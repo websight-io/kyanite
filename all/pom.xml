@@ -1,0 +1,98 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>pl.ds.bulma</groupId>
+        <artifactId>bulma.parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>bulma.all</artifactId>
+    <version>${project.parent.version}</version>
+    <packaging>content-package</packaging>
+    <name>Bulma - All</name>
+    <description>All modules for Bulma</description>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.jackrabbit</groupId>
+                <artifactId>filevault-package-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <group>pl.ds.bulma</group>
+                    <packageType>container</packageType>
+                    <skipSubPackageValidation>true</skipSubPackageValidation>
+                    <embeddeds>
+                        <embedded>
+                            <groupId>pl.ds.bulma</groupId>
+                            <artifactId>bulma.core</artifactId>
+                            <type>jar</type>
+                            <target>/apps/bulma/install</target>
+                        </embedded>
+                        <embedded>
+                            <groupId>pl.ds.bulma</groupId>
+                            <artifactId>bulma.ui.apps</artifactId>
+                            <type>zip</type>
+                            <target>/apps/bulma/install</target>
+                        </embedded>
+                    </embeddeds>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.day.jcr.vault</groupId>
+                <artifactId>content-package-maven-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <verbose>true</verbose>
+                    <failOnError>true</failOnError>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>autoInstallAllPackage</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <pluginManagement>
+                    <plugins>
+                        <plugin>
+                            <groupId>com.day.jcr.vault</groupId>
+                            <artifactId>content-package-maven-plugin</artifactId>
+                            <executions>
+                                <execution>
+                                    <id>install-package</id>
+                                    <goals>
+                                        <goal>install</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                    </plugins>
+                </pluginManagement>
+            </build>
+        </profile>
+    </profiles>
+
+    <dependencies>
+        <dependency>
+            <groupId>pl.ds.bulma</groupId>
+            <artifactId>bulma.core</artifactId>
+            <version>${project.parent.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>pl.ds.bulma</groupId>
+            <artifactId>bulma.ui.apps</artifactId>
+            <version>${project.parent.version}</version>
+            <type>zip</type>
+        </dependency>
+    </dependencies>
+</project>
