@@ -1,82 +1,82 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-  xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
-  jcr:primaryType="nt:unstructured"
-  sling:resourceType="wcm/dialogs/components/radio"
-  name="ratio"
-  label="Ratio of image">
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/select"
+          name="style"
+          label="Ratio of image">
   <square
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="Square (or 1 by 1)"
-    value="is-square"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="Square (or 1 by 1)"
+      value="is-square"/>
   <is-5by4
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="5 by 4"
-    value="is-5by4"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="5 by 4"
+      value="is-5by4"/>
   <is-4by3
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="4 by 3"
-    value="is-4by3"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="4 by 3"
+      value="is-4by3"/>
   <is-3by2
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="3 by 2"
-    value="is-3by2"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="3 by 2"
+      value="is-3by2"/>
   <is-5by3
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="5 by 3"
-    value="is-5by3"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="5 by 3"
+      value="is-5by3"/>
   <is-16by9
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="16 by 9"
-    value="is-16by9"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="16 by 9"
+      value="is-16by9"/>
   <is-2by1
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="2 by 1"
-    value="is-2by1"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="2 by 1"
+      value="is-2by1"/>
   <is-3by1
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="3 by 1"
-    value="is-3by1"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="3 by 1"
+      value="is-3by1"/>
   <is-4by5
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="4 by 5"
-    value="is-4by5"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="4 by 5"
+      value="is-4by5"/>
   <is-3by4
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="3 by 4"
-    value="is-3by4"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="3 by 4"
+      value="is-3by4"/>
   <is-2by3
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="2 by 3"
-    value="is-2by3"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="2 by 3"
+      value="is-2by3"/>
   <is-3by5
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="3 by 5"
-    value="is-3by5"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="3 by 5"
+      value="is-3by5"/>
   <is-9by16
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="9 by 16"
-    value="is-9by16"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="9 by 16"
+      value="is-9by16"/>
   <is-1by2
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="1 by 2"
-    value="is-1by2"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="1 by 2"
+      value="is-1by2"/>
   <is-1by3
-    jcr:primaryType="nt:unstructured"
-    sling:resourceType="wcm/dialogs/components/radio/option"
-    label="1 by 3"
-    value="is-1by3"/>
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="1 by 3"
+      value="is-1by3"/>
 </jcr:root>

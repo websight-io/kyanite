@@ -32,6 +32,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <componentGroupName>ds.pl.bulma</componentGroupName>
+
+        <!-- admin user default credentials for tests and maven plugins -->
+        <websight.admin.username>wsadmin</websight.admin.username>
+        <websight.admin.password>wsadmin</websight.admin.password>
+
+        <sling.user>wsadmin</sling.user>
+        <sling.password>wsadmin</sling.password>
     </properties>
 
     <build>
