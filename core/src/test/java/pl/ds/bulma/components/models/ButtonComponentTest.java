@@ -1,4 +1,4 @@
-package pl.ds.howlite.components.models;
+package pl.ds.bulma.components.models;
 
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
 import org.apache.sling.testing.mock.sling.junit5.SlingContext;
