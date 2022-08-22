@@ -1,0 +1,14 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.HeroComponent">
+    <section class="hero ${model.heroClasses @ join=' '}">
+        <div class="hero-body">
+            <p class="title">
+                ${model.title}
+            </p>
+            <sly data-sly-test="${model.subTitle}">
+                <p class="subtitle">
+                    ${model.subTitle}
+                </p>
+            </sly>
+        </div>
+    </section>
+</sly>
