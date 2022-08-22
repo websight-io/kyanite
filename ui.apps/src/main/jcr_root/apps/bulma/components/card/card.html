@@ -1,0 +1,18 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.CardComponent">
+    <div class="card">
+
+        <sly data-sly-test="${model.header}">
+            <header class="card-header">
+                <p class="card-header-title">
+                    ${model.header}
+                </p>
+            </header>
+        </sly>
+
+        <div class="card-content">
+            <div class="content">
+                ${model.content}
+            </div>
+        </div>
+    </div>
+</sly>

@@ -25,6 +25,7 @@ dist/
 
 # JetBrains IDE
 .idea/
+*.iml
 
 # Unit test reports
 TEST*.xml
@@ -49,3 +50,4 @@ Thumbs.db
 *.wmv
 
 /all/target/
+/core/bulma.core.iml
