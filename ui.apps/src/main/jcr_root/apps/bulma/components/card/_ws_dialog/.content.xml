@@ -14,7 +14,19 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/textfield"
                     name="header"
-                    label="Header"
+                    label="Card header"
+            />
+            <title
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/textfield"
+                    name="title"
+                    label="Title"
+            />
+            <subtitle
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/textfield"
+                    name="subtitle"
+                    label="Subtitle"
             />
             <content
                     jcr:primaryType="nt:unstructured"
@@ -23,5 +35,78 @@
                     label="Content"
             />
         </generalTab>
+        <thumbnail
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/tab"
+                label="Thumbnail">
+            <assetReference
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/assetreference"
+                    mimeTypes="[image/*]"
+                    name="thumbnail/assetReference"
+                    description="Default image source"
+                    label="Choose image"/>
+            <src
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/pathpicker"
+                    rootPath="/content"
+                    name="thumbnail/src"
+                    description="Secondary image source"
+                    label="Use this if you want a link to image from web"/>
+            <alt
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/textfield"
+                    name="thumbnail/alt"
+                    label="Alt text"/>
+        </thumbnail>
+        <mainImage
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/tab"
+                label="Image">
+            <assetReference
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/assetreference"
+                    mimeTypes="[image/*]"
+                    name="image/assetReference"
+                    description="Default image source"
+                    label="Choose image"/>
+            <src
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/pathpicker"
+                    rootPath="/content"
+                    name="image/src"
+                    description="Secondary image source"
+                    label="Use this if you want a link to image from web"/>
+            <alt
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/textfield"
+                    name="image/alt"
+                    label="Alt text"/>
+        </mainImage>
+        <footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/tab"
+                label="Footer">
+            <url1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/pathpicker"
+                    name="urls/1/address"
+                    label="URL"/>
+            <url1Label
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/textfield"
+                    name="urls/1/label"
+                    label="Label"/>
+            <url2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/pathpicker"
+                    name="urls/2/address"
+                    label="URL"/>
+            <url2Label
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/textfield"
+                    name="urls/2/label"
+                    label="Label"/>
+        </footer>
     </tabs>
 </jcr:root>
