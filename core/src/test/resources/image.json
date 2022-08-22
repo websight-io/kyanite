@@ -1,0 +1,26 @@
+{
+  "fixed": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/image",
+    "assetReference": "/content/space/assets/imageLg.jpg",
+    "type": "fixed",
+    "style": "is-16x16px",
+    "isRounded": "true",
+    "alt": "Really nice picture"
+  },
+  "ratio": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/image",
+    "assetReference": "/content/space/assets/imageLg.jpg",
+    "src": "/content/space/assets/imageSrc.jpg",
+    "type": "ratio",
+    "style": "is-4by3"
+  },
+  "srcOverwrite": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/image",
+    "src": "/content/space/assets/otherAsset.jpg",
+    "type": "fixed",
+    "style": "is-16x16px"
+  }
+}
