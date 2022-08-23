@@ -40,4 +40,18 @@
             </plugin>
         </plugins>
     </build>
+
+    <!-- Do not remove this dependency. It's here for 2 reasons: -->
+    <!-- 1. Ensure that ui.apps cannot be build without build of ui.frontend -->
+    <!-- 2. Force order of modules build duing reactor pom build - ui.frontend must be build before ui.apps, -->
+    <!-- otherwise ui.apps will not contain latest ui.frontend build results -->
+    <dependencies>
+        <dependency>
+            <groupId>pl.ds.bulma</groupId>
+            <artifactId>bulma-ui-frontend</artifactId>
+            <version>${project.parent.version}</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+
 </project>

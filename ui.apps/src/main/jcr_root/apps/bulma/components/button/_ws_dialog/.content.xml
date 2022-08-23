@@ -44,7 +44,7 @@
             <size
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/include"
-                    path="/apps/bulma/components/button/attributes/size"/>
+                    path="/apps/bulma/components/common/size"/>
             <variant
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/include"

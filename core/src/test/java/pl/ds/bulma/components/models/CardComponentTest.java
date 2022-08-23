@@ -36,7 +36,7 @@ class CardComponentTest {
     }
 
     @Test
-    void buttonComponentModelTest() {
+    void cardComponentModelTest() {
         CardComponent model = context.resourceResolver().getResource(PATH + "/complex").adaptTo(CardComponent.class);
 
         assertThat(model).isNotNull();

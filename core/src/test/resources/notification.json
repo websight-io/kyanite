@@ -1,0 +1,14 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/message"
+  },
+  "styled": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/message",
+    "content": "Content",
+    "variant": "is-info",
+    "button": "true",
+    "isLight": "true"
+  }
+}
