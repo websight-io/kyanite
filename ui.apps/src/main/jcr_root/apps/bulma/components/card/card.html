@@ -1,0 +1,49 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.CardComponent">
+    <div class="card">
+
+        <sly data-sly-test="${model.header}">
+            <header class="card-header">
+                <p class="card-header-title">
+                    ${model.header}
+                </p>
+            </header>
+        </sly>
+
+        <sly data-sly-test="${model.image.assetReference}">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                    <img src="${model.image.assetReference}" alt="${model.image.alt}">
+                </figure>
+            </div>
+        </sly>
+
+        <div class="card-content">
+            <div class="media">
+                <sly data-sly-test="${model.thumbnail.assetReference}">
+                    <div class="media-left">
+                        <figure class="image is-48x48">
+                            <img src="${model.thumbnail.assetReference}" alt="${model.thumbnail.alt}">
+                        </figure>
+                    </div>
+                </sly>
+                <div class="media-content">
+                    <p class="title is-4">${model.title}</p>
+                    <p class="subtitle is-6">${model.subtitle}</p>
+                </div>
+            </div>
+
+            <div class="content">
+                ${model.content}
+            </div>
+        </div>
+
+        <footer class="card-footer">
+            <sly data-sly-list.url="${model.urls}">
+                <sly data-sly-test="${url.label}">
+                    <a href="${url.address}" class="card-footer-item">${url.label}</a>
+                </sly>
+            </sly>
+        </footer>
+
+    </div>
+</sly>

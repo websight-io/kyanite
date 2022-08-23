@@ -1,0 +1,25 @@
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/tab"
+          label="Image">
+    <assetReference
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/assetreference"
+            mimeTypes="[image/*]"
+            name="image/assetReference"
+            description="Default image source"
+            label="Choose image"/>
+    <src
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/pathpicker"
+            rootPath="/content"
+            name="image/src"
+            description="Secondary image source"
+            label="Use this if you want a link to image from web"/>
+    <alt
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/textfield"
+            name="image/alt"
+            label="Alt text"/>
+</jcr:root>
