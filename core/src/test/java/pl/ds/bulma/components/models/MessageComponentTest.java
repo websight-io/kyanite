@@ -32,8 +32,8 @@ class MessageComponentTest {
         assertThat(model.getContent()).isNull();
         assertThat(model.getVariant()).isNull();
         assertThat(model.getSize()).isNull();
-        assertThat(model.getButton()).isNull();
-        assertThat(model.getShowHeader()).isNull();
+        assertThat(model.getShowButton()).isFalse();
+        assertThat(model.getShowHeader()).isTrue();
         assertThat(model.getMessageClasses()).isEmpty();
     }
 
@@ -46,8 +46,8 @@ class MessageComponentTest {
         assertThat(model.getContent()).isEqualTo("Content");
         assertThat(model.getVariant()).isEqualTo("is-info");
         assertThat(model.getSize()).isEqualTo("is-small");
-        assertThat(model.getButton()).isEqualTo("true");
-        assertThat(model.getShowHeader()).isEqualTo("true");
+        assertThat(model.getShowButton()).isTrue();
+        assertThat(model.getShowHeader()).isTrue();
         assertThat(model.getMessageClasses()).containsExactlyInAnyOrder("is-small", "is-info");
     }
 }

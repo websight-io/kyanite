@@ -8,7 +8,7 @@
     "sling:resourceType": "bulma/components/message",
     "content": "Content",
     "variant": "is-info",
-    "button": "true",
+    "showButton": "true",
     "isLight": "true"
   }
 }

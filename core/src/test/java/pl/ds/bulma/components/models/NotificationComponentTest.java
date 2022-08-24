@@ -24,13 +24,14 @@ class NotificationComponentTest {
     }
 
     @Test
-    void defaultMessageComponentModelTest() {
+    void defaultNotificationComponentModelTest() {
         NotificationComponent model = context.resourceResolver().getResource(PATH + "/default").adaptTo(NotificationComponent.class);
 
         assertThat(model).isNotNull();
         assertThat(model.getContent()).isNull();
         assertThat(model.getVariant()).isNull();
-        assertThat(model.getButton()).isNull();
+        assertThat(model.getShowButton()).isFalse();
+        assertThat(model.isLight()).isFalse();
         assertThat(model.getNotificationClasses()).isEmpty();
     }
 
@@ -41,7 +42,7 @@ class NotificationComponentTest {
         assertThat(model).isNotNull();
         assertThat(model.getContent()).isEqualTo("Content");
         assertThat(model.getVariant()).isEqualTo("is-info");
-        assertThat(model.getButton()).isEqualTo("true");
-        assertThat(model.getIsLight()).isEqualTo("true");
+        assertThat(model.isLight()).isTrue();
+        assertThat(model.getShowButton()).isTrue();
     }
 }

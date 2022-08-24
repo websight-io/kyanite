@@ -16,11 +16,10 @@
           name="content"
           label="Content"
           required="true"/>
-      <button
+      <showButton
           jcr:primaryType="nt:unstructured"
-          sling:resourceType="wcm/dialogs/components/toggle"
-          name="button"
-          checkedByDefault="false"
+          sling:resourceType="wcm/dialogs/components/checkbox"
+          name="showButton"
           label="Has delete button"/>
       <variant
           jcr:primaryType="nt:unstructured"
@@ -28,9 +27,8 @@
           path="/apps/bulma/components/common/variant"/>
       <isLight
           jcr:primaryType="nt:unstructured"
-          sling:resourceType="wcm/dialogs/components/toggle"
+          sling:resourceType="wcm/dialogs/components/checkbox"
           name="isLight"
-          checkedByDefault="false"
           label="Is light style"/>
     </generalTab>
   </tabs>

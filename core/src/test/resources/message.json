@@ -9,7 +9,7 @@
     "header": "Header",
     "content": "Content",
     "variant": "is-info",
-    "button": "true",
+    "showButton": "true",
     "size": "is-small",
     "showHeader": "true"
   }

@@ -12,7 +12,7 @@
   "scripts": {
     "prod": "webpack --config ./webpack.prod.js",
     "watch": "webpack --config ./webpack.prod.js --watch",
-    "sync": "websight-localsync target-folder=dist provider-root-suffix=howlite/web_root"
+    "sync": "websight-localsync target-folder=dist provider-root-suffix=bulma/web_root"
   },
   "dependencies": {
   },

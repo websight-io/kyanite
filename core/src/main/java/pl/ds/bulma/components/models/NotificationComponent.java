@@ -2,6 +2,7 @@ package pl.ds.bulma.components.models;
 
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 
@@ -22,11 +23,13 @@ public class NotificationComponent {
 
     @Inject
     @Getter
-    private String isLight;
+    @Default(booleanValues = false)
+    private boolean isLight;
 
     @Inject
     @Getter
-    private String button;
+    @Default(booleanValues = false)
+    private Boolean showButton;
 
     @Inject
     @Getter
@@ -35,7 +38,7 @@ public class NotificationComponent {
     @PostConstruct
     private void init() {
         List<String> classes = new ArrayList<>();
-        if ("true".equals(isLight)) {
+        if (isLight) {
             classes.add("is-light");
         }
         if (variant != null) {

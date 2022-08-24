@@ -1,9 +1,9 @@
 <sly data-sly-use.model="pl.ds.bulma.components.models.MessageComponent">
     <article class="message ${model.messageClasses @ join=' '}">
-        <sly data-sly-test="${model.showHeader == 'true'}">
+        <sly data-sly-test="${model.showHeader}">
             <div class="message-header">
                 <p>${model.header}</p>
-                <sly data-sly-test=${model.button}>
+                <sly data-sly-test="${model.showButton}">
                     <button class="delete" aria-label="delete"></button>
                 </sly>
             </div>

@@ -2,6 +2,7 @@ package pl.ds.bulma.components.models;
 
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 
@@ -30,7 +31,8 @@ public class MessageComponent {
 
     @Inject
     @Getter
-    private String button;
+    @Default(booleanValues = false)
+    private Boolean showButton;
 
     @Inject
     @Getter
@@ -38,7 +40,8 @@ public class MessageComponent {
 
     @Inject
     @Getter
-    private String showHeader;
+    @Default(booleanValues = true)
+    private Boolean showHeader;
 
     @PostConstruct
     private void init() {

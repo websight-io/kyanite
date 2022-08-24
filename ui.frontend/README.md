@@ -1,6 +1,6 @@
 ## Description
 
-Module contains Front-End for Howlite. During build it copy build results to web root folder in ui.apps.
+Module contains Front-End for port of Bulma components. During build it copy build results to web root folder in ui.apps.
 
 ## Usage:
 
