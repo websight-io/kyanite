@@ -1,0 +1,9 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.PricingTableComponent">
+    <div data-sly-unwrap=" ${!wcmmode.isEdit  }" style="padding-bottom: 30px">
+        <div class="pricing-table  ${model.pricingClasses @ join=' '}">
+            <sly data-sly-test="${resource.hasChildren}">
+                <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+            </sly>
+        </div>
+    </div>
+</sly>
