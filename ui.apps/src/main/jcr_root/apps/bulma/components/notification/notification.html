@@ -1,0 +1,8 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.NotificationComponent">
+    <div class="notification ${model.notificationClasses @ join=' '}">
+        <sly data-sly-test="${model.showButton}">
+            <button class="delete"></button>
+        </sly>
+        ${model.content @ context='html'}
+    </div>
+</sly>
