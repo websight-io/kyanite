@@ -1,0 +1,37 @@
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/select"
+          name="size"
+          label="Size">
+  <is1
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="Is 1"
+      value="is-1"/>
+  <is2
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="Is 2"
+      value="is-2"/>
+  <is3
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="Is 3"
+      value="is-3"/>
+  <is4
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="Is 4"
+      value="is-4"/>
+  <is5
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="Is 5"
+      value="is-5"/>
+  <is6
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/select/selectitem"
+      label="Is 6"
+      value="is-6"/>
+</jcr:root>

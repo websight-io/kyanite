@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/dialog">
+  <tabs
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/tabs">
+    <generalTab
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/dialogs/components/tab"
+        label="General">
+      <type jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/radio"
+            name="type"
+            label="Title/subtitle"
+            required="true">
+        <title jcr:primaryType="nt:unstructured"
+               sling:resourceType="wcm/dialogs/components/radio/option"
+               label="Title"
+               value="title"
+               selected="true"/>
+        <subtitle jcr:primaryType="nt:unstructured"
+                  sling:resourceType="wcm/dialogs/components/radio/option"
+                  label="Subtitle"
+                  value="subtitle"/>
+      </type>
+      <elementtype jcr:primaryType="nt:unstructured"
+                   sling:resourceType="wcm/dialogs/components/radio"
+                   name="elementType"
+                   label="Element type"
+                   required="true">
+        <p jcr:primaryType="nt:unstructured"
+           sling:resourceType="wcm/dialogs/components/radio/option"
+           label="Paragraph"
+           value="p"/>
+        <h jcr:primaryType="nt:unstructured"
+           sling:resourceType="wcm/dialogs/components/radio/option"
+           label="Heading"
+           value="h"
+           selected="true"/>
+      </elementtype>
+      <text
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/textfield"
+          name="text"
+          label="Text"/>
+      <size
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/include"
+          path="/apps/bulma/components/common/issize"/>
+      <element
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/include">
+        <include
+            jcr:primaryType="nt:unstructured"
+            sling:resourceSuperType="/apps/bulma/components/common/headinglevel"
+            name="element">
+        </include>
+        <ws:display
+            jcr:primaryType="nt:unstructured">
+          <condition
+              jcr:primaryType="nt:unstructured"
+              sourceName="elementType"
+              values="h"/>
+        </ws:display>
+      </element>
+      <isSpaced
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/checkbox"
+          name="isSpaced"
+          label="Normal spacing between title and subtitle">
+        <ws:display
+            jcr:primaryType="nt:unstructured">
+          <condition
+              jcr:primaryType="nt:unstructured"
+              sourceName="type"
+              values="title"/>
+        </ws:display>
+      </isSpaced>
+    </generalTab>
+  </tabs>
+</jcr:root>
