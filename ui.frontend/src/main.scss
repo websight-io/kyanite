@@ -14,9 +14,6 @@
  * limitations under the License.
  */
 
-
-// Stylesheets
-import "./main.scss";
-
-// Javascript or Typescript
-import "./**/*.js";
+@import './components/index';
+@import "bulma";
+@import "bulma-pricingtable";

@@ -1,0 +1,24 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/pricingtable"
+  },
+  "horizontal": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/pricingtable",
+    "isComparative": "false",
+    "isHorizontal": "true"
+  },
+  "comparative": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/pricingtable",
+    "isComparative": "true",
+    "isHorizontal": "false"
+  },
+  "bothStyles": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/pricingtable",
+    "isComparative": "true",
+    "isHorizontal": "true"
+  }
+}

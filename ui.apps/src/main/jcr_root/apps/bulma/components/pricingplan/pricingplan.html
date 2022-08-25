@@ -1,0 +1,29 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.PricingPlanComponent">
+    <div class="pricing-plan ${model.variant}">
+        <div class="plan-header">${model.header}</div>
+        <div class="plan-price">
+            <sly data-sly-test="${model.showPricing}">
+                 <span class="plan-price-amount">
+                    <span class="plan-price-currency">
+                        ${model.currency}
+                    </span>
+                    ${model.price}
+                </span>
+                ${model.period}
+            </sly>
+            <span class="plan-price-amount">&nbsp;</span>
+        </div>
+        <div class="plan-items">
+            <sly data-sly-list.detail="${model.details}">
+                <sly data-sly-test="${detail}">
+                    <div class="plan-item">${detail.description}</div>
+                </sly>
+            </sly>
+        </div>
+        <div class="plan-footer">
+            <sly data-sly-test="${model.showButton}">
+                <button class="button is-fullwidth" disabled="disabled">Current plan</button>
+            </sly>
+        </div>
+    </div>
+</sly>

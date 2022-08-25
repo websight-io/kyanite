@@ -1,0 +1,11 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/pricingdetails"
+  },
+  "filled": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/pricingdetails",
+    "description": "Cheap plan"
+  }
+}

@@ -38,7 +38,7 @@ class MessageComponentTest {
     }
 
     @Test
-    void cardComponentModelTest() {
+    void messageComponentModelTest() {
         MessageComponent model = context.resourceResolver().getResource(PATH + "/styled").adaptTo(MessageComponent.class);
 
         assertThat(model).isNotNull();
