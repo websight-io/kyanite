@@ -36,7 +36,7 @@ class NotificationComponentTest {
     }
 
     @Test
-    void cardComponentModelTest() {
+    void notificationComponentModelTest() {
         NotificationComponent model = context.resourceResolver().getResource(PATH + "/styled").adaptTo(NotificationComponent.class);
 
         assertThat(model).isNotNull();

@@ -43,7 +43,7 @@ public class PricingPlanComponent {
 
     @Inject
     @Getter
-    List<PricingDetailsComponent> details;
+    private List<PricingDetailsComponent> details;
 
     @Inject
     @Getter
