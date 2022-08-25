@@ -36,8 +36,18 @@
       </buttonLabel>
       <variant
           jcr:primaryType="nt:unstructured"
-          sling:resourceType="wcm/dialogs/components/include"
-          path="/apps/bulma/components/common/variant"/>
+          sling:resourceType="wcm/dialogs/components/include">
+        <include
+            jcr:primaryType="nt:unstructured"
+            sling:resourceSuperType="/apps/bulma/components/common/variant"
+            label="Custom label">
+          <white
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="Active"
+            value="is-active"/>
+        </include>
+      </variant>
     </generalTab>
     <pricingTab
         jcr:primaryType="nt:unstructured"
