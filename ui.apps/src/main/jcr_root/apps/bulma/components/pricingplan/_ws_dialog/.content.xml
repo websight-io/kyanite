@@ -39,8 +39,7 @@
           sling:resourceType="wcm/dialogs/components/include">
         <include
             jcr:primaryType="nt:unstructured"
-            sling:resourceSuperType="/apps/bulma/components/common/variant"
-            label="Custom label">
+            sling:resourceSuperType="/apps/bulma/components/common/variant">
           <white
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select/selectitem"
