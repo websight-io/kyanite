@@ -1,0 +1,22 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/progressbar"
+  },
+  "isIntermediate": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/progressbar",
+    "value": 45,
+    "isIntermediate": "true",
+    "size": "is-medium",
+    "variant": "is-warning"
+  },
+  "valueSet": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/pricingtprogressbarable",
+    "value": 45,
+    "isIntermediate": "false",
+    "size": "is-medium",
+    "variant": "is-warning"
+  }
+}
