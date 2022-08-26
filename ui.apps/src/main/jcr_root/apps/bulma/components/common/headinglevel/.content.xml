@@ -2,9 +2,9 @@
           xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
           jcr:primaryType="nt:unstructured"
           sling:resourceType="wcm/dialogs/components/radio"
-          name="headingLevel"
-          description="HTML heading level help to communicate the organization and hierarchy of the content (for SEO and accessibility)"
-          label="Heading level">
+          name="headingElement"
+          description="HTML heading element help to communicate the organization and hierarchy of the content (for SEO and accessibility)"
+          label="Heading element">
     <h1
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/radio/option"
@@ -36,4 +36,9 @@
             sling:resourceType="wcm/dialogs/components/radio/option"
             label="H6"
             value="h6"/>
+    <p
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/radio/option"
+            label="Paragraph"
+            value="p"/>
 </jcr:root>

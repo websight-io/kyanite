@@ -27,11 +27,6 @@ public class TitleComponent {
 
     @Inject
     @Getter
-    @Default(values = "h")
-    private String elementType;
-
-    @Inject
-    @Getter
     @Default(values = "h1")
     private String element;
 
@@ -58,9 +53,6 @@ public class TitleComponent {
         }
         if (isSpaced) {
             classes.add("is-spaced");
-        }
-        if ("p".equals(elementType)) {
-            element = elementType;
         }
         titleClasses = classes.toArray(new String[]{});
     }

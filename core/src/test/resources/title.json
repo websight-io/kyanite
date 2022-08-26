@@ -8,8 +8,7 @@
     "sling:resourceType": "bulma/components/title",
     "text": "Nice subtitle",
     "type": "subtitle",
-    "elementType": "p",
-    "element": "h2",
+    "element": "p",
     "size": "is-2",
     "isSpaced": true
   }
