@@ -1,0 +1,14 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.ColumnsComponent">
+    <sly data-sly-test="${resource.hasChildren}">
+        <div data-sly-unwrap="${model.hasOnlyColumnsWhichHasNoChildren}" class="columns">
+            <sly data-sly-repeat="${resource.listChildren}">
+                <sly data-sly-resource="${item.path}"></sly>
+            </sly>
+        </div>
+    </sly>
+    <sly data-sly-test="${!resource.hasChildren}">
+        <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
+             data-sly-call="${lib.placeholder @ classes='columns'}">
+        </sly>
+    </sly>
+</sly>
