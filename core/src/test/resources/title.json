@@ -1,0 +1,15 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/title"
+  },
+  "complex": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/title",
+    "text": "Nice subtitle",
+    "type": "subtitle",
+    "element": "p",
+    "size": "is-2",
+    "isSpaced": true
+  }
+}
