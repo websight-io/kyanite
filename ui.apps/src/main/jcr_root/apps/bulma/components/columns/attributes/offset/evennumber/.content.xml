@@ -1,0 +1,73 @@
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/select"
+          name="offset"
+          label="Offset size"
+          defaultValue="empty">
+    <empty
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="Not specified"
+            value="empty"/>
+    <one
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="1 Column"
+            value="one"/>
+    <two
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="2 Columns"
+            value="two"/>
+    <three
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="3 Columns"
+            value="three"/>
+    <four
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="4 Columns"
+            value="four"/>
+    <five
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="5 Columns"
+            value="five"/>
+    <six
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="6 Columns"
+            value="six"/>
+    <seven
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="7 Columns"
+            value="seven"/>
+    <eight
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="8 Columns"
+            value="eight"/>
+    <nine
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="9 Columns"
+            value="nine"/>
+    <ten
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="10 Columns"
+            value="ten"/>
+    <eleven
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="11 Columns"
+            value="eleven"/>
+    <twelve
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="12 Columns"
+            value="twelve"/>
+</jcr:root>

@@ -1,4 +1,4 @@
-package pl.ds.bulma.components.models;
+package pl.ds.bulma.components.models.columns;
 
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
 import org.apache.sling.testing.mock.sling.junit5.SlingContext;

@@ -1,0 +1,17 @@
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/radio"
+          name="sizeType"
+          label="Type of the column size">
+    <evennumber
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/radio/option"
+            label="Even number"
+            value="evenNumber"/>
+    <fraction
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/radio/option"
+            label="Fraction of a full row"
+            value="fraction"/>
+</jcr:root>

@@ -36,7 +36,7 @@
                                         Bundle-Description : ${Bundle-Name}
                                         Bundle-Vendor: Dynamic Solutions sp. z o.o. sp. k.
                                             -exportcontents: \
-                                                pl.ds.bulma.components.models, \
+                                                pl.ds.bulma.components.models.*, \
                                                 ${removeall;${packages;VERSIONED};${packages;CONDITIONAL}}
                                             -noextraheaders: true
                                             -snapshot: SNAPSHOT
