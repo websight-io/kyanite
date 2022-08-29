@@ -1,9 +1,12 @@
 package pl.ds.bulma.components.models.columns;
 
+import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 
+import javax.inject.Inject;
 import java.util.stream.StreamSupport;
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
@@ -15,6 +18,11 @@ public class ColumnsComponent {
 
     @SlingObject
     private Resource resource;
+
+    @Getter
+    @Inject
+    @Default(values = "is-tablet")
+    private String columnsActivationLevel;
 
     public boolean hasOnlyColumnsWhichHasNoChildren() {
         return StreamSupport
