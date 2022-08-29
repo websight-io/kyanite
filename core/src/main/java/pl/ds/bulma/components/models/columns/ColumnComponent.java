@@ -2,7 +2,6 @@ package pl.ds.bulma.components.models.columns;
 
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
@@ -18,7 +17,6 @@ import java.util.stream.Collectors;
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
-@NoArgsConstructor
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class ColumnComponent {
 
@@ -52,17 +50,19 @@ public class ColumnComponent {
     private void init() {
         size = createSizeClass(ColumnSizes.findByName(size).getCssClass());
         offset = createOffsetClass(ColumnSizes.findByName(offset).getCssClass());
-        popuplateClasses();
+        populateClasses();
     }
 
-    private void popuplateClasses() {
+    private void populateClasses() {
         List<String> classList = new ArrayList<>();
-        classList.add(size);
-        classList.add(offset);
         if (Boolean.parseBoolean(isNarrowColumn)) {
             //TODO: Refactor this, once implementing responsiveness
-            classList.add("is-narrow");
+            classes = new String[]{"is-narrow"};
+            return;
         }
+
+        classList.add(size);
+        classList.add(offset);
         classes = classList.stream()
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList())
