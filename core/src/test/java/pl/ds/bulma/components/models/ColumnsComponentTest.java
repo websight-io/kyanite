@@ -7,18 +7,25 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static java.util.Objects.requireNonNull;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SlingContextExtension.class)
 public class ColumnsComponentTest {
 
     private static final String PATH = "/content/columns";
+    private static final String SLING_RESOURCE_TYPE = "sling:resourceType";
+
     private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
 
     @BeforeEach
     public void init() {
-        context.addModelsForClasses(CardComponent.class);
+        context.addModelsForClasses(ColumnsComponent.class);
         context.load().json(requireNonNull(Thread.currentThread().getContextClassLoader().getResourceAsStream("columns.json")), PATH);
     }
 
@@ -26,8 +33,31 @@ public class ColumnsComponentTest {
     void defaultColumnsComponentModelTest() {
         ColumnsComponent model = context.resourceResolver().getResource(PATH + "/default").adaptTo(ColumnsComponent.class);
 
-        //TODO
-        assertTrue(true);
-//        assertThat(model).isNotNull();
+        assertThat(model).isNotNull();
+    }
+
+    @Test
+    void hasOnlyColumnsWhichHasNoChildrenWorksWhenChildColumnIsEmptyTest() {
+        addChildResourceType("column1", PATH + "/default", "bulma/components/columns/column");
+        ColumnsComponent model = context.resourceResolver().getResource(PATH + "/default").adaptTo(ColumnsComponent.class);
+
+        assertThat(model).isNotNull();
+        assertTrue(model.hasOnlyColumnsWhichHasNoChildren());
+    }
+
+    @Test
+    void hasOnlyColumnsWhichHasNoChildrenWorksWhenChildColumnIsNotEmptyTest() {
+        addChildResourceType("column1", PATH + "/default", "bulma/components/columns/column");
+        addChildResourceType("button", PATH + "/default/column1","bulma/components/button");
+        ColumnsComponent model = context.resourceResolver().getResource(PATH + "/default").adaptTo(ColumnsComponent.class);
+
+        assertThat(model).isNotNull();
+        assertFalse(model.hasOnlyColumnsWhichHasNoChildren());
+    }
+
+    private void addChildResourceType(String childResourceName, String resourcePath, String childResourceTypeValue) {
+        Map<String, String> childrenValues = new HashMap<>();
+        childrenValues.put(SLING_RESOURCE_TYPE, childResourceTypeValue);
+        context.build().resource(resourcePath).siblingsMode().resource(childResourceName, childrenValues);
     }
 }
