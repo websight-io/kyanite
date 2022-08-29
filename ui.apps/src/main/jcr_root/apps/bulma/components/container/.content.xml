@@ -4,4 +4,4 @@
           jcr:title="Container"
           isContainer="true"
           group="Bulma.io"
-          allowedComponents="Bulma.io"/>
+          allowedComponents="[Bulma.io]"/>
