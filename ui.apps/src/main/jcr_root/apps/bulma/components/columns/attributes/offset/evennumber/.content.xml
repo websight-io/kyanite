@@ -65,9 +65,4 @@
             sling:resourceType="wcm/dialogs/components/select/selectitem"
             label="11 Columns"
             value="eleven"/>
-    <twelve
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="wcm/dialogs/components/select/selectitem"
-            label="12 Columns"
-            value="twelve"/>
 </jcr:root>
