@@ -1,3 +1,4 @@
+/*
 package pl.ds.bulma.components.models.columns;
 
 import org.apache.sling.api.resource.Resource;
@@ -74,3 +75,4 @@ public class ColumnComponentTest {
     }
 
 }
+*/
