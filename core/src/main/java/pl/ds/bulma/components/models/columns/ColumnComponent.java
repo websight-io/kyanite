@@ -52,7 +52,10 @@ public class ColumnComponent {
     private void init() {
         size = createSizeClass(ColumnSizes.findByName(size).getCssClass());
         offset = createOffsetClass(ColumnSizes.findByName(offset).getCssClass());
+        popuplateClasses();
+    }
 
+    private void popuplateClasses() {
         List<String> classList = new ArrayList<>();
         classList.add(size);
         classList.add(offset);
