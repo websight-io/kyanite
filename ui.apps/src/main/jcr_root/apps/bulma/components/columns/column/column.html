@@ -1,0 +1,9 @@
+<sly data-sly-test="${resource.hasChildren}">
+    <div class="column">
+        <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+    </div>
+</sly>
+<sly data-sly-test="${!resource.hasChildren}">
+    <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
+         data-sly-call="${lib.placeholder @ classes='column m-3'}"></sly>
+</sly>
