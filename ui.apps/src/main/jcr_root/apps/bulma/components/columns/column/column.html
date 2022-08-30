@@ -5,7 +5,9 @@
         </div>
     </sly>
     <sly data-sly-test="${!resource.hasChildren}">
+        <sly data-sly-test.modelClasses="${model.classes @ join=' '}"></sly>
+        <sly data-sly-test.placeholderClasses="${['column m-3', modelClasses] @ join=' '}"></sly>
         <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
-             data-sly-call="${lib.placeholder @ classes='column m-3'}"></sly>
+             data-sly-call="${lib.placeholder @ classes=placeholderClasses}"></sly>
     </sly>
 </sly>

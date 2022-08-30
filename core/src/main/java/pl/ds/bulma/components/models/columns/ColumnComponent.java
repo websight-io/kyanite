@@ -40,7 +40,7 @@ public class ColumnComponent {
     private String offset;
 
     @Inject
-    private String isNarrowColumn;
+    private boolean isNarrowColumn;
 
     @Inject
     @Getter
@@ -48,25 +48,29 @@ public class ColumnComponent {
 
     @PostConstruct
     private void init() {
-        size = createSizeClass(ColumnSizes.findByName(size).getCssClass());
-        offset = createOffsetClass(ColumnSizes.findByName(offset).getCssClass());
-        populateClasses();
+        String sizeClass = createSizeClass(ColumnSizes.findByName(size).getCssClass());
+        String offsetClass = createOffsetClass(ColumnSizes.findByName(offset).getCssClass());
+        populateClasses(sizeClass, offsetClass);
     }
 
-    private void populateClasses() {
+    private void populateClasses(String sizeClass, String offsetClass) {
         List<String> classList = new ArrayList<>();
-        if (Boolean.parseBoolean(isNarrowColumn)) {
+        if (isNarrowColumn) {
             //TODO: Refactor this, once implementing responsiveness
             classes = new String[]{"is-narrow"};
             return;
         }
 
-        classList.add(size);
-        classList.add(offset);
+        classList.add(sizeClass);
+        classList.add(offsetClass);
         classes = classList.stream()
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList())
                 .toArray(new String[]{});
+
+        if (classes.length == 0) {
+            classes = new String[]{};
+        }
     }
 
     private String createSizeClass(String classPart) {
