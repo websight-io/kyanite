@@ -2,72 +2,60 @@
           xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
           jcr:primaryType="nt:unstructured"
           sling:resourceType="wcm/dialogs/components/select"
-          name="size"
-          label="Column size"
           defaultValue="empty">
     <empty
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select/selectitem"
             label="Not specified"
             value="empty"/>
-    <one
+    <one-fifth
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select/selectitem"
-            label="1 Column"
-            value="one"/>
-    <two
+            label="1/5 of the row"
+            value="one_fifth"/>
+    <one-quarter
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select/selectitem"
-            label="2 Columns"
-            value="two"/>
-    <three
+            label="1/4 of the row"
+            value="one_quarter"/>
+    <one-third
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select/selectitem"
-            label="3 Columns"
-            value="three"/>
-    <four
+            label="1/3 of the row"
+            value="one_third"/>
+    <two-fifths
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select/selectitem"
-            label="4 Columns"
-            value="four"/>
-    <five
+            label="2/5 of the row"
+            value="two_fifths"/>
+    <half
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select/selectitem"
-            label="5 Columns"
-            value="five"/>
-    <six
+            label="Half of the row"
+            value="half"/>
+    <three-fifths
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select/selectitem"
-            label="6 Columns"
-            value="six"/>
-    <seven
+            label="3/5 of the row"
+            value="three_fifths"/>
+    <two-thirds
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select/selectitem"
-            label="7 Columns"
-            value="seven"/>
-    <eight
+            label="2/3 of the row"
+            value="two_thirds"/>
+    <three-quarters
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select/selectitem"
-            label="8 Columns"
-            value="eight"/>
-    <nine
+            label="3/4 of the row"
+            value="three_quarters"/>
+    <four-fifths
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select/selectitem"
-            label="9 Columns"
-            value="nine"/>
-    <ten
+            label="4/5 of the row"
+            value="four_fifths"/>
+    <full
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/select/selectitem"
-            label="10 Columns"
-            value="ten"/>
-    <eleven
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="wcm/dialogs/components/select/selectitem"
-            label="11 Columns"
-            value="eleven"/>
-    <twelve
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="wcm/dialogs/components/select/selectitem"
-            label="12 Columns"
-            value="twelve"/>
+            label="Full row"
+            value="full"/>
 </jcr:root>

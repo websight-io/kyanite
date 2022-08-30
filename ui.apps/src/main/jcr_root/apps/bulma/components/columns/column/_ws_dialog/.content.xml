@@ -22,15 +22,27 @@
                     sling:resourceType="wcm/dialogs/components/container">
                 <sizeType
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/dialogs/components/include"
-                        path="/apps/bulma/components/columns/attributes/size/type"/>
+                        sling:resourceType="wcm/dialogs/components/include">
+                    <include
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceSuperType="/apps/bulma/components/columns/attributes/type"
+                            name="sizeType"
+                            label="Type of the column size">
+                    </include>
+                </sizeType>
                 <evenNumber
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="wcm/dialogs/components/container">
                     <size
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="wcm/dialogs/components/include"
-                            path="/apps/bulma/components/columns/attributes/size/evennumber"/>
+                            sling:resourceType="wcm/dialogs/components/include">
+                        <include
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceSuperType="/apps/bulma/components/columns/attributes/evennumber"
+                                name="size"
+                                label="Column size">
+                        </include>
+                    </size>
                     <ws:display
                             jcr:primaryType="nt:unstructured">
                         <condition
@@ -44,8 +56,14 @@
                         sling:resourceType="wcm/dialogs/components/container">
                     <style
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="wcm/dialogs/components/include"
-                            path="/apps/bulma/components/columns/attributes/size/fraction"/>
+                            sling:resourceType="wcm/dialogs/components/include">
+                        <include
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceSuperType="/apps/bulma/components/columns/attributes/fraction"
+                                name="size"
+                                label="Column size">
+                        </include>
+                    </style>
                     <ws:display
                             jcr:primaryType="nt:unstructured">
                         <condition
@@ -56,15 +74,28 @@
                 </fraction>
                 <offsetType
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/dialogs/components/include"
-                        path="/apps/bulma/components/columns/attributes/offset/type"/>
+                        sling:resourceType="wcm/dialogs/components/include">
+                    <include
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceSuperType="/apps/bulma/components/columns/attributes/type"
+                            name="offsetType"
+                            label="Type of the offset size">
+                    </include>
+                </offsetType>
                 <offsetEvenNumber
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="wcm/dialogs/components/container">
                     <size
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="wcm/dialogs/components/include"
-                            path="/apps/bulma/components/columns/attributes/offset/evennumber"/>
+                            sling:resourceType="wcm/dialogs/components/include">
+                        <include
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceSuperType="/apps/bulma/components/columns/attributes/evennumber"
+                            name="offset"
+                            label="Offset size"
+                            sling:hideChildren="[twelve]">
+                        </include>
+                    </size>
                     <ws:display
                             jcr:primaryType="nt:unstructured">
                         <condition
@@ -78,8 +109,15 @@
                         sling:resourceType="wcm/dialogs/components/container">
                     <style
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="wcm/dialogs/components/include"
-                            path="/apps/bulma/components/columns/attributes/offset/fraction"/>
+                            sling:resourceType="wcm/dialogs/components/include">
+                        <include
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceSuperType="/apps/bulma/components/columns/attributes/fraction"
+                                name="offset"
+                                label="Offset size"
+                                sling:hideChildren="[full]">
+                        </include>
+                    </style>
                     <ws:display
                             jcr:primaryType="nt:unstructured">
                         <condition
