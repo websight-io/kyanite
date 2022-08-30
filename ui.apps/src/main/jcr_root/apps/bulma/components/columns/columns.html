@@ -1,9 +1,11 @@
 <sly data-sly-use.model="pl.ds.bulma.components.models.ColumnsComponent">
     <sly data-sly-test="${resource.hasChildren}">
-        <div data-sly-unwrap="${model.hasOnlyColumnsWhichHasNoChildren}" class="columns">
-            <sly data-sly-repeat="${resource.listChildren}">
-                <sly data-sly-resource="${item.path}"></sly>
-            </sly>
+        <div class="m-4" data-sly-unwrap="${!wcmmode.isEdit}">
+            <div class="columns" data-sly-unwrap="${!wcmmode.isEdit && model.hasOnlyColumnsWhichHasNoChildren}">
+                <sly data-sly-repeat="${resource.listChildren}">
+                    <sly data-sly-resource="${item.path}"></sly>
+                </sly>
+            </div>
         </div>
     </sly>
     <sly data-sly-test="${!resource.hasChildren}">
