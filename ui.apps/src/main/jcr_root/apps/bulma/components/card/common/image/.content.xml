@@ -28,7 +28,7 @@
         <include
             jcr:primaryType="nt:unstructured"
             sling:resourceSuperType="/apps/bulma/components/image/attributes/ratio"
-            name="style"
+            name="image/style"
             label="Image ratio">
             <is-4by3
                 jcr:primaryType="nt:unstructured"
@@ -53,7 +53,7 @@
         <include
             jcr:primaryType="nt:unstructured"
             sling:resourceSuperType="/apps/bulma/components/image/attributes/fixed"
-            name="style"
+            name="thumbnail/style"
             label="Fixed size">
             <is-48x48
                 jcr:primaryType="nt:unstructured"
