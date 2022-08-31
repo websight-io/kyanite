@@ -11,7 +11,7 @@
 
         <sly data-sly-test="${model.image.assetReference}">
             <div class="card-image">
-                <figure class="image is-4by3">
+                <figure class="image ${model.image.style}">
                     <img src="${model.image.assetReference}" alt="${model.image.alt}">
                 </figure>
             </div>
