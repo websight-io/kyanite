@@ -1,9 +1,13 @@
-<sly data-sly-test="${resource.hasChildren}">
-    <div class="column">
-        <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-    </div>
-</sly>
-<sly data-sly-test="${!resource.hasChildren}">
-    <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
-         data-sly-call="${lib.placeholder @ classes='column m-3'}"></sly>
+<sly data-sly-use.model="pl.ds.bulma.components.models.columns.ColumnComponent">
+    <sly data-sly-test="${resource.hasChildren}">
+        <div class="column ${model.classes @ join=' '}">
+            <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+        </div>
+    </sly>
+    <sly data-sly-test="${!resource.hasChildren}">
+        <sly data-sly-test.modelClasses="${model.classes @ join=' '}"></sly>
+        <sly data-sly-test.placeholderClasses="${['column m-3', modelClasses] @ join=' '}"></sly>
+        <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
+             data-sly-call="${lib.placeholder @ classes=placeholderClasses}"></sly>
+    </sly>
 </sly>

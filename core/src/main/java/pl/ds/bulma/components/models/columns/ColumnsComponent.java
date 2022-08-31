@@ -1,4 +1,4 @@
-package pl.ds.bulma.components.models;
+package pl.ds.bulma.components.models.columns;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;

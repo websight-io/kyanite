@@ -1,0 +1,21 @@
+{
+  "default": {
+    "sling:resourceType": "bulma/components/columns/column",
+    "jcr:primaryType": "nt:unstructured",
+    "isNarrowColumn": false
+  },
+  "narrow": {
+    "sling:resourceType": "bulma/components/columns/column",
+    "jcr:primaryType": "nt:unstructured",
+    "isNarrowColumn": true
+  },
+  "complex": {
+    "sling:resourceType": "bulma/components/columns/column",
+    "jcr:primaryType": "nt:unstructured",
+    "isNarrowColumn": false,
+    "offset": "four",
+    "offsetType": "evenNumber",
+    "size": "half",
+    "sizeType": "fraction"
+  }
+}
