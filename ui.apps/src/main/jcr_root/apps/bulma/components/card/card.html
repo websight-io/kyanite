@@ -21,7 +21,7 @@
             <div class="media">
                 <sly data-sly-test="${model.thumbnail.assetReference}">
                     <div class="media-left">
-                        <figure class="image is-48x48">
+                        <figure class="image ${model.thumbnail.style}">
                             <img src="${model.thumbnail.assetReference}" alt="${model.thumbnail.alt}">
                         </figure>
                     </div>

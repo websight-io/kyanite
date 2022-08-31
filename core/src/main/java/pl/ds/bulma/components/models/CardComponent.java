@@ -52,21 +52,4 @@ public class CardComponent {
     @Default(values = "Card content")
     private String content;
 
-    @Inject
-    @Getter
-    private String date;
-    @PostConstruct
-    private void init() {
-        formatArticleDate();
-    }
-
-    public void formatArticleDate() {
-        if(date ==null){
-            return;
-        }
-        LocalDate localDate = LocalDate.parse(date);
-        date = localDate.format(DateTimeFormatter.ofPattern("MMM d, YYYY"));
-    }
-
-
 }

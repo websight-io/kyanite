@@ -34,13 +34,6 @@
                     name="content"
                     label="Content"
             />
-            <date
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/dialogs/components/datepicker"
-                name="articleDate"
-                label="Date"
-                type="date"
-                displayDateFormat="MMM D, YYYY"/>
         </generalTab>
         <thumbnail
                 jcr:primaryType="nt:unstructured"
@@ -64,6 +57,10 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceSuperType="/apps/bulma/components/card/common/image"
                     >
+                <fixedStyle
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideResource="true"
+                />
             </include>
         </mainImage>
         <footer
