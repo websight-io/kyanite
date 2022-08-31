@@ -30,10 +30,21 @@
             />
             <content
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/dialogs/components/textfield"
+                    sling:resourceType="wcm/dialogs/components/richtext"
                     name="content"
                     label="Content"
             />
+            <date
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/datepicker"
+                name="date"
+                label="Date"
+                required="true"
+                type="datetime"
+                displayDateFormat="YYYY-MM-DD"
+                displayTimeFormat="HH:mm"
+                minDate="2020-01-02"
+                maxDate="2022-12-12"/>
         </generalTab>
         <thumbnail
                 jcr:primaryType="nt:unstructured"
@@ -67,26 +78,22 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/tab"
                 label="Footer">
-            <url1
+            <urls
+            jcr:primaryType="nt:unstructured"
+            name="urls"
+            label="Footer URLs"
+            sling:resourceType="wcm/dialogs/components/multifield">
+                <adress
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/pathpicker"
-                    name="urls/1/address"
+                    name="address"
                     label="URL"/>
-            <url1Label
+                <label
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/textfield"
-                    name="urls/1/label"
+                    name="label"
                     label="Label"/>
-            <url2
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/dialogs/components/pathpicker"
-                    name="urls/2/address"
-                    label="URL"/>
-            <url2Label
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/dialogs/components/textfield"
-                    name="urls/2/label"
-                    label="Label"/>
+            </urls>
         </footer>
     </tabs>
 </jcr:root>

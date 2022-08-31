@@ -6,8 +6,13 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
@@ -46,4 +51,9 @@ public class CardComponent {
     @Getter
     @Default(values = "Card content")
     private String content;
+
+    @Inject
+    @Getter
+    private String date;
+
 }

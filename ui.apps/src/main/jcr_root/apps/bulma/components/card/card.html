@@ -32,8 +32,8 @@
                 </div>
             </div>
 
-            <div class="content">
-                ${model.content}
+            <div data-sly-test="model.content" class="content">
+                ${model.content @ context='html'}
             </div>
         </div>
 
