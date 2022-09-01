@@ -13,7 +13,6 @@ import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIO
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class TagsListComponent {
     @Inject
-    @Default(booleanValues = false)
     @Getter
     private boolean hasAddons;
 }

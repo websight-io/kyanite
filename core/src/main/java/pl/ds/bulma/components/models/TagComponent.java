@@ -30,11 +30,9 @@ public class TagComponent {
     private String size;
 
     @Inject
-    @Default(booleanValues = false)
     private boolean isLight;
 
     @Inject
-    @Default(booleanValues = false)
     private boolean isRounded;
 
     @Inject
