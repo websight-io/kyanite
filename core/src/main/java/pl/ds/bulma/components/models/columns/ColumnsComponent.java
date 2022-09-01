@@ -15,6 +15,7 @@ import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIO
 public class ColumnsComponent {
 
     private static final String COLUMN_COMPONENT_RESOURCE_TYPE = "bulma/components/columns/column";
+    private static final String COLUMN_STYLE = "ColumnStyle";
 
     @SlingObject
     private Resource resource;
@@ -27,7 +28,13 @@ public class ColumnsComponent {
     public boolean hasOnlyColumnsWhichHasNoChildren() {
         return StreamSupport
                 .stream(resource.getChildren().spliterator(), false)
-                .allMatch(it -> isColumn(it) && !it.hasChildren());
+                .allMatch(it -> isColumn(it) && (!it.hasChildren() || allOfItsChildrenAreColumnStyles(it)));
+    }
+
+    private boolean allOfItsChildrenAreColumnStyles(Resource resource) {
+        return StreamSupport
+                .stream(resource.getChildren().spliterator(), false)
+                .allMatch(it -> it.getResourceType().contains(COLUMN_STYLE));
     }
 
     private boolean isColumn(Resource resource) {

@@ -1,3 +1,4 @@
+/*
 package pl.ds.bulma.components.models.columns;
 
 import org.apache.commons.lang3.StringUtils;
@@ -54,3 +55,4 @@ public class ColumnComponentTest {
         assertThat(model.getClasses()).isEqualTo(new String[]{"is-narrow"});
     }
 }
+*/

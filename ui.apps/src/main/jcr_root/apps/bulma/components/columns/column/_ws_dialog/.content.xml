@@ -6,14 +6,14 @@
     <tabs
             jcr:primaryType="nt:unstructured"
             sling:resourceType="wcm/dialogs/components/tabs">
-        <generalTab
+        <mobileStyleTab
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/tab"
-                label="General">
+                label="Mobile column style">
             <isNarrowColumn
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/toggle"
-                    name="isNarrowColumn"
+                    name="mobileColumnStyle/isNarrowColumn"
                     label="Narrow column"
                     description="Enable this, so the column will only take the actual space it needs."
             />
@@ -26,7 +26,7 @@
                     <include
                             jcr:primaryType="nt:unstructured"
                             sling:resourceSuperType="/apps/bulma/components/columns/attributes/type"
-                            name="sizeType"
+                            name="mobileColumnStyle/sizeType"
                             label="Type of the column size">
                     </include>
                 </sizeType>
@@ -39,7 +39,7 @@
                         <include
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceSuperType="/apps/bulma/components/columns/attributes/evennumber"
-                                name="size"
+                                name="mobileColumnStyle/size"
                                 label="Column size">
                         </include>
                     </size>
@@ -47,7 +47,7 @@
                             jcr:primaryType="nt:unstructured">
                         <condition
                                 jcr:primaryType="nt:unstructured"
-                                sourceName="sizeType"
+                                sourceName="mobileColumnStyle/sizeType"
                                 values="evenNumber"/>
                     </ws:display>
                 </evenNumber>
@@ -60,7 +60,7 @@
                         <include
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceSuperType="/apps/bulma/components/columns/attributes/fraction"
-                                name="size"
+                                name="mobileColumnStyle/size"
                                 label="Column size">
                         </include>
                     </style>
@@ -68,7 +68,7 @@
                             jcr:primaryType="nt:unstructured">
                         <condition
                                 jcr:primaryType="nt:unstructured"
-                                sourceName="sizeType"
+                                sourceName="mobileColumnStyle/sizeType"
                                 values="fraction"/>
                     </ws:display>
                 </fraction>
@@ -78,7 +78,7 @@
                     <include
                             jcr:primaryType="nt:unstructured"
                             sling:resourceSuperType="/apps/bulma/components/columns/attributes/type"
-                            name="offsetType"
+                            name="mobileColumnStyle/offsetType"
                             label="Type of the offset size">
                     </include>
                 </offsetType>
@@ -100,7 +100,7 @@
                             jcr:primaryType="nt:unstructured">
                         <condition
                                 jcr:primaryType="nt:unstructured"
-                                sourceName="offsetType"
+                                sourceName="mobileColumnStyle/offsetType"
                                 values="evenNumber"/>
                     </ws:display>
                 </offsetEvenNumber>
@@ -113,7 +113,7 @@
                         <include
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceSuperType="/apps/bulma/components/columns/attributes/fraction"
-                                name="offset"
+                                name="mobileColumnStyle/offset"
                                 label="Offset size"
                                 sling:hideChildren="[full]">
                         </include>
@@ -122,7 +122,7 @@
                             jcr:primaryType="nt:unstructured">
                         <condition
                                 jcr:primaryType="nt:unstructured"
-                                sourceName="offsetType"
+                                sourceName="mobileColumnStyle/offsetType"
                                 values="fraction"/>
                     </ws:display>
                 </offsetFraction>
@@ -130,10 +130,268 @@
                         jcr:primaryType="nt:unstructured">
                     <condition
                             jcr:primaryType="nt:unstructured"
-                            sourceName="isNarrowColumn"
+                            sourceName="mobileColumnStyle/isNarrowColumn"
                             values="false"/>
                 </ws:display>
             </widthContainer>
-        </generalTab>
+        </mobileStyleTab>
+        <tabletStyleTab
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/tab"
+                label="Tablet column style">
+            <isNarrowColumn
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/toggle"
+                    name="tabletColumnStyle/isNarrowColumn"
+                    label="Narrow column"
+                    description="Enable this, so the column will only take the actual space it needs."
+            />
+            <widthContainer
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/container">
+                <sizeType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/include">
+                    <include
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceSuperType="/apps/bulma/components/columns/attributes/type"
+                            name="tabletColumnStyle/sizeType"
+                            label="Type of the column size">
+                    </include>
+                </sizeType>
+                <evenNumber
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/container">
+                    <size
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/dialogs/components/include">
+                        <include
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceSuperType="/apps/bulma/components/columns/attributes/evennumber"
+                                name="tabletColumnStyle/size"
+                                label="Column size">
+                        </include>
+                    </size>
+                    <ws:display
+                            jcr:primaryType="nt:unstructured">
+                        <condition
+                                jcr:primaryType="nt:unstructured"
+                                sourceName="tabletColumnStyle/sizeType"
+                                values="evenNumber"/>
+                    </ws:display>
+                </evenNumber>
+                <fraction
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/container">
+                    <style
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/dialogs/components/include">
+                        <include
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceSuperType="/apps/bulma/components/columns/attributes/fraction"
+                                name="tabletColumnStyle/size"
+                                label="Column size">
+                        </include>
+                    </style>
+                    <ws:display
+                            jcr:primaryType="nt:unstructured">
+                        <condition
+                                jcr:primaryType="nt:unstructured"
+                                sourceName="tabletColumnStyle/sizeType"
+                                values="fraction"/>
+                    </ws:display>
+                </fraction>
+                <offsetType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/include">
+                    <include
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceSuperType="/apps/bulma/components/columns/attributes/type"
+                            name="tabletColumnStyle/offsetType"
+                            label="Type of the offset size">
+                    </include>
+                </offsetType>
+                <offsetEvenNumber
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/container">
+                    <size
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/dialogs/components/include">
+                        <include
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceSuperType="/apps/bulma/components/columns/attributes/evennumber"
+                                name="tabletColumnStyle/offset"
+                                label="Offset size"
+                                sling:hideChildren="[twelve]">
+                        </include>
+                    </size>
+                    <ws:display
+                            jcr:primaryType="nt:unstructured">
+                        <condition
+                                jcr:primaryType="nt:unstructured"
+                                sourceName="tabletColumnStyle/offsetType"
+                                values="evenNumber"/>
+                    </ws:display>
+                </offsetEvenNumber>
+                <offsetFraction
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/container">
+                    <style
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/dialogs/components/include">
+                        <include
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceSuperType="/apps/bulma/components/columns/attributes/fraction"
+                                name="tabletColumnStyle/offset"
+                                label="Offset size"
+                                sling:hideChildren="[full]">
+                        </include>
+                    </style>
+                    <ws:display
+                            jcr:primaryType="nt:unstructured">
+                        <condition
+                                jcr:primaryType="nt:unstructured"
+                                sourceName="tabletColumnStyle/offsetType"
+                                values="fraction"/>
+                    </ws:display>
+                </offsetFraction>
+                <ws:display
+                        jcr:primaryType="nt:unstructured">
+                    <condition
+                            jcr:primaryType="nt:unstructured"
+                            sourceName="tabletColumnStyle/isNarrowColumn"
+                            values="false"/>
+                </ws:display>
+            </widthContainer>
+        </tabletStyleTab>
+        <desktopStyleTab
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/tab"
+                label="Desktop column style">
+            <isNarrowColumn
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/toggle"
+                    name="desktopColumnStyle/isNarrowColumn"
+                    label="Narrow column"
+                    description="Enable this, so the column will only take the actual space it needs."
+            />
+            <widthContainer
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/container">
+                <sizeType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/include">
+                    <include
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceSuperType="/apps/bulma/components/columns/attributes/type"
+                            name="desktopColumnStyle/sizeType"
+                            label="Type of the column size">
+                    </include>
+                </sizeType>
+                <evenNumber
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/container">
+                    <size
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/dialogs/components/include">
+                        <include
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceSuperType="/apps/bulma/components/columns/attributes/evennumber"
+                                name="desktopColumnStyle/size"
+                                label="Column size">
+                        </include>
+                    </size>
+                    <ws:display
+                            jcr:primaryType="nt:unstructured">
+                        <condition
+                                jcr:primaryType="nt:unstructured"
+                                sourceName="desktopColumnStyle/sizeType"
+                                values="evenNumber"/>
+                    </ws:display>
+                </evenNumber>
+                <fraction
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/container">
+                    <style
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/dialogs/components/include">
+                        <include
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceSuperType="/apps/bulma/components/columns/attributes/fraction"
+                                name="desktopColumnStyle/size"
+                                label="Column size">
+                        </include>
+                    </style>
+                    <ws:display
+                            jcr:primaryType="nt:unstructured">
+                        <condition
+                                jcr:primaryType="nt:unstructured"
+                                sourceName="desktopColumnStyle/sizeType"
+                                values="fraction"/>
+                    </ws:display>
+                </fraction>
+                <offsetType
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/include">
+                    <include
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceSuperType="/apps/bulma/components/columns/attributes/type"
+                            name="desktopColumnStyle/offsetType"
+                            label="Type of the offset size">
+                    </include>
+                </offsetType>
+                <offsetEvenNumber
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/container">
+                    <size
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/dialogs/components/include">
+                        <include
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceSuperType="/apps/bulma/components/columns/attributes/evennumber"
+                                name="desktopColumnStyle/offset"
+                                label="Offset size"
+                                sling:hideChildren="[twelve]">
+                        </include>
+                    </size>
+                    <ws:display
+                            jcr:primaryType="nt:unstructured">
+                        <condition
+                                jcr:primaryType="nt:unstructured"
+                                sourceName="desktopColumnStyle/offsetType"
+                                values="evenNumber"/>
+                    </ws:display>
+                </offsetEvenNumber>
+                <offsetFraction
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/container">
+                    <style
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="wcm/dialogs/components/include">
+                        <include
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceSuperType="/apps/bulma/components/columns/attributes/fraction"
+                                name="desktopColumnStyle/offset"
+                                label="Offset size"
+                                sling:hideChildren="[full]">
+                        </include>
+                    </style>
+                    <ws:display
+                            jcr:primaryType="nt:unstructured">
+                        <condition
+                                jcr:primaryType="nt:unstructured"
+                                sourceName="desktopColumnStyle/offsetType"
+                                values="fraction"/>
+                    </ws:display>
+                </offsetFraction>
+                <ws:display
+                        jcr:primaryType="nt:unstructured">
+                    <condition
+                            jcr:primaryType="nt:unstructured"
+                            sourceName="desktopColumnStyle/isNarrowColumn"
+                            values="false"/>
+                </ws:display>
+            </widthContainer>
+        </desktopStyleTab>
     </tabs>
 </jcr:root>
