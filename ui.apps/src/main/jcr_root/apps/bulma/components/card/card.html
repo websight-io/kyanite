@@ -19,11 +19,18 @@
 
         <div class="card-content">
             <div class="media">
-                <sly data-sly-test="${model.thumbnail.assetReference}">
+                <sly data-sly-test="${model.thumbnail.assetReference && model.type=='image'}">
                     <div class="media-left">
                         <figure class="image ${model.thumbnail.style ? model.thumbnail.style : 'is-48x48'}">
                             <img src="${model.thumbnail.assetReference}" alt="${model.thumbnail.alt}">
                         </figure>
+                    </div>
+                </sly>
+                <sly data-sly-test="${model.type=='icon'}">
+                    <div class="media-left">
+                        <span class="icon ${model.textVariant}">
+                            <i class="fa fa-lg ${model.icon}"></i>
+                        </span>
                     </div>
                 </sly>
                 <div class="media-content">
