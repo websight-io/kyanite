@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/dialog">
+  <tabs
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/tabs">
+    <generalTab
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/dialogs/components/tab"
+        label="General">
+      <containerStyle
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/select"
+          name="containerStyle"
+          label="Style of the container">
+        <default
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="Default style"
+            value=""/>
+        <is-widescreen
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="Widescreen"
+            value="is-widescreen"/>
+        <is-fullhd
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="Full hd"
+            value="is-fullhd"/>
+        <is-max-desktop
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="Max desktop"
+            value="is-max-desktop"/>
+        <is-max-widescreen
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="Max widescreen"
+            value="is-max-widescreen"/>
+        <is-fluid
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/select/selectitem"
+            label="Fluid"
+            value="is-fluid"/>
+      </containerStyle>
+    </generalTab>
+  </tabs>
+</jcr:root>

@@ -1,0 +1,6 @@
+{
+  "default": {
+    "sling:resourceType": "bulma/components/columns",
+    "jcr:primaryType": "nt:unstructured"
+  }
+}

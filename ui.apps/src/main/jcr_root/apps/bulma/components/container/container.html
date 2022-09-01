@@ -1,0 +1,9 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.ContainerComponent">
+    <div class="container ${model.containerStyle}">
+        <div style="padding-top: 40px;" data-sly-unwrap="${!wcmmode.isEdit}">
+            <sly data-sly-test="${resource.hasChildren}">
+                <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+            </sly>
+        </div>
+    </div>
+</sly>
