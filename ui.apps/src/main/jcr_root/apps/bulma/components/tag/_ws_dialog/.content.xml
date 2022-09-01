@@ -18,16 +18,10 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/include"
                     path="/apps/bulma/components/tag/attributes/variant"/>
-        </generalTab>
-        <modifiers
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/dialogs/components/tab"
-                label="Modifiers">
             <isLight
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/toggle"
                     name="isLight"
-                    checkedByDefault="false"
                     label="Light">
             </isLight>
             <isRounded
@@ -37,6 +31,6 @@
                     checkedByDefault="false"
                     label="Rounded">
             </isRounded>
-        </modifiers>
+        </generalTab>
     </tabs>
 </jcr:root>

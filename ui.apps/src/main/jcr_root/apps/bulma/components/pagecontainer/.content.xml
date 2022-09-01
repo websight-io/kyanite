@@ -4,4 +4,4 @@
           jcr:title="Page"
           isContainer="true"
           group=".hidden"
-          allowedComponents="[Bulma.io,Howlite]"/>
+          allowedComponents="[Bulma.io]"/>
