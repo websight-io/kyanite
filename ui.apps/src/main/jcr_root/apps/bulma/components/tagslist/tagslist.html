@@ -1,0 +1,7 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.TagsListComponent">
+    <sly data-sly-test="${resource.hasChildren}">
+        <div class="tags ${model.hasAddons ? 'has-addons ' : ''}">
+            <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+        </div>
+    </sly>
+</sly>

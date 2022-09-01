@@ -58,35 +58,30 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/toggle"
                     name="isLight"
-                    checkedByDefault="false"
                     label="Light">
             </isLight>
             <isOutlined
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/toggle"
                     name="isOutlined"
-                    checkedByDefault="false"
                     label="Outlined">
             </isOutlined>
             <isRounded
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/toggle"
                     name="isRounded"
-                    checkedByDefault="false"
                     label="Rounded">
             </isRounded>
             <isFullWidth
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/toggle"
                     name="isFullWidth"
-                    checkedByDefault="false"
                     label="Full width">
             </isFullWidth>
             <isDisabled
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/toggle"
                     name="isDisabled"
-                    checkedByDefault="false"
                     label="Disabled">
                 <ws:display
                         jcr:primaryType="nt:unstructured">
