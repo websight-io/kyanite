@@ -1,0 +1,26 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.BreadcrumbComponent">
+    <nav class="breadcrumb  ${model.classes @ join=' '}" aria-label="breadcrumbs">
+        <ul>
+            <sly data-sly-list.element="${model.elements}">
+                <li>
+                <a href="${element.url}">
+                    <sly data-sly-test="${element.icon}">
+                        <span class="icon ${model.size ? model.size : 'is-small'}">
+                             <i class="fas ${element.icon}" aria-hidden="true"></i>
+                         </span>
+                    </sly>
+                    <span>${element.label}</span>
+                </a>
+                </li>
+            </sly>
+            <sly data-sly-list.element="${!model.elements}">
+                <li>
+                    <a href="#">
+                        <span>Test</span>
+                    </a>
+                </li>
+            </sly>
+        </ul>
+    </nav>
+<!--    Add functionality to add active class to selected element-->
+</sly>
