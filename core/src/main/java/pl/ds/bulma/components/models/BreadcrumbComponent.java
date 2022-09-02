@@ -8,6 +8,7 @@ import org.apache.sling.models.annotations.Model;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.print.DocFlavor;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,13 +43,13 @@ public class BreadcrumbComponent {
     @PostConstruct
     private void init() {
         List<String> styles = new ArrayList<>();
-        if (size != null) {
+        if (StringUtils.isNotEmpty(size)) {
             styles.add(size);
         }
-        if (alignment != null) {
+        if (StringUtils.isNotEmpty(alignment)) {
             styles.add(alignment);
         }
-        if (separator != null) {
+        if (StringUtils.isNotEmpty(alignment)) {
             styles.add(separator);
         }
 
