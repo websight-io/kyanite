@@ -30,63 +30,59 @@
             />
             <content
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/dialogs/components/textfield"
+                    sling:resourceType="wcm/dialogs/components/richtext"
                     name="content"
                     label="Content"
             />
         </generalTab>
         <thumbnail
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/dialogs/components/include">
+                sling:resourceType="wcm/dialogs/components/include"
+                namespace="thumbnail">
             <include
                     jcr:primaryType="nt:unstructured"
                     sling:resourceSuperType="/apps/bulma/components/card/common/image"
                     label="Thumbnail">
-                <assetReference
-                        jcr:primaryType="nt:unstructured"
-                        name="thumbnail/assetReference"/>
-                <src
-                        jcr:primaryType="nt:unstructured"
-                        name="thumbnail/src"
-                />
-                <alt
-                        jcr:primaryType="nt:unstructured"
-                        name="thumbnail/alt"
+                <style
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideResource="true"
                 />
             </include>
         </thumbnail>
         <mainImage
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/dialogs/components/include">
+                sling:resourceType="wcm/dialogs/components/include"
+                namespace="image">
             <include
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceSuperType="/apps/bulma/components/card/common/image">
+                    sling:resourceSuperType="/apps/bulma/components/card/common/image"
+                    >
+                <fixedStyle
+                    jcr:primaryType="nt:unstructured"
+                    sling:hideResource="true"
+                />
             </include>
         </mainImage>
         <footer
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/tab"
                 label="Footer">
-            <url1
+            <urls
+            jcr:primaryType="nt:unstructured"
+            name="urls"
+            label="Footer URLs"
+            sling:resourceType="wcm/dialogs/components/multifield">
+                <address
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/pathpicker"
-                    name="urls/1/address"
+                    name="address"
                     label="URL"/>
-            <url1Label
+                <label
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/textfield"
-                    name="urls/1/label"
+                    name="label"
                     label="Label"/>
-            <url2
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/dialogs/components/pathpicker"
-                    name="urls/2/address"
-                    label="URL"/>
-            <url2Label
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/dialogs/components/textfield"
-                    name="urls/2/label"
-                    label="Label"/>
+            </urls>
         </footer>
     </tabs>
 </jcr:root>
