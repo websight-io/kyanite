@@ -13,15 +13,12 @@ import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIO
 public class DefaultResponsiveColumnComponent {
 
     @Inject
-    @Getter
     private ResponsiveColumnStyle mobileColumnStyle;
 
     @Inject
-    @Getter
     private ResponsiveColumnStyle tabletColumnStyle;
 
     @Inject
-    @Getter
     private ResponsiveColumnStyle desktopColumnStyle;
 
 }
