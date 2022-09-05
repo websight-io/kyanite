@@ -1,21 +1,23 @@
 {
   "default": {
     "sling:resourceType": "bulma/components/columns/column",
-    "jcr:primaryType": "nt:unstructured",
-    "isNarrowColumn": false
-  },
-  "narrow": {
-    "sling:resourceType": "bulma/components/columns/column",
-    "jcr:primaryType": "nt:unstructured",
-    "isNarrowColumn": true
+    "jcr:primaryType": "nt:unstructured"
   },
   "complex": {
     "sling:resourceType": "bulma/components/columns/column",
     "jcr:primaryType": "nt:unstructured",
-    "isNarrowColumn": false,
-    "offset": "four",
-    "offsetType": "evenNumber",
-    "size": "half",
-    "sizeType": "fraction"
+    "mobileColumnStyle": {
+      "isNarrowColumn": true
+    },
+    "tabletColumnStyle": {
+      "isNarrowColumn": false,
+      "sizeType": "fraction",
+      "size": "half",
+      "offsetType": "evenNumber",
+      "offset": "four"
+    },
+    "desktopColumnStyle": {
+      "isNarrowColumn": false
+    }
   }
 }

@@ -1,4 +1,3 @@
-/*
 package pl.ds.bulma.components.models.columns;
 
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
@@ -38,6 +37,14 @@ public class ColumnsComponentTest {
     }
 
     @Test
+    void complexColumnsComponentModelTest() {
+        ColumnsComponent model = context.resourceResolver().getResource(PATH + "/complex").adaptTo(ColumnsComponent.class);
+
+        assertThat(model).isNotNull();
+        assertThat(model.getColumnsActivationLevel()).isEqualTo("is-mobile");
+    }
+
+    @Test
     void hasOnlyColumnsWhichHasNoChildrenWorksWhenChildColumnIsEmptyTest() {
         addChildResourceType("column1", PATH + "/default", "bulma/components/columns/column");
         ColumnsComponent model = context.resourceResolver().getResource(PATH + "/default").adaptTo(ColumnsComponent.class);
@@ -62,4 +69,3 @@ public class ColumnsComponentTest {
         context.build().resource(resourcePath).siblingsMode().resource(childResourceName, childrenValues);
     }
 }
-*/
