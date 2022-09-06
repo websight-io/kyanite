@@ -15,7 +15,7 @@ import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIO
 public class ResponsiveColumnStyle {
 
     @Inject
-    private boolean isNarrowColumn;
+    private boolean isNormalColumn;
 
     @Inject
     @Default(values = StringUtils.EMPTY)

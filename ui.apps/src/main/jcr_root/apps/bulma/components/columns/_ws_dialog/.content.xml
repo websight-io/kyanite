@@ -12,23 +12,23 @@
                 label="General">
             <columnsActivationLevel
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/dialogs/components/radio"
+                    sling:resourceType="wcm/dialogs/components/select"
                     name="columnsActivationLevel"
                     label="Activate columns structure from the viewport:">
                 <isMobile
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/dialogs/components/radio/option"
+                        sling:resourceType="wcm/dialogs/components/select/selectitem"
                         label="Mobile"
                         value="is-mobile"/>
                 <isTablet
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/dialogs/components/radio/option"
+                        sling:resourceType="wcm/dialogs/components/select/selectitem"
                         label="Tablet"
                         selected="true"
                         value="is-tablet"/>
                 <isDesktop
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/dialogs/components/radio/option"
+                        sling:resourceType="wcm/dialogs/components/select/selectitem"
                         label="Desktop"
                         value="is-desktop"/>
             </columnsActivationLevel>
