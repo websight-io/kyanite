@@ -33,6 +33,7 @@ class CardComponentTest {
         assertThat(model.getHeader()).isEqualTo(StringUtils.EMPTY);
         assertThat(model.getTitle()).isEqualTo(StringUtils.EMPTY);
         assertThat(model.getSubtitle()).isEqualTo(StringUtils.EMPTY);
+        assertThat(model.getType()).isEqualTo("image");
     }
 
     @Test

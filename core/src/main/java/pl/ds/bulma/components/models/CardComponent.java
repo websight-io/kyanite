@@ -46,4 +46,19 @@ public class CardComponent {
     @Default(values = "Card content")
     private String content;
 
+    @Inject
+    @Getter
+    @Default(values = "image")
+    private String type;
+
+    @Inject
+    @Getter
+    @Default(values = StringUtils.EMPTY)
+    private String icon;
+
+    @Inject
+    @Getter
+    @Default(values = StringUtils.EMPTY)
+    private String textVariant;
+
 }

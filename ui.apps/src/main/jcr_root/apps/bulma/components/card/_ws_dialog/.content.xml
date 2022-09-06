@@ -35,34 +35,73 @@
                     label="Content"
             />
         </generalTab>
-        <thumbnail
+        <thumbnailTab
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/tab"
+            label="Thumbnail">
+            <type
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/include"
-                namespace="thumbnail">
-            <include
+                path="/apps/bulma/components/card/common/type"/>
+            <thumbnail
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceSuperType="/apps/bulma/components/card/common/image"
-                    label="Thumbnail">
+                    sling:resourceType="wcm/dialogs/components/include"
+                    namespace="thumbnail">
+                <include
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceSuperType="/apps/bulma/components/card/common/image">
+                    <style
+                        jcr:primaryType="nt:unstructured"
+                        sling:hideResource="true"
+                    />
+                </include>
+                <ws:display
+                    jcr:primaryType="nt:unstructured">
+                    <condition
+                        jcr:primaryType="nt:unstructured"
+                        sourceName="type"
+                        values="image"/>
+                </ws:display>
+            </thumbnail>
+            <iconContainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/dialogs/components/container">
+                <icon
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/include"
+                    path="/apps/bulma/components/common/icon"/>
                 <style
                     jcr:primaryType="nt:unstructured"
-                    sling:hideResource="true"
-                />
-            </include>
-        </thumbnail>
-        <mainImage
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/dialogs/components/include"
-                namespace="image">
-            <include
+                    sling:resourceType="wcm/dialogs/components/include"
+                    path="/apps/bulma/components/common/textvariant"/>
+                <ws:display
+                    jcr:primaryType="nt:unstructured">
+                    <condition
+                        jcr:primaryType="nt:unstructured"
+                        sourceName="type"
+                        values="icon"/>
+                </ws:display>
+            </iconContainer>
+        </thumbnailTab>
+        <imageTab
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/dialogs/components/tab"
+            label="Image">
+            <mainImage
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceSuperType="/apps/bulma/components/card/common/image"
-                    >
-                <fixedStyle
-                    jcr:primaryType="nt:unstructured"
-                    sling:hideResource="true"
-                />
-            </include>
-        </mainImage>
+                    sling:resourceType="wcm/dialogs/components/include"
+                    namespace="image">
+                <include
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceSuperType="/apps/bulma/components/card/common/image"
+                        >
+                    <fixedStyle
+                        jcr:primaryType="nt:unstructured"
+                        sling:hideResource="true"
+                    />
+                </include>
+            </mainImage>
+        </imageTab>
         <footer
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/tab"
