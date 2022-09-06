@@ -1,0 +1,50 @@
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd"
+          xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <servers>
+    <server>
+      <id>websight-maven-repo</id>
+      <username>aws</username>
+      <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+    </server>
+    <server>
+      <id>websight-internal-maven-snapshot-repo</id>
+      <username>aws</username>
+      <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
+    </server>
+  </servers>
+
+  <profiles>
+    <profile>
+      <id>websight-maven-repo</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+        <repository>
+          <id>websight-maven-repo</id>
+          <url>https://websight-${env.AWS_ACCOUNT_ID}.d.codeartifact.eu-central-1.amazonaws.com/maven/maven-repo/</url>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+        <repository>
+          <id>websight-internal-maven-snapshot-repo</id>
+          <url>https://websight-internal-${env.AWS_ACCOUNT_ID}.d.codeartifact.eu-central-1.amazonaws.com/maven/maven-snapshot-repo/</url>
+        </repository>
+        <repository>
+          <id>maven repo</id>
+          <url>https://repo1.maven.org/maven2/</url>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>websight-maven-repo</activeProfile>
+  </activeProfiles>
+
+</settings>
