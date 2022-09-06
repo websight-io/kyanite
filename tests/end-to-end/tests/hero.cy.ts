@@ -29,8 +29,8 @@ describe('Hero component', function () {
     cy.visit('/content/bulma-tests/pages/hero.html');
     cy.percySnapshotPreview('Hero preview');
 
-    cy.contains('Hero Page test').click();
-    cy.contains(' Nice subtitle ').should('be.visible');
+    cy.contains('Default title').click();
+    cy.contains('Warning').should('be.visible');
   });
 
   it('renders correctly in edit mode', function () {

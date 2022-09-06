@@ -41,6 +41,9 @@
 
         <sling.user>wsadmin</sling.user>
         <sling.password>wsadmin</sling.password>
+
+        <e2e.skip>true</e2e.skip>
+        <mongo.container.image>mongo:4.4.6</mongo.container.image>
     </properties>
 
     <build>
@@ -299,6 +302,13 @@
                     </plugins>
                 </pluginManagement>
             </build>
+        </profile>
+
+        <profile>
+            <id>e2e</id>
+            <properties>
+                <e2e.skip>false</e2e.skip>
+            </properties>
         </profile>
 
     </profiles>
