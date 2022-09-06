@@ -35,7 +35,7 @@
     "css-loader": "^6.5.1",
     "postcss": "^8.2.15",
     "postcss-loader": "^3.0.0",
-    "sass": "^1.45.0",
+    "sass": "^1.54.8",
     "sass-loader": "^12.4.0",
     "autoprefixer": "^9.2.1"
   }
