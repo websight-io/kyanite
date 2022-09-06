@@ -35,8 +35,8 @@ describe('Hero component', function () {
 
   it('renders correctly in edit mode', function () {
     cy.intercept(
-        'POST',
-        '**/pagecontainer/hero.websight-dialogs-service.save-properties.action'
+      'POST',
+      '**/pagecontainer/hero.websight-dialogs-service.save-properties.action'
     ).as('saveProperties');
 
     cy.visit(
@@ -46,7 +46,7 @@ describe('Hero component', function () {
     cy.getByTestId(paths.hero)
       .click()
       .find(selectors.overlayName)
-        .should('have.text', 'Hero');
+      .should('have.text', 'Hero');
 
     cy.percySnapshotPageEditor('Hero editor');
 
@@ -54,7 +54,6 @@ describe('Hero component', function () {
 
     cy.getByTestId('Input_Title-container').clear().type('Title');
     cy.getByTestId('Input_Subtitle-container').clear().type('Subtitle');
-
 
     cy.get('div[id^="size-uid"]').click();
     cy.contains('Large').click({ force: true });
@@ -68,20 +67,17 @@ describe('Hero component', function () {
 
     cy.wait('@saveProperties');
 
-
     cy.request(
-        '/content/bulma-tests/pages/hero/jcr:content/pagecontainer/hero.json'
+      '/content/bulma-tests/pages/hero/jcr:content/pagecontainer/hero.json'
     )
-        .its('body')
-        .should('deep.eq', {
-          subTitle: 'Subtitle',
-          size: 'is-large',
-          'sling:resourceType': 'bulma/components/hero',
-          'jcr:primaryType': 'nt:unstructured',
-          title: 'Title',
-          variant: 'is-link'
-        });
-
+      .its('body')
+      .should('deep.eq', {
+        subTitle: 'Subtitle',
+        size: 'is-large',
+        'sling:resourceType': 'bulma/components/hero',
+        'jcr:primaryType': 'nt:unstructured',
+        title: 'Title',
+        variant: 'is-link'
+      });
   });
-
 });
