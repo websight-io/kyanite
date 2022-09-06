@@ -2,45 +2,32 @@ package pl.ds.bulma.components.models.columns;
 
 
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.bulma.components.services.ColumnClassProvider;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Objects;
+import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
-public class ColumnComponent {
+public class ColumnComponent extends DefaultResponsiveColumnComponent {
+
+    private static final String SLING_RESOURCE_TYPE = "sling:resourceType";
 
     @SlingObject
     private Resource resource;
 
-    @Inject
-    @Getter
-    @Default(values = StringUtils.EMPTY)
-    private String sizeType;
-
-    @Inject
-    private String size;
-
-    @Inject
-    @Getter
-    @Default(values = StringUtils.EMPTY)
-    private String offsetType;
-
-    @Inject
-    private String offset;
-
-    @Inject
-    private boolean isNarrowColumn;
+    @OSGiService
+    private ColumnClassProvider columnClassProvider;
 
     @Inject
     @Getter
@@ -48,37 +35,27 @@ public class ColumnComponent {
 
     @PostConstruct
     private void init() {
-        String sizeClass = createSizeClass(ColumnSizes.findByName(size).getCssClass());
-        String offsetClass = createOffsetClass(ColumnSizes.findByName(offset).getCssClass());
-        populateClasses(sizeClass, offsetClass);
+        Map<String, ResponsiveColumnStyle> columnStyleMap = new HashMap<>();
+        addToColumnStyleMapIfColumnStyleIsNotNull(columnStyleMap, "mobile", getMobileColumnStyle());
+        addToColumnStyleMapIfColumnStyleIsNotNull(columnStyleMap, "tablet", getTabletColumnStyle());
+        addToColumnStyleMapIfColumnStyleIsNotNull(columnStyleMap, "desktop", getDesktopColumnStyle());
+
+        classes = columnClassProvider.getClasses(columnStyleMap);
     }
 
-    private void populateClasses(String sizeClass, String offsetClass) {
-        List<String> classList = new ArrayList<>();
-        if (isNarrowColumn) {
-            //TODO: Refactor this, once implementing responsiveness
-            classes = new String[]{"is-narrow"};
-            return;
+    public List<Resource> getChildrenComponents() {
+        return StreamSupport
+                .stream(resource.getChildren().spliterator(), false)
+                .filter(it -> it.getValueMap().get(SLING_RESOURCE_TYPE) != null)
+                .collect(Collectors.toList());
+    }
+
+    private void addToColumnStyleMapIfColumnStyleIsNotNull(Map<String, ResponsiveColumnStyle> columnStyleMap,
+                                                           String screen,
+                                                           ResponsiveColumnStyle columnStyle) {
+        if (columnStyle != null) {
+            columnStyleMap.put(screen, columnStyle);
         }
-
-        classList.add(sizeClass);
-        classList.add(offsetClass);
-        classes = classList.stream()
-                .filter(Objects::nonNull)
-                .collect(Collectors.toList())
-                .toArray(new String[]{});
-
-        if (classes.length == 0) {
-            classes = new String[]{};
-        }
-    }
-
-    private String createSizeClass(String classPart) {
-        return StringUtils.EMPTY.equals(classPart) ? null : "is-" + classPart;
-    }
-
-    private String createOffsetClass(String classPart) {
-        return StringUtils.EMPTY.equals(classPart) ? null : "is-offset-" + classPart;
     }
 
 }

@@ -9,8 +9,8 @@
     "header": "Header",
     "content": "Content",
     "variant": "is-info",
-    "showButton": "true",
+    "showButton": true,
     "size": "is-small",
-    "showHeader": "true"
+    "showHeader": true
   }
 }

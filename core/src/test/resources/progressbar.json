@@ -7,7 +7,7 @@
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "bulma/components/progressbar",
     "value": 45,
-    "isIntermediate": "true",
+    "isIntermediate": true,
     "size": "is-medium",
     "variant": "is-warning"
   },
@@ -15,7 +15,7 @@
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "bulma/components/progressbar",
     "value": 45,
-    "isIntermediate": "false",
+    "isIntermediate": false,
     "size": "is-medium",
     "variant": "is-warning"
   }
