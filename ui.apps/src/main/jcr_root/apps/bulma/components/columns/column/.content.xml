@@ -4,5 +4,5 @@
           jcr:title="Single column"
           isContainer="true"
           group="Bulma.io sub-components"
-          allowedComponents="[Bulma.io, /apps/bulma/components/columns]"
+          allowedComponents="[Bulma.io]"
 />
