@@ -19,5 +19,47 @@
     "desktopColumnStyle": {
       "isNormalColumn": false
     }
+  },
+  "nested": {
+    "sling:resourceType": "bulma/components/columns/column",
+    "jcr:primaryType": "nt:unstructured",
+    "mobileColumnStyle": {
+      "isNarrowColumn": true
+    },
+    "tabletColumnStyle": {
+      "isNarrowColumn": false,
+      "sizeType": "fraction",
+      "size": "half",
+      "offsetType": "evenNumber",
+      "offset": "four"
+    },
+    "desktopColumnStyle": {
+      "isNarrowColumn": false
+    },
+    "columns": {
+      "sling:resourceType": "bulma/components/columns",
+      "jcr:primaryType": "nt:unstructured",
+      "column1": {
+        "sling:resourceType": "bulma/components/columns/column",
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "column2": {
+        "sling:resourceType": "bulma/components/columns/column",
+        "jcr:primaryType": "nt:unstructured",
+        "mobileColumnStyle": {
+          "isNarrowColumn": true
+        },
+        "tabletColumnStyle": {
+          "isNarrowColumn": false,
+          "sizeType": "evenNumber",
+          "size": "6",
+          "offsetType": "fraction",
+          "offset": "four-fifths"
+        },
+        "desktopColumnStyle": {
+          "isNarrowColumn": false
+        }
+      }
+    }
   }
 }

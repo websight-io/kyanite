@@ -1,4 +1,3 @@
-/*
 package pl.ds.bulma.components.models.columns;
 
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
@@ -70,4 +69,3 @@ public class ColumnsComponentTest {
         context.build().resource(resourcePath).siblingsMode().resource(childResourceName, childrenValues);
     }
 }
-*/
