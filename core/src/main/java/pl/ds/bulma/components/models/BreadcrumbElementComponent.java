@@ -1,4 +1,4 @@
-package pl.ds.bulma.components.models.columns;
+package pl.ds.bulma.components.models;
 
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
@@ -10,27 +10,20 @@ import javax.inject.Inject;
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
-@Getter
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
-public class ResponsiveColumnStyle {
-
+public class BreadcrumbElementComponent {
     @Inject
-    private boolean isNormalColumn;
-
-    @Inject
+    @Getter
     @Default(values = StringUtils.EMPTY)
-    private String sizeType;
+    private String url;
 
     @Inject
+    @Getter
     @Default(values = StringUtils.EMPTY)
-    private String size;
+    private String label;
 
     @Inject
+    @Getter
     @Default(values = StringUtils.EMPTY)
-    private String offsetType;
-
-    @Inject
-    @Default(values = StringUtils.EMPTY)
-    private String offset;
-
+    private String icon;
 }

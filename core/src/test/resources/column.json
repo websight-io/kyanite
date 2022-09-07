@@ -7,17 +7,59 @@
     "sling:resourceType": "bulma/components/columns/column",
     "jcr:primaryType": "nt:unstructured",
     "mobileColumnStyle": {
-      "isNarrowColumn": true
+      "isNormalColumn": false
     },
     "tabletColumnStyle": {
-      "isNarrowColumn": false,
+      "isNormalColumn": true,
       "sizeType": "fraction",
       "size": "half",
       "offsetType": "evenNumber",
       "offset": "four"
     },
     "desktopColumnStyle": {
-      "isNarrowColumn": false
+      "isNormalColumn": false
+    }
+  },
+  "nested": {
+    "sling:resourceType": "bulma/components/columns/column",
+    "jcr:primaryType": "nt:unstructured",
+    "mobileColumnStyle": {
+      "isNormalColumn": false
+    },
+    "tabletColumnStyle": {
+      "isNormalColumn": true,
+      "sizeType": "fraction",
+      "size": "half",
+      "offsetType": "evenNumber",
+      "offset": "four"
+    },
+    "desktopColumnStyle": {
+      "isNormalColumn": false
+    },
+    "columns": {
+      "sling:resourceType": "bulma/components/columns",
+      "jcr:primaryType": "nt:unstructured",
+      "column1": {
+        "sling:resourceType": "bulma/components/columns/column",
+        "jcr:primaryType": "nt:unstructured"
+      },
+      "column2": {
+        "sling:resourceType": "bulma/components/columns/column",
+        "jcr:primaryType": "nt:unstructured",
+        "mobileColumnStyle": {
+          "isNormalColumn": false
+        },
+        "tabletColumnStyle": {
+          "isNormalColumn": true,
+          "sizeType": "evenNumber",
+          "size": "6",
+          "offsetType": "fraction",
+          "offset": "four-fifths"
+        },
+        "desktopColumnStyle": {
+          "isNormalColumn": false
+        }
+      }
     }
   }
 }

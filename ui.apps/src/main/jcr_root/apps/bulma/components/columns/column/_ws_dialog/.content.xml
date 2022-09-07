@@ -10,12 +10,13 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/tab"
                 label="Mobile column style">
-            <isNarrowColumn
+            <isNormalColumn
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/toggle"
-                    name="mobileColumnStyle/isNarrowColumn"
-                    label="Narrow column"
-                    description="Enable this, so the column will only take the actual space it needs."
+                    name="mobileColumnStyle/isNormalColumn"
+                    label="Normal column"
+                    description="Disable this, so the column will only take the actual space it needs."
+                    checkedByDefault="true"
             />
             <widthContainer
                     jcr:primaryType="nt:unstructured"
@@ -130,8 +131,8 @@
                         jcr:primaryType="nt:unstructured">
                     <condition
                             jcr:primaryType="nt:unstructured"
-                            sourceName="mobileColumnStyle/isNarrowColumn"
-                            values="false"/>
+                            sourceName="mobileColumnStyle/isNormalColumn"
+                            values="true"/>
                 </ws:display>
             </widthContainer>
         </mobileStyleTab>
@@ -139,12 +140,13 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/tab"
                 label="Tablet column style">
-            <isNarrowColumn
+            <isNormalColumn
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/toggle"
-                    name="tabletColumnStyle/isNarrowColumn"
-                    label="Narrow column"
-                    description="Enable this, so the column will only take the actual space it needs."
+                    name="tabletColumnStyle/isNormalColumn"
+                    label="Normal column"
+                    description="Disable this, so the column will only take the actual space it needs."
+                    checkedByDefault="true"
             />
             <widthContainer
                     jcr:primaryType="nt:unstructured"
@@ -259,8 +261,8 @@
                         jcr:primaryType="nt:unstructured">
                     <condition
                             jcr:primaryType="nt:unstructured"
-                            sourceName="tabletColumnStyle/isNarrowColumn"
-                            values="false"/>
+                            sourceName="tabletColumnStyle/isNormalColumn"
+                            values="true"/>
                 </ws:display>
             </widthContainer>
         </tabletStyleTab>
@@ -268,12 +270,13 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="wcm/dialogs/components/tab"
                 label="Desktop column style">
-            <isNarrowColumn
+            <isNormalColumn
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/toggle"
-                    name="desktopColumnStyle/isNarrowColumn"
-                    label="Narrow column"
-                    description="Enable this, so the column will only take the actual space it needs."
+                    name="desktopColumnStyle/isNormalColumn"
+                    label="Normal column"
+                    description="Disable this, so the column will only take the actual space it needs."
+                    checkedByDefault="true"
             />
             <widthContainer
                     jcr:primaryType="nt:unstructured"
@@ -388,8 +391,8 @@
                         jcr:primaryType="nt:unstructured">
                     <condition
                             jcr:primaryType="nt:unstructured"
-                            sourceName="desktopColumnStyle/isNarrowColumn"
-                            values="false"/>
+                            sourceName="desktopColumnStyle/isNormalColumn"
+                            values="true"/>
                 </ws:display>
             </widthContainer>
         </desktopStyleTab>
