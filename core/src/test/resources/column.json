@@ -7,17 +7,17 @@
     "sling:resourceType": "bulma/components/columns/column",
     "jcr:primaryType": "nt:unstructured",
     "mobileColumnStyle": {
-      "isNarrowColumn": true
+      "isNormalColumn": false
     },
     "tabletColumnStyle": {
-      "isNarrowColumn": false,
+      "isNormalColumn": true,
       "sizeType": "fraction",
       "size": "half",
       "offsetType": "evenNumber",
       "offset": "four"
     },
     "desktopColumnStyle": {
-      "isNarrowColumn": false
+      "isNormalColumn": false
     }
   }
 }

@@ -51,19 +51,19 @@ public class ColumnComponentTest {
 
         assertThat(model).isNotNull();
         assertThat(model.getChildrenComponents()).isEmpty();
-        assertThat(model.getMobileColumnStyle().isNarrowColumn()).isEqualTo(true);
+        assertThat(model.getMobileColumnStyle().isNormalColumn()).isEqualTo(false);
         assertThat(model.getMobileColumnStyle().getOffset()).isBlank();
         assertThat(model.getMobileColumnStyle().getOffsetType()).isBlank();
         assertThat(model.getMobileColumnStyle().getSize()).isBlank();
         assertThat(model.getMobileColumnStyle().getSizeType()).isBlank();
 
-        assertThat(model.getTabletColumnStyle().isNarrowColumn()).isEqualTo(false);
+        assertThat(model.getTabletColumnStyle().isNormalColumn()).isEqualTo(true);
         assertThat(model.getTabletColumnStyle().getOffset()).isEqualTo("four");
         assertThat(model.getTabletColumnStyle().getOffsetType()).isEqualTo("evenNumber");
         assertThat(model.getTabletColumnStyle().getSize()).isEqualTo("half");
         assertThat(model.getTabletColumnStyle().getSizeType()).isEqualTo("fraction");
 
-        assertThat(model.getDesktopColumnStyle().isNarrowColumn()).isEqualTo(false);
+        assertThat(model.getDesktopColumnStyle().isNormalColumn()).isEqualTo(false);
         assertThat(model.getDesktopColumnStyle().getOffset()).isBlank();
         assertThat(model.getDesktopColumnStyle().getOffsetType()).isBlank();
         assertThat(model.getDesktopColumnStyle().getSize()).isBlank();
