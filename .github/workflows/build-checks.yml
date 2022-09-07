@@ -24,7 +24,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: ${{ secrets.AWS_CI_ROLE_TO_ASSUME }}
-          role-session-name: HowlitePullRequestCheck
+          role-session-name: BulmaPullRequestCheck
           aws-region: ${{ env.AWS_REGION }}
       - name: Cache local Maven repository
         uses: actions/cache@v3
