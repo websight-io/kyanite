@@ -60,7 +60,7 @@ public class ColumnComponentTest {
         assertThat(model.getTabletColumnStyle().getSizeType()).isEqualTo("fraction");
         assertThat(model.getTabletColumnStyle().getOffset()).isEqualTo(ColumnSizes.FOUR.name().toLowerCase());
         assertThat(model.getTabletColumnStyle().getOffsetType()).isEqualTo("evenNumber");
-        assertThat(model.getTabletColumnStyle().isNarrowColumn()).isEqualTo(false);
+        assertThat(model.getTabletColumnStyle().isNormalColumn()).isEqualTo(true);
         assertCommonComplexModelFields(model);
         assertThat(model.getClasses()).isEqualTo(expectedClasses);
     }
@@ -92,7 +92,7 @@ public class ColumnComponentTest {
         assertThat(nestedSecondColumn.getTabletColumnStyle().getSizeType()).isEqualTo("evenNumber");
         assertThat(nestedSecondColumn.getTabletColumnStyle().getOffset()).isEqualTo(ColumnSizes.FOUR_FIFTHS.getCssClass());
         assertThat(nestedSecondColumn.getTabletColumnStyle().getOffsetType()).isEqualTo("fraction");
-        assertThat(nestedSecondColumn.getTabletColumnStyle().isNarrowColumn()).isEqualTo(false);
+        assertThat(nestedSecondColumn.getTabletColumnStyle().isNormalColumn()).isEqualTo(true);
         assertCommonComplexModelFields(nestedSecondColumn);
         assertThat(nestedSecondColumn.getClasses()).isEqualTo(expectedSecondNestedColumnClasses);
     }
@@ -105,7 +105,7 @@ public class ColumnComponentTest {
         assertThat(model.getMobileColumnStyle().getSize()).isBlank();
         assertThat(model.getMobileColumnStyle().getSizeType()).isBlank();
 
-        assertThat(model.getDesktopColumnStyle().isNarrowColumn()).isEqualTo(false);
+        assertThat(model.getDesktopColumnStyle().isNormalColumn()).isEqualTo(false);
         assertThat(model.getDesktopColumnStyle().getOffset()).isBlank();
         assertThat(model.getDesktopColumnStyle().getOffsetType()).isBlank();
         assertThat(model.getDesktopColumnStyle().getSize()).isBlank();
