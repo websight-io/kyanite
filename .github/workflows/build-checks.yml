@@ -42,4 +42,5 @@ jobs:
       - name: Build and test with Maven
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
         run: mvn --batch-mode --update-snapshots clean install -P e2e
