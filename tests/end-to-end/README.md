@@ -78,6 +78,11 @@ Resource: `tests/authentication.spec.ts`
 
 ![Running functional tests in CI](../docs/diagrams/generated/websight-e2e-testing-ci.png)
 
+
+## How to run Percy visual tests:
+
+You need to export PERCY_TOKEN to your env variables. 
+
 ## References
 
 - [E2E Functional and Visual Testing for the Web](https://www.youtube.com/watch?v=MXfZeE9RQDw)
