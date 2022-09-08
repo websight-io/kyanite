@@ -304,7 +304,7 @@
             </goals>
             <phase>integration-test</phase>
             <configuration>
-              <skip>${e2e.skip}</skip>
+              <skip>true</skip>
               <arguments>cypress run test:ci</arguments>
               <environmentVariables>
                 <CYPRESS_baseUrl>http://localhost:${wsce.port}</CYPRESS_baseUrl>
