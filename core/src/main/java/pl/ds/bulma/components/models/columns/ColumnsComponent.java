@@ -6,7 +6,10 @@ import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.StreamSupport;
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
@@ -24,6 +27,42 @@ public class ColumnsComponent {
     @Inject
     @Default(values = "is-tablet")
     private String columnsActivationLevel;
+
+    @Getter
+    @Inject
+    private boolean isCustomGapLevel;
+
+    @Getter
+    @Inject
+    @Default(values = "is-3")
+    private String mobileGapLevel;
+
+    @Getter
+    @Inject
+    @Default(values = "is-3")
+    private String tabletGapLevel;
+
+    @Getter
+    @Inject
+    @Default(values = "is-3")
+    private String desktopGapLevel;
+
+    @Getter
+    @Inject
+    private String[] classes;
+
+    @PostConstruct
+    private void init() {
+        List<String> classList = new ArrayList<>();
+        if (isCustomGapLevel) {
+            classList.add("is-variable");
+            classList.add(mobileGapLevel + "-mobile");
+            classList.add(tabletGapLevel + "-tablet");
+            classList.add(desktopGapLevel + "-desktop");
+        }
+        classList.add(columnsActivationLevel);
+        classes = classList.toArray(new String[]{});
+    }
 
     public boolean hasOnlyColumnsWhichHasNoChildren() {
         return StreamSupport

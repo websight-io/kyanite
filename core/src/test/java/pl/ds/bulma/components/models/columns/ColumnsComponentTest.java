@@ -38,10 +38,16 @@ public class ColumnsComponentTest {
 
     @Test
     void complexColumnsComponentModelTest() {
+        String[] expectedClasses = new String[]{"is-variable", "is-0-mobile", "is-2-tablet", "is-8-desktop", "is-mobile"};
         ColumnsComponent model = context.resourceResolver().getResource(PATH + "/complex").adaptTo(ColumnsComponent.class);
 
         assertThat(model).isNotNull();
         assertThat(model.getColumnsActivationLevel()).isEqualTo("is-mobile");
+        assertThat(model.isCustomGapLevel()).isTrue();
+        assertThat(model.getMobileGapLevel()).isEqualTo("is-0");
+        assertThat(model.getTabletGapLevel()).isEqualTo("is-2");
+        assertThat(model.getDesktopGapLevel()).isEqualTo("is-8");
+        assertThat(model.getClasses()).containsExactly(expectedClasses);
     }
 
     @Test

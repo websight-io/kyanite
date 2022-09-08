@@ -1,7 +1,7 @@
 <sly data-sly-use.model="pl.ds.bulma.components.models.columns.ColumnsComponent">
     <sly data-sly-test="${resource.hasChildren}">
         <div class="m-4" data-sly-unwrap="${!wcmmode.isEdit}">
-            <div class="columns ${model.columnsActivationLevel}" data-sly-unwrap="${!wcmmode.isEdit && model.hasOnlyColumnsWhichHasNoChildren}">
+            <div class="columns ${model.classes @ join=' '}" data-sly-unwrap="${!wcmmode.isEdit && model.hasOnlyColumnsWhichHasNoChildren}">
                 <sly data-sly-repeat="${resource.listChildren}">
                     <sly data-sly-resource="${item.path}"></sly>
                 </sly>
@@ -9,7 +9,8 @@
         </div>
     </sly>
     <sly data-sly-test="${!resource.hasChildren}">
-        <sly data-sly-test.columnsClasses="${['columns', model.columnsActivationLevel] @ join=' '}"></sly>
+        <sly data-sly-test.classes="${model.classes @ join=' '}"></sly>
+        <sly data-sly-test.columnsClasses="${['columns', classes] @ join=' '}"></sly>
         <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
              data-sly-call="${lib.placeholder @ classes=columnsClasses}">
         </sly>

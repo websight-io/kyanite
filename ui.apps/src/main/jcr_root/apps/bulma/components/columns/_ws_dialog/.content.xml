@@ -14,7 +14,7 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="wcm/dialogs/components/select"
                     name="columnsActivationLevel"
-                    label="Activate columns structure from the viewport:">
+                    label="Activate columns structure from the viewport of:">
                 <isMobile
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="wcm/dialogs/components/select/selectitem"
@@ -32,6 +32,54 @@
                         label="Desktop"
                         value="is-desktop"/>
             </columnsActivationLevel>
+            <isCustomGapLevel
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/toggle"
+                    name="isCustomGapLevel"
+                    label="Override the space between columns"
+            >
+            </isCustomGapLevel>
+            <gapLevelContainer
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="wcm/dialogs/components/container">
+                <mobileGapLevel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/include">
+                    <include
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceSuperType="/apps/bulma/components/columns/attributes/gaplevel"
+                            name="mobileGapLevel"
+                            label="Gap level on Mobile">
+                    </include>
+                </mobileGapLevel>
+                <tabletGapLevel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/include">
+                    <include
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceSuperType="/apps/bulma/components/columns/attributes/gaplevel"
+                            name="tabletGapLevel"
+                            label="Gap level on Tablet">
+                    </include>
+                </tabletGapLevel>
+                <desktopGapLevel
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="wcm/dialogs/components/include">
+                    <include
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceSuperType="/apps/bulma/components/columns/attributes/gaplevel"
+                            name="desktopGapLevel"
+                            label="Gap level on Desktop">
+                    </include>
+                </desktopGapLevel>
+                <ws:display
+                        jcr:primaryType="nt:unstructured">
+                    <condition
+                            jcr:primaryType="nt:unstructured"
+                            sourceName="isCustomGapLevel"
+                            values="true"/>
+                </ws:display>
+            </gapLevelContainer>
         </generalTab>
     </tabs>
 </jcr:root>
