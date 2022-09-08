@@ -6,6 +6,10 @@
   "complex": {
     "sling:resourceType": "bulma/components/columns",
     "jcr:primaryType": "nt:unstructured",
-    "columnsActivationLevel": "is-mobile"
+    "columnsActivationLevel": "is-mobile",
+    "isCustomGapLevel": true,
+    "mobileGapLevel": "is-0",
+    "tabletGapLevel": "is-2",
+    "desktopGapLevel": "is-8"
   }
 }
