@@ -10,6 +10,9 @@
     "isCustomGapLevel": true,
     "mobileGapLevel": "is-0",
     "tabletGapLevel": "is-2",
-    "desktopGapLevel": "is-8"
+    "desktopGapLevel": "is-8",
+    "isMultiline": true,
+    "isVerticallyCentered": true,
+    "isCentered": true
   }
 }

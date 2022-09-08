@@ -15,7 +15,7 @@ public class ColumnClassProvider {
     public String[] getClasses(Map<String, ResponsiveColumnStyle> columnStyleMap) {
         List<String> classList = new ArrayList<>();
         columnStyleMap.forEach((key, columnStyle) -> {
-            if (columnStyle.isNormalColumn()) {
+            if (!columnStyle.isNormalColumn()) {
                 classList.add("is-narrow-" + key);
             } else {
                 String sizeClass = createSizeClass(ColumnSizes.findByName(columnStyle.getSize()).getCssClass());
