@@ -1,73 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Copyright (C) 2022 Dynamic Solutions
+  ~
+  ~     Copyright (C) 2022 Dynamic Solutions
+  ~
+  ~     Licensed under the Apache License, Version 2.0 (the "License");
+  ~     you may not use this file except in compliance with the License.
+  ~     You may obtain a copy of the License at
+  ~
+  ~         http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~     Unless required by applicable law or agreed to in writing, software
+  ~     distributed under the License is distributed on an "AS IS" BASIS,
+  ~     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~     See the License for the specific language governing permissions and
+  ~     limitations under the License.
+  ~
+  -->
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
-
-        http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
--->
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-
-  <parent>
-    <groupId>pl.ds.bulma</groupId>
-    <artifactId>bulma.tests</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-  </parent>
-
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <artifactId>bulma.tests.e2e</artifactId>
-  <name>Bulma: Tests: End to end</name>
-  <packaging>pom</packaging>
-
-  <properties>
-    <websight.ice.version>2.0.0-SNAPSHOT</websight.ice.version>
-    <bulma.version>${project.parent.version}</bulma.version>
-    <mongo.container.image>mongo:4.4.6</mongo.container.image>
-    <it.startTimeoutSeconds>30</it.startTimeoutSeconds>
-  </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>pl.ds.websight</groupId>
-      <artifactId>websight-ice-distribution</artifactId>
-      <version>${websight.ice.version}</version>
-      <classifier>wsce</classifier>
-      <type>slingosgifeature</type>
-    </dependency>
-    <dependency>
-      <groupId>pl.ds.bulma</groupId>
-      <artifactId>bulma.core</artifactId>
-      <version>${bulma.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>pl.ds.bulma</groupId>
-      <artifactId>bulma.ui.apps</artifactId>
-      <version>${bulma.version}</version>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>pl.ds.bulma</groupId>
-      <artifactId>bulma.tests.content</artifactId>
-      <version>${bulma.version}</version>
-      <type>pom</type>
-    </dependency>
-  </dependencies>
 
   <build>
     <plugins>
       <plugin>
         <artifactId>maven-clean-plugin</artifactId>
-        <version>3.2.0</version>
         <configuration>
           <filesets>
             <fileset>
@@ -79,104 +37,107 @@
             </fileset>
           </filesets>
         </configuration>
+        <version>3.2.0</version>
       </plugin>
       <plugin>
-        <groupId>org.apache.sling</groupId>
         <artifactId>slingfeature-maven-plugin</artifactId>
-        <version>1.6.6</version>
-        <extensions>true</extensions>
         <configuration>
-          <replacePropertyVariables>
-            bulma.version
-          </replacePropertyVariables>
           <aggregates>
             <aggregate>
               <classifier>bulma-tests</classifier>
               <filesInclude>*.json</filesInclude>
-              <title>Bulma with test data</title>
               <includeArtifact>
-                <groupId>pl.ds.websight</groupId>
                 <artifactId>websight-ice-distribution</artifactId>
-                <version>${websight.ice.version}</version>
                 <classifier>wsce</classifier>
+                <groupId>pl.ds.websight</groupId>
                 <type>slingosgifeature</type>
+                <version>${websight.ice.version}</version>
               </includeArtifact>
+              <title>Bulma with test data</title>
             </aggregate>
           </aggregates>
-          <scans>
-            <scan>
-              <includeClassifier>bulma-tests</includeClassifier>
-            </scan>
-          </scans>
+          <extension/>
+          <outputDir>target</outputDir>
+          <replacePropertyVariables>
+            bulma.version
+          </replacePropertyVariables>
           <repositories>
             <repository>
               <includeClassifier>bulma-tests</includeClassifier>
             </repository>
           </repositories>
-          <outputDir>target</outputDir>
+          <scans>
+            <scan>
+              <includeClassifier>bulma-tests</includeClassifier>
+            </scan>
+          </scans>
           <selection/>
-          <extension/>
         </configuration>
         <executions>
           <execution>
-            <id>aggregate-features</id>
-            <phase>prepare-package</phase>
             <goals>
               <goal>aggregate-features</goal>
               <goal>analyse-features</goal>
               <goal>attach-features</goal>
             </goals>
+            <id>aggregate-features</id>
+            <phase>prepare-package</phase>
           </execution>
         </executions>
+        <extensions>true</extensions>
+        <groupId>org.apache.sling</groupId>
+        <version>1.6.6</version>
       </plugin>
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
-            <id>prepare-feature-launcher</id>
-            <goals>
-              <goal>get</goal>
-              <goal>copy</goal>
-            </goals>
-            <phase>package</phase>
             <configuration>
               <!-- 1.1.28 and newer versions don't work out-of-the-box due to SLING-10956 -->
               <artifact>org.apache.sling:org.apache.sling.feature.launcher:1.1.26</artifact>
               <stripVersion>true</stripVersion>
             </configuration>
+            <goals>
+              <goal>get</goal>
+              <goal>copy</goal>
+            </goals>
+            <id>prepare-feature-launcher</id>
+            <phase>package</phase>
           </execution>
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>3.3.0</version>
         <executions>
           <execution>
-            <id>reserve-network-port</id>
-            <goals>
-              <goal>reserve-network-port</goal>
-            </goals>
-            <phase>pre-integration-test</phase>
             <configuration>
               <portNames>
                 <portName>wsce.port</portName>
                 <portName>mongo.port</portName>
               </portNames>
             </configuration>
+            <goals>
+              <goal>reserve-network-port</goal>
+            </goals>
+            <id>reserve-network-port</id>
+            <phase>pre-integration-test</phase>
           </execution>
         </executions>
+        <groupId>org.codehaus.mojo</groupId>
+        <version>3.3.0</version>
       </plugin>
       <plugin>
-        <groupId>io.fabric8</groupId>
         <artifactId>docker-maven-plugin</artifactId>
-        <version>0.40.1</version>
         <configuration>
           <images>
             <image>
               <alias>mongo</alias>
               <name>${mongo.container.image}</name>
               <run>
+                <env>
+                  <MONGO_INITDB_ROOT_PASSWORD>mongoadmin</MONGO_INITDB_ROOT_PASSWORD>
+                  <MONGO_INITDB_ROOT_USERNAME>mongoadmin</MONGO_INITDB_ROOT_USERNAME>
+                </env>
                 <ports>
                   <port>${mongo.port}:27017</port>
                 </ports>
@@ -184,55 +145,51 @@
                   <log>CONTROL</log>
                   <time>60000</time>
                 </wait>
-                <env>
-                  <MONGO_INITDB_ROOT_USERNAME>mongoadmin</MONGO_INITDB_ROOT_USERNAME>
-                  <MONGO_INITDB_ROOT_PASSWORD>mongoadmin</MONGO_INITDB_ROOT_PASSWORD>
-                </env>
               </run>
             </image>
           </images>
         </configuration>
         <executions>
           <execution>
-            <id>start mongo</id>
             <goals>
               <goal>start</goal>
             </goals>
+            <id>start mongo</id>
           </execution>
           <execution>
-            <id>stop mongo</id>
-            <phase>verify</phase>
             <goals>
               <goal>stop</goal>
             </goals>
+            <id>stop mongo</id>
+            <phase>verify</phase>
           </execution>
         </executions>
+        <groupId>io.fabric8</groupId>
+        <version>0.40.1</version>
       </plugin>
       <plugin>
-        <groupId>org.apache.sling</groupId>
         <artifactId>feature-launcher-maven-plugin</artifactId>
-        <version>0.1.2</version>
         <configuration>
           <launches>
             <launch>
-              <id>bulma-tests</id>
+              <environmentVariables>
+                <MONGODB_PORT>${mongo.port}</MONGODB_PORT>
+                <WS_ADMIN_PASSWORD>${websight.admin.password}</WS_ADMIN_PASSWORD>
+                <WS_ADMIN_USERNAME>${websight.admin.username}</WS_ADMIN_USERNAME>
+              </environmentVariables>
               <feature>
-                <groupId>${project.groupId}</groupId>
                 <artifactId>${project.artifactId}</artifactId>
-                <version>${project.version}</version>
                 <classifier>bulma-tests</classifier>
+                <groupId>${project.groupId}</groupId>
                 <type>slingosgifeature</type>
+                <version>${project.version}</version>
               </feature>
+              <id>bulma-tests</id>
               <launcherArguments>
                 <frameworkProperties>
                   <org.osgi.service.http.port>${wsce.port}</org.osgi.service.http.port>
                 </frameworkProperties>
               </launcherArguments>
-              <environmentVariables>
-                <MONGODB_PORT>${mongo.port}</MONGODB_PORT>
-                <WS_ADMIN_USERNAME>${websight.admin.username}</WS_ADMIN_USERNAME>
-                <WS_ADMIN_PASSWORD>${websight.admin.password}</WS_ADMIN_PASSWORD>
-              </environmentVariables>
               <startTimeoutSeconds>${it.startTimeoutSeconds}</startTimeoutSeconds>
             </launch>
           </launches>
@@ -245,91 +202,88 @@
             </goals>
           </execution>
         </executions>
+        <groupId>org.apache.sling</groupId>
+        <version>0.1.2</version>
       </plugin>
       <plugin>
-        <groupId>com.github.eirslett</groupId>
         <artifactId>frontend-maven-plugin</artifactId>
-        <version>${frontend-maven-plugin.version}</version>
+        <configuration>
+          <nodeVersion>${node.version}</nodeVersion>
+        </configuration>
         <executions>
           <execution>
-            <id>install node and npm</id>
             <goals>
               <goal>install-node-and-npm</goal>
             </goals>
+            <id>install node and npm</id>
             <phase>prepare-package</phase>
           </execution>
           <execution>
-            <id>npm install</id>
+            <configuration>
+              <arguments>install</arguments>
+              <skip>${e2e.skip}</skip>
+            </configuration>
             <goals>
               <goal>npm</goal>
             </goals>
+            <id>npm install</id>
             <phase>prepare-package</phase>
-            <configuration>
-              <skip>${e2e.skip}</skip>
-              <arguments>install</arguments>
-            </configuration>
           </execution>
           <execution>
-            <id>cypress verify</id>
-            <goals>
-              <goal>npx</goal>
-            </goals>
-            <phase>pre-integration-test</phase>
             <configuration>
-              <skip>${e2e.skip}</skip>
               <arguments>cypress verify</arguments>
               <environmentVariables>
                 <CI>1</CI>
               </environmentVariables>
+              <skip>${e2e.skip}</skip>
             </configuration>
-          </execution>
-          <execution>
-            <id>cypress info</id>
             <goals>
               <goal>npx</goal>
             </goals>
+            <id>cypress verify</id>
             <phase>pre-integration-test</phase>
+          </execution>
+          <execution>
             <configuration>
-              <skip>${e2e.skip}</skip>
               <arguments>cypress info</arguments>
               <environmentVariables>
                 <CI>1</CI>
               </environmentVariables>
+              <skip>${e2e.skip}</skip>
             </configuration>
-          </execution>
-          <execution>
-            <id>npx test</id>
             <goals>
               <goal>npx</goal>
             </goals>
-            <phase>integration-test</phase>
+            <id>cypress info</id>
+            <phase>pre-integration-test</phase>
+          </execution>
+          <execution>
             <configuration>
-              <skip>${e2e.skip}</skip>
               <arguments>cypress run test:ci</arguments>
               <environmentVariables>
-                <CYPRESS_baseUrl>http://localhost:${wsce.port}</CYPRESS_baseUrl>
-                <CYPRESS_loginUsername>${websight.admin.username}</CYPRESS_loginUsername>
-                <CYPRESS_loginPassword>${websight.admin.password}</CYPRESS_loginPassword>
-                <TERM>xterm</TERM>
                 <CI>1</CI>
+                <CYPRESS_baseUrl>http://localhost:${wsce.port}</CYPRESS_baseUrl>
+                <CYPRESS_loginPassword>${websight.admin.password}</CYPRESS_loginPassword>
+                <CYPRESS_loginUsername>${websight.admin.username}</CYPRESS_loginUsername>
+                <TERM>xterm</TERM>
               </environmentVariables>
+              <skip>${e2e.skip}</skip>
             </configuration>
+            <goals>
+              <goal>npx</goal>
+            </goals>
+            <id>npx test</id>
+            <phase>integration-test</phase>
           </execution>
         </executions>
-        <configuration>
-          <nodeVersion>${node.version}</nodeVersion>
-        </configuration>
+        <groupId>com.github.eirslett</groupId>
+        <version>${frontend-maven-plugin.version}</version>
       </plugin>
 
       <plugin>
-        <groupId>org.apache.rat</groupId>
         <artifactId>apache-rat-plugin</artifactId>
         <executions>
           <execution>
-            <phase>validate</phase>
-            <goals>
-              <goal>check</goal>
-            </goals>
             <configuration>
               <excludes>
                 <exclude>*.md</exclude>
@@ -339,10 +293,59 @@
                 <exclude>/target/**</exclude>
               </excludes>
             </configuration>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <phase>validate</phase>
           </execution>
         </executions>
+        <groupId>org.apache.rat</groupId>
       </plugin>
     </plugins>
   </build>
+
+  <dependencies>
+    <dependency>
+      <artifactId>websight-ice-distribution</artifactId>
+      <classifier>wsce</classifier>
+      <groupId>pl.ds.websight</groupId>
+      <type>slingosgifeature</type>
+      <version>${websight.ice.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>bulma.core</artifactId>
+      <groupId>pl.ds.bulma</groupId>
+      <version>${bulma.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>bulma.ui.apps</artifactId>
+      <groupId>pl.ds.bulma</groupId>
+      <type>pom</type>
+      <version>${bulma.version}</version>
+    </dependency>
+    <dependency>
+      <artifactId>bulma.tests.content</artifactId>
+      <groupId>pl.ds.bulma</groupId>
+      <type>pom</type>
+      <version>${bulma.version}</version>
+    </dependency>
+  </dependencies>
+  <modelVersion>4.0.0</modelVersion>
+  <name>Bulma: Tests: End to end</name>
+
+  <packaging>pom</packaging>
+
+  <parent>
+    <artifactId>bulma.tests</artifactId>
+    <groupId>pl.ds.bulma</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <properties>
+    <bulma.version>${project.parent.version}</bulma.version>
+    <it.startTimeoutSeconds>30</it.startTimeoutSeconds>
+    <mongo.container.image>mongo:4.4.6</mongo.container.image>
+    <websight.ice.version>2.0.0-SNAPSHOT</websight.ice.version>
+  </properties>
 
 </project>

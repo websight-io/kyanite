@@ -16,7 +16,6 @@
         "url": "#",
         "label": "Test1",
         "icon": "fa-file"
-
       },
       "2": {
         "jcr:primaryType": "nt:unstructured",

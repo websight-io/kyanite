@@ -1,36 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<!--
+  ~
+  ~     Copyright (C) 2022 Dynamic Solutions
+  ~
+  ~     Licensed under the Apache License, Version 2.0 (the "License");
+  ~     you may not use this file except in compliance with the License.
+  ~     You may obtain a copy of the License at
+  ~
+  ~         http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~     Unless required by applicable law or agreed to in writing, software
+  ~     distributed under the License is distributed on an "AS IS" BASIS,
+  ~     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~     See the License for the specific language governing permissions and
+  ~     limitations under the License.
+  ~
+  -->
 
-    <parent>
-        <groupId>pl.ds.bulma</groupId>
-        <artifactId>bulma.parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
-    </parent>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>bulma.core</artifactId>
 
-    <artifactId>bulma.core</artifactId>
-    <version>${project.parent.version}</version>
-    <name>Bulma Core</name>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.sling</groupId>
-                <artifactId>sling-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>biz.aQute.bnd</groupId>
-                <artifactId>bnd-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>bnd-process</id>
-                        <goals>
-                            <goal>bnd-process</goal>
-                        </goals>
-                        <configuration>
-                            <bnd><![CDATA[
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>sling-maven-plugin</artifactId>
+        <groupId>org.apache.sling</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>bnd-maven-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <artifactId>org.apache.sling.caconfig.bnd-plugin</artifactId>
+            <groupId>org.apache.sling</groupId>
+            <version>${sling.caconfig.bnd.version}</version>
+          </dependency>
+          <dependency>
+            <artifactId>org.apache.sling.bnd.models</artifactId>
+            <groupId>org.apache.sling</groupId>
+            <version>${sling.models.bnd.version}</version>
+          </dependency>
+          <dependency>
+            <artifactId>scriptingbundle-maven-plugin</artifactId>
+            <groupId>org.apache.sling</groupId>
+            <version>${sling.scriptbundle.version}</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <configuration>
+              <bnd><![CDATA[
                                         Bundle-Category: ${componentGroupName}
                                         Bundle-Developers: Dynamic Solutions sp. z o.o. sp. k.
                                         Bundle-Description : ${Bundle-Name}
@@ -45,94 +65,93 @@
                                             -plugin org.apache.sling.caconfig.bndplugin.ConfigurationClassScannerPlugin
                                             -plugin org.apache.sling.bnd.models.ModelsScannerPlugin
                                 ]]></bnd>
-                        </configuration>
-                    </execution>
-                </executions>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.sling</groupId>
-                        <artifactId>org.apache.sling.caconfig.bnd-plugin</artifactId>
-                        <version>${sling.caconfig.bnd.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.apache.sling</groupId>
-                        <artifactId>org.apache.sling.bnd.models</artifactId>
-                        <version>${sling.models.bnd.version}</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.apache.sling</groupId>
-                        <artifactId>scriptingbundle-maven-plugin</artifactId>
-                        <version>${sling.scriptbundle.version}</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-                    </archive>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+            </configuration>
+            <goals>
+              <goal>bnd-process</goal>
+            </goals>
+            <id>bnd-process</id>
+          </execution>
+        </executions>
+        <groupId>biz.aQute.bnd</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+          <archive>
+            <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
+          </archive>
+        </configuration>
+        <groupId>org.apache.maven.plugins</groupId>
+      </plugin>
+    </plugins>
+  </build>
 
-    <dependencies>
-        <dependency>
-            <groupId>javax.inject</groupId>
-            <artifactId>javax.inject</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.annotation</groupId>
-            <artifactId>javax.annotation-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.models.api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.api</artifactId>
-        </dependency>
+  <dependencies>
+    <dependency>
+      <artifactId>javax.inject</artifactId>
+      <groupId>javax.inject</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>javax.annotation-api</artifactId>
+      <groupId>javax.annotation</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>lombok</artifactId>
+      <groupId>org.projectlombok</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>commons-lang3</artifactId>
+      <groupId>org.apache.commons</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>org.apache.sling.models.api</artifactId>
+      <groupId>org.apache.sling</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>org.apache.sling.api</artifactId>
+      <groupId>org.apache.sling</groupId>
+    </dependency>
 
-        <!-- TEST -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-params</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.sling</groupId>
-            <artifactId>org.apache.sling.testing.sling-mock.junit5</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.assertj</groupId>
-            <artifactId>assertj-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-junit-jupiter</artifactId>
-        </dependency>
-    </dependencies>
+    <!-- TEST -->
+    <dependency>
+      <artifactId>junit-jupiter-api</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>junit-jupiter-params</artifactId>
+      <groupId>org.junit.jupiter</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>org.apache.sling.testing.sling-mock.junit5</artifactId>
+      <groupId>org.apache.sling</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>assertj-core</artifactId>
+      <groupId>org.assertj</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>mockito-core</artifactId>
+      <groupId>org.mockito</groupId>
+    </dependency>
+    <dependency>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <groupId>org.mockito</groupId>
+    </dependency>
+  </dependencies>
+  <modelVersion>4.0.0</modelVersion>
+  <name>Bulma Core</name>
+
+  <parent>
+    <artifactId>bulma.parent</artifactId>
+    <groupId>pl.ds.bulma</groupId>
+    <relativePath>../pom.xml</relativePath>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <version>${project.parent.version}</version>
 
 </project>
