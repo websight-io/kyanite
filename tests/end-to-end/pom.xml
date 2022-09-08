@@ -265,7 +265,7 @@
             </goals>
             <phase>prepare-package</phase>
             <configuration>
-              <skip>${e2e.skip}</skip>
+<!--              <skip>${e2e.skip}</skip>-->
               <arguments>install</arguments>
             </configuration>
           </execution>
@@ -276,7 +276,7 @@
             </goals>
             <phase>pre-integration-test</phase>
             <configuration>
-              <skip>${e2e.skip}</skip>
+<!--              <skip>${e2e.skip}</skip>-->
               <arguments>cypress verify</arguments>
               <environmentVariables>
                 <CI>1</CI>
@@ -290,7 +290,7 @@
             </goals>
             <phase>pre-integration-test</phase>
             <configuration>
-              <skip>${e2e.skip}</skip>
+<!--              <skip>${e2e.skip}</skip>-->
               <arguments>cypress info</arguments>
               <environmentVariables>
                 <CI>1</CI>
@@ -306,6 +306,24 @@
             <configuration>
               <skip>${e2e.skip}</skip>
               <arguments>cypress run test:ci</arguments>
+              <environmentVariables>
+                <CYPRESS_baseUrl>http://localhost:${wsce.port}</CYPRESS_baseUrl>
+                <CYPRESS_loginUsername>${websight.admin.username}</CYPRESS_loginUsername>
+                <CYPRESS_loginPassword>${websight.admin.password}</CYPRESS_loginPassword>
+                <TERM>xterm</TERM>
+                <CI>1</CI>
+              </environmentVariables>
+            </configuration>
+          </execution>
+          <execution>
+            <id>npx visual test</id>
+            <goals>
+              <goal>npx</goal>
+            </goals>
+            <phase>integration-test</phase>
+            <configuration>
+              <skip>${e2e.skip.visual}</skip>
+              <arguments>percy exec -- cypress run</arguments>
               <environmentVariables>
                 <CYPRESS_baseUrl>http://localhost:${wsce.port}</CYPRESS_baseUrl>
                 <CYPRESS_loginUsername>${websight.admin.username}</CYPRESS_loginUsername>

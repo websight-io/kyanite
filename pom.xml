@@ -44,6 +44,7 @@
         <sling.password>wsadmin</sling.password>
 
         <e2e.skip>true</e2e.skip>
+        <e2e.skip.visual>false</e2e.skip.visual>
         <mongo.container.image>mongo:4.4.6</mongo.container.image>
     </properties>
 
