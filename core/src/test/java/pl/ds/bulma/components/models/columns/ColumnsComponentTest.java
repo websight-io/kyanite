@@ -34,11 +34,16 @@ public class ColumnsComponentTest {
         ColumnsComponent model = context.resourceResolver().getResource(PATH + "/default").adaptTo(ColumnsComponent.class);
 
         assertThat(model).isNotNull();
+        assertThat(model.isCustomGapLevel()).isFalse();
+        assertThat(model.isMultiline()).isFalse();
+        assertThat(model.isVerticallyCentered()).isFalse();
+        assertThat(model.isCentered()).isFalse();
     }
 
     @Test
     void complexColumnsComponentModelTest() {
-        String[] expectedClasses = new String[]{"is-variable", "is-0-mobile", "is-2-tablet", "is-8-desktop", "is-mobile"};
+        String[] expectedClasses = new String[]{"is-variable", "is-0-mobile", "is-2-tablet", "is-8-desktop",
+                "is-mobile", "is-multiline", "is-vcentered", "is-centered"};
         ColumnsComponent model = context.resourceResolver().getResource(PATH + "/complex").adaptTo(ColumnsComponent.class);
 
         assertThat(model).isNotNull();
@@ -47,7 +52,10 @@ public class ColumnsComponentTest {
         assertThat(model.getMobileGapLevel()).isEqualTo("is-0");
         assertThat(model.getTabletGapLevel()).isEqualTo("is-2");
         assertThat(model.getDesktopGapLevel()).isEqualTo("is-8");
-        assertThat(model.getClasses()).containsExactly(expectedClasses);
+        assertThat(model.isMultiline()).isTrue();
+        assertThat(model.isVerticallyCentered()).isTrue();
+        assertThat(model.isCentered()).isTrue();
+        assertThat(model.getClasses()).containsExactlyInAnyOrder(expectedClasses);
     }
 
     @Test

@@ -49,6 +49,18 @@ public class ColumnsComponent {
 
     @Getter
     @Inject
+    private boolean isMultiline;
+
+    @Getter
+    @Inject
+    private boolean isVerticallyCentered;
+
+    @Getter
+    @Inject
+    private boolean isCentered;
+
+    @Getter
+    @Inject
     private String[] classes;
 
     @PostConstruct
@@ -60,6 +72,19 @@ public class ColumnsComponent {
             classList.add(tabletGapLevel + "-tablet");
             classList.add(desktopGapLevel + "-desktop");
         }
+
+        if (isMultiline) {
+            classList.add("is-multiline");
+        }
+
+        if (isVerticallyCentered) {
+            classList.add("is-vcentered");
+        }
+
+        if (isCentered) {
+            classList.add("is-centered");
+        }
+
         classList.add(columnsActivationLevel);
         classes = classList.toArray(new String[]{});
     }
