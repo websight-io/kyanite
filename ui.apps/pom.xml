@@ -28,7 +28,7 @@
                     <validatorsSettings>
                         <jackrabbit-filter>
                             <options>
-                                <validRoots>/apps/bulma</validRoots>
+                                <validRoots>/apps</validRoots>
                             </options>
                         </jackrabbit-filter>
                     </validatorsSettings>
