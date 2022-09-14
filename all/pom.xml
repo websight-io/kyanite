@@ -31,13 +31,13 @@
                             <groupId>pl.ds.bulma</groupId>
                             <artifactId>bulma.core</artifactId>
                             <type>jar</type>
-                            <target>/apps/bulma/install</target>
+                            <target>/apps/bulma-all/install</target>
                         </embedded>
                         <embedded>
                             <groupId>pl.ds.bulma</groupId>
                             <artifactId>bulma.ui.apps</artifactId>
                             <type>zip</type>
-                            <target>/apps/bulma/install</target>
+                            <target>/apps/bulma-all/install</target>
                         </embedded>
                     </embeddeds>
                 </configuration>
