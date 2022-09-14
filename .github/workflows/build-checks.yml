@@ -44,6 +44,11 @@ jobs:
           mkdir -p ~/.m2/repository
           cp .github/settings.xml ~/.m2/settings.xml
           echo "CODEARTIFACT_AUTH_TOKEN=${CODEARTIFACT_AUTH_TOKEN}" >> $GITHUB_ENV
+      - name: Update snapshot version
+        if: ${{ github.event_name == 'schedule' }}
+        run: mvn -f tests/end-to-end/pom.xml versions:update-properties
+        env:
+          AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
       - name: Build and test with Maven
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
@@ -52,7 +57,7 @@ jobs:
       - name: Build and test visual with Maven and Percy
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          BULMA_PERCY_TOKEN: ${{ secrets.BULMA_PERCY_TOKEN }}
         if: ${{ github.event_name == 'schedule' }}
         run: mvn --batch-mode --update-snapshots clean install -P visual-tests
 
