@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:ws="http://ds.pl/websight"
-          jcr:primaryType="ws:PagesTemplate"
-          jcr:title="Bulma pages"
-          allowedChildren="[/apps/bulma/templates/basicpage]"
+  jcr:primaryType="ws:PagesTemplate"
+  jcr:title="Bulma pages"
+  allowedChildren="[/apps/bulma/templates/basicpage]"
 />

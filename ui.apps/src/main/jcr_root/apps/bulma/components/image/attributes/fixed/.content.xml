@@ -1,42 +1,42 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
-          jcr:primaryType="nt:unstructured"
-          sling:resourceType="wcm/dialogs/components/select"
-          name="style"
-          label="Size of fixed image -useful for avatars">
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:primaryType="nt:unstructured"
+  sling:resourceType="wcm/dialogs/components/select"
+  name="style"
+  label="Size of fixed image -useful for avatars">
   <is-16x16
-      jcr:primaryType="nt:unstructured"
-      sling:resourceType="wcm/dialogs/components/select/selectitem"
-      label="16x16px"
-      value="is-16x16"/>
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/select/selectitem"
+    label="16x16px"
+    value="is-16x16"/>
   <is-24x24
-      jcr:primaryType="nt:unstructured"
-      sling:resourceType="wcm/dialogs/components/select/selectitem"
-      label="24x24px"
-      value="is-24x24"/>
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/select/selectitem"
+    label="24x24px"
+    value="is-24x24"/>
   <is-32x32
-      jcr:primaryType="nt:unstructured"
-      sling:resourceType="wcm/dialogs/components/select/selectitem"
-      label="32x32px"
-      value="is-32x32"/>
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/select/selectitem"
+    label="32x32px"
+    value="is-32x32"/>
   <is-48x48
-      jcr:primaryType="nt:unstructured"
-      sling:resourceType="wcm/dialogs/components/select/selectitem"
-      label="48x48px"
-      value="is-48x48"/>
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/select/selectitem"
+    label="48x48px"
+    value="is-48x48"/>
   <is-64x64
-      jcr:primaryType="nt:unstructured"
-      sling:resourceType="wcm/dialogs/components/select/selectitem"
-      label="64x64px"
-      value="is-64x64"/>
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/select/selectitem"
+    label="64x64px"
+    value="is-64x64"/>
   <is-96x96
-      jcr:primaryType="nt:unstructured"
-      sling:resourceType="wcm/dialogs/components/select/selectitem"
-      label="96x96px"
-      value="is-96x96"/>
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/select/selectitem"
+    label="96x96px"
+    value="is-96x96"/>
   <is-128x128
-      jcr:primaryType="nt:unstructured"
-      sling:resourceType="wcm/dialogs/components/select/selectitem"
-      label="128x128px"
-      value="is-128x128"/>
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/select/selectitem"
+    label="128x128px"
+    value="is-128x128"/>
 </jcr:root>

@@ -1,5 +1,7 @@
-<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd"
-          xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<settings
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd"
+  xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
   <servers>
     <server>
@@ -23,14 +25,18 @@
       <repositories>
         <repository>
           <id>websight-maven-repo</id>
-          <url>https://websight-${env.AWS_ACCOUNT_ID}.d.codeartifact.eu-central-1.amazonaws.com/maven/maven-repo/</url>
+          <url>
+            https://websight-${env.AWS_ACCOUNT_ID}.d.codeartifact.eu-central-1.amazonaws.com/maven/maven-repo/
+          </url>
           <snapshots>
             <enabled>false</enabled>
           </snapshots>
         </repository>
         <repository>
           <id>websight-internal-maven-snapshot-repo</id>
-          <url>https://websight-internal-${env.AWS_ACCOUNT_ID}.d.codeartifact.eu-central-1.amazonaws.com/maven/maven-snapshot-repo/</url>
+          <url>
+            https://websight-internal-${env.AWS_ACCOUNT_ID}.d.codeartifact.eu-central-1.amazonaws.com/maven/maven-snapshot-repo/
+          </url>
         </repository>
         <repository>
           <id>maven repo</id>

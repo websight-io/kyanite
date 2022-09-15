@@ -38,6 +38,6 @@ public class ImageComponent {
   private void init() {
     if (assetReference == null && src != null) {
       assetReference = src;
-     }
+    }
   }
 }

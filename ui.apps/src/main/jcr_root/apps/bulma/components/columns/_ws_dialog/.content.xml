@@ -1,104 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
+  jcr:primaryType="nt:unstructured"
+  sling:resourceType="wcm/dialogs/dialog">
+  <tabs
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/tabs">
+    <generalTab
+      jcr:primaryType="nt:unstructured"
+      sling:resourceType="wcm/dialogs/components/tab"
+      label="General">
+      <columnsActivationLevel
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/dialogs/components/select"
+        name="columnsActivationLevel"
+        label="Activate columns structure from the viewport of:">
+        <isMobile
           jcr:primaryType="nt:unstructured"
-          sling:resourceType="wcm/dialogs/dialog">
-    <tabs
+          sling:resourceType="wcm/dialogs/components/select/selectitem"
+          label="Mobile"
+          value="is-mobile"/>
+        <isTablet
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/select/selectitem"
+          label="Tablet"
+          selected="true"
+          value="is-tablet"/>
+        <isDesktop
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/select/selectitem"
+          label="Desktop"
+          value="is-desktop"/>
+      </columnsActivationLevel>
+      <isMultiline
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/dialogs/components/toggle"
+        name="isMultiline"
+        label="Treat columns as multiline"
+        description="Overrides the default behavior of a row. This way you can add more columns, what would normally fit in a single row."
+      />
+      <isVerticallyCentered
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/dialogs/components/toggle"
+        name="isVerticallyCentered"
+        label="Align the columns vertically centered"
+      />
+      <isCentered
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/dialogs/components/toggle"
+        name="isCentered"
+        label="Align the columns horizontally centered"
+      />
+      <isCustomGapLevel
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/dialogs/components/toggle"
+        name="isCustomGapLevel"
+        label="Override the space between columns"
+      >
+      </isCustomGapLevel>
+      <gapLevelContainer
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="wcm/dialogs/components/container">
+        <mobileGapLevel
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/include">
+          <include
             jcr:primaryType="nt:unstructured"
-            sling:resourceType="wcm/dialogs/components/tabs">
-        <generalTab
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="wcm/dialogs/components/tab"
-                label="General">
-            <columnsActivationLevel
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/dialogs/components/select"
-                    name="columnsActivationLevel"
-                    label="Activate columns structure from the viewport of:">
-                <isMobile
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/dialogs/components/select/selectitem"
-                        label="Mobile"
-                        value="is-mobile"/>
-                <isTablet
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/dialogs/components/select/selectitem"
-                        label="Tablet"
-                        selected="true"
-                        value="is-tablet"/>
-                <isDesktop
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/dialogs/components/select/selectitem"
-                        label="Desktop"
-                        value="is-desktop"/>
-            </columnsActivationLevel>
-            <isMultiline
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/dialogs/components/toggle"
-                    name="isMultiline"
-                    label="Treat columns as multiline"
-                    description="Overrides the default behavior of a row. This way you can add more columns, what would normally fit in a single row."
-            />
-            <isVerticallyCentered
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/dialogs/components/toggle"
-                    name="isVerticallyCentered"
-                    label="Align the columns vertically centered"
-            />
-            <isCentered
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/dialogs/components/toggle"
-                    name="isCentered"
-                    label="Align the columns horizontally centered"
-            />
-            <isCustomGapLevel
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/dialogs/components/toggle"
-                    name="isCustomGapLevel"
-                    label="Override the space between columns"
-            >
-            </isCustomGapLevel>
-            <gapLevelContainer
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="wcm/dialogs/components/container">
-                <mobileGapLevel
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/dialogs/components/include">
-                    <include
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceSuperType="/apps/bulma/components/columns/attributes/gaplevel"
-                            name="mobileGapLevel"
-                            label="Gap level on Mobile">
-                    </include>
-                </mobileGapLevel>
-                <tabletGapLevel
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/dialogs/components/include">
-                    <include
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceSuperType="/apps/bulma/components/columns/attributes/gaplevel"
-                            name="tabletGapLevel"
-                            label="Gap level on Tablet">
-                    </include>
-                </tabletGapLevel>
-                <desktopGapLevel
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="wcm/dialogs/components/include">
-                    <include
-                            jcr:primaryType="nt:unstructured"
-                            sling:resourceSuperType="/apps/bulma/components/columns/attributes/gaplevel"
-                            name="desktopGapLevel"
-                            label="Gap level on Desktop">
-                    </include>
-                </desktopGapLevel>
-                <ws:display
-                        jcr:primaryType="nt:unstructured">
-                    <condition
-                            jcr:primaryType="nt:unstructured"
-                            sourceName="isCustomGapLevel"
-                            values="true"/>
-                </ws:display>
-            </gapLevelContainer>
-        </generalTab>
-    </tabs>
+            sling:resourceSuperType="/apps/bulma/components/columns/attributes/gaplevel"
+            name="mobileGapLevel"
+            label="Gap level on Mobile">
+          </include>
+        </mobileGapLevel>
+        <tabletGapLevel
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/include">
+          <include
+            jcr:primaryType="nt:unstructured"
+            sling:resourceSuperType="/apps/bulma/components/columns/attributes/gaplevel"
+            name="tabletGapLevel"
+            label="Gap level on Tablet">
+          </include>
+        </tabletGapLevel>
+        <desktopGapLevel
+          jcr:primaryType="nt:unstructured"
+          sling:resourceType="wcm/dialogs/components/include">
+          <include
+            jcr:primaryType="nt:unstructured"
+            sling:resourceSuperType="/apps/bulma/components/columns/attributes/gaplevel"
+            name="desktopGapLevel"
+            label="Gap level on Desktop">
+          </include>
+        </desktopGapLevel>
+        <ws:display
+          jcr:primaryType="nt:unstructured">
+          <condition
+            jcr:primaryType="nt:unstructured"
+            sourceName="isCustomGapLevel"
+            values="true"/>
+        </ws:display>
+      </gapLevelContainer>
+    </generalTab>
+  </tabs>
 </jcr:root>

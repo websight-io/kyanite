@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:ws="http://ds.pl/websight"
-          jcr:primaryType="ws:Component"
-          jcr:title="Columns"
-          isContainer="true"
-          group="Bulma.io"
-          allowedComponents="[/apps/bulma/components/columns/column]"/>
+  jcr:primaryType="ws:Component"
+  jcr:title="Columns"
+  isContainer="true"
+  group="Bulma.io"
+  allowedComponents="[/apps/bulma/components/columns/column]"/>

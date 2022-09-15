@@ -1,51 +1,51 @@
 package pl.ds.bulma.components.models;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import java.util.ArrayList;
-import java.util.List;
-
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class NotificationComponent {
-    @Inject
-    @Getter
-    private String content;
 
-    @Inject
-    @Getter
-    private String variant;
+  @Inject
+  @Getter
+  private String content;
 
-    @Inject
-    @Getter
-    @Default(booleanValues = false)
-    private boolean isLight;
+  @Inject
+  @Getter
+  private String variant;
 
-    @Inject
-    @Getter
-    @Default(booleanValues = false)
-    private Boolean showButton;
+  @Inject
+  @Getter
+  @Default(booleanValues = false)
+  private boolean isLight;
 
-    @Inject
-    @Getter
-    private String[] notificationClasses;
+  @Inject
+  @Getter
+  @Default(booleanValues = false)
+  private Boolean showButton;
 
-    @PostConstruct
-    private void init() {
-        List<String> classes = new ArrayList<>();
-        if (isLight) {
-            classes.add("is-light");
-        }
-        if (variant != null) {
-            classes.add(variant);
-        }
+  @Inject
+  @Getter
+  private String[] notificationClasses;
 
-        notificationClasses = classes.toArray(new String[]{});
+  @PostConstruct
+  private void init() {
+    List<String> classes = new ArrayList<>();
+    if (isLight) {
+      classes.add("is-light");
     }
+    if (variant != null) {
+      classes.add(variant);
+    }
+
+    notificationClasses = classes.toArray(new String[]{});
+  }
 
 }

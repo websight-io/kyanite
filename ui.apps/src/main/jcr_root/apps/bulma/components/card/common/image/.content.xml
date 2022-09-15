@@ -1,62 +1,62 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
-          jcr:primaryType="nt:unstructured"
-          sling:resourceType="wcm/dialogs/components/container">
-    <assetReference
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="wcm/dialogs/components/assetreference"
-            mimeTypes="[image/*]"
-            name="assetReference"
-            description="Default image source"
-            label="Choose image"/>
-    <src
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="wcm/dialogs/components/pathpicker"
-            rootPath="/content"
-            name="src"
-            description="Secondary image source"
-            label="Use this if you want a link to image from web"/>
-    <alt
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="wcm/dialogs/components/textfield"
-            name="alt"
-            label="Alt text"/>
-    <style
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:primaryType="nt:unstructured"
+  sling:resourceType="wcm/dialogs/components/container">
+  <assetReference
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/assetreference"
+    mimeTypes="[image/*]"
+    name="assetReference"
+    description="Default image source"
+    label="Choose image"/>
+  <src
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/pathpicker"
+    rootPath="/content"
+    name="src"
+    description="Secondary image source"
+    label="Use this if you want a link to image from web"/>
+  <alt
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/textfield"
+    name="alt"
+    label="Alt text"/>
+  <style
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/include">
+    <include
+      jcr:primaryType="nt:unstructured"
+      sling:resourceSuperType="/apps/bulma/components/image/attributes/ratio"
+      name="image/style"
+      label="Image ratio">
+      <is-4by3
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="wcm/dialogs/components/include">
-        <include
-            jcr:primaryType="nt:unstructured"
-            sling:resourceSuperType="/apps/bulma/components/image/attributes/ratio"
-            name="image/style"
-            label="Image ratio">
-            <is-4by3
-                jcr:primaryType="nt:unstructured"
-                selected="true"/>
-            <is-3by5
-                jcr:primaryType="nt:unstructured"
-                sling:hideResource="true"/>
-            <is-9by16
-                jcr:primaryType="nt:unstructured"
-                sling:hideResource="true"/>
-            <is-1by2
-                jcr:primaryType="nt:unstructured"
-                sling:hideResource="true"/>
-            <is-1by3
-                jcr:primaryType="nt:unstructured"
-                sling:hideResource="true"/>
-        </include>
-    </style>
-    <fixedStyle
+        selected="true"/>
+      <is-3by5
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="wcm/dialogs/components/include">
-        <include
-            jcr:primaryType="nt:unstructured"
-            sling:resourceSuperType="/apps/bulma/components/image/attributes/fixed"
-            name="thumbnail/style"
-            label="Fixed size">
-            <is-48x48
-                jcr:primaryType="nt:unstructured"
-                selected="true"/>
-        </include>
-    </fixedStyle>
+        sling:hideResource="true"/>
+      <is-9by16
+        jcr:primaryType="nt:unstructured"
+        sling:hideResource="true"/>
+      <is-1by2
+        jcr:primaryType="nt:unstructured"
+        sling:hideResource="true"/>
+      <is-1by3
+        jcr:primaryType="nt:unstructured"
+        sling:hideResource="true"/>
+    </include>
+  </style>
+  <fixedStyle
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/include">
+    <include
+      jcr:primaryType="nt:unstructured"
+      sling:resourceSuperType="/apps/bulma/components/image/attributes/fixed"
+      name="thumbnail/style"
+      label="Fixed size">
+      <is-48x48
+        jcr:primaryType="nt:unstructured"
+        selected="true"/>
+    </include>
+  </fixedStyle>
 </jcr:root>

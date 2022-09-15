@@ -24,6 +24,8 @@ Build everything with local deployment
 mvn clean install -P autoInstallAllPackage
 ```
 
+
+This module uses Google Style and verifies code against its rules. 
 ## Copyrights
 
 Dynamic Solutions
