@@ -1,18 +1,17 @@
 package pl.ds.bulma.components.models;
 
 
-import lombok.Getter;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Default;
-import org.apache.sling.models.annotations.Model;
+import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
 import javax.inject.Inject;
-
-import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
+import lombok.Getter;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Model;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class TagsListComponent {
-    @Inject
-    @Getter
-    private boolean hasAddons;
+
+  @Inject
+  @Getter
+  private boolean hasAddons;
 }

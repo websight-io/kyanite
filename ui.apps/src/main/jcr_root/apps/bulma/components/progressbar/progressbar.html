@@ -1,5 +1,6 @@
 <sly data-sly-use.model="pl.ds.bulma.components.models.ProgressBarComponent">
-    <progress class="progress ${model.progressBarClasses @ join=' '}" value="${model.isIntermediate ? '' : model.value}" max="100">
-        ${model.value}%
-    </progress>
+  <progress class="progress ${model.progressBarClasses @ join=' '}"
+            value="${model.isIntermediate ? '' : model.value}" max="100">
+    ${model.value}%
+  </progress>
 </sly>

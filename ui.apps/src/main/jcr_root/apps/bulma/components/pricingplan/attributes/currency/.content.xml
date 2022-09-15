@@ -1,27 +1,27 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-          xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight"
-          jcr:primaryType="nt:unstructured"
-          sling:resourceType="wcm/dialogs/components/select"
-          name="currency"
-          label="Currency">
+  xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+  jcr:primaryType="nt:unstructured"
+  sling:resourceType="wcm/dialogs/components/select"
+  name="currency"
+  label="Currency">
   <dollar
-      jcr:primaryType="nt:unstructured"
-      sling:resourceType="wcm/dialogs/components/select/selectitem"
-      label="Dollar"
-      value="$"/>
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/select/selectitem"
+    label="Dollar"
+    value="$"/>
   <euro
-      jcr:primaryType="nt:unstructured"
-      sling:resourceType="wcm/dialogs/components/select/selectitem"
-      label="Euro"
-      value="$"/>
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/select/selectitem"
+    label="Euro"
+    value="$"/>
   <zloty
-      jcr:primaryType="nt:unstructured"
-      sling:resourceType="wcm/dialogs/components/select/selectitem"
-      label="Polish zloty"
-      value="zł"/>
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/select/selectitem"
+    label="Polish zloty"
+    value="zł"/>
   <pound
-      jcr:primaryType="nt:unstructured"
-      sling:resourceType="wcm/dialogs/components/select/selectitem"
-      label="Pound"
-      value="£"/>
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="wcm/dialogs/components/select/selectitem"
+    label="Pound"
+    value="£"/>
 </jcr:root>

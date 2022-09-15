@@ -1,12 +1,12 @@
 <sly data-sly-test.hasChildren="${resource.hasChildren}">
-    <div data-sly-unwrap="${!wcmmode.isEdit}">
-        <sly data-sly-repeat.paragraph="${resource.children}"
-             data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType}"></sly>
-    </div>
+  <div data-sly-unwrap="${!wcmmode.isEdit}">
+    <sly data-sly-repeat.paragraph="${resource.children}"
+         data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType}"></sly>
+  </div>
 </sly>
 <sly data-sly-test="${!hasChildren}">
-    <div style="padding-top: 40px;" data-sly-unwrap="${!wcmmode.isEdit}">
-        <sly data-sly-repeat.paragraph="${resource.children}"
-             data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType}"></sly>
-    </div>
+  <div style="padding-top: 40px;" data-sly-unwrap="${!wcmmode.isEdit}">
+    <sly data-sly-repeat.paragraph="${resource.children}"
+         data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType}"></sly>
+  </div>
 </sly>
