@@ -1,0 +1,16 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.ModalComponent">
+    <div id="${model.id}" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box" data-sly-unwrap="${!model.contentFrame}">
+                <!-- Your content -->
+                <sly data-sly-test="${resource.hasChildren}">
+                    <sly data-sly-list="${resource.children}">
+                        <sly data-sly-resource="${item}"></sly>
+                    </sly>
+                </sly>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+</sly>
