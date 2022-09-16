@@ -1,0 +1,9 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.SectionComponent">
+    <section class="section ${model.size}" id="${model.id}">
+        <sly data-sly-test="${resource.hasChildren}">
+            <sly data-sly-list="${resource.children}">
+                <sly data-sly-resource="${item}"></sly>
+            </sly>
+        </sly>
+    </section>
+</sly>
