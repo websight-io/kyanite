@@ -78,15 +78,12 @@
       "label": "Footer",
       "urls": {
         "name": "urls",
-        "label": [
-          "Footer URLs",
-          {
-            "jcr:primaryType": "nt:unstructured",
-            "sling:resourceType": "wcm/dialogs/components/textfield",
-            "name": "label",
-            "label": "Label"
-          }
-        ],
+        "label": "Footer URLs",
+        "labelText": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Label"
+        },
         "sling:resourceType": "wcm/dialogs/components/multifield",
         "address": {
           "sling:resourceType": "wcm/dialogs/components/pathpicker",

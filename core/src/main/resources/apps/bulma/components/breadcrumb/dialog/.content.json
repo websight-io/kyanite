@@ -26,15 +26,12 @@
       "elements": {
         "sling:resourceType": "wcm/dialogs/components/multifield",
         "name": "elements",
-        "label": [
-          "Elements",
-          {
-            "jcr:primaryType": "nt:unstructured",
-            "sling:resourceType": "wcm/dialogs/components/textfield",
-            "name": "label",
-            "label": "Label"
-          }
-        ],
+        "label": "Elements",
+        "labelText": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Label"
+        },
         "url": {
           "sling:resourceType": "wcm/dialogs/components/pathpicker",
           "rootPath": "/content",
