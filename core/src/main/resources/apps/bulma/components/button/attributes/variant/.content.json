@@ -1,0 +1,18 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/include",
+  "name": "variant",
+  "label": "Variant",
+  "include": {
+    "sling:resourceSuperType": "/apps/bulma/components/common/extendedvariant",
+    "text": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Text",
+      "value": "is-text"
+    },
+    "ghost": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Ghost",
+      "value": "is-ghost"
+    }
+  }
+}

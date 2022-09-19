@@ -1,0 +1,99 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "header": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "header",
+        "label": "Card header"
+      },
+      "title": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "title",
+        "label": "Title"
+      },
+      "subtitle": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "subtitle",
+        "label": "Subtitle"
+      },
+      "content": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "content",
+        "label": "Content"
+      }
+    },
+    "thumbnailTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Thumbnail",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/apps/bulma/components/card/common/type"
+      },
+      "thumbnail": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "namespace": "thumbnail",
+        "include": {
+          "sling:resourceSuperType": "/apps/bulma/components/card/common/image",
+          "style": {"sling:hideResource": true}
+        },
+        "ws:display": {"condition": {
+          "sourceName": "type",
+          "values": "image"
+        }}
+      },
+      "iconContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "icon": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/apps/bulma/components/common/icon"
+        },
+        "style": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/apps/bulma/components/common/textvariant"
+        },
+        "ws:display": {"condition": {
+          "sourceName": "type",
+          "values": "icon"
+        }}
+      }
+    },
+    "imageTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Image",
+      "mainImage": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "namespace": "image",
+        "include": {
+          "sling:resourceSuperType": "/apps/bulma/components/card/common/image",
+          "fixedStyle": {"sling:hideResource": true}
+        }
+      }
+    },
+    "footer": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Footer",
+      "urls": {
+        "name": "urls",
+        "label": [
+          "Footer URLs",
+          {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "name": "label",
+            "label": "Label"
+          }
+        ],
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "address": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "name": "address",
+          "label": "URL"
+        }
+      }
+    }
+  }
+}

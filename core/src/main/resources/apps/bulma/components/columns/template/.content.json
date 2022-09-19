@@ -1,0 +1,11 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "column1": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/columns/column"
+  },
+  "column2": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/columns/column"
+  }
+}

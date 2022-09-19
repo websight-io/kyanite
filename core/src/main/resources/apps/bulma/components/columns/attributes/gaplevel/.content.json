@@ -1,0 +1,49 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "empty": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Gapless",
+    "value": "is-0"
+  },
+  "one": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "0.25rem",
+    "value": "is-1"
+  },
+  "two": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "0.5rem",
+    "value": "is-2"
+  },
+  "three": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Default (0.75rem)",
+    "selected": true,
+    "value": "is-3"
+  },
+  "four": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "1rem",
+    "value": "is-4"
+  },
+  "five": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "1.25rem",
+    "value": "is-5"
+  },
+  "six": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "1.5rem",
+    "value": "is-6"
+  },
+  "seven": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "1.75rem",
+    "value": "is-7"
+  },
+  "eight": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "2rem",
+    "value": "is-8"
+  }
+}

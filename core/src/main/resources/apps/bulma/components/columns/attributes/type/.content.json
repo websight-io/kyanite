@@ -1,0 +1,13 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/radio",
+  "evennumber": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "Even number",
+    "value": "evenNumber"
+  },
+  "fraction": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "Fraction of a full row",
+    "value": "fraction"
+  }
+}

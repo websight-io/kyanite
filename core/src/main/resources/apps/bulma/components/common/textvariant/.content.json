@@ -1,0 +1,40 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "textVariant",
+  "label": "Text variant",
+  "primary": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Primary",
+    "value": "has-text-primary"
+  },
+  "link": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Link",
+    "value": "has-text-link"
+  },
+  "info": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Info",
+    "value": "has-text-info"
+  },
+  "success": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Success",
+    "value": "has-text-success"
+  },
+  "warning": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Warning",
+    "value": "has-text-warning"
+  },
+  "grey": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Warning",
+    "value": "has-text-grey"
+  },
+  "danger": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Danger",
+    "value": "is-danger"
+  }
+}

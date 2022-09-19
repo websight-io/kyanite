@@ -1,0 +1,20 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "alignment": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/apps/bulma/components/common/alignment"
+      },
+      "hasAddons": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "hasAddons",
+        "checkedByDefault": false,
+        "label": "Addons (join together)"
+      }
+    }
+  }
+}

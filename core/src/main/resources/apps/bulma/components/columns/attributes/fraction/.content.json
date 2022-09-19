@@ -1,0 +1,59 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "defaultValue": "empty",
+  "empty": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Not specified",
+    "value": "empty"
+  },
+  "one-fifth": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "1/5 of the row",
+    "value": "one_fifth"
+  },
+  "one-quarter": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "1/4 of the row",
+    "value": "one_quarter"
+  },
+  "one-third": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "1/3 of the row",
+    "value": "one_third"
+  },
+  "two-fifths": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "2/5 of the row",
+    "value": "two_fifths"
+  },
+  "half": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Half of the row",
+    "value": "half"
+  },
+  "three-fifths": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "3/5 of the row",
+    "value": "three_fifths"
+  },
+  "two-thirds": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "2/3 of the row",
+    "value": "two_thirds"
+  },
+  "three-quarters": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "3/4 of the row",
+    "value": "three_quarters"
+  },
+  "four-fifths": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "4/5 of the row",
+    "value": "four_fifths"
+  },
+  "full": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Full row",
+    "value": "full"
+  }
+}

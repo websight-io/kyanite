@@ -1,0 +1,81 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": [
+        "General",
+        {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Label"
+        }
+      ],
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/apps/bulma/components/button/attributes/type"
+      },
+      "container": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL"
+        },
+        "openInNewTab": {
+          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "name": "openInNewTab",
+          "label": "Open link in a new tab"
+        },
+        "ws:display": {"condition": {
+          "sourceName": "type",
+          "values": "a"
+        }}
+      },
+      "size": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/apps/bulma/components/common/size"
+      },
+      "variant": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/apps/bulma/components/button/attributes/variant"
+      }
+    },
+    "modifiers": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Modifiers",
+      "isLight": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isLight",
+        "label": "Light"
+      },
+      "isOutlined": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isOutlined",
+        "label": "Outlined"
+      },
+      "isRounded": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isRounded",
+        "label": "Rounded"
+      },
+      "isFullWidth": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isFullWidth",
+        "label": "Full width"
+      },
+      "isDisabled": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isDisabled",
+        "label": "Disabled",
+        "ws:display": {"condition": {
+          "sourceName": "type",
+          "values": "button"
+        }}
+      }
+    }
+  }
+}
