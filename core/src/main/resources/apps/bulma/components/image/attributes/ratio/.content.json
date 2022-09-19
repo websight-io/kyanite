@@ -1,0 +1,80 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "style",
+  "label": "Ratio of image",
+  "square": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Square (or 1 by 1)",
+    "value": "is-square"
+  },
+  "is-5by4": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "5 by 4",
+    "value": "is-5by4"
+  },
+  "is-4by3": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "4 by 3",
+    "value": "is-4by3"
+  },
+  "is-3by2": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "3 by 2",
+    "value": "is-3by2"
+  },
+  "is-5by3": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "5 by 3",
+    "value": "is-5by3"
+  },
+  "is-16by9": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "16 by 9",
+    "value": "is-16by9"
+  },
+  "is-2by1": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "2 by 1",
+    "value": "is-2by1"
+  },
+  "is-3by1": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "3 by 1",
+    "value": "is-3by1"
+  },
+  "is-4by5": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "4 by 5",
+    "value": "is-4by5"
+  },
+  "is-3by4": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "3 by 4",
+    "value": "is-3by4"
+  },
+  "is-2by3": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "2 by 3",
+    "value": "is-2by3"
+  },
+  "is-3by5": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "3 by 5",
+    "value": "is-3by5"
+  },
+  "is-9by16": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "9 by 16",
+    "value": "is-9by16"
+  },
+  "is-1by2": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "1 by 2",
+    "value": "is-1by2"
+  },
+  "is-1by3": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "1 by 3",
+    "value": "is-1by3"
+  }
+}

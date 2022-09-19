@@ -1,0 +1,16 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/radio",
+  "name": "type",
+  "label": "Type",
+  "image": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "Image",
+    "value": "image",
+    "selected": true
+  },
+  "icon": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "Icon",
+    "value": "icon"
+  }
+}

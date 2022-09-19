@@ -108,7 +108,7 @@ module.exports = {
                     copy: [
                         {
                             source: path.join(__dirname, 'dist/main'),
-                            destination: path.join(__dirname, '../ui.apps/src/main/jcr_root/apps/bulma/web_root')
+                            destination: path.join(__dirname, '../core/src/main/resources/apps/bulma/web_root')
                         }
                     ]
                 }

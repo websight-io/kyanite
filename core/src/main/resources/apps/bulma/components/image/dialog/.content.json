@@ -1,0 +1,65 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "assetReference": {
+        "sling:resourceType": "wcm/dialogs/components/assetreference",
+        "mimeTypes": ["image/*"],
+        "name": "assetReference",
+        "description": "Default image source",
+        "label": "Choose image"
+      },
+      "src": {
+        "sling:resourceType": "wcm/dialogs/components/pathpicker",
+        "rootPath": "/content",
+        "name": "src",
+        "description": "Secondary image source",
+        "label": "Use this if you want a link to image from web"
+      },
+      "alt": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "alt",
+        "label": "Alt text"
+      }
+    },
+    "styleTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Style of image",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/apps/bulma/components/image/attributes/type"
+      },
+      "ratio": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "style": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/apps/bulma/components/image/attributes/ratio"
+        },
+        "ws:display": {"condition": {
+          "sourceName": "type",
+          "values": "ratio"
+        }}
+      },
+      "fixed": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "style": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/apps/bulma/components/image/attributes/fixed"
+        },
+        "ws:display": {"condition": {
+          "sourceName": "type",
+          "values": "fixed"
+        }}
+      },
+      "isRounded": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isRounded",
+        "checkedByDefault": false,
+        "label": "Rounded"
+      }
+    }
+  }
+}

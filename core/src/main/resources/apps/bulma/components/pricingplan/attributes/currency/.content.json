@@ -1,0 +1,25 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "currency",
+  "label": "Currency",
+  "dollar": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Dollar",
+    "value": "$"
+  },
+  "euro": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Euro",
+    "value": "$"
+  },
+  "zloty": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Polish zloty",
+    "value": "zł"
+  },
+  "pound": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Pound",
+    "value": "£"
+  }
+}
