@@ -12,7 +12,6 @@
   </parent>
 
   <artifactId>bulma.core</artifactId>
-  <version>${project.parent.version}</version>
   <name>Bulma Core</name>
 
   <build>

@@ -9,11 +9,6 @@ Build
 mvn clean install
 ```
 
-Build content packages with local deployment
-```
-mvn clean install -P autoInstallPackage
-```
-
 Build bundles with local deployment
 ```
 mvn clean install -P autoInstallBundle
