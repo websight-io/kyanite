@@ -1,0 +1,52 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "type",
+        "label": "Type",
+        "required": true,
+        "title": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Title",
+          "value": "title",
+          "selected": true
+        },
+        "subtitle": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Subtitle",
+          "value": "subtitle"
+        }
+      },
+      "text": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "text",
+        "label": "Text"
+      },
+      "size": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/apps/bulma/components/common/issize"
+      },
+      "element": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/apps/bulma/components/common/headinglevel",
+          "name": "element"
+        }
+      },
+      "isSpaced": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isSpaced",
+        "label": "Normal spacing between title and subtitle",
+        "ws:display": {"condition": {
+          "sourceName": "type",
+          "values": "title"
+        }}
+      }
+    }
+  }
+}

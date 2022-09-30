@@ -1,0 +1,30 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "separator",
+  "label": "Separator",
+  "slash": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Forward slash",
+    "value": ""
+  },
+  "arrow": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Arrow",
+    "value": "has-arrow-separator"
+  },
+  "bullet": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Bullet",
+    "value": "has-bullet-separator"
+  },
+  "dot": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Dot",
+    "value": "has-dot-separator"
+  },
+  "succeeds": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Succeeds",
+    "value": "has-succeeds-separator"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "element",
+        "description": "Type of the desired box container",
+        "label": "Box container type",
+        "div": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Content Division element",
+          "value": "div"
+        },
+        "form": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Form element",
+          "value": "form"
+        },
+        "section": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Section element",
+          "value": "section"
+        },
+        "main": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Main content area",
+          "value": "main"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "type",
+  "label": "Type",
+  "button": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Button",
+    "value": "button"
+  },
+  "anchor": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Anchor",
+    "value": "a"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/radio",
+  "name": "alignment",
+  "label": "Alignment",
+  "left": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "Left",
+    "value": "is-left"
+  },
+  "centered": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "Center",
+    "value": "is-centered"
+  },
+  "right": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "Right",
+    "value": "is-right"
+  }
+}
