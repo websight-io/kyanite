@@ -1,0 +1,6 @@
+{
+  "isContainer": true,
+  "group": "Bulma.io",
+  "sling:resourceType": "ws:Component",
+  "title": "Modal"
+}

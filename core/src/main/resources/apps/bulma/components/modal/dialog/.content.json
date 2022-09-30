@@ -1,0 +1,16 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "showButton": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "contentFrame",
+        "label": "Frame the content",
+        "checkedByDefault": true
+      }
+    }
+  }
+}

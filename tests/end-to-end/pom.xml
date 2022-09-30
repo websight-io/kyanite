@@ -52,12 +52,6 @@
     </dependency>
     <dependency>
       <groupId>pl.ds.bulma</groupId>
-      <artifactId>bulma.ui.apps</artifactId>
-      <version>${bulma.version}</version>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>pl.ds.bulma</groupId>
       <artifactId>bulma.tests.content</artifactId>
       <version>${bulma.version}</version>
       <type>pom</type>
