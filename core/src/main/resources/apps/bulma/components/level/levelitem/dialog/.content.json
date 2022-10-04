@@ -1,0 +1,39 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "levelType": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "levelType",
+        "label": "Should elements be centered or two boxes on each side",
+        "required": true,
+        "description": "When switching value child elements will be deleted",
+        "centered": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Centered",
+          "value": "centered"
+        },
+        "positioned": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Positioned on sides",
+          "value": "positioned",
+          "selected": true
+        }
+      },
+      "isVertical": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isVertical",
+        "checkedByDefault": true,
+        "label": "The level is vertical on mobile",
+        "description": "If you want the level to be horizontal on mobile as well uncheck that box.",
+        "ws:display": {"condition": {
+          "sourceName": "levelType",
+          "values": "centered"
+        }}
+      }
+    }
+  }
+}

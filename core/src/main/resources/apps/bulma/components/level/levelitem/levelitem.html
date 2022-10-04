@@ -1,0 +1,9 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.level.PositionedLevelComponent">
+    <sly data-sly-test="${resource.hasChildren}">
+      <div class="${model.positionedStyle}">
+        <sly
+            data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+      </div>
+
+    </sly>>
+</sly>

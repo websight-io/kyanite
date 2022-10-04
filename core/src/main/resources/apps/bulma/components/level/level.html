@@ -1,0 +1,9 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.BoxComponent">
+  <div data-sly-unwrap="${!wcmmode.isEdit}" style="padding-bottom: 30px">
+    <!--data-sly-element does not allow to set form element so it is used as default in htl-->
+    <form data-sly-element=${model.element} class="box">
+      <sly data-sly-repeat.paragraph="${resource.children}"
+           data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType}"></sly>
+    </form>
+  </div>
+</sly>

@@ -1,0 +1,8 @@
+{
+  "isContainer": true,
+  "allowedComponents": "Bulma.io",
+  "group": "Bulma.io",
+  "sling:resourceType": "ws:Component",
+  "title": "Positioned level container",
+  "hidden": true
+}
