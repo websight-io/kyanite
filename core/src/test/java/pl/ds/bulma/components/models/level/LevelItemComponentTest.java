@@ -2,8 +2,6 @@ package pl.ds.bulma.components.models.level;
 
 import static java.util.Objects.requireNonNull;
 import static org.assertj.core.api.Assertions.assertThat;
-import static pl.ds.bulma.components.models.level.LevelComponent.LEVEL_ITEM_COMPONENT_RESOURCE_TYPE;
-import static pl.ds.bulma.components.models.level.LevelComponent.POSITIONED_LEVEL_COMPONENT_RESOURCE_TYPE;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
@@ -16,35 +14,37 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith({SlingContextExtension.class, MockitoExtension.class})
-class PositionedLevelComponentTest {
+class LevelItemComponentTest {
 
 
-  private static final String PATH = "/content/positionedlevel";
+  private static final String PATH = "/content/level";
   private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
 
   @BeforeEach
   public void init() {
-    context.addModelsForClasses(PositionedLevelComponent.class);
+    context.addModelsForClasses(LevelItemComponent.class, LevelComponent.class, PositionedLevelComponent.class);
     context.load().json(requireNonNull(
-        Thread.currentThread().getContextClassLoader().getResourceAsStream("positionedlevel.json")), PATH);
+        Thread.currentThread().getContextClassLoader().getResourceAsStream("levelitem.json")), PATH);
   }
 
   @Test
-  void defaultLevel() {
-    PositionedLevelComponent model = requireNonNull(
-        getResource("/default")).adaptTo(PositionedLevelComponent.class);
+  void levelItemOnLevel() {
+    LevelItemComponent model = requireNonNull(
+        getResource("/onLevel/firstItem")).adaptTo(LevelItemComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getPositionedStyle()).isNull();
+    assertThat(model.getLevelItemStyle()).isEqualTo("has-text-centered");
+    assertThat(model.getElementType()).isEqualTo("div");
   }
 
   @Test
-  void positionedLevel() {
-    PositionedLevelComponent model = requireNonNull(
-        getResource("/positioned")).adaptTo(PositionedLevelComponent.class);
+  void levelItemOnPositionedLevel() {
+    LevelItemComponent model = requireNonNull(
+        getResource("/onPositionedLevel/firstItem")).adaptTo(LevelItemComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getPositionedStyle()).isEqualTo("level-left");
+    assertThat(model.getLevelItemStyle()).isEmpty();
+    assertThat(model.getElementType()).isEqualTo("p");
   }
 
   @Nullable

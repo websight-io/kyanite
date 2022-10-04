@@ -7,14 +7,9 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class LevelComponent {
+public class PositionedLevelComponent {
 
   @Inject
   @Getter
-  private boolean isLeft;
-
-  @Inject
-  @Getter
-  private boolean isRight;
-
+  private String positionedStyle;
 }

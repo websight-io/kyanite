@@ -1,9 +1,10 @@
-<sly data-sly-use.model="pl.ds.bulma.components.models.level.PositionedLevelComponent">
+<sly data-sly-use.model="pl.ds.bulma.components.models.level.LevelItemComponent">
+  <div data-sly-unwrap="${!wcmmode.isEdit}" style="width: 200px; height: 50px">
     <sly data-sly-test="${resource.hasChildren}">
-      <div class="${model.positionedStyle}">
+      <div data-sly-element=${model.elementType} class="level-item ${model.levelItemStyle}">
         <sly
             data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
       </div>
-
-    </sly>>
+    </sly>
+  </div>
 </sly>

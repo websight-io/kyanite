@@ -1,7 +1,7 @@
 {
   "isContainer": true,
-  "allowedComponents": "Bulma.io",
-  "group": "Bulma.io",
+  "allowedComponents": ["/apps/bulma/components/level/levelitem"],
   "sling:resourceType": "ws:Component",
-  "title": "Level container"
+  "title": "Positioned level container",
+  "group": ".hidden"
 }
