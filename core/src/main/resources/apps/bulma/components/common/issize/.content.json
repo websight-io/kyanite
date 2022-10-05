@@ -1,0 +1,35 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "size",
+  "label": "Size",
+  "is1": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Is 1",
+    "value": "is-1"
+  },
+  "is2": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Is 2",
+    "value": "is-2"
+  },
+  "is3": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Is 3",
+    "value": "is-3"
+  },
+  "is4": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Is 4",
+    "value": "is-4"
+  },
+  "is5": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Is 5",
+    "value": "is-5"
+  },
+  "is6": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Is 6",
+    "value": "is-6"
+  }
+}

@@ -6,7 +6,6 @@
     }
   ],
   "content-packages:ARTIFACTS|true": [
-    "pl.ds.bulma:bulma.ui.apps:zip:${bulma.version}",
     "pl.ds.bulma:bulma.tests.content:zip:${bulma.version}"
   ]
 }

@@ -1,0 +1,5 @@
+{
+  "group": "Bulma.io",
+  "sling:resourceType": "ws:Component",
+  "title": "Pricing Plan"
+}

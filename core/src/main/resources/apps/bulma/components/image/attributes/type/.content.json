@@ -1,0 +1,15 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/radio",
+  "name": "type",
+  "label": "Type",
+  "fixed": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "Fixed size",
+    "value": "fixed"
+  },
+  "ratio": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "Responsive images with ratios ",
+    "value": "ratio"
+  }
+}

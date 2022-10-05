@@ -1,0 +1,69 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "defaultValue": "empty",
+  "empty": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Not specified",
+    "value": "empty"
+  },
+  "one": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "1 Column",
+    "value": "one"
+  },
+  "two": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "2 Columns",
+    "value": "two"
+  },
+  "three": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "3 Columns",
+    "value": "three"
+  },
+  "four": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "4 Columns",
+    "value": "four"
+  },
+  "five": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "5 Columns",
+    "value": "five"
+  },
+  "six": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "6 Columns",
+    "value": "six"
+  },
+  "seven": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "7 Columns",
+    "value": "seven"
+  },
+  "eight": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "8 Columns",
+    "value": "eight"
+  },
+  "nine": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "9 Columns",
+    "value": "nine"
+  },
+  "ten": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "10 Columns",
+    "value": "ten"
+  },
+  "eleven": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "11 Columns",
+    "value": "eleven"
+  },
+  "twelve": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "12 Columns",
+    "value": "twelve"
+  }
+}

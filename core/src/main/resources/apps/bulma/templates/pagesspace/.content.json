@@ -1,0 +1,5 @@
+{
+  "allowedChildren": ["/apps/bulma/templates/basicpage"],
+  "sling:resourceType": "ws:PagesTemplate",
+  "title": "Bulma pages"
+}
