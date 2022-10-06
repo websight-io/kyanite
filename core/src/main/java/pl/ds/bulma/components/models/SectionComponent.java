@@ -12,17 +12,12 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class SectionComponent {
 
-  public static final String SECTION_ID_PREFIX = "section_";
-
   @Inject
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String size;
 
-  @SlingObject
-  private Resource resource;
-
-  public String getId() {
-    return SECTION_ID_PREFIX + Math.abs(resource.getPath().hashCode() - 1);
-  }
+  @Inject
+  @Getter
+  private String id;
 }
