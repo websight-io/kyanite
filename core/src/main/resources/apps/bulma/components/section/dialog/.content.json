@@ -1,0 +1,20 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "id": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "id",
+        "label": "Section id",
+        "required": true
+      },
+      "size": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/apps/bulma/components/hero/attributes/size"
+      }
+    }
+  }
+}
