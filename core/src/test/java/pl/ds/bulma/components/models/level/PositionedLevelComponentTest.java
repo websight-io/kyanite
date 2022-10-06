@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-@ExtendWith({SlingContextExtension.class, MockitoExtension.class})
+@ExtendWith(SlingContextExtension.class)
 class PositionedLevelComponentTest {
 
 
@@ -35,7 +35,7 @@ class PositionedLevelComponentTest {
         getResource("/default")).adaptTo(PositionedLevelComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getPositionedStyle()).isNull();
+    assertThat(model.getPositionedStyle()).isEqualTo("level-left");
   }
 
   @Test

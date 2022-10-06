@@ -3,5 +3,5 @@
   "allowedComponents": ["/apps/bulma/components/level/levelitem"],
   "sling:resourceType": "ws:Component",
   "title": "Positioned level container",
-  "group": ".hidden"
+  "group": "Bulma.io sub-components"
 }

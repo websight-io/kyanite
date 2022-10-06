@@ -13,11 +13,10 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bulma/components/content"
                 text="&lt;p>&lt;br>&lt;br>&lt;br>&lt;br>&lt;br>&lt;br>&lt;br>&lt;/p>"/>
-            <level
+            <level_2
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="bulma/components/level"
-                levelType="positioned">
-                <positionedlevel_level-left
+                sling:resourceType="bulma/components/level">
+                <positionedlevel
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="bulma/components/level/positionedlevel"
                     positionedStyle="level-left">
@@ -47,15 +46,14 @@
                             type="button"
                             variant="is-light"/>
                     </levelitem_1>
-                </positionedlevel_level-left>
-                <positionedlevel_level-right
+                </positionedlevel>
+                <positionedlevel_1
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="bulma/components/level/positionedlevel"
                     positionedStyle="level-right">
                     <levelitem_3
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="bulma/components/level/levelitem"
-                        elementType="div">
+                        sling:resourceType="bulma/components/level/levelitem">
                         <content
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="bulma/components/content"
@@ -104,21 +102,15 @@
                             type="a"
                             variant="is-success"/>
                     </levelitem_4>
-                </positionedlevel_level-right>
-            </level>
-            <container
+                </positionedlevel_1>
+            </level_2>
+            <content_1
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="bulma/components/container">
-                <content
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="bulma/components/content"
-                    text="&lt;p>&lt;br>&lt;br>&lt;br>&lt;br>&lt;br>&lt;br>&lt;br>&lt;/p>"/>
-            </container>
-            <level_1
+                sling:resourceType="bulma/components/content"
+                text="&lt;p>&lt;br>&lt;br>&lt;br>&lt;br>&lt;br>&lt;br>&lt;br>&lt;/p>"/>
+            <level_3
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="bulma/components/level"
-                isVertical="true"
-                levelType="centered">
+                sling:resourceType="bulma/components/level">
                 <levelitem
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="bulma/components/level/levelitem">
@@ -175,16 +167,15 @@
                         text="789"
                         type="title"/>
                 </levelitem_2>
-            </level_1>
-            <content_1
+            </level_3>
+            <content_1_1
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bulma/components/content"
                 text="&lt;p>&lt;br>&lt;br>&lt;br>&lt;br>&lt;br>&lt;br>&lt;br>&lt;/p>"/>
-            <level_1_1
+            <level_3_1
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bulma/components/level"
-                isVertical="false"
-                levelType="centered">
+                isVertical="false">
                 <levelitem
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="bulma/components/level/levelitem">
@@ -229,7 +220,7 @@
                         text="789"
                         type="title"/>
                 </levelitem_2>
-            </level_1_1>
+            </level_3_1>
         </pagecontainer>
     </jcr:content>
 </jcr:root>

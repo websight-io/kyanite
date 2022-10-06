@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-@ExtendWith({SlingContextExtension.class, MockitoExtension.class})
+@ExtendWith(SlingContextExtension.class)
 class LevelComponentTest {
 
 
@@ -29,6 +29,7 @@ class LevelComponentTest {
         Thread.currentThread().getContextClassLoader().getResourceAsStream("level.json")), PATH);
   }
 
+
   @Test
   void defaultLevel() {
     LevelComponent model = requireNonNull(
@@ -36,11 +37,6 @@ class LevelComponentTest {
 
     assertThat(model).isNotNull();
     assertThat(model.isVertical()).isTrue();
-    assertThat(model.getLevelType()).isEqualTo("positioned");
-    getResource("/default").getChildren().forEach(child -> {
-      assertThat(child.isResourceType(POSITIONED_LEVEL_COMPONENT_RESOURCE_TYPE)).isTrue();
-      System.out.println(child.getPath());
-    });
   }
 
   @Test
@@ -50,36 +46,8 @@ class LevelComponentTest {
 
     assertThat(model).isNotNull();
     assertThat(model.isVertical()).isFalse();
-    assertThat(model.getLevelType()).isEqualTo("centered");
     getResource("/centered").getChildren().forEach(child -> {
       assertThat(child.isResourceType(LEVEL_ITEM_COMPONENT_RESOURCE_TYPE)).isTrue();
-      System.out.println(child.getPath());
-    });
-  }
-
-  @Test
-  void changeToCenteredLevel() {
-    LevelComponent model = requireNonNull(
-        getResource("/changeToCentered")).adaptTo(LevelComponent.class);
-
-    assertThat(model).isNotNull();
-    assertThat(model.isVertical()).isFalse();
-    assertThat(model.getLevelType()).isEqualTo("centered");
-    //PositionedElements should be deleted
-    assertThat(getResource("/changeToCentered").hasChildren()).isFalse();
-  }
-
-  @Test
-  void positionedLevel() {
-    LevelComponent model = requireNonNull(
-        getResource("/positioned")).adaptTo(LevelComponent.class);
-
-    assertThat(model).isNotNull();
-    assertThat(model.isVertical()).isTrue();
-    assertThat(model.getLevelType()).isEqualTo("positioned");
-    //should only have positioned elements
-    getResource("/positioned").getChildren().forEach(child -> {
-      assertThat(child.isResourceType(POSITIONED_LEVEL_COMPONENT_RESOURCE_TYPE)).isTrue();
     });
   }
 
@@ -87,5 +55,6 @@ class LevelComponentTest {
   private Resource getResource(String variant) {
     return context.resourceResolver().getResource(PATH + variant);
   }
+
 
 }

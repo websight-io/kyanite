@@ -17,10 +17,10 @@
 import { selectors, testIds } from '../support/consts';
 
 const paths = {
-  hero: 'ComponentOverlay_pagecontainer/level'
+  level: 'ComponentOverlay_pagecontainer/level_3'
 };
 
-describe('Hero component', function () {
+describe('Level component', function () {
   beforeEach(() => {
     cy.login();
   });
@@ -43,38 +43,24 @@ describe('Hero component', function () {
       '/apps/websight/index.html/content/bulma-tests/pages/level::editor'
     );
 
-    cy.getByTestId(paths.hero)
-      .click()
-      .find(selectors.overlayName)
-      .should('have.text', 'Level container');
 
     cy.percySnapshotPageEditor('Level editor');
 
-    cy.getByTestId(testIds.editIcon).click();
-
-    cy.percySnapshotDialog('Hero dialog');
-
-    cy.getByTestId(testIds.dialogSubmitButton).click();
-
-    cy.wait('@saveProperties');
-
     cy.request(
-      '/content/bulma-tests/pages/level/jcr:content/pagecontainer/level.json'
+      '/content/bulma-tests/pages/level/jcr:content/pagecontainer/level_2.json'
     )
       .its('body')
       .should('deep.eq', {
-        levelType: 'positioned',
         'sling:resourceType': 'bulma/components/level',
         'jcr:primaryType': 'nt:unstructured'
       });
 
     cy.request(
-        '/content/bulma-tests/pages/level/jcr:content/pagecontainer/level_1_1.json'
+        '/content/bulma-tests/pages/level/jcr:content/pagecontainer/level_3_1.json'
     )
     .its('body')
     .should('deep.eq', {
       isVertical: 'false',
-      levelType: 'centered',
       'jcr:primaryType': 'nt:unstructured',
       'sling:resourceType': 'bulma/components/level',
     });
