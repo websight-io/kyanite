@@ -52,12 +52,6 @@
     </dependency>
     <dependency>
       <groupId>pl.ds.bulma</groupId>
-      <artifactId>bulma.ui.apps</artifactId>
-      <version>${bulma.version}</version>
-      <type>pom</type>
-    </dependency>
-    <dependency>
-      <groupId>pl.ds.bulma</groupId>
       <artifactId>bulma.tests.content</artifactId>
       <version>${bulma.version}</version>
       <type>pom</type>
@@ -339,28 +333,6 @@
         <configuration>
           <nodeVersion>${node.version}</nodeVersion>
         </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.rat</groupId>
-        <artifactId>apache-rat-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>validate</phase>
-            <goals>
-              <goal>check</goal>
-            </goals>
-            <configuration>
-              <excludes>
-                <exclude>*.md</exclude>
-                <exclude>/.node_version</exclude>
-                <exclude>/node/**</exclude>
-                <exclude>/node_modules/**</exclude>
-                <exclude>/target/**</exclude>
-              </excludes>
-            </configuration>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
   </build>
