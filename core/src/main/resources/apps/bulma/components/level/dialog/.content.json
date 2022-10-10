@@ -1,0 +1,17 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "isVertical": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isVertical",
+        "checkedByDefault": true,
+        "label": "The level is vertical on mobile",
+        "description": "If you want the level to be horizontal on mobile as well uncheck that box."
+      }
+    }
+  }
+}

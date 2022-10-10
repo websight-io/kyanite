@@ -1,0 +1,29 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "positionedStyle": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "positionedStyle",
+        "label": "Create container positioning on side",
+        "required": true,
+        "description": "Only one of each type is advised",
+        "centered": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Left",
+          "value": "level-left",
+          "selected": true
+        },
+        "positioned": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Right",
+          "value": "level-right",
+          "selected": true
+        }
+      }
+    }
+  }
+}

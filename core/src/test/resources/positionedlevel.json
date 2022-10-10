@@ -1,0 +1,11 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/level/positionedlevel"
+  },
+  "positioned": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/positionedlevel",
+    "positionedStyle": "level-left"
+  }
+}
