@@ -25,7 +25,7 @@ class BreadcrumbComponentTest {
   }
 
   @Test
-  void defaultBreadcrumbComponentModelTest() {
+  void defaultPricingPlanComponentModelTest() {
     BreadcrumbComponent model = context.resourceResolver().getResource(PATH + "/default")
         .adaptTo(BreadcrumbComponent.class);
 
@@ -38,7 +38,7 @@ class BreadcrumbComponentTest {
   }
 
   @Test
-  void breadcrumbComponentModelTest() {
+  void pricingPlanComponentModelTest() {
     BreadcrumbComponent model = context.resourceResolver().getResource(PATH + "/complex")
         .adaptTo(BreadcrumbComponent.class);
 
