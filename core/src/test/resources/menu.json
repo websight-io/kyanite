@@ -1,0 +1,73 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/menu"
+  },
+  "complex": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/menu",
+    "menuSections": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "label": "Label1",
+        "menuListItemComponentList": {
+          "jcr:primaryType": "nt:unstructured",
+          "1": {
+            "jcr:primaryType": "nt:unstructured",
+            "url": "www.com",
+            "text": "Text 1"
+          },
+          "2": {
+            "jcr:primaryType": "nt:unstructured",
+            "url": "www.com2",
+            "text": "Text 2",
+            "secondLevelItems": {
+              "jcr:primaryType": "nt:unstructured",
+              "1": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "www.second",
+                "text": "Second 1"
+              },
+              "2": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "www.second2",
+                "text": "Second 2"
+              }
+            }
+          }
+        }
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "label": "Label2",
+        "menuListItemComponentList": {
+          "jcr:primaryType": "nt:unstructured",
+          "1": {
+            "jcr:primaryType": "nt:unstructured",
+            "url": "www.com",
+            "text": "Text 22"
+          },
+          "2": {
+            "jcr:primaryType": "nt:unstructured",
+            "url": "www.com2",
+            "text": "Text 222",
+            "secondLevelItems": {
+              "jcr:primaryType": "nt:unstructured",
+              "1": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "www.second",
+                "text": "Second 123"
+              },
+              "2": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "www.second2",
+                "text": "Second 234"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

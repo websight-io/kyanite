@@ -1,0 +1,50 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "menuSections": {
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "name": "menuSections",
+        "label": "Menu Sections",
+        "menuLabel": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Section label"
+        },
+        "menuListItemComponentList": {
+          "sling:resourceType": "wcm/dialogs/components/multifield",
+          "name": "menuListItemComponentList",
+          "label": "Elements in the section of menu",
+          "text": {
+            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "name": "text",
+            "label": "Item text"
+          },
+          "url": {
+            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "name": "url",
+            "label": "URL connected to item"
+          },
+          "secondLevelItems": {
+            "sling:resourceType": "wcm/dialogs/components/multifield",
+            "name": "secondLevelItems",
+            "label": "Elements in the subsection of menu",
+            "text": {
+              "sling:resourceType": "wcm/dialogs/components/textfield",
+              "name": "text",
+              "label": "Subitem text"
+            },
+            "url": {
+              "sling:resourceType": "wcm/dialogs/components/textfield",
+              "name": "url",
+              "label": "URL connected to item"
+            }
+          }
+        }
+      }
+    }
+  }
+}
