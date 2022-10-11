@@ -24,7 +24,8 @@
             "label": "Item text"
           },
           "url": {
-            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "sling:resourceType": "wcm/dialogs/components/pathpicker",
+            "rootPath": "/content",
             "name": "url",
             "label": "URL connected to item"
           },
@@ -38,7 +39,8 @@
               "label": "Subitem text"
             },
             "url": {
-              "sling:resourceType": "wcm/dialogs/components/textfield",
+              "sling:resourceType": "wcm/dialogs/components/pathpicker",
+              "rootPath": "/content",
               "name": "url",
               "label": "URL connected to item"
             }
