@@ -15,6 +15,8 @@ describe('Hero component', function () {
 
     cy.contains('Default title').click();
     cy.contains('Warning').should('be.visible');
+
+    cy.contains('Bulma by Jeremy Thomas.')
   });
 
   it('renders correctly in edit mode', function () {
