@@ -1,0 +1,10 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarBrandComponent">
+  <div data-sly-unwrap="${!wcmmode.isEdit}" style="min-width: 125px">
+    <div id="navbar-menu" class="navbar-menu">
+      <sly data-sly-test="${resource.hasChildren}">
+        <sly
+            data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+      </sly>
+    </div>
+  </div>
+</sly>

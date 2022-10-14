@@ -1,0 +1,20 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarDropdownComponent">
+  <div class="navbar-item has-dropdown is-hoverable">
+    <a class="navbar-link ${model.hasArrow ? '' : 'is-arrowless'}">
+      ${model.label}
+    </a>
+
+    <div class="navbar-dropdown ${model.isBoxed ? 'is-boxed' : ''}">
+      <sly data-sly-list.item="${model.items}">
+        <li>
+          <a class="navbar-item" href="${item.url}">
+            ${item.label}
+          </a>
+          <sly data-sly-test="${item.hasDivider}">
+            <hr class="navbar-divider">
+          </sly>
+        </li>
+      </sly>
+    </div>
+  </div>
+</sly>

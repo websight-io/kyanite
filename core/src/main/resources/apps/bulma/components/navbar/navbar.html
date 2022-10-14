@@ -1,0 +1,8 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarComponent">
+  <nav class="navbar ${model.navbarStyle}" role="navigation" aria-label="main navigation">
+    <sly data-sly-test="${resource.hasChildren}">
+      <sly
+          data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+    </sly>
+  </nav>
+</sly>

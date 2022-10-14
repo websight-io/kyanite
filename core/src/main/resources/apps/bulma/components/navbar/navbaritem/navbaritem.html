@@ -1,0 +1,23 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarItemComponent">
+  <div data-sly-unwrap="${!wcmmode.isEdit}" style="min-width: 125px; min-height: 50px">
+    <sly data-sly-test="${model.type == 'link'}">
+      <a class="navbar-item" href="${model.url}">
+        ${model.label}
+      </a>
+    </sly>
+    <sly data-sly-test="${model.type == 'image'}">
+      <a class="navbar-item">
+        <img src="${model.image.src}" width="imageWidth" height="imageHeight"
+             alt="${model.image.alt}">
+      </a>
+    </sly>
+    <sly data-sly-test="${model.type =='container'}">
+        <div class="navbar-item">
+          <sly data-sly-test="${resource.hasChildren}">
+            <sly
+                data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+          </sly>
+        </div>
+    </sly>
+  </div>
+</sly>

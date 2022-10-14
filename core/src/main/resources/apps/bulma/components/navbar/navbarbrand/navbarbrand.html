@@ -1,0 +1,18 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarBrandComponent">
+  <div data-sly-unwrap="${!wcmmode.isEdit}" style="min-width: 125px">
+    <div class="navbar-brand">
+      <sly data-sly-test="${resource.hasChildren}">
+        <sly
+            data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+      </sly>
+      <sly data-sly-test="${model.createBurger}">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+           data-target="navbar-menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </sly>
+    </div>
+  </div>
+</sly>

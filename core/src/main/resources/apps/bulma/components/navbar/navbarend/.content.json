@@ -1,0 +1,10 @@
+{
+  "isContainer": true,
+  "allowedComponents": [
+    "/apps/bulma/components/navbar/navbaritem",
+    "/apps/bulma/components/navbar/navbardropdown"
+  ],
+  "group": "Bulma.io sub-components",
+  "sling:resourceType": "ws:Component",
+  "title": "Navbar end"
+}
