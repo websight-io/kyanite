@@ -1,0 +1,18 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/multifield",
+    "tab1": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "label": "Tab 1"
+    },
+    "tab2": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "label": "Tab 2"
+    },
+    "tab3": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "label": "Tab 3"
+    }
+  }
+}
