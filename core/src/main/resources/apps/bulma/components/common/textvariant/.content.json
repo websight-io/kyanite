@@ -2,6 +2,12 @@
   "sling:resourceType": "wcm/dialogs/components/select",
   "name": "textVariant",
   "label": "Text variant",
+  "noStyle": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "No styled",
+    "value": "",
+    "selected": "true"
+  },
   "primary": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Primary",
@@ -29,12 +35,12 @@
   },
   "grey": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
-    "label": "Warning",
+    "label": "Grey",
     "value": "has-text-grey"
   },
   "danger": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Danger",
-    "value": "is-danger"
+    "value": "has-text-danger"
   }
 }
