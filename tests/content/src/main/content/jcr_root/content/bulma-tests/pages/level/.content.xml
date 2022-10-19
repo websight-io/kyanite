@@ -93,12 +93,16 @@
                         <button
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="bulma/components/button"
+                            addIcon="true"
+                            icon="fa fa-sm fa-envelope"
+                            isDisabled="false"
                             isFullWidth="false"
                             isLight="false"
                             isOutlined="false"
                             isRounded="false"
                             label="New"
                             openInNewTab="false"
+                            selectOrType="type"
                             type="a"
                             variant="is-success"/>
                     </levelitem_4>
