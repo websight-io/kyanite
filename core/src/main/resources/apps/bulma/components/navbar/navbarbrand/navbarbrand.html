@@ -17,7 +17,7 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarBrandComponent">
-  <div data-sly-unwrap="${!wcmmode.isEdit}" style="min-width: 125px">
+  <sly data-sly-test="${resource.hasChildren}">
     <div class="navbar-brand">
       <sly data-sly-test="${resource.hasChildren}">
         <sly
@@ -32,5 +32,10 @@
         </a>
       </sly>
     </div>
-  </div>
+  </sly>
+  <sly data-sly-test="${!resource.hasChildren}">
+    <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
+         data-sly-call="${lib.placeholder @ classes='navbar-brand'}">
+    </sly>
+  </sly>
 </sly>
