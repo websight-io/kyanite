@@ -27,10 +27,12 @@
           "name": "openInNewTab",
           "label": "Open link in a new tab"
         },
-        "ws:display": {"condition": {
-          "sourceName": "type",
-          "values": "a"
-        }}
+        "ws:display": {
+          "condition": {
+            "sourceName": "type",
+            "values": "a"
+          }
+        }
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
@@ -68,10 +70,74 @@
         "sling:resourceType": "wcm/dialogs/components/toggle",
         "name": "isDisabled",
         "label": "Disabled",
-        "ws:display": {"condition": {
-          "sourceName": "type",
-          "values": "button"
-        }}
+        "ws:display": {
+          "condition": {
+            "sourceName": "type",
+            "values": "button"
+          }
+        }
+      }
+    },
+    "icon": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Icon",
+      "addIcon": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "addIcon",
+        "label": "Add icon?"
+      },
+      "iconContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "selectOrType": {
+          "sling:resourceType": "wcm/dialogs/components/radio",
+          "name": "selectOrType",
+          "label": "Select icon or type it",
+          "required": true,
+          "select": {
+            "sling:resourceType": "wcm/dialogs/components/radio/option",
+            "label": "Select it",
+            "value": "select",
+            "selected": true
+          },
+          "type": {
+            "sling:resourceType": "wcm/dialogs/components/radio/option",
+            "label": "Type it",
+            "value": "type"
+          }
+        },
+        "included": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "icon": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "/apps/bulma/components/common/icon"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "selectOrType",
+              "values": "select"
+            }
+          }
+        },
+        "typed": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "icon": {
+            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "name": "icon",
+            "label": "Name of the icon from font awesome"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "selectOrType",
+              "values": "type"
+            }
+          }
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "addIcon",
+            "values": "true"
+          }
+        }
       }
     }
   }

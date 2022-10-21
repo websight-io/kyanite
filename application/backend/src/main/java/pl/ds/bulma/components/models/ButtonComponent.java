@@ -38,6 +38,11 @@ public class ButtonComponent {
 
   @Inject
   @Getter
+  @Default(values = "Label")
+  private String icon;
+
+  @Inject
+  @Getter
   @Default(values = "button")
   private String type;
 
@@ -52,25 +57,20 @@ public class ButtonComponent {
   private String size;
 
   @Inject
-  @Default(values = "false")
-  private String isLight;
+  private boolean isLight;
 
   @Inject
-  @Default(values = "false")
-  private String isOutlined;
+  private boolean isOutlined;
 
   @Inject
-  @Default(values = "false")
-  private String isRounded;
+  private boolean isRounded;
 
   @Inject
-  @Default(values = "false")
-  private String isFullWidth;
+  private boolean isFullWidth;
 
   @Inject
   @Getter
-  @Default(values = "false")
-  private String isDisabled;
+  private boolean isDisabled;
 
   @Inject
   @Getter
@@ -84,6 +84,10 @@ public class ButtonComponent {
 
   @Inject
   @Getter
+  private boolean addIcon;
+
+  @Inject
+  @Getter
   private String[] buttonClasses;
 
   @PostConstruct
@@ -91,16 +95,16 @@ public class ButtonComponent {
     List<String> classes = new ArrayList<>();
     classes.add(size);
     classes.add(variant);
-    if (Boolean.parseBoolean(isLight)) {
+    if (isLight) {
       classes.add("is-light");
     }
-    if (Boolean.parseBoolean(isOutlined)) {
+    if (isOutlined) {
       classes.add("is-outlined");
     }
-    if (Boolean.parseBoolean(isRounded)) {
+    if (isRounded) {
       classes.add("is-rounded");
     }
-    if (Boolean.parseBoolean(isFullWidth)) {
+    if (isFullWidth) {
       classes.add("is-fullwidth");
     }
     buttonClasses = classes.toArray(new String[]{});

@@ -28,7 +28,7 @@ permissions:
   contents: read
 
 jobs:
-  build-luna-with-latest-snapshots:
+  build-bulma-with-latest-snapshots:
     runs-on: ubuntu-latest
 
     steps:
@@ -49,7 +49,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: ${{ secrets.AWS_CI_ROLE_TO_ASSUME }}
-          role-session-name: LunaPullRequestCheck
+          role-session-name: BulmaPullRequestCheck
           aws-region: ${{ env.AWS_REGION }}
       - name: Prepare Maven settings for Code Artifact
         run: |
