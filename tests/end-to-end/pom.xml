@@ -15,45 +15,46 @@
     limitations under the License.
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>pl.ds.bulma</groupId>
-    <artifactId>bulma.tests</artifactId>
+    <artifactId>bulma-tests</artifactId>
     <version>1.0.0-SNAPSHOT</version>
+    <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>bulma.tests.e2e</artifactId>
-  <name>Bulma: Tests: End to end</name>
+  <artifactId>bulma-tests-e2e</artifactId>
+  <name>Bulma Components Project - Tests: End to end</name>
+  <description>Contains functional and visual tests for the project distribution.</description>
   <packaging>pom</packaging>
 
   <properties>
-    <websight.ice.version>2.0.0-SNAPSHOT</websight.ice.version>
-    <bulma.version>${project.parent.version}</bulma.version>
-    <mongo.container.image>mongo:4.4.6</mongo.container.image>
     <it.startTimeoutSeconds>30</it.startTimeoutSeconds>
+
+    <e2e.skip>true</e2e.skip>
+    <e2e.skip.cypress>true</e2e.skip.cypress>
+    <e2e.skip.visual>true</e2e.skip.visual>
+    <mongo.container.image>mongo:4.4.6</mongo.container.image>
+
+    <frontend-maven-plugin.version>1.12.1</frontend-maven-plugin.version>
+    <node.version>v16.15.0</node.version>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>pl.ds.websight</groupId>
-      <artifactId>websight-ice-distribution</artifactId>
-      <version>${websight.ice.version}</version>
-      <classifier>wsce</classifier>
+      <groupId>pl.ds.bulma</groupId>
+      <artifactId>bulma-distribution</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
+      <classifier>websight-cms-bulma-project</classifier>
       <type>slingosgifeature</type>
     </dependency>
     <dependency>
       <groupId>pl.ds.bulma</groupId>
-      <artifactId>bulma.core</artifactId>
-      <version>${bulma.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>pl.ds.bulma</groupId>
-      <artifactId>bulma.tests.content</artifactId>
-      <version>${bulma.version}</version>
+      <artifactId>bulma-tests-content</artifactId>
+      <version>1.0.0-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
   </dependencies>
@@ -82,30 +83,30 @@
         <extensions>true</extensions>
         <configuration>
           <replacePropertyVariables>
-            bulma.version
+            project.version
           </replacePropertyVariables>
           <aggregates>
             <aggregate>
-              <classifier>bulma-tests</classifier>
+              <classifier>bulma-project-tests</classifier>
               <filesInclude>*.json</filesInclude>
-              <title>Bulma with test data</title>
+              <title>Bulma Components Project distribution with test data</title>
               <includeArtifact>
-                <groupId>pl.ds.websight</groupId>
-                <artifactId>websight-ice-distribution</artifactId>
-                <version>${websight.ice.version}</version>
-                <classifier>wsce</classifier>
+                <groupId>pl.ds.bulma</groupId>
+                <artifactId>bulma-distribution</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+                <classifier>websight-cms-bulma-project</classifier>
                 <type>slingosgifeature</type>
               </includeArtifact>
             </aggregate>
           </aggregates>
           <scans>
             <scan>
-              <includeClassifier>bulma-tests</includeClassifier>
+              <includeClassifier>bulma-project-tests</includeClassifier>
             </scan>
           </scans>
           <repositories>
             <repository>
-              <includeClassifier>bulma-tests</includeClassifier>
+              <includeClassifier>bulma-project-tests</includeClassifier>
             </repository>
           </repositories>
           <outputDir>target</outputDir>
@@ -155,7 +156,7 @@
             <phase>pre-integration-test</phase>
             <configuration>
               <portNames>
-                <portName>wsce.port</portName>
+                <portName>cms.port</portName>
                 <portName>mongo.port</portName>
               </portNames>
             </configuration>
@@ -165,7 +166,6 @@
       <plugin>
         <groupId>io.fabric8</groupId>
         <artifactId>docker-maven-plugin</artifactId>
-        <version>0.40.1</version>
         <configuration>
           <images>
             <image>
@@ -210,17 +210,17 @@
         <configuration>
           <launches>
             <launch>
-              <id>bulma-tests</id>
+              <id>bulma-project-tests</id>
               <feature>
-                <groupId>${project.groupId}</groupId>
-                <artifactId>${project.artifactId}</artifactId>
-                <version>${project.version}</version>
-                <classifier>bulma-tests</classifier>
+                <groupId>pl.ds.bulma</groupId>
+                <artifactId>bulma-tests-e2e</artifactId>
+                <version>1.0.0-SNAPSHOT</version>
+                <classifier>bulma-project-tests</classifier>
                 <type>slingosgifeature</type>
               </feature>
               <launcherArguments>
                 <frameworkProperties>
-                  <org.osgi.service.http.port>${wsce.port}</org.osgi.service.http.port>
+                  <org.osgi.service.http.port>${cms.port}</org.osgi.service.http.port>
                 </frameworkProperties>
               </launcherArguments>
               <environmentVariables>
@@ -302,7 +302,7 @@
               <skip>${e2e.skip.cypress}</skip>
               <arguments>cypress run test:ci</arguments>
               <environmentVariables>
-                <CYPRESS_baseUrl>http://localhost:${wsce.port}</CYPRESS_baseUrl>
+                <CYPRESS_baseUrl>http://localhost:${cms.port}</CYPRESS_baseUrl>
                 <CYPRESS_loginUsername>${websight.admin.username}</CYPRESS_loginUsername>
                 <CYPRESS_loginPassword>${websight.admin.password}</CYPRESS_loginPassword>
                 <TERM>xterm</TERM>
@@ -317,10 +317,10 @@
             </goals>
             <phase>integration-test</phase>
             <configuration>
-              <skip>${e2e.skip.visual}</skip>
+             <skip>${e2e.skip.visual}</skip>
               <arguments>percy exec -- cypress run</arguments>
               <environmentVariables>
-                <CYPRESS_baseUrl>http://localhost:${wsce.port}</CYPRESS_baseUrl>
+                <CYPRESS_baseUrl>http://localhost:${cms.port}</CYPRESS_baseUrl>
                 <CYPRESS_loginUsername>${websight.admin.username}</CYPRESS_loginUsername>
                 <CYPRESS_loginPassword>${websight.admin.password}</CYPRESS_loginPassword>
                 <PERCY_TOKEN>${env.BULMA_PERCY_TOKEN}</PERCY_TOKEN>
@@ -334,7 +334,56 @@
           <nodeVersion>${node.version}</nodeVersion>
         </configuration>
       </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>2.11.0</version>
+        <configuration>
+          <allowSnapshots>true</allowSnapshots>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.rat</groupId>
+        <artifactId>apache-rat-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>validate</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <excludes>
+                <exclude>*.md</exclude>
+                <exclude>/.node_version</exclude>
+                <exclude>/node/**</exclude>
+                <exclude>/node_modules/**</exclude>
+                <exclude>/target/**</exclude>
+              </excludes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>e2e</id>
+      <properties>
+        <e2e.skip>false</e2e.skip>
+        <e2e.skip.cypress>false</e2e.skip.cypress>
+        <e2e.skip.visual>true</e2e.skip.visual>
+      </properties>
+    </profile>
+    <profile>
+      <id>e2e-visual</id>
+      <properties>
+        <e2e.skip>false</e2e.skip>
+        <e2e.skip.cypress>true</e2e.skip.cypress>
+        <e2e.skip.visual>false</e2e.skip.visual>
+      </properties>
+    </profile>
+  </profiles>
 
 </project>
