@@ -9,9 +9,6 @@
       "start-order": "25"
     }
   ],
-  "content-packages:ARTIFACTS|true": [
-    "pl.ds.bulma:bulma-content:zip:1.0.0-SNAPSHOT"
-  ],
   "configurations": {
     "org.apache.sling.commons.log.LogManager.factory.config~bulma-project.log": {
       "org.apache.sling.commons.log.packagingDataEnabled": true,
