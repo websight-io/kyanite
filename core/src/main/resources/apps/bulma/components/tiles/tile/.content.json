@@ -1,0 +1,7 @@
+{
+  "isContainer": true,
+  "group": "Bulma.io sub-components",
+  "allowedComponents": ["Bulma.io", "Bulma.io sub-components"],
+  "sling:resourceType": "ws:Component",
+  "title": "Single tile"
+}

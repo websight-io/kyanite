@@ -1,0 +1,13 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/radio",
+  "parent": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "As container for other tiles",
+    "value": "is-parent"
+  },
+  "child": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "As container for content",
+    "value": "is-child"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "widthContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "tileType": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "/apps/bulma/components/tiles/attributes/type",
+            "name": "type",
+            "label": "Type of the tile"
+          }
+        },
+        "parentOptions": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "size": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/apps/bulma/components/tiles/attributes/size",
+              "name": "size",
+              "label": "Tile size"
+            }
+          },
+          "vertical": {
+            "sling:resourceType": "wcm/dialogs/components/toggle",
+            "name": "isVertical",
+            "label": "Vertical",
+            "description": "Enable if you want to stack tiles vertically instead of horizontally"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "type",
+              "values": "is-parent"
+            }
+          }
+        },
+        "childOptions": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "content": {
+            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "name": "contentClasses",
+            "label": "Content class",
+            "description": "As soon as you want to add content to a tile, just type any class you want. For example box or notification is-danger"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "type",
+              "values": "is-child"
+            }
+          }
+        }
+      }
+    }
+  }
+}

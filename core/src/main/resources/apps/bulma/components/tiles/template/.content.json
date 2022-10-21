@@ -1,0 +1,15 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "tile1": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/tiles/tile"
+  },
+  "tile2": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/tiles/tile"
+  },
+  "tile3": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/tiles/tile"
+  }
+}
