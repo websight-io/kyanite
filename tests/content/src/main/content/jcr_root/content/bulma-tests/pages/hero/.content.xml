@@ -90,14 +90,6 @@
           title="Small"
           variant="is-dark"/>
       </container_3_1_2>
-      <footer
-        jcr:primaryType="nt:unstructured"
-        sling:resourceType="bulma/components/footer">
-        <content
-          jcr:primaryType="nt:unstructured"
-          sling:resourceType="bulma/components/content"
-          text="&lt;p>&lt;strong>Bulma&lt;/strong> by &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://jgthms.com&quot;>Jeremy Thomas&lt;/a>. The source code is licensed &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://opensource.org/licenses/mit-license.php&quot;>MIT&lt;/a>. The website content is licensed &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://creativecommons.org/licenses/by-nc-sa/4.0/&quot;>CC BY NC SA 4.0&lt;/a>.&lt;/p>"/>
-      </footer>
     </pagecontainer>
   </jcr:content>
 </jcr:root>
