@@ -4,6 +4,5 @@
   ws:template="/apps/bulma/templates/pagesspace">
   <hero/>
   <level/>
-  <menu/>
   <modal/>
 </jcr:root>
