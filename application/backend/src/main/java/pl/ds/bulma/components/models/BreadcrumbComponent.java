@@ -63,7 +63,7 @@ public class BreadcrumbComponent {
     if (StringUtils.isNotEmpty(alignment)) {
       styles.add(alignment);
     }
-    if (StringUtils.isNotEmpty(alignment)) {
+    if (StringUtils.isNotEmpty(separator)) {
       styles.add(separator);
     }
 
