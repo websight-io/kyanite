@@ -1,7 +1,7 @@
 {
   "isContainer": true,
-  "group": "Bulma.io",
-  "allowedComponents": ["/apps/bulma/components/tiles/tile"],
+  "group": "Bulma.io Layouts",
+  "allowedComponents": ["/apps/bulma/components/tiles/tileparent"],
   "sling:resourceType": "ws:Component",
   "title": "Tiles"
 }

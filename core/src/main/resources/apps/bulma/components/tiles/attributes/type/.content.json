@@ -1,13 +1,20 @@
 {
-  "sling:resourceType": "wcm/dialogs/components/radio",
-  "parent": {
-    "sling:resourceType": "wcm/dialogs/components/radio/option",
-    "label": "As container for other tiles",
-    "value": "is-parent"
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "type",
+  "label": "Type",
+  "box": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Box",
+    "value": "box"
   },
-  "child": {
-    "sling:resourceType": "wcm/dialogs/components/radio/option",
-    "label": "As container for content",
-    "value": "is-child"
+  "notification": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Notification",
+    "value": "notification"
+  },
+  "container": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Container",
+    "value": "container"
   }
 }

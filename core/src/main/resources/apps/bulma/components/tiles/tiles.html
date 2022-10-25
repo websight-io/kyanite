@@ -16,18 +16,16 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.bulma.components.models.tiles.TilesComponent">
-  <sly data-sly-test.hasChildren="${resource.hasChildren}">
-    <div class="tile is-ancestor">
-      <sly data-sly-list="${resource.children}">
-        <sly data-sly-resource="${item}"></sly>
-      </sly>
-    </div>
-  </sly>
-  <sly data-sly-test="${!hasChildren}">
-    <sly data-sly-test.modelClasses="tile is-ancestor"></sly>
-    <sly data-sly-test.placeholderClasses="${['column m-3', modelClasses] @ join=' '}"></sly>
-    <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
-         data-sly-call="${lib.placeholder @ classes=placeholderClasses}"></sly>
-  </sly>
+<sly data-sly-test.hasChildren="${resource.hasChildren}">
+  <div class="tile is-ancestor">
+    <sly data-sly-list="${resource.children}">
+      <sly data-sly-resource="${item}"></sly>
+    </sly>
+  </div>
+</sly>
+<sly data-sly-test="${!hasChildren}">
+  <sly data-sly-test.modelClasses="tile is-ancestor"></sly>
+  <sly data-sly-test.placeholderClasses="${['column m-3', modelClasses] @ join=' '}"></sly>
+  <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
+       data-sly-call="${lib.placeholder @ classes=placeholderClasses}"></sly>
 </sly>
