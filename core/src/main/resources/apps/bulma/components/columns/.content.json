@@ -1,6 +1,6 @@
 {
   "isContainer": true,
-  "group": "Bulma.io",
+  "group": "Bulma.io Columns",
   "allowedComponents": ["/apps/bulma/components/columns/column"],
   "sling:resourceType": "ws:Component",
   "title": "Columns"

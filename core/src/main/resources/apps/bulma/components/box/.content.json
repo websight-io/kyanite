@@ -1,7 +1,12 @@
 {
   "isContainer": true,
-  "allowedComponents": "Bulma.io",
-  "group": "Bulma.io",
+  "allowedComponents": [
+    "Bulma.io Columns",
+    "Bulma.io Components",
+    "Bulma.io Elements",
+    "Bulma.io Layouts"
+  ],
+  "group": "Bulma.io Elements",
   "sling:resourceType": "ws:Component",
   "title": "Box"
 }
