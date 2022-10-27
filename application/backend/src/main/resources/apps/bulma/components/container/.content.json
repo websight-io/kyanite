@@ -1,7 +1,12 @@
 {
   "isContainer": true,
-  "group": "Bulma.io",
-  "allowedComponents": ["Bulma.io"],
+  "group": "Bulma.io Layouts",
+  "allowedComponents": [
+    "Bulma.io Columns",
+    "Bulma.io Components",
+    "Bulma.io Elements",
+    "Bulma.io Layouts"
+  ],
   "sling:resourceType": "ws:Component",
   "title": "Container"
 }
