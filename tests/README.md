@@ -2,14 +2,22 @@
 This module is responsible for the automatic validation of the Bulma components.
 
 It contains:
-- [content](./content) - providing the minimal set of components and pages used during testing
-- [end-to-end](./end-to-end) - end-to-end tests validating both Bulma components on authoring and publication
+- [content](./content) - providing test content
+- [end-to-end](./end-to-end) - end-to-end tests
 
-## How to run
 
 ```bash
-mvn clean install -P e2e
+../mvnw clean verify -P e2e
 ```
 
-Packs the content package, then builds a Docker image that contains the package. Finally, it runs the container with the created Docker image 
-and runs functional tests.
+First we need to start a docker container with Mongo:
+```bash
+docker run -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=mongoadmin mongo:4.4.6
+```
+
+Then from `end-to-end` run the CMS with debug mode:
+```bash
+java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=localhost:5005 \
+-jar target/dependency/org.apache.sling.feature.launcher.jar  \
+-f target/slingfeature-tmp/feature-bulma-project-tests.json
+```

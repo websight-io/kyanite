@@ -3,4 +3,6 @@
   jcr:primaryType="ws:Pages"
   ws:template="/apps/bulma/templates/pagesspace">
   <hero/>
+  <level/>
+  <modal/>
 </jcr:root>

@@ -1,0 +1,77 @@
+# Copyright (C) 2022 Dynamic Solutions
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+version: "3.9"
+
+services:
+  cms:
+    image: websight-cms-bulma-project:latest
+    ports:
+      - "8080:8080"
+      - "5005:5005"
+    environment:
+      WS_ADMIN_USERNAME: "wsadmin"
+      MONGODB_HOST: "mongo"
+      MONGODB_PORT: 27017
+      MONGODB_USERNAME: "mongoadmin"
+      # LEASE_CHECK_MODE: "LENIENT" is for local usage only. This option must not be used on servers.
+      # This is to avoid lost of connection to local mongo instace in some cases.
+      LEASE_CHECK_MODE: "LENIENT"
+      # WS_DEBUG: "true" is for local usage only. It enables java debugger.
+      WS_DEBUG: "true"
+    volumes:
+      - bulma-project_cms_logs:/websight/logs
+      - bulma-project_site_repository:/websight/docroot
+    secrets:
+      - source: mongo_password
+        target: mongo.password
+    depends_on:
+      - mongo
+
+  # MongoDB
+  mongo:
+    image: mongo:4.4.6
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 4096M
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+      - MONGO_INITDB_ROOT_PASSWORD_FILE=/run/secrets/mongo.password
+    volumes:
+      - bulma-project_mongo_repository:/data/db
+    secrets:
+      - source: mongo_password
+        target: mongo.password
+
+
+  # HTTP Server
+  nginx:
+    image: nginx-bulma-project:latest
+    ports:
+      - "80:80"
+    volumes:
+      - bulma-project_site_repository:/usr/share/nginx/html:ro
+
+volumes:
+  bulma-project_cms_logs:
+  bulma-project_mongo_repository:
+  bulma-project_site_repository:
+
+secrets:
+  mongo_password:
+    file: ./mongo_password.txt

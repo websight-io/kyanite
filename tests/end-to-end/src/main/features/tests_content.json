@@ -1,0 +1,5 @@
+{
+  "content-packages:ARTIFACTS|true": [
+    "pl.ds.bulma:bulma-tests-content:zip:1.0.0-SNAPSHOT"
+  ]
+}
