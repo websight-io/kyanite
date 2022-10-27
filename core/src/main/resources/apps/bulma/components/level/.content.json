@@ -4,7 +4,7 @@
     "/apps/bulma/components/level/positionedlevel",
     "/apps/bulma/components/level/levelitem"
   ],
-  "group": "Bulma.io",
+  "group": "Bulma.io Layouts",
   "sling:resourceType": "ws:Component",
   "title": "Level container"
 }
