@@ -1,5 +1,5 @@
 {
-  "group": "Bulma.io",
+  "group": "Bulma.io Components",
   "sling:resourceType": "ws:Component",
-  "title": "Pricing Plan"
+  "title": "Pricing plan"
 }

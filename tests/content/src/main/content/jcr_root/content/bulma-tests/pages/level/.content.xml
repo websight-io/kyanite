@@ -20,6 +20,20 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="bulma/components/level/positionedlevel"
                     positionedStyle="level-left">
+                    <levelitem_3
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bulma/components/level/levelitem">
+                        <icon
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="bulma/components/icon"
+                            addText="true"
+                            colorOnText="true"
+                            elementType="span"
+                            icon="fa fa-envelope"
+                            label="Send"
+                            selectOrType="type"
+                            textVariant="has-text-info"/>
+                    </levelitem_3>
                     <levelitem
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="bulma/components/level/levelitem">
@@ -46,11 +60,36 @@
                             type="button"
                             variant="is-light"/>
                     </levelitem_1>
+                    <levelitem_2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bulma/components/level/levelitem">
+                        <icon
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="bulma/components/icon"
+                            addText="true"
+                            colorOnText="false"
+                            elementType="div"
+                            icon="fa fa-lg fa-cubes"
+                            label="Nice"
+                            selectOrType="type"
+                            textVariant="has-text-success"/>
+                    </levelitem_2>
                 </positionedlevel>
                 <positionedlevel_1
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="bulma/components/level/positionedlevel"
                     positionedStyle="level-right">
+                    <levelitem_5
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bulma/components/level/levelitem">
+                        <icon
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="bulma/components/icon"
+                            addText="false"
+                            icon="fa fa-lg fa-cogs"
+                            selectOrType="select"
+                            textVariant="has-text-danger"/>
+                    </levelitem_5>
                     <levelitem_3
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="bulma/components/level/levelitem">
@@ -93,12 +132,16 @@
                         <button
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="bulma/components/button"
+                            addIcon="true"
+                            icon="fa fa-sm fa-envelope"
+                            isDisabled="false"
                             isFullWidth="false"
                             isLight="false"
                             isOutlined="false"
                             isRounded="false"
                             label="New"
                             openInNewTab="false"
+                            selectOrType="type"
                             type="a"
                             variant="is-success"/>
                     </levelitem_4>
@@ -111,6 +154,9 @@
             <level_3
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bulma/components/level">
+                <levelitem_5
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bulma/components/level/levelitem"/>
                 <levelitem
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="bulma/components/level/levelitem">

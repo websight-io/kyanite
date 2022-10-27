@@ -1,6 +1,6 @@
 {
   "isContainer": true,
-  "group": "Bulma.io",
+  "group": "Bulma.io Components",
   "allowedComponents": ["/apps/bulma/components/pricingplan"],
   "sling:resourceType": "ws:Component",
   "title": "Pricing table"

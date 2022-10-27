@@ -20,19 +20,34 @@
   <sly data-sly-test="${model.type == 'button'}">
     <sly data-sly-test.disabled="${model.isDisabled}">
       <button class="button ${model.buttonClasses @ join=' '}" disabled>
-        ${model.label}
+        <sly data-sly-test.hasIcon="${model.addIcon}">
+          <span class="icon">
+            <i class="${model.icon}"></i>
+          </span>
+        </sly>
+        <span>${model.label}</span>
       </button>
     </sly>
     <sly data-sly-test="${!disabled}">
       <button class="button ${model.buttonClasses @ join=' '}">
-        ${model.label}
+        <sly data-sly-test="${model.addIcon}">
+          <span class="icon">
+            <i class="${model.icon}"></i>
+          </span>
+        </sly>
+        <span>${model.label}</span>
       </button>
     </sly>
   </sly>
   <sly data-sly-test="${model.type == 'a'}">
     <a href="${model.url}" class="button ${model.buttonClasses @ join=' '}"
        target="${model.openInNewTab && model.url != '' ? '_blank' : ''}">
-      ${model.label}
+      <sly data-sly-test="${model.addIcon}">
+        <span class="icon">
+          <i class="${model.icon}"></i>
+        </span>
+      </sly>
+      <span>${model.label}</span>
     </a>
   </sly>
 </sly>

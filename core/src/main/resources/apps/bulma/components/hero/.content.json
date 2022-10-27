@@ -1,5 +1,5 @@
 {
-  "group": "Bulma.io",
+  "group": "Bulma.io Layouts",
   "sling:resourceType": "ws:Component",
   "title": "Hero"
 }
