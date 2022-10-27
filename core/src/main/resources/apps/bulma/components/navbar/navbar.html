@@ -16,13 +16,15 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.bulma.components.models.ButtonsListComponent">
-  <div data-sly-unwrap="${!wcmmode.isEdit}" style="min-width: 125px; min-height: 50px">
-    <sly data-sly-test="${resource.hasChildren}">
-      <div class="buttons ${model.hasAddons ? 'has-addons ' : ''}${model.alignment}">
-        <sly
-            data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-      </div>
-    </sly>
-  </div>
+<sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarComponent">
+  <sly data-sly-test.classes="navbar ${model.navbarStyle}"></sly>
+  <sly data-sly-test="${resource.hasChildren}">
+    <nav class="${classes}" role="navigation" aria-label="main navigation" >
+      <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+    </nav>
+  </sly>
+  <sly data-sly-test="${!resource.hasChildren}">
+    <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
+         data-sly-call="${lib.placeholder @ classes=classes}"></sly>
+  </sly>
 </sly>

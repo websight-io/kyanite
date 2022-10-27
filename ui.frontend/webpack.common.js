@@ -39,6 +39,7 @@ module.exports = {
     resolve: resolve,
     entry: {
         main: {import: SOURCE_ROOT + '/main.ts', filename: 'main/main.js'},
+        author: {import: SOURCE_ROOT + '/author.ts', filename: 'author/author.js'},
     },
     output: {
         filename: (chunkData) => {
@@ -111,6 +112,10 @@ module.exports = {
                         {
                             source: path.join(__dirname, 'dist/main'),
                             destination: path.join(__dirname, '../core/src/main/resources/apps/bulma/web_root')
+                        },
+                        {
+                            source: path.join(__dirname, 'dist/author'),
+                            destination: path.join(__dirname, '../core/src/main/resources/apps/bulma/author')
                         }
                     ]
                 }

@@ -1,0 +1,15 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "createBurger": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "createBurger",
+        "label": "Create Navbar Burger"
+      }
+    }
+  }
+}
