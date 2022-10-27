@@ -1,0 +1,20 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "type",
+  "label": "Type",
+  "box": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Box",
+    "value": "box"
+  },
+  "notification": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Notification",
+    "value": "notification"
+  },
+  "container": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Container",
+    "value": "container"
+  }
+}
