@@ -42,9 +42,7 @@ public class NavbarComponent {
 
   @PostConstruct
   private void init() {
-    //reset color variant if navbar is transparent
     if (isTransparent) {
-      variant = null;
       navbarStyle = "is-transparent";
     } else {
       navbarStyle = variant;
