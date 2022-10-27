@@ -46,7 +46,7 @@ describe('Hero component', function () {
     cy.getByTestId(paths.hero)
       .click()
       .find(selectors.overlayName)
-      .should('have.text', 'Hero');
+      .should('contain.text', 'Hero');
 
     cy.percySnapshotPageEditor('Hero editor');
 
