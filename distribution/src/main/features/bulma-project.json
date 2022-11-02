@@ -1,11 +1,11 @@
 {
   "bundles": [
     {
-      "id": "pl.ds.bulma:bulma-backend:1.0.0-SNAPSHOT",
+      "id": "pl.ds.bulma:bulma-backend:${project.version}",
       "start-order": "25"
     },
     {
-      "id": "pl.ds.bulma:bulma-frontend:1.0.0-SNAPSHOT",
+      "id": "pl.ds.bulma:bulma-frontend:${project.version}",
       "start-order": "25"
     }
   ],

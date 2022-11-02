@@ -15,14 +15,13 @@
     limitations under the License.
 -->
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>pl.ds.bulma</groupId>
     <artifactId>bulma-tests</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -47,14 +46,14 @@
     <dependency>
       <groupId>pl.ds.bulma</groupId>
       <artifactId>bulma-distribution</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
+      <version>0.1.0-SNAPSHOT</version>
       <classifier>websight-cms-bulma-project</classifier>
       <type>slingosgifeature</type>
     </dependency>
     <dependency>
       <groupId>pl.ds.bulma</groupId>
       <artifactId>bulma-tests-content</artifactId>
-      <version>1.0.0-SNAPSHOT</version>
+      <version>0.1.0-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
   </dependencies>
@@ -93,7 +92,7 @@
               <includeArtifact>
                 <groupId>pl.ds.bulma</groupId>
                 <artifactId>bulma-distribution</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${project.version}</version>
                 <classifier>websight-cms-bulma-project</classifier>
                 <type>slingosgifeature</type>
               </includeArtifact>
@@ -110,8 +109,8 @@
             </repository>
           </repositories>
           <outputDir>target</outputDir>
-          <selection/>
-          <extension/>
+          <selection />
+          <extension />
         </configuration>
         <executions>
           <execution>
@@ -214,7 +213,7 @@
               <feature>
                 <groupId>pl.ds.bulma</groupId>
                 <artifactId>bulma-tests-e2e</artifactId>
-                <version>1.0.0-SNAPSHOT</version>
+                <version>${project.version}</version>
                 <classifier>bulma-project-tests</classifier>
                 <type>slingosgifeature</type>
               </feature>
