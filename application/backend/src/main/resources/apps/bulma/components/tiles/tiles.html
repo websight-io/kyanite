@@ -25,7 +25,6 @@
 </sly>
 <sly data-sly-test="${!hasChildren}">
   <sly data-sly-test.modelClasses="tile is-ancestor"></sly>
-  <sly data-sly-test.placeholderClasses="${['column m-3', modelClasses] @ join=' '}"></sly>
   <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
-       data-sly-call="${lib.placeholder @ classes=placeholderClasses}"></sly>
+       data-sly-call="${lib.placeholder @ classes=modelClasses}"></sly>
 </sly>
