@@ -88,6 +88,16 @@ public class ButtonComponent {
 
   @Inject
   @Getter
+  @Default(values = StringUtils.EMPTY)
+  private String actionType;
+
+  @Inject
+  @Getter
+  @Default(values = StringUtils.EMPTY)
+  private String modalId;
+
+  @Inject
+  @Getter
   private String[] buttonClasses;
 
   @PostConstruct

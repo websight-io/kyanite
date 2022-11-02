@@ -29,14 +29,29 @@
       </button>
     </sly>
     <sly data-sly-test="${!disabled}">
-      <button class="button ${model.buttonClasses @ join=' '}">
-        <sly data-sly-test="${model.addIcon}">
+
+      <sly data-sly-test="${model.actionType == 'open-modal'}">
+        <button class="button js-modal-trigger ${model.buttonClasses @ join=' '}" data-target="${model.modalId}">
+          <sly data-sly-test="${model.addIcon}">
           <span class="icon">
             <i class="${model.icon}"></i>
           </span>
-        </sly>
-        <span>${model.label}</span>
-      </button>
+          </sly>
+          <span>${model.label}</span>
+        </button>
+      </sly>
+
+      <sly data-sly-test="${model.actionType != 'open-modal'}">
+        <button class="button ${model.buttonClasses @ join=' '}">
+          <sly data-sly-test="${model.addIcon}">
+          <span class="icon">
+            <i class="${model.icon}"></i>
+          </span>
+          </sly>
+          <span>${model.label}</span>
+        </button>
+      </sly>
+
     </sly>
   </sly>
   <sly data-sly-test="${model.type == 'a'}">

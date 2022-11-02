@@ -10,6 +10,12 @@
         "name": "contentFrame",
         "label": "Frame the content",
         "checkedByDefault": true
+      },
+      "id": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "id",
+        "label": "Modal ID",
+        "description": "To open this modal, use its identifier as the action identifier within the settings of another component. For example, a button."
       }
     }
   }
