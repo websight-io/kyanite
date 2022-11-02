@@ -121,7 +121,8 @@
       <modal
         jcr:primaryType="nt:unstructured"
         sling:resourceType="bulma/components/modal"
-        contentFrame="true">
+        contentFrame="true"
+        id="modal_3fcc4d2fb8dee118">
         <card
           jcr:primaryType="nt:unstructured"
           sling:resourceType="bulma/components/card"
@@ -143,6 +144,14 @@
           </urls>
         </card>
       </modal>
+      <button
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="bulma/components/button"
+        actionType="open-modal"
+        label="Open JS example modal"
+        type="button"
+        modalId="modal_3fcc4d2fb8dee118"
+      />
     </pagecontainer>
   </jcr:content>
 </jcr:root>
