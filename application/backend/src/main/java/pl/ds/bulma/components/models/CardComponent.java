@@ -54,7 +54,7 @@ public class CardComponent {
 
   @Inject
   @Getter
-  private List<URLComponent> urls;
+  private List<UrlComponent> urls;
 
   @Inject
   @Getter

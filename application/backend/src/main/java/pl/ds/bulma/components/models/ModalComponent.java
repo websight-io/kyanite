@@ -37,7 +37,8 @@ public class ModalComponent {
   @SlingObject
   private Resource resource;
 
-  //TODO Maybe use UUID that will be stored in properties as each time path changes same happens with ID
+  //TODO Maybe use UUID that will be stored in properties
+  //as each time path changes same happens with ID
   //We would like it to be general
   public String getId() {
     return MODAL_ID_PREFIX + Math.abs(resource.getPath().hashCode() - 1);

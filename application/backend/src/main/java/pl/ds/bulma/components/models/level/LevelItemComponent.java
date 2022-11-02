@@ -28,6 +28,7 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class LevelItemComponent {
+
   private static final String LEVEL_COMPONENT_RESOURCE_TYPE = "bulma/components/level";
 
   @SlingObject
@@ -45,8 +46,8 @@ public class LevelItemComponent {
 
 
   @PostConstruct
-  private void init(){
-    if(LEVEL_COMPONENT_RESOURCE_TYPE.equals(resource.getParent().getResourceType())){
+  private void init() {
+    if (LEVEL_COMPONENT_RESOURCE_TYPE.equals(resource.getParent().getResourceType())) {
       levelItemStyle = "has-text-centered";
     }
   }
