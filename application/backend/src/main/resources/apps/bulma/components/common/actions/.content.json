@@ -1,0 +1,15 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "actionType",
+  "label": "Action",
+  "openModal": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Open modal",
+    "value": "open-modal"
+  },
+  "none": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "None",
+    "value": ""
+  }
+}
