@@ -42,5 +42,11 @@ docker compose up
 
 This module uses Google Style and verifies code against its rules.
 
+## Contributing
+Please read our [Contributing Guide](./CONTRIBUTING.md) before submitting a Pull Request to the project.
+
+## Community support
+Please check the community support section in [WebSight Starter](https://github.com/websight-io/starter).
+
 ## License
 Bulma components is `open-source` project with `Apache License 2.0` license.
