@@ -22,25 +22,31 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.bulma.components.services.ComponentIdService;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ModalComponent {
 
-  public static final String MODAL_ID_PREFIX = "modal_";
+  public static final String ID_PREFIX = "modal";
+
+  @OSGiService
+  private ComponentIdService idService;
+
+  @SlingObject
+  private Resource resource;
+
+  @Inject
+  private String id;
 
   @Inject
   @Getter
   @Default(booleanValues = true)
   private Boolean contentFrame;
 
-  @SlingObject
-  private Resource resource;
-
-  //TODO Maybe use UUID that will be stored in properties
-  //as each time path changes same happens with ID
-  //We would like it to be general
   public String getId() {
-    return MODAL_ID_PREFIX + Math.abs(resource.getPath().hashCode() - 1);
+    id = idService.getId(resource, ID_PREFIX);
+    return id;
   }
 }

@@ -139,6 +139,37 @@
           }
         }
       }
+    },
+    "actionTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Action",
+      "actionType": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/apps/bulma/components/common/actions"
+      },
+      "action": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "modalId": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "modalId",
+          "label": "Modal ID",
+          "description": "Enter the ID of the modal that should be opened by this button"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "actionType",
+            "values": [
+              "open-modal"
+            ]
+          }
+        }
+      },
+      "ws:display": {
+        "condition": {
+          "sourceName": "type",
+          "values": "button"
+        }
+      }
     }
   }
 }
