@@ -33,7 +33,8 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class LevelComponent {
 
-  static final String POSITIONED_LEVEL_COMPONENT_RESOURCE_TYPE = "bulma/components/level/positionedlevel";
+  static final String POSITIONED_LEVEL_COMPONENT_RESOURCE_TYPE
+      = "bulma/components/level/positionedlevel";
   static final String LEVEL_ITEM_COMPONENT_RESOURCE_TYPE = "bulma/components/level/levelitem";
 
 
