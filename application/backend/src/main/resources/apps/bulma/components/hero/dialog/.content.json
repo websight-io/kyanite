@@ -5,16 +5,6 @@
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
-      "title": {
-        "sling:resourceType": "wcm/dialogs/components/textfield",
-        "name": "title",
-        "label": "Title"
-      },
-      "subTitle": {
-        "sling:resourceType": "wcm/dialogs/components/textfield",
-        "name": "subTitle",
-        "label": "Subtitle"
-      },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "path": "/apps/bulma/components/hero/attributes/size"

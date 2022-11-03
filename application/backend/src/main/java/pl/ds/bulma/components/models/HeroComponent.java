@@ -31,15 +31,6 @@ public class HeroComponent {
 
   @Inject
   @Getter
-  @Default(values = "Default title")
-  private String title;
-
-  @Inject
-  @Getter
-  private String subTitle;
-
-  @Inject
-  @Getter
   private String variant;
 
   @Inject
