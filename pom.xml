@@ -142,4 +142,33 @@
     </pluginManagement>
   </build>
 
+  <profiles>
+    <profile>
+      <id>code-artifact-distribution</id>
+      <distributionManagement>
+        <repository>
+          <id>ws-code-artifact-repo</id>
+          <name>ws-code-artifact-repo</name>
+          <url>https://websight-${env.AWS_ACCOUNT_ID}.d.codeartifact.eu-central-1.amazonaws.com/maven/maven-repo/</url>
+        </repository>
+        <snapshotRepository>
+          <id>ws-code-artifact-snapshot-repo</id>
+          <name>ws-code-artifact-snapshot-repo</name>
+          <url>https://websight-internal-${env.AWS_ACCOUNT_ID}.d.codeartifact.eu-central-1.amazonaws.com/maven/maven-snapshot-repo/</url>
+        </snapshotRepository>
+      </distributionManagement>
+    </profile>
+
+    <profile>
+      <id>s3-distribution</id>
+      <distributionManagement>
+        <repository>
+          <id>ws-s3-repo</id>
+          <name>ws-s3-repo</name>
+          <url>s3://repo.websight.io/maven</url>
+        </repository>
+      </distributionManagement>
+    </profile>
+  </profiles>
+
 </project>
