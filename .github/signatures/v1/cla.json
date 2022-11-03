@@ -1,5 +1,20 @@
 {
   "signedContributors": [
-    
+    {
+      "name": "paweljozwicki",
+      "id": 109656376,
+      "comment_id": 1302052529,
+      "created_at": "2022-11-03T12:52:31Z",
+      "repoId": 526080605,
+      "pullRequestNo": 63
+    },
+    {
+      "name": "paweljozwicki",
+      "id": 109656376,
+      "comment_id": 1302056274,
+      "created_at": "2022-11-03T12:55:52Z",
+      "repoId": 526080605,
+      "pullRequestNo": 63
+    }
   ]
 }
