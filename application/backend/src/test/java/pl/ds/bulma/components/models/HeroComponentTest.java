@@ -45,8 +45,6 @@ class HeroComponentTest {
         context.resourceResolver().getResource(PATH + "/default")).adaptTo(HeroComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getTitle()).isEqualTo("Default title");
-    assertThat(model.getSubTitle()).isNull();
     assertThat(model.getSize()).isNull();
     assertThat(model.getVariant()).isNull();
     assertThat(model.getHeroClasses()).isEmpty();
@@ -58,8 +56,6 @@ class HeroComponentTest {
         context.resourceResolver().getResource(PATH + "/onlySize")).adaptTo(HeroComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getTitle()).isEqualTo("Nice title");
-    assertThat(model.getSubTitle()).isEqualTo("Subtitle");
     assertThat(model.getSize()).isEqualTo("is-medium");
     assertThat(model.getVariant()).isNull();
     assertThat(model.getHeroClasses()).containsExactlyInAnyOrder("is-medium");
@@ -71,8 +67,6 @@ class HeroComponentTest {
         context.resourceResolver().getResource(PATH + "/bothStyles")).adaptTo(HeroComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getTitle()).isEqualTo("Nice title");
-    assertThat(model.getSubTitle()).isEqualTo("Subtitle");
     assertThat(model.getSize()).isEqualTo("is-medium");
     assertThat(model.getVariant()).isEqualTo("is-warning");
     assertThat(model.getHeroClasses()).containsExactlyInAnyOrder("is-medium", "is-warning");
@@ -84,8 +78,6 @@ class HeroComponentTest {
         context.resourceResolver().getResource(PATH + "/onlyVariant")).adaptTo(HeroComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getTitle()).isEqualTo("Nice title");
-    assertThat(model.getSubTitle()).isEqualTo("Subtitle");
     assertThat(model.getSize()).isNull();
     assertThat(model.getVariant()).isEqualTo("is-warning");
     assertThat(model.getHeroClasses()).containsExactlyInAnyOrder("is-warning");

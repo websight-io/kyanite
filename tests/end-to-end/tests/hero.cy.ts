@@ -28,9 +28,6 @@ describe('Hero component', function () {
   it('renders correctly in preview mode', function () {
     cy.visit('/content/bulma-tests/pages/hero.html');
     cy.percySnapshotPreview('Hero preview');
-
-    cy.contains('Default title').click();
-    cy.contains('Warning').should('be.visible');
   });
 
   it('renders correctly in edit mode', function () {
@@ -52,9 +49,6 @@ describe('Hero component', function () {
 
     cy.getByTestId(testIds.editIcon).click();
 
-    cy.getByTestId('Input_Title-container').clear().type('Title');
-    cy.getByTestId('Input_Subtitle-container').clear().type('Subtitle');
-
     cy.get('div[id^="size-uid"]').click();
     cy.contains('Large').click({ force: true });
 
@@ -72,11 +66,9 @@ describe('Hero component', function () {
     )
       .its('body')
       .should('deep.eq', {
-        subTitle: 'Subtitle',
         size: 'is-large',
         'sling:resourceType': 'bulma/components/hero',
         'jcr:primaryType': 'nt:unstructured',
-        title: 'Title',
         variant: 'is-link'
       });
   });
