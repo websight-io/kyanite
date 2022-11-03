@@ -50,3 +50,5 @@ Please check the community support section in [WebSight Starter](https://github.
 
 ## License
 Bulma components is `open-source` project with `Apache License 2.0` license.
+
+Just to check
