@@ -12,6 +12,7 @@
 
   <modules>
     <module>application</module>
+    <module>content</module>
     <module>distribution</module>
     <module>tests</module>
   </modules>
