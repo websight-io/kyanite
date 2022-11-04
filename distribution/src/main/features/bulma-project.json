@@ -25,6 +25,9 @@
     "pl.ds.websight.publishing.staticprocessor.PagePublishProcessor": {
       "shorten.paths": true
     }
-  }
+  },
+  "content-packages:ARTIFACTS|true": [
+    "pl.ds.bulma:bulma-content:zip:${project.version}"
+  ]
 }
   
