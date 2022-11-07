@@ -15,4 +15,4 @@
 FROM nginx
 
 COPY src/main/docker/nginx/default.conf /etc/nginx/conf.d/default.conf
-COPY src/main/docker/nginx/html/homepage.html /usr/share/nginx/html/content/bulma-project/pages/homepage.html
+COPY src/main/docker/nginx/html/homepage.html /usr/share/nginx/html/content/bulma/pages/homepage.html
