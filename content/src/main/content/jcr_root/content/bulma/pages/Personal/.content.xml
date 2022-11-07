@@ -110,7 +110,7 @@
         <content
           jcr:primaryType="nt:unstructured"
           sling:resourceType="bulma/components/content"
-          text="&lt;h1 style=&quot;text-align: center&quot;>About Me&lt;/h1>&lt;h4 style=&quot;text-align: center&quot;>Jack of all trades, master of &quot;some&quot;&lt;/h4>&lt;p style=&quot;text-align: center&quot;>Web developer with more than &lt;strong>4 years&lt;/strong> of well-rounded experience with a degree in the field of &lt;strong>Computer Science&lt;/strong>, extensive knowledge of modern Web techniques and love for &lt;strong>Coffee&lt;/strong>.&lt;br>Looking for an opportunity to work and upgrade, as well as being involved in an organization that believes in gaining a competitive edge and giving back to the community.&lt;/p>"/>
+          text="&lt;h1 style=&quot;text-align: center&quot;>About Me&lt;/h1>&lt;p style=&quot;text-align: center&quot;>Jack of all trades, master of &quot;some&quot;&lt;/p>&lt;p style=&quot;text-align: center&quot;>Web developer with more than &lt;strong>4 years&lt;/strong> of well-rounded experience with a degree in the field of &lt;strong>Computer Science&lt;/strong>, extensive knowledge of modern Web techniques and love for &lt;strong>Coffee&lt;/strong>.&lt;br>Looking for an opportunity to work and upgrade, as well as being involved in an organization that believes in gaining a competitive edge and giving back to the community.&lt;/p>"/>
         <box
           jcr:primaryType="nt:unstructured"
           sling:resourceType="bulma/components/box"
@@ -246,7 +246,7 @@
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/content"
                       size="is-normal"
-                      text="&lt;p>&lt;strong>JavaScript:&lt;/strong>&lt;/p>&lt;p>&lt;strong>Vue.js:&lt;/strong>&lt;/p>&lt;p>&lt;strong>Node.js:&lt;/strong>&lt;/p>&lt;p>&lt;strong>HTML5/CSS3:&lt;/strong>&lt;/p>&lt;p>&lt;strong>Databases:&lt;/strong>&lt;/p>"/>
+                      text="&lt;p style=&quot;text-align: right&quot;>&lt;strong>JavaScript:&lt;/strong>&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>Vue.js:&lt;/strong>&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>Node.js:&lt;/strong>&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>HTML5/CSS3:&lt;/strong>&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>Databases:&lt;/strong>&lt;/p>"/>
                   </tilechild>
                 </tile1>
                 <tile2
