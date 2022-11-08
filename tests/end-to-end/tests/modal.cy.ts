@@ -28,7 +28,7 @@ describe('Modal component', function () {
     cy.contains('Open JS example modal').click();
 
     cy.percySnapshotPreview('Modal preview');
-    cy.contains('Very big title').should('be.visible');
+    cy.contains('Nice header').should('be.visible');
   });
 
   it('renders correctly in edit mode', function () {

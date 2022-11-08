@@ -126,13 +126,7 @@
         <card
           jcr:primaryType="nt:unstructured"
           sling:resourceType="bulma/components/card"
-          content="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id hendrerit elit. Curabitur posuere nec libero vel dapibus. Suspendisse vulputate id justo nec blandit. Morbi vel tincidunt risus. Duis sed blandit ipsum, ut tincidunt orci. Morbi nec augue tellus. Mauris consequat sodales eros, a porta lorem placerat et. Nunc vitae hendrerit nibh. Quisque purus est, consequat vitae congue ut, tempor sed libero. Morbi pharetra arcu ante, at dictum est finibus ac. Quisque arcu nisi, egestas sed ornare ut, ultrices id elit. Etiam suscipit, diam non fermentum dapibus, tortor nibh egestas turpis, ut ultricies augue quam id tortor. Phasellus imperdiet in magna sed malesuada.&lt;/p>"
-          header="Nice header"
-          icon="fa-columns"
-          subtitle="Subtitle"
-          textVariant="has-text-success"
-          title="Very big title"
-          type="icon">
+          header="Nice header">
           <image
             jcr:primaryType="nt:unstructured"
             alt="\0"/>

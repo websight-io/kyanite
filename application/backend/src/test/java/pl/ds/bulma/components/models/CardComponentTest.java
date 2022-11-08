@@ -46,11 +46,8 @@ class CardComponentTest {
         .adaptTo(CardComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getContent()).isEqualTo("Card content");
     assertThat(model.getHeader()).isEqualTo(StringUtils.EMPTY);
-    assertThat(model.getTitle()).isEqualTo(StringUtils.EMPTY);
-    assertThat(model.getSubtitle()).isEqualTo(StringUtils.EMPTY);
-    assertThat(model.getType()).isEqualTo("image");
+
   }
 
   @Test
@@ -60,9 +57,7 @@ class CardComponentTest {
 
     assertThat(model).isNotNull();
     assertThat(model).isNotNull();
-    assertThat(model.getContent()).isEqualTo("Lorem ipsum");
     assertThat(model.getHeader()).isEqualTo("Card header");
-    assertThat(model.getTitle()).isEqualTo("Title");
-    assertThat(model.getSubtitle()).isEqualTo("Subtitle");
+
   }
 }

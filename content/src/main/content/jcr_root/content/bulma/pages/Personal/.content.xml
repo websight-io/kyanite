@@ -453,18 +453,14 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Admin (Light)"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Admin (Light)">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
                       <image
                         jcr:primaryType="nt:unstructured"
                         alt="\0"
-                        src="https://bulmatemplates.github.io/bulma-templates/images/admin.png"/>
+                        src="\0"/>
                       <urls jcr:primaryType="nt:unstructured">
                         <_x0030_
                           jcr:primaryType="nt:unstructured"
@@ -473,6 +469,17 @@
                           jcr:primaryType="nt:unstructured"
                           label="Source Code"/>
                       </urls>
+                      <cardcontent
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bulma/components/card/cardcontent">
+                        <image
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="bulma/components/image"
+                          alt="\0"
+                          isRounded="false"
+                          src="https://bulmatemplates.github.io/bulma-templates/images/admin.png"
+                          type="fixed"/>
+                      </cardcontent>
                     </card>
                   </tilechild>
                   <tilechild_2
@@ -507,18 +514,14 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Cards"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Cards">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
                       <image
                         jcr:primaryType="nt:unstructured"
                         alt="\0"
-                        src="https://bulmatemplates.github.io/bulma-templates/images/cards.png"/>
+                        src="\0"/>
                       <urls jcr:primaryType="nt:unstructured">
                         <_x0030_
                           jcr:primaryType="nt:unstructured"
@@ -527,9 +530,20 @@
                           jcr:primaryType="nt:unstructured"
                           label="Source Code"/>
                       </urls>
+                      <cardcontent
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bulma/components/card/cardcontent">
+                        <image
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="bulma/components/image"
+                          alt="\0"
+                          isRounded="false"
+                          src="https://bulmatemplates.github.io/bulma-templates/images/cards.png"
+                          type="fixed"/>
+                      </cardcontent>
                     </card>
                   </tilechild_2>
-                  <tilechild_2_1
+                  <tilechild_2_1_1
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="bulma/components/tiles/tilechild"
                     type="box">
@@ -561,18 +575,14 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Forum"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Forum">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
                       <image
                         jcr:primaryType="nt:unstructured"
                         alt="\0"
-                        src="https://bulmatemplates.github.io/bulma-templates/images/forum.png"/>
+                        src="\0"/>
                       <urls jcr:primaryType="nt:unstructured">
                         <_x0030_
                           jcr:primaryType="nt:unstructured"
@@ -581,8 +591,19 @@
                           jcr:primaryType="nt:unstructured"
                           label="Source Code"/>
                       </urls>
+                      <cardcontent
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bulma/components/card/cardcontent">
+                        <image
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="bulma/components/image"
+                          alt="\0"
+                          isRounded="false"
+                          src="https://bulmatemplates.github.io/bulma-templates/images/forum.png"
+                          type="fixed"/>
+                      </cardcontent>
                     </card>
-                  </tilechild_2_1>
+                  </tilechild_2_1_1>
                 </tileparent>
               </tiles>
             </column>
@@ -628,18 +649,14 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Band"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Band">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
                       <image
                         jcr:primaryType="nt:unstructured"
                         alt="\0"
-                        src="https://bulmatemplates.github.io/bulma-templates/images/band.png"/>
+                        src="\0"/>
                       <urls jcr:primaryType="nt:unstructured">
                         <_x0030_
                           jcr:primaryType="nt:unstructured"
@@ -648,6 +665,17 @@
                           jcr:primaryType="nt:unstructured"
                           label="Source Code"/>
                       </urls>
+                      <cardcontent
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bulma/components/card/cardcontent">
+                        <image
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="bulma/components/image"
+                          alt="\0"
+                          isRounded="false"
+                          src="https://bulmatemplates.github.io/bulma-templates/images/band.png"
+                          type="fixed"/>
+                      </cardcontent>
                     </card>
                   </tilechild>
                   <tilechild_2
@@ -682,18 +710,14 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Cheatsheet"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Cheatsheet">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
                       <image
                         jcr:primaryType="nt:unstructured"
                         alt="\0"
-                        src="https://bulmatemplates.github.io/bulma-templates/images/cheatsheet.png"/>
+                        src="\0"/>
                       <urls jcr:primaryType="nt:unstructured">
                         <_x0030_
                           jcr:primaryType="nt:unstructured"
@@ -702,6 +726,17 @@
                           jcr:primaryType="nt:unstructured"
                           label="Source Code"/>
                       </urls>
+                      <cardcontent
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bulma/components/card/cardcontent">
+                        <image
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="bulma/components/image"
+                          alt="\0"
+                          isRounded="false"
+                          src="https://bulmatemplates.github.io/bulma-templates/images/cheatsheet.png"
+                          type="fixed"/>
+                      </cardcontent>
                     </card>
                   </tilechild_2>
                   <tilechild_2_1
@@ -736,18 +771,14 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Hero"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Hero">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
                       <image
                         jcr:primaryType="nt:unstructured"
                         alt="\0"
-                        src="https://bulmatemplates.github.io/bulma-templates/images/hero.png"/>
+                        src="\0"/>
                       <urls jcr:primaryType="nt:unstructured">
                         <_x0030_
                           jcr:primaryType="nt:unstructured"
@@ -756,6 +787,17 @@
                           jcr:primaryType="nt:unstructured"
                           label="Source Code"/>
                       </urls>
+                      <cardcontent
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bulma/components/card/cardcontent">
+                        <image
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="bulma/components/image"
+                          alt="\0"
+                          isRounded="false"
+                          src="https://bulmatemplates.github.io/bulma-templates/images/hero.png"
+                          type="fixed"/>
+                      </cardcontent>
                     </card>
                   </tilechild_2_1>
                 </tileparent>
@@ -803,18 +845,14 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Blog"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Blog">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
                       <image
                         jcr:primaryType="nt:unstructured"
                         alt="\0"
-                        src="https://bulmatemplates.github.io/bulma-templates/images/blog.png"/>
+                        src="\0"/>
                       <urls jcr:primaryType="nt:unstructured">
                         <_x0030_
                           jcr:primaryType="nt:unstructured"
@@ -823,6 +861,17 @@
                           jcr:primaryType="nt:unstructured"
                           label="Source Code"/>
                       </urls>
+                      <cardcontent
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bulma/components/card/cardcontent">
+                        <image
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="bulma/components/image"
+                          alt="\0"
+                          isRounded="false"
+                          src="https://bulmatemplates.github.io/bulma-templates/images/blog.png"
+                          type="fixed"/>
+                      </cardcontent>
                     </card>
                   </tilechild_2>
                   <tilechild_2_1
@@ -857,18 +906,14 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Cover"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Cover">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
                       <image
                         jcr:primaryType="nt:unstructured"
                         alt="\0"
-                        src="https://bulmatemplates.github.io/bulma-templates/images/cover.png"/>
+                        src="\0"/>
                       <urls jcr:primaryType="nt:unstructured">
                         <_x0030_
                           jcr:primaryType="nt:unstructured"
@@ -877,6 +922,17 @@
                           jcr:primaryType="nt:unstructured"
                           label="Source Code"/>
                       </urls>
+                      <cardcontent
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bulma/components/card/cardcontent">
+                        <image
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="bulma/components/image"
+                          alt="\0"
+                          isRounded="false"
+                          src="https://bulmatemplates.github.io/bulma-templates/images/cover.png"
+                          type="fixed"/>
+                      </cardcontent>
                     </card>
                   </tilechild_2_1>
                   <tilechild_2_1_1
@@ -911,18 +967,14 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Inbox"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Inbox">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
                       <image
                         jcr:primaryType="nt:unstructured"
                         alt="\0"
-                        src="https://bulmatemplates.github.io/bulma-templates/images/inbox.png"/>
+                        src="\0"/>
                       <urls jcr:primaryType="nt:unstructured">
                         <_x0030_
                           jcr:primaryType="nt:unstructured"
@@ -931,6 +983,17 @@
                           jcr:primaryType="nt:unstructured"
                           label="Source Code"/>
                       </urls>
+                      <cardcontent
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="bulma/components/card/cardcontent">
+                        <image
+                          jcr:primaryType="nt:unstructured"
+                          sling:resourceType="bulma/components/image"
+                          alt="\0"
+                          isRounded="false"
+                          src="https://bulmatemplates.github.io/bulma-templates/images/inbox.png"
+                          type="fixed"/>
+                      </cardcontent>
                     </card>
                   </tilechild_2_1_1>
                 </tileparent>
