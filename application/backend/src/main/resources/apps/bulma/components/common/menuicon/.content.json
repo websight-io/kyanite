@@ -1,0 +1,65 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "icon",
+  "label": "Icon",
+  "none": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "None",
+    "value": "none"
+  },
+  "envelope": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Envelope",
+    "value": "fas fa-envelope"
+  },
+  "wpforms": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Wpforms",
+    "value": "fas fa-wpforms"
+  },
+  "columns": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Columns",
+    "value": "fas fa-columns"
+  },
+  "cubes": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Cubes",
+    "value": "fas fa-cubes"
+  },
+  "cogs": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Gears",
+    "value": "fas fa-cogs"
+  },
+  "superpowers": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Superpowers",
+    "value": "fas fa-superpowers"
+  },
+  "cube": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Cube",
+    "value": "fas fa-cube"
+  },
+  "info": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Info",
+    "value": "fas fa-info"
+  },
+  "bars": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Bars",
+    "value": "fas fa-bars"
+  },
+  "file": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "File",
+    "value": "fas fa-file-alt"
+  },
+  "list": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "List",
+    "value": "fas fa-th-list"
+  }
+}

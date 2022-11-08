@@ -10,6 +10,11 @@
         "name": "label",
         "label": "Label of a dropdown"
       },
+      "icon": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/apps/bulma/components/common/menuicon",
+        "defaultValue": "none"
+      },
       "hasArrow": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "name": "hasArrow",
@@ -21,6 +26,11 @@
         "name": "isBoxed",
         "label": "Boxed version of dropdown",
         "description": " When having a transparent navbar, it is preferable to use the boxed version of the dropdown, by using the is-boxed modifier."
+      },
+      "isDropup": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isDropup",
+        "label": "Revert expanding direction"
       },
       "items": {
         "sling:resourceType": "wcm/dialogs/components/multifield",
@@ -36,6 +46,10 @@
           "rootPath": "/content",
           "name": "url",
           "label": "URL connected to item"
+        },
+        "icon": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/apps/bulma/components/common/menuicon"
         },
         "hasDivider": {
           "sling:resourceType": "wcm/dialogs/components/checkbox",

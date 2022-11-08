@@ -14,7 +14,8 @@
         jcr:primaryType="nt:unstructured"
         sling:resourceType="bulma/components/navbar"
         isTransparent="false"
-        variant="is-link">
+        variant="is-link"
+        fixedOption="is-fixed-top">
         <brand
           jcr:primaryType="nt:unstructured"
           sling:resourceType="bulma/components/navbar/navbarbrand">
@@ -38,7 +39,8 @@
               sling:resourceType="bulma/components/navbar/navbaritem"
               label="About"
               type="link"
-              url="#about">
+              url="#about"
+              icon="fas fa-info">
               <hero
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bulma/components/hero"/>
@@ -48,25 +50,29 @@
               sling:resourceType="bulma/components/navbar/navbaritem"
               label="Services"
               type="link"
-              url="#services"/>
+              url="#services"
+              icon="fas fa-bars"/>
             <item
               jcr:primaryType="nt:unstructured"
               sling:resourceType="bulma/components/navbar/navbaritem"
               label="Resume"
               type="link"
-              url="#resume"/>
+              url="#resume"
+              icon="fas fa-file-alt"/>
             <navbaritem_1
               jcr:primaryType="nt:unstructured"
               sling:resourceType="bulma/components/navbar/navbaritem"
               label="Portfolio"
               type="link"
-              url="#portfolio"/>
+              url="#portfolio"
+              icon="fas fa-th-list"/>
             <navbaritem_2
               jcr:primaryType="nt:unstructured"
               sling:resourceType="bulma/components/navbar/navbaritem"
               label="Contact"
               type="link"
-              url="#contact"/>
+              url="#contact"
+              icon="fas fa-envelope"/>
           </end>
         </navbarmenu>
       </navbar>
