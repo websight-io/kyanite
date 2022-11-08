@@ -44,6 +44,8 @@ Once Docker images are ready, all you need is to run Docker Compose from the `en
 docker compose up
 ```
 
+After the run, you can get access to the application using: http://localhost:8080/apps/websight/index.html/content::spaces (credentials are `wsadmin/wsadmin`)
+
 This module uses Google Style and verifies code against its rules.
 
 ## Contributing
