@@ -19,34 +19,24 @@ package pl.ds.bulma.components.models;
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class CardComponent {
+
+  public static final String CARD_CONTENT_TYPE = "bulma/components/card/cardcontent";
 
   @Inject
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String header;
-
-  @Inject
-  @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String title;
-
-  @Inject
-  @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String subtitle;
-
-  @Inject
-  @Getter
-  private ImageComponent thumbnail;
 
   @Inject
   @Getter
@@ -58,22 +48,19 @@ public class CardComponent {
 
   @Inject
   @Getter
-  @Default(values = "Card content")
-  private String content;
+  private boolean content;
 
-  @Inject
-  @Getter
-  @Default(values = "image")
-  private String type;
+  @SlingObject
+  private Resource resource;
 
-  @Inject
-  @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String icon;
-
-  @Inject
-  @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String textVariant;
-
+  @PostConstruct
+  void init() {
+    for (Resource child : resource.getChildren()) {
+      String resourceType = child.getResourceType();
+      if (CARD_CONTENT_TYPE.equals(resourceType)) {
+        content = true;
+        break;
+      }
+    }
+  }
 }
