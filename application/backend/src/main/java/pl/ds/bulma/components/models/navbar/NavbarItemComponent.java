@@ -56,4 +56,8 @@ public class NavbarItemComponent {
   @Inject
   @Getter
   private boolean hasDivider;
+
+  @Inject
+  @Getter
+  private String icon;
 }

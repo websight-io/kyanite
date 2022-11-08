@@ -38,12 +38,20 @@ public class NavbarComponent {
   @Getter
   private String navbarStyle;
 
+  @Inject
+  @Getter
+  private String fixedOption;
+
   @PostConstruct
   private void init() {
     if (isTransparent) {
       navbarStyle = "is-transparent";
     } else {
       navbarStyle = variant;
+    }
+
+    if (fixedOption != null && !fixedOption.isEmpty()) {
+      navbarStyle = navbarStyle + " " + fixedOption;
     }
   }
 }

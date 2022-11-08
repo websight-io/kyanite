@@ -41,6 +41,10 @@
           "name": "url",
           "label": "URL connected to item"
         },
+        "icon": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/apps/bulma/components/common/menuicon"
+        },
         "ws:display": {"condition": {
           "sourceName": "type",
           "values": "link"

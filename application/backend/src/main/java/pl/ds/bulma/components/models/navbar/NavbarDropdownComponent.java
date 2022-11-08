@@ -41,6 +41,13 @@ public class NavbarDropdownComponent {
   @Getter
   private boolean isBoxed;
 
+  @Inject
+  @Getter
+  private boolean isDropup;
+
+  @Inject
+  @Getter
+  private String icon;
 
   @Inject
   @Getter

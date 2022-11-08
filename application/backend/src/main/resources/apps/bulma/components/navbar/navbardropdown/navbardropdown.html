@@ -17,8 +17,13 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarDropdownComponent">
-  <div class="navbar-item has-dropdown is-hoverable">
+  <div class="navbar-item has-dropdown is-hoverable ${model.isDropup ? 'has-dropdown-up' : ''}">
     <a class="navbar-link ${model.hasArrow ? '' : 'is-arrowless'}">
+      <sly data-sly-test="${model.icon && model.icon != 'none'}">
+        <span class="icon">
+          <i class="${model.icon}"></i>
+        </span>
+      </sly>
       ${model.label}
     </a>
 
@@ -26,6 +31,11 @@
       <sly data-sly-list.item="${model.items}">
         <li>
           <a class="navbar-item" href="${item.url}">
+            <sly data-sly-test="${item.icon && item.icon != 'none'}">
+              <span class="icon">
+                <i class="${item.icon}"></i>
+              </span>
+            </sly>
             ${item.label}
           </a>
           <sly data-sly-test="${item.hasDivider}">

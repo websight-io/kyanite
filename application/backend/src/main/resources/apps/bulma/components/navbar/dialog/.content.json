@@ -18,6 +18,26 @@
           }
         }
       },
+      "fixedOption": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "fixedOption",
+        "label": "Fixed Option",
+        "top": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Fixed Top",
+          "value": "is-fixed-top"
+        },
+        "standard": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Standard",
+          "value": ""
+        },
+        "bottom": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Fixed Bottom",
+          "value": "is-fixed-bottom"
+        }
+      },
       "isTransparent": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "name": "isTransparent",
