@@ -453,11 +453,7 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Admin (Light)"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Admin (Light)">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
@@ -518,11 +514,7 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Cards"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Cards">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
@@ -583,11 +575,7 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Forum"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Forum">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
@@ -661,11 +649,7 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Band"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Band">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
@@ -726,11 +710,7 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Cheatsheet"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Cheatsheet">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
@@ -791,11 +771,7 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Hero"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Hero">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
@@ -869,11 +845,7 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Blog"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Blog">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
@@ -934,11 +906,7 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Cover"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Cover">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
@@ -999,11 +967,7 @@
                     <card
                       jcr:primaryType="nt:unstructured"
                       sling:resourceType="bulma/components/card"
-                      content="&lt;p>&lt;/p>"
-                      header="Inbox"
-                      subtitle="\0"
-                      title="\0"
-                      type="image">
+                      header="Inbox">
                       <thumbnail
                         jcr:primaryType="nt:unstructured"
                         alt="\0"/>
