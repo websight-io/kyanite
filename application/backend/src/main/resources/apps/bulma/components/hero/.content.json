@@ -1,5 +1,6 @@
 {
   "isContainer": true,
+  "isLayout": true,
   "group": "Bulma.io Layouts",
   "allowedComponents": [
     "Bulma.io Columns",
