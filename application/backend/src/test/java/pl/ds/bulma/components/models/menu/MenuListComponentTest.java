@@ -41,39 +41,4 @@ class MenuListComponentTest {
         PATH);
   }
 
-  @Test
-  void defaultPricingPlanComponentModelTest() {
-    MenuComponent model = context.resourceResolver().getResource(PATH + "/default")
-        .adaptTo(MenuComponent.class);
-
-    assertThat(model).isNotNull();
-    assertThat(model.getMenuSections()).isNull();
-  }
-
-  @Test
-  void pricingPlanComponentModelTest() {
-    MenuComponent model = context.resourceResolver().getResource(PATH + "/complex")
-        .adaptTo(MenuComponent.class);
-
-    assertThat(model).isNotNull();
-    assertThat(model.getMenuSections()).hasSize(2);
-    assertThat(
-        model.getMenuSections()
-            .stream()
-            .filter(i -> i.getLabel().equals("Label1"))
-            .findFirst()
-              .get().getMenuListItemComponentList()
-              .get(1) //only second item has children
-              .getSecondLevelItems()).hasSize(2);
-    assertThat(
-        model.getMenuSections()
-            .stream()
-            .filter(i -> i.getLabel().equals("Label2"))
-            .findFirst()
-            .get().getMenuListItemComponentList()
-            .get(0)
-            .getSecondLevelItems()).isNull();
-
-  }
-
 }
