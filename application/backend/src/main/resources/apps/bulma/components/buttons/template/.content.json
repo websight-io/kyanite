@@ -1,0 +1,16 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "button1": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/button"
+  },
+  "button2": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/button"
+  },
+  "button3": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/button"
+  }
+
+}

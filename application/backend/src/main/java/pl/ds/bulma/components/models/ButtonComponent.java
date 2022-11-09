@@ -53,7 +53,6 @@ public class ButtonComponent {
 
   @Inject
   @Getter
-  @Default(values = "is-normal")
   private String size;
 
   @Inject

@@ -48,7 +48,7 @@ class ButtonComponentTest {
     assertThat(model.getLabel()).isEqualTo("Label");
     assertThat(model.getType()).isEqualTo("button");
     assertThat(model.getVariant()).isEqualTo("is-primary");
-    assertThat(model.getSize()).isEqualTo("is-normal");
+    assertThat(model.getSize()).isNull();
 
   }
 
