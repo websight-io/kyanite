@@ -1,10 +1,11 @@
 {
   "isContainer": true,
+  "isLayout": true,
+  "group": "Bulma.io Layouts",
   "allowedComponents": [
     "/apps/bulma/components/level/positionedlevel",
     "/apps/bulma/components/level/levelitem"
   ],
-  "group": "Bulma.io Layouts",
   "sling:resourceType": "ws:Component",
   "title": "Level container"
 }
