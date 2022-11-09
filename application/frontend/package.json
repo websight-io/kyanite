@@ -15,8 +15,7 @@
     "sync": "websight-localsync target-folder=dist provider-root-suffix=bulma/web_root"
   },
   "dependencies": {
-    "bulma": "^0.9.4",
-    "bulma-pricingtable": "^0.2.0"
+    "bulma": "^0.9.4"
   },
   "devDependencies": {
     "webpack": "^5.69.1",
