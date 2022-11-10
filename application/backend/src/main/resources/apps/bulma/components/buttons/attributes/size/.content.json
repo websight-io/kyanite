@@ -1,0 +1,21 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "size",
+  "label": "Size",
+  "areSmall": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Small",
+    "value": "are-small"
+  },
+  "areMedium": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Medium",
+    "value": "are-medium"
+  },
+  "areLarge": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Large",
+    "value": "are-large"
+  }
+}
+

@@ -19,22 +19,52 @@ package pl.ds.bulma.components.models;
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
-public class ButtonsListComponent {
+public class ButtonsComponent {
+
+  public static final String IS_LEFT = "is-left";
+  public static final String HAS_ADDONS = "has-addons";
 
   @Inject
-  @Default(values = "false")
   @Getter
-  private String hasAddons;
+  private boolean hasAddons;
 
   @Inject
-  @Default(values = "is-left")
+  @Default(values = IS_LEFT)
   @Getter
   private String alignment;
+
+  @Inject
+  @Getter
+  private String size;
+
+  @Inject
+  @Getter
+  private String[] buttonsClasses;
+
+  @PostConstruct
+  private void init() {
+    List<String> classes = new ArrayList<>();
+    if (StringUtils.isNotEmpty(size)) {
+      classes.add(size);
+    }
+    if (StringUtils.isNotEmpty(alignment)) {
+      classes.add(alignment);
+    }
+    if (hasAddons) {
+      classes.add(HAS_ADDONS);
+    }
+
+    buttonsClasses = classes.toArray(new String[]{});
+  }
 }

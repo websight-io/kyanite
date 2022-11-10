@@ -3,5 +3,5 @@
   "group": "Bulma.io Elements",
   "allowedComponents": ["/apps/bulma/components/button"],
   "sling:resourceType": "ws:Component",
-  "title": "Buttons list"
+  "title": "Buttons"
 }
