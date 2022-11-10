@@ -18,15 +18,19 @@ package pl.ds.bulma.components.models;
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class TabComponent {
+
+  public static final String TAB_CONTENT_TYPE = "bulma/components/tabs/tabcontent";
 
   @Inject
   @Getter
@@ -37,4 +41,22 @@ public class TabComponent {
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String icon;
+
+  @Inject
+  @Getter
+  private boolean content;
+
+  @SlingObject
+  private Resource resource;
+
+  @PostConstruct
+  void init() {
+    for (Resource child : resource.getChildren()) {
+      String resourceType = child.getResourceType();
+      if (TAB_CONTENT_TYPE.equals(resourceType)) {
+        content = true;
+        break;
+      }
+    }
+  }
 }

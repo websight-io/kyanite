@@ -22,20 +22,6 @@
             "value": ""
           }
         }
-      },
-      "tabs": {
-        "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "tabs",
-        "label": "Tab",
-        "labelText": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "label",
-          "label": "Label"
-        },
-        "icon": {
-          "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/apps/bulma/components/common/icon"
-        }
       }
     },
     "modifiers": {

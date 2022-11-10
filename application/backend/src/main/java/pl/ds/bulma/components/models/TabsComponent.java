@@ -33,6 +33,8 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 
 public class TabsComponent {
 
+  public static final String TAB_TYPE = "bulma/components/tabs/tab";
+
   @Inject
   @Getter
   @Default(values = StringUtils.EMPTY)
@@ -70,8 +72,20 @@ public class TabsComponent {
   @Getter
   private String[] tabClasses;
 
+  @Inject
+  @Getter
+  private boolean content;
+
   @PostConstruct
   private void init() {
+    for (Resource child : resource.getChildren()) {
+      String resourceType = child.getResourceType();
+      if (TAB_TYPE.equals(resourceType)) {
+        content = true;
+        break;
+      }
+    }
+
     List<String> styles = new ArrayList<>();
     if (StringUtils.isNotEmpty(size)) {
       styles.add(size);
