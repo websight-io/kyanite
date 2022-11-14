@@ -20,13 +20,19 @@ const test = () => {
         const tabs = document.querySelectorAll('.tabs li');
         const tabContentBoxes = document.querySelectorAll('#tab-content > div');
 
+        tabs[0].classList.add('is-active');
+        tabContentBoxes.forEach(box => {
+            if (box.getAttribute('id') === tabs[0].dataset.target) {
+                box.classList.remove('is-hidden');
+            }
+        })
+
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
                 tabs.forEach(item => item.classList.remove('is-active'));
                 tab.classList.add('is-active');
 
                 const target = tab.dataset.target;
-                // console.log(target);
                 tabContentBoxes.forEach(box => {
                     if (box.getAttribute('id') === target) {
                         box.classList.remove('is-hidden');

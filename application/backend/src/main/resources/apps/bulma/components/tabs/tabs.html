@@ -20,11 +20,13 @@
         <sly data-sly-test="${resource.hasChildren}">
             <!--        edit mode layout-->
             <sly data-sly-test="${wcmmode.isEdit}">
-                <sly data-sly-list="${resource.children}">
-                    <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tab'}">
-                        <sly data-sly-resource="${item}"></sly>
+                <div style="padding-top: 10px; padding-bottom: 10px;">
+                    <sly data-sly-list="${resource.children}">
+                        <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tab'}">
+                            <sly data-sly-resource="${item}"></sly>
+                        </sly>
                     </sly>
-                </sly>
+                </div>
             </sly>
             <!--        end of edit mode layout-->
 
@@ -48,7 +50,7 @@
                                 <sly data-sly-test.tabid="${item.label}">
                                     <sly data-sly-list="${item.children}">
                                         <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tabcontent'}">
-                                            <div id="${tabid}">
+                                            <div id="${tabid}" class="is-hidden">
                                                 <sly data-sly-resource="${item}"></sly>
                                             </div>
                                         </sly>
