@@ -18,21 +18,16 @@
 <sly data-sly-use.model="pl.ds.bulma.components.models.TabsComponent">
     <sly data-sly-test="${model.content}">
         <sly data-sly-test="${resource.hasChildren}">
-
             <!--        edit mode layout-->
             <sly data-sly-test="${wcmmode.isEdit}">
-                <div>
-                    <div style="padding-top: 20px; padding-bottom: 20px;" data-sly-unwrap="${!wcmmode.isEdit}">
-                        <ul>
-                            <sly data-sly-list="${resource.children}">
-                                <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tab'}">
-                                    <sly data-sly-resource="${item}"></sly>
-                                </sly>
-                            </sly>
-                        </ul>
-                    </div>
-                </div>
+                <sly data-sly-list="${resource.children}">
+                    <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tab'}">
+                        <sly data-sly-resource="${item}"></sly>
+                    </sly>
+                </sly>
             </sly>
+            <!--        end of edit mode layout-->
+
             <!--        preview mode layout-->
             <sly data-sly-test="${!wcmmode.isEdit}">
                 <div class="tabs ${model.tabClasses @ join=' '}">
@@ -64,7 +59,7 @@
                     </sly>
                 </div>
             </sly>
-
+            <!--        end of preview mode layout-->
         </sly>
     </sly>
 </sly>

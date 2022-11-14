@@ -66,10 +66,6 @@ public class TabsComponent {
 
   @Inject
   @Getter
-  private List<TabComponent> tabs;
-
-  @Inject
-  @Getter
   private String[] tabClasses;
 
   @Inject

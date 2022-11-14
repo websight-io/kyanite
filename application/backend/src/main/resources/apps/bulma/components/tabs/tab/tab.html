@@ -19,30 +19,42 @@
     <sly data-sly-test="${model.content}">
         <!--        edit mode layout-->
         <sly data-sly-test="${wcmmode.isEdit}">
-            <div style="display: block; padding-bottom: 5px;margin-bottom: 10px">
-                <div style="display: block;">
-<!--                    <a>-->
-<!--                        <sly data-sly-test="${model.icon}">-->
-<!--                        <span class="icon is-small">-->
-<!--                            <i class="${model.icon}" aria-hidden="true"></i>-->
-<!--                        </span>-->
-<!--                        </sly>-->
-<!--                        <span>Content of ${model.label}</span>-->
-<!--                    </a>-->
-                                            <span>Content of ${model.label}</span>
+            <div style="margin-bottom: 20px;">
+            <div class="tabs ${model.tabClasses @ join=' '}">
+                    <sly data-sly-test.parent="${resource.parent}">
+                        <ul>
+                            <sly data-sly-list="${parent.children}">
+                                <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tab'}">
+                                    <li class="${model.label == item.label ? 'is-active' : ''}"
+                                        data-target="${item.label}">
+                                        <a>
+                                            <sly data-sly-test="${item.icon}">
+                                                <span class="icon is-small"><i class="${item.icon}"
+                                                                               aria-hidden="true"></i></span>
+                                            </sly>
+                                            <span>${item.label}</span>
+                                        </a>
+                                    </li>
+                                </sly>
+                            </sly>
+                        </ul>
+                    </sly>
                 </div>
-                <sly data-sly-test="${resource.hasChildren}">
-                    <!--        <sly data-sly-test="${resource.hasChildren}">-->
+            <div class="px-2" id="tab-content">
+                <sly data-sly-test=" ${resource.hasChildren}">
                     <sly data-sly-list="${resource.children}">
                         <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tabcontent'}">
-                            <div style="display: block;">
+                            <div>
                                 <sly data-sly-resource="${item}"></sly>
                             </div>
                         </sly>
                     </sly>
                 </sly>
             </div>
+            </div>
         </sly>
+
+        <!--        end of edit mode layout-->
 
         <!--        preview mode layout-->
         <sly data-sly-test="${!wcmmode.isEdit}">
@@ -55,18 +67,6 @@
                 </a>
             </li>
         </sly>
-
-<!--        <sly data-sly-test="${wcmmode.isEdit && resource.hasChildren}">-->
-<!--            &lt;!&ndash;        <sly data-sly-test="${resource.hasChildren}">&ndash;&gt;-->
-<!--            <sly data-sly-list="${resource.children}">-->
-<!--                <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tabcontent'}">-->
-<!--                    <div class="tab-content">-->
-<!--                        <sly data-sly-resource="${item}"></sly>-->
-<!--                    </div>-->
-<!--                </sly>-->
-<!--            </sly>-->
-<!--        </sly>-->
-
-
+        <!--        end of preview mode layout-->
     </sly>
 </sly>
