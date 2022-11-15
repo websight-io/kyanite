@@ -1,0 +1,11 @@
+{
+  "isContainer": true,
+  "isLayout": true,
+  "group": "Bulma.io Layouts",
+  "allowedComponents": [
+    "/apps/bulma/components/mediaobject/medialeft",
+    "/apps/bulma/components/mediaobject/mediacontent",
+    "/apps/bulma/components/mediaobject/mediaright"],
+  "sling:resourceType": "ws:Component",
+  "title": "Media Object"
+}
