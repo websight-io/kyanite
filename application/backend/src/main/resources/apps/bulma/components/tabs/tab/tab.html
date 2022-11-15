@@ -19,9 +19,9 @@
     <sly data-sly-test="${model.content}">
         <!--        edit mode layout-->
         <sly data-sly-test="${wcmmode.isEdit}">
-            <div style="margin-bottom: 20px;">
-                <div class="tabs ${model.tabClasses @ join=' '}">
-                    <sly data-sly-test.parent="${resource.parent}">
+            <div style="margin-bottom: 20px; border-style: dashed; border-color: #a8a4a4;">
+                <sly data-sly-test.parent="${resource.parent}">
+                    <div class="tabs ${parent.size ? parent.size : ''} ${parent.alignment ? parent.alignment : ''} ${parent.boxed ? 'is-boxed' : ''} ${parent.fullWidth ? 'is-fullwidth' : ''} ${parent.toggle ? 'is-toggle' : ''} ${parent.toggleRounded ? 'is-toggle-rounded' : ''}">
                         <ul>
                             <sly data-sly-list="${parent.children}">
                                 <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tab'}">
@@ -38,8 +38,8 @@
                                 </sly>
                             </sly>
                         </ul>
-                    </sly>
-                </div>
+                    </div>
+                </sly>
                 <div class="px-2" id="tab-content">
                     <sly data-sly-test=" ${resource.hasChildren}">
                         <sly data-sly-list="${resource.children}">

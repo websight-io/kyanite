@@ -1,0 +1,30 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "tab1": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/tabs/tab",
+    "label":"Tab 1",
+    "tabcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/tabs/tabcontent"
+    }
+  },
+  "tab2": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/tabs/tab",
+    "label":"Tab 2",
+    "tabcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/tabs/tabcontent"
+    }
+  },
+  "tab3": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/tabs/tab",
+    "label":"Tab 3",
+    "tabcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/tabs/tabcontent"
+    }
+  }
+}
