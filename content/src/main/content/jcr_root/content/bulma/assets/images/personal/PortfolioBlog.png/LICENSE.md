@@ -1,0 +1,1 @@
+Image is from https://github.com/BulmaTemplates/bulma-templates. It is licensed [MIT](http://opensource.org/licenses/mit-license.php).
