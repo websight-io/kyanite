@@ -42,10 +42,12 @@
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "name": "isSpaced",
         "label": "Normal spacing between title and subtitle",
-        "ws:display": {"condition": {
-          "sourceName": "type",
-          "values": "title"
-        }}
+        "ws:display": {
+          "condition": {
+            "sourceName": "type",
+            "values": "title"
+          }
+        }
       }
     }
   }
