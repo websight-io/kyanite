@@ -16,13 +16,9 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.bulma.components.models.BlockComponent">
-  <div style="padding-top: 40px;" data-sly-unwrap="${!wcmmode.isEdit}">
-    <div class="block">
-      <sly data-sly-test="${resource.hasChildren}">
-        <sly
-            data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-      </sly>
-    </div>
+<sly data-sly-test="${resource.hasChildren}">
+  <div class="block">
+    <sly
+        data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
   </div>
 </sly>
