@@ -16,57 +16,55 @@
   ~
 */-->
 <sly data-sly-use.model="pl.ds.bulma.components.models.TabComponent">
-    <sly data-sly-test="${model.content}">
-        <!--        edit mode layout-->
-        <sly data-sly-test="${wcmmode.isEdit}">
-            <div style="margin-bottom: 20px; border-style: dashed; border-color: #a8a4a4;">
-                <sly data-sly-test.parent="${resource.parent}">
-                    <div class="tabs ${parent.size ? parent.size : ''} ${parent.alignment ? parent.alignment : ''} ${parent.boxed ? 'is-boxed' : ''} ${parent.fullWidth ? 'is-fullwidth' : ''} ${parent.toggle ? 'is-toggle' : ''} ${parent.toggleRounded ? 'is-toggle-rounded' : ''}">
-                        <ul>
-                            <sly data-sly-list="${parent.children}">
-                                <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tab'}">
-                                    <li class="${model.label == item.label ? 'is-active' : ''}"
-                                        data-target="${item.label}">
-                                        <a>
-                                            <sly data-sly-test="${item.icon}">
+    <!--        edit mode layout-->
+    <sly data-sly-test="${wcmmode.isEdit}">
+        <div style="margin-bottom: 20px; border-style: dashed; border-color: #a8a4a4;">
+            <sly data-sly-test.parent="${resource.parent}">
+                <div class="tabs ${parent.size ? parent.size : ''} ${parent.alignment ? parent.alignment : ''} ${parent.boxed ? 'is-boxed' : ''} ${parent.fullWidth ? 'is-fullwidth' : ''} ${parent.toggle ? 'is-toggle' : ''} ${parent.toggleRounded ? 'is-toggle-rounded' : ''}">
+                    <ul>
+                        <sly data-sly-list="${parent.children}">
+                            <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tab'}">
+                                <li class="${model.label == item.label ? 'is-active' : ''}"
+                                    data-target="${item.label}">
+                                    <a>
+                                        <sly data-sly-test="${item.icon}">
                                                 <span class="icon is-small"><i class="${item.icon}"
                                                                                aria-hidden="true"></i></span>
-                                            </sly>
-                                            <span>${item.label}</span>
-                                        </a>
-                                    </li>
-                                </sly>
-                            </sly>
-                        </ul>
-                    </div>
-                </sly>
-                <div class="px-2" id="tab-content">
-                    <sly data-sly-test=" ${resource.hasChildren}">
-                        <sly data-sly-list="${resource.children}">
-                            <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tabcontent'}">
-                                <div>
-                                    <sly data-sly-resource="${item}"></sly>
-                                </div>
+                                        </sly>
+                                        <span>${item.label}</span>
+                                    </a>
+                                </li>
                             </sly>
                         </sly>
-                    </sly>
+                    </ul>
                 </div>
-            </div>
-        </sly>
-
-        <!--        end of edit mode layout-->
-
-        <!--        preview mode layout-->
-        <sly data-sly-test="${!wcmmode.isEdit}">
-            <li data-target="${model.label}">
-                <a>
-                    <sly data-sly-test="${model.icon}">
-                        <span class="icon is-small"><i class="${model.icon}" aria-hidden="true"></i></span>
+            </sly>
+            <div class="px-2" id="tab-content">
+                <sly data-sly-test=" ${resource.hasChildren}">
+                    <sly data-sly-list="${resource.children}">
+                        <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tabcontent'}">
+                            <div>
+                                <sly data-sly-resource="${item}"></sly>
+                            </div>
+                        </sly>
                     </sly>
-                    <span>${model.label}</span>
-                </a>
-            </li>
-        </sly>
-        <!--        end of preview mode layout-->
+                </sly>
+            </div>
+        </div>
     </sly>
+
+    <!--        end of edit mode layout-->
+
+    <!--        preview mode layout-->
+    <sly data-sly-test="${!wcmmode.isEdit}">
+        <li data-target="${model.label}">
+            <a>
+                <sly data-sly-test="${model.icon}">
+                    <span class="icon is-small"><i class="${model.icon}" aria-hidden="true"></i></span>
+                </sly>
+                <span>${model.label}</span>
+            </a>
+        </li>
+    </sly>
+    <!--        end of preview mode layout-->
 </sly>

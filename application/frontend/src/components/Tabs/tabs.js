@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-const test = () => {
+const switchTab = () => {
     document.addEventListener('DOMContentLoaded', () => {
 
         const tabs = document.querySelectorAll('.tabs li');
@@ -46,4 +46,4 @@ const test = () => {
     });
 };
 
-test();
+switchTab();
