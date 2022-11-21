@@ -16,11 +16,9 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.bulma.components.models.FooterComponent">
+<sly data-sly-test="${resource.hasChildren}">
   <footer class="footer">
-      <sly data-sly-test="${resource.hasChildren}">
-        <sly
-            data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-      </sly>
+    <sly
+        data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
   </footer>
 </sly>
