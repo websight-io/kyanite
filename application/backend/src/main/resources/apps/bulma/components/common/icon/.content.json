@@ -1,45 +1,82 @@
 {
-  "sling:resourceType": "wcm/dialogs/components/select",
-  "name": "icon",
-  "label": "Icon",
-  "envelope": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Envelope",
-    "value": "fa fa-lg fa-envelope"
+  "sling:resourceType": "wcm/dialogs/components/container",
+  "selectOrType": {
+    "sling:resourceType": "wcm/dialogs/components/radio",
+    "name": "selectOrType",
+    "label": "Select icon or type it",
+    "required": true,
+    "select": {
+      "sling:resourceType": "wcm/dialogs/components/radio/option",
+      "label": "Select it",
+      "value": "select",
+      "selected": true
+    },
+    "type": {
+      "sling:resourceType": "wcm/dialogs/components/radio/option",
+      "label": "Type it",
+      "value": "type"
+    }
   },
-  "file": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "File",
-    "value": "fa fa-lg fa-file-alt"
+  "selectableIcon": {
+    "sling:resourceType": "wcm/dialogs/components/select",
+    "name": "icon",
+    "label": "Icon",
+    "envelope": {
+      "sling:resourceType": "wcm/dialogs/components/selectItem",
+      "label": "Envelope",
+      "value": "fa fa-lg fa-envelope"
+    },
+    "file": {
+      "sling:resourceType": "wcm/dialogs/components/selectItem",
+      "label": "File",
+      "value": "fa fa-lg fa-file-alt"
+    },
+    "wpforms": {
+      "sling:resourceType": "wcm/dialogs/components/selectItem",
+      "label": "Wpforms",
+      "value": "fa fa-lg fa-wpforms"
+    },
+    "columns": {
+      "sling:resourceType": "wcm/dialogs/components/selectItem",
+      "label": "Columns",
+      "value": "fa fa-lg fa-columns"
+    },
+    "cubes": {
+      "sling:resourceType": "wcm/dialogs/components/selectItem",
+      "label": "Cubes",
+      "value": "fa fa-lg fa-cubes"
+    },
+    "cogs": {
+      "sling:resourceType": "wcm/dialogs/components/selectItem",
+      "label": "Gears",
+      "value": "fa fa-lg fa-cogs"
+    },
+    "superpowers": {
+      "sling:resourceType": "wcm/dialogs/components/selectItem",
+      "label": "Superpowers",
+      "value": "fa fa-lg fa-superpowers"
+    },
+    "cube": {
+      "sling:resourceType": "wcm/dialogs/components/selectItem",
+      "label": "Cube",
+      "value": "fa fa-lg fa-cube"
+    },
+    "ws:display": {
+      "condition": {
+        "sourceName": "selectOrType",
+        "values": "select"
+      }
+    }
   },
-  "wpforms": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Wpforms",
-    "value": "fa fa-lg fa-wpforms"
-  },
-  "columns": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Columns",
-    "value": "fa fa-lg fa-columns"
-  },
-  "cubes": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Cubes",
-    "value": "fa fa-lg fa-cubes"
-  },
-  "cogs": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Gears",
-    "value": "fa fa-lg fa-cogs"
-  },
-  "superpowers": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Superpowers",
-    "value": "fa fa-lg fa-superpowers"
-  },
-  "cube": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Cube",
-    "value": "fa fa-lg fa-cube"
+  "typedIcon": {
+    "sling:resourceType": "wcm/dialogs/components/textfield",
+    "name": "icon",
+    "label": "Name of the icon from font awesome",
+    "ws:display": {
+      "condition": {
+        "sourceName": "selectOrType",
+        "values": "type"
+      }
+    }
   }
 }

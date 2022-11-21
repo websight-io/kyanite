@@ -87,50 +87,9 @@
         "label": "Add icon?"
       },
       "iconContainer": {
-        "sling:resourceType": "wcm/dialogs/components/container",
-        "selectOrType": {
-          "sling:resourceType": "wcm/dialogs/components/radio",
-          "name": "selectOrType",
-          "label": "Select icon or type it",
-          "required": true,
-          "select": {
-            "sling:resourceType": "wcm/dialogs/components/radio/option",
-            "label": "Select it",
-            "value": "select",
-            "selected": true
-          },
-          "type": {
-            "sling:resourceType": "wcm/dialogs/components/radio/option",
-            "label": "Type it",
-            "value": "type"
-          }
-        },
-        "included": {
-          "sling:resourceType": "wcm/dialogs/components/container",
-          "icon": {
-            "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/apps/bulma/components/common/icon"
-          },
-          "ws:display": {
-            "condition": {
-              "sourceName": "selectOrType",
-              "values": "select"
-            }
-          }
-        },
-        "typed": {
-          "sling:resourceType": "wcm/dialogs/components/container",
-          "icon": {
-            "sling:resourceType": "wcm/dialogs/components/textfield",
-            "name": "icon",
-            "label": "Name of the icon from font awesome"
-          },
-          "ws:display": {
-            "condition": {
-              "sourceName": "selectOrType",
-              "values": "type"
-            }
-          }
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/apps/bulma/components/common/icon"
         },
         "ws:display": {
           "condition": {
