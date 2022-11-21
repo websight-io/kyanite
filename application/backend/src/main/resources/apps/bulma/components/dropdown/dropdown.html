@@ -1,0 +1,24 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.DropdownComponent">
+  <div class="dropdown ${model.isHoverable} ${model.isDropup} ${model.isRight}">
+    <div class="dropdown-trigger">
+      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+        <span>${model.label}</span>
+        <span class="icon is-small">
+        <i class="fas ${model.isDropup ? 'fa-angle-up' : 'fa-angle-down'}" aria-hidden="true"></i>
+      </span>
+      </button>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+      <div class="dropdown-content">
+        <sly data-sly-list.item="${model.items}">
+          <a class="dropdown-item" href="${item.url}">
+            ${item.label}
+          </a>
+          <sly data-sly-test="${item.hasDivider}">
+            <hr class="dropdown-divider">
+          </sly>
+        </sly>
+      </div>
+    </div>
+  </div>
+</sly>

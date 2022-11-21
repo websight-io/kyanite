@@ -1,0 +1,51 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "dropdownLabel": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "label",
+        "label": "Label of a dropdown"
+      },
+      "isHoverable": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isHoverable",
+        "label": "Hoverable"
+      },
+      "isRight": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isRight",
+        "label": "Right Aligned"
+      },
+      "isDropup": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isDropup",
+        "label": "Revert expanding direction"
+      },
+      "items": {
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "name": "items",
+        "label": "Elements in the dropdown",
+        "text": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Item label"
+        },
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL connected to item"
+        },
+        "hasDivider": {
+          "sling:resourceType": "wcm/dialogs/components/checkbox",
+          "name": "hasDivider",
+          "label": "Has divider after item"
+        }
+      }
+    }
+  }
+}
