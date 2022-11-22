@@ -20,9 +20,9 @@
         "name": "isRight",
         "label": "Right Aligned"
       },
-      "isDropup": {
+      "isUp": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
-        "name": "isDropup",
+        "name": "isUp",
         "label": "Revert expanding direction"
       },
       "items": {

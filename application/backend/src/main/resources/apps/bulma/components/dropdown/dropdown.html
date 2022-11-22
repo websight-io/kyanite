@@ -1,10 +1,10 @@
 <sly data-sly-use.model="pl.ds.bulma.components.models.DropdownComponent">
-  <div class="dropdown ${model.isHoverable} ${model.isDropup} ${model.isRight}">
+  <div class="dropdown ${model.dropdownClasses @ join=' '}">
     <div class="dropdown-trigger">
       <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
         <span>${model.label}</span>
         <span class="icon is-small">
-        <i class="fas ${model.isDropup ? 'fa-angle-up' : 'fa-angle-down'}" aria-hidden="true"></i>
+        <i class="fas ${model.isUp ? 'fa-angle-up' : 'fa-angle-down'}" aria-hidden="true"></i>
       </span>
       </button>
     </div>
