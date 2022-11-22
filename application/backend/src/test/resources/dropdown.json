@@ -1,0 +1,29 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/dropdown"
+  },
+  "complex": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/dropdown",
+    "label": "Dropdown",
+    "isHoverable": true,
+    "isRight": true,
+    "isUp": true,
+    "items": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "label": "Item 1",
+        "url": "url1",
+        "hasDivider": true
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "label": "Item 2",
+        "url": "url2",
+        "hasDivider": false
+      }
+    }
+  }
+}
