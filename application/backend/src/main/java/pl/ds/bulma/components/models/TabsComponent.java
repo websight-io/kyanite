@@ -27,13 +27,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 
 public class TabsComponent {
-
-  public static final String TAB_TYPE = "bulma/components/tabs/tab";
 
   @Inject
   @Getter
@@ -61,27 +58,12 @@ public class TabsComponent {
   @Getter
   private boolean toggleRounded;
 
-  @SlingObject
-  private Resource resource;
-
   @Inject
   @Getter
   private String[] tabClasses;
 
-  @Inject
-  @Getter
-  private boolean content;
-
   @PostConstruct
   private void init() {
-    for (Resource child : resource.getChildren()) {
-      String resourceType = child.getResourceType();
-      if (TAB_TYPE.equals(resourceType)) {
-        content = true;
-        break;
-      }
-    }
-
     List<String> styles = new ArrayList<>();
     if (StringUtils.isNotEmpty(size)) {
       styles.add(size);

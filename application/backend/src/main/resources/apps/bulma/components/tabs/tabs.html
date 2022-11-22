@@ -16,7 +16,9 @@
   ~
 */-->
 <sly data-sly-use.model="pl.ds.bulma.components.models.TabsComponent">
-    <sly data-sly-test="${model.content}">
+    <sly data-sly-test="${wcmmode.isEdit}">
+        <div id="check" data-check="true" style="display: none"></div>
+    </sly>
         <sly data-sly-test="${resource.hasChildren}">
             <!--        edit mode layout-->
             <sly data-sly-test="${wcmmode.isEdit}">
@@ -63,5 +65,4 @@
             </sly>
             <!--        end of preview mode layout-->
         </sly>
-    </sly>
 </sly>
