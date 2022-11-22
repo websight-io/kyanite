@@ -16,33 +16,49 @@
 
 const switchTab = () => {
     document.addEventListener('DOMContentLoaded', () => {
+        const tabContainers = document.querySelectorAll('.tabs');
+        let tabContainersTabs = [];
+        tabContainers.forEach(container => {
+            tabContainersTabs.push(container.querySelectorAll('li'));
+        })
 
-        const tabs = document.querySelectorAll('.tabs li');
-        const tabContentBoxes = document.querySelectorAll('#tab-content > div');
-
-        tabs[0].classList.add('is-active');
-        tabContentBoxes.forEach(box => {
-            if (box.getAttribute('id') === tabs[0].dataset.target) {
-                box.classList.remove('is-hidden');
+        tabContainersTabs.forEach(tabs => {
+            if (tabs != null && tabs.length > 0 && tabs[0] != null) {
+                tabs[0].classList.add('is-active');
             }
         })
 
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(item => item.classList.remove('is-active'));
-                tab.classList.add('is-active');
-
-                const target = tab.dataset.target;
-                tabContentBoxes.forEach(box => {
-                    if (box.getAttribute('id') === target) {
-                        box.classList.remove('is-hidden');
-                    } else {
-                        box.classList.add('is-hidden');
-                    }
-                })
+        const tabContentBoxes = document.querySelectorAll('#tab-content > div');
+        tabContentBoxes.forEach(box => {
+            tabContainersTabs.forEach(tabs => {
+                if (box.getAttribute('id') === tabs[0].dataset.target) {
+                    box.classList.remove('is-hidden');
+                }
             })
         })
 
+        tabContainersTabs.forEach(tabs => {
+            tabs.forEach(tab => {
+
+                tab.addEventListener('click', () => {
+                    tabs.forEach(item => item.classList.remove('is-active'));
+                    tab.classList.add('is-active');
+
+                    const target = tab.dataset.target;
+                    tabContentBoxes.forEach(box => {
+                        if (box.getAttribute('id') === target) {
+                            box.classList.remove('is-hidden');
+                        } else {
+                            tabs.forEach(item => {
+                                if (box.getAttribute('id') === item.dataset.target)
+                                    box.classList.add('is-hidden');
+                            });
+                        }
+                    })
+                })
+
+            })
+        })
     });
 };
 
