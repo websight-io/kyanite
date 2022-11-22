@@ -16,20 +16,53 @@
   ~
 */-->
 <sly data-sly-use.model="pl.ds.bulma.components.models.TabsComponent">
-  <div class="tabs ${model.tabClasses @ join=' '}">
-    <div style="padding-top: 20px; padding-bottom: 20px;" data-sly-unwrap="${!wcmmode.isEdit}">
-      <ul>
-        <sly data-sly-list.item="${model.tabs}">
-          <li class="${itemList.first ? 'is-active' : ''}">
-            <a>
-              <sly data-sly-test="${item.icon}">
-                <span class="icon is-small"><i class="${item.icon}" aria-hidden="true"></i></span>
-              </sly>
-              <span>${item.label}</span>
-            </a>
-          </li>
+    <sly data-sly-test="${wcmmode.isEdit}">
+        <div id="check" data-check="true" style="display: none"></div>
+    </sly>
+        <sly data-sly-test="${resource.hasChildren}">
+            <!--        edit mode layout-->
+            <sly data-sly-test="${wcmmode.isEdit}">
+                <div style="padding-top: 10px; padding-bottom: 10px;">
+                    <sly data-sly-list="${resource.children}">
+                        <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tab'}">
+                            <sly data-sly-resource="${item}"></sly>
+                        </sly>
+                    </sly>
+                </div>
+            </sly>
+            <!--        end of edit mode layout-->
+
+            <!--        preview mode layout-->
+            <sly data-sly-test="${!wcmmode.isEdit}">
+                <div class="tabs ${model.tabClasses @ join=' '}">
+                    <div style="padding-top: 20px; padding-bottom: 20px;" data-sly-unwrap="${!wcmmode.isEdit}">
+                        <ul>
+                            <sly data-sly-list="${resource.children}">
+                                <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tab'}">
+                                    <sly data-sly-resource="${item}"></sly>
+                                </sly>
+                            </sly>
+                        </ul>
+                    </div>
+                </div>
+                <div class="px-2" id="tab-content">
+                    <sly data-sly-list="${resource.children}">
+                        <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tab'}">
+                            <sly data-sly-test="${item.hasChildren}">
+                                <sly data-sly-test.tabid="${item.label}">
+                                    <sly data-sly-list="${item.children}">
+                                        <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tabcontent'}">
+                                            <div id="${tabid}" class="is-hidden">
+                                                <sly data-sly-resource="${item}"></sly>
+                                            </div>
+                                        </sly>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </sly>
+                    </sly>
+                </div>
+            </sly>
+            <!--        end of preview mode layout-->
         </sly>
-      </ul>
-    </div>
-  </div>
 </sly>

@@ -1,18 +1,30 @@
 {
   "jcr:primaryType": "nt:unstructured",
-  "tabs": {
-    "sling:resourceType": "wcm/dialogs/components/multifield",
-    "tab1": {
-      "sling:resourceType": "wcm/dialogs/components/textfield",
-      "label": "Tab 1"
-    },
-    "tab2": {
-      "sling:resourceType": "wcm/dialogs/components/textfield",
-      "label": "Tab 2"
-    },
-    "tab3": {
-      "sling:resourceType": "wcm/dialogs/components/textfield",
-      "label": "Tab 3"
+  "tab1": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/tabs/tab",
+    "label":"Tab 1",
+    "tabcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/tabs/tabcontent"
+    }
+  },
+  "tab2": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/tabs/tab",
+    "label":"Tab 2",
+    "tabcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/tabs/tabcontent"
+    }
+  },
+  "tab3": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/tabs/tab",
+    "label":"Tab 3",
+    "tabcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/tabs/tabcontent"
     }
   }
 }

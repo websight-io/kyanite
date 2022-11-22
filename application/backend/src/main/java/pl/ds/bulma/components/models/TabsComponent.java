@@ -27,7 +27,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 
@@ -58,13 +57,6 @@ public class TabsComponent {
   @Inject
   @Getter
   private boolean toggleRounded;
-
-  @SlingObject
-  private Resource resource;
-
-  @Inject
-  @Getter
-  private List<TabComponent> tabs;
 
   @Inject
   @Getter
