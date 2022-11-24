@@ -25,3 +25,13 @@
 .media-left, .media-right {
   min-width: 125px;
 }
+
+.ws-placeholder.level-left, .ws-placeholder.level-right {
+  min-width: 300px;
+  min-height: 50px;
+}
+
+.ws-placeholder.level-item {
+  min-width: 125px;
+  min-height: 50px;
+}
