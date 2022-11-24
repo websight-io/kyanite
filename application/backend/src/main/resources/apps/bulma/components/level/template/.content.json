@@ -1,0 +1,30 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "sling:resourceType": "bulma/components/level",
+  "positionedlevel1": {
+    "jcr:primaryType": "nt:unstructured",
+    "positionedStyle": "level-left",
+    "sling:resourceType": "bulma/components/level/positionedlevel",
+    "levelitem1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/level/levelitem"
+    },
+    "levelitem2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/level/levelitem"
+    }
+  },
+  "positionedlevel2": {
+    "jcr:primaryType": "nt:unstructured",
+    "positionedStyle": "level-right",
+    "sling:resourceType": "bulma/components/level/positionedlevel",
+    "levelitem1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/level/levelitem"
+    },
+    "levelitem2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/level/levelitem"
+    }
+  }
+}
