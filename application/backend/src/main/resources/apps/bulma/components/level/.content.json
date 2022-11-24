@@ -7,5 +7,5 @@
     "/apps/bulma/components/level/levelitem"
   ],
   "sling:resourceType": "ws:Component",
-  "title": "Level container"
+  "title": "Level"
 }

@@ -17,12 +17,15 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.level.PositionedLevelComponent">
-  <div data-sly-unwrap="${!wcmmode.isEdit}" class="${model.positionedStyle}" style="min-width: 300px; min-height: 50px">
-    <sly data-sly-test="${resource.hasChildren}">
-      <div class="${model.positionedStyle}">
-        <sly
-            data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-      </div>
+  <sly data-sly-test="${resource.hasChildren}">
+    <div class="${model.positionedStyle}">
+      <sly
+          data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+    </div>
+  </sly>
+  <sly data-sly-test="${!resource.hasChildren}">
+    <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
+         data-sly-call="${lib.placeholder @ classes=model.positionedStyle}">
     </sly>
-  </div>
+  </sly>
 </sly>

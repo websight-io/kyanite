@@ -8,5 +8,5 @@
   ],
   "group": "Bulma.io sub-components",
   "sling:resourceType": "ws:Component",
-  "title": "Level item container"
+  "title": "Level item"
 }
