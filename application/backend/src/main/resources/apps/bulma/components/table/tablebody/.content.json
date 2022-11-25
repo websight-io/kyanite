@@ -3,5 +3,5 @@
   "group": "Bulma.io sub-elements",
   "allowedComponents": ["/apps/bulma/components/table/tablerow"],
   "sling:resourceType": "ws:Component",
-  "title": "Table bodí"
+  "title": "Table body"
 }
