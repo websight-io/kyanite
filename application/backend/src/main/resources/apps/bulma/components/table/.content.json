@@ -2,7 +2,7 @@
   "isContainer": true,
   "allowedComponents": [
     "/apps/bulma/components/table/tablehead",
-    "/apps/bulma/components/table/tablefooter",
+    "/apps/bulma/components/table/tablefoot",
     "/apps/bulma/components/table/tablebody"
   ],
   "group": "Bulma.io Elements",
