@@ -17,8 +17,8 @@
 */-->
 
 <sly data-sly-test="${resource.hasChildren}">
-  <tbody>
-  <sly
-      data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-  </tbody>
+  <div class="table-container">
+    <sly
+        data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+  </div>
 </sly>

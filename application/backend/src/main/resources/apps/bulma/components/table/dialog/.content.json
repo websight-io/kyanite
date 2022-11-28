@@ -1,0 +1,35 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "isBordered": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isBordered",
+        "label": "Add borders to all the cells"
+      },
+      "isStriped": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isStriped",
+        "label": "Add stripes to the table"
+      },
+      "isNarrow": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isNarrow",
+        "label": "Make the cells narrower"
+      },
+      "isHoverable": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isHoverable",
+        "label": "Add hover effect on each row"
+      },
+      "isFullwidth": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isFullwidth",
+        "label": "Fullwidth table"
+      }
+    }
+  }
+}

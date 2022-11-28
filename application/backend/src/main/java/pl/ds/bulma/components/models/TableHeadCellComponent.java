@@ -14,28 +14,21 @@
  * limitations under the License.
  */
 
-.ws-placeholder.navbar-brand, .ws-placeholder.navbar-item {
-  min-width: 50px;
-}
+package pl.ds.bulma.components.models;
 
-.navbar-start, .navbar-end {
-  width: 100%;
-}
+import javax.inject.Inject;
+import lombok.Getter;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Default;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Model;
 
-.media-left, .media-right {
-  min-width: 125px;
-}
+@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+public class TableHeadCellComponent {
 
-.ws-placeholder.level-left, .ws-placeholder.level-right {
-  min-width: 300px;
-  min-height: 50px;
-}
+  @Inject
+  @Getter
+  @Default(values = "Content")
+  private String text;
 
-.ws-placeholder.level-item {
-  min-width: 125px;
-  min-height: 50px;
-}
-
-.table .ws-placeholder {
-  width: 100%;
 }

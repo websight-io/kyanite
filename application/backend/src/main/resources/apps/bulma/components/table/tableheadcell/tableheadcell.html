@@ -16,9 +16,8 @@
   ~
 */-->
 
-<sly data-sly-test="${resource.hasChildren}">
-  <tbody>
-  <sly
-      data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-  </tbody>
+<sly data-sly-use.model="pl.ds.bulma.components.models.TableHeadCellComponent">
+  <th>
+    ${model.text @ context='html'}
+  </th>
 </sly>

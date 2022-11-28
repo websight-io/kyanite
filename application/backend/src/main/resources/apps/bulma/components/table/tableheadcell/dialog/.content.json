@@ -1,0 +1,16 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "text": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "text",
+        "label": "Text",
+        "required": true
+      }
+    }
+  }
+}
