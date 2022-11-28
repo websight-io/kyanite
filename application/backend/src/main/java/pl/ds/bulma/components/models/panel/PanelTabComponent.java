@@ -14,14 +14,23 @@
  * limitations under the License.
  */
 
-package pl.ds.bulma.components.services;
+package pl.ds.bulma.components.models.panel;
 
+import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
+
+import javax.inject.Inject;
+import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Default;
+import org.apache.sling.models.annotations.Model;
 
-public interface ComponentIdService {
+@Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
+public class PanelTabComponent {
 
-  String getStoredId(Resource resource, String prefix);
-
-  String getTemporaryId(String prefix);
+  @Inject
+  @Getter
+  @Default(values = StringUtils.EMPTY)
+  private String label;
 
 }
