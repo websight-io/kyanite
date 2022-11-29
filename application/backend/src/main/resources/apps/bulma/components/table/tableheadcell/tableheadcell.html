@@ -17,7 +17,7 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.TableHeadCellComponent">
-  <th>
+  <th rowspan="${model.rowspan}" colspan="${model.colspan}">
     ${model.text @ context='html'}
   </th>
 </sly>

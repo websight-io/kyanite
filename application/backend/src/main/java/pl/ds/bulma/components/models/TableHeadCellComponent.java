@@ -31,4 +31,14 @@ public class TableHeadCellComponent {
   @Default(values = "Content")
   private String text;
 
+  @Inject
+  @Getter
+  @Default(intValues = 1)
+  private int colspan;
+
+  @Inject
+  @Getter
+  @Default(intValues = 1)
+  private int rowspan;
+
 }
