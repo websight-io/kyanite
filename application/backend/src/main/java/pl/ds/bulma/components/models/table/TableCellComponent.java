@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package pl.ds.bulma.components.models;
+package pl.ds.bulma.components.models.table;
 
 import javax.inject.Inject;
 import lombok.Getter;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package pl.ds.bulma.components.models;
+package pl.ds.bulma.components.models.table;
 
 import java.util.ArrayList;
 import java.util.List;
