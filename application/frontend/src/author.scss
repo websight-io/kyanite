@@ -43,16 +43,25 @@
   min-width: 100px;
 
   .ws-placeholder {
-    display: table-row;
+    display: table-row-group;
     height: 48px;
     width: 100%;
   }
 
   & > .ws-placeholder {
-    display: block;
+    &::after, &::before {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 100%;
+    }
   }
 
   thead, tbody, tfoot {
+
+    .ws-placeholder {
+      display: table-row;
+    }
 
     &::after, &::before {
       content: "";
