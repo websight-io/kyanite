@@ -1,0 +1,7 @@
+{
+  "isContainer": true,
+  "group": "Bulma.io Elements",
+  "allowedComponents": ["/apps/bulma/components/table"],
+  "sling:resourceType": "ws:Component",
+  "title": "Table container"
+}

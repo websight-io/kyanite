@@ -1,0 +1,15 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/table"
+  },
+  "complex": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/table",
+    "isBordered": true,
+    "isFullwidth": true,
+    "isHoverable": true,
+    "isNarrow": true,
+    "isStriped": true
+  }
+}
