@@ -8,22 +8,26 @@
       "isBordered": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "name": "isBordered",
-        "label": "Add borders to all the cells"
+        "label": "Bordered cells",
+        "description": "Add borders to all the cells"
       },
       "isStriped": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "name": "isStriped",
-        "label": "Add stripes to the table"
+        "label": "Striped table",
+        "description": "Add stripes to the table"
       },
       "isNarrow": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "name": "isNarrow",
-        "label": "Make the cells narrower"
+        "label": "Narrow cells",
+        "description": "Make the cells narrower"
       },
       "isHoverable": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "name": "isHoverable",
-        "label": "Add hover effect on each row"
+        "label": "Hover effect",
+        "description": "Add hover effect on each row"
       },
       "isFullwidth": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",

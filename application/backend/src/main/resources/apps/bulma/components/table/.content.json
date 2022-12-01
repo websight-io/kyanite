@@ -3,7 +3,8 @@
   "allowedComponents": [
     "/apps/bulma/components/table/tablehead",
     "/apps/bulma/components/table/tablefoot",
-    "/apps/bulma/components/table/tablebody"
+    "/apps/bulma/components/table/tablebody",
+    "/apps/bulma/components/table/tablerow"
   ],
   "group": "Bulma.io Elements",
   "sling:resourceType": "ws:Component",
