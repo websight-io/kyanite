@@ -14,14 +14,7 @@
  * limitations under the License.
  */
 
-package pl.ds.bulma.components.services;
+@Version("1.0.0")
+package pl.ds.bulma.components.models.panel;
 
-import org.apache.sling.api.resource.Resource;
-
-public interface ComponentIdService {
-
-  String getStoredId(Resource resource, String prefix);
-
-  String getTemporaryId(String prefix);
-
-}
+import org.osgi.annotation.versioning.Version;

@@ -14,39 +14,33 @@
  * limitations under the License.
  */
 
-package pl.ds.bulma.components.models;
+package pl.ds.bulma.components.models.panel;
+
+import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
 import javax.inject.Inject;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
-import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import pl.ds.bulma.components.services.ComponentIdService;
 
-@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class ModalComponent {
+@Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
+public class PanelBlockComponent {
 
-  public static final String ID_PREFIX = "modal";
+  public static final String ID_PREFIX = "panel_block";
 
   @OSGiService
   private ComponentIdService idService;
 
-  @SlingObject
-  private Resource resource;
-
-  @Inject
-  private String id;
-
   @Inject
   @Getter
-  @Default(booleanValues = true)
-  private Boolean contentFrame;
+  @Default(values = StringUtils.EMPTY)
+  private String icon;
 
   public String getId() {
-    id = idService.getStoredId(resource, ID_PREFIX);
-    return id;
+    return idService.getTemporaryId(ID_PREFIX);
   }
 }
