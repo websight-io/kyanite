@@ -25,7 +25,6 @@ import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import pl.ds.bulma.components.models.table.TableComponent;
 
 @ExtendWith(SlingContextExtension.class)
 public class TableComponentTest {

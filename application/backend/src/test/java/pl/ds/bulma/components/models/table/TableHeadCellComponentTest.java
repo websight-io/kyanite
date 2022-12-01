@@ -25,10 +25,10 @@ import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import pl.ds.bulma.components.models.table.TableHeadCellComponent;
 
 @ExtendWith(SlingContextExtension.class)
 public class TableHeadCellComponentTest {
+
   private static final String PATH = "/content/tableheadcell";
 
   private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
@@ -37,7 +37,8 @@ public class TableHeadCellComponentTest {
   public void init() {
     context.addModelsForClasses(TableHeadCellComponent.class);
     context.load().json(requireNonNull(
-        Thread.currentThread().getContextClassLoader().getResourceAsStream("tableheadcell.json")), PATH);
+            Thread.currentThread().getContextClassLoader().getResourceAsStream("tableheadcell.json")),
+        PATH);
   }
 
   @Test
