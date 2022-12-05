@@ -32,7 +32,7 @@
                                 sling:resourceType="bulma/components/navbar/navbaritem"
                                 label="LUNA"
                                 type="image"
-                                url="http://localhost:8080/content/bulma---luna-template/pages/Homepage.html">
+                                url="/content/luna/pages/Homepage">
                                 <image
                                     jcr:primaryType="nt:unstructured"
                                     alt="\0"
@@ -50,31 +50,31 @@
                                     sling:resourceType="bulma/components/navbar/navbaritem"
                                     label="BLOG"
                                     type="link"
-                                    url="http://localhost:8080/content/bulma---luna-template/pages/Homepage.html"/>
+                                    url="/content/luna/pages/Homepage"/>
                                 <item
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="bulma/components/navbar/navbaritem"
                                     label="PRODUCTS"
                                     type="link"
-                                    url="http://localhost:8080/content/bulma---luna-template/pages/Products.html"/>
+                                    url="/content/luna/pages/Products"/>
                                 <item_2
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="bulma/components/navbar/navbaritem"
                                     label="CATALOG"
                                     type="link"
-                                    url="http://localhost:8080/content/bulma---luna-template/pages/Catalog.html"/>
+                                    url="/content/luna/pages/Catalog"/>
                                 <item_2_1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="bulma/components/navbar/navbaritem"
                                     label="ABOUT"
                                     type="link"
-                                    url="http://localhost:8080/content/bulma---luna-template/pages/About.html"/>
+                                    url="/content/luna/pages/About"/>
                                 <item_2_1_1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="bulma/components/navbar/navbaritem"
                                     label="          CONTACT US"
                                     type="link"
-                                    url="http://localhost:8080/content/bulma---luna-template/pages/Contact.html"/>
+                                    url="/content/luna/pages/Homepage"/>
                             </end>
                         </menu>
                     </navbar>
@@ -506,13 +506,13 @@
                                     sling:resourceType="bulma/components/navbar/navbaritem"
                                     label="PRODUCTS"
                                     type="link"
-                                    url="http://localhost:8080/content/bulma---luna-template/pages/Products.html"/>
+                                    url="/content/luna/pages/Products"/>
                                 <item_2_1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="bulma/components/navbar/navbaritem"
                                     label="ABOUT"
                                     type="link"
-                                    url="http://localhost:8080/content/bulma---luna-template/pages/About.html"/>
+                                    url="/content/luna/pages/About"/>
                             </start>
                             <end
                                 jcr:primaryType="nt:unstructured"
