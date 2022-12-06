@@ -16,9 +16,9 @@
 
 const switchTab = () => {
     const check = document.querySelector('#check')
-    let isPreviewMode = true;
-    if (check != null && check.dataset.check == 'true') {
-        isPreviewMode = false;
+    let isPreviewMode = false;
+    if (check != null && check.dataset.editCheck == 'false') {
+        isPreviewMode = true;
     }
 
     if (isPreviewMode) {
