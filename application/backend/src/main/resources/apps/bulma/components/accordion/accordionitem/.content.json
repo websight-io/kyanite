@@ -1,0 +1,12 @@
+{
+  "isContainer": true,
+  "allowedComponents": [
+    "Bulma.io Columns",
+    "Bulma.io Components",
+    "Bulma.io Elements",
+    "Bulma.io Layouts"
+  ],
+  "group": "Bulma.io sub-components",
+  "sling:resourceType": "ws:Component",
+  "title": "Accordion item"
+}

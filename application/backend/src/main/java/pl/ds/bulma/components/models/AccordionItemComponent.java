@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package pl.ds.bulma.components.models.panel;
+package pl.ds.bulma.components.models;
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
@@ -29,17 +29,17 @@ import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import pl.ds.bulma.components.services.ComponentIdService;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
-public class PanelBlockComponent {
+public class AccordionItemComponent {
 
-  public static final String ID_PREFIX = "panel_block";
+  public static final String ID_PREFIX = "accordion_item";
 
   @OSGiService
   private ComponentIdService idService;
 
   @Inject
   @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String icon;
+  @Default(values = "Accordion header")
+  private String header;
 
   @Inject
   @Getter
