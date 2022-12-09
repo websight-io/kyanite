@@ -33,6 +33,7 @@
   <modules>
     <module>frontend</module>
     <module>backend</module>
+    <module>bulma-table-service</module>
   </modules>
 
   <properties>
@@ -161,6 +162,25 @@
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>pl.ds.websight</groupId>
+        <artifactId>websight-rest-framework</artifactId>
+        <version>${websight.rest.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>pl.ds.websight</groupId>
+        <artifactId>websight-pages-core-api</artifactId>
+        <version>${websight.pages.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>pl.ds.websight</groupId>
+        <artifactId>websight-request-parameters-support</artifactId>
+        <version>${websight.request.parameters.version}</version>
+        <scope>provided</scope>
+      </dependency>
+
       <dependency>
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.annotation.versioning</artifactId>
