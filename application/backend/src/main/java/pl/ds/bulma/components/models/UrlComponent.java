@@ -23,9 +23,14 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.bulma.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class UrlComponent {
+
+  @SlingObject
+  private Resource resource;
 
   @Inject
   @Getter
@@ -33,7 +38,9 @@ public class UrlComponent {
   private String label;
 
   @Inject
-  @Getter
   private String address;
 
+  public String getAddress() {
+    return LinkUtil.handleLink(address, resource.getResourceResolver());
+  }
 }

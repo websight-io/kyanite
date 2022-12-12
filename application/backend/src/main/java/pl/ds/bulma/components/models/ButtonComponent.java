@@ -27,6 +27,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.bulma.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class ButtonComponent {
@@ -72,7 +74,6 @@ public class ButtonComponent {
   private boolean isDisabled;
 
   @Inject
-  @Getter
   @Default(values = StringUtils.EMPTY)
   private String url;
 
@@ -99,6 +100,9 @@ public class ButtonComponent {
   @Getter
   private String[] buttonClasses;
 
+  @SlingObject
+  private Resource resource;
+
   @PostConstruct
   private void init() {
     List<String> classes = new ArrayList<>();
@@ -117,5 +121,9 @@ public class ButtonComponent {
       classes.add("is-fullwidth");
     }
     buttonClasses = classes.toArray(new String[]{});
+  }
+
+  public String getUrl() {
+    return LinkUtil.handleLink(url, resource.getResourceResolver());
   }
 }

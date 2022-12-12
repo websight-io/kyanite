@@ -22,11 +22,15 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import pl.ds.bulma.components.models.ImageComponent;
+import pl.ds.bulma.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class NavbarItemComponent {
 
+  @SlingObject
+  private Resource resource;
 
   @Inject
   @Getter
@@ -38,7 +42,6 @@ public class NavbarItemComponent {
   private String label;
 
   @Inject
-  @Getter
   private String url;
 
   @Inject
@@ -60,4 +63,8 @@ public class NavbarItemComponent {
   @Inject
   @Getter
   private String icon;
+
+  public String getUrl() {
+    return LinkUtil.handleLink(url, resource.getResourceResolver());
+  }
 }
