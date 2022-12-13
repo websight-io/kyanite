@@ -16,8 +16,6 @@
 
 package pl.ds.bulma.rest.table;
 
-import static pl.ds.websight.pages.core.api.PageConstants.NT_PAGE;
-
 import org.osgi.service.component.annotations.Component;
 import pl.ds.websight.rest.framework.RestAction;
 import pl.ds.websight.rest.framework.RestActionResult;
@@ -26,7 +24,7 @@ import pl.ds.websight.rest.framework.annotations.SlingAction;
 
 @Component
 @SlingAction
-@PrimaryTypes(NT_PAGE)
+@PrimaryTypes("nt:base")
 public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, AddTableRowDataDto> {
 
   @Override

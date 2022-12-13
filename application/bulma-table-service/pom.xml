@@ -82,14 +82,6 @@
       <groupId>pl.ds.websight</groupId>
       <artifactId>websight-rest-framework</artifactId>
     </dependency>
-    <dependency>
-      <groupId>pl.ds.websight</groupId>
-      <artifactId>websight-pages-core-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>pl.ds.websight</groupId>
-      <artifactId>websight-request-parameters-support</artifactId>
-    </dependency>
 
     <dependency>
       <groupId>javax.inject</groupId>
