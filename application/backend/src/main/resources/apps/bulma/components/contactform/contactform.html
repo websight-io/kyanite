@@ -1,0 +1,93 @@
+<!--/*
+  ~
+  ~     Copyright (C) 2022 Dynamic Solutions
+  ~
+  ~     Licensed under the Apache License, Version 2.0 (the "License");
+  ~     you may not use this file except in compliance with the License.
+  ~     You may obtain a copy of the License at
+  ~
+  ~         http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~     Unless required by applicable law or agreed to in writing, software
+  ~     distributed under the License is distributed on an "AS IS" BASIS,
+  ~     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~     See the License for the specific language governing permissions and
+  ~     limitations under the License.
+  ~
+*/-->
+
+<sly data-sly-use.model="pl.ds.bulma.components.models.ContactFormComponent">
+  <form action="${model.targetUrl}" method="get" class="contact-form">
+
+    <div class="field">
+      <label class="label">Email address</label>
+      <div class="control has-icons-left">
+        <input class="input" type="email" name="email" id="email" placeholder="Email" required>
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+      </div>
+    </div>
+
+    <sly data-sly-test="${model.phoneNumber}">
+      <div class="field">
+        <label class="label">Phone Number</label>
+        <div class="control has-icons-left">
+          <input class="input" type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder="Phone Number">
+          <span class="icon is-small is-left">
+          <i class="fas fa-phone"></i>
+        </span>
+        </div>
+      </div>
+    </sly>
+
+    <sly data-sly-test="${model.subject}">
+      <div class="field">
+        <label class="label">Subject</label>
+        <div class="control">
+          <input class="input" type="text" id="subject" name="subject" placeholder="Subject">
+        </div>
+      </div>
+    </sly>
+
+    <div class="field">
+      <label class="label">Message</label>
+      <div class="control">
+        <textarea class="textarea" placeholder="Write your message here..." required></textarea>
+      </div>
+    </div>
+
+    <div class="field is-horizontal">
+      <div class="field-label">
+        <label class="label">${model.consentText @ context='html'}</label>
+      </div>
+      <div class="field-body">
+        <div class="field">
+          <div class="control">
+            <label class="checkbox">
+              <input type="checkbox" required>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--    <div class="field">-->
+<!--      <div class="control">-->
+<!--        <label class="checkbox">-->
+<!--          ${model.consentText @ context='html'}-->
+<!--          <input type="checkbox" required>-->
+<!--        </label>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link">${model.submitLabel}</button>
+      </div>
+      <div class="control">
+        <button class="button is-link is-light">${model.cancelLabel}</button>
+      </div>
+    </div>
+  </form>
+</sly>
