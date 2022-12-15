@@ -22,18 +22,27 @@ import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.bulma.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class MenuListItemComponent {
+
+  @SlingObject
+  private Resource resource;
+
   @Inject
   @Getter
   private String text;
 
   @Inject
-  @Getter
   private String url;
 
   @Inject
   @Getter
   private List<MenuListItemComponent> secondLevelItems;
+
+  public String getUrl() {
+    return LinkUtil.handleLink(url, resource.getResourceResolver());
+  }
 }

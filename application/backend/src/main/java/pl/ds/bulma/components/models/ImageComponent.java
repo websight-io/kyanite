@@ -22,16 +22,16 @@ import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.bulma.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ImageComponent {
 
   @Inject
-  @Getter
   private String src;
 
   @Inject
-  @Getter
   private String assetReference;
 
   @Inject
@@ -50,10 +50,21 @@ public class ImageComponent {
   @Getter
   private String alt;
 
+  @SlingObject
+  private Resource resource;
+
   @PostConstruct
   private void init() {
     if (assetReference == null && src != null) {
       assetReference = src;
     }
+  }
+
+  public String getSrc() {
+    return LinkUtil.handleLink(src, resource.getResourceResolver());
+  }
+
+  public String getAssetReference() {
+    return LinkUtil.handleLink(assetReference, resource.getResourceResolver());
   }
 }

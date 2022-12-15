@@ -2,7 +2,7 @@
   "bundles": [
     {
       "id": "pl.ds.bulma:bulma-backend:${project.version}",
-      "start-order": "20"
+      "start-order": "25"
     }
   ],
   "content-packages:ARTIFACTS|true": [

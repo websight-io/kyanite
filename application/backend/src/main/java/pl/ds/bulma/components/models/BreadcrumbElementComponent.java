@@ -24,12 +24,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.bulma.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class BreadcrumbElementComponent {
 
   @Inject
-  @Getter
   @Default(values = StringUtils.EMPTY)
   private String url;
 
@@ -42,4 +43,11 @@ public class BreadcrumbElementComponent {
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String icon;
+
+  @SlingObject
+  private Resource resource;
+
+  public String getUrl() {
+    return LinkUtil.handleLink(url, resource.getResourceResolver());
+  }
 }
