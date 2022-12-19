@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-package pl.ds.bulma.components.services;
+package pl.ds.bulma.components.rest;
 
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.metatype.annotations.Designate;
+import pl.ds.bulma.components.configurations.ContactFormConfiguration;
 import pl.ds.websight.rest.framework.RestAction;
 import pl.ds.websight.rest.framework.RestActionResult;
 import pl.ds.websight.rest.framework.annotations.SlingAction;
@@ -37,11 +38,8 @@ public class ReadContactFormConfigRestAction implements RestAction<Void, Contact
   }
 
   @Override
-  public RestActionResult<ContactFormConfiguration> perform(Void unused) {
+  public RestActionResult<ContactFormConfiguration> perform(Void noModel) {
     return RestActionResult.success(config);
   }
 
-  public ContactFormConfiguration getConfig() {
-    return config;
-  }
 }

@@ -57,13 +57,11 @@
       </div>
     </div>
 
-    <div class="field is-horizontal">
+    <div class="field is-grouped">
       <div class="control">
-        <label class="checkbox">
-          <input type="checkbox" required>
-          ${model.consentText @ context='html'}
-        </label>
+        <input type="checkbox" required>
       </div>
+      ${model.consentText @ context='html'}
     </div>
 
     <div class="field">

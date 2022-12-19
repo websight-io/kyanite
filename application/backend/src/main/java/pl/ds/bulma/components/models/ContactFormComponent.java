@@ -46,7 +46,7 @@ public class ContactFormComponent {
 
   @Inject
   @Getter
-  @Default(values = "Consent")
+  @Default(values = "<p>Consent</p>")
   private String consentText;
 
 }

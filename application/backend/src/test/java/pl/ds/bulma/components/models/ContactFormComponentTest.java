@@ -51,7 +51,7 @@ public class ContactFormComponentTest {
     assertThat(model.isPhoneNumber()).isFalse();
     assertThat(model.getSubmitLabel()).isEqualTo("Send");
     assertThat(model.getCancelLabel()).isEqualTo("Cancel");
-    assertThat(model.getConsentText()).isEqualTo("Consent");
+    assertThat(model.getConsentText()).isEqualTo("<p>Consent</p>");
   }
 
   @Test

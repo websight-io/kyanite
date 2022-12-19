@@ -20,11 +20,6 @@
         "name": "submitLabel",
         "label": "Label of Submit action"
       },
-      "cancelLabel": {
-        "sling:resourceType": "wcm/dialogs/components/textfield",
-        "name": "cancelLabel",
-        "label": "Label of Cancel action"
-      },
       "consentText": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "consentText",

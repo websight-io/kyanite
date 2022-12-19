@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package pl.ds.bulma.components.services;
+package pl.ds.bulma.components.configurations;
 
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
