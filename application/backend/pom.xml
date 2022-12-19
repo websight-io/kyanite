@@ -85,8 +85,16 @@
       <artifactId>org.osgi.annotation.versioning</artifactId>
     </dependency>
     <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.metatype.annotations</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>pl.ds.websight</groupId>
+      <artifactId>websight-rest-framework</artifactId>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
