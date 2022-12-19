@@ -49,9 +49,4 @@ public class ContactFormComponent {
   @Default(values = "Consent")
   private String consentText;
 
-  @Inject
-  @Getter
-  @Default(values = "/targetUrl")
-  private String targetUrl;
-
 }

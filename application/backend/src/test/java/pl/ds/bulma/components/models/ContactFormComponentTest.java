@@ -37,7 +37,8 @@ public class ContactFormComponentTest {
   public void init() {
     context.addModelsForClasses(ContactFormComponent.class);
     context.load().json(requireNonNull(
-        Thread.currentThread().getContextClassLoader().getResourceAsStream("contactform.json")), PATH);
+            Thread.currentThread().getContextClassLoader().getResourceAsStream("contactform.json")),
+        PATH);
   }
 
   @Test
@@ -51,7 +52,6 @@ public class ContactFormComponentTest {
     assertThat(model.getSubmitLabel()).isEqualTo("Send");
     assertThat(model.getCancelLabel()).isEqualTo("Cancel");
     assertThat(model.getConsentText()).isEqualTo("Consent");
-    assertThat(model.getTargetUrl()).isEqualTo("/targetUrl");
   }
 
   @Test
@@ -65,7 +65,6 @@ public class ContactFormComponentTest {
     assertThat(model.getSubmitLabel()).isEqualTo("Send Message");
     assertThat(model.getCancelLabel()).isEqualTo("Abort");
     assertThat(model.getConsentText()).isEqualTo("I consent");
-    assertThat(model.getTargetUrl()).isEqualTo("/contactEndpoint");
   }
 
 }

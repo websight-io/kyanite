@@ -10,7 +10,6 @@
     "isPhoneNumber": true,
     "submitLabel": "Send Message",
     "cancelLabel": "Abort",
-    "consentText": "I consent",
-    "targetUrl": "/contactEndpoint"
+    "consentText": "I consent"
   }
 }
