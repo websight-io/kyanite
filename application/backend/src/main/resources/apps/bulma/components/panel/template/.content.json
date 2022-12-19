@@ -1,0 +1,75 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "title": "Panel Title",
+  "panelblock1": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/panel/panelblock"
+  },
+  "paneltabs1": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/panel/paneltabs",
+    "tab1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/panel/paneltabs/paneltab",
+      "label": "Tab 1",
+      "paneltabcontent": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "bulma/components/panel/paneltabs/paneltabcontent",
+        "panelblock1": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "bulma/components/panel/panelblock"
+        },
+        "panelblock2": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "bulma/components/panel/panelblock"
+        },
+        "panelblock3": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "bulma/components/panel/panelblock"
+        }
+      }
+    },
+    "tab2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/panel/paneltabs/paneltab",
+      "label": "Tab 2",
+      "paneltabcontent": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "bulma/components/panel/paneltabs/paneltabcontent",
+        "panelblock1": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "bulma/components/panel/panelblock"
+        },
+        "panelblock2": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "bulma/components/panel/panelblock"
+        },
+        "panelblock3": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "bulma/components/panel/panelblock"
+        }
+      }
+    },
+    "tab3": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/panel/paneltabs/paneltab",
+      "label": "Tab 3",
+      "paneltabcontent": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "bulma/components/panel/paneltabs/paneltabcontent",
+        "panelblock1": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "bulma/components/panel/panelblock"
+        },
+        "panelblock2": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "bulma/components/panel/panelblock"
+        },
+        "panelblock3": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "bulma/components/panel/panelblock"
+        }
+      }
+    }
+  }
+}

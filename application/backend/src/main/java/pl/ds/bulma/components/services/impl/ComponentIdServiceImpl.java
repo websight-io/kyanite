@@ -33,7 +33,8 @@ public class ComponentIdServiceImpl implements ComponentIdService {
   public static final String UNDERSCORE_SEPARATOR = "_";
   public static final String ID_PROPERTY_NAME = "id";
 
-  public String getId(Resource resource, String prefix) {
+  @Override
+  public String getStoredId(Resource resource, String prefix) {
     String id = StringUtils.EMPTY;
     Session session = resource.getResourceResolver().adaptTo(Session.class);
 
@@ -54,6 +55,11 @@ public class ComponentIdServiceImpl implements ComponentIdService {
     }
 
     return id;
+  }
+
+  @Override
+  public String getTemporaryId(String prefix) {
+    return generateId(prefix);
   }
 
   private String generateId(String prefix) {

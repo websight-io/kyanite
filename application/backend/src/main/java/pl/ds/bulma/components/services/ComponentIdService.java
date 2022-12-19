@@ -20,6 +20,8 @@ import org.apache.sling.api.resource.Resource;
 
 public interface ComponentIdService {
 
-  String getId(Resource resource, String prefix);
+  String getStoredId(Resource resource, String prefix);
+
+  String getTemporaryId(String prefix);
 
 }

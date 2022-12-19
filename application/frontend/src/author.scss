@@ -35,3 +35,40 @@
   min-width: 125px;
   min-height: 50px;
 }
+
+.table {
+
+  border-collapse: separate;
+  border-spacing: 0 2px;
+  min-width: 100px;
+
+  .ws-placeholder {
+    display: table-row-group;
+    height: 48px;
+    width: 100%;
+  }
+
+  & > .ws-placeholder {
+    &::after, &::before {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 100%;
+    }
+  }
+
+  thead, tbody, tfoot {
+
+    .ws-placeholder {
+      display: table-row;
+    }
+
+    &::after, &::before {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 100%;
+    }
+  }
+
+}

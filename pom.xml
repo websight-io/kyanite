@@ -5,7 +5,7 @@
 
   <groupId>pl.ds.bulma</groupId>
   <artifactId>bulma</artifactId>
-  <version>1.0.4-SNAPSHOT</version>
+  <version>1.0.6-SNAPSHOT</version>
 
   <name>Bulma Components Project</name>
   <packaging>pom</packaging>
@@ -65,7 +65,7 @@
     <websight.admin.omitAdminPw>true</websight.admin.omitAdminPw>
 
     <!-- WebSight CMS Version -->
-    <websight.cms.version>1.2.0</websight.cms.version>
+    <websight.cms.version>1.5.0</websight.cms.version>
 
     <timestamp>${maven.build.timestamp}</timestamp>
     <maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>

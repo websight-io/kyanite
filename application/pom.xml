@@ -21,7 +21,7 @@
   <parent>
     <groupId>pl.ds.bulma</groupId>
     <artifactId>bulma</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.6-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -268,6 +268,12 @@
         <groupId>javax.servlet</groupId>
         <artifactId>javax.servlet-api</artifactId>
         <version>3.1.0</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>pl.ds.websight</groupId>
+        <artifactId>websight-assets-core-api</artifactId>
+        <version>1.0.0</version>
         <scope>provided</scope>
       </dependency>
     </dependencies>

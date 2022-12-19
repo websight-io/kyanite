@@ -46,7 +46,7 @@ public class ModalComponent {
   private Boolean contentFrame;
 
   public String getId() {
-    id = idService.getId(resource, ID_PREFIX);
+    id = idService.getStoredId(resource, ID_PREFIX);
     return id;
   }
 }
