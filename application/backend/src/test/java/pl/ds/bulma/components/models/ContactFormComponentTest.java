@@ -27,47 +27,42 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 @ExtendWith(SlingContextExtension.class)
-class DropdownComponentTest {
+public class ContactFormComponentTest {
 
-  private static final String PATH = "/content/dropdown";
-
+  private static final String PATH = "/content/contactform";
   private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
+
 
   @BeforeEach
   public void init() {
-    context.addModelsForClasses(DropdownComponent.class);
+    context.addModelsForClasses(ContactFormComponent.class);
     context.load().json(requireNonNull(
-        Thread.currentThread().getContextClassLoader().getResourceAsStream("dropdown.json")), PATH);
+            Thread.currentThread().getContextClassLoader().getResourceAsStream("contactform.json")),
+        PATH);
   }
 
   @Test
-  void defaultDropdownComponentModelTest() {
-    DropdownComponent model = context.resourceResolver().getResource(PATH + "/default")
-        .adaptTo(DropdownComponent.class);
+  void defaultContactFormComponentTest() {
+    ContactFormComponent model = context.resourceResolver().getResource(PATH + "/default")
+        .adaptTo(ContactFormComponent.class);
+
     assertThat(model).isNotNull();
-    assertThat(model.getLabel()).isEqualTo("Label");
-    assertThat(model.getDropdownClasses()).isEmpty();
-    assertThat(model.getItems()).isNull();
+    assertThat(model.isSubject()).isFalse();
+    assertThat(model.isPhoneNumber()).isFalse();
+    assertThat(model.getSubmitLabel()).isEqualTo("Send");
+    assertThat(model.getConsentText()).isEqualTo("<p>Consent</p>");
   }
 
   @Test
-  void dropdownComponentTest() {
-    DropdownComponent model = context.resourceResolver().getResource(PATH + "/complex")
-        .adaptTo(DropdownComponent.class);
-    assertThat(model.getLabel()).isEqualTo("Dropdown");
-    assertThat(model.getDropdownClasses()).containsExactlyInAnyOrder("is-hoverable", "is-up",
-        "is-right");
-    assertThat(model.getItems().stream()
-        .filter(i -> i.getLabel().equals("Item 1"))
-        .filter(i -> i.getUrl().equals("http://url1"))
-        .filter(i -> i.isHasDivider())
-        .count()).isEqualTo(1);
-    assertThat(model.getItems().stream()
-        .filter(i -> i.getLabel().equals("Item 2"))
-        .filter(i -> i.getUrl().equals("http://url2"))
-        .filter(i -> !i.isHasDivider())
-        .count()).isEqualTo(1);
+  void contactFormComponentTest() {
+    ContactFormComponent model = context.resourceResolver().getResource(PATH + "/complex")
+        .adaptTo(ContactFormComponent.class);
 
+    assertThat(model).isNotNull();
+    assertThat(model.isSubject()).isTrue();
+    assertThat(model.isPhoneNumber()).isTrue();
+    assertThat(model.getSubmitLabel()).isEqualTo("Send Message");
+    assertThat(model.getConsentText()).isEqualTo("I consent");
   }
 
 }
