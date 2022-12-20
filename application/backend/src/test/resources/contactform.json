@@ -1,0 +1,14 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/contactform"
+  },
+  "complex": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/contactform",
+    "isSubject": true,
+    "isPhoneNumber": true,
+    "submitLabel": "Send Message",
+    "consentText": "I consent"
+  }
+}

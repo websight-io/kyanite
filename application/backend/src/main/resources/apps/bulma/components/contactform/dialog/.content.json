@@ -1,0 +1,30 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "isSubject": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isSubject",
+        "label": "Input for Subject"
+      },
+      "isPhoneNumber": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isPhoneNumber",
+        "label": "Input for Phone Number"
+      },
+      "submitLabel": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "submitLabel",
+        "label": "Label of Submit action"
+      },
+      "consentText": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "consentText",
+        "label": "Consent Text"
+      }
+    }
+  }
+}

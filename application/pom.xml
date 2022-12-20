@@ -173,6 +173,18 @@
         <version>1.4.0</version>
         <scope>provided</scope>
       </dependency>
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.service.metatype.annotations</artifactId>
+        <version>1.4.1</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>pl.ds.websight</groupId>
+        <artifactId>websight-rest-framework</artifactId>
+        <version>1.0.10</version>
+        <scope>provided</scope>
+      </dependency>
 
       <dependency>
         <groupId>org.apache.sling</groupId>
