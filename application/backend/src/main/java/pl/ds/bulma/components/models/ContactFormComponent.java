@@ -41,11 +41,6 @@ public class ContactFormComponent {
 
   @Inject
   @Getter
-  @Default(values = "Cancel")
-  private String cancelLabel;
-
-  @Inject
-  @Getter
   @Default(values = "<p>Consent</p>")
   private String consentText;
 

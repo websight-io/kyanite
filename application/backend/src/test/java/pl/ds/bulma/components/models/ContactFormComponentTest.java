@@ -50,7 +50,6 @@ public class ContactFormComponentTest {
     assertThat(model.isSubject()).isFalse();
     assertThat(model.isPhoneNumber()).isFalse();
     assertThat(model.getSubmitLabel()).isEqualTo("Send");
-    assertThat(model.getCancelLabel()).isEqualTo("Cancel");
     assertThat(model.getConsentText()).isEqualTo("<p>Consent</p>");
   }
 
@@ -63,7 +62,6 @@ public class ContactFormComponentTest {
     assertThat(model.isSubject()).isTrue();
     assertThat(model.isPhoneNumber()).isTrue();
     assertThat(model.getSubmitLabel()).isEqualTo("Send Message");
-    assertThat(model.getCancelLabel()).isEqualTo("Abort");
     assertThat(model.getConsentText()).isEqualTo("I consent");
   }
 

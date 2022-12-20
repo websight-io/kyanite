@@ -9,7 +9,6 @@
     "isSubject": true,
     "isPhoneNumber": true,
     "submitLabel": "Send Message",
-    "cancelLabel": "Abort",
     "consentText": "I consent"
   }
 }
