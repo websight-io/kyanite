@@ -4,16 +4,6 @@
   "label": "Size",
   "include": {
     "sling:resourceSuperType": "/apps/bulma/components/common/size",
-    "normal": {"sling:hideResource": true},
-    "halfheight": {
-      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
-      "label": "Half-height",
-      "value": "is-halfheight"
-    },
-    "fullheight": {
-      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
-      "label": "Full-height (do not use as it breaks edit mode)",
-      "value": "is-fullheight"
-    }
+    "normal": {"sling:hideResource": true}
   }
 }
