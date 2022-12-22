@@ -57,16 +57,19 @@
       </div>
     </div>
 
-    <div class="field is-grouped">
+
+    <div class="field">
       <div class="control">
-        <input type="checkbox" required>
+        <label class="checkbox is-flex">
+          <input type="checkbox" class="mr-2" required>
+          ${model.consentText @ context='html'}
+        </label>
       </div>
-      ${model.consentText @ context='html'}
     </div>
 
     <div class="field">
       <div class="control">
-        <button class="button is-link">${model.submitLabel}</button>
+        <button id="submit-form" class="button is-link">${model.submitLabel}</button>
       </div>
     </div>
   </form>

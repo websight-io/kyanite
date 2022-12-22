@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       dropdown.addEventListener('click', (e) => {
         e.stopPropagation();
         dropdown.classList.toggle('is-active');
-      })
+      });
     });
 
     //Close dropdowns if user clicks outside of dropdowns

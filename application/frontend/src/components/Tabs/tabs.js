@@ -15,7 +15,7 @@
  */
 
 const switchTab = () => {
-    const check = document.querySelector('#check')
+    const check = document.querySelector('#check');
     let isPreviewMode = false;
     if (check != null && check.dataset.editCheck == 'false') {
         isPreviewMode = true;
@@ -27,13 +27,13 @@ const switchTab = () => {
             let tabContainersTabs = [];
             tabContainers.forEach(container => {
                 tabContainersTabs.push(container.querySelectorAll('li'));
-            })
+            });
 
             tabContainersTabs.forEach(tabs => {
                 if (tabs != null && tabs.length > 0 && tabs[0] != null) {
                     tabs[0].classList.add('is-active');
                 }
-            })
+            });
 
             const tabContentBoxes = document.querySelectorAll('#tab-content > div');
             tabContentBoxes.forEach(box => {
@@ -41,8 +41,8 @@ const switchTab = () => {
                     if (box.getAttribute('id') === tabs[0].dataset.target) {
                         box.classList.remove('is-hidden');
                     }
-                })
-            })
+                });
+            });
 
             tabContainersTabs.forEach(tabs => {
                 tabs.forEach(tab => {
@@ -57,15 +57,15 @@ const switchTab = () => {
                                 box.classList.remove('is-hidden');
                             } else {
                                 tabs.forEach(item => {
-                                    if (box.getAttribute('id') === item.dataset.target)
+                                    if (box.getAttribute('id') === item.dataset.target) {
                                         box.classList.add('is-hidden');
+                                    }
                                 });
                             }
-                        })
-                    })
-
-                })
-            })
+                        });
+                    });
+                });
+            });
         });
     }
 };

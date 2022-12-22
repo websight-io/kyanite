@@ -15,7 +15,7 @@
  */
 
 const switchPanelTab = () => {
-  const check = document.querySelector('#mode-check')
+  const check = document.querySelector('#mode-check');
   let isPreviewMode = false;
   if (check != null && check.dataset.isEdit == 'false') {
     isPreviewMode = true;
@@ -27,13 +27,13 @@ const switchPanelTab = () => {
       let tabContainersTabs = [];
       tabContainers.forEach(container => {
         tabContainersTabs.push(container.querySelectorAll('a'));
-      })
+      });
 
       tabContainersTabs.forEach(tabs => {
         if (tabs != null && tabs.length > 0 && tabs[0] != null) {
           tabs[0].classList.add('is-active');
         }
-      })
+      });
 
       const tabContentBoxes = document.querySelectorAll(
           '#panel-tab-content > div');
@@ -42,8 +42,8 @@ const switchPanelTab = () => {
           if (box.getAttribute('id') === tabs[0].dataset.target) {
             box.classList.remove('is-hidden');
           }
-        })
-      })
+        });
+      });
 
       tabContainersTabs.forEach(tabs => {
         tabs.forEach(tab => {
@@ -62,10 +62,10 @@ const switchPanelTab = () => {
                   }
                 });
               }
-            })
-          })
-        })
-      })
+            });
+          });
+        });
+      });
 
       const panelBlocks = document.querySelectorAll('.panel-block');
       panelBlocks.forEach(block => {
@@ -73,11 +73,11 @@ const switchPanelTab = () => {
           panelBlocks.forEach(item => item.classList.remove('is-active'));
           block.classList.add('is-active');
 
-        })
+        });
 
       });
-    })
+    });
   }
-}
+};
 
-  switchPanelTab();
+switchPanelTab();
