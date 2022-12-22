@@ -13,19 +13,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import APIService from '../../ts/services/APIService';
+
+const getContactFormEntityName = () => {
+    const domain = window.location.origin;
+
+    fetch(domain + '/apps/bulma-backend/bin/read-contact-form-config.action')
+    .then((response) => response.json())
+    .then((data) => APIService.getInstance().setContactFormEntity(data.entity.endpoint));
+};
+
+const sendForm = (api) => {
+    const domain = window.location.origin;
+    // post
+    // fetch(domain + api)
+    // .then((response) => response.json())
+    // .then((data) => console.log(data));
+};
 
 const initSubmitListener = () => {
     document.addEventListener('DOMContentLoaded', () => {
         const submitBtn = document.getElementById('submit-form');
         submitBtn.addEventListener( 'click', ()=> {
             submitBtn.setAttribute('disabled', 'disabled');
-            const domain = window.location.origin;
+            const contactFormEntityName = APIService.getInstance().getContactFormEntity();
             
-            fetch(domain + '/apps/bulma-backend/bin/read-contact-form-config.action')
-                .then((response) => response.json())
-                .then((data) => console.log(data));
+            if (contactFormEntityName) {
+                sendForm(contactFormEntityName);
+            } else {
+                getContactFormEntityName();
+                sendForm(APIService.getInstance().getContactFormEntity());
+            }
+            
 
-            submitBtn.setAttribute('disabled', 'false');
+            submitBtn.removeAttribute('disabled');
         });
     });
 };
