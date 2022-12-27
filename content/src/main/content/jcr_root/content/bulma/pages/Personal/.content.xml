@@ -1018,6 +1018,49 @@
           jcr:primaryType="nt:unstructured"
           sling:resourceType="bulma/components/content"
           text="&lt;h1 style=&quot;text-align: center&quot;>Contact&lt;/h1>&lt;h4 style=&quot;text-align: center&quot;>Get in touch&lt;/h4>"/>
+          <container
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="bulma/components/container">
+            <columns
+            isCentered="false"
+            isCustomGapLevel="false"
+            isMultiline="false"
+            isVerticallyCentered="false"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="bulma/components/columns">
+              <column
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="bulma/components/columns/column">
+                <box
+                  jcr:primaryType="nt:unstructured"
+                  sling:resourceType="bulma/components/box">
+                  <contactform
+                    isPhoneNumber="true"
+                    isSubject="true"
+                    submitLabel="Submit"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="bulma/components/contactform">
+                  </contactform>
+                </box>
+                <mobileColumnStyle
+                  jcr:primaryType="nt:unstructured"
+                  isNormalColumn="false">
+                </mobileColumnStyle>
+                <tabletColumnStyle
+                  jcr:primaryType="nt:unstructured"
+                  isNormalColumn="false">
+                </tabletColumnStyle>
+                <desktopColumnStyle
+                  jcr:primaryType="nt:unstructured"
+                  isNormalColumn="true"
+                  offset="three"
+                  offsetType="evenNumber"
+                  size="six"
+                  sizeType="evenNumber">
+                </desktopColumnStyle>
+              </column>
+            </columns>
+          </container>
       </section_1_1_2>
       <footer
         jcr:primaryType="nt:unstructured"

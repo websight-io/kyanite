@@ -17,7 +17,7 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.ContactFormComponent">
-  <form id="contactForm">
+  <form id="${resource.name}">
     <div class="field">
       <label class="label">Email address</label>
       <div class="control has-icons-left">
@@ -28,19 +28,17 @@
       </div>
       <p id="emailError" class="help is-danger is-hidden">This email is invalid</p>
     </div>
-
+    
     <sly data-sly-test="${model.phoneNumber}">
       <div class="field">
-        <label class="label">Phone Number</label>
+        <label class="label">Phone</label>
         <div class="control has-icons-left">
-          <input class="input" type="tel" name="phoneNumber" placeholder="Phone Number" required>
-          <span class="icon is-small is-left">
-          <i class="fas fa-phone"></i>
-        </span>
+          <input class="input" type="tel" name="phone" placeholder="Phone" required>
+          <span class="icon is-small is-left"><i class="fas fa-phone"></i></span>
         </div>
       </div>
     </sly>
-
+    
     <sly data-sly-test="${model.subject}">
       <div class="field">
         <label class="label">Subject</label>
@@ -70,11 +68,11 @@
 
     <div class="field">
       <div class="control">
-        <input id="submit-btn" class="button is-link" type="submit" placeholder="${model.submitLabel}">
+        <input id="submit-btn" class="button is-link is-medium" type="submit" placeholder="${model.submitLabel}" data-form-id="${resource.name}">
       </div>
     </div>
     <div class="block">
-      <div class="notification is-danger is-hidden form-failure">
+      <div class="notification is-danger is-hidden form-failure mb-0">
         Something's wrong, try again
       </div>
       <div class="notification is-success is-hidden form-success">
