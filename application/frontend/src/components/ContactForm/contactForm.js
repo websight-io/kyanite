@@ -41,13 +41,14 @@ const sendForm = (api) => {
     const domain = window.location.origin;
 
         fetch(domain + '/' + api, {
-        method: 'POST',
-        body: JSON.stringify(formPostData)
+            method: 'POST',
+            body: JSON.stringify(formPostData)
         })
         .then((response) => response.json())
         .then(() => {
             formSuccessEl.classList.remove('is-hidden');
             submitBtn.removeAttribute('disabled');
+            form.reset();
         })
         .catch(err => {
             console.error(err);
