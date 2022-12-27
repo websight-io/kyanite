@@ -17,15 +17,16 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.ContactFormComponent">
-  <form>
+  <form id="contactForm">
     <div class="field">
       <label class="label">Email address</label>
       <div class="control has-icons-left">
-        <input class="input" type="email" name="email" placeholder="Email" required>
+        <input class="input email-input" type="email" name="email" placeholder="Email" required>
         <span class="icon is-small is-left">
           <i class="fas fa-envelope"></i>
         </span>
       </div>
+      <p id="emailError" class="help is-danger is-hidden">This email is invalid</p>
     </div>
 
     <sly data-sly-test="${model.phoneNumber}">
@@ -69,7 +70,15 @@
 
     <div class="field">
       <div class="control">
-        <button id="submit-form" class="button is-link">${model.submitLabel}</button>
+        <input id="submit-btn" class="button is-link" type="submit" placeholder="${model.submitLabel}">
+      </div>
+    </div>
+    <div class="block">
+      <div class="notification is-danger is-hidden form-failure">
+        Something's wrong, try again
+      </div>
+      <div class="notification is-success is-hidden form-success">
+        Form submitted successfully
       </div>
     </div>
   </form>
