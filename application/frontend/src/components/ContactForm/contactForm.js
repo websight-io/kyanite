@@ -17,18 +17,19 @@ import APIService from '../../ts/services/APIService';
 
 const initForm = () => {
     document.addEventListener('DOMContentLoaded', () => {
-        document.addEventListener('submit', (e)=> {
+        document.addEventListener('submit', (e) => {
             e.preventDefault();
             
             const form = e.target;
             const submitBtn = form.getElementsByClassName('button')[0];
             const formSuccessEl = form.getElementsByClassName('form-success')[0];
             const formFailureEl = form.getElementsByClassName('form-failure')[0];
+            const emailValidateErrorEl = form.getElementsByClassName('email-validate-error')[0];
+            const emailInputEl = form.getElementsByClassName('email-input')[0];
+            const domain = window.location.origin;
             let formPostData = {};
 
             const getContactFormEntityName = () => {
-                const domain = window.location.origin;
-            
                 fetch(domain + '/apps/bulma-backend/bin/read-contact-form-config.action')
                 .then((response) => response.json())
                 .then((data) => {
@@ -36,15 +37,11 @@ const initForm = () => {
                     sendForm(data.entity.endpoint);
                 })
                 .catch(err => {
-                    console.error(err);
-                    formFailureEl.classList.remove('is-hidden');
-                    submitBtn.removeAttribute('disabled');
+                    errorStatus(err);
                 });
             };
             
             const sendForm = (api) => {
-                const domain = window.location.origin;
-            
                     fetch(domain + '/' + api, {
                         method: 'POST',
                         body: JSON.stringify(formPostData)
@@ -56,10 +53,14 @@ const initForm = () => {
                         form.reset();
                     })
                     .catch(err => {
-                        console.error(err);
-                        formFailureEl.classList.remove('is-hidden');
-                        submitBtn.removeAttribute('disabled');
+                        errorStatus(err);
                     });
+            };
+
+            const errorStatus = (err) => {
+                console.error(err);
+                formFailureEl.classList.remove('is-hidden');
+                submitBtn.removeAttribute('disabled');
             };
             
             const sendOrGetEntityName = () => {
@@ -73,34 +74,35 @@ const initForm = () => {
             };
             
             const showEmailError = () => {
-                const emailErrorMessageEl = document.getElementById('emailError');
-                const emailInputEl = form.getElementsByClassName('email-input')[0];
-                emailErrorMessageEl.classList.remove('is-hidden');
-                emailInputEl.classList.contains('is-danger') ? false : emailInputEl.classList.add('is-danger');
+                emailValidateErrorEl.classList.remove('is-hidden');
+                !emailInputEl.classList.contains('is-danger') && emailInputEl.classList.add('is-danger');
             };
             
             const hideEmailError = () => {
-                const emailErrorMessageEl = document.getElementById('emailError');
-                const emailInputEl = form.getElementsByClassName('email-input')[0];
-                emailErrorMessageEl.classList.contains('is-hidden') 
-                ? false 
-                : emailErrorMessageEl.classList.add('is-hidden');
+                !emailValidateErrorEl.classList.contains('is-hidden') 
+                && emailValidateErrorEl.classList.add('is-hidden');
                 emailInputEl.classList.remove('is-danger');
             };
             
             const hideNotifications = () => {
-                formSuccessEl.classList.contains('is-hidden') ? false : formSuccessEl.classList.add('is-hidden');
-                formFailureEl.classList.contains('is-hidden') ? false : formFailureEl.classList.add('is-hidden');
+                !formSuccessEl.classList.contains('is-hidden') && formSuccessEl.classList.add('is-hidden');
+                !formFailureEl.classList.contains('is-hidden') && formFailureEl.classList.add('is-hidden');
             };
 
             const prepareFormData = () => {
                 const formData = new FormData(form);
+                let validateEmail = false;
                 formPostData = {};
                 for (let data of formData.entries()) {
                     formPostData[data[0]] = data[1];
                     if (data[0] === 'email') {
-                        emailIsValid(data[1]) ? sendOrGetEntityName(): showEmailError();
+                        validateEmail = data[1];
                     }
+                }
+                if (validateEmail) {
+                    emailIsValid(validateEmail) ? sendOrGetEntityName() : showEmailError();
+                } else {
+                    sendOrGetEntityName();
                 }
             };
 
