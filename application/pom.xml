@@ -193,6 +193,24 @@
         <version>1.0.10</version>
         <scope>provided</scope>
       </dependency>
+      <dependency>
+        <groupId>pl.ds.websight</groupId>
+        <artifactId>websight-request-parameters-support</artifactId>
+        <version>1.0.5</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>pl.ds.websight</groupId>
+        <artifactId>websight-ui-framework-actions</artifactId>
+        <version>2.0.0</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>pl.ds.websight</groupId>
+        <artifactId>websight-pages-editor-view</artifactId>
+        <version>1.3.0</version>
+        <scope>provided</scope>
+      </dependency>
 
       <dependency>
         <groupId>org.apache.sling</groupId>
