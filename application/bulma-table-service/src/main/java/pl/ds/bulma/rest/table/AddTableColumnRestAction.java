@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-
 package pl.ds.bulma.rest.table;
 
 import java.util.Iterator;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.osgi.service.component.annotations.Component;
 import pl.ds.websight.rest.framework.RestAction;
 import pl.ds.websight.rest.framework.RestActionResult;
@@ -32,59 +32,60 @@ import pl.ds.websight.rest.framework.annotations.SlingAction;
 @PrimaryTypes("nt:base")
 public class AddTableColumnRestAction implements RestAction<AddTableColumnRestModel, String> {
 
-  private static final String SLING_RESOURCETYPE = "sling:resourceType";
+  private static final String CELL_IDENTIFIER = "tablecell%d";
 
   @Override
   public RestActionResult<String> perform(AddTableColumnRestModel addTableColumnRestModel) {
 
-    Resource resource = addTableColumnRestModel.getResource();
-    Resource tableRow = resource.getParent();
-    Resource tableSection = tableRow.getParent();
-    Resource table = tableSection.getParent();
+    try {
 
-    Iterator<Resource> cells = tableRow.listChildren();
-    int pos = 0;
-    while (cells.hasNext()) {
-      Resource cell = cells.next();
-      pos++;
-      if (cell.getName().equals(resource.getName())) {
-        break;
-      }
-    }
+      Resource selectedCell = addTableColumnRestModel.getResource();
+      Resource table = selectedCell.getParent().getParent().getParent();
+      int pos = getSelectedCellPosition(selectedCell);
 
-    Iterator<Resource> sections = table.listChildren();
-    while (sections.hasNext()) {
-      Resource section = sections.next();
-      Iterator<Resource> rows = section.listChildren();
-      while (rows.hasNext()) {
-        Resource row = rows.next();
-        Node rowNode = row.adaptTo(Node.class);
-        try {
-          Node newCell = rowNode.addNode("mytablecell");
-          newCell.setProperty(SLING_RESOURCETYPE, resource.getResourceType());
+      for (Resource section : table.getChildren()) {
+        for (Resource row : section.getChildren()) {
+          Node rowNode = row.adaptTo(Node.class);
+          long numberOfCells = rowNode.getNodes().getSize();
 
-          Iterator<Resource> rowCells = row.listChildren();
-          Resource selectedCell = null;
-          int cursor = 0;
-          while (rowCells.hasNext() && cursor < pos) {
-            selectedCell = rowCells.next();
-            cursor++;
+          // create and add new cell to table row
+          Node newCell = rowNode.addNode(String.format(CELL_IDENTIFIER, numberOfCells + 1));
+          newCell.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE,
+              selectedCell.getResourceType());
+
+          // find cell name where the new cell will be moved before or after
+          Iterator<Resource> cells = row.listChildren();
+          String destCellName = null;
+          Resource destCell = null;
+          for (int i = 0; cells.hasNext() && i < pos; i++) {
+            destCell = cells.next();
           }
 
-          //if (addTableColumnRestModel.isInsertBefore()) {
-          row.adaptTo(Node.class).orderBefore(newCell.getName(), selectedCell.getName());
-          //}
+          newCell.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE,
+              destCell != null ? destCell.getResourceType() : selectedCell.getResourceType());
 
-        } catch (RepositoryException e) {
-          return RestActionResult.failure("Cannot create column");
+          if (addTableColumnRestModel.isInsertBefore()) {
+            rowNode.orderBefore(newCell.getName(), destCell.getName());
+          } else if (cells.hasNext()) {
+            rowNode.orderBefore(newCell.getName(), cells.next().getName());
+          }
         }
       }
-    }
-    try {
       addTableColumnRestModel.getSession().save();
+      return RestActionResult.success("Created column");
     } catch (RepositoryException e) {
-      return RestActionResult.failure("Cannot create column");
+      return RestActionResult.failure("Cannot create column", e.getMessage());
     }
-    return RestActionResult.success("Created row");
+  }
+
+  private int getSelectedCellPosition(Resource selectedCell) {
+    int position = 0;
+    for (Resource cell : selectedCell.getParent().getChildren()) {
+      position++;
+      if (selectedCell.getName().equals(cell.getName())) {
+        return position;
+      }
+    }
+    return position;
   }
 }

@@ -20,9 +20,8 @@ import java.util.Iterator;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.osgi.service.component.annotations.Component;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import pl.ds.websight.rest.framework.RestAction;
 import pl.ds.websight.rest.framework.RestActionResult;
 import pl.ds.websight.rest.framework.annotations.PrimaryTypes;
@@ -33,49 +32,49 @@ import pl.ds.websight.rest.framework.annotations.SlingAction;
 @PrimaryTypes("nt:base")
 public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, String> {
 
-  private static final Logger LOG = LoggerFactory.getLogger(AddTableRowRestAction.class);
-
-  private static String rowNodeName = "tablerow%d";
-  private static final String SLING_RESOURCETYPE = "sling:resourceType";
+  private static final String ROW_IDENTIFIER = "tablerow%d";
 
   @Override
   public RestActionResult<String> perform(AddTableRowRestModel addTableRowRestModel) {
 
     try {
-      Resource tableRow = addTableRowRestModel.getResource();
-      Resource parent = tableRow.getParent();
-      Node parentNode = parent.adaptTo(Node.class);
-      long rowSize = parentNode.getNodes().getSize();
+      Resource selectedRow = addTableRowRestModel.getResource();
+      Resource section = selectedRow.getParent();
+      Node sectionNode = section.adaptTo(Node.class);
+      long numberOfRows = sectionNode.getNodes().getSize();
 
-      Node newTableRow = parentNode.addNode(String.format(rowNodeName, rowSize + 1));
-      newTableRow.setProperty(SLING_RESOURCETYPE, tableRow.getResourceType());
+      // create and add new row to the end of the table section
+      Node newRow = sectionNode.addNode(String.format(ROW_IDENTIFIER, numberOfRows + 1));
+      newRow.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE, selectedRow.getResourceType());
 
-      Iterator<Resource> iterator = tableRow.listChildren();
-      while (iterator.hasNext()) {
-        Resource tableCell = iterator.next();
-        Node newTableCell = newTableRow.addNode(tableCell.getName());
-        newTableCell.setProperty(SLING_RESOURCETYPE, tableCell.getResourceType());
+      // add table cells to new row
+      for (Resource cell : selectedRow.getChildren()) {
+        Node newCell = newRow.addNode(cell.getName());
+        newCell.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE, cell.getResourceType());
       }
 
+      // move new row before or after the selected row
       if (addTableRowRestModel.isInsertBefore()) {
-        parentNode.orderBefore(newTableRow.getName(),
-            addTableRowRestModel.getResource().getName());
+        sectionNode.orderBefore(newRow.getName(),
+            selectedRow.getName());
       } else {
-        Iterator<Resource> tableRowsIterator = parent.getChildren().iterator();
-        while (tableRowsIterator.hasNext()) {
-          Resource currentRow = tableRowsIterator.next();
-          if (currentRow.getName().equals(addTableRowRestModel.getResource().getName())
-              && tableRowsIterator.hasNext()) {
-            parentNode.orderBefore(newTableRow.getName(),
-                tableRowsIterator.next().getName());
-          }
-        }
+        sectionNode.orderBefore(newRow.getName(), nextSiblingName(selectedRow));
       }
       addTableRowRestModel.getSession().save();
       return RestActionResult.success("Table row created",
-          "New table row created at " + newTableRow.getPath(), newTableRow.getPath());
+          "New table row created at " + newRow.getPath(), newRow.getPath());
     } catch (RepositoryException e) {
       return RestActionResult.failure("Cannot create row", e.getMessage());
     }
+  }
+
+  private String nextSiblingName(Resource resource) {
+    Iterator<Resource> siblings = resource.getParent().getChildren().iterator();
+    while (siblings.hasNext()) {
+      if (siblings.next().getName().equals(resource.getName())) {
+        return siblings.hasNext() ? siblings.next().getName() : null;
+      }
+    }
+    return null;
   }
 }
