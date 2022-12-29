@@ -17,7 +17,7 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.table.TableComponent">
-  <sly data-sly-test.classes="table ${model.tableClasses @ join=' '}"></sly>
+  <sly data-sly-set.classes="table ${model.tableClasses @ join=' '}"></sly>
   <sly data-sly-test="${resource.hasChildren}">
     <table class="${classes}">
       <sly

@@ -17,7 +17,7 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.columns.ColumnComponent">
-  <sly data-sly-test.childrenComponents="${model.childrenComponents}"></sly>
+  <sly data-sly-set.childrenComponents="${model.childrenComponents}"></sly>
   <sly data-sly-test="${!childrenComponents.empty}">
     <div class="column ${model.classes @ join=' '}">
       <sly data-sly-repeat="${childrenComponents}">
@@ -26,8 +26,8 @@
     </div>
   </sly>
   <sly data-sly-test="${childrenComponents.empty}">
-    <sly data-sly-test.modelClasses="${model.classes @ join=' '}"></sly>
-    <sly data-sly-test.placeholderClasses="${['column m-3', modelClasses] @ join=' '}"></sly>
+    <sly data-sly-set.modelClasses="${model.classes @ join=' '}"></sly>
+    <sly data-sly-set.placeholderClasses="${['column m-3', modelClasses] @ join=' '}"></sly>
     <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
          data-sly-call="${lib.placeholder @ classes=placeholderClasses}"></sly>
   </sly>

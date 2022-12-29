@@ -20,7 +20,7 @@
   <sly data-sly-test="${model.type == 'button'}">
     <sly data-sly-test.disabled="${model.isDisabled}">
       <button class="button ${model.buttonClasses @ join=' '}" disabled>
-        <sly data-sly-test.hasIcon="${model.addIcon}">
+        <sly data-sly-test="${model.addIcon}">
           <span class="icon">
             <i class="${model.icon}"></i>
           </span>

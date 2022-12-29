@@ -49,7 +49,7 @@
                     <sly data-sly-list="${resource.children}">
                         <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tab'}">
                             <sly data-sly-test="${item.hasChildren}">
-                                <sly data-sly-test.tabid="${item.path}">
+                                <sly data-sly-set.tabid="${item.path}">
                                     <sly data-sly-list="${item.children}">
                                         <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tabcontent'}">
                                             <div id="${tabid}" class="is-hidden">
