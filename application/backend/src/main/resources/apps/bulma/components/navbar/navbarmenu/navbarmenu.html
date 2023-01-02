@@ -18,7 +18,7 @@
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarBrandComponent">
   <sly data-sly-test="${resource.hasChildren}">
-    <div class="navbar-menu">
+    <div class="navbar-menu" id="navMenu">
       <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
     </div>
   </sly>
