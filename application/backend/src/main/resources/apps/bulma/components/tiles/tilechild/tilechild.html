@@ -25,7 +25,7 @@
     </div>
   </sly>
   <sly data-sly-test="${!resource.hasChildren}">
-    <sly data-sly-test.modelClasses="tile is-child ${model.classes @ join=' '}"></sly>
+    <sly data-sly-set.modelClasses="tile is-child ${model.classes @ join=' '}"></sly>
     <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
          data-sly-call="${lib.placeholder @ classes=modelClasses}"></sly>
   </sly>

@@ -17,7 +17,7 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.level.LevelItemComponent">
-  <sly data-sly-test.classes="level-item ${model.levelItemStyle}"></sly>
+  <sly data-sly-set.classes="level-item ${model.levelItemStyle}"></sly>
   <sly data-sly-test="${resource.hasChildren}">
     <div data-sly-element=${model.elementType} class="${classes}">
       <sly
