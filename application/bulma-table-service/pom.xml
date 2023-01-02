@@ -87,14 +87,6 @@
       <groupId>pl.ds.websight</groupId>
       <artifactId>websight-request-parameters-support</artifactId>
     </dependency>
-    <dependency>
-      <groupId>pl.ds.websight</groupId>
-      <artifactId>websight-ui-framework-actions</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>pl.ds.websight</groupId>
-      <artifactId>websight-pages-editor-view</artifactId>
-    </dependency>
 
     <dependency>
       <groupId>javax.inject</groupId>
