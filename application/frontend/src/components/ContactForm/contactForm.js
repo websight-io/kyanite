@@ -54,9 +54,13 @@ const initForm = () => {
             };
             
             const getEntityName = () => {
-                const contactFormEntityName = JSON.parse(document.body.dataset.config).contactForm;
-                submitBtn.setAttribute('disabled', 'disabled');
-                sendForm(contactFormEntityName);
+                const contactFormEntityName = JSON.parse(document.body.dataset.config);
+                if (contactFormEntityName.constructor === Object && Object.keys(contactFormEntityName).length !== 0) {
+                    submitBtn.setAttribute('disabled', 'disabled');
+                    sendForm(contactFormEntityName.contactForm);
+                } else {
+                    console.error('Invalid configuration');
+                }
             };
             
             const emailIsValid = (emailValue) => {
