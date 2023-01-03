@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import ContactFormAPIService from '../../ts/services/ContactFormAPIService';
 
 const initForm = () => {
     document.addEventListener('DOMContentLoaded', () => {
@@ -26,11 +25,10 @@ const initForm = () => {
             const formFailureEl = form.getElementsByClassName('form-failure')[0];
             const emailValidateErrorEl = form.getElementsByClassName('email-validate-error')[0];
             const emailInputEl = form.getElementsByClassName('email-input')[0];
-            const domain = window.location.origin;
             let formPostData = {};
             
             const sendForm = (api) => {
-                    fetch(domain + '/' + api, {
+                    fetch(api, {
                         method: 'POST',
                         body: JSON.stringify(formPostData)
                     })
@@ -55,8 +53,8 @@ const initForm = () => {
                 submitBtn.removeAttribute('disabled');
             };
             
-            const getEntityName = async () => {
-                const contactFormEntityName = await ContactFormAPIService.getInstance().getEntity();
+            const getEntityName = () => {
+                const contactFormEntityName = JSON.parse(document.body.dataset.config).contactForm;
                 submitBtn.setAttribute('disabled', 'disabled');
                 sendForm(contactFormEntityName);
             };
