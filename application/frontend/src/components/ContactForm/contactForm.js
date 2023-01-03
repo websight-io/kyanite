@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import APIService from '../../ts/services/APIService';
+import ContactFormAPIService from '../../ts/services/ContactFormAPIService';
 
 const initForm = () => {
     document.addEventListener('DOMContentLoaded', () => {
@@ -28,18 +28,6 @@ const initForm = () => {
             const emailInputEl = form.getElementsByClassName('email-input')[0];
             const domain = window.location.origin;
             let formPostData = {};
-
-            const getContactFormEntityName = () => {
-                fetch(domain + '/apps/bulma-backend/bin/read-contact-form-config.action')
-                .then((response) => response.json())
-                .then((data) => {
-                    APIService.getInstance().setContactFormEntity(data.entity.endpoint);
-                    sendForm(data.entity.endpoint);
-                })
-                .catch(err => {
-                    errorStatus(err);
-                });
-            };
             
             const sendForm = (api) => {
                     fetch(domain + '/' + api, {
@@ -48,13 +36,17 @@ const initForm = () => {
                     })
                     .then((response) => response.json())
                     .then(() => {
-                        formSuccessEl.classList.remove('is-hidden');
-                        submitBtn.removeAttribute('disabled');
-                        form.reset();
+                        successStatus();
                     })
                     .catch(err => {
                         errorStatus(err);
                     });
+            };
+
+            const successStatus = () => {
+                formSuccessEl.classList.remove('is-hidden');
+                submitBtn.removeAttribute('disabled');
+                form.reset();
             };
 
             const errorStatus = (err) => {
@@ -63,10 +55,10 @@ const initForm = () => {
                 submitBtn.removeAttribute('disabled');
             };
             
-            const sendOrGetEntityName = () => {
-                const contactFormEntityName = APIService.getInstance().getContactFormEntity();
+            const getEntityName = async () => {
+                const contactFormEntityName = await ContactFormAPIService.getInstance().getEntity();
                 submitBtn.setAttribute('disabled', 'disabled');
-                contactFormEntityName ? sendForm(contactFormEntityName) : getContactFormEntityName();
+                sendForm(contactFormEntityName);
             };
             
             const emailIsValid = (emailValue) => {
@@ -100,9 +92,9 @@ const initForm = () => {
                     }
                 }
                 if (validateEmail) {
-                    emailIsValid(validateEmail) ? sendOrGetEntityName() : showEmailError();
+                    emailIsValid(validateEmail) ? getEntityName() : showEmailError();
                 } else {
-                    sendOrGetEntityName();
+                    getEntityName();
                 }
             };
 
