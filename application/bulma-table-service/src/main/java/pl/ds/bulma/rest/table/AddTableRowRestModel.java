@@ -16,6 +16,8 @@
 
 package pl.ds.bulma.rest.table;
 
+import java.util.regex.Pattern;
+import javax.annotation.PostConstruct;
 import javax.jcr.Session;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
@@ -27,6 +29,9 @@ import pl.ds.websight.request.parameters.support.annotations.RequestParameter;
 @Model(adaptables = SlingHttpServletRequest.class)
 public class AddTableRowRestModel {
 
+  private static final Pattern cellResourceType = Pattern.compile(
+      "bulma/components/table/(tablecell|tableheadcell)");
+
   @SlingObject
   private Resource resource;
 
@@ -36,12 +41,26 @@ public class AddTableRowRestModel {
   @RequestParameter
   private boolean insertBefore;
 
-  public Session getSession() {
-    return resourceResolver.adaptTo(Session.class);
+  private Resource selectedRow;
+
+  @PostConstruct
+  private void init() {
+    selectedRow = findSelectedRow();
   }
 
-  public Resource getResource() {
+  private Resource findSelectedRow() {
+    if (cellResourceType.matcher(resource.getResourceType()).matches()) {
+      return resource.getParent();
+    }
     return resource;
+  }
+
+  public Resource getSelectedRow() {
+    return selectedRow;
+  }
+
+  public Session getSession() {
+    return resourceResolver.adaptTo(Session.class);
   }
 
   public boolean isInsertBefore() {

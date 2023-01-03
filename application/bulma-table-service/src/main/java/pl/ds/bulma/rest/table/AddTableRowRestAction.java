@@ -38,13 +38,13 @@ public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, S
   public RestActionResult<String> perform(AddTableRowRestModel addTableRowRestModel) {
 
     try {
-      Resource selectedRow = addTableRowRestModel.getResource();
-      Resource section = selectedRow.getParent();
-      Node sectionNode = section.adaptTo(Node.class);
-      long numberOfRows = sectionNode.getNodes().getSize();
+      Resource selectedRow = addTableRowRestModel.getSelectedRow();
+      Resource parent = selectedRow.getParent();
+      Node parentNode = parent.adaptTo(Node.class);
+      long numberOfRows = parentNode.getNodes().getSize();
 
       // create and add new row to the end of the table section
-      Node newRow = sectionNode.addNode(String.format(ROW_IDENTIFIER, numberOfRows + 1));
+      Node newRow = parentNode.addNode(String.format(ROW_IDENTIFIER, numberOfRows + 1));
       newRow.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE, selectedRow.getResourceType());
 
       // add table cells to new row
@@ -55,10 +55,10 @@ public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, S
 
       // move new row before or after the selected row
       if (addTableRowRestModel.isInsertBefore()) {
-        sectionNode.orderBefore(newRow.getName(),
+        parentNode.orderBefore(newRow.getName(),
             selectedRow.getName());
       } else {
-        sectionNode.orderBefore(newRow.getName(), nextSiblingName(selectedRow));
+        parentNode.orderBefore(newRow.getName(), nextSiblingName(selectedRow));
       }
       addTableRowRestModel.getSession().save();
       return RestActionResult.success("Table row created",

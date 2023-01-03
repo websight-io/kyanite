@@ -36,46 +36,45 @@ public class AddTableColumnRestAction implements RestAction<AddTableColumnRestMo
 
   @Override
   public RestActionResult<String> perform(AddTableColumnRestModel addTableColumnRestModel) {
-
     try {
-
       Resource selectedCell = addTableColumnRestModel.getResource();
-      Resource table = selectedCell.getParent().getParent().getParent();
       int pos = getSelectedCellPosition(selectedCell);
 
-      for (Resource section : table.getChildren()) {
-        for (Resource row : section.getChildren()) {
-          Node rowNode = row.adaptTo(Node.class);
-          long numberOfCells = rowNode.getNodes().getSize();
-
-          // create and add new cell to table row
-          Node newCell = rowNode.addNode(String.format(CELL_IDENTIFIER, numberOfCells + 1));
-          newCell.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE,
-              selectedCell.getResourceType());
-
-          // find cell name where the new cell will be moved before or after
-          Iterator<Resource> cells = row.listChildren();
-          String destCellName = null;
-          Resource destCell = null;
-          for (int i = 0; cells.hasNext() && i < pos; i++) {
-            destCell = cells.next();
-          }
-
-          newCell.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE,
-              destCell != null ? destCell.getResourceType() : selectedCell.getResourceType());
-
-          if (addTableColumnRestModel.isInsertBefore()) {
-            rowNode.orderBefore(newCell.getName(), destCell.getName());
-          } else if (cells.hasNext()) {
-            rowNode.orderBefore(newCell.getName(), cells.next().getName());
-          }
-        }
+      for (Resource row : addTableColumnRestModel.getRows()) {
+        addCellToRowAtPosition(row, selectedCell, pos, addTableColumnRestModel.isInsertBefore());
       }
+
       addTableColumnRestModel.getSession().save();
       return RestActionResult.success("Created column");
     } catch (RepositoryException e) {
       return RestActionResult.failure("Cannot create column", e.getMessage());
     }
+  }
+
+  private void addCellToRowAtPosition(Resource row, Resource selectedCell, int position,
+      boolean isInsertBefore) throws RepositoryException {
+    Node rowNode = row.adaptTo(Node.class);
+    long numberOfCells = rowNode.getNodes().getSize();
+
+    // create and add new cell to table row
+    Node newCell = rowNode.addNode(String.format(CELL_IDENTIFIER, numberOfCells + 1));
+
+    // find cell where the new cell will be moved before or after
+    Iterator<Resource> cells = row.listChildren();
+    Resource destCell = null;
+    for (int i = 0; cells.hasNext() && i < position; i++) {
+      destCell = cells.next();
+    }
+
+    newCell.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE,
+        destCell != null ? destCell.getResourceType() : selectedCell.getResourceType());
+
+    if (isInsertBefore) {
+      rowNode.orderBefore(newCell.getName(), destCell.getName());
+    } else if (cells.hasNext()) {
+      rowNode.orderBefore(newCell.getName(), cells.next().getName());
+    }
+
   }
 
   private int getSelectedCellPosition(Resource selectedCell) {
