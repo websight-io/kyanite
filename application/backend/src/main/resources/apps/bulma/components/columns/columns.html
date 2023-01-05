@@ -28,8 +28,8 @@
     </div>
   </sly>
   <sly data-sly-test="${!resource.hasChildren}">
-    <sly data-sly-test.classes="${model.classes @ join=' '}"></sly>
-    <sly data-sly-test.columnsClasses="${['columns', classes] @ join=' '}"></sly>
+    <sly data-sly-set.classes="${model.classes @ join=' '}"></sly>
+    <sly data-sly-set.columnsClasses="${['columns', classes] @ join=' '}"></sly>
     <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
          data-sly-call="${lib.placeholder @ classes=columnsClasses}">
     </sly>

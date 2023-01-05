@@ -17,7 +17,7 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.HeroComponent">
-  <sly data-sly-test.classes="hero ${model.heroClasses @ join=' '}"></sly>
+  <sly data-sly-set.classes="hero ${model.heroClasses @ join=' '}"></sly>
   <sly data-sly-test="${resource.hasChildren}">
     <section class="${classes}">
       <div class="hero-body">

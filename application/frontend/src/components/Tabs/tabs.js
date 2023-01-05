@@ -57,13 +57,13 @@ const switchTab = () => {
                                 box.classList.remove('is-hidden');
                             } else {
                                 tabs.forEach(item => {
-                                    if (box.getAttribute('id') === item.dataset.target) {
-                                        box.classList.add('is-hidden');
-                                    }
+                                    if (box.getAttribute('id') === item.dataset.target)
+                                        {box.classList.add('is-hidden');}
                                 });
                             }
                         });
                     });
+
                 });
             });
         });
