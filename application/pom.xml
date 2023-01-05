@@ -168,6 +168,12 @@
         <version>${websight.rest.version}</version>
         <scope>provided</scope>
       </dependency>
+      <dependency>
+        <groupId>pl.ds.websight</groupId>
+        <artifactId>websight-request-parameters-support</artifactId>
+        <version>${websight.request.parameters.version}</version>
+        <scope>provided</scope>
+      </dependency>
 
       <dependency>
         <groupId>org.osgi</groupId>
@@ -185,18 +191,6 @@
         <groupId>org.osgi</groupId>
         <artifactId>org.osgi.service.metatype.annotations</artifactId>
         <version>1.4.1</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>pl.ds.websight</groupId>
-        <artifactId>websight-rest-framework</artifactId>
-        <version>1.0.10</version>
-        <scope>provided</scope>
-      </dependency>
-      <dependency>
-        <groupId>pl.ds.websight</groupId>
-        <artifactId>websight-request-parameters-support</artifactId>
-        <version>1.0.5</version>
         <scope>provided</scope>
       </dependency>
 
