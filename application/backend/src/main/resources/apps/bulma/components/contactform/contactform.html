@@ -21,25 +21,24 @@
     <div class="field">
       <label class="label">Email address</label>
       <div class="control has-icons-left">
-        <input class="input" type="email" name="email" placeholder="Email" required>
+        <input class="input email-input" type="email" name="email" placeholder="Email" required>
         <span class="icon is-small is-left">
           <i class="fas fa-envelope"></i>
         </span>
       </div>
+      <p class="help is-danger is-hidden email-validate-error">This email is invalid</p>
     </div>
-
+    
     <sly data-sly-test="${model.phoneNumber}">
       <div class="field">
-        <label class="label">Phone Number</label>
+        <label class="label">Phone</label>
         <div class="control has-icons-left">
-          <input class="input" type="tel" name="phoneNumber" placeholder="Phone Number" required>
-          <span class="icon is-small is-left">
-          <i class="fas fa-phone"></i>
-        </span>
+          <input class="input" type="tel" name="phone" placeholder="Phone" required>
+          <span class="icon is-small is-left"><i class="fas fa-phone"></i></span>
         </div>
       </div>
     </sly>
-
+    
     <sly data-sly-test="${model.subject}">
       <div class="field">
         <label class="label">Subject</label>
@@ -57,16 +56,27 @@
       </div>
     </div>
 
-    <div class="field is-grouped">
+
+    <div class="field">
       <div class="control">
-        <input type="checkbox" required>
+        <label class="checkbox is-flex">
+          <input type="checkbox" class="mr-2" required>
+          ${model.consentText @ context='html'}
+        </label>
       </div>
-      ${model.consentText @ context='html'}
     </div>
 
     <div class="field">
       <div class="control">
-        <button class="button is-link">${model.submitLabel}</button>
+        <input id="submit-btn" class="button is-link is-medium" type="submit" placeholder="${model.submitLabel}" data-form-id="${resource.name}">
+      </div>
+    </div>
+    <div class="block">
+      <div class="notification is-danger is-hidden form-failure mb-0">
+        Something's wrong, try again
+      </div>
+      <div class="notification is-success is-hidden form-success">
+        Form submitted successfully
       </div>
     </div>
   </form>

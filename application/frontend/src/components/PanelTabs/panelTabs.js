@@ -80,4 +80,4 @@ const switchPanelTab = () => {
   }
 };
 
-  switchPanelTab();
+switchPanelTab();

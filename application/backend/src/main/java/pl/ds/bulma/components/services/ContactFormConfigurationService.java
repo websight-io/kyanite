@@ -14,32 +14,28 @@
  * limitations under the License.
  */
 
-package pl.ds.bulma.components.rest;
+package pl.ds.bulma.components.services;
 
+
+import javax.inject.Inject;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.metatype.annotations.Designate;
 import pl.ds.bulma.components.configurations.ContactFormConfiguration;
-import pl.ds.websight.rest.framework.RestAction;
-import pl.ds.websight.rest.framework.RestActionResult;
-import pl.ds.websight.rest.framework.annotations.SlingAction;
-import pl.ds.websight.rest.framework.annotations.SlingAction.HttpMethod;
 
-@Component
-@SlingAction(HttpMethod.GET)
+@Component(service = ContactFormConfigurationService.class)
 @Designate(ocd = ContactFormConfiguration.class)
-public class ReadContactFormConfigRestAction implements RestAction<Void, ContactFormConfiguration> {
+public class ContactFormConfigurationService {
 
+  @Inject
   private ContactFormConfiguration config;
+
+  public String getConfigEndpoint() {
+    return config.getEndpoint();
+  }
 
   @Activate
   protected void activate(ContactFormConfiguration config) {
     this.config = config;
   }
-
-  @Override
-  public RestActionResult<ContactFormConfiguration> perform(Void noModel) {
-    return RestActionResult.success(config);
-  }
-
 }
