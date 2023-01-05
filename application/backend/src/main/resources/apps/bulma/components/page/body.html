@@ -20,7 +20,7 @@
 <sly data-sly-test.navbarFixed="${properties.navbarFixed}"></sly>
 <sly data-sly-test.position="${properties.navbarFixedPosition}"></sly>
 
-<body data-config="{'contactForm': '${model.configEndpoint}'}" class="${properties.defaultTemplateCSS} ${navbarFixed ? position : ''}">
+<body data-config='{"contactForm": "${model.configEndpoint}"}' class="${properties.defaultTemplateCSS} ${navbarFixed ? position : ''}">
 <sly data-sly-include="body-content.html"></sly>
 </body>
 </sly>
