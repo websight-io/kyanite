@@ -5,7 +5,7 @@
     "tablerow1": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "bulma/components/table/tablerow",
-      "tableheadcell1": {
+      "tablecell1": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "bulma/components/table/tableheadcell"
       }
@@ -39,7 +39,11 @@
     "tablebody": {
       "tablerow1": {
         "jcr:primaryType": "nt:unstructured",
-        "sling:resourceType": "bulma/components/table/tablerow"
+        "sling:resourceType": "bulma/components/table/tablerow",
+        "tablecell1": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "bulma/components/table/tablecell"
+        }
       }
     },
     "tablefoot": {

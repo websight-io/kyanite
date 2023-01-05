@@ -16,8 +16,8 @@
 
 package pl.ds.bulma.rest.table;
 
-import java.util.Iterator;
 import javax.jcr.Node;
+import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -38,10 +38,11 @@ public class AddTableColumnRestAction implements RestAction<AddTableColumnRestMo
   public RestActionResult<String> perform(AddTableColumnRestModel addTableColumnRestModel) {
     try {
       Resource selectedCell = addTableColumnRestModel.getResource();
-      int pos = getSelectedCellPosition(selectedCell);
+      long pos = getSelectedCellPosition(selectedCell.adaptTo(Node.class));
 
       for (Resource row : addTableColumnRestModel.getRows()) {
-        addCellToRowAtPosition(row, selectedCell, pos, addTableColumnRestModel.isInsertBefore());
+        addCellToRowAtPosition(row, selectedCell, pos,
+            addTableColumnRestModel.isInsertBefore());
       }
 
       addTableColumnRestModel.getSession().save();
@@ -51,40 +52,37 @@ public class AddTableColumnRestAction implements RestAction<AddTableColumnRestMo
     }
   }
 
-  private void addCellToRowAtPosition(Resource row, Resource selectedCell, int position,
+  private void addCellToRowAtPosition(Resource row, Resource selectedCell, long position,
       boolean isInsertBefore) throws RepositoryException {
     Node rowNode = row.adaptTo(Node.class);
     long numberOfCells = rowNode.getNodes().getSize();
 
+    // find cell where the new cell will be moved before or after
+    NodeIterator siblings = rowNode.getNodes();
+    siblings.skip(position - 1);
+    Node destCell = siblings.hasNext() ? siblings.nextNode() : null;
+
     // create and add new cell to table row
     Node newCell = rowNode.addNode(String.format(CELL_IDENTIFIER, numberOfCells + 1));
-
-    // find cell where the new cell will be moved before or after
-    Iterator<Resource> cells = row.listChildren();
-    Resource destCell = null;
-    for (int i = 0; cells.hasNext() && i < position; i++) {
-      destCell = cells.next();
-    }
-
     newCell.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE,
-        destCell != null ? destCell.getResourceType() : selectedCell.getResourceType());
+        destCell != null ? destCell.getProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE).getString()
+            : selectedCell.getResourceType());
 
     if (isInsertBefore) {
       rowNode.orderBefore(newCell.getName(), destCell.getName());
-    } else if (cells.hasNext()) {
-      rowNode.orderBefore(newCell.getName(), cells.next().getName());
+    } else if (siblings.hasNext()) {
+      rowNode.orderBefore(newCell.getName(), siblings.nextNode().getName());
     }
 
   }
 
-  private int getSelectedCellPosition(Resource selectedCell) {
-    int position = 0;
-    for (Resource cell : selectedCell.getParent().getChildren()) {
-      position++;
-      if (selectedCell.getName().equals(cell.getName())) {
-        return position;
+  private long getSelectedCellPosition(Node selectedCell) throws RepositoryException {
+    NodeIterator siblings = selectedCell.getParent().getNodes();
+    while (siblings.hasNext()) {
+      if (selectedCell.getName().equals(siblings.nextNode().getName())) {
+        return siblings.getPosition();
       }
     }
-    return position;
+    throw new RepositoryException("Position of selected cell was not found");
   }
 }

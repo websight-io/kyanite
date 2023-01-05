@@ -19,25 +19,21 @@ package pl.ds.bulma.rest.table;
 import static java.util.Objects.requireNonNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
 import org.apache.sling.testing.mock.sling.junit5.SlingContext;
 import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
-import org.apache.sling.testing.mock.sling.servlet.MockSlingHttpServletRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
 import pl.ds.websight.request.parameters.support.impl.injectors.RequestParameterInjector;
 
-@ExtendWith({SlingContextExtension.class, MockitoExtension.class})
+@ExtendWith(SlingContextExtension.class)
 public class AddTableRowRestModelTest {
 
   private static final String PATH = "/content/table";
+  private static final String TABLE = PATH + "/simple";
 
   private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
-
-  private MockSlingHttpServletRequest request;
 
   @BeforeEach
   public void init() {
@@ -45,31 +41,29 @@ public class AddTableRowRestModelTest {
     context.addModelsForClasses(AddTableRowRestModel.class);
     context.load().json(requireNonNull(
         Thread.currentThread().getContextClassLoader().getResourceAsStream("table.json")), PATH);
-    request = context.request();
-    request.setMethod(HttpConstants.METHOD_POST);
   }
 
   @Test
   void testAddTableRowRestModel_When_tableRowSelected() {
-    String expected = "/content/table/simple/tablerow1";
-    request.setResource(context.resourceResolver().getResource(expected));
-    AddTableRowRestModel model = request.adaptTo(AddTableRowRestModel.class);
+    String expected = TABLE + "/tablerow1";
+    context.request().setResource(context.resourceResolver().getResource(expected));
+    AddTableRowRestModel model = context.request().adaptTo(AddTableRowRestModel.class);
     assertEquals(expected, model.getSelectedRow().getPath());
   }
 
   @Test
   void testAddTableRowRestModel_When_tableHeadCellSelected() {
-    String expected = "/content/table/simple/tablerow1";
-    request.setResource(context.resourceResolver().getResource(expected + "/tableheadcell1"));
-    AddTableRowRestModel model = request.adaptTo(AddTableRowRestModel.class);
+    String expected = TABLE + "/tablerow1";
+    context.request().setResource(context.resourceResolver().getResource(expected + "/tablecell1"));
+    AddTableRowRestModel model = context.request().adaptTo(AddTableRowRestModel.class);
     assertEquals(expected, model.getSelectedRow().getPath());
   }
 
   @Test
   void testAddTableRowRestModel_When_tableCellSelected() {
-    String expected = "/content/table/simple/tablerow2";
-    request.setResource(context.resourceResolver().getResource(expected + "/tablecell1"));
-    AddTableRowRestModel model = request.adaptTo(AddTableRowRestModel.class);
+    String expected = TABLE + "/tablerow2";
+    context.request().setResource(context.resourceResolver().getResource(expected + "/tablecell1"));
+    AddTableRowRestModel model = context.request().adaptTo(AddTableRowRestModel.class);
     assertEquals(expected, model.getSelectedRow().getPath());
   }
 

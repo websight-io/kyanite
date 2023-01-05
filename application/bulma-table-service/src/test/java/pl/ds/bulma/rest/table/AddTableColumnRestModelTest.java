@@ -23,11 +23,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
 import org.apache.sling.testing.mock.sling.junit5.SlingContext;
 import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
-import org.apache.sling.testing.mock.sling.servlet.MockSlingHttpServletRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -37,10 +35,9 @@ import pl.ds.websight.request.parameters.support.impl.injectors.RequestParameter
 public class AddTableColumnRestModelTest {
 
   private static final String PATH = "/content/table";
+  private static final String TABLE = PATH + "/complex";
 
   private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
-
-  private MockSlingHttpServletRequest request;
 
   @BeforeEach
   public void init() {
@@ -48,21 +45,18 @@ public class AddTableColumnRestModelTest {
     context.addModelsForClasses(AddTableColumnRestModel.class);
     context.load().json(requireNonNull(
         Thread.currentThread().getContextClassLoader().getResourceAsStream("table.json")), PATH);
-    request = context.request();
-    request.setMethod(HttpConstants.METHOD_POST);
   }
 
   @Test
   void addTableColumnRestModelTest() {
-    request.setResource(
-        context.resourceResolver().getResource("/content/table/complex/tablerow1/tablecell1"));
-    AddTableColumnRestModel model = request.adaptTo(AddTableColumnRestModel.class);
+    context.request().setResource(
+        context.resourceResolver().getResource(TABLE + "/tablerow1/tablecell1"));
+    AddTableColumnRestModel model = context.request().adaptTo(AddTableColumnRestModel.class);
     List<String> expected = Arrays.asList(
-        "/content/table/complex/tablerow1",
-        "/content/table/complex/tablehead/tablerow1",
-        "/content/table/complex/tablebody/tablerow1",
-        "/content/table/complex/tablefoot/tablerow1"
-    );
+        TABLE + "/tablerow1",
+        TABLE + "/tablehead/tablerow1",
+        TABLE + "/tablebody/tablerow1",
+        TABLE + "/tablefoot/tablerow1");
 
     List<String> actual = model.getRows().stream().map(Resource::getPath)
         .collect(Collectors.toList());
