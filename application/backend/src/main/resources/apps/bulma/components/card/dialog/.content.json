@@ -26,6 +26,7 @@
     "footer": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Footer",
+      "ws:disallowedContext": ["sidepanel"],
       "urls": {
         "name": "urls",
         "label": "Footer URLs",

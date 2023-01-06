@@ -9,6 +9,7 @@
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "text",
         "label": "Text",
+        "ws:disallowedContext": ["sidepanel"],
         "required": true
       },
       "colspan": {

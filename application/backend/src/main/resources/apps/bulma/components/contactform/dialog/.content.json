@@ -23,7 +23,8 @@
       "consentText": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "consentText",
-        "label": "Consent Text"
+        "label": "Consent Text",
+        "ws:disallowedContext": ["sidepanel"]
       }
     }
   }

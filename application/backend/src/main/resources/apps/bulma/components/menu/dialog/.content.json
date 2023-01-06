@@ -2,6 +2,7 @@
   "sling:resourceType": "wcm/dialogs/dialog",
   "tabs": {
     "sling:resourceType": "wcm/dialogs/components/tabs",
+    "ws:disallowedContext": ["sidepanel"],
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",

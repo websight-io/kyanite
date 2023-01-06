@@ -36,6 +36,7 @@
         "sling:resourceType": "wcm/dialogs/components/multifield",
         "name": "items",
         "label": "Elements in the dropdown",
+        "ws:disallowedContext": ["sidepanel"],
         "text": {
           "sling:resourceType": "wcm/dialogs/components/textfield",
           "name": "label",

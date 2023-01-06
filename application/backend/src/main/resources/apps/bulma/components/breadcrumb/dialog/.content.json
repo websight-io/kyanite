@@ -27,6 +27,7 @@
         "sling:resourceType": "wcm/dialogs/components/multifield",
         "name": "elements",
         "label": "Elements",
+        "ws:disallowedContext": ["sidepanel"],
         "labelText": {
           "sling:resourceType": "wcm/dialogs/components/textfield",
           "name": "label",
