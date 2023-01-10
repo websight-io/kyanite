@@ -14,25 +14,35 @@
  * limitations under the License.
  */
 
-import React from "/apps/websight-atlaskit-esm/web-resources/react.js";
-import { useActionRef } from "/apps/websight-pages-editor-view/web-resources/actions/common.js";
-import {performTableRestAction} from "./common.js";
+import React from '/apps/websight-atlaskit-esm/web-resources/react.js';
+import {
+  useActionRef,
+} from '/apps/websight-pages-editor-view/web-resources/actions/common.js';
+import {performTableRestAction} from './common.js';
+import PropTypes from 'prop-types';
 
 const AddTableColumnAction = React.forwardRef((props, ref) => {
-  const { resourcePath } = props;
+  const {resourcePath} = props;
   useActionRef({
     execute: ({
-      editModeStore
-    }) => performTableRestAction(editModeStore, resourcePath, "add-table-column", false)
+      editModeStore,
+    }) => performTableRestAction(editModeStore, resourcePath,
+        'add-table-column', false),
   }, ref);
   return null;
 });
 
+AddTableColumnAction.propTypes = {
+  resourcePath: PropTypes.string,
+};
+
+AddTableColumnAction.displayName = 'AddTableColumnAction';
+
 const action = {
   data: {
     name: 'Add column after',
-    icon: 'keyboard_arrow_right'
+    icon: 'keyboard_arrow_right',
   },
-  actionComponent: AddTableColumnAction
+  actionComponent: AddTableColumnAction,
 };
 export default action;

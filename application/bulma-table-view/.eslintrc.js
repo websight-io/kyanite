@@ -14,18 +14,24 @@
  * limitations under the License.
  */
 
-import RestClient
-  from '/apps/websight-rest-atlaskit-client/web-resources/js/RestClient.js';
-
-export const performTableRestAction = (editModeStore, resourcePath, action,
-    insertBefore) => {
-  const restClient = new RestClient('bulma-table-service');
-  restClient.post({
-    resourcePath: resourcePath,
-    action: action,
-    data: {
-      insertBefore: insertBefore,
-    },
-    onSuccess: () => editModeStore.methods.refreshComponentTree(),
-  });
+module.exports = {
+  'env': {
+    'browser': true,
+    'es2021': true,
+  },
+  'extends': [
+    'plugin:react/recommended',
+    'google',
+  ],
+  'overrides': [
+  ],
+  'parserOptions': {
+    'ecmaVersion': '2018',
+    'sourceType': 'module',
+  },
+  'plugins': [
+    'react',
+  ],
+  'rules': {
+  },
 };

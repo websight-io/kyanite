@@ -14,25 +14,35 @@
  * limitations under the License.
  */
 
-import React from "/apps/websight-atlaskit-esm/web-resources/react.js";
-import { useActionRef } from "/apps/websight-pages-editor-view/web-resources/actions/common.js";
-import { performTableRestAction } from "./common.js";
+import React from '/apps/websight-atlaskit-esm/web-resources/react.js';
+import {
+  useActionRef,
+} from '/apps/websight-pages-editor-view/web-resources/actions/common.js';
+import {performTableRestAction} from './common.js';
+import PropTypes from 'prop-types';
 
 const AddTableRowBeforeAction = React.forwardRef((props, ref) => {
-  const { resourcePath } = props;
+  const {resourcePath} = props;
   useActionRef({
     execute: ({
-      editModeStore
-    }) => performTableRestAction(editModeStore, resourcePath, "add-table-row", true)
+      editModeStore,
+    }) => performTableRestAction(editModeStore, resourcePath, 'add-table-row',
+        true),
   }, ref);
   return null;
 });
 
+AddTableRowBeforeAction.propTypes = {
+  resourcePath: PropTypes.string,
+};
+
+AddTableRowBeforeAction.displayName = 'AddTableRowBeforeAction';
+
 const action = {
   data: {
     name: 'Add row before',
-    icon: 'keyboard_arrow_up'
+    icon: 'keyboard_arrow_up',
   },
-  actionComponent: AddTableRowBeforeAction
+  actionComponent: AddTableRowBeforeAction,
 };
 export default action;
