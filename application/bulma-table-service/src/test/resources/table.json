@@ -2,18 +2,18 @@
   "simple": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "bulma/components/table",
-    "tablerow1": {
+    "tablerow": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "bulma/components/table/tablerow",
-      "tablecell1": {
+      "tablecell": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "bulma/components/table/tableheadcell"
       }
     },
-    "tablerow2": {
+    "tablerow0": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "bulma/components/table/tablerow",
-      "tablecell1": {
+      "tablecell": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "bulma/components/table/tablecell"
       }
@@ -22,32 +22,32 @@
   "complex": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "bulma/components/table",
-    "tablerow1": {
+    "tablerow": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "bulma/components/table/tablerow",
-      "tablecell1": {
+      "tablecell": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "bulma/components/table/tablecell"
       }
     },
     "tablehead": {
-      "tablerow1": {
+      "tablerow": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "bulma/components/table/tablerow"
       }
     },
     "tablebody": {
-      "tablerow1": {
+      "tablerow": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "bulma/components/table/tablerow",
-        "tablecell1": {
+        "tablecell": {
           "jcr:primaryType": "nt:unstructured",
           "sling:resourceType": "bulma/components/table/tablecell"
         }
       }
     },
     "tablefoot": {
-      "tablerow1": {
+      "tablerow": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "bulma/components/table/tablerow"
       }

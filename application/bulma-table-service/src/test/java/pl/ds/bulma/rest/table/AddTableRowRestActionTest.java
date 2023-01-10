@@ -38,9 +38,9 @@ public class AddTableRowRestActionTest {
 
   private static final String PATH = "/content/table";
   private static final String TABLE = PATH + "/simple";
-  private static final String ROW1 = TABLE + "/tablerow1";
-  private static final String ROW2 = TABLE + "/tablerow2";
-  private static final String ROW3 = TABLE + "/tablerow3";
+  private static final String ROW1 = TABLE + "/tablerow";
+  private static final String ROW2 = TABLE + "/tablerow0";
+  private static final String ROW3 = TABLE + "/tablerow1";
 
   private final SlingContext context = new SlingContext(ResourceResolverType.JCR_MOCK);
 
@@ -53,7 +53,7 @@ public class AddTableRowRestActionTest {
   }
 
   @ParameterizedTest
-  @ValueSource(strings = {ROW1, ROW1 + "/tablecell1"})
+  @ValueSource(strings = {ROW1, ROW1 + "/tablecell"})
   void testAddTableRowRestAction(String selectedResource) {
     AddTableRowRestModel model = getModel(selectedResource);
     RestActionResult<String> result = performRestAction(model);

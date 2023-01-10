@@ -45,7 +45,7 @@ public class AddTableRowRestModelTest {
 
   @Test
   void testAddTableRowRestModel_When_tableRowSelected() {
-    String expected = TABLE + "/tablerow1";
+    String expected = TABLE + "/tablerow";
     context.request().setResource(context.resourceResolver().getResource(expected));
     AddTableRowRestModel model = context.request().adaptTo(AddTableRowRestModel.class);
     assertEquals(expected, model.getSelectedRow().getPath());
@@ -53,16 +53,16 @@ public class AddTableRowRestModelTest {
 
   @Test
   void testAddTableRowRestModel_When_tableHeadCellSelected() {
-    String expected = TABLE + "/tablerow1";
-    context.request().setResource(context.resourceResolver().getResource(expected + "/tablecell1"));
+    String expected = TABLE + "/tablerow";
+    context.request().setResource(context.resourceResolver().getResource(expected + "/tablecell"));
     AddTableRowRestModel model = context.request().adaptTo(AddTableRowRestModel.class);
     assertEquals(expected, model.getSelectedRow().getPath());
   }
 
   @Test
   void testAddTableRowRestModel_When_tableCellSelected() {
-    String expected = TABLE + "/tablerow2";
-    context.request().setResource(context.resourceResolver().getResource(expected + "/tablecell1"));
+    String expected = TABLE + "/tablerow0";
+    context.request().setResource(context.resourceResolver().getResource(expected + "/tablecell"));
     AddTableRowRestModel model = context.request().adaptTo(AddTableRowRestModel.class);
     assertEquals(expected, model.getSelectedRow().getPath());
   }

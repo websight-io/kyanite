@@ -38,10 +38,10 @@ public class AddTableColumnRestActionTest {
 
   private static final String PATH = "/content/table";
   private static final String TABLE = PATH + "/simple";
-  private static final String ROW1 = TABLE + "/tablerow1";
-  private static final String ROW2 = TABLE + "/tablerow2";
-  private static final String CELL1 = "/tablecell1";
-  private static final String CELL2 = "/tablecell2";
+  private static final String ROW1 = TABLE + "/tablerow";
+  private static final String ROW2 = TABLE + "/tablerow0";
+  private static final String CELL1 = "/tablecell";
+  private static final String CELL2 = "/tablecell0";
 
   private final SlingContext context = new SlingContext(ResourceResolverType.JCR_MOCK);
 
@@ -57,7 +57,7 @@ public class AddTableColumnRestActionTest {
   @ValueSource(booleans = {false, true})
   void testAddTableColumnRestAction(boolean insertBefore) {
     context.request().addRequestParameter("insertBefore", String.valueOf(insertBefore));
-    AddTableColumnRestModel model = getModel(ROW1 + "/tablecell1");
+    AddTableColumnRestModel model = getModel(ROW1 + "/tablecell");
     AddTableColumnRestAction addTableColumnRestAction = new AddTableColumnRestAction();
     RestActionResult<String> result = addTableColumnRestAction.perform(model);
     assertThat(result.getStatus()).isEqualTo(SUCCESS);

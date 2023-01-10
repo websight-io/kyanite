@@ -50,13 +50,13 @@ public class AddTableColumnRestModelTest {
   @Test
   void addTableColumnRestModelTest() {
     context.request().setResource(
-        context.resourceResolver().getResource(TABLE + "/tablerow1/tablecell1"));
+        context.resourceResolver().getResource(TABLE + "/tablerow/tablecell"));
     AddTableColumnRestModel model = context.request().adaptTo(AddTableColumnRestModel.class);
     List<String> expected = Arrays.asList(
-        TABLE + "/tablerow1",
-        TABLE + "/tablehead/tablerow1",
-        TABLE + "/tablebody/tablerow1",
-        TABLE + "/tablefoot/tablerow1");
+        TABLE + "/tablerow",
+        TABLE + "/tablehead/tablerow",
+        TABLE + "/tablebody/tablerow",
+        TABLE + "/tablefoot/tablerow");
 
     List<String> actual = model.getRows().stream().map(Resource::getPath)
         .collect(Collectors.toList());
