@@ -19,8 +19,10 @@ package pl.ds.bulma.rest.table;
 import java.util.Iterator;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
+import org.apache.sling.api.resource.PersistenceException;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ResourceUtil;
 import org.osgi.service.component.annotations.Component;
 import pl.ds.websight.rest.framework.RestAction;
 import pl.ds.websight.rest.framework.RestActionResult;
@@ -32,19 +34,17 @@ import pl.ds.websight.rest.framework.annotations.SlingAction;
 @PrimaryTypes("nt:base")
 public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, String> {
 
-  private static final String ROW_IDENTIFIER = "tablerow%d";
+  private static final String ROW_IDENTIFIER = "tablerow";
 
   @Override
   public RestActionResult<String> perform(AddTableRowRestModel addTableRowRestModel) {
-
     try {
       Resource selectedRow = addTableRowRestModel.getSelectedRow();
       Resource parent = selectedRow.getParent();
       Node parentNode = parent.adaptTo(Node.class);
-      long numberOfRows = parentNode.getNodes().getSize();
 
       // create and add new row to the end of the table section
-      Node newRow = parentNode.addNode(String.format(ROW_IDENTIFIER, numberOfRows + 1));
+      Node newRow = parentNode.addNode(ResourceUtil.createUniqueChildName(parent, ROW_IDENTIFIER));
       newRow.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE, selectedRow.getResourceType());
 
       // add table cells to new row
@@ -63,7 +63,7 @@ public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, S
       addTableRowRestModel.getSession().save();
       return RestActionResult.success("Table row created",
           "New table row created at " + newRow.getPath(), newRow.getPath());
-    } catch (RepositoryException e) {
+    } catch (RepositoryException | PersistenceException e) {
       return RestActionResult.failure("Cannot create row", e.getMessage());
     }
   }
