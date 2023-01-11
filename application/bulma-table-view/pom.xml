@@ -82,16 +82,6 @@
               <arguments>run babel</arguments>
             </configuration>
           </execution>
-<!--          <execution>-->
-<!--            <id>npm run prod</id>-->
-<!--            <phase>generate-resources</phase>-->
-<!--            <goals>-->
-<!--              <goal>npm</goal>-->
-<!--            </goals>-->
-<!--            <configuration>-->
-<!--              <arguments>run prod</arguments>-->
-<!--            </configuration>-->
-<!--          </execution>-->
         </executions>
       </plugin>
       <plugin>

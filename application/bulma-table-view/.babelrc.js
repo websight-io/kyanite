@@ -19,9 +19,9 @@ const plugins = [
     'module-resolver',
     {
       alias: {
-        "react": "/apps/websight-atlaskit-esm/web-resources/react.js",
-        "restclient": "/apps/websight-rest-atlaskit-client/web-resources/js/RestClient.js",
-        "^websight-pages-editor-view/(.*)": "/apps/websight-pages-editor-view/web-resources/\\1",
+        'react': '/apps/websight-atlaskit-esm/web-resources/react.js',
+        'restclient': '/apps/websight-rest-atlaskit-client/web-resources/js/RestClient.js',
+        '^websight-pages-editor-view/(.*)': '/apps/websight-pages-editor-view/web-resources/\\1',
       },
       loglevel: "silent"
     },
