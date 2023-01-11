@@ -14,12 +14,9 @@
  * limitations under the License.
  */
 
-import React from '/apps/websight-atlaskit-esm/web-resources/react.js';
-import {
-  useActionRef,
-} from '/apps/websight-pages-editor-view/web-resources/actions/common.js';
+import React from 'react';
+import {useActionRef} from 'websight-pages-editor-view/actions/common.js';
 import {performTableRestAction} from './common.js';
-import PropTypes from 'prop-types';
 
 const AddTableRowAction = React.forwardRef((props, ref) => {
   const {resourcePath} = props;
@@ -31,12 +28,6 @@ const AddTableRowAction = React.forwardRef((props, ref) => {
   }, ref);
   return null;
 });
-
-AddTableRowAction.propTypes = {
-  resourcePath: PropTypes.string,
-};
-
-AddTableRowAction.displayName = 'AddTableRowAction';
 
 const action = {
   data: {

@@ -14,8 +14,7 @@
  * limitations under the License.
  */
 
-import RestClient
-  from '/apps/websight-rest-atlaskit-client/web-resources/js/RestClient.js';
+import RestClient from 'restclient';
 
 export const performTableRestAction = (editModeStore, resourcePath, action,
     insertBefore) => {
