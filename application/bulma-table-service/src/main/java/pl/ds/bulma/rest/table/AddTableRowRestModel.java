@@ -18,7 +18,6 @@ package pl.ds.bulma.rest.table;
 
 import java.util.regex.Pattern;
 import javax.annotation.PostConstruct;
-import javax.jcr.Session;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -59,8 +58,8 @@ public class AddTableRowRestModel {
     return selectedRow;
   }
 
-  public Session getSession() {
-    return resourceResolver.adaptTo(Session.class);
+  public ResourceResolver getResourceResolver() {
+    return resourceResolver;
   }
 
   public boolean isInsertBefore() {

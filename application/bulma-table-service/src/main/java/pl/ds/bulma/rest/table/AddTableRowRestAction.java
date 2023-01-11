@@ -24,6 +24,8 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceUtil;
 import org.osgi.service.component.annotations.Component;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pl.ds.websight.rest.framework.RestAction;
 import pl.ds.websight.rest.framework.RestActionResult;
 import pl.ds.websight.rest.framework.annotations.PrimaryTypes;
@@ -34,6 +36,8 @@ import pl.ds.websight.rest.framework.annotations.SlingAction;
 @PrimaryTypes("nt:base")
 public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, String> {
 
+  private static final Logger LOG = LoggerFactory.getLogger(AddTableRowRestAction.class);
+
   private static final String ROW_IDENTIFIER = "tablerow";
 
   @Override
@@ -41,34 +45,56 @@ public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, S
     try {
       Resource selectedRow = addTableRowRestModel.getSelectedRow();
       Resource parent = selectedRow.getParent();
+
       Node parentNode = parent.adaptTo(Node.class);
-
-      // create and add new row to the end of the table section
-      Node newRow = parentNode.addNode(ResourceUtil.createUniqueChildName(parent, ROW_IDENTIFIER));
-      newRow.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE, selectedRow.getResourceType());
-
-      // add table cells to new row
-      for (Resource cell : selectedRow.getChildren()) {
-        Node newCell = newRow.addNode(cell.getName());
-        newCell.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE, cell.getResourceType());
+      if (parentNode == null) {
+        throw new RepositoryException("Failed to adapt parent resource to node");
       }
 
-      // move new row before or after the selected row
-      if (addTableRowRestModel.isInsertBefore()) {
-        parentNode.orderBefore(newRow.getName(),
-            selectedRow.getName());
-      } else {
-        parentNode.orderBefore(newRow.getName(), nextSiblingName(selectedRow));
-      }
-      addTableRowRestModel.getSession().save();
+      String newRowName = ResourceUtil.createUniqueChildName(parent, ROW_IDENTIFIER);
+      Node newRow = addRow(parentNode, newRowName, selectedRow.getResourceType());
+
+      addCellsToRow(selectedRow, newRow);
+
+      orderRow(parentNode, newRow, selectedRow, addTableRowRestModel.isInsertBefore());
+
+      addTableRowRestModel.getResourceResolver().commit();
       return RestActionResult.success("Table row created",
           "New table row created at " + newRow.getPath(), newRow.getPath());
     } catch (RepositoryException | PersistenceException e) {
-      return RestActionResult.failure("Cannot create row", e.getMessage());
+      LOG.error("Failed to create row", e);
+      return RestActionResult.failure("Cannot create row",
+          "An error occurred during adding the row");
+    }
+  }
+
+  private Node addRow(Node parent, String rowName, String resourceType) throws RepositoryException {
+    Node row = parent.addNode(rowName);
+    row.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE, resourceType);
+    return row;
+  }
+
+  private void addCellsToRow(Resource selectedRow, Node row) throws RepositoryException {
+    for (Resource cell : selectedRow.getChildren()) {
+      Node newCell = row.addNode(cell.getName());
+      newCell.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE, cell.getResourceType());
+    }
+  }
+
+  private void orderRow(Node parent, Node newRow, Resource selectedRow, boolean isInsertBefore)
+      throws RepositoryException {
+    if (isInsertBefore) {
+      parent.orderBefore(newRow.getName(),
+          selectedRow.getName());
+    } else {
+      parent.orderBefore(newRow.getName(), nextSiblingName(selectedRow));
     }
   }
 
   private String nextSiblingName(Resource resource) {
+    if (resource.getParent() == null) {
+      return null;
+    }
     Iterator<Resource> siblings = resource.getParent().getChildren().iterator();
     while (siblings.hasNext()) {
       if (siblings.next().getName().equals(resource.getName())) {

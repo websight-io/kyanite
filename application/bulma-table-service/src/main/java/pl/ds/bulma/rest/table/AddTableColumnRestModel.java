@@ -20,7 +20,6 @@ package pl.ds.bulma.rest.table;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.jcr.Session;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -82,8 +81,8 @@ public class AddTableColumnRestModel {
     return rows;
   }
 
-  public Session getSession() {
-    return resourceResolver.adaptTo(Session.class);
+  public ResourceResolver getResourceResolver() {
+    return resourceResolver;
   }
 
   public Resource getResource() {
