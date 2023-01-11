@@ -26,12 +26,6 @@ const plugins = [
       loglevel: "silent"
     },
   ],
-  // [
-  //   'transform-react-remove-prop-types',
-  //   {
-  //     removeImport: true,
-  //   },
-  // ],
 ];
 
 module.exports = {plugins};
