@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "lint": "eslint .",
+    "babel": "babel src/main/webapp --config-file ./.babelrc.js -d target/dist --copy-files"
+  },
+  "eslintIgnore": [
+    "target/*"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "eslint": "^8.31.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.31.11"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1"
+  }
+}

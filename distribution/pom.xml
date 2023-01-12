@@ -55,6 +55,12 @@
       <version>1.0.7-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
+    <dependency>
+      <groupId>pl.ds.bulma</groupId>
+      <artifactId>bulma-table-view</artifactId>
+      <version>1.0.7-SNAPSHOT</version>
+      <type>pom</type>
+    </dependency>
   </dependencies>
 
   <build>

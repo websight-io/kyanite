@@ -7,6 +7,14 @@
     {
       "id": "pl.ds.bulma:bulma-frontend:${project.version}",
       "start-order": "25"
+    },
+    {
+      "id": "pl.ds.bulma:bulma-table-service:${project.version}",
+      "start-order": "25"
+    },
+    {
+      "id": "pl.ds.bulma:bulma-table-view:${project.version}",
+      "start-order": "25"
     }
   ],
   "configurations": {
