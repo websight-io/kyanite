@@ -24,7 +24,7 @@
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "consentText",
         "label": "Consent Text",
-        "ws:disallowedContext": ["sidepanel"]
+        "ws:disallowedContext": ["edit:panel"]
       }
     }
   }
