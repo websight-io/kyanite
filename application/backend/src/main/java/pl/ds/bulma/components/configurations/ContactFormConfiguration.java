@@ -25,6 +25,6 @@ public @interface ContactFormConfiguration {
 
   @AttributeDefinition(name = "Endpoint",
       description = "Enter the endpoint where the contact form data is submitted")
-  String getEndpoint();
+  String endpoint();
 
 }
