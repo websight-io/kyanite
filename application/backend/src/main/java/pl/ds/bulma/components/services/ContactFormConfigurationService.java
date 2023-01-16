@@ -31,7 +31,7 @@ public class ContactFormConfigurationService {
   private ContactFormConfiguration config;
 
   public String getConfigEndpoint() {
-    return config.getEndpoint();
+    return config.endpoint();
   }
 
   @Activate
