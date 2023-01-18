@@ -33,6 +33,12 @@
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "name": "isFullwidth",
         "label": "Fullwidth table"
+      },
+      "isScrollable": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isScrollable",
+        "label": "Scrollable table",
+        "description": "Make the table scrollable"
       }
     }
   }

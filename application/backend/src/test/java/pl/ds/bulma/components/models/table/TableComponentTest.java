@@ -46,12 +46,14 @@ public class TableComponentTest {
         .adaptTo(TableComponent.class);
     assertThat(model).isNotNull();
     assertThat(model.getTableClasses()).isEmpty();
+    assertThat(model.isScrollable()).isFalse();
   }
 
   @Test
   void tableComponentTest() {
     TableComponent model = context.resourceResolver().getResource(PATH + "/complex")
         .adaptTo(TableComponent.class);
+    assertThat(model.isScrollable()).isTrue();
     assertThat(model.getTableClasses()).containsExactlyInAnyOrder("is-bordered", "is-striped",
         "is-narrow", "is-hoverable", "is-fullwidth");
   }
