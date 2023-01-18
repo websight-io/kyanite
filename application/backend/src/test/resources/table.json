@@ -10,6 +10,7 @@
     "isFullwidth": true,
     "isHoverable": true,
     "isNarrow": true,
-    "isStriped": true
+    "isStriped": true,
+    "isScrollable": true
   }
 }

@@ -19,10 +19,12 @@
 <sly data-sly-use.model="pl.ds.bulma.components.models.table.TableComponent">
   <sly data-sly-set.classes="table ${model.tableClasses @ join=' '}"></sly>
   <sly data-sly-test="${resource.hasChildren}">
-    <table class="${classes}">
-      <sly
-          data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-    </table>
+    <div data-sly-unwrap="${!model.isScrollable}" class="table-container">
+      <table class="${classes}">
+        <sly
+            data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+      </table>
+    </div>
   </sly>
   <sly data-sly-test="${!resource.hasChildren}">
     <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"

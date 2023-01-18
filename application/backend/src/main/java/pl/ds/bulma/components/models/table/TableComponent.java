@@ -45,6 +45,10 @@ public class TableComponent {
 
   @Inject
   @Getter
+  private boolean isScrollable;
+
+  @Inject
+  @Getter
   private String[] tableClasses;
 
   @PostConstruct
