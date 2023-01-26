@@ -14,18 +14,25 @@
  * limitations under the License.
  */
 
-import RestClient from 'restclient';
+import React from 'react';
+import {useActionRef} from 'websight-pages-editor-view/actions/common.js';
+import {performTableRestAction} from './common.js';
 
-export const performTableRestAction = (editModeStore, resourcePath, action,
-    insertBefore) => {
-  const restClient = new RestClient('bulma-table-service');
-  const config = {
-    resourcePath,
-    action,
-    onSuccess: () => editModeStore.methods.refreshComponentTree()
-  }
-  if (insertBefore !== 'undefined') {
-    config.data = {insertBefore};
-  }
-  restClient.post(config);
+const DeleteTableRowAction = React.forwardRef((props, ref) => {
+  const {resourcePath} = props;
+  useActionRef({
+    execute: ({
+      editModeStore,
+    }) => performTableRestAction(editModeStore, resourcePath, 'delete-table-row'),
+  }, ref);
+  return null;
+});
+
+const action = {
+  data: {
+    name: 'Delete row',
+    icon: 'remove',
+  },
+  actionComponent: DeleteTableRowAction,
 };
+export default action;
