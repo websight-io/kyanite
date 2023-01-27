@@ -59,8 +59,7 @@ public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, S
       orderRow(parentNode, newRow, selectedRow, addTableRowRestModel.isInsertBefore());
 
       addTableRowRestModel.getResourceResolver().commit();
-      return RestActionResult.success("Table row created",
-          "New table row created at " + newRow.getPath(), newRow.getPath());
+      return RestActionResult.success("Table row created");
     } catch (RepositoryException | PersistenceException e) {
       LOG.error("Failed to create row", e);
       return RestActionResult.failure("Cannot create row",
