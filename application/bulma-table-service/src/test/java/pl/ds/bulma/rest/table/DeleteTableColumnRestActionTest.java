@@ -24,6 +24,7 @@ import org.apache.sling.testing.mock.sling.ResourceResolverType;
 import org.apache.sling.testing.mock.sling.junit5.SlingContext;
 import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import pl.ds.websight.rest.framework.RestActionResult;
@@ -37,7 +38,7 @@ public class DeleteTableColumnRestActionTest {
 
   @BeforeEach
   public void init() {
-    context.addModelsForClasses(DeleteTableRowRestModel.class);
+    context.addModelsForClasses(DeleteTableColumnRestModel.class);
     context.load().json(requireNonNull(
             Thread.currentThread().getContextClassLoader()
                 .getResourceAsStream("deletetablecolumn.json")),
@@ -46,7 +47,7 @@ public class DeleteTableColumnRestActionTest {
 
   @Test
   void testDeleteTableColumnRestAction() {
-    context.request().setResource(context.resourceResolver().getResource(PATH + "/tablerow/tablecell"));
+    context.request().setResource(context.resourceResolver().getResource(PATH + "/tablehead/tablerow/tablecell"));
     DeleteTableColumnRestModel model = requireNonNull(
         context.request().adaptTo(DeleteTableColumnRestModel.class));
     DeleteTableColumnRestAction restAction = new DeleteTableColumnRestAction();
