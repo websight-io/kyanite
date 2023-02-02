@@ -47,7 +47,7 @@ describe('Hero component', function () {
 
     cy.percySnapshotPageEditor('Hero editor');
 
-    cy.getByTestId(testIds.editIcon).click();
+    cy.getByTestId(testIds.editIcon).click({ force: true });
 
     cy.get('div[id^="size-uid"]').click();
     cy.contains('Large').click({ force: true });
