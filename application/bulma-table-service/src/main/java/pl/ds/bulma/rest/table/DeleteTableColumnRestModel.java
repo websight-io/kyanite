@@ -29,16 +29,12 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Model(adaptables = SlingHttpServletRequest.class)
 public class DeleteTableColumnRestModel {
 
-  private static final Logger LOG = LoggerFactory.getLogger(DeleteTableRowRestModel.class);
   private static final String TABLE_RESOURCE_TYPE = "bulma/components/table";
   private static final String TABLEROW_RESOURCE_TYPE = "bulma/components/table/tablerow";
-
   private static final String COLSPAN = "colspan";
   private static final String ROWSPAN = "rowspan";
 
@@ -183,4 +179,5 @@ public class DeleteTableColumnRestModel {
   public ResourceResolver getResourceResolver() {
     return resourceResolver;
   }
+
 }
