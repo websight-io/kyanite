@@ -17,9 +17,7 @@
 package pl.ds.bulma.rest.table;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.regex.Pattern;
 import javax.annotation.PostConstruct;
@@ -28,6 +26,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.jetbrains.annotations.NotNull;
 import pl.ds.websight.request.parameters.support.annotations.RequestParameter;
 
 @Model(adaptables = SlingHttpServletRequest.class)
@@ -51,15 +50,13 @@ public class AddTableRowRestModel {
 
   private Resource selectedRow;
 
-  private Optional<Resource> selectedCell;
+  private Resource selectedCell;
 
   private int selectedRowNumber;
 
   private Resource table;
 
   private List<Resource> rows;
-
-  private Map<Integer, Resource> rowsMap;
 
   @PostConstruct
   private void init() {
@@ -76,38 +73,35 @@ public class AddTableRowRestModel {
     return resource;
   }
 
-  private Optional<Resource> findSelectedCell() {
+  private Resource findSelectedCell() {
     Resource cellResource = null;
     if (cellResourceType.matcher(resource.getResourceType()).matches()) {
       cellResource = resource;
     }
-    return Optional.ofNullable(cellResource);
+    return cellResource;
   }
 
   private void handleRows(Resource selectedRow) {
-    List<Resource> rows = new ArrayList<>();
-    Map<Integer, Resource> rowsMap = new LinkedHashMap<>();
+    List<Resource> tableRows = new ArrayList<>();
     int rowsCounter = 0;
     for (Resource child : table.getChildren()) {
       if (TABLEROW_RESOURCE_TYPE.equals(child.getResourceType())) {
-        rows.add(child);
+        tableRows.add(child);
         rowsCounter++;
-        rowsMap.put(rowsCounter, child);
-        if (selectedRow.equals(child)) {
+        if (selectedRow.getPath().equals(child.getPath())) {
           selectedRowNumber = rowsCounter;
         }
       } else {
         for (Resource row : child.getChildren()) {
-          rows.add(row);
+          tableRows.add(row);
           rowsCounter++;
-          rowsMap.put(rowsCounter, row);
-          if (selectedRow.getPath().equals(row.getPath())) { // ------
+          if (selectedRow.getPath().equals(row.getPath())) {
             selectedRowNumber = rowsCounter;
           }
         }
       }
     }
-    this.rows = rows;
+    this.rows = tableRows;
   }
 
   private Resource findTable() {
@@ -125,11 +119,11 @@ public class AddTableRowRestModel {
     return rows;
   }
 
-  public Resource getSelectedRow() {
+  public @NotNull Resource getSelectedRow() {
     return selectedRow;
   }
 
-  public ResourceResolver getResourceResolver() {
+  public @NotNull ResourceResolver getResourceResolver() {
     return resourceResolver;
   }
 
@@ -137,16 +131,11 @@ public class AddTableRowRestModel {
     return insertBefore;
   }
 
-
   public int getSelectedRowNumber() {
     return selectedRowNumber;
   }
 
-  public Map<Integer, Resource> getRowsMap() {
-    return rowsMap;
-  }
-
   public Optional<Resource> getSelectedCell() {
-    return selectedCell;
+    return Optional.ofNullable(selectedCell);
   }
 }

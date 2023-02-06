@@ -38,9 +38,6 @@ public class RowCellInfo {
   private final int rowNumber;
 
   @Getter
-  private final String name;
-
-  @Getter
   private final int startAbsolutePosition;
 
   @Getter
@@ -48,7 +45,6 @@ public class RowCellInfo {
 
   public RowCellInfo(Resource cellResource, int rowNumber) {
     this.resource = cellResource;
-    this.name = cellResource.getName();
     this.rowNumber = rowNumber;
     this.rowspan = getRowspan(cellResource);
     this.startAbsolutePosition = rowNumber;

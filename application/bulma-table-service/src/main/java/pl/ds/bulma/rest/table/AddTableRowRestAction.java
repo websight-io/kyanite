@@ -50,37 +50,29 @@ public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, S
   @Override
   public RestActionResult<String> perform(AddTableRowRestModel addTableRowRestModel) {
     try {
-      Resource selectedRow = addTableRowRestModel.getSelectedRow();
-      Resource parent = selectedRow.getParent();
       int selectedRowNumber = addTableRowRestModel.getSelectedRowNumber();
-
       List<RowInfo> rowsInfo = getRowsInfo(addTableRowRestModel);
-      //establish real row
-      RowInfo realSelectedRow = realSelectedRow(rowsInfo, addTableRowRestModel, selectedRowNumber);
-      //  List<RowCellInfo> cellsInRange = getCellsInRange(rowsInfo, realSelectedRow.getPosition());
+      RowInfo realSelectedRow = establishRealSelectedRow(rowsInfo, addTableRowRestModel,
+          selectedRowNumber);
 
+      Resource parent = realSelectedRow.getResource().getParent();
       Node parentNode = parent.adaptTo(Node.class);
       if (parentNode == null) {
         throw new RepositoryException("Failed to adapt parent resource to node");
       }
 
-      //      String newRowName = ResourceUtil.createUniqueChildName(parent, ROW_IDENTIFIER);
-      //      Node newRow = addRow(parentNode, newRowName, realSelectedRow.getResource()
-      //      .getResourceType());
-
-      Node newRow = addEmptyRow(addTableRowRestModel, realSelectedRow);
+      Node newRow = addEmptyRow(realSelectedRow);
       List<RowCellInfo> cellsInRange = getCellsInRange(rowsInfo, realSelectedRow.getPosition());
+      boolean insertBefore = addTableRowRestModel.isInsertBefore();
 
       addCellsToEmptyRow(cellsInRange, realSelectedRow, newRow,
-          addTableRowRestModel.isInsertBefore());
-      //
-      //      addCellsToRow(selectedRow, newRow);
-      //
+          insertBefore);
+
       orderRow(parentNode, newRow, realSelectedRow.getResource(),
-          addTableRowRestModel.isInsertBefore());
+          insertBefore);
 
       List<RowCellInfo> cellsToExpandRowspan = findCellsToExpandRowspan(cellsInRange,
-          realSelectedRow.getPosition(), addTableRowRestModel.isInsertBefore(), rowsInfo);
+          realSelectedRow.getPosition(), insertBefore, rowsInfo);
 
       expandRowspanInCells(cellsToExpandRowspan);
 
@@ -95,22 +87,6 @@ public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, S
   }
 
   private void expandRowspanInCells(List<RowCellInfo> cellsToExpandRowspan) {
-
-    //    if (insertBefore) {
-    //      // cellsToModifyRowspan
-    //      cellsToExpandRowspan = cellsInRange.stream()
-    //          .filter(rowCellInfo -> rowCellInfo.getEndAbsolutePosition() == rowPosition)
-    //          .filter(rowCellInfo -> rowCellInfo.getStartAbsolutePosition() < rowPosition)
-    //          .collect(Collectors.toList());
-    //
-    //    } else {
-    //      // cellsToModifyRowspan
-    //      cellsToExpandRowspan = cellsInRange.stream()
-    //          .filter(rowCellInfo -> rowCellInfo.getStartAbsolutePosition() <= rowPosition)
-    //          .filter(rowCellInfo -> rowCellInfo.getEndAbsolutePosition() > rowPosition)
-    //          .collect(Collectors.toList());
-    //    }
-
     cellsToExpandRowspan.stream().forEach(RowCellInfo::incrementRowspan);
   }
 
@@ -118,50 +94,28 @@ public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, S
       int rowPosition, boolean insertBefore, List<RowInfo> rowsInfo) {
     List<RowCellInfo> cellsToExpandRowspan;
     if (insertBefore) {
-      // cellsToModifyRowspan
       cellsToExpandRowspan = cellsInRange.stream()
           .filter(rowCellInfo -> rowCellInfo.getEndAbsolutePosition() >= rowPosition)
           .filter(rowCellInfo -> rowCellInfo.getStartAbsolutePosition() < rowPosition)
-          .collect(Collectors.toList());
-
+          .toList();
     } else {
-      // cellsToModifyRowspan
       cellsToExpandRowspan = cellsInRange.stream()
           .filter(rowCellInfo -> rowCellInfo.getStartAbsolutePosition() <= rowPosition)
           .filter(rowCellInfo -> rowCellInfo.getEndAbsolutePosition() > rowPosition)
           .filter(rowCellInfo -> rowCellInfo.getEndAbsolutePosition() <= rowsInfo.size())
-          .collect(Collectors.toList());
+          .toList();
     }
 
     return cellsToExpandRowspan;
-    //    cellsToExpandRowspan.stream().forEach(RowCellInfo::incrementRowspan);
   }
 
   private void addCellsToEmptyRow(List<RowCellInfo> cellsInRange, RowInfo realSelectedRow,
-      Node newRow,
-      boolean insertBefore)
-      throws RepositoryException, PersistenceException {
-    int rowPosition = realSelectedRow.getPosition();
-    //    List<RowCellInfo> cellsInRange = getCellsInRange(rowsInfo, rowPosition);
+      Node newRow, boolean insertBefore) throws RepositoryException, PersistenceException {
 
+    int rowPosition = realSelectedRow.getPosition();
     Iterable<Resource> children = realSelectedRow.getResource().getChildren();
     int size = (int) StreamSupport.stream(children.spliterator(), false).count();
-
-    //    List<RowCellInfo> cellsToExpandRowspan = new LinkedList<>();
     if (!insertBefore) {
-      // cellsToModifyRowspan
-      //      cellsToExpandRowspan = cellsInRange.stream()
-      //          .filter(rowCellInfo -> rowCellInfo.getEndAbsolutePosition() == rowPosition)
-      //          .filter(rowCellInfo -> rowCellInfo.getStartAbsolutePosition() < rowPosition)
-      //          .collect(Collectors.toList());
-
-      //    } else {
-      // cellsToModifyRowspan
-      //      cellsToExpandRowspan = cellsInRange.stream()
-      //          .filter(rowCellInfo -> rowCellInfo.getStartAbsolutePosition() <= rowPosition)
-      //          .filter(rowCellInfo -> rowCellInfo.getEndAbsolutePosition() > rowPosition)
-      //          .collect(Collectors.toList());
-
       int moreCellsToAdd = (int) cellsInRange.stream()
           .filter(rowCellInfo -> rowCellInfo.getStartAbsolutePosition() < rowPosition)
           .filter(rowCellInfo -> rowCellInfo.getEndAbsolutePosition() == rowPosition)
@@ -175,60 +129,45 @@ public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, S
       size += moreCellsToAdd - moreCellsToRemove;
     }
 
-    // number of cells to add
-
     Resource referenceCell = StreamSupport.stream(children.spliterator(), false)
         .findFirst()
         .orElse(null);
 
     if (referenceCell != null) {
-      //      iter X times fori
       for (int i = 0; i < size; i++) {
         ResourceResolver resourceResolver = referenceCell.getResourceResolver();
         Resource rowResource = resourceResolver.getResource(newRow.getPath());
-
         String newCellName = ResourceUtil.createUniqueChildName(rowResource, CELL_IDENTIFIER);
         Node newCell = newRow.addNode(newCellName);
         newCell.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE,
             referenceCell.getResourceType());
       }
-
-      //      for (Resource cell : realSelectedRow.getResource().getChildren()) {
-      //        Node newCell = newRow.addNode(referenceCell.getName());
-      //        newCell.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE,
-      //            referenceCell.getResourceType());
-      //      }
-
     }
-
-
   }
 
   private List<RowCellInfo> getCellsInRange(List<RowInfo> rowsInfo, int selectedRowNumber) {
     List<RowCellInfo> cellsInRange = new LinkedList<>();
     for (RowInfo rowInfo : rowsInfo) {
-      // get all cells in range
       cellsInRange.addAll(rowInfo.getCellsInRange(selectedRowNumber));
     }
+
     return cellsInRange;
   }
 
   @NotNull
-  private List<RowInfo> getRowsInfo(AddTableRowRestModel addTableRowRestModel)
-      throws RepositoryException {
+  private List<RowInfo> getRowsInfo(AddTableRowRestModel addTableRowRestModel) {
     List<RowInfo> rowsInfo = new LinkedList<>();
-
     int rowCounter = 0;
     for (Resource row : addTableRowRestModel.getRows()) {
       rowCounter++;
       RowInfo rowInfo = new RowInfo(row, rowCounter);
       rowsInfo.add(rowInfo);
-
     }
+
     return rowsInfo;
   }
 
-  private Node addEmptyRow(AddTableRowRestModel addTableRowRestModel, RowInfo realRow)
+  private Node addEmptyRow(RowInfo realRow)
       throws RepositoryException, PersistenceException {
 
     Resource rowResource = realRow.getResource();
@@ -237,25 +176,22 @@ public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, S
       throw new RepositoryException("Failed to adapt parent resource to node");
     }
 
-    //    String newRowName = ResourceUtil.createUniqueChildName(rowResource, ROW_IDENTIFIER);
-    //    ???? raczej rowResource.getParent() ??
     String newRowName = ResourceUtil.createUniqueChildName(rowResource.getParent(), ROW_IDENTIFIER);
-
     Node row = parentNode.addNode(newRowName);
     row.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE, rowResource.getResourceType());
-    return row;
 
+    return row;
   }
 
-  private RowInfo realSelectedRow(List<RowInfo> rowsInfo, AddTableRowRestModel addTableRowRestModel,
-      int selectedRowNumber) {
+  private RowInfo establishRealSelectedRow(List<RowInfo> rowsInfo,
+      AddTableRowRestModel addTableRowRestModel, int selectedRowNumber) {
 
     if (!addTableRowRestModel.isInsertBefore() && addTableRowRestModel.getSelectedCell()
         .isPresent()) {
       Resource selectedCell = addTableRowRestModel.getSelectedCell().get();
       RowCellInfo selectedCellInfo = new RowCellInfo(selectedCell, selectedRowNumber);
       if (selectedCellInfo.getEndAbsolutePosition() > rowsInfo.size()) {
-        return rowsInfo.get(rowsInfo.size() - 1);   //return last row -----
+        return rowsInfo.get(rowsInfo.size() - 1);
       } else {
         return rowsInfo.get(selectedCellInfo.getEndAbsolutePosition() - 1);
       }
@@ -264,27 +200,40 @@ public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, S
     return rowsInfo.get(selectedRowNumber - 1);
   }
 
-  private Node addRow(Node parent, String rowName, String resourceType) throws RepositoryException {
-    Node row = parent.addNode(rowName);
-    row.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE, resourceType);
-    return row;
-  }
-
-  private void addCellsToRow(Resource selectedRow, Node newRow) throws RepositoryException {
-    for (Resource cell : selectedRow.getChildren()) {
-      Node newCell = newRow.addNode(cell.getName());
-      newCell.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE, cell.getResourceType());
-    }
-  }
-
   private void orderRow(Node parent, Node newRow, Resource selectedRow, boolean isInsertBefore)
       throws RepositoryException {
+
+    // start of temporary log to remove ------------
+    Iterator<Resource> beforeorder = selectedRow.getParent()
+        .listChildren();
+    int beforeordercount = 0;
+    while (beforeorder.hasNext()) {
+      Resource row = beforeorder.next();
+      beforeordercount++;
+      System.out.println("BEFORE ORDER -- " + row.getPath() + " <<<<<<<<<<<<<<<<");
+    }
+    System.out.println(
+        "Total number of rows BEFORE ORDER: " + beforeordercount + " <<<<<<<<<<<<<<<<<");
+    // end of temporary log to remove --------------------
+
     if (isInsertBefore) {
       parent.orderBefore(newRow.getName(),
           selectedRow.getName());
     } else {
       parent.orderBefore(newRow.getName(), nextSiblingName(selectedRow));
     }
+
+    // start of temporary log to remove ------------------
+    Iterator<Resource> afterorder = selectedRow.getParent()
+        .listChildren();
+    int testcount = 0;
+    while (afterorder.hasNext()) {
+      Resource row = afterorder.next();
+      testcount++;
+      System.out.println("AFTER ORDER -- " + row.getPath() + " <<<<<<<<<<<<<<<<");
+    }
+    System.out.println("Total number of rows AFTER ORDER: " + testcount + " <<<<<<<<<<<<<<<<<");
+    // end of temporary log to remove ------------------
   }
 
   private String nextSiblingName(Resource resource) {

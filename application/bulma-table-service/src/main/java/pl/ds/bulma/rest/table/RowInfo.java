@@ -19,38 +19,27 @@ package pl.ds.bulma.rest.table;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.jcr.RepositoryException;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 
 public class RowInfo {
 
-  private static final String ROWSPAN_CELL_PROPERTY = "rowspan";
-
   @Getter
-  private int position;
-
-  @Getter
-  private final String name;
+  private final int position;
 
   @Getter
   private final Resource resource;
 
-  private List<RowCellInfo> cells = new LinkedList();
+  private final List<RowCellInfo> cells = new LinkedList<>();
 
-  public RowInfo(Resource rowResource, int position) throws RepositoryException {
+  public RowInfo(Resource rowResource, int position) {
     this.resource = rowResource;
-    this.name = rowResource.getName();
     this.position = position;
 
     Iterable<Resource> cellResources = rowResource.getChildren();
     for (Resource cellResource : cellResources) {
       cells.add(new RowCellInfo(cellResource, position));
     }
-  }
-
-  public List<RowCellInfo> getCellsWithoutRowspan() {
-    return cells.stream().filter(cell -> cell.getRowspan() > 1).collect(Collectors.toList());
   }
 
   public List<RowCellInfo> getCellsInRange(int selectedRowNumber) {
