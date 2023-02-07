@@ -18,21 +18,21 @@ import React from 'react';
 import {useActionRef} from 'websight-pages-editor-view/actions/common.js';
 import {performTableRestAction} from './common.js';
 
-const DeleteTableRowAction = React.forwardRef((props, ref) => {
+const DeleteTableColumnAction = React.forwardRef((props, ref) => {
   const {resourcePath} = props;
   useActionRef({
     execute: ({
       editModeStore,
-    }) => performTableRestAction(editModeStore, resourcePath, 'delete-table-row'),
+    }) => performTableRestAction(editModeStore, resourcePath, 'delete-table-column'),
   }, ref);
   return null;
 });
 
 const action = {
   data: {
-    name: 'Delete row',
-    icon: 'delete_sweep',
+    name: 'Delete column',
+    icon: 'remove_road',
   },
-  actionComponent: DeleteTableRowAction,
+  actionComponent: DeleteTableColumnAction,
 };
 export default action;

@@ -22,15 +22,15 @@ import pl.ds.websight.ui.framework.actions.service.WebAction;
 import pl.ds.websight.ui.framework.actions.service.WebActionConfig;
 
 @Component
-public class DeleteTableRowWebAction implements WebAction {
+public class DeleteTableColumnWebAction implements WebAction {
 
   private static final WebActionConfig CONFIG = WebActionConfig.Builder
-      .newWebActionConfig("/apps/bulma-table-view/web-resources/actions/DeleteTableRowAction.js")
+      .newWebActionConfig("/apps/bulma-table-view/web-resources/actions/DeleteTableColumnAction.js")
       .forAllModules()
       .forResourceTypes(
           Arrays.asList("bulma/components/table/tableheadcell", "bulma/components/table/tablecell"))
       .forViewTypes("page-editor-toolbar")
-      .withRanking(1325)
+      .withRanking(1300)
       .build();
 
   @Override
