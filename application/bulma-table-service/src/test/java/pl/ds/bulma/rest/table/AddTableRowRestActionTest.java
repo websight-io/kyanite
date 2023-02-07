@@ -51,7 +51,6 @@ public class AddTableRowRestActionTest {
   private static final String COMPLEX_ROW3 = COMPLEX_CELLS_TABLE + "/tablebody/tablerow2";
 
   private final SlingContext context = new SlingContext(ResourceResolverType.JCR_MOCK);
-  // private final SlingContext context = new SlingContext(ResourceResolverType.JCR_OAK);
 
   @BeforeEach
   public void init() {
@@ -98,7 +97,7 @@ public class AddTableRowRestActionTest {
             false)
         .count();
 
-    // assertThat(countedRows).isEqualTo(4);
+    assertThat(countedRows).isEqualTo(4);
 
   }
 
@@ -120,7 +119,7 @@ public class AddTableRowRestActionTest {
             false)
         .count();
 
-    //    assertThat(countedCells).isEqualTo(3);
+    assertThat(countedCells).isEqualTo(3);
 
   }
 

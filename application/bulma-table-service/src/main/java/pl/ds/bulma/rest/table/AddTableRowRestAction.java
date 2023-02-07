@@ -19,7 +19,6 @@ package pl.ds.bulma.rest.table;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
@@ -202,38 +201,10 @@ public class AddTableRowRestAction implements RestAction<AddTableRowRestModel, S
 
   private void orderRow(Node parent, Node newRow, Resource selectedRow, boolean isInsertBefore)
       throws RepositoryException {
-
-    // start of temporary log to remove ------------
-    Iterator<Resource> beforeorder = selectedRow.getParent()
-        .listChildren();
-    int beforeordercount = 0;
-    while (beforeorder.hasNext()) {
-      Resource row = beforeorder.next();
-      beforeordercount++;
-      System.out.println("BEFORE ORDER -- " + row.getPath() + " <<<<<<<<<<<<<<<<");
+    String targetRowName = isInsertBefore ? selectedRow.getName() : nextSiblingName(selectedRow);
+    if (!newRow.getName().equals(targetRowName)) {
+      parent.orderBefore(newRow.getName(), targetRowName);
     }
-    System.out.println(
-        "Total number of rows BEFORE ORDER: " + beforeordercount + " <<<<<<<<<<<<<<<<<");
-    // end of temporary log to remove --------------------
-
-    if (isInsertBefore) {
-      parent.orderBefore(newRow.getName(),
-          selectedRow.getName());
-    } else {
-      parent.orderBefore(newRow.getName(), nextSiblingName(selectedRow));
-    }
-
-    // start of temporary log to remove ------------------
-    Iterator<Resource> afterorder = selectedRow.getParent()
-        .listChildren();
-    int testcount = 0;
-    while (afterorder.hasNext()) {
-      Resource row = afterorder.next();
-      testcount++;
-      System.out.println("AFTER ORDER -- " + row.getPath() + " <<<<<<<<<<<<<<<<");
-    }
-    System.out.println("Total number of rows AFTER ORDER: " + testcount + " <<<<<<<<<<<<<<<<<");
-    // end of temporary log to remove ------------------
   }
 
   private String nextSiblingName(Resource resource) {
