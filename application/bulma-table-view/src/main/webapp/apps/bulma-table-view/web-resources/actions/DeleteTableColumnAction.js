@@ -14,12 +14,25 @@
  * limitations under the License.
  */
 
-export const selectors = {
-  overlayName: 'span.name',
-  autosuggestionsBox: '.autosuggestion-options'
-};
+import React from 'react';
+import {useActionRef} from 'websight-pages-editor-view/actions/common.js';
+import {performTableRestAction} from './common.js';
 
-export const testIds = {
-  editIcon: 'ToolbarItem_Properties',
-  dialogSubmitButton: 'Action_Submit'
+const DeleteTableColumnAction = React.forwardRef((props, ref) => {
+  const {resourcePath} = props;
+  useActionRef({
+    execute: ({
+      editModeStore,
+    }) => performTableRestAction(editModeStore, resourcePath, 'delete-table-column'),
+  }, ref);
+  return null;
+});
+
+const action = {
+  data: {
+    name: 'Delete column',
+    icon: 'remove_road',
+  },
+  actionComponent: DeleteTableColumnAction,
 };
+export default action;

@@ -19,12 +19,13 @@ import RestClient from 'restclient';
 export const performTableRestAction = (editModeStore, resourcePath, action,
     insertBefore) => {
   const restClient = new RestClient('bulma-table-service');
-  restClient.post({
-    resourcePath: resourcePath,
-    action: action,
-    data: {
-      insertBefore: insertBefore,
-    },
-    onSuccess: () => editModeStore.methods.refreshComponentTree(),
-  });
+  const config = {
+    resourcePath,
+    action,
+    onSuccess: () => editModeStore.methods.refreshComponentTree()
+  }
+  if (insertBefore !== 'undefined') {
+    config.data = {insertBefore};
+  }
+  restClient.post(config);
 };

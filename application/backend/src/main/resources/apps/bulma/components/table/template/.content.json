@@ -33,17 +33,17 @@
       "tablecell1": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "bulma/components/table/tablecell",
-        "text": "Table cell 1"
+        "text": "Table cell 4"
       },
       "tablecell2": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "bulma/components/table/tablecell",
-        "text": "Table cell 2"
+        "text": "Table cell 5"
       },
       "tablecell3": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "bulma/components/table/tablecell",
-        "text": "Table cell 3"
+        "text": "Table cell 6"
       }
     },
     "tablerow2": {
@@ -52,17 +52,17 @@
       "tablecell1": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "bulma/components/table/tablecell",
-        "text": "Table cell 1"
+        "text": "Table cell 7"
       },
       "tablecell2": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "bulma/components/table/tablecell",
-        "text": "Table cell 2"
+        "text": "Table cell 8"
       },
       "tablecell3": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "bulma/components/table/tablecell",
-        "text": "Table cell 3"
+        "text": "Table cell 9"
       }
     }
   }
