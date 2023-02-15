@@ -16,10 +16,23 @@
 
 import TableActionsComponentsAction from "../actions/TableActionsComponentsAction.js";
 
+const config = {
+  metadata: {
+    title: 'Add column',
+    icon: 'keyboard_arrow_right',
+  },
+  action: 'add-table-column',
+  insertBefore: false,
+  allowedComponents: [
+    "/apps/bulma/components/table/tableheadcell",
+    "/apps/bulma/components/table/tablecell"
+  ]
+}
+
 export default {
   init: (editor) => {
     editor.componentsActions.addProvider({
-      getActions: components => [new TableActionsComponentsAction(components, editor)]
+      getActions: components => [new TableActionsComponentsAction(components, editor, config)]
     });
   }
 }

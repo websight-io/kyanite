@@ -16,10 +16,24 @@
 
 import TableActionsComponentsAction from "../actions/TableActionsComponentsAction.js";
 
+const config = {
+  metadata: {
+    title: 'Add row',
+    icon: 'keyboard_arrow_down',
+  },
+  action: 'add-table-row',
+  insertBefore: false,
+  allowedComponents: [
+    "/apps/bulma/components/table/tablerow",
+    "/apps/bulma/components/table/tableheadcell",
+    "/apps/bulma/components/table/tablecell"
+  ]
+}
+
 export default {
   init: (editor) => {
     editor.componentsActions.addProvider({
-      getActions: components => [new TableActionsComponentsAction(components, editor)]
+      getActions: components => [new TableActionsComponentsAction(components, editor, config)]
     });
   }
 }

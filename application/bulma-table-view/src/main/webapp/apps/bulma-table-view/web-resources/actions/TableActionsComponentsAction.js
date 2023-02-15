@@ -20,26 +20,25 @@ export default class TableActionsComponentsAction {
 
   name = 'Add Table Row';
   ranking = 2000;
-  metadata = {
-    title: 'Add table row',
-    icon: 'keyboard_arrow_down'
-  }
 
-  constructor(components, editor) {
+  constructor(components, editor, config) {
     this.components = components;
     this.editor = editor;
+    this.config = config;
+  }
+
+  get metadata() {
+    return this.config?.metadata;
   }
 
   getConditions() {
     return [{
-      isMatching: components => ["/apps/bulma/components/table/tablerow",
-        "/apps/bulma/components/table/tableheadcell",
-        "/apps/bulma/components/table/tablecell"].includes(
+      isMatching: components => this.config?.allowedComponents.includes(
           [...components][0].componentDefinition.path)
     }];
   }
 
   execute() {
-    performTableRestAction(this.editor, [...this.components][0].path, 'add-table-row', false);
+    performTableRestAction(this.editor, this.editor.editedPage.contentPath + "/" + [...this.components][0].path, this.config?.action, this.config?.insertBefore);
   }
 }

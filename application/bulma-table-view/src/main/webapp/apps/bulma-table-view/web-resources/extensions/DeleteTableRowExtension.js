@@ -16,10 +16,22 @@
 
 import TableActionsComponentsAction from "../actions/TableActionsComponentsAction.js";
 
+const config = {
+  metadata: {
+    title: 'Delete row',
+    icon: 'delete_sweep',
+  },
+  action: 'delete-table-row',
+  allowedComponents: [
+    "/apps/bulma/components/table/tableheadcell",
+    "/apps/bulma/components/table/tablecell"
+  ]
+}
+
 export default {
   init: (editor) => {
     editor.componentsActions.addProvider({
-      getActions: components => [new TableActionsComponentsAction(components, editor)]
+      getActions: components => [new TableActionsComponentsAction(components, editor, config)]
     });
   }
 }
