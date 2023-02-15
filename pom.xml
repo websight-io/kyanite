@@ -71,6 +71,7 @@
     <websight.pages.version>3.0.0</websight.pages.version>
     <websight.request.parameters.version>1.0.5</websight.request.parameters.version>
     <websight.ui.actions.version>2.0.0</websight.ui.actions.version>
+    <websight.fragments.registry.version>1.0.3</websight.fragments.registry.version>
 
     <timestamp>${maven.build.timestamp}</timestamp>
     <maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>

@@ -177,6 +177,12 @@
       </dependency>
       <dependency>
         <groupId>pl.ds.websight</groupId>
+        <artifactId>websight-fragments-registry</artifactId>
+        <version>${websight.fragments.registry.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>pl.ds.websight</groupId>
         <artifactId>websight-ui-framework-actions</artifactId>
         <version>${websight.ui.actions.version}</version>
         <scope>provided</scope>

@@ -137,6 +137,10 @@
   <dependencies>
     <dependency>
       <groupId>pl.ds.websight</groupId>
+      <artifactId>websight-fragments-registry</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>pl.ds.websight</groupId>
       <artifactId>websight-ui-framework-actions</artifactId>
     </dependency>
     <dependency>
