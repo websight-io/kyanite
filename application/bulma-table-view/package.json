@@ -1,7 +1,7 @@
 {
   "scripts": {
     "lint": "eslint .",
-    "babel": "babel src/main/webapp --extensions \".ts,.tsx\" --config-file ./.babelrc.js -d target/dist --copy-files"
+    "babel": "babel src/main/webapp --config-file ./.babelrc.js -d target/dist --copy-files"
   },
   "eslintIgnore": [
     "target/*"
@@ -9,7 +9,6 @@
   "devDependencies": {
     "@babel/cli": "^7.20.7",
     "@babel/core": "^7.20.12",
-    "@babel/preset-typescript": "^7.18.6",
     "babel-plugin-module-resolver": "^5.0.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "eslint": "^8.31.0",
@@ -17,7 +16,6 @@
     "eslint-plugin-react": "^7.31.11"
   },
   "dependencies": {
-    "prop-types": "^15.8.1",
-    "typescript": "^4.9.5"
+    "prop-types": "^15.8.1"
   }
 }

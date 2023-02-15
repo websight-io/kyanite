@@ -14,18 +14,12 @@
  * limitations under the License.
  */
 
-import RestClient from 'restclient';
+import TableActionsComponentsAction from "../actions/TableActionsComponentsAction.js";
 
-export const performTableRestAction = (editor, resourcePath, action,
-    insertBefore) => {
-  const restClient = new RestClient('bulma-table-service');
-  const config = {
-    resourcePath,
-    action,
-    onSuccess: () => editor.refreshComponentTree()
+export default {
+  init: (editor) => {
+    editor.componentsActions.addProvider({
+      getActions: components => [new TableActionsComponentsAction(components, editor)]
+    });
   }
-  if (insertBefore !== 'undefined') {
-    config.data = {insertBefore};
-  }
-  restClient.post(config);
-};
+}

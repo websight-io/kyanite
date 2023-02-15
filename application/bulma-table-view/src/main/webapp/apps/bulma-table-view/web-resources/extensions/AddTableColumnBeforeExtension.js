@@ -14,27 +14,12 @@
  * limitations under the License.
  */
 
+import TableActionsComponentsAction from "../actions/TableActionsComponentsAction.js";
+
 export default {
   init: (editor) => {
     editor.componentsActions.addProvider({
-      getActions: components => [{
-        name: "Add Table Row",
-        ranking: 2000,
-        metadata: {
-          title: "title",
-          icon: "icon"
-        },
-        getConditions() {
-          return [{
-            isMatching: components => ["/apps/bulma/components/table/tablerow", "/apps/bulma/components/table/tableheadcell",
-              "/apps/bulma/components/table/tablecell"].includes([...components][0].componentDefinition.path)
-          }];
-        },
-        execute() {
-          console.log("executing...");
-          console.log([...components][0]);
-        }
-      }]
+      getActions: components => [new TableActionsComponentsAction(components, editor)]
     });
   }
 }

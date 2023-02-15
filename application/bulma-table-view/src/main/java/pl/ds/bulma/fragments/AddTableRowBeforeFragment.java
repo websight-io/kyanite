@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package pl.ds.bulma.actions.table;
+package pl.ds.bulma.fragments;
 
 import org.osgi.service.component.annotations.Component;
 import pl.ds.websight.fragments.registry.WebFragment;
 
 @Component
-public class AddTableRowFragment implements WebFragment {
+public class AddTableRowBeforeFragment implements WebFragment {
 
   @Override
   public String getKey() {
@@ -29,11 +29,12 @@ public class AddTableRowFragment implements WebFragment {
 
   @Override
   public String getFragment() {
-    return "/apps/bulma-table-view/web-resources/actions/AddTableRowExtension.js";
+    return "/apps/bulma-table-view/web-resources/extensions/AddTableRowBeforeExtension.js";
   }
 
   @Override
   public int getRanking() {
-    return 1275;
+    return 1250;
   }
+
 }

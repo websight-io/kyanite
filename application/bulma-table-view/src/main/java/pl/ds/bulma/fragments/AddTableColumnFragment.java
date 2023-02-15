@@ -14,25 +14,27 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import {useActionRef} from 'websight-pages-editor-view/actions/common.js';
-import {performTableRestAction} from './common.js';
+package pl.ds.bulma.fragments;
 
-const DeleteTableColumnAction = React.forwardRef((props, ref) => {
-  const {resourcePath} = props;
-  useActionRef({
-    execute: ({
-      editModeStore,
-    }) => performTableRestAction(editModeStore, resourcePath, 'delete-table-column'),
-  }, ref);
-  return null;
-});
+import org.osgi.service.component.annotations.Component;
+import pl.ds.websight.fragments.registry.WebFragment;
 
-const action = {
-  data: {
-    name: 'Delete column',
-    icon: 'remove_road',
-  },
-  actionComponent: DeleteTableColumnAction,
-};
-export default action;
+@Component
+public class AddTableColumnFragment implements WebFragment {
+
+  @Override
+  public String getKey() {
+    return "websight.editor.spi.extension";
+  }
+
+  @Override
+  public String getFragment() {
+    return "/apps/bulma-table-view/web-resources/extensions/AddTableColumnExtension.js";
+  }
+
+  @Override
+  public int getRanking() {
+    return 1225;
+  }
+
+}

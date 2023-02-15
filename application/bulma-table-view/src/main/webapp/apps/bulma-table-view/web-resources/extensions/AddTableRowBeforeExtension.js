@@ -14,26 +14,12 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import {useActionRef} from 'websight-pages-editor-view/actions/common.js';
-import {performTableRestAction} from './common.js';
+import TableActionsComponentsAction from "../actions/TableActionsComponentsAction.js";
 
-const AddTableRowBeforeAction = React.forwardRef((props, ref) => {
-  const {resourcePath} = props;
-  useActionRef({
-    execute: ({
-      editModeStore,
-    }) => performTableRestAction(editModeStore, resourcePath, 'add-table-row',
-        true),
-  }, ref);
-  return null;
-});
-
-const action = {
-  data: {
-    name: 'Add row before',
-    icon: 'keyboard_arrow_up',
-  },
-  actionComponent: AddTableRowBeforeAction,
-};
-export default action;
+export default {
+  init: (editor) => {
+    editor.componentsActions.addProvider({
+      getActions: components => [new TableActionsComponentsAction(components, editor)]
+    });
+  }
+}
