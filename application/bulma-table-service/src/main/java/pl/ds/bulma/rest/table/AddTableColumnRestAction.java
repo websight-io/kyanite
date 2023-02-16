@@ -16,6 +16,7 @@
 
 package pl.ds.bulma.rest.table;
 
+import java.util.Optional;
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
@@ -40,6 +41,10 @@ public class AddTableColumnRestAction implements RestAction<AddTableColumnRestMo
 
   private static final String CELL_IDENTIFIER = "tablecell";
 
+  private static final String COLSPAN_CELL_PROPERTY = "colspan";
+
+  private static final int ONE_MODIFIER = 1;
+
   @Override
   public RestActionResult<String> perform(AddTableColumnRestModel addTableColumnRestModel) {
     try {
@@ -49,11 +54,12 @@ public class AddTableColumnRestAction implements RestAction<AddTableColumnRestMo
         throw new RepositoryException("Failed to adapt the selected cell resource to node");
       }
 
-      long pos = getSelectedCellPosition(selectedCellNode);
+      CellInfo selectedCellInfo = new CellInfo(selectedCellNode);
+      int targetAbsolutePosition = getTargetCellAbsolutePosition(
+          addTableColumnRestModel.isInsertBefore(), selectedCellInfo);
 
       for (Resource row : addTableColumnRestModel.getRows()) {
-        addCellToRowAtPosition(row, selectedCell, pos,
-            addTableColumnRestModel.isInsertBefore());
+        addToRow(row, targetAbsolutePosition, selectedCellInfo);
       }
 
       addTableColumnRestModel.getResourceResolver().commit();
@@ -65,56 +71,112 @@ public class AddTableColumnRestAction implements RestAction<AddTableColumnRestMo
     }
   }
 
-  private long getSelectedCellPosition(Node selectedCell) throws RepositoryException {
-    NodeIterator siblings = selectedCell.getParent().getNodes();
-    while (siblings.hasNext()) {
-      if (selectedCell.getName().equals(siblings.nextNode().getName())) {
-        return siblings.getPosition();
-      }
-    }
-    throw new RepositoryException("Position of selected cell was not found");
-  }
-
-  private void addCellToRowAtPosition(Resource row, Resource selectedCell, long position,
-      boolean isInsertBefore) throws RepositoryException, PersistenceException {
+  private void addToRow(Resource row, int targetAbsolutePosition, CellInfo selectedCellInfo)
+      throws RepositoryException, PersistenceException {
     Node rowNode = row.adaptTo(Node.class);
     if (rowNode == null) {
       LOG.error("Failed to adapt the row resource to node");
       return;
     }
 
-    if (!hasCellAtPosition(rowNode, position)) {
+    if (!validPosition(rowNode, targetAbsolutePosition)) {
       return;
     }
 
-    NodeIterator siblings = rowNode.getNodes();
-    siblings.skip(position - 1);
-    Node baseCell = siblings.hasNext() ? siblings.nextNode() : null;
+    Optional<CellInfo> currentCell = getCellAtAbsolutePosition(
+        rowNode, selectedCellInfo.getStartAbsolutePosition());
 
     String newCellName = ResourceUtil.createUniqueChildName(row, CELL_IDENTIFIER);
-    String newCellResourceType =
-        baseCell != null ? baseCell.getProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE).getString()
-            : selectedCell.getResourceType();
-    addCellToRow(rowNode, newCellName, newCellResourceType);
+    String newCellResourceType = currentCell
+        .map(CellInfo::getResourceType)
+        .orElse(selectedCellInfo.getResourceType());
 
-    orderCell(siblings, rowNode, newCellName, baseCell.getName(), isInsertBefore);
+    addNewCellToRow(row, targetAbsolutePosition, newCellName, newCellResourceType);
   }
 
-  private boolean hasCellAtPosition(Node row, long position) throws RepositoryException {
-    return row.getNodes().getSize() >= position;
+  private void addNewCellToRow(Resource row, int targetAbsolutePosition, String newCellName,
+      String resourceType)
+      throws RepositoryException {
+    Node rowNode = row.adaptTo(Node.class);
+    if (rowNode == null) {
+      LOG.error("Failed to adapt the row resource to node");
+      return;
+    }
+
+    Optional<CellInfo> currentCellAtTargetAbsolutePosition = getCellAtAbsolutePosition(
+        rowNode, targetAbsolutePosition);
+
+    if (currentCellAtTargetAbsolutePosition.isPresent()) {
+      CellInfo currentCell = currentCellAtTargetAbsolutePosition.get();
+      if (currentCell.getStartAbsolutePosition() == targetAbsolutePosition) {
+        addCell(newCellName, resourceType, rowNode);
+        rowNode.orderBefore(newCellName, currentCell.getName());
+      } else {
+        expandCell(rowNode, currentCell);
+      }
+    } else {
+      addCell(newCellName, resourceType, rowNode);
+    }
   }
 
-  private void addCellToRow(Node row, String name, String resourceType) throws RepositoryException {
-    Node cell = row.addNode(name);
+  private void expandCell(Node rowNode, CellInfo currentCell) throws RepositoryException {
+    Node cellNode = rowNode.getNode(currentCell.getName());
+    int newColspan = getColspan(cellNode) + ONE_MODIFIER;
+    cellNode.setProperty(COLSPAN_CELL_PROPERTY, newColspan);
+  }
+
+  private void addCell(String newCellName, String resourceType, Node node)
+      throws RepositoryException {
+    Node cell = node.addNode(newCellName);
     cell.setProperty(ResourceResolver.PROPERTY_RESOURCE_TYPE, resourceType);
   }
 
-  private void orderCell(NodeIterator siblings, Node row, String newCellName, String baseCellName,
-      boolean isInsertBefore) throws RepositoryException {
-    if (isInsertBefore) {
-      row.orderBefore(newCellName, baseCellName);
-    } else if (siblings.hasNext()) {
-      row.orderBefore(newCellName, siblings.nextNode().getName());
+  private Optional<CellInfo> getCellAtAbsolutePosition(Node rowNode,
+      int targetAbsolutePosition) throws RepositoryException {
+
+    CellInfo currentCell = null;
+    NodeIterator nodeIterator = rowNode.getNodes();
+    int sum = 0;
+    Node nextCell = null;
+    while (nodeIterator.hasNext() && sum < targetAbsolutePosition) {
+      nextCell = nodeIterator.nextNode();
+      sum += getColspan(nextCell);
+    }
+
+    if (sum >= targetAbsolutePosition && nextCell != null) {
+      currentCell = new CellInfo(nextCell);
+    }
+
+    return Optional.ofNullable(currentCell);
+  }
+
+  private boolean validPosition(Node rowNode, int targetAbsolutePosition)
+      throws RepositoryException {
+    int absoluteRowLength = getAbsoluteRowLength(rowNode);
+    return targetAbsolutePosition <= absoluteRowLength + ONE_MODIFIER;
+  }
+
+  private int getAbsoluteRowLength(Node rowNode) throws RepositoryException {
+    NodeIterator nodeIterator = rowNode.getNodes();
+    int rowLength = 0;
+    while (nodeIterator.hasNext()) {
+      Node nextCell = nodeIterator.nextNode();
+      rowLength += getColspan(nextCell);
+    }
+
+    return rowLength;
+  }
+
+  private int getColspan(Node cellNode) throws RepositoryException {
+    return cellNode.hasProperty(COLSPAN_CELL_PROPERTY)
+        ? Integer.parseInt(cellNode.getProperty(COLSPAN_CELL_PROPERTY).getString()) : ONE_MODIFIER;
+  }
+
+  private int getTargetCellAbsolutePosition(boolean insertBefore, CellInfo cellInfo) {
+    if (insertBefore) {
+      return cellInfo.getStartAbsolutePosition();
+    } else {
+      return cellInfo.getEndAbsolutePosition() + ONE_MODIFIER;
     }
   }
 }

@@ -21,7 +21,7 @@
   <parent>
     <groupId>pl.ds.bulma</groupId>
     <artifactId>bulma-tests</artifactId>
-    <version>1.0.9-SNAPSHOT</version>
+    <version>1.0.10-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -46,14 +46,14 @@
     <dependency>
       <groupId>pl.ds.bulma</groupId>
       <artifactId>bulma-distribution</artifactId>
-      <version>1.0.9-SNAPSHOT</version>
+      <version>1.0.10-SNAPSHOT</version>
       <classifier>websight-cms-bulma-project</classifier>
       <type>slingosgifeature</type>
     </dependency>
     <dependency>
       <groupId>pl.ds.bulma</groupId>
       <artifactId>bulma-tests-content</artifactId>
-      <version>1.0.9-SNAPSHOT</version>
+      <version>1.0.10-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
   </dependencies>
