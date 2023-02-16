@@ -34,7 +34,7 @@ public class AddTableRowFragment implements WebFragment {
 
   @Override
   public int getRanking() {
-    return 1275;
+    return 1500;
   }
 
 }

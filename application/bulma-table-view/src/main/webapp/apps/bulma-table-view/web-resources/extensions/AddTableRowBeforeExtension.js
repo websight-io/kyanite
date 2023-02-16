@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-import TableActionsComponentsAction from "../actions/TableActionsComponentsAction.js";
+import TableActionsComponentsAction
+  from "../actions/TableActionsComponentsAction.js";
 
 const config = {
-  ranking: 1250,
+  name: 'addTableRowBefore',
+  ranking: 1400,
   metadata: {
     title: 'Add row before',
     icon: 'keyboard_arrow_up',
@@ -29,12 +31,13 @@ const config = {
     "/apps/bulma/components/table/tableheadcell",
     "/apps/bulma/components/table/tablecell"
   ]
-}
+};
 
 export default {
   init: (editor) => {
     editor.componentsActions.addProvider({
-      getActions: components => [new TableActionsComponentsAction(components, editor, config)]
+      getActions: components => [new TableActionsComponentsAction(components,
+          editor, config)]
     });
   }
-}
+};

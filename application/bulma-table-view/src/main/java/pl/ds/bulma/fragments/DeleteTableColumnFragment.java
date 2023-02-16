@@ -34,7 +34,7 @@ public class DeleteTableColumnFragment implements WebFragment {
 
   @Override
   public int getRanking() {
-    return 1300;
+    return 1600;
   }
 
 }

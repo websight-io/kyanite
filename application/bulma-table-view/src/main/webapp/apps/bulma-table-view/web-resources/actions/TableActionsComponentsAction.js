@@ -18,8 +18,6 @@ import {performTableRestAction} from "./common.js";
 
 export default class TableActionsComponentsAction {
 
-  name = 'Add Table Row';
-
   constructor(components, editor, config) {
     this.components = components;
     this.editor = editor;
@@ -30,10 +28,10 @@ export default class TableActionsComponentsAction {
     return this.config?.metadata;
   }
 
-  getConditions() {
+  get conditions() {
     return [{
-      isMatching: components => this.config?.allowedComponents.includes(
-          [...components][0].componentDefinition.path)
+      isMatching: component => this.config?.allowedComponents.includes(
+          component.componentDefinition.path)
     }];
   }
 
@@ -46,4 +44,4 @@ export default class TableActionsComponentsAction {
         `${this.editor.editedPage.contentPath}/${[...this.components][0].path}`,
         this.config?.action, this.config?.insertBefore);
   }
-}
+};

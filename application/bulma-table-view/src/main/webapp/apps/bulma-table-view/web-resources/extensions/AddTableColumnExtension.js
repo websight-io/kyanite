@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-import TableActionsComponentsAction from "../actions/TableActionsComponentsAction.js";
+import TableActionsComponentsAction
+  from "../actions/TableActionsComponentsAction.js";
 
 const config = {
-  ranking: 122555,
+  name: 'addTableColumn',
+  ranking: 1300,
   metadata: {
     title: 'Add column',
     icon: 'keyboard_arrow_right',
@@ -28,12 +30,13 @@ const config = {
     "/apps/bulma/components/table/tableheadcell",
     "/apps/bulma/components/table/tablecell"
   ]
-}
+};
 
 export default {
   init: (editor) => {
     editor.componentsActions.addProvider({
-      getActions: components => [new TableActionsComponentsAction(components, editor, config)]
+      getActions: components => [new TableActionsComponentsAction(components,
+          editor, config)]
     });
   }
-}
+};

@@ -23,7 +23,7 @@ export const performTableRestAction = (editor, resourcePath, action,
     resourcePath,
     action,
     onSuccess: () => editor.refreshComponentTree()
-  }
+  };
   if (insertBefore !== 'undefined') {
     config.data = {insertBefore};
   }

@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-import TableActionsComponentsAction from "../actions/TableActionsComponentsAction.js";
+import TableActionsComponentsAction
+  from "../actions/TableActionsComponentsAction.js";
 
 const config = {
-  ranking: 1325,
+  name: 'deleteTableRow',
+  ranking: 1700,
   metadata: {
     title: 'Delete row',
     icon: 'delete_sweep',
@@ -27,12 +29,13 @@ const config = {
     "/apps/bulma/components/table/tableheadcell",
     "/apps/bulma/components/table/tablecell"
   ]
-}
+};
 
 export default {
   init: (editor) => {
     editor.componentsActions.addProvider({
-      getActions: components => [new TableActionsComponentsAction(components, editor, config)]
+      getActions: components => [new TableActionsComponentsAction(components,
+          editor, config)]
     });
   }
-}
+};
