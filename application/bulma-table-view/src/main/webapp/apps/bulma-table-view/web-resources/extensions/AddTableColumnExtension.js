@@ -17,6 +17,7 @@
 import TableActionsComponentsAction from "../actions/TableActionsComponentsAction.js";
 
 const config = {
+  ranking: 122555,
   metadata: {
     title: 'Add column',
     icon: 'keyboard_arrow_right',

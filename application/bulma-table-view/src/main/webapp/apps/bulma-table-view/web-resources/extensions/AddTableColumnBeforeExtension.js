@@ -17,6 +17,7 @@
 import TableActionsComponentsAction from "../actions/TableActionsComponentsAction.js";
 
 const config = {
+  ranking : 1200,
   metadata: {
     title: 'Add column before',
     icon: 'keyboard_arrow_left',

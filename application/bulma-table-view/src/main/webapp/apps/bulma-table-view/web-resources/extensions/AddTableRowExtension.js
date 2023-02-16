@@ -17,6 +17,7 @@
 import TableActionsComponentsAction from "../actions/TableActionsComponentsAction.js";
 
 const config = {
+  ranking: 1275,
   metadata: {
     title: 'Add row',
     icon: 'keyboard_arrow_down',

@@ -19,7 +19,6 @@ import {performTableRestAction} from "./common.js";
 export default class TableActionsComponentsAction {
 
   name = 'Add Table Row';
-  ranking = 2000;
 
   constructor(components, editor, config) {
     this.components = components;
@@ -38,7 +37,13 @@ export default class TableActionsComponentsAction {
     }];
   }
 
+  get ranking() {
+    return this.config?.ranking;
+  }
+
   execute() {
-    performTableRestAction(this.editor, this.editor.editedPage.contentPath + "/" + [...this.components][0].path, this.config?.action, this.config?.insertBefore);
+    performTableRestAction(this.editor,
+        `${this.editor.editedPage.contentPath}/${[...this.components][0].path}`,
+        this.config?.action, this.config?.insertBefore);
   }
 }

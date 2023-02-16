@@ -17,6 +17,7 @@
 import TableActionsComponentsAction from "../actions/TableActionsComponentsAction.js";
 
 const config = {
+  ranking: 1325,
   metadata: {
     title: 'Delete row',
     icon: 'delete_sweep',

@@ -17,6 +17,7 @@
 import TableActionsComponentsAction from "../actions/TableActionsComponentsAction.js";
 
 const config = {
+  ranking: 1300,
   metadata: {
     title: 'Delete column',
     icon: 'remove_road',
