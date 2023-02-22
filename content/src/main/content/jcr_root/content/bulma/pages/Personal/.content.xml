@@ -80,7 +80,7 @@
             <hero
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="bulma/components/hero"
-                size="is-large"
+                size="is-fullheight"
                 subTitle="\0"
                 title="\0"
                 variant="is-link">
