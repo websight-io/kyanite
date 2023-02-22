@@ -14,26 +14,27 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import {useActionRef} from 'websight-pages-editor-view/actions/common.js';
-import {performTableRestAction} from './common.js';
+package pl.ds.bulma.fragments;
 
-const AddTableColumnAction = React.forwardRef((props, ref) => {
-  const {resourcePath} = props;
-  useActionRef({
-    execute: ({
-      editModeStore,
-    }) => performTableRestAction(editModeStore, resourcePath,
-        'add-table-column', false),
-  }, ref);
-  return null;
-});
+import org.osgi.service.component.annotations.Component;
+import pl.ds.websight.fragments.registry.WebFragment;
 
-const action = {
-  data: {
-    name: 'Add column after',
-    icon: 'keyboard_arrow_right',
-  },
-  actionComponent: AddTableColumnAction,
-};
-export default action;
+@Component
+public class AddTableColumnFragment implements WebFragment {
+
+  @Override
+  public String getKey() {
+    return "websight.editor.spi.extension";
+  }
+
+  @Override
+  public String getFragment() {
+    return "/apps/bulma-table-view/web-resources/extensions/AddTableColumnExtension.js";
+  }
+
+  @Override
+  public int getRanking() {
+    return 1300;
+  }
+
+}

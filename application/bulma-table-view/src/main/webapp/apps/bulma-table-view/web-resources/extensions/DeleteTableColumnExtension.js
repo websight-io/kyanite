@@ -14,18 +14,28 @@
  * limitations under the License.
  */
 
-import RestClient from 'restclient';
+import TableActionsComponentsAction
+  from "../actions/TableActionsComponentsAction.js";
 
-export const performTableRestAction = (editor, resourcePath, action,
-    insertBefore) => {
-  const restClient = new RestClient('bulma-table-service');
-  const config = {
-    resourcePath,
-    action,
-    onSuccess: () => editor.refreshComponentTree()
-  };
-  if (insertBefore !== 'undefined') {
-    config.data = {insertBefore};
+const config = {
+  name: 'deleteTableColumn',
+  ranking: 1600,
+  metadata: {
+    title: 'Delete column',
+    icon: 'remove_road',
+  },
+  action: 'delete-table-column',
+  allowedComponents: [
+    "/apps/bulma/components/table/tableheadcell",
+    "/apps/bulma/components/table/tablecell"
+  ]
+};
+
+export default {
+  init: (editor) => {
+    editor.componentsActions.addProvider({
+      getActions: components => [new TableActionsComponentsAction(components,
+          editor, config)]
+    });
   }
-  restClient.post(config);
 };

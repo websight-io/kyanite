@@ -14,25 +14,28 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import {useActionRef} from 'websight-pages-editor-view/actions/common.js';
-import {performTableRestAction} from './common.js';
+import TableActionsComponentsAction
+  from "../actions/TableActionsComponentsAction.js";
 
-const DeleteTableColumnAction = React.forwardRef((props, ref) => {
-  const {resourcePath} = props;
-  useActionRef({
-    execute: ({
-      editModeStore,
-    }) => performTableRestAction(editModeStore, resourcePath, 'delete-table-column'),
-  }, ref);
-  return null;
-});
-
-const action = {
-  data: {
-    name: 'Delete column',
-    icon: 'remove_road',
+const config = {
+  name: 'deleteTableRow',
+  ranking: 1700,
+  metadata: {
+    title: 'Delete row',
+    icon: 'delete_sweep',
   },
-  actionComponent: DeleteTableColumnAction,
+  action: 'delete-table-row',
+  allowedComponents: [
+    "/apps/bulma/components/table/tableheadcell",
+    "/apps/bulma/components/table/tablecell"
+  ]
 };
-export default action;
+
+export default {
+  init: (editor) => {
+    editor.componentsActions.addProvider({
+      getActions: components => [new TableActionsComponentsAction(components,
+          editor, config)]
+    });
+  }
+};

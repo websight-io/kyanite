@@ -22,7 +22,7 @@ module.exports = {
   'overrides': [
   ],
   'parserOptions': {
-    'ecmaVersion': '2018',
+    'ecmaVersion': 'latest',
     'sourceType': 'module',
   },
   'plugins': [

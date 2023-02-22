@@ -14,26 +14,29 @@
  * limitations under the License.
  */
 
-import React from 'react';
-import {useActionRef} from 'websight-pages-editor-view/actions/common.js';
-import {performTableRestAction} from './common.js';
+import TableActionsComponentsAction
+  from "../actions/TableActionsComponentsAction.js";
 
-const AddTableColumnBeforeAction = React.forwardRef((props, ref) => {
-  const {resourcePath} = props;
-  useActionRef({
-    execute: ({
-      editModeStore,
-    }) => performTableRestAction(editModeStore, resourcePath,
-        'add-table-column', true),
-  }, ref);
-  return null;
-});
-
-const action = {
-  data: {
-    name: 'Add column before',
+const config = {
+  name: 'addTableColumnBefore',
+  ranking: 1200,
+  metadata: {
+    title: 'Add column before',
     icon: 'keyboard_arrow_left',
   },
-  actionComponent: AddTableColumnBeforeAction,
+  action: 'add-table-column',
+  insertBefore: true,
+  allowedComponents: [
+    "/apps/bulma/components/table/tableheadcell",
+    "/apps/bulma/components/table/tablecell"
+  ]
 };
-export default action;
+
+export default {
+  init: (editor) => {
+    editor.componentsActions.addProvider({
+      getActions: components => [new TableActionsComponentsAction(components,
+          editor, config)]
+    });
+  }
+};

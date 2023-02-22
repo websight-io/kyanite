@@ -14,18 +14,29 @@
  * limitations under the License.
  */
 
-import RestClient from 'restclient';
+import TableActionsComponentsAction
+  from "../actions/TableActionsComponentsAction.js";
 
-export const performTableRestAction = (editor, resourcePath, action,
-    insertBefore) => {
-  const restClient = new RestClient('bulma-table-service');
-  const config = {
-    resourcePath,
-    action,
-    onSuccess: () => editor.refreshComponentTree()
-  };
-  if (insertBefore !== 'undefined') {
-    config.data = {insertBefore};
+const config = {
+  name: 'addTableColumn',
+  ranking: 1300,
+  metadata: {
+    title: 'Add column',
+    icon: 'keyboard_arrow_right',
+  },
+  action: 'add-table-column',
+  insertBefore: false,
+  allowedComponents: [
+    "/apps/bulma/components/table/tableheadcell",
+    "/apps/bulma/components/table/tablecell"
+  ]
+};
+
+export default {
+  init: (editor) => {
+    editor.componentsActions.addProvider({
+      getActions: components => [new TableActionsComponentsAction(components,
+          editor, config)]
+    });
   }
-  restClient.post(config);
 };

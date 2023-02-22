@@ -14,18 +14,27 @@
  * limitations under the License.
  */
 
-import RestClient from 'restclient';
+package pl.ds.bulma.fragments;
 
-export const performTableRestAction = (editor, resourcePath, action,
-    insertBefore) => {
-  const restClient = new RestClient('bulma-table-service');
-  const config = {
-    resourcePath,
-    action,
-    onSuccess: () => editor.refreshComponentTree()
-  };
-  if (insertBefore !== 'undefined') {
-    config.data = {insertBefore};
+import org.osgi.service.component.annotations.Component;
+import pl.ds.websight.fragments.registry.WebFragment;
+
+@Component
+public class DeleteTableColumnFragment implements WebFragment {
+
+  @Override
+  public String getKey() {
+    return "websight.editor.spi.extension";
   }
-  restClient.post(config);
-};
+
+  @Override
+  public String getFragment() {
+    return "/apps/bulma-table-view/web-resources/extensions/DeleteTableColumnExtension.js";
+  }
+
+  @Override
+  public int getRanking() {
+    return 1600;
+  }
+
+}
