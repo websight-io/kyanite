@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { selectors, testIds } from '../support/consts';
+import { selectors, testIds } from '../../support/consts';
 
 const paths = {
   level: 'ComponentOverlay_pagecontainer/level_3'
