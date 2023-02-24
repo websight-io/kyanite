@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../support/consts';
 
 const paths = {
-  hero: 'ComponentOverlay_pagecontainer/hero'
+  hero: 'ComponentOverlay_/content/bulma-tests/pages/hero/jcr:content/pagecontainer/hero'
 };
 
 describe('Hero component', function () {

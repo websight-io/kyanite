@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../support/consts';
 
 const paths = {
-  level: 'ComponentOverlay_pagecontainer/level_3'
+  level: 'ComponentOverlay_/content/bulma-tests/pages/level/jcr:content/pagecontainer/level_3'
 };
 
 describe('Level component', function () {
