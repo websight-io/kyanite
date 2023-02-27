@@ -4,7 +4,7 @@
   jcr:primaryType="ws:Page">
   <jcr:content
     jcr:primaryType="ws:PageContent"
-    jcr:title="Hero"
+    jcr:title="Section"
     sling:resourceType="bulma/components/page"
     ws:template="/apps/bulma/templates/basicpage">
     <pagecontainer
