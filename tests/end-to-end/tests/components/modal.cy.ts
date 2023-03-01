@@ -15,7 +15,7 @@
  */
 
 const paths = {
-  modal: 'ComponentOverlay_/apps/websight/index.html/content/bulma-tests/pages/modal/pagecontainer/modal'
+  modal: 'ComponentOverlay_/content/bulma-tests/pages/modal/jcr:content/pagecontainer/modal'
 };
 
 describe('Modal component', function () {

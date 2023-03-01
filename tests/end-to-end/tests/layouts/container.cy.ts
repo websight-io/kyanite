@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  container: 'ComponentOverlay_pagecontainer/container'
+  container: 'ComponentOverlay_/content/bulma-tests/pages/container/jcr:content/pagecontainer/container'
 };
 
 describe('Container layout', function () {

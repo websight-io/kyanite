@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  dropdown: 'ComponentOverlay_pagecontainer/dropdown'
+  dropdown: 'ComponentOverlay_/content/bulma-tests/pages/dropdown/jcr:content/pagecontainer/dropdown'
 };
 
 describe('Dropdown component', function () {

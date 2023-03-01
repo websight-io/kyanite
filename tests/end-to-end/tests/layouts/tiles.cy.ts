@@ -17,9 +17,9 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  tiles: 'ComponentOverlay_pagecontainer/tiles',
-  tileParent: 'ComponentOverlay_pagecontainer/tiles/tile1/tile1/tile2',
-  tileChild: 'ComponentOverlay_pagecontainer/tiles/tile1/tile1/tile2/tile1'
+  tiles: 'ComponentOverlay_/content/bulma-tests/pages/tiles/jcr:content/pagecontainer/tiles',
+  tileParent: 'ComponentOverlay_/content/bulma-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2',
+  tileChild: 'ComponentOverlay_/content/bulma-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2/tile1'
 };
 
 describe('Tiles layout', function () {

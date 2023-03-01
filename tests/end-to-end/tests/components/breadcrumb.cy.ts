@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  breadcrumb: 'ComponentOverlay_pagecontainer/breadcrumb'
+  breadcrumb: 'ComponentOverlay_/content/bulma-tests/pages/breadcrumb/jcr:content/pagecontainer/breadcrumb'
 };
 
 describe('Breadcrumb component', function () {

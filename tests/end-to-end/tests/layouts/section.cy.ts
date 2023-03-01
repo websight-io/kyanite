@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  section: 'ComponentOverlay_pagecontainer/section'
+  section: 'ComponentOverlay_/content/bulma-tests/pages/section/jcr:content/pagecontainer/section'
 };
 
 describe('Section layout', function () {

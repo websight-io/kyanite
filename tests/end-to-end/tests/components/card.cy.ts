@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  card: 'ComponentOverlay_pagecontainer/card'
+  card: 'ComponentOverlay_/content/bulma-tests/pages/card/jcr:content/pagecontainer/card'
 };
 
 describe('Card component', function () {
