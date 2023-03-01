@@ -15,74 +15,31 @@
  */
 
 import '@4tw/cypress-drag-drop';
+import { SelectionMode } from './types';
+
 
 /**
  * Adds support for '/' in testId
  */
 const prepareTestId = (testId: string) => testId.replaceAll('/', '\\/');
 
-Cypress.Commands.add('getByTestId', (testId) => {
-  return cy.get(`[data-testid=${prepareTestId(testId)}]`);
+Cypress.Commands.addQuery('getByTestId',
+    (testId: string, selectionMode = SelectionMode.FULL_MATCH) => {
+  const fixedTextId = prepareTestId(testId);
+  const getFn = cy.now('get', `[data-testid${selectionMode}="${fixedTextId}"]`);
+  return () => {
+    return getFn(cy);
+  };
 });
 
-Cypress.Commands.add('getPageIframe', () => {
-  return cy
-    .get(`.page-editor iframe`)
-    .its('0.contentDocument')
-    .should('exist')
-    .its('body')
-    .should('not.be.undefined')
-    .then(cy.wrap);
+Cypress.Commands.addQuery('findByTestId',
+    (testId: string, selectionMode = SelectionMode.FULL_MATCH) => {
+  const fixedTextId = prepareTestId(testId);
+  const getFn = cy.now('find', `[data-testid${selectionMode}="${fixedTextId}"]`);
+  return (subject) => {
+    return getFn(subject);
+  };
 });
-
-Cypress.Commands.add(
-  'findByTestId',
-  {
-    prevSubject: true
-  },
-  (subject, testId) => {
-    return subject.find(`[data-testid=${prepareTestId(testId)}]`);
-  }
-);
-
-Cypress.Commands.add(
-  'dragByTestId',
-  {
-    prevSubject: 'element'
-  },
-  (subject, targetTestId) => {
-    cy.wrap(subject).drag(`[data-testid=${prepareTestId(targetTestId)}]`);
-  }
-);
-
-Cypress.Commands.add('listByTestIdPrefix', (testIdPrefix) => {
-  return cy.get(`[data-testid^=${prepareTestId(testIdPrefix)}_]`);
-});
-
-Cypress.Commands.add(
-  'saveDataAttrAsNumber',
-  {
-    prevSubject: 'element'
-  },
-  (subject, attrName: string, alias: string) => {
-    cy.wrap(subject).invoke('attr', attrName).then(parseInt).as(alias);
-  }
-);
-
-Cypress.Commands.add(
-  'shouldAttrAsNumber',
-  {
-    prevSubject: 'element'
-  },
-  (subject, attrName: string, chainer: string, alias: string) => {
-    cy.get(`@${alias}`).then((valueToCompareWith) => {
-      cy.wrap(subject)
-        .invoke('attr', attrName)
-        .then(parseInt)
-        .should(chainer, valueToCompareWith);
-    });
-  }
-);
 
 Cypress.Commands.add('login', () => {
   const authUrl = `${
