@@ -36,6 +36,7 @@ describe('Dropdown component', function () {
     );
 
     cy.getByTestId(paths.dropdown)
+    .should('be.visible')
     .click()
     .find(selectors.overlayName)
     .should('contain.text', 'Dropdown');
