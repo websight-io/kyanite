@@ -36,8 +36,7 @@ describe('Breadcrumb component', function () {
     );
 
     cy.getByTestId(paths.breadcrumb)
-    .should('be.visible')
-    .click({force: true})
+    .click()
     .find(selectors.overlayName)
     .should('contain.text', 'Breadcrumb');
 
