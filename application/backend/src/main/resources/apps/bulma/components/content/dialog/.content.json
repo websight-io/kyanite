@@ -5,11 +5,18 @@
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
-      "text": {
+      "dialogText": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "text",
         "label": "Text",
         "ws:disallowedContext": ["edit:panel"],
+        "required": true
+      },
+      "panelText": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "text",
+        "label": "Text",
+        "ws:disallowedContext": ["edit:dialog"],
         "required": true
       },
       "size": {
