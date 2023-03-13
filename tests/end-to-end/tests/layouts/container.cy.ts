@@ -42,7 +42,8 @@ describe('Container layout', function () {
 
     cy.getByTestId(testIds.editIcon).click({ force: true });
 
-    cy.get('div[id^="containerStyle-uid"]').click();
+    cy.getByTestId('ModalDialog_Container')
+      .find('div[id^="containerStyle-uid"]').click();
     cy.contains('Full hd').click({ force: true });
 
     cy.getByTestId(testIds.dialogSubmitButton).click();

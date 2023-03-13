@@ -42,17 +42,26 @@ describe('Card component', function () {
 
     cy.getByTestId(testIds.editIcon).click({ force: true });
 
-    cy.getByTestId('Input_Cardheader').clear().type('Card header');
+    cy.getByTestId('ModalDialog_Card')
+      .findByTestId('Input_Cardheader').clear().type('Card header');
 
-    cy.getByTestId('dialogTab_Image').click();
-    cy.getByTestId('Input_Alttext').clear().type('Alt text');
-    cy.getByTestId('Input_Usethisifyouwantalinktoimagefromweb').clear().type('/content/bulma/assets/images/personal/PortfolioForum.png');
-    cy.get('div[class^="Input_Imageratio__control"]').click();
+    cy.getByTestId('ModalDialog_Card')
+      .findByTestId('dialogTab_Image').click();
+    cy.getByTestId('ModalDialog_Card')
+      .findByTestId('Input_Alttext').clear().type('Alt text');
+    cy.getByTestId('ModalDialog_Card')
+      .findByTestId('Input_Usethisifyouwantalinktoimagefromweb')
+        .clear().type('/content/bulma/assets/images/personal/PortfolioForum.png');
+    cy.getByTestId('ModalDialog_Card')
+      .find('div[class^="Input_Imageratio__control"]').click();
     cy.contains('16 by 9').click({ force: true });
 
-    cy.getByTestId('dialogTab_Footer').click();
-    cy.getByTestId('Button_Multifield_Add').click({ force: true });
-    cy.getByTestId('Input_Label').clear().type('Card footer label');
+    cy.getByTestId('ModalDialog_Card')
+      .findByTestId('dialogTab_Footer').click();
+    cy.getByTestId('ModalDialog_Card')
+      .findByTestId('Button_Multifield_Add').click({ force: true });
+    cy.getByTestId('ModalDialog_Card')
+      .findByTestId('Input_Label').clear().type('Card footer label');
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
 

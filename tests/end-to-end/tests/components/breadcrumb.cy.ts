@@ -42,16 +42,21 @@ describe('Breadcrumb component', function () {
 
     cy.getByTestId(testIds.editIcon).click({ force: true });
 
-    cy.get('div[id^="separator-uid"]').click();
+    cy.getByTestId('ModalDialog_Breadcrumb')
+      .find('div[id^="separator-uid"]').click();
     cy.contains('Bullet').click({ force: true });
 
-    cy.get('div[id^="size-uid"]').click();
+    cy.getByTestId('ModalDialog_Breadcrumb')
+      .find('div[id^="size-uid"]').click();
     cy.contains('Medium').click({ force: true });
 
-    cy.getByTestId('RadioElement_is-right').click();
+    cy.getByTestId('ModalDialog_Breadcrumb')
+      .findByTestId('RadioElement_is-right').click();
 
-    cy.getByTestId('Button_Multifield_Add').click({ force: true });
-    cy.getByTestId('Input_Label').clear().type('Label');
+    cy.getByTestId('ModalDialog_Breadcrumb')
+      .findByTestId('Button_Multifield_Add').click({ force: true });
+    cy.getByTestId('ModalDialog_Breadcrumb')
+      .findByTestId('Input_Label').clear().type('Label');
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
 

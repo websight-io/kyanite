@@ -42,16 +42,23 @@ describe('Dropdown component', function () {
 
     cy.getByTestId(testIds.editIcon).click({ force: true });
 
-    cy.getByTestId('Input_Labelofadropdown').clear().type('Label');
+    cy.getByTestId('ModalDialog_Dropdown')
+      .findByTestId('Input_Labelofadropdown').clear().type('Label');
 
-    cy.getByTestId('Input_Hoverable--checkbox-label').click();
-    cy.getByTestId('Input_RightAligned--checkbox-label').click();
-    cy.getByTestId('Input_Revertexpandingdirection--checkbox-label').click();
+    cy.getByTestId('ModalDialog_Dropdown')
+      .findByTestId('Input_Hoverable--checkbox-label').click();
+    cy.getByTestId('ModalDialog_Dropdown')
+      .findByTestId('Input_RightAligned--checkbox-label').click();
+    cy.getByTestId('ModalDialog_Dropdown')
+      .findByTestId('Input_Revertexpandingdirection--checkbox-label').click();
 
 
-    cy.getByTestId('Button_Multifield_Add').click({ force: true });
-    cy.getByTestId('Input_Itemlabel').clear().type('Item 1');
-    cy.getByTestId(testIds.dialogSubmitButton).click();
+    cy.getByTestId('ModalDialog_Dropdown')
+      .findByTestId('Button_Multifield_Add').click({ force: true });
+    cy.getByTestId('ModalDialog_Dropdown')
+      .findByTestId('Input_Itemlabel').clear().type('Item 1');
+    cy.getByTestId('ModalDialog_Dropdown')
+      .findByTestId(testIds.dialogSubmitButton).click();
 
     cy.wait('@saveProperties');
 
