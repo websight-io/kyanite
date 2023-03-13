@@ -17,7 +17,8 @@
         "name": "text",
         "label": "Text",
         "ws:disallowedContext": ["edit:dialog"],
-        "required": true
+        "required": true,
+        "configuration": "wcm/dialogs/components/richtext/configuration/sidepanel"
       },
       "colspan": {
         "sling:resourceType": "wcm/dialogs/components/numberfield",

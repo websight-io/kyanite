@@ -30,7 +30,8 @@
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "consentText",
         "label": "Consent Text",
-        "ws:disallowedContext": ["edit:dialog"]
+        "ws:disallowedContext": ["edit:dialog"],
+        "configuration": "wcm/dialogs/components/richtext/configuration/sidepanel"
       }
     }
   }
