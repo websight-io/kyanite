@@ -42,10 +42,12 @@ describe('Breadcrumb component', function () {
 
     cy.getByTestId(testIds.editIcon).click({ force: true });
 
-    cy.getByTestId('ModalDialog_Breadcrumb').find('div[id^="separator-uid"]').click();
+    cy.getByTestId('ModalDialog_Breadcrumb')
+      .find('div[id^="separator-uid"]').click();
     cy.contains('Bullet').click({ force: true });
 
-    cy.getByTestId('ModalDialog_Breadcrumb').find('div[id^="size-uid"]').click();
+    cy.getByTestId('ModalDialog_Breadcrumb')
+      .find('div[id^="size-uid"]').click();
     cy.contains('Medium').click({ force: true });
 
     cy.getByTestId('ModalDialog_Breadcrumb')
