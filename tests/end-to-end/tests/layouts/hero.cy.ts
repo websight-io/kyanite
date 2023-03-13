@@ -49,10 +49,12 @@ describe('Hero component', function () {
 
     cy.getByTestId(testIds.editIcon).click({ force: true });
 
-    cy.get('div[id^="size-uid"]').click();
+    cy.getByTestId('ModalDialog_Hero')
+      .find('div[id^="size-uid"]').click();
     cy.contains('Large').click({ force: true });
 
-    cy.get('div[id^="variant-uid"]').click();
+    cy.getByTestId('ModalDialog_Hero')
+      .find('div[id^="variant-uid"]').click();
     cy.contains('Link').click({ force: true });
 
     cy.percySnapshotDialog('Hero dialog');

@@ -42,9 +42,11 @@ describe('Section layout', function () {
 
     cy.getByTestId(testIds.editIcon).click({ force: true });
 
-    cy.getByTestId('Input_Sectionid').clear().type('section1');
+    cy.getByTestId('ModalDialog_Section')
+      .findByTestId('Input_Sectionid').clear().type('section1');
 
-    cy.get('div[id^="size-uid"]').click();
+    cy.getByTestId('ModalDialog_Section')
+      .find('div[id^="size-uid"]').click();
     cy.contains('Half height').click({ force: true });
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
