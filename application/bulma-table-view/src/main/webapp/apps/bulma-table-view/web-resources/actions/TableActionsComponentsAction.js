@@ -40,8 +40,7 @@ export default class TableActionsComponentsAction {
   }
 
   execute() {
-    performTableRestAction(this.editor,
-        `${this.editor.editedPage.contentPath}/${[...this.components][0].path}`,
+    performTableRestAction(this.editor, [...this.components][0].path,
         this.config?.action, this.config?.insertBefore);
   }
 };
