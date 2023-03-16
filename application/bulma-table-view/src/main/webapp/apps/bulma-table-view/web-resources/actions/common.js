@@ -16,13 +16,24 @@
 
 import RestClient from 'restclient';
 
-export const performTableRestAction = (editor, resourcePath, action,
+function findTable(component) {
+  while (component.parent) {
+    if (component.domNodes[0].tagName === 'TABLE')
+      return component;
+    component = component.parent;
+  }
+  return null;
+}
+
+export const performTableRestAction = (editor, components, action,
     insertBefore) => {
   const restClient = new RestClient('bulma-table-service');
+  const resourcePath = [...components][0].path;
+  const table = findTable([...components][0]);
   const config = {
     resourcePath,
     action,
-    onSuccess: () => editor.refreshComponentTree()
+    onSuccess: () => editor.refreshComponentTree(new Set([table]))
   };
   if (insertBefore !== 'undefined') {
     config.data = {insertBefore};
