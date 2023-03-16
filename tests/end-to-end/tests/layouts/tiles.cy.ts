@@ -50,10 +50,12 @@ describe('Tiles layout', function () {
 
     cy.getByTestId(testIds.editIcon).click({ force: true });
 
-    cy.get('div[id^="size-uid"]').click();
+    cy.getByTestId('ModalDialog_Parenttile')
+      .find('div[id^="size-uid"]').click();
     cy.contains('Is 7').click({ force: true });
 
-    cy.getByTestId('Input_Vertical').click();
+    cy.getByTestId('ModalDialog_Parenttile')
+      .findByTestId('Input_Vertical').click();
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
 
@@ -84,10 +86,12 @@ describe('Tiles layout', function () {
 
     cy.getByTestId(testIds.editIcon).click({ force: true });
 
-    cy.get('div[id^="type-uid"]').click();
+    cy.getByTestId('ModalDialog_Childtile')
+      .find('div[id^="type-uid"]').click();
     cy.contains('Notification').click({ force: true });
 
-    cy.get('div[id^="variant-uid"]').click();
+    cy.getByTestId('ModalDialog_Childtile')
+      .find('div[id^="variant-uid"]').click();
     cy.contains('Warning').click({ force: true });
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
