@@ -18,7 +18,7 @@
         "label": "Text",
         "ws:disallowedContext": ["edit:dialog"],
         "required": true,
-        "configuration": "wcm/dialogs/components/richtext/configuration/sidepanel"
+        "configuration": "wcm/dialogs/components/richtext/configurations/compact"
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
