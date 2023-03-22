@@ -27,17 +27,14 @@ describe('Tiles layout', function () {
     cy.login();
   });
 
-  it('renders correctly in edit mode', function () {
+  beforeEach('visit tiles page', function () {
 
     cy.visit(
         '/apps/websight/index.html/content/bulma-tests/pages/tiles::editor'
     );
-
-   testTileParent();
-   testTileChild();
   });
 
-  function testTileParent() {
+  it ('tile parent renders correctly in edit mode', function () {
     cy.intercept(
         'POST',
         '**/pagecontainer/tiles/tile1/tile1/tile2.websight-dialogs-service.save-properties.action'
@@ -51,11 +48,11 @@ describe('Tiles layout', function () {
     cy.getByTestId(testIds.editIcon).click({ force: true });
 
     cy.getByTestId('ModalDialog_Parenttile')
-      .find('div[id^="size-uid"]').click();
+    .find('div[id^="size-uid"]').click();
     cy.contains('Is 7').click({ force: true });
 
     cy.getByTestId('ModalDialog_Parenttile')
-      .findByTestId('Input_Vertical').click();
+    .findByTestId('Input_Vertical').click();
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
 
@@ -71,9 +68,9 @@ describe('Tiles layout', function () {
       'sling:resourceType': 'bulma/components/tiles/tileparent',
       'jcr:primaryType': 'nt:unstructured'
     });
-  }
+  });
 
-  function testTileChild() {
+  it ('tile parent renders correctly in edit mode', function () {
     cy.intercept(
         'POST',
         '**/pagecontainer/tiles/tile1/tile1/tile2/tile1.websight-dialogs-service.save-properties.action'
@@ -87,11 +84,11 @@ describe('Tiles layout', function () {
     cy.getByTestId(testIds.editIcon).click({ force: true });
 
     cy.getByTestId('ModalDialog_Childtile')
-      .find('div[id^="type-uid"]').click();
+    .find('div[id^="type-uid"]').click();
     cy.contains('Notification').click({ force: true });
 
     cy.getByTestId('ModalDialog_Childtile')
-      .find('div[id^="variant-uid"]').click();
+    .find('div[id^="variant-uid"]').click();
     cy.contains('Warning').click({ force: true });
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
@@ -108,5 +105,5 @@ describe('Tiles layout', function () {
       'sling:resourceType': 'bulma/components/tiles/tilechild',
       'jcr:primaryType': 'nt:unstructured'
     });
-  }
+  });
 });

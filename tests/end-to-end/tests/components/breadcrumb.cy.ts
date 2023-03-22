@@ -56,7 +56,7 @@ describe('Breadcrumb component', function () {
     cy.getByTestId('ModalDialog_Breadcrumb')
       .findByTestId('Button_Multifield_Add').click({ force: true });
     cy.getByTestId('ModalDialog_Breadcrumb')
-      .findByTestId('Input_Label').clear().type('Label');
+      .findByTestId('Input_elements/0/label').clear().type('Label');
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
 
