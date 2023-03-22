@@ -61,7 +61,7 @@ describe('Card component', function () {
     cy.getByTestId('ModalDialog_Card')
       .findByTestId('Button_Multifield_Add').click({ force: true });
     cy.getByTestId('ModalDialog_Card')
-      .findByTestId('Input_Label').clear().type('Card footer label');
+      .findByTestId('Input_urls/0/label').clear().type('Card footer label');
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
 

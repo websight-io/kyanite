@@ -56,7 +56,7 @@ describe('Dropdown component', function () {
     cy.getByTestId('ModalDialog_Dropdown')
       .findByTestId('Button_Multifield_Add').click({ force: true });
     cy.getByTestId('ModalDialog_Dropdown')
-      .findByTestId('Input_Itemlabel').clear().type('Item 1');
+      .findByTestId('Input_items/0/label').clear().type('Item 1');
     cy.getByTestId('ModalDialog_Dropdown')
       .findByTestId(testIds.dialogSubmitButton).click();
 
