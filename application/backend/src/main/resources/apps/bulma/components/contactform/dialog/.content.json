@@ -20,11 +20,18 @@
         "name": "submitLabel",
         "label": "Label of Submit action"
       },
-      "consentText": {
+      "dialogConsentText": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "consentText",
         "label": "Consent Text",
         "ws:disallowedContext": ["edit:panel"]
+      },
+      "panelConsentText": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "consentText",
+        "label": "Consent Text",
+        "ws:disallowedContext": ["edit:dialog"],
+        "configuration": "wcm/dialogs/components/richtext/configurations/compact"
       }
     }
   }
