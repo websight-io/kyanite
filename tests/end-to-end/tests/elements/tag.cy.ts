@@ -37,7 +37,7 @@ describe('Tag component', function () {
     );
 
     cy.getByTestId(paths.tag)
-    .click()
+    .click({force: true})
     .find(selectors.overlayName)
     .should('contain.text', 'Tag');
 
