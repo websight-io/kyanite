@@ -61,6 +61,8 @@ class ButtonComponentTest {
     assertThat(model.getLabel()).isEqualTo("Button");
     assertThat(model.getType()).isEqualTo("anchor");
     assertThat(model.getVariant()).isEqualTo("is-white");
+    assertThat(model.isAddIcon()).isTrue();
+    assertThat(model.getIconPosition()).isEqualTo("right");
     assertThat(model.getSize()).isEqualTo("is-medium");
   }
 }

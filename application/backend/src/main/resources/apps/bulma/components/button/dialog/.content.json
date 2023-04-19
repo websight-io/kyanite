@@ -88,6 +88,22 @@
       },
       "iconContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
+        "iconPosition" : {
+          "sling:resourceType": "wcm/dialogs/components/select",
+          "label": "Icon position",
+          "name": "iconPosition",
+          "defaultValue": "left",
+          "left": {
+            "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+            "label": "Left",
+            "value": "left"
+          },
+          "right": {
+            "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+            "label": "Right",
+            "value": "right"
+          }
+        },
         "selectOrType": {
           "sling:resourceType": "wcm/dialogs/components/radio",
           "name": "selectOrType",

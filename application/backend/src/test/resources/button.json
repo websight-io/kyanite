@@ -8,6 +8,8 @@
     "label": "Button",
     "type": "anchor",
     "variant": "is-white",
-    "size": "is-medium"
+    "size": "is-medium",
+    "addIcon": true,
+    "iconPosition": "right"
   }
 }

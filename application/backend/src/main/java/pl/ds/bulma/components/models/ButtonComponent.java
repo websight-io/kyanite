@@ -88,6 +88,11 @@ public class ButtonComponent {
 
   @Inject
   @Getter
+  @Default(values = "left")
+  private String iconPosition;
+
+  @Inject
+  @Getter
   @Default(values = StringUtils.EMPTY)
   private String actionType;
 
