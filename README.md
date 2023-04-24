@@ -17,6 +17,7 @@ To use this project on existing environment you have to use a command from secti
 - `application` - components related code and scripts
   - `backend` - backend code and scripts
   - `frontend` - frontend code and scripts
+  - `extensions` - directory for extension modules
 - `content` - sample content built with delivered components
 - `distribution` - builds a distribution of the project - instance feature model and docker images for runtime components
 - `environment` - contains scripts and files used to build environment
