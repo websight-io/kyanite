@@ -10,6 +10,7 @@
     "variant": "is-white",
     "size": "is-medium",
     "addIcon": true,
-    "iconPosition": "right"
+    "icon": "left-icon",
+    "iconRight": "right-icon"
   }
 }

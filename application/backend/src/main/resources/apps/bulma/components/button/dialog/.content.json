@@ -88,22 +88,6 @@
       },
       "iconContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
-        "iconPosition" : {
-          "sling:resourceType": "wcm/dialogs/components/select",
-          "label": "Icon position",
-          "name": "iconPosition",
-          "defaultValue": "left",
-          "left": {
-            "sling:resourceType": "wcm/dialogs/components/select/selectitem",
-            "label": "Left",
-            "value": "left"
-          },
-          "right": {
-            "sling:resourceType": "wcm/dialogs/components/select/selectitem",
-            "label": "Right",
-            "value": "right"
-          }
-        },
         "selectOrType": {
           "sling:resourceType": "wcm/dialogs/components/radio",
           "name": "selectOrType",
@@ -145,6 +129,55 @@
             "condition": {
               "sourceName": "selectOrType",
               "values": "type"
+            }
+          }
+        },
+
+        "selectOrTypeRight": {
+          "sling:resourceType": "wcm/dialogs/components/radio",
+          "name": "selectOrTypeRight",
+          "label": "Select right icon or type it",
+          "required": true,
+          "selectRight": {
+            "sling:resourceType": "wcm/dialogs/components/radio/option",
+            "label": "Select it",
+            "value": "selectRight",
+            "selected": true
+          },
+          "typeRight": {
+            "sling:resourceType": "wcm/dialogs/components/radio/option",
+            "label": "Type it",
+            "value": "typeRight"
+          }
+        },
+        "includedRight": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "iconRight": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/apps/bulma/components/common/icon",
+              "label": "Right icon",
+              "name": "iconRight"
+            }
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "selectOrTypeRight",
+              "values": "selectRight"
+            }
+          }
+        },
+        "typedRight": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "iconRight": {
+            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "name": "iconRight",
+            "label": "Name of the right icon from font awesome"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "selectOrTypeRight",
+              "values": "typeRight"
             }
           }
         },

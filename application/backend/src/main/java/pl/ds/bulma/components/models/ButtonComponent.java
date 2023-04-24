@@ -40,8 +40,11 @@ public class ButtonComponent {
 
   @Inject
   @Getter
-  @Default(values = "Label")
   private String icon;
+
+  @Inject
+  @Getter
+  private String iconRight;
 
   @Inject
   @Getter
@@ -85,11 +88,6 @@ public class ButtonComponent {
   @Inject
   @Getter
   private boolean addIcon;
-
-  @Inject
-  @Getter
-  @Default(values = "left")
-  private String iconPosition;
 
   @Inject
   @Getter
