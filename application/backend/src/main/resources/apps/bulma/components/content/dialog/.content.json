@@ -10,7 +10,33 @@
         "name": "text",
         "label": "Text",
         "ws:disallowedContext": ["edit:panel"],
-        "required": true
+        "required": true,
+        "configuration": {
+          "sling:resourceSuperType": "wcm/dialogs/components/richtext/configuration",
+          "color": {
+            "sling:resourceType": "extensions/dialogs/components/richtext/ui/color",
+            "title": "Color picker",
+            "icon": "",
+            "plugin": {
+              "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color",
+              "colors": [
+                {
+                  "name": "has-text-primary",
+                  "value": "#00d1b2"
+                },
+                {
+                  "name": "has-text-link",
+                  "value": "#485fc7"
+                },
+                {
+                  "name": "has-text-info",
+                  "value": "#3e8ed0"
+                }
+              ]
+            },
+            "sling:orderBefore": "bulletlist"
+          }
+        }
       },
       "panelText": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
