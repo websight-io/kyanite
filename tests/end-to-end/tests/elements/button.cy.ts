@@ -128,6 +128,7 @@ describe('Button component', function () {
           'isRounded': 'true',
           'modalId': 'Modal ID',
           'sling:resourceType': 'bulma/components/button',
+          'selectOrTypeRight': 'selectRight',
           'actionType': 'open-modal',
           'selectOrType': 'select',
           'isLight': 'true'

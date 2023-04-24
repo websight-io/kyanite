@@ -15,53 +15,44 @@
   ~     limitations under the License.
   ~
 */-->
-
 <sly data-sly-use.model="pl.ds.bulma.components.models.ButtonComponent">
-  <sly data-sly-test="${model.type == 'button'}">
-    <sly data-sly-test.disabled="${model.isDisabled}">
-      <button class="button ${model.buttonClasses @ join=' '}" disabled>
-        <sly data-sly-test="${model.addIcon}">
-          <span class="icon">
-            <i class="${model.icon}"></i>
-          </span>
+    <sly data-sly-test="${model.type == 'button'}">
+        <sly data-sly-test.disabled="${model.isDisabled}">
+            <button class="button ${model.buttonClasses @ join=' '}" disabled>
+                <sly data-sly-use.template="./template.html"
+                     data-sly-call="${template.buttonContent @
+             label=model.label, addIcon=model.addIcon,
+             icon=model.icon, iconRight=model.iconRight}"></sly>
+            </button>
         </sly>
-        <span data-sly-unwrap="${model.label == ''}">${model.label}</span>
-      </button>
-    </sly>
-    <sly data-sly-test="${!disabled}">
-      <sly data-sly-test="${model.actionType == 'open-modal'}">
-        <button class="button js-modal-trigger ${model.buttonClasses @ join=' '}" data-target="${model.modalId}">
-          <sly data-sly-test="${model.addIcon}">
-          <span class="icon">
-            <i class="${model.icon}"></i>
-          </span>
-          </sly>
-          <span data-sly-unwrap="${model.label == ''}">${model.label}</span>
-        </button>
-      </sly>
+        <sly data-sly-test="${!disabled}">
+            <sly data-sly-test="${model.actionType == 'open-modal'}">
+                <button class="button js-modal-trigger ${model.buttonClasses @ join=' '}"
+                        data-target="${model.modalId}">
+                    <sly data-sly-use.template="./template.html"
+                         data-sly-call="${template.buttonContent @
+             label=model.label, addIcon=model.addIcon,
+             icon=model.icon, iconRight=model.iconRight}"></sly>
+                </button>
+            </sly>
 
-      <sly data-sly-test="${model.actionType != 'open-modal'}">
-        <button class="button ${model.buttonClasses @ join=' '}">
-          <sly data-sly-test="${model.addIcon}">
-          <span class="icon">
-            <i class="${model.icon}"></i>
-          </span>
-          </sly>
-          <span data-sly-unwrap="${model.label == ''}">${model.label}</span>
-        </button>
-      </sly>
-
+            <sly data-sly-test="${model.actionType != 'open-modal'}">
+                <button class="button ${model.buttonClasses @ join=' '}">
+                    <sly data-sly-use.template="./template.html"
+                         data-sly-call="${template.buttonContent @
+             label=model.label, addIcon=model.addIcon,
+             icon=model.icon, iconRight=model.iconRight}"></sly>
+                </button>
+            </sly>
+        </sly>
     </sly>
-  </sly>
-  <sly data-sly-test="${model.type == 'a'}">
-    <a href="${model.url}" class="button ${model.buttonClasses @ join=' '}"
-       target="${model.openInNewTab && model.url != '' ? '_blank' : ''}">
-      <sly data-sly-test="${model.addIcon}">
-        <span class="icon">
-          <i class="${model.icon}"></i>
-        </span>
-      </sly>
-      <span data-sly-unwrap="${model.label == ''}">${model.label}</span>
-    </a>
-  </sly>
+    <sly data-sly-test="${model.type == 'a'}">
+        <a href="${model.url}" class="button ${model.buttonClasses @ join=' '}"
+           target="${model.openInNewTab && model.url != '' ? '_blank' : ''}">
+            <sly data-sly-use.template="./template.html"
+                 data-sly-call="${template.buttonContent @
+             label=model.label, addIcon=model.addIcon,
+             icon=model.icon, iconRight=model.iconRight}"></sly>
+        </a>
+    </sly>
 </sly>

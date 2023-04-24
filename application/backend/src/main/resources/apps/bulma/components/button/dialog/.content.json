@@ -132,6 +132,55 @@
             }
           }
         },
+
+        "selectOrTypeRight": {
+          "sling:resourceType": "wcm/dialogs/components/radio",
+          "name": "selectOrTypeRight",
+          "label": "Select right icon or type it",
+          "required": true,
+          "selectRight": {
+            "sling:resourceType": "wcm/dialogs/components/radio/option",
+            "label": "Select it",
+            "value": "selectRight",
+            "selected": true
+          },
+          "typeRight": {
+            "sling:resourceType": "wcm/dialogs/components/radio/option",
+            "label": "Type it",
+            "value": "typeRight"
+          }
+        },
+        "includedRight": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "iconRight": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/apps/bulma/components/common/icon",
+              "label": "Right icon",
+              "name": "iconRight"
+            }
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "selectOrTypeRight",
+              "values": "selectRight"
+            }
+          }
+        },
+        "typedRight": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "iconRight": {
+            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "name": "iconRight",
+            "label": "Name of the right icon from font awesome"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "selectOrTypeRight",
+              "values": "typeRight"
+            }
+          }
+        },
         "ws:display": {
           "condition": {
             "sourceName": "addIcon",
