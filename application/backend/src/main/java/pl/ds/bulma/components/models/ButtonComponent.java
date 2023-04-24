@@ -70,6 +70,9 @@ public class ButtonComponent {
   private boolean isRounded;
 
   @Inject
+  private boolean isInverted;
+
+  @Inject
   private boolean isFullWidth;
 
   @Inject
@@ -119,6 +122,9 @@ public class ButtonComponent {
     }
     if (isRounded) {
       classes.add("is-rounded");
+    }
+    if (isInverted) {
+      classes.add("is-inverted");
     }
     if (isFullWidth) {
       classes.add("is-fullwidth");
