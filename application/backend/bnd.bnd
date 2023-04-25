@@ -1,2 +1,2 @@
-Sling-Bundle-Resources: /apps/bulma
+Sling-Bundle-Resources: /apps/bulma,/wcm/dialogs/components/richtext/configuration
 WebSight-Apps-WebRoot: /apps/bulma/web_root

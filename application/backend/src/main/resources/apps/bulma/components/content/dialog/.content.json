@@ -12,7 +12,7 @@
         "ws:disallowedContext": ["edit:panel"],
         "required": true,
         "configuration": {
-          "sling:resourceSuperType": "wcm/dialogs/components/richtext/configuration",
+          "sling:resourceSuperType": "wcm/dialogs/components/richtext",
           "color": {
             "sling:resourceType": "extensions/dialogs/components/richtext/ui/color",
             "title": "Color picker",
