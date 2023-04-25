@@ -1,25 +1,44 @@
 {
-  "sling:resourceSuperType": "wcm/dialogs/components/richtext/default",
+  "sling:resourceType": "wcm/dialogs/components/richtext/configuration",
+  "sling:resourceSuperType": "wcm/dialogs/components/richtext/configurations/default",
   "color": {
-    "sling:resourceType": "extensions/dialogs/components/richtext/ui/color",
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown",
     "title": "Color picker",
-    "icon": "",
-    "plugin": {
-      "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color",
-      "colors": [
-        {
-          "name": "has-text-primary",
-          "value": "#00d1b2"
-        },
-        {
-          "name": "has-text-link",
-          "value": "#485fc7"
-        },
-        {
-          "name": "has-text-info",
-          "value": "#3e8ed0"
-        }
-      ]
+    "default": {
+      "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
+      "title": "Default color",
+      "plugin": {
+        "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color",
+        "color": "default",
+        "name": ""
+      }
+    },
+    "primary": {
+      "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
+      "title": "Primary color",
+      "plugin": {
+        "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color",
+        "color": "hsl(204, 86%, 53%)",
+        "name": "has-text-primary"
+      }
+    },
+    "dark": {
+      "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
+      "title": "Dark color",
+      "plugin": {
+        "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color",
+        "color": "hsl(0, 0%, 21%)",
+        "name": "has-text-dark"
+      }
+    },
+    "light": {
+      "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
+      "title": "Light color",
+      "plugin": {
+        "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color",
+        "color": "hsl(0, 0%, 96%)",
+        "name": "has-text-light"
+      }
     },
     "sling:orderBefore": "bulletlist"
   }
