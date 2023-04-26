@@ -10,6 +10,8 @@
     "type": "subtitle",
     "element": "p",
     "size": "is-2",
+    "color": "has-text-black",
+    "shadow": "bis",
     "isSpaced": true
   }
 }
