@@ -61,6 +61,11 @@
         "name": "isRounded",
         "label": "Rounded"
       },
+      "isInverted": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isInverted",
+        "label": "Inverted"
+      },
       "isFullWidth": {
         "sling:resourceType": "wcm/dialogs/components/toggle",
         "name": "isFullWidth",
