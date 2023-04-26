@@ -2,43 +2,11 @@
   "sling:resourceType": "wcm/dialogs/components/richtext/configuration",
   "sling:resourceSuperType": "wcm/dialogs/components/richtext/configurations/default",
   "color": {
-    "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown",
-    "title": "Color picker",
-    "default": {
-      "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
-      "title": "Default color",
-      "plugin": {
-        "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color",
-        "color": "default",
-        "name": ""
-      }
-    },
-    "primary": {
-      "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
-      "title": "Primary color",
-      "plugin": {
-        "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color",
-        "color": "hsl(204, 86%, 53%)",
-        "name": "has-text-primary"
-      }
-    },
-    "dark": {
-      "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
-      "title": "Dark color",
-      "plugin": {
-        "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color",
-        "color": "hsl(0, 0%, 21%)",
-        "name": "has-text-dark"
-      }
-    },
-    "light": {
-      "sling:resourceType": "wcm/dialogs/components/richtext/ui/dropdown/dropdownitem",
-      "title": "Light color",
-      "plugin": {
-        "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color",
-        "color": "hsl(0, 0%, 96%)",
-        "name": "has-text-light"
-      }
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+    "title": "Color",
+    "icon": "format_color_text",
+    "plugin": {
+      "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color"
     },
     "sling:orderBefore": "bulletlist"
   }
