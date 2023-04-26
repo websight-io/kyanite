@@ -16,6 +16,8 @@
 
 package pl.ds.bulma.components.models;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
@@ -36,4 +38,46 @@ public class ContentComponent {
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String size;
+
+  @Inject
+  @Default(values = StringUtils.EMPTY)
+  private String color;
+
+  @Inject
+  @Default(values = StringUtils.EMPTY)
+  private String shade;
+
+  public String getTextColorVariant() {
+    List<String> blackAndWhiteColor = new ArrayList<>();
+    blackAndWhiteColor.add("has-text-black");
+    blackAndWhiteColor.add("has-text-white");
+    List<String> blackAndWhiteShade = new ArrayList<>();
+    blackAndWhiteShade.add("bis");
+    blackAndWhiteShade.add("ter");
+
+    List<String> greyColor = new ArrayList<>();
+    greyColor.add("has-text-grey");
+    List<String> greyShade = new ArrayList<>();
+    greyShade.add("light");
+    greyShade.add("lighter");
+    greyShade.add("dark");
+    greyShade.add("darker");
+
+    List<String> restColor = new ArrayList<>();
+    restColor.add("has-text-primary");
+    restColor.add("has-text-link");
+    restColor.add("has-text-info");
+    restColor.add("has-text-success");
+    restColor.add("has-text-success");
+    restColor.add("has-text-warning");
+    restColor.add("has-text-danger");
+    List<String> restShade = new ArrayList<>();
+    restShade.add("light");
+    restShade.add("dark");
+
+    return (blackAndWhiteColor.contains(color) && blackAndWhiteShade.contains(shade))
+      || (greyColor.contains(color) && greyShade.contains(shade))
+      || (restColor.contains(color) && restShade.contains(shade))
+      ? color + "-" + shade : color;
+  }
 }

@@ -48,6 +48,82 @@
             "values": "title"
           }
         }
+      },
+      "color": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/apps/bulma/components/common/text/color"
+      },
+      "shadeContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "blackAndWhiteShade": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "intensity": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "/apps/bulma/components/common/text/shade/blackandwhite"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "color",
+              "values": [
+                "has-text-black",
+                "has-text-white"
+              ]
+            }
+          }
+        },
+        "greyShade": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "intensity": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "/apps/bulma/components/common/text/shade/grey"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "color",
+              "values": [
+                "has-text-grey"
+              ]
+            }
+          }
+        },
+        "restShade": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "intensity": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "/apps/bulma/components/common/text/shade/rest"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "color",
+              "values": [
+                "has-text-primary",
+                "has-text-link",
+                "has-text-info",
+                "has-text-success",
+                "has-text-success",
+                "has-text-warning",
+                "has-text-danger"
+              ]
+            }
+          }
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "color",
+            "values": [
+              "has-text-black",
+              "has-text-white",
+              "has-text-grey",
+              "has-text-primary",
+              "has-text-link",
+              "has-text-info",
+              "has-text-success",
+              "has-text-success",
+              "has-text-warning",
+              "has-text-danger"
+            ]
+          }
+        }
       }
     }
   }

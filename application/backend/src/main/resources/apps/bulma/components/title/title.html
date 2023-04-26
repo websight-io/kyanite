@@ -17,7 +17,7 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.TitleComponent">
-  <h1 data-sly-element="${model.element}" class="${model.titleClasses @ join=' '}">
+  <h1 data-sly-element="${model.element}" class="${model.titleClasses @ join=' '} ${model.textColorVariant}">
     ${model.text}
   </h1>
 </sly>

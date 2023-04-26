@@ -1,0 +1,20 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "shade",
+  "label": "Shade",
+  "primary": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Primary",
+    "value": ""
+  },
+  "secondary": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Secondary",
+    "value": "bis"
+  },
+  "tertiary": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Tertiary",
+    "value": "ter"
+  }
+}
