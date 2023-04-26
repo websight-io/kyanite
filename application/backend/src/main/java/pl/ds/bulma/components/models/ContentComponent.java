@@ -27,6 +27,7 @@ import org.apache.sling.models.annotations.Model;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContentComponent {
 
+  public static final String TEXT_WEIGHT_DEFAULT = "has-text-weight-normal";
   @Inject
   @Getter
   @Default(values = "Content")
@@ -36,4 +37,9 @@ public class ContentComponent {
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String size;
+
+  @Inject
+  @Getter
+  @Default(values = TEXT_WEIGHT_DEFAULT)
+  private String textWeight;
 }
