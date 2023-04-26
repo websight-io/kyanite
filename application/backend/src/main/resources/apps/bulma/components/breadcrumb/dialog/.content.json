@@ -38,6 +38,10 @@
           "rootPath": "/content",
           "name": "url",
           "label": "URL"
+        },
+        "icon": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/apps/bulma/components/common/icon"
         }
       }
     }
