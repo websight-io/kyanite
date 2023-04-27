@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-import '@tiptap/extension-text-style'
-
-import { Extension } from '@tiptap/core'
+import '@tiptap/extension-text-style';
+import { Extension } from '@tiptap/core';
 
 export type ColorOptions = {
   types: string[],
@@ -38,7 +37,7 @@ export const CustomColor = Extension.create<ColorOptions>({
   addOptions() {
     return {
       types: ['textStyle'],
-    }
+    };
   },
 
   addGlobalAttributes() {
@@ -51,17 +50,17 @@ export const CustomColor = Extension.create<ColorOptions>({
             parseHTML: element => element.style.color?.replace(/['"]+/g, ''),
             renderHTML: attributes => {
               if (!attributes.color) {
-                return {}
+                return {};
               }
 
               return {
                 style: `color: ${attributes.color}`,
-              }
+              };
             },
           },
         },
       },
-    ]
+    ];
   },
 
   addCommands() {
@@ -69,20 +68,20 @@ export const CustomColor = Extension.create<ColorOptions>({
       setColor: color => ({ chain }) => {
         return chain()
           .setMark('textStyle', { color })
-          .run()
+          .run();
       },
       unsetColor: () => ({ chain }) => {
         return chain()
           .setMark('textStyle', { color: null })
           .removeEmptyTextStyle()
-          .run()
+          .run();
       },
       toggleColor: color => ({ chain }) => {
         return chain()
           .toggleMark('textStyle', { color })
           .removeEmptyTextStyle()
-          .run()
+          .run();
       },
-    }
+    };
   },
-})
+});
