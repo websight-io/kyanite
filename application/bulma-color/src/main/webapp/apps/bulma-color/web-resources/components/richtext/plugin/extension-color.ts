@@ -14,27 +14,26 @@
  * limitations under the License.
  */
 
-import '@tiptap/extension-text-style';
 import { Extension } from '@tiptap/core';
 
 export type ColorOptions = {
-  types: string[],
+  types: string[]
 }
 
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
     color: {
-      toggleColor: (color: string) => ReturnType
+      setColor: (color: string) => ReturnType
+      unsetColor: () => ReturnType
     }
   }
 }
 
 export const CustomColor = Extension.create<ColorOptions>({
   name: 'color',
-
   addOptions() {
     return {
-      types: ['textStyle'],
+      types: ['textCssClass']
     };
   },
 
@@ -45,14 +44,14 @@ export const CustomColor = Extension.create<ColorOptions>({
         attributes: {
           color: {
             default: null,
-            parseHTML: element => element.style.color?.replace(/['"]+/g, ''),
+            parseHTML: element => element.classList.value.replace(/['"]+/g, ''),
             renderHTML: attributes => {
               if (!attributes.color) {
                 return {};
               }
 
               return {
-                style: `color: ${attributes.color}`,
+                class: attributes.color
               };
             },
           },
@@ -63,17 +62,16 @@ export const CustomColor = Extension.create<ColorOptions>({
 
   addCommands() {
     return {
-      toggleColor: color => ({editor, chain}) => {
-        if (editor.isActive('textStyle')) {
-          return chain()
-            .setMark('textStyle', { color: null })
-            .removeEmptyTextStyle()
-            .run();
-        } else {
-          return chain()
-            .setMark('textStyle', { color: color })
-            .run();
-        }
+      unsetColor: () => ({chain}) => {
+        return chain()
+          .setMark('textCssClass', { color: null })
+          .removeEmptyTextCssClass()
+          .run();
+      },
+      setColor: color => ({chain}) => {
+        return chain()
+          .setMark('textCssClass', { color: color })
+          .run();
       },
     };
   },

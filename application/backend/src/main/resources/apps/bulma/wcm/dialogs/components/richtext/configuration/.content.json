@@ -2,9 +2,10 @@
   "sling:resourceType": "wcm/dialogs/components/richtext/configuration",
   "sling:resourceSuperType": "wcm/dialogs/components/richtext/configurations/default",
   "color": {
-    "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+    "sling:resourceType": "extensions/dialogs/components/richtext/ui/color",
     "title": "Color",
     "icon": "format_color_text",
+    "colors": "has-text-primary=#00d1b2, has-text-dark=#363636, has-text-light=#f5f5f5",
     "plugin": {
       "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color"
     },

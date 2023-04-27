@@ -15,14 +15,22 @@
  */
 
 import { CustomColor } from "./extension-color.js";
-import TipTapTextStyle from "@tiptap/extension-text-style";
+import { TextCssClass } from "./extension-text-class.js";
 
 const Color = () => ({
-    getTipTapExtensions: () => [TipTapTextStyle, CustomColor],
+    getTipTapExtensions: () => [TextCssClass, CustomColor],
     getAction: ({ editor }) => ({
-        execute: () => editor.chain().focus().toggleColor('#0053FF').run()
+        execute: ({cssClassName}) => {
+            if (cssClassName !== '') {
+                editor.chain().focus().setColor(cssClassName).run();
+            } else {
+                editor.chain().focus().unsetColor().run();
+            }
+        }
     }),
-    getState: ({ editor }) => ({isActive: editor.isActive('textStyle')
+    getState: ({ editor }) => ({
+        isActive: editor.isActive('textCssClass'),
+        ...editor.getAttributes('textCssClass'),
     }),
 });
 

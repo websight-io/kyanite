@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /*
  * Copyright (C) 2023 Dynamic Solutions
  *
@@ -14,12 +15,23 @@
  * limitations under the License.
  */
 
-const rollupPluginPostcss = require('rollup-plugin-postcss');
-const rollupPluginNodePolyfills = require('rollup-plugin-node-polyfills');
+interface Color {
+    colorClassName: string,
+    value: string,
+}
 
-module.exports = {
-    webDependencies: [],
-    rollup: {
-        plugins: [rollupPluginPostcss(), rollupPluginNodePolyfills()]
+export let COLORS: Array<Color> = [
+    { colorClassName: 'has-text-primary', value: '#00d1b2' },
+    { colorClassName: 'has-text-dark', value: '#363636' },
+    { colorClassName: 'has-text-light', value: '#f5f5f5' }
+];
+
+export const createColorsList = (colors: string) => {
+    COLORS = [];
+    for (const colorItem of colors.split(',')) {
+        const pair = colorItem.trim().split('=');
+        COLORS.push({
+            colorClassName: pair[0], value: pair[1]
+        });
     }
 };

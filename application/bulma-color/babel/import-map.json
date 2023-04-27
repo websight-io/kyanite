@@ -1,7 +1,6 @@
 {
   "rootDir": "/apps/",
   "aliases": {
-    "@tiptap/extension-text-style": "bulma-color/web-resources/@tiptap/extension-text-style.js",
     "^(components.*)": "websight-dialogs-view/web-resources/\\1.js",
     "^(.*)": "websight-atlaskit-esm/web-resources/\\1.js"
   },

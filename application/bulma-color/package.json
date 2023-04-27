@@ -7,8 +7,8 @@
     "prepare": "snowpack --dest target/dist/apps/bulma-color/web-resources --optimize"
   },
   "dependencies": {
+    "@atlaskit/checkbox": "^12.4.6",
     "@tiptap/core": "^2.0.0-beta.209",
-    "@tiptap/extension-text-style": "^2.0.3",
     "@types/react": "^18.0.28",
     "prop-types": "15.8.1",
     "react": "16.13.1",
