@@ -36,11 +36,6 @@ public class LevelItemComponent {
 
   @Inject
   @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String levelItemStyle;
-
-  @Inject
-  @Getter
   @Default(values = "div")
   private String elementType;
 
@@ -48,20 +43,13 @@ public class LevelItemComponent {
   @Default(values = "is-left")
   private String alignment;
 
-  @PostConstruct
-  private void init() {
-    if (LEVEL_COMPONENT_RESOURCE_TYPE.equals(resource.getParent().getResourceType())) {
-      levelItemStyle = "has-text-centered";
-    }
-  }
-
   public String getAlignment() {
     if (alignment.equals("is-left")) {
-      return "is-justify-content-flex-start";
+      return "is-justify-content-flex-start has-text-left";
     }
     if (alignment.equals("is-right")) {
-      return "is-justify-content-flex-end";
+      return "is-justify-content-flex-end has-text-right";
     }
-    return "";
+    return "has-text-centered";
   }
 }
