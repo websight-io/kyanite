@@ -29,8 +29,6 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class LevelItemComponent {
 
-  private static final String LEVEL_COMPONENT_RESOURCE_TYPE = "bulma/components/level";
-
   @SlingObject
   private Resource resource;
 
