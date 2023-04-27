@@ -24,9 +24,7 @@ export type ColorOptions = {
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
     color: {
-      setColor: (color: string) => ReturnType,
-      toggleColor: (color: string) => ReturnType,
-      unsetColor: () => ReturnType,
+      toggleColor: (color: string) => ReturnType
     }
   }
 }
@@ -65,22 +63,17 @@ export const CustomColor = Extension.create<ColorOptions>({
 
   addCommands() {
     return {
-      setColor: color => ({ chain }) => {
-        return chain()
-          .setMark('textStyle', { color })
-          .run();
-      },
-      unsetColor: () => ({ chain }) => {
-        return chain()
-          .setMark('textStyle', { color: null })
-          .removeEmptyTextStyle()
-          .run();
-      },
-      toggleColor: color => ({ chain }) => {
-        return chain()
-          .toggleMark('textStyle', { color })
-          .removeEmptyTextStyle()
-          .run();
+      toggleColor: color => ({editor, chain}) => {
+        if (editor.isActive('textStyle')) {
+          return chain()
+            .setMark('textStyle', { color: null })
+            .removeEmptyTextStyle()
+            .run();
+        } else {
+          return chain()
+            .setMark('textStyle', { color: color })
+            .run();
+        }
       },
     };
   },
