@@ -31,6 +31,32 @@
         "sling:resourceType": "wcm/dialogs/components/include",
         "path": "/apps/bulma/components/common/issize"
       },
+      "textweighttitle": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/apps/bulma/components/common/textweight",
+          "bold": {"selected": "true"}
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "type",
+            "values": "title"
+          }
+        }
+      },
+      "textweightsubritle": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/apps/bulma/components/common/textweight",
+          "semibold": {"selected": "true"}
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "type",
+            "values": "subtitle"
+          }
+        }
+      },
       "element": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "include": {

@@ -10,6 +10,7 @@
     "type": "subtitle",
     "element": "p",
     "size": "is-2",
+    "textWeight": "has-text-weight-bold",
     "isSpaced": true
   }
 }

@@ -26,7 +26,10 @@
       },
       "textweight": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/common/textweight"
+        "include": {
+          "sling:resourceSuperType": "/apps/bulma/components/common/textweight",
+          "normal": {"selected": "true"}
+        }
       }
     }
   }

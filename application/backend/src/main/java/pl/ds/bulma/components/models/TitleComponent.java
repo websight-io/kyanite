@@ -30,6 +30,8 @@ import org.apache.sling.models.annotations.Model;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class TitleComponent {
 
+  public static final String TEXT_WEIGHT_DEFAULT = "has-text-weight-bold";
+
   @Inject
   @Getter
   @Default(values = "Title")
@@ -59,10 +61,16 @@ public class TitleComponent {
   @Getter
   private String[] titleClasses;
 
+  @Inject
+  @Getter
+  @Default(values = TEXT_WEIGHT_DEFAULT)
+  private String textWeight;
+
   @PostConstruct
   private void init() {
     List<String> classes = new ArrayList<>();
     classes.add(type);
+    classes.add(textWeight);
     if (StringUtils.isNotBlank(size)) {
       classes.add(size);
     }

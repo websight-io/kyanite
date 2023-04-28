@@ -10,8 +10,7 @@
   "normal": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Normal",
-    "value": "has-text-weight-normal",
-    "selected": "true"
+    "value": "has-text-weight-normal"
   },
   "medium": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
