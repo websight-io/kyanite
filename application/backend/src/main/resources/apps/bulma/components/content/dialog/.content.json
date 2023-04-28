@@ -23,6 +23,10 @@
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "path": "/apps/bulma/components/common/size"
+      },
+      "textweight": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/apps/bulma/components/common/textweight"
       }
     }
   }
