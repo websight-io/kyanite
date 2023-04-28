@@ -10,7 +10,8 @@
   "black": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Black",
-    "value": "bw_has-text-black"
+    "value": "bw_has-text-black",
+    "selected": true
   },
   "white": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",

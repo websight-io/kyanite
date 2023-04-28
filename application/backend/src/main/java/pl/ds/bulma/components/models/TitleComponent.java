@@ -62,7 +62,7 @@ public class TitleComponent {
   private String[] titleClasses;
 
   @Inject
-  @Default(values = StringUtils.EMPTY)
+  @Default(values = "bw_has-text-black")
   private String color;
 
   @Inject
