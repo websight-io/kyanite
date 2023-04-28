@@ -18,19 +18,26 @@ package pl.ds.bulma.components.helpers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Spliterator;
+import java.util.Spliterators;
 import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 
-public class ColorHelper {
-  private List<String> colorBw = new ArrayList<>();
-  private List<String> colorGrey = new ArrayList<>();
-  private List<String> colorRest = new ArrayList<>();
-  private String color = "";
-  private String shadeBw = "";
-  private String shadeGrey = "";
-  private String shadeRest = "";
+public class ColorService {
+  private final List<String> colorBw;
+  private final List<String> colorGrey;
+  private final List<String> colorRest;
+  private final String color;
+  private final String shadeBw;
+  private final String shadeGrey;
+  private final String shadeRest;
 
-  public ColorHelper(List<String> colorsList, String color,
-                     String shadeBw, String shadeGrey, String shadeRest) {
+  public ColorService(Resource resource, String resourcePath, String color,
+                      String shadeBw, String shadeGrey, String shadeRest) {
+    List<String> colorsList = getColorsListFromResource(resource, resourcePath);
+
     this.colorBw = getElementsFromListByPrefix(colorsList, "bw_");
     this.colorGrey = getElementsFromListByPrefix(colorsList, "grey_");
     this.colorRest = getElementsFromListByPrefix(colorsList, "rest_");
@@ -58,6 +65,26 @@ public class ColorHelper {
     }
 
     return this.color;
+  }
+
+  private List<String> getColorsListFromResource(Resource resource, String resourcePath) {
+    if (resource != null) {
+      ResourceResolver resourceResolver = resource.getResourceResolver();
+      Resource textColorsResource = resourceResolver
+              .getResource(resourcePath);
+
+      if (textColorsResource != null) {
+        Spliterator<Resource> spliterator = Spliterators
+                .spliteratorUnknownSize(textColorsResource.listChildren(), Spliterator.ORDERED);
+
+        return StreamSupport.stream(spliterator, false)
+                .map(Resource::getValueMap)
+                .map(valueMap -> valueMap.get("value", String.class))
+                .collect(Collectors.toList());
+      }
+    }
+
+    return new ArrayList<>();
   }
 
   private List<String> getElementsFromListByPrefix(List<String> list, String prefix) {

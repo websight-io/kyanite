@@ -17,23 +17,17 @@
 package pl.ds.bulma.components.models;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Spliterator;
-import java.util.Spliterators;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import pl.ds.bulma.components.helpers.ColorHelper;
+import pl.ds.bulma.components.helpers.ColorService;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class TitleComponent {
@@ -101,30 +95,10 @@ public class TitleComponent {
     }
     titleClasses = classes.toArray(new String[]{});
 
-    List<String> colorsList = getColorsListFromResource();
-    ColorHelper colorHelper
-            = new ColorHelper(colorsList, this.color, this.shadeBw, this.shadeGrey, this.shadeRest);
+    ColorService colorService
+            = new ColorService(resource, "/apps/bulma/components/common/text/color",
+            this.color, this.shadeBw, this.shadeGrey, this.shadeRest);
 
-    this.textColorVariant = colorHelper.getTextColorVariant();
-  }
-
-  private List<String> getColorsListFromResource() {
-    if (resource != null) {
-      ResourceResolver resourceResolver = resource.getResourceResolver();
-      Resource textColorsResource = resourceResolver
-              .getResource("/apps/bulma/components/common/text/color");
-
-      if (textColorsResource != null) {
-        Spliterator<Resource> spliterator = Spliterators
-                .spliteratorUnknownSize(textColorsResource.listChildren(), Spliterator.ORDERED);
-
-        return StreamSupport.stream(spliterator, false)
-                .map(Resource::getValueMap)
-                .map(valueMap -> valueMap.get("value", String.class))
-                .collect(Collectors.toList());
-      }
-    }
-
-    return new ArrayList<>();
+    this.textColorVariant = colorService.getTextColorVariant();
   }
 }
