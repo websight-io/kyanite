@@ -16,13 +16,15 @@
  */
 
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import { Checkbox } from '@atlaskit/checkbox';
+import styled from 'styled-components';
+import { injectGlobal } from 'styled-components';
 
 import Popup from 'components/richtext/ui/Popup';
 import Button from 'components/richtext/ui/Button';
 
-import { DialogContainer, PopupContainer } from './ColorDialogStyles.js';
+import { PopupContainer, createGlobalCSS, createCSS } from './ColorDialogStyles.js';
 import {COLORS, createColorsList} from './colors.js';
 
 const ColorDialogContent = ({
@@ -40,6 +42,37 @@ const ColorDialogContent = ({
             submit({});
         }
     };
+    
+    const DialogContainer = styled.div`
+        .Richtext_Color-Cards {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 4px;
+            label {
+                cursor: pointer;
+                margin: 4px;
+                border: 2px solid transparent;
+                border-radius: 6px;
+                transition: border-color 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
+                &:hover {
+                    border-color: #B3D4FF;
+                }
+                > input {
+                    & + svg {
+                        border-radius: 4px;
+                        width: 22px;
+                        height: 22px;
+                        margin: 1px;
+                        path {
+                            d: path("M 7.356 10.942 a 0.497 0.497 0 0 0 -0.713 0 l -0.7 0.701 a 0.501 0.501 0 0 0 -0.003 0.71 l 3.706 3.707 a 0.501 0.501 0 0 0 0.705 0.003 l 7.712 -7.712 a 0.493 0.493 0 0 0 -0.006 -0.708 l -0.7 -0.7 a 0.504 0.504 0 0 0 -0.714 0 l -6.286 6.286 a 0.506 0.506 0 0 1 -0.713 0 l -2.288 -2.287 Z");
+                        }
+                    }
+                }
+            }
+            ${createCSS(COLORS)}
+        }
+    `;
+
 
     return (
         <DialogContainer>
@@ -72,8 +105,16 @@ const ColorDialog = ({ configuration, state, action }) => {
     const { isActive, color } = state;
     const { execute } = action;
     const dialogRef = React.createRef();
-    
-    createColorsList(colors);
+
+    useEffect(() => {
+        createColorsList(colors);
+        
+        injectGlobal`
+            .ProseMirror {
+              ${createGlobalCSS(COLORS)}
+            }
+        `;
+    }, []);
 
     const open = () => {
         dialogRef.current.toggle();

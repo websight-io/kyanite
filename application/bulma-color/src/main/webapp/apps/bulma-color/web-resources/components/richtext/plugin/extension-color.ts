@@ -17,7 +17,7 @@
 import { Extension } from '@tiptap/core';
 
 export type ColorOptions = {
-  types: string[]
+  types: string[],
 }
 
 declare module '@tiptap/core' {
@@ -33,7 +33,7 @@ export const CustomColor = Extension.create<ColorOptions>({
   name: 'color',
   addOptions() {
     return {
-      types: ['textCssClass']
+      types: ['textCssClass'],
     };
   },
 
@@ -64,7 +64,7 @@ export const CustomColor = Extension.create<ColorOptions>({
     return {
       unsetColor: () => ({chain}) => {
         return chain()
-          .setMark('textCssClass', { color: null })
+          .unsetMark('textCssClass')
           .removeEmptyTextCssClass()
           .run();
       },
@@ -72,7 +72,7 @@ export const CustomColor = Extension.create<ColorOptions>({
         return chain()
           .setMark('textCssClass', { color: color })
           .run();
-      },
+      }
     };
   },
 });

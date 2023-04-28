@@ -20,11 +20,7 @@ interface Color {
     value: string,
 }
 
-export let COLORS: Array<Color> = [
-    { colorClassName: 'has-text-primary', value: '#00d1b2' },
-    { colorClassName: 'has-text-dark', value: '#363636' },
-    { colorClassName: 'has-text-light', value: '#f5f5f5' }
-];
+export let COLORS: Array<Color> = [];
 
 export const createColorsList = (colors: string) => {
     COLORS = [];

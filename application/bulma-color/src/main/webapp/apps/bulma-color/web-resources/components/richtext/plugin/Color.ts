@@ -21,7 +21,7 @@ const Color = () => ({
     getTipTapExtensions: () => [TextCssClass, CustomColor],
     getAction: ({ editor }) => ({
         execute: ({cssClassName}) => {
-            if (cssClassName !== '') {
+            if (cssClassName !== undefined) {
                 editor.chain().focus().setColor(cssClassName).run();
             } else {
                 editor.chain().focus().unsetColor().run();

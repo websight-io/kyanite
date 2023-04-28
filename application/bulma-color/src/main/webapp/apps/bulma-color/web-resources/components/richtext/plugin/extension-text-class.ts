@@ -67,7 +67,7 @@ import {
         removeEmptyTextCssClass: () => ({ state, commands }) => {
           const attributes = getMarkAttributes(state, this.type);
           const hasCssClass = Object.entries(attributes).some(([, value]) => !!value);
-  
+
           if (hasCssClass) {
             return true;
           }
