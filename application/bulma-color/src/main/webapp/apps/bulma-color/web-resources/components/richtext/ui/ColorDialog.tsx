@@ -42,12 +42,13 @@ const ColorDialogContent = ({
             submit({});
         }
     };
-    
+
     const DialogContainer = styled.div`
         .Richtext_Color-Cards {
             display: flex;
             flex-wrap: wrap;
             margin: 4px;
+            max-width: 214px;
             label {
                 cursor: pointer;
                 margin: 4px;
@@ -63,6 +64,7 @@ const ColorDialogContent = ({
                         width: 22px;
                         height: 22px;
                         margin: 1px;
+                        box-shadow: inset 0px 0px 0px 1px var(--ds-background-inverse-subtle,rgba(13,20,36,0.18));
                         path {
                             d: path("M 7.356 10.942 a 0.497 0.497 0 0 0 -0.713 0 l -0.7 0.701 a 0.501 0.501 0 0 0 -0.003 0.71 l 3.706 3.707 a 0.501 0.501 0 0 0 0.705 0.003 l 7.712 -7.712 a 0.493 0.493 0 0 0 -0.006 -0.708 l -0.7 -0.7 a 0.504 0.504 0 0 0 -0.714 0 l -6.286 6.286 a 0.506 0.506 0 0 1 -0.713 0 l -2.288 -2.287 Z");
                         }
