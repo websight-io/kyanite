@@ -113,13 +113,16 @@ public class TitleComponent {
       ResourceResolver resourceResolver = resource.getResourceResolver();
       Resource textColorsResource = resourceResolver
               .getResource("/apps/bulma/components/common/text/color");
-      Spliterator<Resource> spliterator = Spliterators
-              .spliteratorUnknownSize(textColorsResource.listChildren(), Spliterator.ORDERED);
 
-      return StreamSupport.stream(spliterator, false)
-              .map(Resource::getValueMap)
-              .map(valueMap -> valueMap.get("value", String.class))
-              .collect(Collectors.toList());
+      if (textColorsResource != null) {
+        Spliterator<Resource> spliterator = Spliterators
+                .spliteratorUnknownSize(textColorsResource.listChildren(), Spliterator.ORDERED);
+
+        return StreamSupport.stream(spliterator, false)
+                .map(Resource::getValueMap)
+                .map(valueMap -> valueMap.get("value", String.class))
+                .collect(Collectors.toList());
+      }
     }
 
     return new ArrayList<>();
