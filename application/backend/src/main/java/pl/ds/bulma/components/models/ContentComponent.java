@@ -30,6 +30,7 @@ import pl.ds.bulma.components.helpers.ColorService;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContentComponent {
 
+  public static final String TEXT_WEIGHT_DEFAULT = "has-text-weight-normal";
   @Inject
   @Getter
   @Default(values = "Content")
@@ -39,6 +40,11 @@ public class ContentComponent {
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String size;
+
+  @Inject
+  @Getter
+  @Default(values = TEXT_WEIGHT_DEFAULT)
+  private String textWeight;
 
   @Inject
   @Default(values = StringUtils.EMPTY)

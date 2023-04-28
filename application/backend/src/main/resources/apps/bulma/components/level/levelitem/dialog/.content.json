@@ -5,6 +5,12 @@
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
+      "alignment": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/apps/bulma/components/common/alignment"
+        }
+      },
       "elementType": {
         "sling:resourceType": "wcm/dialogs/components/radio",
         "name": "elementType",
