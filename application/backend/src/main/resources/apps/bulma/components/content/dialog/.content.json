@@ -34,7 +34,7 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "intensity": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/apps/bulma/components/common/text/shade/blackandwhite"
+            "path": "/apps/bulma/components/common/text/shade/bw"
           },
           "ws:display": {
             "condition": {
@@ -75,7 +75,6 @@
                 "has-text-link",
                 "has-text-info",
                 "has-text-success",
-                "has-text-success",
                 "has-text-warning",
                 "has-text-danger"
               ]
@@ -92,7 +91,6 @@
               "has-text-primary",
               "has-text-link",
               "has-text-info",
-              "has-text-success",
               "has-text-success",
               "has-text-warning",
               "has-text-danger"

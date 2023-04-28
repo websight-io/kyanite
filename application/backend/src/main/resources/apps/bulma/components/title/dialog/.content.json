@@ -59,14 +59,14 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "intensity": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/apps/bulma/components/common/text/shade/blackandwhite"
+            "path": "/apps/bulma/components/common/text/shade/bw"
           },
           "ws:display": {
             "condition": {
               "sourceName": "color",
               "values": [
-                "has-text-black",
-                "has-text-white"
+                "bw_has-text-black",
+                "bw_has-text-white"
               ]
             }
           }
@@ -81,7 +81,7 @@
             "condition": {
               "sourceName": "color",
               "values": [
-                "has-text-grey"
+                "grey_has-text-grey"
               ]
             }
           }
@@ -96,13 +96,13 @@
             "condition": {
               "sourceName": "color",
               "values": [
-                "has-text-primary",
-                "has-text-link",
-                "has-text-info",
-                "has-text-success",
-                "has-text-success",
-                "has-text-warning",
-                "has-text-danger"
+                "rest_has-text-primary",
+                "rest_has-text-link",
+                "rest_has-text-info",
+                "rest_has-text-success",
+                "rest_has-text-success",
+                "rest_has-text-warning",
+                "rest_has-text-danger"
               ]
             }
           }
@@ -111,16 +111,16 @@
           "condition": {
             "sourceName": "color",
             "values": [
-              "has-text-black",
-              "has-text-white",
-              "has-text-grey",
-              "has-text-primary",
-              "has-text-link",
-              "has-text-info",
-              "has-text-success",
-              "has-text-success",
-              "has-text-warning",
-              "has-text-danger"
+              "bw_has-text-black",
+              "bw_has-text-white",
+              "grey_has-text-grey",
+              "rest_has-text-primary",
+              "rest_has-text-link",
+              "rest_has-text-info",
+              "rest_has-text-success",
+              "rest_has-text-success",
+              "rest_has-text-warning",
+              "rest_has-text-danger"
             ]
           }
         }

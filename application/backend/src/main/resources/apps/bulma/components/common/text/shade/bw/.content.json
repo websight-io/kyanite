@@ -1,6 +1,6 @@
 {
   "sling:resourceType": "wcm/dialogs/components/select",
-  "name": "shade",
+  "name": "shadeBw",
   "label": "Shade",
   "primary": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",

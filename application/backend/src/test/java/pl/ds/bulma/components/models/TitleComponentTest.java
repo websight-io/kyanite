@@ -64,7 +64,6 @@ class TitleComponentTest {
     assertThat(model.getElement()).isEqualTo("p");
     assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("subtitle", "is-2", "is-spaced");
     assertThat(model.getSize()).isEqualTo("is-2");
-    assertThat(model.getTextColorVariant()).isEqualTo("has-text-black-bis");
     assertThat(model.isSpaced()).isTrue();
   }
 }

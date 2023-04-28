@@ -10,17 +10,17 @@
   "black": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Black",
-    "value": "has-text-black"
+    "value": "bw_has-text-black"
   },
   "white": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "White",
-    "value": "has-text-white"
+    "value": "bw_has-text-white"
   },
   "grey": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Grey",
-    "value": "has-text-grey"
+    "value": "grey_has-text-grey"
   },
   "dark": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
@@ -35,31 +35,31 @@
   "primary": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Primary",
-    "value": "has-text-primary"
+    "value": "rest_has-text-primary"
   },
   "link": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Link",
-    "value": "has-text-link"
+    "value": "rest_has-text-link"
   },
   "info": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Info",
-    "value": "has-text-info"
+    "value": "rest_has-text-info"
   },
   "success": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Success",
-    "value": "has-text-success"
+    "value": "rest_has-text-success"
   },
   "warning": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Warning",
-    "value": "has-text-warning"
+    "value": "rest_has-text-warning"
   },
   "danger": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
-    "label": "Success",
-    "value": "has-text-danger"
+    "label": "Danger",
+    "value": "rest_has-text-danger"
   }
 }

@@ -11,7 +11,7 @@
     "element": "p",
     "size": "is-2",
     "color": "has-text-black",
-    "shade": "bis",
+    "shadeBw": "bis",
     "isSpaced": true
   }
 }
