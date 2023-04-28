@@ -11,6 +11,12 @@
           "sling:resourceSuperType": "/apps/bulma/components/common/alignment"
         }
       },
+      "alignmentVertical": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/apps/bulma/components/common/alignmentvertical"
+        }
+      },
       "elementType": {
         "sling:resourceType": "wcm/dialogs/components/radio",
         "name": "elementType",
