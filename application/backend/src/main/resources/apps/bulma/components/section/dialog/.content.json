@@ -8,7 +8,8 @@
       "id": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "id",
-        "label": "Section id"
+        "label": "Section id",
+        "required": true
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",

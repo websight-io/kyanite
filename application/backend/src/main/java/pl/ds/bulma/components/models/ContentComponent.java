@@ -16,6 +16,7 @@
 
 package pl.ds.bulma.components.models;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
@@ -27,13 +28,22 @@ import org.apache.sling.models.annotations.Model;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContentComponent {
 
+  private static final String DEFAULT_TEXT = "Content";
+
   @Inject
   @Getter
-  @Default(values = "Content")
+  @Default(values = DEFAULT_TEXT)
   private String text;
 
   @Inject
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String size;
+
+  @PostConstruct
+  private void init() {
+    if ("<p></p>".equals(text)) {
+      text = DEFAULT_TEXT;
+    }
+  }
 }

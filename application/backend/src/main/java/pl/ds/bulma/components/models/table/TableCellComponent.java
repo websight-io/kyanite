@@ -16,6 +16,7 @@
 
 package pl.ds.bulma.components.models.table;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
@@ -26,9 +27,11 @@ import org.apache.sling.models.annotations.Model;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class TableCellComponent {
 
+  private static final String DEFAULT_TEXT = "Content";
+
   @Inject
   @Getter
-  @Default(values = "Content")
+  @Default(values = DEFAULT_TEXT)
   private String text;
 
   @Inject
@@ -40,5 +43,12 @@ public class TableCellComponent {
   @Getter
   @Default(intValues = 1)
   private int rowspan;
+
+  @PostConstruct
+  private void init() {
+    if ("<p></p>".equals(text)) {
+      text = DEFAULT_TEXT;
+    }
+  }
 
 }

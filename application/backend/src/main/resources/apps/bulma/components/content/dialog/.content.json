@@ -9,15 +9,13 @@
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "text",
         "label": "Text",
-        "ws:disallowedContext": ["edit:panel"],
-        "required": true
+        "ws:disallowedContext": ["edit:panel"]
       },
       "panelText": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "text",
         "label": "Text",
         "ws:disallowedContext": ["edit:dialog"],
-        "required": true,
         "configuration": "wcm/dialogs/components/richtext/configurations/compact"
       },
       "size": {
