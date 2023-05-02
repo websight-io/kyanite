@@ -2,7 +2,7 @@
   "isContainer": true,
   "isLayout": true,
   "group": "Bulma.io Layouts",
-  "allowedComponents": ["/apps/bulma/components/tiles/tileparent"],
+  "allowedComponents": ["/libs/bulma/components/tiles/tileparent"],
   "sling:resourceType": "ws:Component",
   "title": "Tiles"
 }

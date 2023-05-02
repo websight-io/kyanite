@@ -10,7 +10,7 @@
         "type": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "include": {
-            "sling:resourceSuperType": "/apps/bulma/components/tiles/attributes/type",
+            "sling:resourceSuperType": "/libs/bulma/components/tiles/attributes/type",
             "name": "type",
             "label": "Type"
           }
@@ -19,7 +19,7 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "variant": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/apps/bulma/components/common/variant"
+            "path": "/libs/bulma/components/common/variant"
           },
           "ws:display": {
             "condition": {

@@ -7,19 +7,19 @@
       "label": "General",
       "separator": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/common/separator"
+        "path": "/libs/bulma/components/common/separator"
       },
       "sizeInclude": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "include": {
-          "sling:resourceSuperType": "/apps/bulma/components/common/size",
+          "sling:resourceSuperType": "/libs/bulma/components/common/size",
           "normal": {"sling:hideResource": true}
         }
       },
       "alignment": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "include": {
-          "sling:resourceSuperType": "/apps/bulma/components/common/alignment",
+          "sling:resourceSuperType": "/libs/bulma/components/common/alignment",
           "left": {"value": ""}
         }
       },
@@ -41,7 +41,7 @@
         },
         "icon": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/apps/bulma/components/common/icon"
+          "path": "/libs/bulma/components/common/icon"
         }
       }
     }

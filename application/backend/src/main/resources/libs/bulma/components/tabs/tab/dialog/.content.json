@@ -12,7 +12,7 @@
       },
       "icon": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/common/icon"
+        "path": "/libs/bulma/components/common/icon"
       }
     }
   }

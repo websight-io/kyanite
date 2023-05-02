@@ -1,2 +1,2 @@
-Sling-Bundle-Resources: /apps/bulma
-WebSight-Apps-WebRoot: /apps/bulma/web_root
+Sling-Bundle-Resources: /libs/bulma
+WebSight-Apps-WebRoot: /libs/bulma/web_root

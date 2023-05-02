@@ -2,6 +2,6 @@
   "group": "Bulma.io Components",
   "sling:resourceType": "ws:Component",
   "isContainer": true,
-  "allowedComponents": ["/apps/bulma/components/tabs/tab"],
+  "allowedComponents": ["/libs/bulma/components/tabs/tab"],
   "title": "Tabs"
 }

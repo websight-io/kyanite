@@ -17,7 +17,7 @@
         "sizeType": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "include": {
-            "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/type",
+            "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/type",
             "name": "mobileColumnStyle/sizeType",
             "label": "Type of the column size"
           }
@@ -27,7 +27,7 @@
           "size": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/evennumber",
+              "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/evennumber",
               "name": "mobileColumnStyle/size",
               "label": "Column size"
             }
@@ -42,7 +42,7 @@
           "style": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/fraction",
+              "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/fraction",
               "name": "mobileColumnStyle/size",
               "label": "Column size"
             }
@@ -55,7 +55,7 @@
         "offsetType": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "include": {
-            "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/type",
+            "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/type",
             "name": "mobileColumnStyle/offsetType",
             "label": "Type of the offset size"
           }
@@ -65,7 +65,7 @@
           "size": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/evennumber",
+              "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/evennumber",
               "name": "offset",
               "label": "Offset size",
               "sling:hideChildren": ["twelve"]
@@ -81,7 +81,7 @@
           "style": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/fraction",
+              "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/fraction",
               "name": "mobileColumnStyle/offset",
               "label": "Offset size",
               "sling:hideChildren": ["full"]
@@ -113,7 +113,7 @@
         "sizeType": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "include": {
-            "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/type",
+            "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/type",
             "name": "tabletColumnStyle/sizeType",
             "label": "Type of the column size"
           }
@@ -123,7 +123,7 @@
           "size": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/evennumber",
+              "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/evennumber",
               "name": "tabletColumnStyle/size",
               "label": "Column size"
             }
@@ -138,7 +138,7 @@
           "style": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/fraction",
+              "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/fraction",
               "name": "tabletColumnStyle/size",
               "label": "Column size"
             }
@@ -151,7 +151,7 @@
         "offsetType": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "include": {
-            "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/type",
+            "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/type",
             "name": "tabletColumnStyle/offsetType",
             "label": "Type of the offset size"
           }
@@ -161,7 +161,7 @@
           "size": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/evennumber",
+              "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/evennumber",
               "name": "tabletColumnStyle/offset",
               "label": "Offset size",
               "sling:hideChildren": ["twelve"]
@@ -177,7 +177,7 @@
           "style": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/fraction",
+              "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/fraction",
               "name": "tabletColumnStyle/offset",
               "label": "Offset size",
               "sling:hideChildren": ["full"]
@@ -209,7 +209,7 @@
         "sizeType": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "include": {
-            "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/type",
+            "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/type",
             "name": "desktopColumnStyle/sizeType",
             "label": "Type of the column size"
           }
@@ -219,7 +219,7 @@
           "size": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/evennumber",
+              "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/evennumber",
               "name": "desktopColumnStyle/size",
               "label": "Column size"
             }
@@ -234,7 +234,7 @@
           "style": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/fraction",
+              "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/fraction",
               "name": "desktopColumnStyle/size",
               "label": "Column size"
             }
@@ -247,7 +247,7 @@
         "offsetType": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "include": {
-            "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/type",
+            "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/type",
             "name": "desktopColumnStyle/offsetType",
             "label": "Type of the offset size"
           }
@@ -257,7 +257,7 @@
           "size": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/evennumber",
+              "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/evennumber",
               "name": "desktopColumnStyle/offset",
               "label": "Offset size",
               "sling:hideChildren": ["twelve"]
@@ -273,7 +273,7 @@
           "style": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/apps/bulma/components/columns/attributes/fraction",
+              "sling:resourceSuperType": "/libs/bulma/components/columns/attributes/fraction",
               "name": "desktopColumnStyle/offset",
               "label": "Offset size",
               "sling:hideChildren": ["full"]

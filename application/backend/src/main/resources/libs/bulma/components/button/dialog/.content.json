@@ -12,7 +12,7 @@
       },
       "type": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/button/attributes/type"
+        "path": "/libs/bulma/components/button/attributes/type"
       },
       "container": {
         "sling:resourceType": "wcm/dialogs/components/container",
@@ -36,11 +36,11 @@
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/common/size"
+        "path": "/libs/bulma/components/common/size"
       },
       "variant": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/button/attributes/variant"
+        "path": "/libs/bulma/components/button/attributes/variant"
       }
     },
     "modifiers": {
@@ -114,7 +114,7 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "icon": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/apps/bulma/components/common/icon"
+            "path": "/libs/bulma/components/common/icon"
           },
           "ws:display": {
             "condition": {
@@ -160,7 +160,7 @@
           "iconRight": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/apps/bulma/components/common/icon",
+              "sling:resourceSuperType": "/libs/bulma/components/common/icon",
               "label": "Right icon",
               "name": "iconRight"
             }
@@ -199,7 +199,7 @@
       "label": "Action",
       "actionType": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/common/actions"
+        "path": "/libs/bulma/components/common/actions"
       },
       "action": {
         "sling:resourceType": "wcm/dialogs/components/container",

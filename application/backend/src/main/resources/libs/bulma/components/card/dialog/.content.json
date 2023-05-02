@@ -18,7 +18,7 @@
         "sling:resourceType": "wcm/dialogs/components/include",
         "namespace": "image",
         "include": {
-          "sling:resourceSuperType": "/apps/bulma/components/card/common/image",
+          "sling:resourceSuperType": "/libs/bulma/components/card/common/image",
           "fixedStyle": {"sling:hideResource": true}
         }
       }

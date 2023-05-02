@@ -2,5 +2,5 @@
   "sling:resourceType": "wcm/dialogs/components/include",
   "name": "variant",
   "label": "Variant",
-  "include": {"sling:resourceSuperType": "/apps/bulma/components/common/extendedvariant"}
+  "include": {"sling:resourceSuperType": "/libs/bulma/components/common/extendedvariant"}
 }

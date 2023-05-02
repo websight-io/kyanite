@@ -3,8 +3,8 @@
   "isLayout": true,
   "group": "Bulma.io Layouts",
   "allowedComponents": [
-    "/apps/bulma/components/level/positionedlevel",
-    "/apps/bulma/components/level/levelitem"
+    "/libs/bulma/components/level/positionedlevel",
+    "/libs/bulma/components/level/levelitem"
   ],
   "sling:resourceType": "ws:Component",
   "title": "Level"

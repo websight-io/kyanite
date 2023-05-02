@@ -109,11 +109,11 @@ module.exports = {
                     copy: [
                         {
                             source: path.join(__dirname, 'dist/main'),
-                            destination: path.join(__dirname, '../backend/src/main/resources/apps/bulma/web_root')
+                            destination: path.join(__dirname, '../backend/src/main/resources/libs/bulma/web_root')
                         },
                         {
                             source: path.join(__dirname, 'dist/author'),
-                            destination: path.join(__dirname, '../backend/src/main/resources/apps/bulma/author')
+                            destination: path.join(__dirname, '../backend/src/main/resources/libs/bulma/author')
                         }
                     ]
                 }

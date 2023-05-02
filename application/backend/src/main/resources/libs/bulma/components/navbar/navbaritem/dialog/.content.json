@@ -43,7 +43,7 @@
         },
         "icon": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/apps/bulma/components/common/menuicon"
+          "path": "/libs/bulma/components/common/menuicon"
         },
         "ws:display": {"condition": {
           "sourceName": "type",

@@ -10,7 +10,7 @@
         "size": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "include": {
-            "sling:resourceSuperType": "/apps/bulma/components/tiles/attributes/size",
+            "sling:resourceSuperType": "/libs/bulma/components/tiles/attributes/size",
             "name": "size",
             "label": "Tile size"
           }

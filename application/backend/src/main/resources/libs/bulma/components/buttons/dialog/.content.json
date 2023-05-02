@@ -7,7 +7,7 @@
       "label": "General",
       "alignment": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/common/alignment"
+        "path": "/libs/bulma/components/common/alignment"
       },
       "hasAddons": {
         "sling:resourceType": "wcm/dialogs/components/toggle",
@@ -17,7 +17,7 @@
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/buttons/attributes/size"
+        "path": "/libs/bulma/components/buttons/attributes/size"
       }
     }
   }

@@ -3,7 +3,7 @@
   "name": "size",
   "label": "Size",
   "include": {
-    "sling:resourceSuperType": "/apps/bulma/components/common/size",
+    "sling:resourceSuperType": "/libs/bulma/components/common/size",
     "normal": {"sling:hideResource": true},
     "halfheight": {
       "sling:resourceType": "wcm/dialogs/components/select/selectitem",

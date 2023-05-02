@@ -2,8 +2,8 @@
   "isContainer": true,
   "group": "Bulma.io Components",
   "allowedComponents": [
-    "/apps/bulma/components/panel/panelblock",
-    "/apps/bulma/components/panel/paneltabs"
+    "/libs/bulma/components/panel/panelblock",
+    "/libs/bulma/components/panel/paneltabs"
   ],
   "sling:resourceType": "ws:Component",
   "title": "Panel"

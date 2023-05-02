@@ -22,7 +22,7 @@
   "style": {
     "sling:resourceType": "wcm/dialogs/components/include",
     "include": {
-      "sling:resourceSuperType": "/apps/bulma/components/image/attributes/ratio",
+      "sling:resourceSuperType": "/libs/bulma/components/image/attributes/ratio",
       "name": "image/style",
       "label": "Image ratio",
       "is-4by3": {"selected": true},
@@ -35,7 +35,7 @@
   "fixedStyle": {
     "sling:resourceType": "wcm/dialogs/components/include",
     "include": {
-      "sling:resourceSuperType": "/apps/bulma/components/image/attributes/fixed",
+      "sling:resourceSuperType": "/libs/bulma/components/image/attributes/fixed",
       "name": "thumbnail/style",
       "label": "Fixed size",
       "is-48x48": {"selected": true}

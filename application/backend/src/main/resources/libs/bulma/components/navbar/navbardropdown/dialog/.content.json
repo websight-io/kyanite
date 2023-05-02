@@ -12,7 +12,7 @@
       },
       "icon": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/common/menuicon",
+        "path": "/libs/bulma/components/common/menuicon",
         "defaultValue": "none"
       },
       "hasArrow": {
@@ -50,7 +50,7 @@
         },
         "icon": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/apps/bulma/components/common/menuicon"
+          "path": "/libs/bulma/components/common/menuicon"
         },
         "hasDivider": {
           "sling:resourceType": "wcm/dialogs/components/checkbox",

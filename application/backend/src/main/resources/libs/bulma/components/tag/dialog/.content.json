@@ -12,11 +12,11 @@
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/common/size"
+        "path": "/libs/bulma/components/common/size"
       },
       "variant": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/tag/attributes/variant"
+        "path": "/libs/bulma/components/tag/attributes/variant"
       },
       "isLight": {
         "sling:resourceType": "wcm/dialogs/components/toggle",

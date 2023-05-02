@@ -1,8 +1,8 @@
 {
   "isContainer": true,
   "allowedComponents": [
-    "/apps/bulma/components/navbar/navbarbrand",
-    "/apps/bulma/components/navbar/navbarmenu"
+    "/libs/bulma/components/navbar/navbarbrand",
+    "/libs/bulma/components/navbar/navbarmenu"
   ],
   "group": "Bulma.io Components",
   "sling:resourceType": "ws:Component",

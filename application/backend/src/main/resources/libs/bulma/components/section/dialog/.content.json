@@ -13,7 +13,7 @@
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/hero/attributes/size"
+        "path": "/libs/bulma/components/hero/attributes/size"
       }
     }
   }

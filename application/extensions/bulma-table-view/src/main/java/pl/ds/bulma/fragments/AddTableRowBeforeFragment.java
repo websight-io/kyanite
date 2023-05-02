@@ -29,7 +29,7 @@ public class AddTableRowBeforeFragment implements WebFragment {
 
   @Override
   public String getFragment() {
-    return "/apps/bulma-table-view/web-resources/extensions/AddTableRowBeforeExtension.js";
+    return "/libs/bulma-table-view/web-resources/extensions/AddTableRowBeforeExtension.js";
   }
 
   @Override

@@ -30,13 +30,13 @@
       "label": "Style of image",
       "type": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/image/attributes/type"
+        "path": "/libs/bulma/components/image/attributes/type"
       },
       "ratio": {
         "sling:resourceType": "wcm/dialogs/components/container",
         "style": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/apps/bulma/components/image/attributes/ratio"
+          "path": "/libs/bulma/components/image/attributes/ratio"
         },
         "ws:display": {"condition": {
           "sourceName": "type",
@@ -47,7 +47,7 @@
         "sling:resourceType": "wcm/dialogs/components/container",
         "style": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/apps/bulma/components/image/attributes/fixed"
+          "path": "/libs/bulma/components/image/attributes/fixed"
         },
         "ws:display": {"condition": {
           "sourceName": "type",

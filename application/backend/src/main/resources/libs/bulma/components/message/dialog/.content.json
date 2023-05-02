@@ -22,11 +22,11 @@
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/common/size"
+        "path": "/libs/bulma/components/common/size"
       },
       "variant": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/common/variant"
+        "path": "/libs/bulma/components/common/variant"
       }
     },
     "modifiers": {

@@ -1,6 +1,6 @@
 {
   "sling:resourceType": "wcm/dialogs/components/select",
-  "sling:resourceSuperType": "/apps/bulma/components/common/variant",
+  "sling:resourceSuperType": "/libs/bulma/components/common/variant",
   "name": "variant",
   "label": "Variant",
   "white": {
