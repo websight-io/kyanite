@@ -16,7 +16,7 @@
  */
 
 import PropTypes from 'prop-types';
-import React, { useState, useEffect, ChangeEvent } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Checkbox } from '@atlaskit/checkbox';
 import styled from 'styled-components';
 import { injectGlobal } from 'styled-components';
