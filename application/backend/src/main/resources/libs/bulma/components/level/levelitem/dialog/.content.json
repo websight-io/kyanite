@@ -1,0 +1,33 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "alignment": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/bulma/components/common/alignment"
+        }
+      },
+      "elementType": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "elementType",
+        "label": "Type of the HTML element",
+        "required": true,
+        "div": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Division",
+          "value": "div",
+          "selected": true
+        },
+        "p": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Paragraph",
+          "value": "p"
+        }
+      }
+    }
+  }
+}

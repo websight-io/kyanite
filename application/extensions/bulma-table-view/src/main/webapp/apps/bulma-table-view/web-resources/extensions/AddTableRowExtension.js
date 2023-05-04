@@ -27,9 +27,9 @@ const config = {
   action: 'add-table-row',
   insertBefore: false,
   allowedComponents: [
-    "/apps/bulma/components/table/tablerow",
-    "/apps/bulma/components/table/tableheadcell",
-    "/apps/bulma/components/table/tablecell"
+    "/libs/bulma/components/table/tablerow",
+    "/libs/bulma/components/table/tableheadcell",
+    "/libs/bulma/components/table/tablecell"
   ]
 };
 

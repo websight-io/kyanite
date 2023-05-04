@@ -5,7 +5,7 @@
         jcr:primaryType="ws:PageContent"
         jcr:title="Personal"
         sling:resourceType="bulma/components/page"
-        ws:template="/apps/bulma/templates/basicpage"
+        ws:template="/libs/bulma/templates/basicpage"
         navbarFixed="true"
         navbarFixedPosition="has-navbar-fixed-top">
         <pagecontainer

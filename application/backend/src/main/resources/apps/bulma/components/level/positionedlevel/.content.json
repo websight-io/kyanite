@@ -1,7 +1,0 @@
-{
-  "isContainer": true,
-  "allowedComponents": ["/apps/bulma/components/level/levelitem"],
-  "sling:resourceType": "ws:Component",
-  "title": "Positioned level",
-  "group": "Bulma.io sub-components"
-}
