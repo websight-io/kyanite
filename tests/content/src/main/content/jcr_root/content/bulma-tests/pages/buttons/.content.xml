@@ -6,7 +6,7 @@
     jcr:primaryType="ws:PageContent"
     jcr:title="Buttons"
     sling:resourceType="bulma/components/page"
-    ws:template="/apps/bulma/templates/basicpage">
+    ws:template="/libs/bulma/templates/basicpage">
     <pagecontainer
       jcr:primaryType="nt:unstructured"
       sling:resourceType="bulma/components/pagecontainer">

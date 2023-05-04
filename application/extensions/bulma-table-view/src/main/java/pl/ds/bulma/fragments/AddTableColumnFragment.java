@@ -29,7 +29,7 @@ public class AddTableColumnFragment implements WebFragment {
 
   @Override
   public String getFragment() {
-    return "/apps/bulma-table-view/web-resources/extensions/AddTableColumnExtension.js";
+    return "/libs/bulma-table-view/web-resources/extensions/AddTableColumnExtension.js";
   }
 
   @Override

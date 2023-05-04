@@ -26,8 +26,8 @@ const config = {
   },
   action: 'delete-table-column',
   allowedComponents: [
-    "/apps/bulma/components/table/tableheadcell",
-    "/apps/bulma/components/table/tablecell"
+    "/libs/bulma/components/table/tableheadcell",
+    "/libs/bulma/components/table/tablecell"
   ]
 };
 

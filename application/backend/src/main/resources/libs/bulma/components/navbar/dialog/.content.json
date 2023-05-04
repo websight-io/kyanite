@@ -1,0 +1,49 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "variant": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "name": "variant",
+        "label": "Variant",
+        "include": {
+          "sling:resourceSuperType": "/libs/bulma/components/common/extendedvariant",
+          "black": {
+            "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+            "label": "Black",
+            "value": "is-black"
+          }
+        }
+      },
+      "fixedOption": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "fixedOption",
+        "label": "Fixed Option",
+        "description": "Requires checking a proper option in page properties",
+        "top": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Fixed Top",
+          "value": "is-fixed-top"
+        },
+        "standard": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Standard",
+          "value": ""
+        },
+        "bottom": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Fixed Bottom",
+          "value": "is-fixed-bottom"
+        }
+      },
+      "isTransparent": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isTransparent",
+        "label": "Navbar background is transparent"
+      }
+    }
+  }
+}

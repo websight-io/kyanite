@@ -1,7 +1,0 @@
-{
-  "isContainer": false,
-  "group": "Bulma.io sub-components",
-  "allowedComponents": ["/apps/bulma/components/tabs/tabcontent"],
-  "sling:resourceType": "ws:Component",
-  "title": "Tab"
-}
