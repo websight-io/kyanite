@@ -30,7 +30,15 @@
       },
       "color": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/common/text/color"
+        "include": {
+          "sling:resourceSuperType": "/apps/bulma/components/common/text/color",
+          "black": {
+            "selected": false
+          },
+          "grey": {
+            "selected": true
+          }
+        }
       },
       "shadeContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
@@ -44,8 +52,8 @@
             "condition": {
               "sourceName": "color",
               "values": [
-                "has-text-black",
-                "has-text-white"
+                "bw_has-text-black",
+                "bw_has-text-white"
               ]
             }
           }
@@ -54,13 +62,14 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "intensity": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/apps/bulma/components/common/text/shade/grey"
+            "path": "/apps/bulma/components/common/text/shade/grey",
+            "value": "darker"
           },
           "ws:display": {
             "condition": {
               "sourceName": "color",
               "values": [
-                "has-text-grey"
+                "grey_has-text-grey"
               ]
             }
           }
@@ -75,12 +84,13 @@
             "condition": {
               "sourceName": "color",
               "values": [
-                "has-text-primary",
-                "has-text-link",
-                "has-text-info",
-                "has-text-success",
-                "has-text-warning",
-                "has-text-danger"
+                "rest_has-text-primary",
+                "rest_has-text-link",
+                "rest_has-text-info",
+                "rest_has-text-success",
+                "rest_has-text-success",
+                "rest_has-text-warning",
+                "rest_has-text-danger"
               ]
             }
           }
@@ -89,15 +99,16 @@
           "condition": {
             "sourceName": "color",
             "values": [
-              "has-text-black",
-              "has-text-white",
-              "has-text-grey",
-              "has-text-primary",
-              "has-text-link",
-              "has-text-info",
-              "has-text-success",
-              "has-text-warning",
-              "has-text-danger"
+              "bw_has-text-black",
+              "bw_has-text-white",
+              "grey_has-text-grey",
+              "rest_has-text-primary",
+              "rest_has-text-link",
+              "rest_has-text-info",
+              "rest_has-text-success",
+              "rest_has-text-success",
+              "rest_has-text-warning",
+              "rest_has-text-danger"
             ]
           }
         }

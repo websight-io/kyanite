@@ -51,7 +51,8 @@
       },
       "color": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/bulma/components/common/text/color"
+        "path": "/apps/bulma/components/common/text/color",
+        "value": "bw_has-text-black"
       },
       "shadeContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",

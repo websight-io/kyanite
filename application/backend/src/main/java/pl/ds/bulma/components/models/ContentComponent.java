@@ -47,7 +47,7 @@ public class ContentComponent {
   private String textWeight;
 
   @Inject
-  @Default(values = StringUtils.EMPTY)
+  @Default(values = "grey_has-text-grey")
   private String color;
 
   @Inject
@@ -55,7 +55,7 @@ public class ContentComponent {
   private String shadeBw;
 
   @Inject
-  @Default(values = StringUtils.EMPTY)
+  @Default(values = "darker")
   private String shadeGrey;
 
   @Inject
