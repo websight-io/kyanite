@@ -43,6 +43,41 @@
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "name": "isTransparent",
         "label": "Navbar background is transparent"
+      },
+      "containerStyle": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "containerStyle",
+        "label": "Style of the container",
+        "default": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Default style",
+          "value": ""
+        },
+        "is-widescreen": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Widescreen",
+          "value": "is-widescreen"
+        },
+        "is-fullhd": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Full hd",
+          "value": "is-fullhd"
+        },
+        "is-max-desktop": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Max desktop",
+          "value": "is-max-desktop"
+        },
+        "is-max-widescreen": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Max widescreen",
+          "value": "is-max-widescreen"
+        },
+        "is-fluid": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Fluid",
+          "value": "is-fluid"
+        }
       }
     }
   }
