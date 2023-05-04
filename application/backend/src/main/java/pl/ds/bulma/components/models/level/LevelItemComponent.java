@@ -39,6 +39,10 @@ public class LevelItemComponent {
   @Default(values = "is-left")
   private String alignment;
 
+  @Inject
+  @Default(values = "is-centered")
+  private String alignmentVertical;
+
   public String getAlignment() {
     if (alignment.equals("is-left")) {
       return "is-justify-content-flex-start has-text-left";
@@ -47,5 +51,15 @@ public class LevelItemComponent {
       return "is-justify-content-flex-end has-text-right";
     }
     return "has-text-centered";
+  }
+
+  public String getAlignmentVertical() {
+    if (alignmentVertical.equals("is-top")) {
+      return "is-align-items-flex-start";
+    }
+    if (alignmentVertical.equals("is-bottom")) {
+      return "is-align-items-flex-end";
+    }
+    return "is-align-items-center";
   }
 }
