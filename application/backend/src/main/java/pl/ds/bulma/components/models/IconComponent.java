@@ -52,4 +52,8 @@ public class IconComponent {
   @Getter
   private boolean colorOnText;
 
+  @Inject
+  @Getter
+  private String size;
+
 }

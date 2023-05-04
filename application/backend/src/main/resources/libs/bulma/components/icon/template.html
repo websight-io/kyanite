@@ -13,8 +13,8 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<template data-sly-template.icon="${ @ colorOnText, textVariant, icon, addText, label}">
-    <span class="icon ${!colorOnText  && textVariant ? textVariant : ''}">
+<template data-sly-template.icon="${ @ colorOnText, textVariant, icon, addText, label, size}">
+    <span class="icon ${size} ${!colorOnText  && textVariant ? textVariant : ''}">
       <i class="${icon}"></i>
     </span>
     <sly data-sly-test="${addText}">

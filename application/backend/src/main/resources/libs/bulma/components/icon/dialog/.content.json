@@ -49,6 +49,10 @@
           "sling:resourceSuperType": "/libs/bulma/components/common/textvariant",
           "label": "Icon color variant"
         }
+      },
+      "size": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/bulma/components/common/size"
       }
     },
     "textTab": {
