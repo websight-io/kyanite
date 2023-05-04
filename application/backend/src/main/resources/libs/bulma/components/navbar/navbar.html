@@ -17,10 +17,12 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarComponent">
-  <sly data-sly-set.classes="navbar ${model.navbarStyle} ${model.containerStyle}"></sly>
+  <sly data-sly-set.classes="navbar ${model.navbarStyle}"></sly>
   <sly data-sly-test="${resource.hasChildren}">
     <nav class="${classes}" role="navigation" aria-label="main navigation" >
-      <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+      <div class="container ${model.containerStyle}">
+        <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+      </div>
     </nav>
   </sly>
   <sly data-sly-test="${!resource.hasChildren}">
