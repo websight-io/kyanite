@@ -33,9 +33,7 @@
   <modules>
     <module>frontend</module>
     <module>backend</module>
-    <module>bulma-table-service</module>
-    <module>bulma-table-view</module>
-    <module>bulma-color</module>
+    <module>extensions</module>
   </modules>
 
   <properties>
