@@ -11,7 +11,9 @@
       "type": "title",
       "text": "Title",
       "size": "is-1",
-      "element": "h1"
+      "element": "h1",
+      "color": "has-text-black",
+      "shadeBw": "has-text-primary"
     },
     "buttons": {
       "jcr:primaryType": "nt:unstructured",
