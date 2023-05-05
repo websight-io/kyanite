@@ -52,7 +52,7 @@
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/bulma/components/common/size"
+        "path": "/libs/bulma/components/common/iconsize"
       }
     },
     "textTab": {
