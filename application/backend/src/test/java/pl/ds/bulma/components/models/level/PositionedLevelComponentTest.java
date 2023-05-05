@@ -18,8 +18,6 @@ package pl.ds.bulma.components.models.level;
 
 import static java.util.Objects.requireNonNull;
 import static org.assertj.core.api.Assertions.assertThat;
-import static pl.ds.bulma.components.models.level.LevelComponent.LEVEL_ITEM_COMPONENT_RESOURCE_TYPE;
-import static pl.ds.bulma.components.models.level.LevelComponent.POSITIONED_LEVEL_COMPONENT_RESOURCE_TYPE;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
@@ -29,7 +27,6 @@ import org.jetbrains.annotations.Nullable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(SlingContextExtension.class)
 class PositionedLevelComponentTest {

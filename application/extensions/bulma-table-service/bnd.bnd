@@ -1,0 +1,3 @@
+Bundle-Name: Bulma Table Service
+Sling-Bundle-Resources: /libs/bulma-table-service/docs
+WebSight-Swagger-Index: /libs/bulma-table-service/docs/api.html

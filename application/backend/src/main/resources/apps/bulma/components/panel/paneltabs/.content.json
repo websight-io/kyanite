@@ -1,7 +1,0 @@
-{
-  "group": "Bulma.io sub-components",
-  "sling:resourceType": "ws:Component",
-  "isContainer": true,
-  "allowedComponents": ["/apps/bulma/components/panel/paneltabs/paneltab"],
-  "title": "Panel Tabs"
-}

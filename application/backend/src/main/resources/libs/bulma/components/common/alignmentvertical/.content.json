@@ -1,0 +1,20 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/radio",
+  "name": "alignmentVertical",
+  "label": "Vertical Alignment",
+  "left": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "Top",
+    "value": "is-top"
+  },
+  "centered": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "Center",
+    "value": "is-centered"
+  },
+  "right": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "Bottom",
+    "value": "is-bottom"
+  }
+}

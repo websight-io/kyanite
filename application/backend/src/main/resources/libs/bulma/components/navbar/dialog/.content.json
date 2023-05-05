@@ -1,0 +1,84 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "variant": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "name": "variant",
+        "label": "Variant",
+        "include": {
+          "sling:resourceSuperType": "/libs/bulma/components/common/extendedvariant",
+          "black": {
+            "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+            "label": "Black",
+            "value": "is-black"
+          }
+        }
+      },
+      "fixedOption": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "fixedOption",
+        "label": "Fixed Option",
+        "description": "Requires checking a proper option in page properties",
+        "top": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Fixed Top",
+          "value": "is-fixed-top"
+        },
+        "standard": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Standard",
+          "value": ""
+        },
+        "bottom": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Fixed Bottom",
+          "value": "is-fixed-bottom"
+        }
+      },
+      "isTransparent": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isTransparent",
+        "label": "Navbar background is transparent"
+      },
+      "containerStyle": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "containerStyle",
+        "label": "Style of the container",
+        "default": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Default style",
+          "value": ""
+        },
+        "is-widescreen": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Widescreen",
+          "value": "is-widescreen"
+        },
+        "is-fullhd": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Full hd",
+          "value": "is-fullhd"
+        },
+        "is-max-desktop": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Max desktop",
+          "value": "is-max-desktop"
+        },
+        "is-max-widescreen": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Max widescreen",
+          "value": "is-max-widescreen"
+        },
+        "is-fluid": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Fluid",
+          "value": "is-fluid"
+        }
+      }
+    }
+  }
+}

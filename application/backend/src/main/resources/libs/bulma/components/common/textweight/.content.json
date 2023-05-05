@@ -1,0 +1,31 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "textWeight",
+  "label": "Text weight",
+  "light": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Light",
+    "value": "has-text-weight-light"
+  },
+  "normal": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Normal",
+    "value": "has-text-weight-normal",
+    "selected": "true"
+  },
+  "medium": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Medium",
+    "value": "has-text-weight-medium"
+  },
+  "semibold": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Semi-bold",
+    "value": "has-text-weight-semibold"
+  },
+  "bold": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Bold",
+    "value": "has-text-weight-bold"
+  }
+}

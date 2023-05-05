@@ -1,0 +1,12 @@
+{
+  "isContainer": true,
+  "allowedComponents": [
+    "/libs/bulma/components/table/tablehead",
+    "/libs/bulma/components/table/tablefoot",
+    "/libs/bulma/components/table/tablebody",
+    "/libs/bulma/components/table/tablerow"
+  ],
+  "group": "Bulma.io Elements",
+  "sling:resourceType": "ws:Component",
+  "title": "Table"
+}
