@@ -8,13 +8,13 @@
       "alignment": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "include": {
-          "sling:resourceSuperType": "/libs/bulma/components/common/alignment"
+          "sling:resourceSuperType": "bulma/components/common/alignment"
         }
       },
       "alignmentVertical": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "include": {
-          "sling:resourceSuperType": "/apps/bulma/components/common/alignmentvertical"
+          "sling:resourceSuperType": "bulma/components/common/alignmentvertical"
         }
       },
       "elementType": {
