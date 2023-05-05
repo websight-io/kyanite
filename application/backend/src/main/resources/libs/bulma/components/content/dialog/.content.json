@@ -10,7 +10,8 @@
         "name": "text",
         "label": "Text",
         "ws:disallowedContext": ["edit:panel"],
-        "required": true
+        "required": true,
+        "configuration": "/libs/bulma/components/common/rte/configurations/default"
       },
       "panelText": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
