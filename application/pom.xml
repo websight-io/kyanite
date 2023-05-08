@@ -21,7 +21,7 @@
   <parent>
     <groupId>pl.ds.bulma</groupId>
     <artifactId>bulma</artifactId>
-    <version>1.0.11-SNAPSHOT</version>
+    <version>1.0.12-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -33,8 +33,7 @@
   <modules>
     <module>frontend</module>
     <module>backend</module>
-    <module>bulma-table-service</module>
-    <module>bulma-table-view</module>
+    <module>extensions</module>
   </modules>
 
   <properties>

@@ -5,7 +5,7 @@
 
   <groupId>pl.ds.bulma</groupId>
   <artifactId>bulma</artifactId>
-  <version>1.0.11-SNAPSHOT</version>
+  <version>1.0.12-SNAPSHOT</version>
 
   <name>Bulma Components Project</name>
   <packaging>pom</packaging>

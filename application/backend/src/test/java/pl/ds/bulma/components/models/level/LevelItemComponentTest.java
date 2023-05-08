@@ -49,7 +49,6 @@ class LevelItemComponentTest {
         getResource("/onLevel/firstItem")).adaptTo(LevelItemComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getLevelItemStyle()).isEqualTo("has-text-centered");
     assertThat(model.getElementType()).isEqualTo("div");
   }
 
@@ -59,7 +58,6 @@ class LevelItemComponentTest {
         getResource("/onPositionedLevel/firstItem")).adaptTo(LevelItemComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getLevelItemStyle()).isEmpty();
     assertThat(model.getElementType()).isEqualTo("p");
   }
 

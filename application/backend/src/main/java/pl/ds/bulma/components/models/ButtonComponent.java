@@ -40,8 +40,11 @@ public class ButtonComponent {
 
   @Inject
   @Getter
-  @Default(values = "Label")
   private String icon;
+
+  @Inject
+  @Getter
+  private String iconRight;
 
   @Inject
   @Getter
@@ -65,6 +68,9 @@ public class ButtonComponent {
 
   @Inject
   private boolean isRounded;
+
+  @Inject
+  private boolean isInverted;
 
   @Inject
   private boolean isFullWidth;
@@ -116,6 +122,9 @@ public class ButtonComponent {
     }
     if (isRounded) {
       classes.add("is-rounded");
+    }
+    if (isInverted) {
+      classes.add("is-inverted");
     }
     if (isFullWidth) {
       classes.add("is-fullwidth");

@@ -1,0 +1,39 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "size": "is-large",
+  "variant": "is-primary",
+  "container1": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/container",
+    "title1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/title",
+      "type": "title",
+      "text": "Title",
+      "size": "is-1",
+      "element": "h1",
+      "color": "has-text-black",
+      "shadeBw": "has-text-primary"
+    },
+    "buttons": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/buttons",
+      "button1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "bulma/components/button",
+        "variant": "is-primary"
+      },
+      "button2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "bulma/components/button",
+        "variant": "is-primary",
+        "isOutlined": true
+      }
+    },
+    "content1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "bulma/components/content",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    }
+  }
+}
