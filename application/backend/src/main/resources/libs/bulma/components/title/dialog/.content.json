@@ -21,27 +21,37 @@
           "name": "element"
         }
       },
-      "addSubtitle": {
-        "sling:resourceType": "wcm/dialogs/components/toggle",
-        "name": "addSubtitle",
-        "label": "Add a subtitle"
-      },
-      "subtitleContainer": {
+      "subtitleOptionsContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
-        "subtitle": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "subtitle",
-          "label": "Subtitle text"
+        "addSubtitle": {
+          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "name": "addSubtitle",
+          "label": "Add a subtitle"
         },
-        "isSpaced": {
-          "sling:resourceType": "wcm/dialogs/components/checkbox",
-          "name": "isSpaced",
-          "label": "Additional space between the title and subtitle"
+        "subtitleContainer": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "subtitle": {
+            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "name": "subtitle",
+            "label": "Subtitle text",
+            "description": "A subtitle can be defined if the size of the title is 4 or smaller"
+          },
+          "isSpaced": {
+            "sling:resourceType": "wcm/dialogs/components/checkbox",
+            "name": "isSpaced",
+            "label": "Additional space between the title and subtitle"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "addSubtitle",
+              "values": "true"
+            }
+          }
         },
         "ws:display": {
           "condition": {
-            "sourceName": "addSubtitle",
-            "values": "true"
+            "sourceName": "size",
+            "values": ["is-1", "is-2", "is-3", "is-4"]
           }
         }
       }
