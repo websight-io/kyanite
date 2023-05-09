@@ -5,7 +5,7 @@
 
   <groupId>pl.ds.bulma</groupId>
   <artifactId>bulma</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.1-SNAPSHOT</version>
 
   <name>Bulma Components Project</name>
   <packaging>pom</packaging>
@@ -28,7 +28,7 @@
     <connection>scm:git:git://github.com/websight-io/bulma.git</connection>
     <developerConnection>scm:git:git@github.com:websight-io/bulma.git</developerConnection>
     <url>https://github.com/websight-io/bulma</url>
-    <tag>v1.1.0</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <organization>
