@@ -15,18 +15,7 @@
   ~     limitations under the License.
   ~
 */-->
-
-<sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarComponent">
-  <sly data-sly-set.classes="navbar ${model.navbarStyle}"></sly>
-  <sly data-sly-test="${resource.hasChildren}">
-    <nav class="${classes}" role="navigation" aria-label="main navigation" >
-      <div class="container ${model.containerStyle}">
-        <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-      </div>
-    </nav>
-  </sly>
-  <sly data-sly-test="${!resource.hasChildren}">
-    <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
-         data-sly-call="${lib.placeholder @ classes=classes}"></sly>
-  </sly>
+<sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarComponent"
+     data-sly-use.template="./template.html"
+     data-sly-call="${template.navbar @ model=model}">
 </sly>
