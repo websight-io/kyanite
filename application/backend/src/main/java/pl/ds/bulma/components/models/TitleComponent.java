@@ -26,7 +26,6 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import pl.ds.bulma.components.helpers.ColorService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import pl.ds.bulma.components.helpers.ColorService;
 
