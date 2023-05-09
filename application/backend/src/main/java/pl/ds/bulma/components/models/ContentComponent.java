@@ -71,7 +71,7 @@ public class ContentComponent {
   @PostConstruct
   private void init() {
     ColorService colorService
-            = new ColorService(resource, "/apps/bulma/components/common/text/color",
+            = new ColorService(resource, "/libs/bulma/components/common/text/color",
             this.color, this.shadeBw, this.shadeGrey, this.shadeRest);
 
     this.textColorVariant = colorService.getTextColorVariant();
