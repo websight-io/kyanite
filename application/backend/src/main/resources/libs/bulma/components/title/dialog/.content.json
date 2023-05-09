@@ -5,23 +5,6 @@
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
-      "type": {
-        "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "type",
-        "label": "Type",
-        "required": true,
-        "title": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Title",
-          "value": "title",
-          "selected": true
-        },
-        "subtitle": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Subtitle",
-          "value": "subtitle"
-        }
-      },
       "text": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "text",
@@ -38,14 +21,37 @@
           "name": "element"
         }
       },
-      "isSpaced": {
-        "sling:resourceType": "wcm/dialogs/components/checkbox",
-        "name": "isSpaced",
-        "label": "Normal spacing between title and subtitle",
+      "subtitleOptionsContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "addSubtitle": {
+          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "name": "addSubtitle",
+          "label": "Add a subtitle"
+        },
+        "subtitleContainer": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "subtitle": {
+            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "name": "subtitle",
+            "label": "Subtitle text",
+            "description": "A subtitle can be defined if the size of the title is 4 or bigger"
+          },
+          "isSpaced": {
+            "sling:resourceType": "wcm/dialogs/components/checkbox",
+            "name": "isSpaced",
+            "label": "Additional space between the title and subtitle"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "addSubtitle",
+              "values": "true"
+            }
+          }
+        },
         "ws:display": {
           "condition": {
-            "sourceName": "type",
-            "values": "title"
+            "sourceName": "size",
+            "values": ["is-1", "is-2", "is-3", "is-4"]
           }
         }
       },

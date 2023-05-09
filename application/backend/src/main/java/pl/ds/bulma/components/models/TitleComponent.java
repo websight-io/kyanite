@@ -26,6 +26,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import pl.ds.bulma.components.helpers.ColorService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import pl.ds.bulma.components.helpers.ColorService;
 
@@ -38,9 +39,7 @@ public class TitleComponent {
   private String text;
 
   @Inject
-  @Getter
-  @Default(values = "title")
-  private String type;
+  private String subtitle;
 
   @Inject
   @Getter
@@ -54,12 +53,21 @@ public class TitleComponent {
 
   @Inject
   @Getter
+  @Default(booleanValues = false)
+  private boolean addSubtitle;
+
+  @Inject
+  @Getter
   @Default(values = StringUtils.EMPTY)
   private String size;
 
   @Inject
   @Getter
   private String[] titleClasses;
+
+  @Inject
+  @Getter
+  private String[] subtitleClasses;
 
   @Inject
   @Default(values = "bw_has-text-black")
@@ -85,20 +93,33 @@ public class TitleComponent {
 
   @PostConstruct
   private void init() {
-    List<String> classes = new ArrayList<>();
-    classes.add(type);
+    List<String> titleClassList = new ArrayList<>();
+    List<String> subtitleClassList = new ArrayList<>();
+    titleClassList.add("title");
+    subtitleClassList.add("subtitle");
+
     if (StringUtils.isNotBlank(size)) {
-      classes.add(size);
+      titleClassList.add(size);
+      int sizeNumber = Integer.parseInt(size.split("-")[1]);
+      if (sizeNumber > 4) {
+        addSubtitle = false;
+      }
+      subtitleClassList.add("is-" + (sizeNumber + 2));
     }
     if (isSpaced) {
-      classes.add("is-spaced");
+      titleClassList.add("is-spaced");
     }
-    titleClasses = classes.toArray(new String[]{});
+    titleClasses = titleClassList.toArray(new String[]{});
+    subtitleClasses = subtitleClassList.toArray(new String[]{});
 
     ColorService colorService
             = new ColorService(resource, "/libs/bulma/components/common/text/color",
             this.color, this.shadeBw, this.shadeGrey, this.shadeRest);
 
     this.textColorVariant = colorService.getTextColorVariant();
+  }
+
+  public String getSubtitle() {
+    return addSubtitle ? subtitle : "";
   }
 }
