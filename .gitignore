@@ -30,6 +30,9 @@ dist/
 .history/
 *.iml
 
+# VSCode IDE
+.vscode/
+
 # Unit test reports
 TEST*.xml
 
