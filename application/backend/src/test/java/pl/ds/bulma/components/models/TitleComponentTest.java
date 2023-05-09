@@ -46,7 +46,6 @@ class TitleComponentTest {
 
     assertThat(model).isNotNull();
     assertThat(model.getText()).isEqualTo("Title");
-    assertThat(model.getType()).isEqualTo("title");
     assertThat(model.getElement()).isEqualTo("h2");
     assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("title");
     assertThat(model.getSize()).isEmpty();
@@ -60,9 +59,9 @@ class TitleComponentTest {
 
     assertThat(model).isNotNull();
     assertThat(model.getText()).isEqualTo("Nice subtitle");
-    assertThat(model.getType()).isEqualTo("subtitle");
     assertThat(model.getElement()).isEqualTo("p");
-    assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("subtitle", "is-2", "is-spaced");
+    assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("title", "is-2", "is-spaced");
+    assertThat(model.getSubtitleClasses()).containsExactlyInAnyOrder("subtitle", "is-4");
     assertThat(model.getSize()).isEqualTo("is-2");
     assertThat(model.isSpaced()).isTrue();
   }
