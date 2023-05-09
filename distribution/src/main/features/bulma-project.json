@@ -15,6 +15,10 @@
     {
       "id": "pl.ds.bulma:bulma-table-view:${project.version}",
       "start-order": "25"
+    },
+    {
+      "id": "pl.ds.bulma:bulma-color:${project.version}",
+      "start-order": "25"
     }
   ],
   "configurations": {

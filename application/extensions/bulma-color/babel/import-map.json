@@ -1,0 +1,8 @@
+{
+  "rootDir": "/apps/",
+  "aliases": {
+    "^(components.*)": "websight-dialogs-view/web-resources/\\1.js",
+    "^(.*)": "websight-atlaskit-esm/web-resources/\\1.js"
+  },
+  "devAliases": {}
+}
