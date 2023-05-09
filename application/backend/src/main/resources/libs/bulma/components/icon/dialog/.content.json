@@ -22,9 +22,24 @@
           "value": "type"
         }
       },
+      "iconLibType": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "iconLibType",
+        "label": "Icon Library",
+        "small": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Font Awesome",
+          "value": "fa"
+        },
+        "normal": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Material Design",
+          "value": "ma"
+        }
+      },
       "selectableIcon": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/bulma/components/common/icon",
+        "path": "/libs/bulma/components/common/icons/fontawesome",
         "ws:display": {
           "condition": {
             "sourceName": "selectOrType",
@@ -50,9 +65,39 @@
           "label": "Icon color variant"
         }
       },
-      "size": {
-        "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/bulma/components/common/iconsize"
+      "iconFA": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "containerSize": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/libs/bulma/components/common/icon/containersize/fontawesome"
+        },
+        "iconSize": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/libs/bulma/components/common/icon/iconsize/fontawesome"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "iconLibType",
+            "values": "fa"
+          }
+        }
+      },
+      "iconMD": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "containerSize": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/libs/bulma/components/common/icon/containersize/materialdesign"
+        },
+        "iconSize": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/libs/bulma/components/common/icon/iconsize/materialdesign"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "iconLibType",
+            "values": "md"
+          }
+        }
       }
     },
     "textTab": {
