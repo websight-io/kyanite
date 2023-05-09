@@ -34,7 +34,7 @@
             "sling:resourceType": "wcm/dialogs/components/textfield",
             "name": "subtitle",
             "label": "Subtitle text",
-            "description": "A subtitle can be defined if the size of the title is 4 or smaller"
+            "description": "A subtitle can be defined if the size of the title is 4 or bigger"
           },
           "isSpaced": {
             "sling:resourceType": "wcm/dialogs/components/checkbox",
