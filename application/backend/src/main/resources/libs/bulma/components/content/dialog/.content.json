@@ -19,7 +19,7 @@
         "label": "Text",
         "ws:disallowedContext": ["edit:dialog"],
         "required": true,
-        "configuration": "wcm/dialogs/components/richtext/configurations/compact"
+        "configuration": "/libs/bulma/components/common/rte/configurations/compact"
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",

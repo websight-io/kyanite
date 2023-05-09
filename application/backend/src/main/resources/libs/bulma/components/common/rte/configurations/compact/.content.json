@@ -1,6 +1,6 @@
 {
   "sling:resourceType": "wcm/dialogs/components/richtext/configuration",
-  "sling:resourceSuperType": "wcm/dialogs/components/richtext/configurations/default",
+  "sling:resourceSuperType": "wcm/dialogs/components/richtext/configurations/compact",
   "color": {
     "sling:resourceType": "extensions/dialogs/components/richtext/ui/color",
     "title": "Color",
