@@ -1,0 +1,20 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "iconSize",
+  "label": "Icon size",
+  "small": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Small",
+    "value": "fas"
+  },
+  "normal": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Normal",
+    "value": "fas fa-lg"
+  },
+  "medium": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Medium",
+    "value": "fas fa-2x"
+  }
+}

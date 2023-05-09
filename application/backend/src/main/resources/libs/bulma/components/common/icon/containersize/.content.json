@@ -1,7 +1,7 @@
 {
   "sling:resourceType": "wcm/dialogs/components/select",
-  "name": "size",
-  "label": "Size",
+  "name": "containerSize",
+  "label": "Container size",
   "small": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Small",

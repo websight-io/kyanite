@@ -54,6 +54,14 @@ public class IconComponent {
 
   @Inject
   @Getter
-  private String size;
+  private String iconLibType;
+
+  @Inject
+  @Getter
+  private String containerSize;
+
+  @Inject
+  @Getter
+  private boolean iconSize;
 
 }

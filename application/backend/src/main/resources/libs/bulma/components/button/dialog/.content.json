@@ -114,7 +114,7 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "icon": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/libs/bulma/components/common/icon"
+            "path": "/libs/bulma/components/common/icon/icons/fontawesome"
           },
           "ws:display": {
             "condition": {
@@ -160,7 +160,7 @@
           "iconRight": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/libs/bulma/components/common/icon",
+              "sling:resourceSuperType": "/libs/bulma/components/common/icons/fontawesome",
               "label": "Right icon",
               "name": "iconRight"
             }
