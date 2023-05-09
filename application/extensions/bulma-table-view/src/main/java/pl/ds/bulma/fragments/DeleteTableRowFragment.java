@@ -29,7 +29,7 @@ public class DeleteTableRowFragment implements WebFragment {
 
   @Override
   public String getFragment() {
-    return "/apps/bulma-table-view/web-resources/extensions/DeleteTableRowExtension.js";
+    return "/libs/bulma-table-view/web-resources/extensions/DeleteTableRowExtension.js";
   }
 
   @Override

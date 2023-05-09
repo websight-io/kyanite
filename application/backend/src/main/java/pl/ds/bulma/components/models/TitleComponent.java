@@ -44,7 +44,7 @@ public class TitleComponent {
 
   @Inject
   @Getter
-  @Default(values = "h1")
+  @Default(values = "h2")
   private String element;
 
   @Inject

@@ -1,9 +1,0 @@
-{
-  "isContainer": true,
-  "group": ".hidden",
-  "allowedComponents": [
-    "/apps/bulma/components/panel/panelblock"
-  ],
-  "sling:resourceType": "ws:Component",
-  "title": "Panel Tab Content"
-}

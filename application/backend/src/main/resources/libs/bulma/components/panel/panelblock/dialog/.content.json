@@ -1,0 +1,14 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "icon": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/bulma/components/common/icon"
+      }
+    }
+  }
+}
