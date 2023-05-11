@@ -9,14 +9,15 @@
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "text",
         "label": "Text",
-        "ws:disallowedContext": ["edit:panel"]
+        "ws:disallowedContext": ["edit:panel"],
+        "configuration": "/libs/bulma/components/common/rte/configurations/default"
       },
       "panelText": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "text",
         "label": "Text",
         "ws:disallowedContext": ["edit:dialog"],
-        "configuration": "wcm/dialogs/components/richtext/configurations/compact"
+        "configuration": "/libs/bulma/components/common/rte/configurations/compact"
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",

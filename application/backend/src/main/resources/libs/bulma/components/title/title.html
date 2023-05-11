@@ -20,4 +20,9 @@
   <h1 data-sly-element="${model.element}" class="${model.titleClasses @ join=' '}">
     ${model.text}
   </h1>
+  <sly data-sly-test="${model.addSubtitle}">
+    <h1 data-sly-element="${model.element}" class="${model.subtitleClasses @ join=' '}">
+      ${model.subtitle}
+    </h1>
+  </sly>
 </sly>
