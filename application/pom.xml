@@ -176,7 +176,7 @@
                     <goal>install</goal>
                   </goals>
                   <configuration>
-                    <slingUrl>http://${env.WEBSIGHT_URL}:${env.WEBSIGHT_PORT}/system/console
+                    <slingUrl>${env.WEBSIGHT_URL}:${env.WEBSIGHT_PORT}/system/console
                     </slingUrl>
                     <user>${env.WEBSIGHT_ADMIN_USER}</user>
                     <password>${env.WEBSIGHT_ADMIN_PASSWORD}</password>

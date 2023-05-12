@@ -31,4 +31,9 @@ jobs:
           distribution: 'adopt'
           cache: maven
       - name: Build with Maven
+        env:
+          WEBSIGHT_URL: ${{ secrets.WEBSIGHT_URL }}
+          WEBSIGHT_PORT: ${{ secrets.WEBSIGHT_PORT }}
+          WEBSIGHT_ADMIN_USER: ${{ secrets.WEBSIGHT_ADMIN_USER }}
+          WEBSIGHT_ADMIN_PASSWORD: ${{ secrets.WEBSIGHT_ADMIN_PASSWORD }}
         run: mvn clean install -PautoInstallBundleEnvironment
