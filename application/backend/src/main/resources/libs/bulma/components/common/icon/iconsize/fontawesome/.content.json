@@ -7,14 +7,14 @@
     "label": "Small",
     "value": "fas"
   },
-  "normal": {
-    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
-    "label": "Normal",
-    "value": "fas fa-lg"
-  },
   "medium": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Medium",
+    "value": "fas fa-lg"
+  },
+  "large": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Large",
     "value": "fas fa-2x"
   }
 }

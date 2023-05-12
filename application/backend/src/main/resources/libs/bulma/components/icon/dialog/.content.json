@@ -34,7 +34,7 @@
         "normal": {
           "sling:resourceType": "wcm/dialogs/components/select/selectitem",
           "label": "Material Design",
-          "value": "ma"
+          "value": "md"
         }
       },
       "selectableIcon": {
@@ -67,10 +67,6 @@
       },
       "iconFA": {
         "sling:resourceType": "wcm/dialogs/components/container",
-        "containerSize": {
-          "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/libs/bulma/components/common/icon/containersize/fontawesome"
-        },
         "iconSize": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "path": "/libs/bulma/components/common/icon/iconsize/fontawesome"
@@ -84,10 +80,6 @@
       },
       "iconMD": {
         "sling:resourceType": "wcm/dialogs/components/container",
-        "containerSize": {
-          "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/libs/bulma/components/common/icon/containersize/materialdesign"
-        },
         "iconSize": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "path": "/libs/bulma/components/common/icon/iconsize/materialdesign"
