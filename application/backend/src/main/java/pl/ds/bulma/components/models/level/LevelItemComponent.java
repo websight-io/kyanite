@@ -16,13 +16,17 @@
 
 package pl.ds.bulma.components.models.level;
 
+import java.util.List;
+import java.util.Objects;
 import javax.inject.Inject;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class LevelItemComponent {
@@ -43,6 +47,9 @@ public class LevelItemComponent {
   @Default(values = "is-centered")
   private String alignmentVertical;
 
+  @ValueMapValue
+  private String[] classes;
+
   public String getAlignment() {
     if (alignment.equals("is-left")) {
       return "is-justify-content-flex-start has-text-left";
@@ -61,5 +68,9 @@ public class LevelItemComponent {
       return "is-align-items-flex-end";
     }
     return "is-align-items-center";
+  }
+
+  public String getClasses() {
+    return Objects.nonNull(classes) ? String.join(" ", List.of(classes)) : StringUtils.EMPTY;
   }
 }

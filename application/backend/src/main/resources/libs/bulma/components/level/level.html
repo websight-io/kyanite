@@ -18,10 +18,10 @@
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.level.LevelComponent">
   <sly data-sly-test="${resource.hasChildren}">
-    <nav class="level ${model.isVertical ? '' : 'is-mobile'}">
+    <div class="level ${model.verticalAlignment} ${model.isVertical ? '' : 'is-mobile'}">
       <sly
           data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
       </div>
-    </nav>
+    </div>
   </sly>
 </sly>
