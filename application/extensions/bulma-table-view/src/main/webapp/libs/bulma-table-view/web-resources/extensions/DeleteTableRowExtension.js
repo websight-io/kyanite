@@ -23,6 +23,7 @@ const config = {
   metadata: {
     title: 'Delete row',
     icon: 'delete_sweep',
+    testId: 'DeleteTableRow',
   },
   action: 'delete-table-row',
   allowedComponents: [
