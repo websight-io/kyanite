@@ -5,6 +5,21 @@
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
+      "iconLibType": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "iconLibType",
+        "label": "Icon Library",
+        "fa": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Font Awesome",
+          "value": "fontawesome"
+        },
+        "md": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Material Design",
+          "value": "materialdesign"
+        }
+      },
       "selectOrType": {
         "sling:resourceType": "wcm/dialogs/components/radio",
         "name": "selectOrType",
@@ -22,31 +37,6 @@
           "value": "type"
         }
       },
-      "iconLibType": {
-        "sling:resourceType": "wcm/dialogs/components/select",
-        "name": "iconLibType",
-        "label": "Icon Library",
-        "small": {
-          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
-          "label": "Font Awesome",
-          "value": "fa"
-        },
-        "normal": {
-          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
-          "label": "Material Design",
-          "value": "md"
-        }
-      },
-      "selectableIcon": {
-        "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/bulma/components/common/icons/fontawesome",
-        "ws:display": {
-          "condition": {
-            "sourceName": "selectOrType",
-            "values": "select"
-          }
-        }
-      },
       "typedIcon": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "icon",
@@ -58,15 +48,18 @@
           }
         }
       },
-      "textVariant": {
-        "sling:resourceType": "wcm/dialogs/components/include",
-        "include": {
-          "sling:resourceSuperType": "/libs/bulma/components/common/textvariant",
-          "label": "Icon color variant"
-        }
-      },
       "iconFA": {
         "sling:resourceType": "wcm/dialogs/components/container",
+        "selectableIcon": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/libs/bulma/components/common/icon/icons/fontawesome",
+          "ws:display": {
+            "condition": {
+              "sourceName": "selectOrType",
+              "values": "select"
+            }
+          }
+        },
         "iconSize": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "path": "/libs/bulma/components/common/icon/iconsize/fontawesome"
@@ -74,12 +67,22 @@
         "ws:display": {
           "condition": {
             "sourceName": "iconLibType",
-            "values": "fa"
+            "values": "fontawesome"
           }
         }
       },
       "iconMD": {
         "sling:resourceType": "wcm/dialogs/components/container",
+        "selectableIcon": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/libs/bulma/components/common/icon/icons/materialdesign",
+          "ws:display": {
+            "condition": {
+              "sourceName": "selectOrType",
+              "values": "select"
+            }
+          }
+        },
         "iconSize": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "path": "/libs/bulma/components/common/icon/iconsize/materialdesign"
@@ -87,8 +90,15 @@
         "ws:display": {
           "condition": {
             "sourceName": "iconLibType",
-            "values": "md"
+            "values": "materialdesign"
           }
+        }
+      },
+      "textVariant": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/bulma/components/common/textvariant",
+          "label": "Icon color variant"
         }
       }
     },

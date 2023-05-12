@@ -62,7 +62,7 @@ public class IconComponent {
 
   @Inject
   @Getter
-  @Default(values = "md")
+  @Default(values = "materialdesign")
   private String iconLibType;
 
   @Getter
@@ -78,32 +78,20 @@ public class IconComponent {
 
   @PostConstruct
   private void init() {
-    String containerSizeLarge = "is-large"; // 3rem
-    String containerSizeMedium = "is-medium"; //2rem
-    String containerSizeRegular = ""; //1.5rem
-
-    IconContainerService iconContainerService = new IconContainerService(resource);
+    IconContainerService iconContainerService = new IconContainerService(this.resource);
     String mappingPath = "/libs/bulma/components/common/icon/containersize/defaultsizemappings";
 
-    ValueMap mapFa = iconContainerService
-            .getContainerSizeMapping(
-                    mappingPath + "/fontawesome");
-    ValueMap mapMd = iconContainerService
-            .getContainerSizeMapping(
-                    mappingPath + "/materialdesign");
+    this.containerSize = "";
 
-    switch (iconLibType) {
-      case "fa":
-        this.containerSize = mapFa.get(iconSize).toString();
-        break;
-      case "md":
-        this.containerSize = mapMd.get(iconSize).toString();
-        break;
-      default:
-        this.containerSize = "";
-        break;
+    if (this.iconLibType != null && !this.iconLibType.isEmpty()) {
+      ValueMap containerSizeMapping = iconContainerService.getContainerSizeMapping(
+                      mappingPath + "/" + this.iconLibType);
+
+      Object mappedContainerSize = containerSizeMapping.get(this.iconSize);
+      if (mappedContainerSize != null) {
+        this.containerSize = mappedContainerSize.toString();
+      }
     }
-
   }
 
 }
