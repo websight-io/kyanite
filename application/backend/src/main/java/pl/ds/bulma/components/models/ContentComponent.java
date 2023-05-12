@@ -16,6 +16,7 @@
 
 package pl.ds.bulma.components.models;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
@@ -27,10 +28,12 @@ import org.apache.sling.models.annotations.Model;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContentComponent {
 
+  private static final String DEFAULT_TEXT = "Content";
   public static final String TEXT_WEIGHT_DEFAULT = "has-text-weight-normal";
+
   @Inject
   @Getter
-  @Default(values = "Content")
+  @Default(values = DEFAULT_TEXT)
   private String text;
 
   @Inject
@@ -42,4 +45,11 @@ public class ContentComponent {
   @Getter
   @Default(values = TEXT_WEIGHT_DEFAULT)
   private String textWeight;
+
+  @PostConstruct
+  private void init() {
+    if (text.isEmpty()) {
+      text = DEFAULT_TEXT;
+    }
+  }
 }

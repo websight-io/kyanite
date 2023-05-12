@@ -23,6 +23,7 @@ const config = {
   metadata: {
     title: 'Delete column',
     icon: 'remove_road',
+    testId: 'DeleteTableColumn',
   },
   action: 'delete-table-column',
   allowedComponents: [
