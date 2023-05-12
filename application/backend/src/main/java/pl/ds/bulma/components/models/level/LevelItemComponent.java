@@ -16,8 +16,6 @@
 
 package pl.ds.bulma.components.models.level;
 
-import java.util.List;
-import java.util.Objects;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
@@ -48,7 +46,8 @@ public class LevelItemComponent {
   private String alignmentVertical;
 
   @ValueMapValue
-  private String[] classes;
+  @Default(values = StringUtils.EMPTY)
+  private String classes;
 
   public String getAlignment() {
     if (alignment.equals("is-left")) {
@@ -70,7 +69,4 @@ public class LevelItemComponent {
     return "is-align-items-center";
   }
 
-  public String getClasses() {
-    return Objects.nonNull(classes) ? String.join(" ", List.of(classes)) : StringUtils.EMPTY;
-  }
 }
