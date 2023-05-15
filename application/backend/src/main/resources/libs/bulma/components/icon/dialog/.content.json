@@ -5,6 +5,23 @@
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
+      "iconLibType": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "iconLibType",
+        "label": "Icon Library",
+        "required": true,
+        "fa": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Font Awesome",
+          "value": "fontawesome"
+        },
+        "md": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Material Design",
+          "value": "materialdesign",
+          "selected": true
+        }
+      },
       "selectOrType": {
         "sling:resourceType": "wcm/dialogs/components/radio",
         "name": "selectOrType",
@@ -22,24 +39,60 @@
           "value": "type"
         }
       },
-      "selectableIcon": {
-        "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/bulma/components/common/icon",
-        "ws:display": {
-          "condition": {
-            "sourceName": "selectOrType",
-            "values": "select"
-          }
-        }
-      },
       "typedIcon": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "icon",
-        "label": "Name of the icon from font awesome",
+        "label": "Name of the icon",
         "ws:display": {
           "condition": {
             "sourceName": "selectOrType",
             "values": "type"
+          }
+        }
+      },
+      "iconFA": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "selectableIcon": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "bulma/components/common/icon/icons/fontawesome",
+          "ws:display": {
+            "condition": {
+              "sourceName": "selectOrType",
+              "values": "select"
+            }
+          }
+        },
+        "iconSize": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "bulma/components/common/icon/iconsize/fontawesome"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "iconLibType",
+            "values": "fontawesome"
+          }
+        }
+      },
+      "iconMD": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "selectableIcon": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "bulma/components/common/icon/icons/materialdesign",
+          "ws:display": {
+            "condition": {
+              "sourceName": "selectOrType",
+              "values": "select"
+            }
+          }
+        },
+        "iconSize": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "bulma/components/common/icon/iconsize/materialdesign"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "iconLibType",
+            "values": "materialdesign"
           }
         }
       },

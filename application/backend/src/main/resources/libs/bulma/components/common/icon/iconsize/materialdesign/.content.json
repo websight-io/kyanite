@@ -1,0 +1,25 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "iconSize",
+  "label": "Icon size",
+  "extraSmall": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Extra small",
+    "value": "mdi mdi-18px"
+  },
+  "small": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Small",
+    "value": "mdi mdi-24px"
+  },
+  "medium": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Medium",
+    "value": "mdi mdi-36px"
+  },
+  "Large": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Large",
+    "value": "mdi mdi-48px"
+  }
+}

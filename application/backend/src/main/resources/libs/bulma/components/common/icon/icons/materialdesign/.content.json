@@ -2,44 +2,34 @@
   "sling:resourceType": "wcm/dialogs/components/select",
   "name": "icon",
   "label": "Icon",
-  "envelope": {
+  "email": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Envelope",
-    "value": "fa fa-lg fa-envelope"
+    "label": "Email",
+    "value": "mdi mdi-email"
   },
   "file": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "File",
-    "value": "fa fa-lg fa-file-alt"
+    "value": "mdi mdi-file-document"
   },
-  "wpforms": {
+  "form": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Wpforms",
-    "value": "fa fa-lg fa-wpforms"
+    "label": "Form",
+    "value": "mdi mdi-form-select"
   },
   "columns": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Columns",
-    "value": "fa fa-lg fa-columns"
-  },
-  "cubes": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Cubes",
-    "value": "fa fa-lg fa-cubes"
-  },
-  "cogs": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Gears",
-    "value": "fa fa-lg fa-cogs"
-  },
-  "superpowers": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Superpowers",
-    "value": "fa fa-lg fa-superpowers"
+    "value": "mdi mdi-format-columns"
   },
   "cube": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Cube",
-    "value": "fa fa-lg fa-cube"
+    "value": "mdi mdi-cube-outline"
+  },
+  "cogs": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Gears",
+    "value": "mdi mdi-cogs"
   }
 }

@@ -16,12 +16,16 @@
 
 package pl.ds.bulma.components.models;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.bulma.components.helpers.IconContainerService;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class IconComponent {
@@ -51,5 +55,39 @@ public class IconComponent {
   @Inject
   @Getter
   private boolean colorOnText;
+
+  @Inject
+  @Getter
+  @Default(values = "materialdesign")
+  private String iconLibType;
+
+  @Getter
+  private String containerSize;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi mdi-36px")
+  private String iconSize;
+
+  @SlingObject
+  private Resource resource;
+
+  @PostConstruct
+  private void init() {
+    IconContainerService iconContainerService = new IconContainerService(this.resource);
+    String mappingPath = "bulma/components/common/icon/containersize/defaultsizemappings";
+
+    this.containerSize = "";
+
+    if (this.iconLibType != null && !this.iconLibType.isEmpty()) {
+      ValueMap containerSizeMapping = iconContainerService.getContainerSizeMapping(
+                      mappingPath + "/" + this.iconLibType);
+
+      Object mappedContainerSize = containerSizeMapping.get(this.iconSize);
+      if (mappedContainerSize != null) {
+        this.containerSize = mappedContainerSize.toString();
+      }
+    }
+  }
 
 }
