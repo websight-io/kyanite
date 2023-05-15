@@ -11,6 +11,27 @@
         "checkedByDefault": true,
         "label": "The level is vertical on mobile",
         "description": "If you want the level to be horizontal on mobile as well uncheck that box."
+      },
+      "verticalAlignment": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "verticalAlignment",
+        "label": "Vertical Alignment",
+        "start": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "start",
+          "value": "is-align-items-flex-start"
+        },
+        "center": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "center",
+          "value": "",
+          "selected": true
+        },
+        "end": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "end",
+          "value": "is-align-items-flex-end"
+        }
       }
     }
   }
