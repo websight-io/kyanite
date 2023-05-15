@@ -19,6 +19,7 @@ package pl.ds.bulma.components.models;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Default;

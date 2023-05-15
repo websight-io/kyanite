@@ -9,6 +9,7 @@
         "sling:resourceType": "wcm/dialogs/components/select",
         "name": "iconLibType",
         "label": "Icon Library",
+        "required": true,
         "fa": {
           "sling:resourceType": "wcm/dialogs/components/select/selectitem",
           "label": "Font Awesome",
@@ -17,7 +18,8 @@
         "md": {
           "sling:resourceType": "wcm/dialogs/components/select/selectitem",
           "label": "Material Design",
-          "value": "materialdesign"
+          "value": "materialdesign",
+          "selected": true
         }
       },
       "selectOrType": {
@@ -40,7 +42,7 @@
       "typedIcon": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "icon",
-        "label": "Name of the icon from font awesome",
+        "label": "Name of the icon",
         "ws:display": {
           "condition": {
             "sourceName": "selectOrType",
@@ -52,7 +54,7 @@
         "sling:resourceType": "wcm/dialogs/components/container",
         "selectableIcon": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/libs/bulma/components/common/icon/icons/fontawesome",
+          "path": "bulma/components/common/icon/icons/fontawesome",
           "ws:display": {
             "condition": {
               "sourceName": "selectOrType",
@@ -62,7 +64,7 @@
         },
         "iconSize": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/libs/bulma/components/common/icon/iconsize/fontawesome"
+          "path": "bulma/components/common/icon/iconsize/fontawesome"
         },
         "ws:display": {
           "condition": {
@@ -75,7 +77,7 @@
         "sling:resourceType": "wcm/dialogs/components/container",
         "selectableIcon": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/libs/bulma/components/common/icon/icons/materialdesign",
+          "path": "bulma/components/common/icon/icons/materialdesign",
           "ws:display": {
             "condition": {
               "sourceName": "selectOrType",
@@ -85,7 +87,7 @@
         },
         "iconSize": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/libs/bulma/components/common/icon/iconsize/materialdesign"
+          "path": "bulma/components/common/icon/iconsize/materialdesign"
         },
         "ws:display": {
           "condition": {

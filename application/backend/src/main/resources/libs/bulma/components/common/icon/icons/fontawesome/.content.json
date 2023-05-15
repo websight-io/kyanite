@@ -5,41 +5,41 @@
   "envelope": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Envelope",
-    "value": "fa fa-lg fa-envelope"
+    "value": "fa fa-envelope"
   },
   "file": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "File",
-    "value": "fa fa-lg fa-file-alt"
+    "value": "fa fa-file-alt"
   },
   "wpforms": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Wpforms",
-    "value": "fa fa-lg fa-wpforms"
+    "value": "fa fa-wpforms"
   },
   "columns": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Columns",
-    "value": "fa fa-lg fa-columns"
+    "value": "fa fa-columns"
   },
   "cubes": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Cubes",
-    "value": "fa fa-lg fa-cubes"
+    "value": "fa fa-cubes"
   },
   "cogs": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Gears",
-    "value": "fa fa-lg fa-cogs"
+    "value": "fa fa-cogs"
   },
   "superpowers": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Superpowers",
-    "value": "fa fa-lg fa-superpowers"
+    "value": "fa fa-superpowers"
   },
   "cube": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Cube",
-    "value": "fa fa-lg fa-cube"
+    "value": "fa fa-cube"
   }
 }
