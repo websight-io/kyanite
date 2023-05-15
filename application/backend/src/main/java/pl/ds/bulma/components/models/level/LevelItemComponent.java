@@ -33,11 +33,6 @@ public class LevelItemComponent {
   private Resource resource;
 
   @Inject
-  @Getter
-  @Default(values = "div")
-  private String elementType;
-
-  @Inject
   @Default(values = "is-left")
   private String alignment;
 
@@ -68,5 +63,4 @@ public class LevelItemComponent {
     }
     return "is-align-items-center";
   }
-
 }

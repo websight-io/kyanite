@@ -23,6 +23,7 @@ const config = {
   metadata: {
     title: 'Add column before',
     icon: 'keyboard_arrow_left',
+    testId: 'AddTableColumnBefore',
   },
   action: 'add-table-column',
   insertBefore: true,

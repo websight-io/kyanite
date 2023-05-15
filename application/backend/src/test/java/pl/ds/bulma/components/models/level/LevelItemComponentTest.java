@@ -49,7 +49,6 @@ class LevelItemComponentTest {
         getResource("/onLevel/firstItem")).adaptTo(LevelItemComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getElementType()).isEqualTo("div");
   }
 
   @Test
@@ -58,7 +57,6 @@ class LevelItemComponentTest {
         getResource("/onPositionedLevel/firstItem")).adaptTo(LevelItemComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getElementType()).isEqualTo("p");
   }
 
   @Nullable
