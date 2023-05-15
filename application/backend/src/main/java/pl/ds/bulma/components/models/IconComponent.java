@@ -16,13 +16,9 @@
 
 package pl.ds.bulma.components.models;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Default;
@@ -79,7 +75,7 @@ public class IconComponent {
   @PostConstruct
   private void init() {
     IconContainerService iconContainerService = new IconContainerService(this.resource);
-    String mappingPath = "/libs/bulma/components/common/icon/containersize/defaultsizemappings";
+    String mappingPath = "bulma/components/common/icon/containersize/defaultsizemappings";
 
     this.containerSize = "";
 
