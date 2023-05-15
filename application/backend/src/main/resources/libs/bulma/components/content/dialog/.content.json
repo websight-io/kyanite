@@ -21,7 +21,7 @@
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/bulma/components/common/size"
+        "path": "bulma/components/common/size"
       },
       "textweight": {
         "sling:resourceType": "wcm/dialogs/components/include",
@@ -30,7 +30,7 @@
       "color": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "include": {
-          "sling:resourceSuperType": "/libs/bulma/components/common/text/color",
+          "sling:resourceSuperType": "bulma/components/common/text/color",
           "black": {
             "selected": false
           },
@@ -43,9 +43,9 @@
         "sling:resourceType": "wcm/dialogs/components/container",
         "blackAndWhiteShade": {
           "sling:resourceType": "wcm/dialogs/components/container",
-          "intensity": {
+          "shade": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/libs/bulma/components/common/text/shade/bw"
+            "path": "bulma/components/common/text/shade/bw"
           },
           "ws:display": {
             "condition": {
@@ -59,10 +59,18 @@
         },
         "greyShade": {
           "sling:resourceType": "wcm/dialogs/components/container",
-          "intensity": {
+          "shade": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/libs/bulma/components/common/text/shade/grey",
-            "value": "darker"
+            "path": "bulma/components/common/text/shade/grey",
+            "include": {
+              "sling:resourceSuperType": "bulma/components/common/text/shade/grey",
+              "default": {
+                "selected": false
+              },
+              "darker": {
+                "selected": true
+              }
+            }
           },
           "ws:display": {
             "condition": {
@@ -75,9 +83,9 @@
         },
         "restShade": {
           "sling:resourceType": "wcm/dialogs/components/container",
-          "intensity": {
+          "shade": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/libs/bulma/components/common/text/shade/rest"
+            "path": "bulma/components/common/text/shade/rest"
           },
           "ws:display": {
             "condition": {

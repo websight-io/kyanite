@@ -5,7 +5,8 @@
   "default": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Default",
-    "value": ""
+    "value": "",
+    "selected": true
   },
   "light": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",

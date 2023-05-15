@@ -57,7 +57,7 @@
       },
       "color": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/bulma/components/common/text/color",
+        "path": "bulma/components/common/text/color",
         "value": "bw_has-text-black"
       },
       "shadeContainer": {
@@ -66,7 +66,7 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "intensity": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/libs/bulma/components/common/text/shade/bw"
+            "path": "bulma/components/common/text/shade/bw"
           },
           "ws:display": {
             "condition": {
@@ -82,7 +82,7 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "intensity": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/libs/bulma/components/common/text/shade/grey"
+            "path": "bulma/components/common/text/shade/grey"
           },
           "ws:display": {
             "condition": {
@@ -97,7 +97,7 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "intensity": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/libs/bulma/components/common/text/shade/rest"
+            "path": "bulma/components/common/text/shade/rest"
           },
           "ws:display": {
             "condition": {
