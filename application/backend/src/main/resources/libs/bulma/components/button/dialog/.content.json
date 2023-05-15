@@ -160,7 +160,7 @@
           "iconRight": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/libs/bulma/components/common/icons/fontawesome",
+              "sling:resourceSuperType": "/libs/bulma/components/common/icon/icons/fontawesome",
               "label": "Right icon",
               "name": "iconRight"
             }
