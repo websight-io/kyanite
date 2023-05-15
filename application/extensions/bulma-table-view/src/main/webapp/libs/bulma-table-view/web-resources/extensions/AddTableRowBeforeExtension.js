@@ -23,6 +23,7 @@ const config = {
   metadata: {
     title: 'Add row before',
     icon: 'keyboard_arrow_up',
+    testId: 'AddTableRowBefore',
   },
   action: 'add-table-row',
   insertBefore: true,

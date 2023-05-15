@@ -10,7 +10,6 @@
         "name": "text",
         "label": "Text",
         "ws:disallowedContext": ["edit:panel"],
-        "required": true,
         "configuration": "/libs/bulma/components/common/rte/configurations/default"
       },
       "panelText": {
@@ -18,7 +17,6 @@
         "name": "text",
         "label": "Text",
         "ws:disallowedContext": ["edit:dialog"],
-        "required": true,
         "configuration": "/libs/bulma/components/common/rte/configurations/compact"
       },
       "size": {

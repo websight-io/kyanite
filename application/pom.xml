@@ -21,7 +21,7 @@
   <parent>
     <groupId>pl.ds.bulma</groupId>
     <artifactId>bulma</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.1.2-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -151,6 +151,36 @@
                   <goals>
                     <goal>install</goal>
                   </goals>
+                </execution>
+              </executions>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+    <profile>
+      <id>autoInstallBundleEnvironment</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.apache.sling</groupId>
+              <artifactId>sling-maven-plugin</artifactId>
+              <executions>
+                <execution>
+                  <id>install-bundle</id>
+                  <goals>
+                    <goal>install</goal>
+                  </goals>
+                  <configuration>
+                    <slingUrl>${env.WEBSIGHT_URL}:${env.WEBSIGHT_PORT}/system/console
+                    </slingUrl>
+                    <user>${env.WEBSIGHT_ADMIN_USER}</user>
+                    <password>${env.WEBSIGHT_ADMIN_PASSWORD}</password>
+                  </configuration>
                 </execution>
               </executions>
             </plugin>

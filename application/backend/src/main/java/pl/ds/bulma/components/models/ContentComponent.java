@@ -30,10 +30,12 @@ import pl.ds.bulma.components.helpers.ColorService;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContentComponent {
 
+  private static final String DEFAULT_TEXT = "Content";
   public static final String TEXT_WEIGHT_DEFAULT = "has-text-weight-normal";
+
   @Inject
   @Getter
-  @Default(values = "Content")
+  @Default(values = DEFAULT_TEXT)
   private String text;
 
   @Inject
@@ -70,8 +72,12 @@ public class ContentComponent {
 
   @PostConstruct
   private void init() {
+    if (text.isEmpty()) {
+      text = DEFAULT_TEXT;
+    }
+
     ColorService colorService
-            = new ColorService(resource, "/libs/bulma/components/common/text/color",
+            = new ColorService(resource, "bulma/components/common/text/color",
             this.color, this.shadeBw, this.shadeGrey, this.shadeRest);
 
     this.textColorVariant = colorService.getTextColorVariant();
