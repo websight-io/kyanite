@@ -121,7 +121,7 @@ describe('Button component', function () {
           'isDisabled': 'true',
           'isFullWidth': 'true',
           'isInverted': 'false',
-          'icon': 'fa fa-lg fa-cubes',
+          'icon': 'fa fa-cubes',
           'size': 'is-medium',
           'type': 'button',
           'label': 'Label',
