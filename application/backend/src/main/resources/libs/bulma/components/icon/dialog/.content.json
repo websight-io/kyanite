@@ -6,21 +6,8 @@
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
       "iconLibType": {
-        "sling:resourceType": "wcm/dialogs/components/select",
-        "name": "iconLibType",
-        "label": "Icon Library",
-        "required": true,
-        "fa": {
-          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
-          "label": "Font Awesome",
-          "value": "fontawesome"
-        },
-        "md": {
-          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
-          "label": "Material Design",
-          "value": "materialdesign",
-          "selected": true
-        }
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "bulma/components/common/icon/libs"
       },
       "selectOrType": {
         "sling:resourceType": "wcm/dialogs/components/radio",
@@ -69,7 +56,7 @@
         "ws:display": {
           "condition": {
             "sourceName": "iconLibType",
-            "values": "fontawesome"
+            "values": "fas"
           }
         }
       },
@@ -92,7 +79,7 @@
         "ws:display": {
           "condition": {
             "sourceName": "iconLibType",
-            "values": "materialdesign"
+            "values": "mdi"
           }
         }
       },

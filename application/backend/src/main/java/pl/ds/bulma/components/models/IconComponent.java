@@ -32,7 +32,7 @@ public class IconComponent {
 
   @Inject
   @Getter
-  @Default(values = "fas fa-home")
+  @Default(values = "mdi-home")
   private String icon;
 
   @Inject
@@ -58,7 +58,7 @@ public class IconComponent {
 
   @Inject
   @Getter
-  @Default(values = "materialdesign")
+  @Default(values = "mdi")
   private String iconLibType;
 
   @Getter
@@ -66,7 +66,7 @@ public class IconComponent {
 
   @Inject
   @Getter
-  @Default(values = "mdi mdi-36px")
+  @Default(values = "mdi-36px")
   private String iconSize;
 
   @SlingObject
