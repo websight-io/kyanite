@@ -16,6 +16,7 @@
 
 package pl.ds.bulma.components.models;
 
+import java.util.stream.Stream;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
@@ -66,5 +67,9 @@ public class ImageComponent {
 
   public String getAssetReference() {
     return LinkUtil.handleLink(assetReference, resource.getResourceResolver());
+  }
+
+  public boolean getIsVideo() {
+    return Stream.of("mp4", "ogg").anyMatch(getSrc()::endsWith);
   }
 }
