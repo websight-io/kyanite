@@ -93,7 +93,6 @@
       },
       "iconContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
-
         "iconLibType": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "path": "bulma/components/common/icon/libs"
@@ -172,13 +171,6 @@
             }
           }
         },
-
-
-
-
-
-
-
         "iconLibTypeRight": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "include": {
@@ -271,9 +263,13 @@
               "values": "mdi"
             }
           }
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "addIcon",
+            "values": "true"
+          }
         }
-
-
       }
     },
     "actionTab": {
