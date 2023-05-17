@@ -42,6 +42,7 @@ public class LevelItemComponent {
 
   @ValueMapValue
   @Default(values = StringUtils.EMPTY)
+  @Getter
   private String classes;
 
   public String getAlignment() {
