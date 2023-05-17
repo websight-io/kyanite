@@ -16,7 +16,7 @@
 
 package pl.ds.bulma.components.models;
 
-import java.util.stream.Stream;
+import java.net.URLConnection;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
@@ -70,6 +70,7 @@ public class ImageComponent {
   }
 
   public boolean getIsVideo() {
-    return Stream.of("mp4", "ogg").anyMatch(getSrc()::endsWith);
+    String mimeType = URLConnection.guessContentTypeFromName(getSrc());
+    return mimeType != null && mimeType.startsWith("video");
   }
 }
