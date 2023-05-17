@@ -54,6 +54,83 @@
             "values": ["is-1", "is-2", "is-3", "is-4"]
           }
         }
+      },
+      "color": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "bulma/components/common/text/color",
+        "value": "bw_has-text-black"
+      },
+      "shadeContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "blackAndWhiteShade": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "intensity": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "bulma/components/common/text/shade/bw"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "color",
+              "values": [
+                "bw_has-text-black",
+                "bw_has-text-white"
+              ]
+            }
+          }
+        },
+        "greyShade": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "intensity": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "bulma/components/common/text/shade/grey"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "color",
+              "values": [
+                "grey_has-text-grey"
+              ]
+            }
+          }
+        },
+        "restShade": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "intensity": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "bulma/components/common/text/shade/rest"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "color",
+              "values": [
+                "rest_has-text-primary",
+                "rest_has-text-link",
+                "rest_has-text-info",
+                "rest_has-text-success",
+                "rest_has-text-success",
+                "rest_has-text-warning",
+                "rest_has-text-danger"
+              ]
+            }
+          }
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "color",
+            "values": [
+              "bw_has-text-black",
+              "bw_has-text-white",
+              "grey_has-text-grey",
+              "rest_has-text-primary",
+              "rest_has-text-link",
+              "rest_has-text-info",
+              "rest_has-text-success",
+              "rest_has-text-success",
+              "rest_has-text-warning",
+              "rest_has-text-danger"
+            ]
+          }
+        }
       }
     }
   }

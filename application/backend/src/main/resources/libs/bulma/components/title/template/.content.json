@@ -1,4 +1,6 @@
 {
   "jcr:primaryType": "nt:unstructured",
-  "size": "is-2"
+  "size": "is-2",
+  "color": "bw_has-text-black",
+  "shadeBw": ""
 }

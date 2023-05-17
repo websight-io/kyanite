@@ -1,0 +1,20 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "shadeRest",
+  "label": "Shade",
+  "default": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Default",
+    "value": ""
+  },
+  "light": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Light",
+    "value": "light"
+  },
+  "dark": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Dark",
+    "value": "dark"
+  }
+}
