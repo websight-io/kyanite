@@ -77,17 +77,9 @@ public class IconComponent {
     IconContainerService iconContainerService = new IconContainerService(this.resource);
     String mappingPath = "bulma/components/common/icon/containersize/defaultsizemappings";
 
-    this.containerSize = "";
-
-    if (this.iconLibType != null && !this.iconLibType.isEmpty()) {
-      ValueMap containerSizeMapping = iconContainerService.getContainerSizeMapping(
-                      mappingPath + "/" + this.iconLibType);
-
-      Object mappedContainerSize = containerSizeMapping.get(this.iconSize);
-      if (mappedContainerSize != null) {
-        this.containerSize = mappedContainerSize.toString();
-      }
-    }
+    this.containerSize
+            = iconContainerService.calculateContainerSize(this.iconLibType,
+            mappingPath, this.iconSize);
   }
 
 }

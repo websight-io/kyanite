@@ -28,11 +28,27 @@ public class IconContainerService {
     this.resource = resource;
   }
 
-  public ValueMap getContainerSizeMapping(String resourcePath) {
+  public String calculateContainerSize(String iconLibType,
+                                        String mappingPath, String iconSize) {
+
+    if (iconLibType != null && !iconLibType.isEmpty()) {
+      ValueMap containerSizeMapping = getContainerSizeMapping(
+              mappingPath + "/" + iconLibType);
+
+      Object mappedContainerSize = containerSizeMapping.get(iconSize);
+      if (mappedContainerSize != null) {
+        return mappedContainerSize.toString();
+      }
+    }
+
+    return "";
+  }
+
+  private ValueMap getContainerSizeMapping(String resourcePath) {
     if (resource != null) {
       ResourceResolver resourceResolver = resource.getResourceResolver();
       Resource iconContainerDefaultSizeMapping = resourceResolver
-                    .getResource(resourcePath);
+              .getResource(resourcePath);
 
       if (iconContainerDefaultSizeMapping != null) {
         return iconContainerDefaultSizeMapping.getValueMap();

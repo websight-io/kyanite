@@ -159,32 +159,16 @@ public class ButtonComponent {
     }
     buttonClasses = classes.toArray(new String[]{});
 
+    IconContainerService iconContainerService = new IconContainerService(resource);
     String mappingPath
             = "bulma/components/common/icon/containersize/defaultsizemappings";
 
     this.containerSize
-            = calculateContainerSize(this.resource, this.iconLibType,
+            = iconContainerService.calculateContainerSize(this.iconLibType,
             mappingPath, this.iconSize);
     this.containerSizeRight
-            = calculateContainerSize(this.resource, this.iconLibTypeRight,
+            = iconContainerService.calculateContainerSize(this.iconLibTypeRight,
             mappingPath, this.iconSizeRight);
-  }
-
-  private String calculateContainerSize(Resource resource, String iconLibType,
-                                        String mappingPath, String iconSize) {
-    IconContainerService iconContainerService = new IconContainerService(resource);
-
-    if (iconLibType != null && !iconLibType.isEmpty()) {
-      ValueMap containerSizeMapping = iconContainerService.getContainerSizeMapping(
-              mappingPath + "/" + iconLibType);
-
-      Object mappedContainerSize = containerSizeMapping.get(iconSize);
-      if (mappedContainerSize != null) {
-        return mappedContainerSize.toString();
-      }
-    }
-
-    return "";
   }
 
   public String getUrl() {

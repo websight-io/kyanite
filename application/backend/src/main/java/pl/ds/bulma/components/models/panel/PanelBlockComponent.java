@@ -69,28 +69,11 @@ public class PanelBlockComponent {
 
   @PostConstruct
   private void init() {
-    String mappingPath
-            = "bulma/components/common/icon/containersize/defaultsizemappings";
+    IconContainerService iconContainerService = new IconContainerService(this.resource);
+    String mappingPath = "bulma/components/common/icon/containersize/defaultsizemappings";
 
     this.containerSize
-            = calculateContainerSize(this.resource, this.iconLibType,
+            = iconContainerService.calculateContainerSize(this.iconLibType,
             mappingPath, this.iconSize);
-  }
-
-  private String calculateContainerSize(Resource resource, String iconLibType,
-                                        String mappingPath, String iconSize) {
-    IconContainerService iconContainerService = new IconContainerService(resource);
-
-    if (iconLibType != null && !iconLibType.isEmpty()) {
-      ValueMap containerSizeMapping = iconContainerService.getContainerSizeMapping(
-              mappingPath + "/" + iconLibType);
-
-      Object mappedContainerSize = containerSizeMapping.get(iconSize);
-      if (mappedContainerSize != null) {
-        return mappedContainerSize.toString();
-      }
-    }
-
-    return "";
   }
 }
