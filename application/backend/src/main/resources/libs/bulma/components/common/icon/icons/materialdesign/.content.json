@@ -2,34 +2,39 @@
   "sling:resourceType": "wcm/dialogs/components/select",
   "name": "icon",
   "label": "Icon",
+  "home": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Home",
+    "value": "mdi-home"
+  },
   "email": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Email",
-    "value": "mdi mdi-email"
+    "value": "mdi-email"
   },
   "file": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "File",
-    "value": "mdi mdi-file-document"
+    "value": "mdi-file-document"
   },
   "form": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Form",
-    "value": "mdi mdi-form-select"
+    "value": "mdi-form-select"
   },
   "columns": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Columns",
-    "value": "mdi mdi-format-columns"
+    "value": "mdi-format-columns"
   },
   "cube": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Cube",
-    "value": "mdi mdi-cube-outline"
+    "value": "mdi-cube-outline"
   },
   "cogs": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Gears",
-    "value": "mdi mdi-cogs"
+    "value": "mdi-cogs"
   }
 }

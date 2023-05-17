@@ -5,16 +5,16 @@
   "small": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Small",
-    "value": "fas"
+    "value": ""
   },
   "medium": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Medium",
-    "value": "fas fa-lg"
+    "value": "fa-lg"
   },
   "large": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Large",
-    "value": "fas fa-2x"
+    "value": "fa-2x"
   }
 }

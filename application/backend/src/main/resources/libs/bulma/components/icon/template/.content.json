@@ -2,8 +2,8 @@
   "jcr:primaryType": "nt:unstructured",
   "sling:resourceType": "bulma/components/icon",
   "addText": "false",
-  "icon": "mdi mdi-file-document",
-  "iconLibType": "materialdesign",
-  "iconSize": "mdi mdi-36px",
+  "icon": "mdi-home",
+  "iconLibType": "mdi",
+  "iconSize": "mdi-36px",
   "selectOrType": "select"
 }
