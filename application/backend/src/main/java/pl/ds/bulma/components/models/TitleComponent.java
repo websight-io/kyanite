@@ -112,7 +112,7 @@ public class TitleComponent {
     subtitleClasses = subtitleClassList.toArray(new String[]{});
 
     ColorService colorService
-            = new ColorService(resource, "/libs/bulma/components/common/text/color",
+            = new ColorService(resource, "bulma/components/common/text/color",
             this.color, this.shadeBw, this.shadeGrey, this.shadeRest);
 
     this.textColorVariant = colorService.getTextColorVariant();
