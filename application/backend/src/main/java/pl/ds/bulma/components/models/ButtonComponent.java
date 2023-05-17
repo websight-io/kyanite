@@ -25,9 +25,11 @@ import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.bulma.components.helpers.IconContainerService;
 import pl.ds.bulma.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
@@ -45,6 +47,32 @@ public class ButtonComponent {
   @Inject
   @Getter
   private String iconRight;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi-36px")
+  private String iconSize;
+
+  @Getter
+  private String containerSize;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi")
+  private String iconLibType;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi-36px")
+  private String iconSizeRight;
+
+  @Getter
+  private String containerSizeRight;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi")
+  private String iconLibTypeRight;
 
   @Inject
   @Getter
@@ -130,6 +158,33 @@ public class ButtonComponent {
       classes.add("is-fullwidth");
     }
     buttonClasses = classes.toArray(new String[]{});
+
+    String mappingPath
+            = "bulma/components/common/icon/containersize/defaultsizemappings";
+
+    this.containerSize
+            = calculateContainerSize(this.resource, this.iconLibType,
+            mappingPath, this.iconSize);
+    this.containerSizeRight
+            = calculateContainerSize(this.resource, this.iconLibTypeRight,
+            mappingPath, this.iconSizeRight);
+  }
+
+  private String calculateContainerSize(Resource resource, String iconLibType,
+                                        String mappingPath, String iconSize) {
+    IconContainerService iconContainerService = new IconContainerService(resource);
+
+    if (iconLibType != null && !iconLibType.isEmpty()) {
+      ValueMap containerSizeMapping = iconContainerService.getContainerSizeMapping(
+              mappingPath + "/" + iconLibType);
+
+      Object mappedContainerSize = containerSizeMapping.get(iconSize);
+      if (mappedContainerSize != null) {
+        return mappedContainerSize.toString();
+      }
+    }
+
+    return "";
   }
 
   public String getUrl() {
