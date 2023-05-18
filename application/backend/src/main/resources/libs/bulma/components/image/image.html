@@ -24,7 +24,13 @@
     </div>
   </sly>
   <figure class="image ${model.style}">
-    <img class="${model.isRounded ? 'is-rounded' : ''}" src="${model.assetReference}"
-         alt="${model.alt}">
+    <sly data-sly-test="${model.isVideo}">
+      <iframe class="${model.isRounded ? 'is-rounded' : ''}" src="${model.assetReference}"
+           alt="${model.alt}">
+    </sly>
+    <sly data-sly-test="${!model.isVideo}">
+      <img class="${model.isRounded ? 'is-rounded' : ''}" src="${model.assetReference}"
+           alt="${model.alt}">
+    </sly>
   </figure>
 </sly>
