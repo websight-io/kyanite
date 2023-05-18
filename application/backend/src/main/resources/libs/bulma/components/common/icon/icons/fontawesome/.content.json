@@ -17,34 +17,89 @@
     "label": "File",
     "value": "fa-file-alt"
   },
-  "wpforms": {
+  "table": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Wpforms",
-    "value": "fa-wpforms"
+    "label": "Table",
+    "value": "fa-table"
   },
-  "columns": {
+  "cube": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Columns",
-    "value": "fa-columns"
-  },
-  "cubes": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Cubes",
-    "value": "fa-cubes"
+    "label": "Cube",
+    "value": "fa-cube"
   },
   "cogs": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Gears",
     "value": "fa-cogs"
   },
-  "superpowers": {
+  "arrowLeft": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Superpowers",
-    "value": "fa-superpowers"
+    "label": "Arrow left",
+    "value": "fa-arrow-left"
   },
-  "cube": {
+  "arrowRight": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Cube",
-    "value": "fa-cube"
+    "label": "Arrow right",
+    "value": "fa-arrow-right"
+  },
+  "arrowUp": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Arrow up",
+    "value": "fa-arrow-up"
+  },
+  "arrowDown": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Arrow down",
+    "value": "fa-arrow-down"
+  },
+  "arrowTrendUp": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Arrow trend up",
+    "value": "fa-arrow-trend-up"
+  },
+  "check": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Check",
+    "value": "fa-check"
+  },
+  "gauge": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Gauge",
+    "value": "fa-gauge-simple-high"
+  },
+  "dashboard": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Dashboard",
+    "value": "fa-objects-column"
+  },
+  "link": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Link",
+    "value": "fa-link-simple"
+  },
+  "bookmark": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Bookmark",
+    "value": "fa-bookmark"
+  },
+  "close": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Close",
+    "value": "fa-xmark"
+  },
+  "chevronUp": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Chevron up",
+    "value": "fa-chevron-up"
+  },
+  "chevronDown": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Chevron down",
+    "value": "fa-chevron-down"
+  },
+  "cubes": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Cubes",
+    "value": "fa-cubes"
   }
 }

@@ -32,7 +32,7 @@ public class IconComponent {
 
   @Inject
   @Getter
-  @Default(values = "mdi-home")
+  @Default(values = "mdi-home-outline")
   private String icon;
 
   @Inject
