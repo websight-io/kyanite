@@ -17,8 +17,8 @@
 package pl.ds.bulma.components.models;
 
 import java.io.IOException;
-import java.util.Objects;
 import java.net.URLConnection;
+import java.util.Objects;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
