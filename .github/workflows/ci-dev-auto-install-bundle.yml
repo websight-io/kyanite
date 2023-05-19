@@ -42,4 +42,4 @@ jobs:
           WEBSIGHT_PORT: ${{ secrets.WEBSIGHT_PORT }}
           WEBSIGHT_ADMIN_USER: ${{ secrets.WEBSIGHT_ADMIN_USER }}
           WEBSIGHT_ADMIN_PASSWORD: ${{ secrets.WEBSIGHT_ADMIN_PASSWORD }}
-        run: mvn clean install -PautoInstallBundleEnvironment
+        run: mvn clean install -f ./application/pom.xml -P autoInstallBundleEnvironment
