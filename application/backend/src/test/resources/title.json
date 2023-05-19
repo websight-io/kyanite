@@ -11,6 +11,8 @@
     "addSubtitle": true,
     "element": "p",
     "size": "is-2",
+    "color": "has-text-black",
+    "shadeBw": "bis",
     "isSpaced": true
   }
 }

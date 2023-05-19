@@ -21,11 +21,104 @@
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/bulma/components/common/size"
+        "path": "bulma/components/common/size"
       },
       "textweight": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "path": "/libs/bulma/components/common/textweight"
+      },
+      "color": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "bulma/components/common/text/color",
+          "black": {
+            "selected": false
+          },
+          "grey": {
+            "selected": true
+          }
+        }
+      },
+      "shadeContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "blackAndWhiteShade": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "shade": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "bulma/components/common/text/shade/bw"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "color",
+              "values": [
+                "bw_has-text-black",
+                "bw_has-text-white"
+              ]
+            }
+          }
+        },
+        "greyShade": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "shade": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "bulma/components/common/text/shade/grey",
+            "include": {
+              "sling:resourceSuperType": "bulma/components/common/text/shade/grey",
+              "default": {
+                "selected": false
+              },
+              "darker": {
+                "selected": true
+              }
+            }
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "color",
+              "values": [
+                "grey_has-text-grey"
+              ]
+            }
+          }
+        },
+        "restShade": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "shade": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "bulma/components/common/text/shade/rest"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "color",
+              "values": [
+                "rest_has-text-primary",
+                "rest_has-text-link",
+                "rest_has-text-info",
+                "rest_has-text-success",
+                "rest_has-text-success",
+                "rest_has-text-warning",
+                "rest_has-text-danger"
+              ]
+            }
+          }
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "color",
+            "values": [
+              "bw_has-text-black",
+              "bw_has-text-white",
+              "grey_has-text-grey",
+              "rest_has-text-primary",
+              "rest_has-text-link",
+              "rest_has-text-info",
+              "rest_has-text-success",
+              "rest_has-text-success",
+              "rest_has-text-warning",
+              "rest_has-text-danger"
+            ]
+          }
+        }
       }
     }
   }

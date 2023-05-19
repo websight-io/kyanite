@@ -29,7 +29,13 @@ jobs:
         with:
           java-version: '17'
           distribution: 'adopt'
-          cache: maven
+      - name: Cache local Maven repository
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
       - name: Build with Maven
         env:
           WEBSIGHT_URL: ${{ secrets.WEBSIGHT_URL }}

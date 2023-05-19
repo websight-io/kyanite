@@ -18,6 +18,7 @@ package pl.ds.bulma.components.models;
 
 import java.io.IOException;
 import java.util.Objects;
+import java.net.URLConnection;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
@@ -101,5 +102,10 @@ public class ImageComponent {
 
   public String getAssetReference() {
     return LinkUtil.handleLink(assetReference, resource.getResourceResolver());
+  }
+
+  public boolean getIsVideo() {
+    String mimeType = URLConnection.guessContentTypeFromName(getSrc());
+    return mimeType != null && mimeType.startsWith("video");
   }
 }
