@@ -29,7 +29,7 @@
   </sly>
   <sly data-sly-test="${model.type == 'image'}">
     <a class="navbar-item">
-      <img src="${model.image.src}" width="imageWidth" height="imageHeight"
+      <img src="${model.image.src}" width="${model.imageWidth}" height="${model.imageHeight}"
            alt="${model.image.alt}">
     </a>
   </sly>
