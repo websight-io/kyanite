@@ -121,12 +121,15 @@ describe('Button component', function () {
     .should('deep.eq',
         {
           'jcr:primaryType': 'nt:unstructured',
-          'addIcon': 'true',
+          'showIconRight': 'false',
+          'showIconLeft': 'true',
+          'iconLeft': 'mdi-cube-outline',
           'isOutlined': 'true',
           'isDisabled': 'true',
+          'selectOrTypeLeft': 'select',
           'isFullWidth': 'true',
+          'iconLibTypeLeft': 'mdi',
           'isInverted': 'false',
-          'icon': 'fa-cubes',
           'size': 'is-medium',
           'type': 'button',
           'label': 'Label',
@@ -134,9 +137,7 @@ describe('Button component', function () {
           'isRounded': 'true',
           'modalId': 'Modal ID',
           'sling:resourceType': 'bulma/components/button',
-          'selectOrTypeRight': 'selectRight',
           'actionType': 'open-modal',
-          'selectOrType': 'select',
           'isLight': 'true'
         });
   });
