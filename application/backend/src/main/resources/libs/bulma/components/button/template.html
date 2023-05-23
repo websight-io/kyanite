@@ -13,15 +13,15 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<template data-sly-template.buttonContent="${ @ label, addIcon, icon, iconRight, iconSize, containerSize, iconLibType, iconSizeRight, containerSizeRight, iconLibTypeRight}">
-    <sly data-sly-test="${addIcon && icon}">
-          <span class="icon ${containerSize}">
-            <i class="${iconLibType} ${iconSize} ${icon}"></i>
+<template data-sly-template.buttonContent="${ @ label, showIconLeft, iconLibTypeLeft, iconLeft, iconSizeLeft, iconContainerSizeLeft, showIconRight, iconLibTypeRight, iconRight, iconSizeRight, iconContainerSizeRight}">
+    <sly data-sly-test="${showIconLeft && iconLeft}">
+          <span class="icon ${iconContainerSizeLeft}">
+            <i class="${iconLibTypeLeft} ${iconSizeLeft} ${iconLeft}"></i>
           </span>
     </sly>
     <span data-sly-unwrap="${label == ''}">${label}</span>
-    <sly data-sly-test="${addIcon && iconRight}">
-          <span class="icon ${containerSizeRight}">
+    <sly data-sly-test="${showIconright && iconRight}">
+          <span class="icon ${iconContainerSizeRight}">
             <i class="${iconLibTypeRight} ${iconSizeRight} ${iconRight}"></i>
           </span>
     </sly>

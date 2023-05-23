@@ -42,7 +42,33 @@ public class ButtonComponent {
 
   @Inject
   @Getter
-  private String icon;
+  private boolean showIconLeft;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi")
+  private String iconLibTypeLeft;
+
+  @Inject
+  @Getter
+  private String iconLeft;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi-36px")
+  private String iconSizeLeft;
+
+  @Getter
+  private String iconContainerSizeLeft;
+
+  @Inject
+  @Getter
+  private boolean showIconRight;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi")
+  private String iconLibTypeRight;
 
   @Inject
   @Getter
@@ -51,28 +77,10 @@ public class ButtonComponent {
   @Inject
   @Getter
   @Default(values = "mdi-36px")
-  private String iconSize;
-
-  @Getter
-  private String containerSize;
-
-  @Inject
-  @Getter
-  @Default(values = "mdi")
-  private String iconLibType;
-
-  @Inject
-  @Getter
-  @Default(values = "mdi-36px")
   private String iconSizeRight;
 
   @Getter
-  private String containerSizeRight;
-
-  @Inject
-  @Getter
-  @Default(values = "mdi")
-  private String iconLibTypeRight;
+  private String iconContainerSizeRight;
 
   @Inject
   @Getter
@@ -118,10 +126,6 @@ public class ButtonComponent {
 
   @Inject
   @Getter
-  private boolean addIcon;
-
-  @Inject
-  @Getter
   @Default(values = StringUtils.EMPTY)
   private String actionType;
 
@@ -163,10 +167,10 @@ public class ButtonComponent {
     String mappingPath
             = "bulma/components/common/icon/containersize/defaultsizemappings";
 
-    this.containerSize
-            = iconContainerService.calculateContainerSize(this.iconLibType,
-            mappingPath, this.iconSize);
-    this.containerSizeRight
+    this.iconContainerSizeLeft
+            = iconContainerService.calculateContainerSize(this.iconLibTypeLeft,
+            mappingPath, this.iconSizeLeft);
+    this.iconContainerSizeRight
             = iconContainerService.calculateContainerSize(this.iconLibTypeRight,
             mappingPath, this.iconSizeRight);
   }
