@@ -85,14 +85,19 @@ describe('Button component', function () {
     .findByTestId('dialogTab_Icon')
     .click();
     cy.getByTestId('ModalDialog_Button')
-    .findByTestId('Input_Showiconleft?')
+    .findByTestId('Input_Showlefticon?--toggle-check-icon')
     .click();
     cy.getByTestId('ModalDialog_Button')
     .findByTestId('RadioElement_select')
     .click();
     cy.getByTestId('ModalDialog_Button')
-    .find('div[id^="icon-uid"]').click();
-    cy.contains('Cubes').click({force: true});
+    .find('div[id^="iconLibTypeLeft-uid"]')
+    .click();
+    cy.contains('.Input_LeftIconLibrary__option', 'Material Design')
+    .click();
+    cy.getByTestId('ModalDialog_Button')
+    .find('div[id^="iconLeft-uid"]').click();
+    cy.contains('Cube').click({force: true});
 
     cy.getByTestId('ModalDialog_Button')
     .findByTestId('dialogTab_Action')
