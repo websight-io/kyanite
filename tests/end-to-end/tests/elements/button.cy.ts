@@ -85,7 +85,7 @@ describe('Button component', function () {
     .findByTestId('dialogTab_Icon')
     .click();
     cy.getByTestId('ModalDialog_Button')
-    .findByTestId('Input_Addicon?')
+    .findByTestId('Input_Showiconleft?')
     .click();
     cy.getByTestId('ModalDialog_Button')
     .findByTestId('RadioElement_select')
@@ -182,7 +182,8 @@ describe('Button component', function () {
     .should('deep.eq',
         {
           'jcr:primaryType': 'nt:unstructured',
-          'addIcon': 'false',
+          'showIconLeft': 'false',
+          'showIconRight': 'false',
           'isOutlined': 'false',
           'isFullWidth': 'false',
           'isInverted': 'false',
