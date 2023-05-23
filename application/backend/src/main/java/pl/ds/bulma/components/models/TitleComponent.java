@@ -84,6 +84,11 @@ public class TitleComponent {
   @Default(values = StringUtils.EMPTY)
   private String shadeRest;
 
+  @Inject
+  @Getter
+  @Default(values = "")
+  private String anchorId;
+
   @SlingObject
   private Resource resource;
 
