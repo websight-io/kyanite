@@ -21,6 +21,11 @@
           "name": "element"
         }
       },
+      "anchorId": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "anchorId",
+        "label": "AnchorId text"
+      },
       "subtitleOptionsContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
         "addSubtitle": {
