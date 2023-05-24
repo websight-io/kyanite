@@ -85,14 +85,19 @@ describe('Button component', function () {
     .findByTestId('dialogTab_Icon')
     .click();
     cy.getByTestId('ModalDialog_Button')
-    .findByTestId('Input_Addicon?')
+    .findByTestId('Input_Showlefticon?--toggle-check-icon')
     .click();
     cy.getByTestId('ModalDialog_Button')
     .findByTestId('RadioElement_select')
     .click();
     cy.getByTestId('ModalDialog_Button')
-    .find('div[id^="icon-uid"]').click();
-    cy.contains('Cubes').click({force: true});
+    .find('div[id^="iconLibTypeLeft-uid"]')
+    .click();
+    cy.contains('.Input_LeftIconLibrary__option', 'Material Design')
+    .click();
+    cy.getByTestId('ModalDialog_Button')
+    .find('div[id^="iconLeft-uid"]').click();
+    cy.contains('Cube').click({force: true});
 
     cy.getByTestId('ModalDialog_Button')
     .findByTestId('dialogTab_Action')
@@ -116,12 +121,15 @@ describe('Button component', function () {
     .should('deep.eq',
         {
           'jcr:primaryType': 'nt:unstructured',
-          'addIcon': 'true',
+          'showIconRight': 'false',
+          'showIconLeft': 'true',
+          'iconLeft': 'mdi-cube-outline',
           'isOutlined': 'true',
           'isDisabled': 'true',
+          'selectOrTypeLeft': 'select',
           'isFullWidth': 'true',
+          'iconLibTypeLeft': 'mdi',
           'isInverted': 'false',
-          'icon': 'fa-cubes',
           'size': 'is-medium',
           'type': 'button',
           'label': 'Label',
@@ -129,9 +137,7 @@ describe('Button component', function () {
           'isRounded': 'true',
           'modalId': 'Modal ID',
           'sling:resourceType': 'bulma/components/button',
-          'selectOrTypeRight': 'selectRight',
           'actionType': 'open-modal',
-          'selectOrType': 'select',
           'isLight': 'true'
         });
   });
@@ -182,7 +188,8 @@ describe('Button component', function () {
     .should('deep.eq',
         {
           'jcr:primaryType': 'nt:unstructured',
-          'addIcon': 'false',
+          'showIconLeft': 'false',
+          'showIconRight': 'false',
           'isOutlined': 'false',
           'isFullWidth': 'false',
           'isInverted': 'false',

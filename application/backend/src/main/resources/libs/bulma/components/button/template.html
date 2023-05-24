@@ -1,5 +1,5 @@
 <!--/*
-    Copyright (C) 2022 Dynamic Solutions
+    Copyright (C) 2023 Dynamic Solutions
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -13,16 +13,16 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<template data-sly-template.buttonContent="${ @ label, addIcon, icon, iconRight}">
-    <sly data-sly-test="${addIcon && icon}">
-          <span class="icon">
-            <i class="${icon}"></i>
+<template data-sly-template.buttonContent="${ @ label, showIconLeft, iconLibTypeLeft, iconLeft, iconSizeLeft, iconContainerSizeLeft, showIconRight, iconLibTypeRight, iconRight, iconSizeRight, iconContainerSizeRight}">
+    <sly data-sly-test="${showIconLeft && iconLeft}">
+          <span class="icon ${iconContainerSizeLeft}">
+            <i class="${iconLibTypeLeft} ${iconSizeLeft} ${iconLeft}"></i>
           </span>
     </sly>
     <span data-sly-unwrap="${label == ''}">${label}</span>
-    <sly data-sly-test="${addIcon && iconRight}">
-          <span class="icon">
-            <i class="${iconRight}"></i>
+    <sly data-sly-test="${showIconright && iconRight}">
+          <span class="icon ${iconContainerSizeRight}">
+            <i class="${iconLibTypeRight} ${iconSizeRight} ${iconRight}"></i>
           </span>
     </sly>
 </template>

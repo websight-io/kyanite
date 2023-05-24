@@ -21,8 +21,12 @@
             <button class="button ${model.buttonClasses @ join=' '}" disabled>
                 <sly data-sly-use.template="./template.html"
                      data-sly-call="${template.buttonContent @
-             label=model.label, addIcon=model.addIcon,
-             icon=model.icon, iconRight=model.iconRight}"></sly>
+             label=model.label, showIconLeft=model.showIconLeft,
+             iconLibTypeLeft=model.iconLibTypeLeft, iconLeft=model.iconLeft,
+             iconSizeLeft=model.iconSizeLeft, iconContainerSizeLeft=model.iconContainerSizeLeft,
+             showIconRight=model.showIconRight, iconLibTypeRight=model.iconLibTypeRight,
+             iconRight=model.iconRight, iconSizeRight=model.iconSizeRight,
+             iconContainerSizeRight=model.iconContainerSizeRight}"></sly>
             </button>
         </sly>
         <sly data-sly-test="${!disabled}">
@@ -31,8 +35,12 @@
                         data-target="${model.modalId}">
                     <sly data-sly-use.template="./template.html"
                          data-sly-call="${template.buttonContent @
-             label=model.label, addIcon=model.addIcon,
-             icon=model.icon, iconRight=model.iconRight}"></sly>
+             label=model.label, showIconLeft=model.showIconLeft,
+             iconLibTypeLeft=model.iconLibTypeLeft, iconLeft=model.iconLeft,
+             iconSizeLeft=model.iconSizeLeft, iconContainerSizeLeft=model.iconContainerSizeLeft,
+             showIconRight=model.showIconRight, iconLibTypeRight=model.iconLibTypeRight,
+             iconRight=model.iconRight, iconSizeRight=model.iconSizeRight,
+             iconContainerSizeRight=model.iconContainerSizeRight}"></sly>
                 </button>
             </sly>
 
@@ -40,8 +48,12 @@
                 <button class="button ${model.buttonClasses @ join=' '}">
                     <sly data-sly-use.template="./template.html"
                          data-sly-call="${template.buttonContent @
-             label=model.label, addIcon=model.addIcon,
-             icon=model.icon, iconRight=model.iconRight}"></sly>
+             label=model.label, showIconLeft=model.showIconLeft,
+             iconLibTypeLeft=model.iconLibTypeLeft, iconLeft=model.iconLeft,
+             iconSizeLeft=model.iconSizeLeft, iconContainerSizeLeft=model.iconContainerSizeLeft,
+             showIconRight=model.showIconRight, iconLibTypeRight=model.iconLibTypeRight,
+             iconRight=model.iconRight, iconSizeRight=model.iconSizeRight,
+             iconContainerSizeRight=model.iconContainerSizeRight}"></sly>
                 </button>
             </sly>
         </sly>
@@ -51,8 +63,12 @@
            target="${model.openInNewTab && model.url != '' ? '_blank' : ''}">
             <sly data-sly-use.template="./template.html"
                  data-sly-call="${template.buttonContent @
-             label=model.label, addIcon=model.addIcon,
-             icon=model.icon, iconRight=model.iconRight}"></sly>
+             label=model.label, showIconLeft=model.showIconLeft,
+             iconLibTypeLeft=model.iconLibTypeLeft, iconLeft=model.iconLeft,
+             iconSizeLeft=model.iconSizeLeft, iconContainerSizeLeft=model.iconContainerSizeLeft,
+             showIconRight=model.showIconRight, iconLibTypeRight=model.iconLibTypeRight,
+             iconRight=model.iconRight, iconSizeRight=model.iconSizeRight,
+             iconContainerSizeRight=model.iconContainerSizeRight}"></sly>
         </a>
     </sly>
 </sly>

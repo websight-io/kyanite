@@ -9,8 +9,13 @@
     "type": "anchor",
     "variant": "is-white",
     "size": "is-medium",
-    "addIcon": true,
-    "icon": "left-icon",
-    "iconRight": "right-icon"
+    "showIconLeft": true,
+    "iconLibTypeLeft": "left-icon-lib",
+    "iconLeft": "left-icon",
+    "iconSizeLeft": "left-icon-size",
+    "showIconRight": true,
+    "iconLibTypeRight": "right-icon-lib",
+    "iconRight": "right-icon",
+    "iconSizeRight": "right-icon-size"
   }
 }

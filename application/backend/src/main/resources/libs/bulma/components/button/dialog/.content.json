@@ -83,19 +83,28 @@
         }
       }
     },
-    "icon": {
+    "iconTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Icon",
-      "addIcon": {
+      "showLeftIcon": {
         "sling:resourceType": "wcm/dialogs/components/toggle",
-        "name": "addIcon",
-        "label": "Add icon?"
+        "name": "showIconLeft",
+        "label": "Show left icon?"
       },
-      "iconContainer": {
+      "iconLeftContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
-        "selectOrType": {
+        "iconLibType": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "bulma/components/common/icon/libs",
+          "include": {
+            "sling:resourceSuperType": "bulma/components/common/icon/libs",
+            "name": "iconLibTypeLeft",
+            "label": "Left Icon Library"
+          }
+        },
+        "selectOrTypeLeft": {
           "sling:resourceType": "wcm/dialogs/components/radio",
-          "name": "selectOrType",
+          "name": "selectOrTypeLeft",
           "label": "Select icon or type it",
           "required": true,
           "select": {
@@ -110,66 +119,120 @@
             "value": "type"
           }
         },
-        "included": {
+        "typedLeft": {
           "sling:resourceType": "wcm/dialogs/components/container",
-          "icon": {
-            "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/libs/bulma/components/common/icon/icons/fontawesome"
-          },
-          "ws:display": {
-            "condition": {
-              "sourceName": "selectOrType",
-              "values": "select"
-            }
-          }
-        },
-        "typed": {
-          "sling:resourceType": "wcm/dialogs/components/container",
-          "icon": {
+          "iconLeft": {
             "sling:resourceType": "wcm/dialogs/components/textfield",
-            "name": "icon",
-            "label": "Name of the icon from font awesome"
+            "name": "iconLeft",
+            "label": "Name of the left icon"
           },
           "ws:display": {
             "condition": {
-              "sourceName": "selectOrType",
+              "sourceName": "selectOrTypeLeft",
               "values": "type"
             }
           }
         },
-
-        "selectOrTypeRight": {
-          "sling:resourceType": "wcm/dialogs/components/radio",
-          "name": "selectOrTypeRight",
-          "label": "Select right icon or type it",
-          "required": true,
-          "selectRight": {
-            "sling:resourceType": "wcm/dialogs/components/radio/option",
-            "label": "Select it",
-            "value": "selectRight",
-            "selected": true
-          },
-          "typeRight": {
-            "sling:resourceType": "wcm/dialogs/components/radio/option",
-            "label": "Type it",
-            "value": "typeRight"
-          }
-        },
-        "includedRight": {
+        "iconFALeft": {
           "sling:resourceType": "wcm/dialogs/components/container",
-          "iconRight": {
+          "selectableIcon": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "/libs/bulma/components/common/icon/icons/fontawesome",
-              "label": "Right icon",
-              "name": "iconRight"
+              "sling:resourceSuperType": "bulma/components/common/icon/icons/fontawesome",
+              "name": "iconLeft",
+              "label": "Left icon"
+            },
+            "ws:display": {
+              "condition": {
+                "sourceName": "selectOrTypeLeft",
+                "values": "select"
+              }
+            }
+          },
+          "iconSizeLeft": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "bulma/components/common/icon/iconsize/fontawesome",
+              "name": "iconSizeLeft",
+              "label": "Left icon size"
             }
           },
           "ws:display": {
             "condition": {
-              "sourceName": "selectOrTypeRight",
-              "values": "selectRight"
+              "sourceName": "iconLibTypeLeft",
+              "values": "fas"
             }
+          }
+        },
+        "iconMDLeft": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "selectableIcon": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "bulma/components/common/icon/icons/materialdesign",
+              "name": "iconLeft",
+              "label": "Left icon"
+            },
+            "ws:display": {
+              "condition": {
+                "sourceName": "selectOrTypeLeft",
+                "values": "select"
+              }
+            }
+          },
+          "iconSize": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "bulma/components/common/icon/iconsize/materialdesign",
+              "name": "iconSizeLeft",
+              "label": "Left icon size"
+            }
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "iconLibTypeLeft",
+              "values": "mdi"
+            }
+          }
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "showIconLeft",
+            "values": "true"
+          }
+        }
+      },
+      "showRightIcon": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "showIconRight",
+        "label": "Show right icon?"
+      },
+      "iconRightContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "iconLibType": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "bulma/components/common/icon/libs",
+          "include": {
+            "sling:resourceSuperType": "bulma/components/common/icon/libs",
+            "name": "iconLibTypeRight",
+            "label": "Right Icon Library"
+          }
+        },
+        "selectOrTypeRight": {
+          "sling:resourceType": "wcm/dialogs/components/radio",
+          "name": "selectOrTypeRight",
+          "label": "Select icon or type it",
+          "required": true,
+          "select": {
+            "sling:resourceType": "wcm/dialogs/components/radio/option",
+            "label": "Select it",
+            "value": "select",
+            "selected": true
+          },
+          "type": {
+            "sling:resourceType": "wcm/dialogs/components/radio/option",
+            "label": "Type it",
+            "value": "type"
           }
         },
         "typedRight": {
@@ -177,18 +240,80 @@
           "iconRight": {
             "sling:resourceType": "wcm/dialogs/components/textfield",
             "name": "iconRight",
-            "label": "Name of the right icon from font awesome"
+            "label": "Name of the right icon"
           },
           "ws:display": {
             "condition": {
               "sourceName": "selectOrTypeRight",
-              "values": "typeRight"
+              "values": "type"
+            }
+          }
+        },
+        "iconFARight": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "selectableIcon": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "bulma/components/common/icon/icons/fontawesome",
+              "name": "iconRight",
+              "label": "Right icon"
+            },
+            "ws:display": {
+              "condition": {
+                "sourceName": "selectOrTypeRight",
+                "values": "select"
+              }
+            }
+          },
+          "iconSizeRight": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "bulma/components/common/icon/iconsize/fontawesome",
+              "name": "iconSizeRight",
+              "label": "Right icon size"
+            }
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "iconLibTypeRight",
+              "values": "fas"
+            }
+          }
+        },
+        "iconMDRight": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "selectableIcon": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "bulma/components/common/icon/icons/materialdesign",
+              "name": "iconRight",
+              "label": "Right icon"
+            },
+            "ws:display": {
+              "condition": {
+                "sourceName": "selectOrTypeRight",
+                "values": "select"
+              }
+            }
+          },
+          "iconSizeRight": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "bulma/components/common/icon/iconsize/materialdesign",
+              "name": "iconSizeRight",
+              "label": "Right icon size"
+            }
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "iconLibTypeRight",
+              "values": "mdi"
             }
           }
         },
         "ws:display": {
           "condition": {
-            "sourceName": "addIcon",
+            "sourceName": "showIconRight",
             "values": "true"
           }
         }
