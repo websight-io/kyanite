@@ -67,6 +67,12 @@
       <version>1.2.3-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
+    <dependency>
+      <groupId>pl.ds.bulma</groupId>
+      <artifactId>bulma-code</artifactId>
+      <version>1.2.3-SNAPSHOT</version>
+      <type>pom</type>
+    </dependency>
   </dependencies>
 
   <build>
