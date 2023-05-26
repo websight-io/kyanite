@@ -18,13 +18,13 @@ import TipTapCode from "@tiptap/extension-code";
 import { injectGlobal } from 'styled-components';
 
 injectGlobal`
-.ProseMirror code {
-    color: #da1039;
-    font-size: .875em;
-    font-weight: 400;
-    padding: 0.25em 0.5em;
-    background-color: #f5f5f5;
-}
+    .ProseMirror code {
+        color: #da1039;
+        font-size: .875em;
+        font-weight: 400;
+        padding: 0.25em 0.5em;
+        background-color: #f5f5f5;
+    }
 `;
 
 const Code = () => ({
