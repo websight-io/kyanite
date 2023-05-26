@@ -17,39 +17,51 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.ContactFormComponent">
-  <form>
-    <div class="field">
-      <label class="label">Email address</label>
-      <div class="control has-icons-left">
-        <input class="input email-input" type="email" name="email" placeholder="Email" required>
-        <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
-        </span>
-      </div>
-      <p class="help is-danger is-hidden email-validate-error">This email is invalid</p>
-    </div>
-    
-    <sly data-sly-test="${model.phoneNumber}">
-      <div class="field">
-        <label class="label">Phone</label>
-        <div class="control has-icons-left">
-          <input class="input" type="tel" name="phone" placeholder="Phone" required>
-          <span class="icon is-small is-left"><i class="fas fa-phone"></i></span>
-        </div>
-      </div>
-    </sly>
-    
-    <sly data-sly-test="${model.subject}">
-      <div class="field">
-        <label class="label">Subject</label>
-        <div class="control">
-          <input class="input" type="text" name="subject" placeholder="Subject" required>
-        </div>
-      </div>
-    </sly>
+  <form data-config-captcha-public-key='${model.captchaPublicKey}'
+        data-config-http-end-point='${model.configEndpoint}'>
 
     <div class="field">
-      <label class="label">Message</label>
+      <label class="label">Type of inquiry</label>
+      <div class="control">
+        <div class="select">
+          <select required
+                  tabindex="1"
+                  name="type">
+            <option disabled selected value>Select an option</option>
+            <sly data-sly-list.item="${model.types}">
+              <option value="${item.email}">${item.label}</option>
+            </sly>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-desktop">
+      <div class="column">
+        <div class="field">
+          <label class="label">Full Name</label>
+          <div class="control">
+            <input class="input" type="text" name="subject" placeholder="Full Name" required>
+          </div>
+        </div>
+
+      </div>
+      <div class="column">
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control has-icons-left">
+            <input class="input email-input" type="email" name="email" placeholder="Email" required>
+            <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+          </div>
+          <p class="help is-danger is-hidden email-validate-error">This email is invalid</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">How we can help you?</label>
       <div class="control">
         <textarea class="textarea" name="message" placeholder="Write your message here..."
                   required></textarea>
@@ -68,7 +80,8 @@
 
     <div class="field">
       <div class="control">
-        <input id="submit-btn" class="button is-link is-medium" type="submit" placeholder="${model.submitLabel}" data-form-id="${resource.name}">
+        <input id="submit-btn" class="button is-link is-medium" type="submit"
+               placeholder="${model.submitLabel}" data-form-id="${resource.name}">
       </div>
     </div>
     <div class="block">
