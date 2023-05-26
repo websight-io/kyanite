@@ -17,11 +17,7 @@
       "start-order": "25"
     },
     {
-      "id": "pl.ds.bulma:bulma-color:${project.version}",
-      "start-order": "25"
-    },
-    {
-      "id": "pl.ds.bulma:bulma-code:${project.version}",
+      "id": "pl.ds.bulma:bulma-richtext:${project.version}",
       "start-order": "25"
     }
   ],

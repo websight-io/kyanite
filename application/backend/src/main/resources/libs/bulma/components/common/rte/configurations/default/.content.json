@@ -17,6 +17,7 @@
     "icon": "code",
     "plugin": {
       "sling:resourceType": "extensions/dialogs/components/richtext/plugin/code"
-    }
+    },
+    "sling:orderBefore": "bulletlist"
   }
 }

@@ -1,1 +1,0 @@
-# RTE Color extension
