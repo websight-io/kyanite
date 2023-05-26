@@ -1,0 +1,20 @@
+{
+  "include": [
+    "../src/main/webapp/**/*"
+  ],
+  "compilerOptions": {
+    "baseUrl": "./bulma-richtext",
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable"
+    ],
+    "target": "es6",
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "strict": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "noEmit": true
+  }
+}

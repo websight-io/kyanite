@@ -33,7 +33,7 @@
     <modules>
     <module>bulma-table-service</module>
     <module>bulma-table-view</module>
-    <module>bulma-color</module>
+    <module>bulma-richtext</module>
     </modules>
 
     <properties>
