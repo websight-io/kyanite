@@ -27,6 +27,7 @@
     <sly data-sly-test="${model.isVideo}">
       <iframe class="${model.isRounded ? 'is-rounded' : ''}" src="${model.assetReference}"
            alt="${model.alt}">
+      </iframe>
     </sly>
     <sly data-sly-test="${!model.isVideo}">
       <img class="${model.isRounded ? 'is-rounded' : ''}" src="${model.assetReference}"
