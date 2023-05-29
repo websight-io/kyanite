@@ -10,5 +10,14 @@
       "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color"
     },
     "sling:orderBefore": "bulletlist"
+  },
+  "code": {
+    "sling:resourceType": "wcm/dialogs/components/richtext/ui/button",
+    "title": "Code",
+    "icon": "code",
+    "plugin": {
+      "sling:resourceType": "extensions/dialogs/components/richtext/plugin/code"
+    },
+    "sling:orderBefore": "bulletlist"
   }
 }
