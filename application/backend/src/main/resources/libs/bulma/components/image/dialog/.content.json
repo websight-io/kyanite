@@ -7,8 +7,8 @@
       "label": "General",
       "assetReference": {
         "sling:resourceType": "wcm/dialogs/components/assetreference",
-        "mimeTypes": ["image/*"],
-        "name": "assetReference",
+        "mimeTypes": ["image/*", "video/*"],
+        "name": "src",
         "description": "Default image source",
         "label": "Choose image"
       },

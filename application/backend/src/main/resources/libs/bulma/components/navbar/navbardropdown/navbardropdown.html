@@ -29,19 +29,17 @@
 
     <div class="navbar-dropdown ${model.isBoxed ? 'is-boxed' : ''}">
       <sly data-sly-list.item="${model.items}">
-        <li>
-          <a class="navbar-item" href="${item.url}">
-            <sly data-sly-test="${item.icon && item.icon != 'none'}">
+        <a class="navbar-item" href="${item.url}">
+          <sly data-sly-test="${item.icon && item.icon != 'none'}">
               <span class="icon">
                 <i class="${item.icon}"></i>
               </span>
-            </sly>
-            ${item.label}
-          </a>
-          <sly data-sly-test="${item.hasDivider}">
-            <hr class="navbar-divider">
           </sly>
-        </li>
+          ${item.label}
+        </a>
+        <sly data-sly-test="${item.hasDivider}">
+          <hr class="navbar-divider">
+        </sly>
       </sly>
     </div>
   </div>

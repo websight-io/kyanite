@@ -2,6 +2,11 @@
   "sling:resourceType": "wcm/dialogs/components/select",
   "name": "variant",
   "label": "Variant",
+  "none": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "None",
+    "value": ""
+  },
   "primary": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Primary",

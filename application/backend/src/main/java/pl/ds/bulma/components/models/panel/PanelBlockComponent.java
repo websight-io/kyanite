@@ -18,13 +18,16 @@ package pl.ds.bulma.components.models.panel;
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.bulma.components.helpers.IconContainerService;
 import pl.ds.bulma.components.services.ComponentIdService;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
@@ -37,10 +40,40 @@ public class PanelBlockComponent {
 
   @Inject
   @Getter
-  @Default(values = StringUtils.EMPTY)
+  private boolean addIcon;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi-home-outline")
   private String icon;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi")
+  private String iconLibType;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi-36px")
+  private String iconSize;
+
+  @Getter
+  private String containerSize;
+
+  @SlingObject
+  private Resource resource;
 
   public String getId() {
     return idService.getTemporaryId(ID_PREFIX);
+  }
+
+  @PostConstruct
+  private void init() {
+    IconContainerService iconContainerService = new IconContainerService(this.resource);
+    String mappingPath = "bulma/components/common/icon/containersize/defaultsizemappings";
+
+    this.containerSize
+            = iconContainerService.calculateContainerSize(this.iconLibType,
+            mappingPath, this.iconSize);
   }
 }
