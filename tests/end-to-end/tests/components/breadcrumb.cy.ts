@@ -67,17 +67,19 @@ describe('Breadcrumb component', function () {
     )
     .its('body')
     .should('deep.eq', {
-      separator: 'has-bullet-separator',
+      'jcr:primaryType': 'nt:unstructured',
       size: 'is-medium',
+      'sling:resourceType': 'bulma/components/breadcrumb',
+      separator: 'has-bullet-separator',
       alignment: 'is-right',
       'elements': {
         'jcr:primaryType':'nt:unstructured',
         '0': {
           'jcr:primaryType':'nt:unstructured',
-          'label':'Label'}
-      },
-      'sling:resourceType': 'bulma/components/breadcrumb',
-      'jcr:primaryType': 'nt:unstructured'
+          icon: 'fa-home',
+          'label':'Label'
+        }
+      }
     });
   });
 });
