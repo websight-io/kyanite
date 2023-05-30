@@ -89,6 +89,18 @@ public class TitleComponent {
   private String shadeRest;
 
   @Inject
+  @Default(values = StringUtils.EMPTY)
+  private String subtitleShadeBw;
+
+  @Inject
+  @Default(values = StringUtils.EMPTY)
+  private String subtitleShadeGrey;
+
+  @Inject
+  @Default(values = StringUtils.EMPTY)
+  private String subtitleShadeRest;
+
+  @Inject
   @Getter
   @Default(values = "")
   private String anchorId;

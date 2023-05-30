@@ -78,7 +78,6 @@
                 "rest_has-text-link",
                 "rest_has-text-info",
                 "rest_has-text-success",
-                "rest_has-text-success",
                 "rest_has-text-warning",
                 "rest_has-text-danger"
               ]
@@ -95,7 +94,6 @@
               "rest_has-text-primary",
               "rest_has-text-link",
               "rest_has-text-info",
-              "rest_has-text-success",
               "rest_has-text-success",
               "rest_has-text-warning",
               "rest_has-text-danger"
@@ -117,6 +115,90 @@
             "name": "subtitle",
             "label": "Subtitle text",
             "description": "A subtitle can be defined if the size of the title is 4 or bigger"
+          },
+          "subtitleColor": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "bulma/components/common/text/color",
+            "name": "subtitleColor",
+            "label": "Subtitle color",
+            "value": "bw_has-text-black"
+          },
+          "subtitleShadeContainer": {
+            "sling:resourceType": "wcm/dialogs/components/container",
+            "subtitleBlackAndWhiteShade": {
+              "sling:resourceType": "wcm/dialogs/components/container",
+              "colorIntensity": {
+                "sling:resourceType": "wcm/dialogs/components/include",
+                "path": "bulma/components/common/text/shade/bw",
+                "name": "colorIntensity",
+                "label": "Subtitle intensity"
+              },
+              "ws:display": {
+                "condition": {
+                  "sourceName": "subtitleColor",
+                  "values": [
+                    "bw_has-text-black",
+                    "bw_has-text-white"
+                  ]
+                }
+              }
+            },
+            "subtitleGreyShade": {
+              "sling:resourceType": "wcm/dialogs/components/container",
+              "subtitleIntensity": {
+                "sling:resourceType": "wcm/dialogs/components/include",
+                "path": "bulma/components/common/text/shade/grey",
+                "name": "colorIntensity",
+                "label": "Subtitle intensity"
+              },
+              "ws:display": {
+                "condition": {
+                  "sourceName": "subtitleColor",
+                  "values": [
+                    "grey_has-text-grey"
+                  ]
+                }
+              }
+            },
+            "subtitleRestShadeContainer": {
+              "sling:resourceType": "wcm/dialogs/components/container",
+              "subtitleRestShade": {
+                "sling:resourceType": "wcm/dialogs/components/include",
+                "include": {
+                  "sling:resourceSuperType": "bulma/components/common/text/shade/rest",
+                  "name": "subtitleRestShade"
+                }
+              },
+              "ws:display": {
+                "condition": {
+                  "sourceName": "subtitleColor",
+                  "values": [
+                    "rest_has-text-primary",
+                    "rest_has-text-link",
+                    "rest_has-text-info",
+                    "rest_has-text-success",
+                    "rest_has-text-warning",
+                    "rest_has-text-danger"
+                  ]
+                }
+              }
+            },
+            "ws:display": {
+              "condition": {
+                "sourceName": "subtitleColor",
+                "values": [
+                  "bw_has-text-black",
+                  "bw_has-text-white",
+                  "grey_has-text-grey",
+                  "rest_has-text-primary",
+                  "rest_has-text-link",
+                  "rest_has-text-info",
+                  "rest_has-text-success",
+                  "rest_has-text-warning",
+                  "rest_has-text-danger"
+                ]
+              }
+            }
           },
           "isSpaced": {
             "sling:resourceType": "wcm/dialogs/components/checkbox",
