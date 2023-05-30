@@ -18,6 +18,8 @@ package pl.ds.bulma.components.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
@@ -38,7 +40,6 @@ public class ContactFormComponent {
   private RecaptchaConfigurationService recaptchaConfigurationService;
 
   @Inject
-  @Getter
   private List<TypeOfInquiry> types = new ArrayList<>();
 
   @ValueMapValue
@@ -53,6 +54,15 @@ public class ContactFormComponent {
 
   public String getCaptchaPublicKey() {
     return recaptchaConfigurationService.getCaptchaPublicKey();
+  }
+
+  public Map<String, String> getTypeOfInquiryValue() {
+    String value = """
+              {"subject":"%s",
+               "email":"%s"}""";
+    return types.stream().collect(Collectors.toMap(
+        TypeOfInquiry::getLabel,
+        elem -> value.formatted(elem.getLabel(), elem.getEmail())));
   }
 
   public String getConfigEndpoint() {

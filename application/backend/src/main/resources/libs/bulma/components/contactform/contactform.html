@@ -28,8 +28,8 @@
                   tabindex="1"
                   name="type">
             <option disabled selected value>Select an option</option>
-            <sly data-sly-list.item="${model.types}">
-              <option value="${item.email}">${item.label}</option>
+            <sly data-sly-list.item="${model.typeOfInquiryValue}">
+              <option value="${model.typeOfInquiryValue[item]}">${item}</option>
             </sly>
           </select>
         </div>
