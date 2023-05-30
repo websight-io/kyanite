@@ -66,7 +66,7 @@ public class LinkUtil {
     return addProtocolPrefixToLink(link);
   }
 
-  private static boolean isInternal(String link, ResourceResolver resourceResolver) {
+  public static boolean isInternal(String link, ResourceResolver resourceResolver) {
     return resourceResolver.getResource(link) != null;
   }
 

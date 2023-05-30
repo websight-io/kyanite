@@ -23,8 +23,9 @@
            data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType}"></sly>
     </div>
   </sly>
-  <figure class="image ${model.style}">
-    <sly data-sly-test="${model.isVideo}">
+  <sly data-sly-test="${!model.isSvg}">
+    <figure class="image ${model.style}">
+      <sly data-sly-test="${model.isVideo}">
       <iframe class="${model.isRounded ? 'is-rounded' : ''}" src="${model.assetReference}"
            alt="${model.alt}">
       </iframe>
@@ -33,5 +34,9 @@
       <img class="${model.isRounded ? 'is-rounded' : ''}" src="${model.assetReference}"
            alt="${model.alt}">
     </sly>
-  </figure>
+    </figure>
+  </sly>
+  <sly data-sly-test="${model.isSvg}">
+    <span class="image ${model.style}">${model.assetLink @ context='unsafe'}</span>
+  </sly>
 </sly>

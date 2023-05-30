@@ -25,16 +25,23 @@ import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import pl.ds.bulma.components.services.SvgImageService;
 
-@ExtendWith(SlingContextExtension.class)
+@ExtendWith({SlingContextExtension.class, MockitoExtension.class})
 class ImageComponentTest {
 
   private static final String PATH = "/content/image";
   private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
 
+  @Mock
+  private SvgImageService svgImageService;
+
   @BeforeEach
   public void init() {
     context.addModelsForClasses(ImageComponent.class);
+    context.registerService(SvgImageService.class, svgImageService);
     context.load().json(requireNonNull(
         Thread.currentThread().getContextClassLoader().getResourceAsStream("image.json")), PATH);
   }
