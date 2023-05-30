@@ -73,6 +73,10 @@ public class TitleComponent {
   private String color;
 
   @Inject
+  @Default(values = "bw_has-text-black")
+  private String subtitleColor;
+
+  @Inject
   @Default(values = StringUtils.EMPTY)
   private String shadeBw;
 
