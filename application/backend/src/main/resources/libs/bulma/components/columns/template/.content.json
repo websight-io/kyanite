@@ -2,10 +2,46 @@
   "jcr:primaryType": "nt:unstructured",
   "column1": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/columns/column"
+    "sling:resourceType": "bulma/components/columns/column",
+    "desktopColumnStyle": {
+      "jcr:primaryType": "nt:unstructured",
+      "sizeType": "evenNumber",
+      "offsetType": "evenNumber",
+      "isNormalColumn": "true"
+    },
+    "tabletColumnStyle": {
+      "jcr:primaryType": "nt:unstructured",
+      "sizeType": "evenNumber",
+      "offsetType": "evenNumber",
+      "isNormalColumn": "true"
+    },
+    "mobileColumnStyle": {
+      "jcr:primaryType": "nt:unstructured",
+      "sizeType": "evenNumber",
+      "offsetType": "evenNumber",
+      "isNormalColumn": "true"
+    }
   },
   "column2": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/columns/column"
+    "sling:resourceType": "bulma/components/columns/column",
+    "desktopColumnStyle": {
+      "jcr:primaryType": "nt:unstructured",
+      "sizeType": "evenNumber",
+      "offsetType": "evenNumber",
+      "isNormalColumn": "true"
+    },
+    "tabletColumnStyle": {
+      "jcr:primaryType": "nt:unstructured",
+      "sizeType": "evenNumber",
+      "offsetType": "evenNumber",
+      "isNormalColumn": "true"
+    },
+    "mobileColumnStyle": {
+      "jcr:primaryType": "nt:unstructured",
+      "sizeType": "evenNumber",
+      "offsetType": "evenNumber",
+      "isNormalColumn": "true"
+    }
   }
 }
