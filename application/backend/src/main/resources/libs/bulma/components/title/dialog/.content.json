@@ -118,20 +118,20 @@
           },
           "subtitleColor": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "bulma/components/common/text/color",
-            "name": "subtitleColor",
-            "label": "Subtitle color",
+            "include": {
+              "sling:resourceSuperType": "bulma/components/common/text/color",
+              "name": "subtitleColor",
+              "label": "Subtitle color"
+            },
             "value": "bw_has-text-black"
           },
           "subtitleShadeContainer": {
             "sling:resourceType": "wcm/dialogs/components/container",
-            "subtitleBlackAndWhiteShade": {
-              "sling:resourceType": "wcm/dialogs/components/container",
-              "colorIntensity": {
-                "sling:resourceType": "wcm/dialogs/components/include",
-                "path": "bulma/components/common/text/shade/bw",
-                "name": "colorIntensity",
-                "label": "Subtitle intensity"
+            "subtitleShade": {
+              "sling:resourceType": "wcm/dialogs/components/include",
+              "include": {
+                "sling:resourceSuperType": "bulma/components/common/text/shade/bw",
+                "name": "subtitleBlackAndWhiteShade"
               },
               "ws:display": {
                 "condition": {
@@ -143,13 +143,14 @@
                 }
               }
             },
-            "subtitleGreyShade": {
+            "subtitleShadeGrey": {
               "sling:resourceType": "wcm/dialogs/components/container",
-              "subtitleIntensity": {
+              "subtitleShade": {
                 "sling:resourceType": "wcm/dialogs/components/include",
-                "path": "bulma/components/common/text/shade/grey",
-                "name": "colorIntensity",
-                "label": "Subtitle intensity"
+                "include": {
+                  "sling:resourceSuperType": "bulma/components/common/text/shade/grey",
+                  "name": "subtitleShadeGrey"
+                }
               },
               "ws:display": {
                 "condition": {
@@ -162,7 +163,7 @@
             },
             "subtitleRestShadeContainer": {
               "sling:resourceType": "wcm/dialogs/components/container",
-              "subtitleRestShade": {
+              "subtitleShade": {
                 "sling:resourceType": "wcm/dialogs/components/include",
                 "include": {
                   "sling:resourceSuperType": "bulma/components/common/text/shade/rest",
@@ -215,7 +216,12 @@
         "ws:display": {
           "condition": {
             "sourceName": "size",
-            "values": ["is-1", "is-2", "is-3", "is-4"]
+            "values": [
+              "is-1",
+              "is-2",
+              "is-3",
+              "is-4"
+            ]
           }
         }
       }
