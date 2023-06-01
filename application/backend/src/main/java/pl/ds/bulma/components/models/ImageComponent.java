@@ -70,6 +70,9 @@ public class ImageComponent {
   @OSGiService
   private SvgImageService svgImageService;
 
+  @Getter
+  private boolean isVideo;
+
   @PostConstruct
   private void init() throws IOException {
     final ResourceResolver resourceResolver = resource.getResourceResolver();
@@ -93,6 +96,7 @@ public class ImageComponent {
         this.assetLink = svgImageService.getSvgFromExternalUrl(link);
       }
     }
+    this.isVideo = this.isVideo(link);
   }
 
 
@@ -104,8 +108,8 @@ public class ImageComponent {
     return LinkUtil.handleLink(assetReference, resource.getResourceResolver());
   }
 
-  public boolean getIsVideo() {
-    String mimeType = URLConnection.guessContentTypeFromName(getSrc());
+  private boolean isVideo(String link) {
+    String mimeType = URLConnection.guessContentTypeFromName(link);
     return mimeType != null && mimeType.startsWith("video");
   }
 }
