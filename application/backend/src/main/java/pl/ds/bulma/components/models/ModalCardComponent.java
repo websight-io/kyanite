@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,37 +16,43 @@
 
 package pl.ds.bulma.components.models;
 
-import javax.inject.Inject;
+import javax.annotation.PostConstruct;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.OSGiService;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import pl.ds.bulma.components.services.ComponentIdService;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class ModalComponent {
+public class ModalCardComponent extends ModalComponent {
 
-  public static final String ID_PREFIX = "modal";
+  public static final String ID_PREFIX = "modalcard";
 
-  @OSGiService
-  protected ComponentIdService idService;
+  public static final String MODEL_CARD_FOOTER_RESOURCE_TYPE
+      = "bulma/components/modelcard/modelcardfooter";
 
-  @SlingObject
-  protected Resource resource;
-
-  @Inject
-  protected String id;
-
-  @Inject
+  @ValueMapValue
   @Getter
-  @Default(booleanValues = true)
-  private Boolean contentFrame;
+  @Default(values = StringUtils.EMPTY)
+  private String header;
+
+  @Getter
+  private boolean hasFooter;
+
+  @PostConstruct
+  void init() {
+    for (Resource child : resource.getChildren()) {
+      String resourceType = child.getResourceType();
+      if (MODEL_CARD_FOOTER_RESOURCE_TYPE.equals(resourceType) && child.hasChildren()) {
+        hasFooter = true;
+        break;
+      }
+    }
+  }
 
   public String getId() {
-    id = idService.getStoredId(resource, ID_PREFIX);
-    return id;
+    return StringUtils.isNotBlank(id) ? id : idService.getStoredId(resource, ID_PREFIX);
   }
 }
