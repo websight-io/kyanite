@@ -105,7 +105,7 @@ public class ImageComponent {
   }
 
   public boolean getIsVideo() {
-    String mimeType = URLConnection.guessContentTypeFromName(getSrc());
+    String mimeType = URLConnection.guessContentTypeFromName(getAssetLink());
     return mimeType != null && mimeType.startsWith("video");
   }
 }
