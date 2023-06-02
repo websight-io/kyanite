@@ -1,0 +1,65 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "assetReference": {
+        "sling:resourceType": "wcm/dialogs/components/assetreference",
+        "mimeTypes": ["video/*"],
+        "name": "assetReference",
+        "description": "Drop an asset here from DAM.",
+        "label": "Choose video"
+      },
+      "hasThumbnail": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "hasThumbnail",
+        "label": "Thumbnail"
+      },
+      "customThumbnail": {
+        "sling:resourceType": "wcm/dialogs/components/assetreference",
+        "rootPath": "/content",
+        "mimeTypes": ["image/*"],
+        "name": "thumbnail",
+        "description": "Choose a Thumbnail",
+        "label": "Thumbnail",
+        "ws:display": {"condition": {
+          "sourceName": "hasThumbnail",
+          "values": "true"
+        }}
+      },
+      "autoplay": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "description": "This function works when isMuted property is disabled",
+        "name": "autoplay",
+        "label": "Autoplay"
+      },
+      "loop": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isLooped",
+        "label": "Loop"
+      },
+      "muted": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isMuted",
+        "checkedByDefault": true,
+        "label": "Muted"
+      },
+      "controls": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "hasControls",
+        "label": "Controls"
+      }
+    },
+    "styleTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Style of video",
+      "fullWidth": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isFullWidth",
+        "label": "Full width"
+      }
+    }
+  }
+}

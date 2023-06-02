@@ -1,0 +1,5 @@
+{
+  "group": "Bulma.io Elements",
+  "sling:resourceType": "ws:Component",
+  "title": "Video"
+}
