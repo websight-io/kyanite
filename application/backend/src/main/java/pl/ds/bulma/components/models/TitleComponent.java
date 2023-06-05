@@ -38,6 +38,7 @@ public class TitleComponent {
   private String text;
 
   @Inject
+  @Default(values = "Subtitle")
   private String subtitle;
 
   @Inject
@@ -73,6 +74,10 @@ public class TitleComponent {
   private String color;
 
   @Inject
+  @Default(values = "bw_has-text-black")
+  private String subtitleColor;
+
+  @Inject
   @Default(values = StringUtils.EMPTY)
   private String shadeBw;
 
@@ -85,6 +90,18 @@ public class TitleComponent {
   private String shadeRest;
 
   @Inject
+  @Default(values = StringUtils.EMPTY)
+  private String subtitleShadeBw;
+
+  @Inject
+  @Default(values = StringUtils.EMPTY)
+  private String subtitleShadeGrey;
+
+  @Inject
+  @Default(values = StringUtils.EMPTY)
+  private String subtitleShadeRest;
+
+  @Inject
   @Getter
   @Default(values = "")
   private String anchorId;
@@ -94,6 +111,9 @@ public class TitleComponent {
 
   @Getter
   private String textColorVariant;
+
+  @Getter
+  private String subtitleColorVariant;
 
   @PostConstruct
   private void init() {
@@ -117,10 +137,15 @@ public class TitleComponent {
     subtitleClasses = subtitleClassList.toArray(new String[]{});
 
     ColorService colorService
-            = new ColorService(resource, "bulma/components/common/text/color",
-            this.color, this.shadeBw, this.shadeGrey, this.shadeRest);
+        = new ColorService(resource, "bulma/components/common/text/color",
+        this.color, this.shadeBw, this.shadeGrey, this.shadeRest);
 
     this.textColorVariant = colorService.getTextColorVariant();
+
+    colorService = new ColorService(resource, "bulma/components/common/text/color",
+        this.subtitleColor, this.subtitleShadeBw, this.subtitleShadeGrey, this.subtitleShadeRest);
+
+    this.subtitleColorVariant = colorService.getTextColorVariant();
   }
 
   public String getSubtitle() {

@@ -21,7 +21,7 @@
     ${model.text}
   </h1>
   <sly data-sly-test="${model.addSubtitle}">
-    <h1 data-sly-element="${model.element}" class="${model.subtitleClasses @ join=' '}">
+    <h1 data-sly-element="${model.element}" class="${model.subtitleClasses @ join=' '} ${model.subtitleColorVariant}">
       ${model.subtitle}
     </h1>
   </sly>
