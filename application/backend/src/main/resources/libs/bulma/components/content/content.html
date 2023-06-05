@@ -18,6 +18,6 @@
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.ContentComponent">
     <div class="content ${model.size} ${model.textWeight} ${model.textColorVariant}">
-        ${model.text @ context='html'}
+        ${model.text @ context='unsafe'}
     </div>
 </sly>
