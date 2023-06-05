@@ -27,10 +27,14 @@ import java.util.stream.StreamSupport;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import pl.ds.bulma.components.services.ColumnClassProvider;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
@@ -48,6 +52,10 @@ public class ColumnComponent extends DefaultResponsiveColumnComponent {
   @Getter
   private String[] classes;
 
+  @ValueMapValue
+  @Default(values = StringUtils.EMPTY)
+  private String customClass;
+
   @PostConstruct
   private void init() {
     Map<String, ResponsiveColumnStyle> columnStyleMap = new HashMap<>();
@@ -56,6 +64,7 @@ public class ColumnComponent extends DefaultResponsiveColumnComponent {
     addToColumnStyleMapIfColumnStyleIsNotNull(columnStyleMap, "desktop", getDesktopColumnStyle());
 
     classes = columnClassProvider.getClasses(columnStyleMap);
+    classes = ArrayUtils.add(classes, customClass);
   }
 
   public List<Resource> getChildrenComponents() {
