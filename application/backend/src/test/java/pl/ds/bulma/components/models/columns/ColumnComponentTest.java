@@ -47,7 +47,7 @@ public class ColumnComponentTest {
 
   @BeforeEach
   public void init() {
-    context.addModelsForClasses(ColumnComponent.class, ResponsiveColumnStyle.class);
+    context.addModelsForClasses(ColumnComponent.class, ResponsiveColumnStyle.class, ColumnsComponent.class);
     context.registerService(ColumnClassProvider.class, columnClassProvider);
     context.load().json(requireNonNull(
         Thread.currentThread().getContextClassLoader().getResourceAsStream("column.json")), PATH);
@@ -60,12 +60,13 @@ public class ColumnComponentTest {
     ColumnComponent model = resource.adaptTo(ColumnComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getClasses()).isEmpty();
+    assertThat(model.getClasses()[0]).isEqualTo("");
   }
 
   @Test
   void complexModelTest() {
     String[] expectedClasses = new String[]{"is-half-tablet", "is-offset-4-tablet"};
+    String[] expected = new String[]{"is-half-tablet", "is-offset-4-tablet",""};
     Mockito.when(columnClassProvider.getClasses(any())).thenReturn(expectedClasses);
     ColumnComponent model = context.resourceResolver().getResource(PATH + "/complex")
         .adaptTo(ColumnComponent.class);
@@ -80,13 +81,15 @@ public class ColumnComponentTest {
     assertThat(model.getTabletColumnStyle().getOffsetType()).isEqualTo("evenNumber");
     assertThat(model.getTabletColumnStyle().isNormalColumn()).isEqualTo(true);
     assertCommonComplexModelFields(model);
-    assertThat(model.getClasses()).isEqualTo(expectedClasses);
+    assertThat(model.getClasses()).isEqualTo(expected);
   }
 
   @Test
   void nestedColumnsModelTest() {
     String[] expectedSecondNestedColumnClasses = new String[]{"is-6-tablet",
         "is-offset-four-fifths-tablet"};
+    String[] expectedClasses = new String[]{"is-6-tablet",
+        "is-offset-four-fifths-tablet", ""};
     Mockito.when(columnClassProvider.getClasses(any()))
         .thenReturn(expectedSecondNestedColumnClasses);
     ColumnComponent model = context.resourceResolver().getResource(PATH + "/nested")
@@ -117,7 +120,7 @@ public class ColumnComponentTest {
     assertThat(nestedSecondColumn.getTabletColumnStyle().getOffsetType()).isEqualTo("fraction");
     assertThat(nestedSecondColumn.getTabletColumnStyle().isNormalColumn()).isEqualTo(true);
     assertCommonComplexModelFields(nestedSecondColumn);
-    assertThat(nestedSecondColumn.getClasses()).isEqualTo(expectedSecondNestedColumnClasses);
+    assertThat(nestedSecondColumn.getClasses()).isEqualTo(expectedClasses);
   }
 
   private static void assertCommonComplexModelFields(ColumnComponent model) {
