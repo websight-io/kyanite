@@ -129,7 +129,8 @@ public class TitleComponent {
     }
 
     String textColorVariant = getColorVariant(color, shadeBw, shadeGrey, shadeRest);
-    String subtitleColorVariant = getColorVariant(subtitleColor, subtitleShadeBw, subtitleShadeGrey, subtitleShadeRest);
+    String subtitleColorVariant = getColorVariant(
+        subtitleColor, subtitleShadeBw, subtitleShadeGrey, subtitleShadeRest);
 
     if (textColorVariant != null && !textColorVariant.isEmpty()) {
       titleClassList.add(textColorVariant);
