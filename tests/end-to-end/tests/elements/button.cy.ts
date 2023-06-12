@@ -122,6 +122,7 @@ describe('Button component', function () {
         {
           'jcr:primaryType': 'nt:unstructured',
           'showIconRight': 'false',
+          'iconSizeLeft': '',
           'showIconLeft': 'true',
           'iconLeft': 'mdi-cube-outline',
           'isOutlined': 'true',
@@ -194,8 +195,10 @@ describe('Button component', function () {
           'isFullWidth': 'false',
           'isInverted': 'false',
           'url': '/content',
+          'size': 'is-small',
           'type': 'a',
           'label': 'Label',
+          'variant': '',
           'isRounded': 'false',
           'sling:resourceType': 'bulma/components/button',
           'openInNewTab': 'true',
