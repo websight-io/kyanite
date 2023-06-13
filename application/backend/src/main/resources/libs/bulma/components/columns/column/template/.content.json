@@ -1,0 +1,9 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "alignment": "",
+  "isNormalColumn": "true",
+  "offset": "empty",
+  "offsetType": "evenNumber",
+  "size": "empty",
+  "sizeType": "evenNumber"
+}
