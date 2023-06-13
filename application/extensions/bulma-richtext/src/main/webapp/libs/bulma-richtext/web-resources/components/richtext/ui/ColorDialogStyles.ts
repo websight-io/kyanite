@@ -54,6 +54,7 @@ export const createCSS = (colors) => {
 };
 
 export const PopupContainer = styled.div`
+    position: relative;
     & > div > div {
         padding: 0;
         display: flex;

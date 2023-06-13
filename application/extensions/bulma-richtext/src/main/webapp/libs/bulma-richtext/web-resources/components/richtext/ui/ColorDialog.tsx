@@ -26,6 +26,9 @@ import Button from 'components/richtext/ui/Button';
 
 import { PopupContainer, createGlobalCSS, createCSS } from './ColorDialogStyles.js';
 import {COLORS, createColorsList} from './colors.js';
+import Color from '../plugin/Color.js';
+
+const RTE_DEFAULT_BUTTON_COLOR = '#344563';
 
 const ColorDialogContent = ({
     submit,
@@ -107,16 +110,28 @@ const ColorDialog = ({ configuration, state, action }) => {
     const { isActive, color } = state;
     const { execute } = action;
     const dialogRef = React.createRef();
+    const colorIndicatorEl: HTMLSpanElement = document.createElement('span');
 
     useEffect(() => {
         createColorsList(colors);
-        
         injectGlobal`
             .ProseMirror {
               ${createGlobalCSS(COLORS)}
             }
         `;
     }, []);
+
+    const filterColor = (colorClassName: string) => {
+        const filteredColor = COLORS.filter(color => color.colorClassName === colorClassName);
+        if (filteredColor.length) {
+            return filteredColor[0].value;
+        }
+        return RTE_DEFAULT_BUTTON_COLOR;
+    };
+
+    const applyActiveColor = (color): string => {
+        return isActive ? colorIndicatorEl.style.backgroundColor = filterColor(color) : colorIndicatorEl.style.backgroundColor = RTE_DEFAULT_BUTTON_COLOR;
+    }
 
     const open = () => {
         dialogRef.current.toggle();
@@ -127,8 +142,19 @@ const ColorDialog = ({ configuration, state, action }) => {
         dialogRef.current.close();
     };
 
+    const ColorIndicator = styled.span`
+        position: absolute;
+        z-index: 1;
+        background-color: ${applyActiveColor(color)};
+        width: 22px;
+        height: 4px;
+        bottom: 8px;
+        left: 11px;
+    `;
+
      return (
         <PopupContainer>
+            <ColorIndicator></ColorIndicator>
             <Popup
                 ref={dialogRef}
                 content={
