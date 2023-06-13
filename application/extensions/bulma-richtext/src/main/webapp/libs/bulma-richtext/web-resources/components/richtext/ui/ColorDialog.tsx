@@ -26,7 +26,6 @@ import Button from 'components/richtext/ui/Button';
 
 import { PopupContainer, createGlobalCSS, createCSS } from './ColorDialogStyles.js';
 import {COLORS, createColorsList} from './colors.js';
-import Color from '../plugin/Color.js';
 
 const RTE_DEFAULT_BUTTON_COLOR = '#344563';
 
@@ -110,7 +109,6 @@ const ColorDialog = ({ configuration, state, action }) => {
     const { isActive, color } = state;
     const { execute } = action;
     const dialogRef = React.createRef();
-    const colorIndicatorEl: HTMLSpanElement = document.createElement('span');
 
     useEffect(() => {
         createColorsList(colors);
@@ -130,8 +128,8 @@ const ColorDialog = ({ configuration, state, action }) => {
     };
 
     const applyActiveColor = (color): string => {
-        return isActive ? colorIndicatorEl.style.backgroundColor = filterColor(color) : colorIndicatorEl.style.backgroundColor = RTE_DEFAULT_BUTTON_COLOR;
-    }
+        return isActive ? filterColor(color) : RTE_DEFAULT_BUTTON_COLOR;
+    };
 
     const open = () => {
         dialogRef.current.toggle();
