@@ -1,6 +1,8 @@
 {
   "jcr:primaryType": "nt:unstructured",
   "variant": "is-primary",
+  "containerStyle": "",
+  "fixedOption": "is-fixed-top",
   "brand": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "bulma/components/navbar/navbarbrand",
