@@ -4,6 +4,10 @@
   "item": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "bulma/components/navbar/navbaritem",
-    "label": "Brand"
+    "label": "Brand",
+    "type": "link",
+    "icon": "home",
+    "iconLibType": "mdi",
+    "iconSize": "mdi-36px"
   }
 }

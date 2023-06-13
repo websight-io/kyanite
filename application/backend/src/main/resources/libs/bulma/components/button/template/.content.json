@@ -1,0 +1,13 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "sling:resourceType": "bulma/components/button",
+  "label": "Label",
+  "type": "button",
+  "variant": "is-primary",
+  "iconLeft": "home",
+  "iconLibTypeLeft": "mdi",
+  "iconSizeLeft": "mdi-36px",
+  "iconRight": "home",
+  "iconLibTypeRight": "mdi",
+  "iconSizeRight": "mdi-36px"
+}
