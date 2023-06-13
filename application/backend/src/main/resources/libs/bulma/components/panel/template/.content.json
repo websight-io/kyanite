@@ -1,6 +1,7 @@
 {
   "jcr:primaryType": "nt:unstructured",
   "title": "Panel Title",
+  "variant": "",
   "panelblock1": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "bulma/components/panel/panelblock"
