@@ -1,0 +1,21 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "type": "button",
+  "size": "is-small",
+  "variant": "is-primary",
+  "openModal": "open-modal",
+  "selectOrTypeLeft": "select",
+  "selectOrTypeRight": "select",
+  "iconLibTypeLeft": "fas",
+  "iconLibTypeRight": "fas",
+  "iconLeft": "fa-home",
+  "iconRight": "fa-home",
+  "iconSizeLeft": "fa-lg",
+  "iconSizeRight": "fa-lg",
+  "isInverted": "false",
+  "isOutlined": "false",
+  "isDisabled": "false",
+  "isFullWidth": "false",
+  "isLight": "false",
+  "isRounded": "false"
+}
