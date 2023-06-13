@@ -3,5 +3,7 @@
   "size": "is-2",
   "color": "bw_has-text-black",
   "shadeBw": "",
-  "subtitleColor": "bw_has-text-black"
+  "subtitleColor": "bw_has-text-black",
+  "addSubtitle": "false",
+  "subtitleShadeBw": ""
 }
