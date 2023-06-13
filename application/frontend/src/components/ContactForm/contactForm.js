@@ -25,11 +25,15 @@ const initForm = () => {
             const formFailureEl = form.getElementsByClassName('form-failure')[0];
             const emailValidateErrorEl = form.getElementsByClassName('email-validate-error')[0];
             const emailInputEl = form.getElementsByClassName('email-input')[0];
+            const contactForm = form.dataset.configHttpEndPoint;
             let formPostData = {};
             
             const sendForm = (api) => {
                     fetch(api, {
                         method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
                         body: JSON.stringify(formPostData)
                     })
                     .then((response) => response.json())
@@ -54,10 +58,9 @@ const initForm = () => {
             };
             
             const getEntityName = () => {
-                const contactFormEntityName = JSON.parse(document.body.dataset.config);
-                if (contactFormEntityName.constructor === Object && Object.keys(contactFormEntityName).length !== 0) {
+                if (contactForm) {
                     submitBtn.setAttribute('disabled', 'disabled');
-                    sendForm(contactFormEntityName.contactForm);
+                    sendForm(contactForm);
                 } else {
                     console.error('Invalid configuration');
                 }
@@ -88,9 +91,13 @@ const initForm = () => {
                 let validateEmail = false;
                 formPostData = {};
                 for (let data of formData.entries()) {
-                    formPostData[data[0]] = data[1];
-                    if (data[0] === 'email') {
-                        validateEmail = data[1];
+                    if (data[0] === 'type') {
+                        formPostData[data[0]] = JSON.parse(data[1]);
+                    } else {
+                        formPostData[data[0]] = data[1];
+                        if (data[0] === 'email') {
+                            validateEmail = data[1];
+                        }
                     }
                 }
                 if (validateEmail) {

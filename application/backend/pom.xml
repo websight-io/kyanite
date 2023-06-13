@@ -120,6 +120,10 @@
       <groupId>pl.ds.websight</groupId>
       <artifactId>websight-assets-core-api</artifactId>
     </dependency>
+    <dependency>
+      <groupId>javax.json</groupId>
+      <artifactId>javax.json-api</artifactId>
+    </dependency>
   </dependencies>
 
 </project>

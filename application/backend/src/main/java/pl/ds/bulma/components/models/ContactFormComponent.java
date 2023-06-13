@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import javax.inject.Inject;
+import javax.json.Json;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
@@ -57,12 +58,12 @@ public class ContactFormComponent {
   }
 
   public Map<String, String> getTypeOfInquiryValue() {
-    String value = """
-              {"subject":"%s",
-               "email":"%s"}""";
     return types.stream().collect(Collectors.toMap(
         TypeOfInquiry::getLabel,
-        elem -> value.formatted(elem.getLabel(), elem.getEmail())));
+        elem -> Json.createObjectBuilder().add("subject", elem.getLabel())
+            .add("email", elem.getEmail())
+            .build()
+            .toString()));
   }
 
   public String getConfigEndpoint() {
