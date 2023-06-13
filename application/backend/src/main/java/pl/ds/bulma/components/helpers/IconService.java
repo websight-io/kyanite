@@ -41,7 +41,7 @@ public class IconService {
       }
     }
 
-    return "";
+    return icon;
   }
 
   private ValueMap getIconMapping(String resourcePath) {

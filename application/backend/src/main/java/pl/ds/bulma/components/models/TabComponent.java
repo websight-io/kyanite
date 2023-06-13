@@ -28,6 +28,7 @@ import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import pl.ds.bulma.components.helpers.IconContainerService;
+import pl.ds.bulma.components.helpers.IconService;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class TabComponent {
@@ -45,6 +46,9 @@ public class TabComponent {
   @Getter
   @Default(values = "mdi-home-outline")
   private String icon;
+
+  @Getter
+  private String mappedIcon;
 
   @Inject
   @Getter
@@ -71,5 +75,12 @@ public class TabComponent {
     this.containerSize
             = iconContainerService.calculateContainerSize(this.iconLibType,
             mappingPath, this.iconSize);
+
+    IconService iconService = new IconService(resource);
+    String iconMappingPath = "bulma/components/common/icon/icons/mappings";
+
+    this.mappedIcon
+            = iconService.getIconIdByIconLibType(this.iconLibType,
+            iconMappingPath, this.icon);
   }
 }

@@ -20,7 +20,7 @@
   <sly data-sly-test="${resource.hasChildren}">
       <a class="panel-block ${model.containerSize}" id="${model.id}">
         <sly data-sly-test="${model.addIcon && model.icon}">
-          <span class="panel-icon"><i class="${model.iconLibType} ${model.iconSize} ${model.icon}" aria-hidden="true"></i></span>
+          <span class="panel-icon"><i class="${model.iconLibType} ${model.iconSize} ${model.mappedIcon}" aria-hidden="true"></i></span>
         </sly>
         <sly data-sly-list="${resource.children}">
           <sly data-sly-resource="${item}"></sly>
