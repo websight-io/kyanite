@@ -30,6 +30,7 @@ import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import pl.ds.bulma.components.helpers.IconContainerService;
+import pl.ds.bulma.components.helpers.IconService;
 import pl.ds.bulma.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
@@ -53,6 +54,9 @@ public class ButtonComponent {
   @Getter
   private String iconLeft;
 
+  @Getter
+  private String mappedIconLeft;
+
   @Inject
   @Getter
   @Default(values = "mdi-36px")
@@ -73,6 +77,9 @@ public class ButtonComponent {
   @Inject
   @Getter
   private String iconRight;
+
+  @Getter
+  private String mappedIconRight;
 
   @Inject
   @Getter
@@ -173,6 +180,16 @@ public class ButtonComponent {
     this.iconContainerSizeRight
             = iconContainerService.calculateContainerSize(this.iconLibTypeRight,
             mappingPath, this.iconSizeRight);
+
+    IconService iconService = new IconService(resource);
+    String iconMappingPath
+            = "bulma/components/common/icon/icons/mappings";
+    this.mappedIconLeft
+            = iconService.getIconIdByIconLibType(this.iconLibTypeLeft,
+            iconMappingPath, this.iconLeft);
+    this.mappedIconRight
+            = iconService.getIconIdByIconLibType(this.iconLibTypeRight,
+            iconMappingPath, this.iconRight);
   }
 
   public String getUrl() {

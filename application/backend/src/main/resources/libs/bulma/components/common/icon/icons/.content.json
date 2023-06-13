@@ -5,101 +5,122 @@
   "home": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Home",
-    "value": "fa-home"
+    "value": "home",
+    "selected": true
   },
   "envelope": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Envelope",
-    "value": "fa-envelope"
+    "value": "envelope"
   },
   "file": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "File",
-    "value": "fa-file-alt"
+    "value": "file"
   },
   "table": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Table",
-    "value": "fa-table"
+    "value": "table"
   },
   "cube": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Cube",
-    "value": "fa-cube"
+    "value": "cube"
   },
   "cogs": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Gears",
-    "value": "fa-cogs"
+    "value": "cogs"
   },
   "arrowLeft": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Arrow left",
-    "value": "fa-arrow-left"
+    "value": "arrow-left"
   },
   "arrowRight": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Arrow right",
-    "value": "fa-arrow-right"
+    "value": "arrow-right"
   },
   "arrowUp": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Arrow up",
-    "value": "fa-arrow-up"
+    "value": "arrow-up"
   },
   "arrowDown": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Arrow down",
-    "value": "fa-arrow-down"
+    "value": "arrow-down"
   },
   "arrowTrendUp": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Arrow trend up",
-    "value": "fa-arrow-trend-up"
+    "value": "arrow-trend-up"
   },
   "check": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Check",
-    "value": "fa-check"
+    "value": "check"
   },
   "gauge": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Gauge",
-    "value": "fa-gauge-simple-high"
+    "value": "gauge"
   },
   "dashboard": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Dashboard",
-    "value": "fa-objects-column"
+    "value": "dashboard"
   },
   "link": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Link",
-    "value": "fa-link-simple"
+    "value": "link"
   },
   "bookmark": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Bookmark",
-    "value": "fa-bookmark"
+    "value": "bookmark"
   },
   "close": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Close",
-    "value": "fa-xmark"
+    "value": "close"
   },
   "chevronUp": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Chevron up",
-    "value": "fa-chevron-up"
+    "value": "chevron-up"
   },
   "chevronDown": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Chevron down",
-    "value": "fa-chevron-down"
+    "value": "chevron-down"
   },
   "cubes": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Cubes",
-    "value": "fa-cubes"
+    "value": "cubes"
+  },
+  "arrowTopRight": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Arrow top right",
+    "value": "arrow-top-right"
+  },
+  "creation": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Creation",
+    "value": "creation"
+  },
+  "bulma": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Bulma",
+    "value": "bulma"
+  },
+  "form": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Form",
+    "value": "form"
   }
 }
