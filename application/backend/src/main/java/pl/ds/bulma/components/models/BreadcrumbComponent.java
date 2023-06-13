@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,10 +45,6 @@ public class BreadcrumbComponent {
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String separator;
-
-  @Inject
-  @Getter
-  private List<BreadcrumbElementComponent> elements;
 
   @Inject
   @Getter

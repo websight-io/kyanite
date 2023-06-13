@@ -16,13 +16,16 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.bulma.components.models.BreadcrumbComponent">
-  <sly data-sly-test="${resource.hasChildren}">
-    <nav class="breadcrumb  ${model.classes @ join=' '}" aria-label="breadcrumbs">
-      <ul>
-          <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-      </ul>
-    </nav>
-  </sly>
+<sly data-sly-use.model="pl.ds.bulma.components.models.BreadcrumbElementComponent">
+    <li>
+        <a href="${model.url}">
+            <sly data-sly-test="${model.addIcon && model.icon}">
+                        <span class="icon ${model.containerSize}">
+                             <i class="${model.iconLibType} ${model.iconSize} ${model.mappedIcon}" aria-hidden="true"></i>
+                         </span>
+            </sly>
+            <span>${model.label}</span>
+        </a>
+    </li>
   <!--    Add functionality to add active class to selected element-->
 </sly>

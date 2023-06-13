@@ -1,0 +1,9 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "label": "Label",
+  "url": "",
+  "addIcon": false,
+  "icon": "home",
+  "iconLibType": "mdi",
+  "iconSize": "mdi-36px"
+}
