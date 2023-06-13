@@ -4,13 +4,14 @@
     "lintfix": "eslint --ignore-path .eslintignore --fix .",
     "babel": "babel ./src/main/webapp --extensions \".ts,.tsx\" --config-file ./babel/.babelrc.js -d target/dist --copy-files",
     "watch": "babel ./src/main/webapp/ --config-file ./babel/.babelrc.js --extensions \".ts,.tsx\" -d target/dist --copy-files --watch",
-    "prepare": "snowpack --dest target/dist/apps/bulma-richtext/web-resources --optimize"
+    "prepare": "snowpack --dest target/dist/libs/bulma-richtext/web-resources --optimize"
   },
   "dependencies": {
     "@atlaskit/checkbox": "^12.4.6",
     "@tiptap/core": "^2.0.0-beta.209",
     "@tiptap/extension-code": "^2.0.3",
     "@types/react": "^18.0.28",
+    "is-dark-color": "^1.2.0",
     "prop-types": "15.8.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
