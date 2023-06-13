@@ -152,7 +152,7 @@ const ColorDialog = ({ configuration, state, action }) => {
 
      return (
         <PopupContainer>
-            <ColorIndicator></ColorIndicator>
+            <ColorIndicator />
             <Popup
                 ref={dialogRef}
                 content={
