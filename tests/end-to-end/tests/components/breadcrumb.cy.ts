@@ -76,7 +76,6 @@ describe('Breadcrumb component', function () {
         'jcr:primaryType':'nt:unstructured',
         '0': {
           'jcr:primaryType':'nt:unstructured',
-          icon: 'fa-home',
           'label':'Label'
         }
       }

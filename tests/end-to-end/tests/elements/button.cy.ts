@@ -124,7 +124,7 @@ describe('Button component', function () {
           'showIconRight': 'false',
           'iconSizeLeft': '',
           'showIconLeft': 'true',
-          'iconLeft': 'mdi-cube-outline',
+          'iconLeft': 'cube',
           'isOutlined': 'true',
           'isDisabled': 'true',
           'selectOrTypeLeft': 'select',
