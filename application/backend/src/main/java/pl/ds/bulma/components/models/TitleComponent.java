@@ -34,31 +34,26 @@ public class TitleComponent {
 
   @Inject
   @Getter
-  @Default(values = "Title")
   private String text;
 
   @Inject
-  @Default(values = "Subtitle")
+  @Getter
   private String subtitle;
 
   @Inject
   @Getter
-  @Default(values = "h2")
   private String element;
 
   @Inject
   @Getter
-  @Default(booleanValues = false)
   private boolean isSpaced;
 
   @Inject
   @Getter
-  @Default(booleanValues = false)
   private boolean addSubtitle;
 
   @Inject
   @Getter
-  @Default(values = StringUtils.EMPTY)
   private String size;
 
   @Inject
@@ -70,40 +65,31 @@ public class TitleComponent {
   private String[] subtitleClasses;
 
   @Inject
-  @Default(values = "bw_has-text-black")
   private String color;
 
   @Inject
-  @Default(values = "bw_has-text-black")
   private String subtitleColor;
 
   @Inject
-  @Default(values = StringUtils.EMPTY)
   private String shadeBw;
 
   @Inject
-  @Default(values = StringUtils.EMPTY)
   private String shadeGrey;
 
   @Inject
-  @Default(values = StringUtils.EMPTY)
   private String shadeRest;
 
   @Inject
-  @Default(values = StringUtils.EMPTY)
   private String subtitleShadeBw;
 
   @Inject
-  @Default(values = StringUtils.EMPTY)
   private String subtitleShadeGrey;
 
   @Inject
-  @Default(values = StringUtils.EMPTY)
   private String subtitleShadeRest;
 
   @Inject
   @Getter
-  @Default(values = "")
   private String anchorId;
 
   @SlingObject
@@ -146,9 +132,5 @@ public class TitleComponent {
         this.subtitleColor, this.subtitleShadeBw, this.subtitleShadeGrey, this.subtitleShadeRest);
 
     this.subtitleColorVariant = colorService.getTextColorVariant();
-  }
-
-  public String getSubtitle() {
-    return addSubtitle ? subtitle : "";
   }
 }

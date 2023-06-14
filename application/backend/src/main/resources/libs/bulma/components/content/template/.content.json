@@ -1,6 +1,10 @@
 {
   "jcr:primaryType": "nt:unstructured",
+  "text": "<p>Content</p>",
+  "size": "",
+  "textWeight": "has-text-weight-normal",
   "color": "grey_has-text-grey",
+  "shadeBw": "",
   "shadeGrey": "darker",
-  "text": "<p>Content</p>"
+  "shadeRest": ""
 }

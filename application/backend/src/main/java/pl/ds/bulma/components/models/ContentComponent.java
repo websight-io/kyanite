@@ -29,39 +29,28 @@ import pl.ds.bulma.components.helpers.ColorService;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContentComponent {
-
-  private static final String DEFAULT_TEXT = "Content";
-  public static final String TEXT_WEIGHT_DEFAULT = "has-text-weight-normal";
-
   @Inject
   @Getter
-  @Default(values = DEFAULT_TEXT)
   private String text;
 
   @Inject
   @Getter
-  @Default(values = StringUtils.EMPTY)
   private String size;
 
   @Inject
   @Getter
-  @Default(values = TEXT_WEIGHT_DEFAULT)
   private String textWeight;
 
   @Inject
-  @Default(values = "grey_has-text-grey")
   private String color;
 
   @Inject
-  @Default(values = StringUtils.EMPTY)
   private String shadeBw;
 
   @Inject
-  @Default(values = "darker")
   private String shadeGrey;
 
   @Inject
-  @Default(values = StringUtils.EMPTY)
   private String shadeRest;
 
   @SlingObject
@@ -72,10 +61,6 @@ public class ContentComponent {
 
   @PostConstruct
   private void init() {
-    if (text.isEmpty()) {
-      text = DEFAULT_TEXT;
-    }
-
     ColorService colorService
             = new ColorService(resource, "bulma/components/common/text/color",
             this.color, this.shadeBw, this.shadeGrey, this.shadeRest);

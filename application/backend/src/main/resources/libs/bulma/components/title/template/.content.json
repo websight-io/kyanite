@@ -1,7 +1,18 @@
 {
   "jcr:primaryType": "nt:unstructured",
+  "text": "Title",
+  "subtitle": "Subtitle",
+  "element": "h2",
+  "isSpaced": false,
+  "addSubtitle": false,
   "size": "is-2",
   "color": "bw_has-text-black",
   "shadeBw": "",
-  "subtitleColor": "bw_has-text-black"
+  "shadeGrey": "",
+  "shadeRest": "",
+  "subtitleColor": "bw_has-text-black",
+  "subtitleShadeBw": "",
+  "subtitleSGrey": "",
+  "subtitleSRest": "",
+  "anchorId": ""
 }

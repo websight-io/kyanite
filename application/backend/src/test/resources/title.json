@@ -1,19 +1,20 @@
 {
-  "default": {
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/title"
-  },
   "complex": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/title",
-    "text": "Nice subtitle",
-    "subtitle": "Nice subtitle",
-    "addSubtitle": true,
-    "element": "p",
-    "anchorId": "anchorId",
+    "text": "Title",
+    "subtitle": "Subtitle",
+    "element": "h2",
+    "isSpaced": false,
+    "addSubtitle": false,
     "size": "is-2",
-    "color": "has-text-black",
-    "shadeBw": "bis",
-    "isSpaced": true
+    "color": "bw_has-text-black",
+    "shadeBw": "",
+    "shadeGrey": "",
+    "shadeRest": "",
+    "subtitleColor": "bw_has-text-black",
+    "subtitleShadeBw": "",
+    "subtitleSGrey": "",
+    "subtitleSRest": "",
+    "anchorId": ""
   }
 }
