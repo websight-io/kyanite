@@ -1,7 +1,7 @@
 {
   "jcr:primaryType": "nt:unstructured",
   "type": "button",
-  "size": "is-small",
+  "size": "is-normal",
   "variant": "is-primary",
   "openModal": "open-modal",
   "selectOrTypeLeft": "select",

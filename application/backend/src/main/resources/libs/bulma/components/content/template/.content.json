@@ -3,6 +3,6 @@
   "color": "grey_has-text-grey",
   "shadeGrey": "darker",
   "text": "<p>Content</p>",
-  "size": "is-small",
+  "size": "is-normal",
   "textWeight": "has-text-weight-normal"
 }

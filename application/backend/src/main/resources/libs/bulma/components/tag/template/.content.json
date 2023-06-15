@@ -2,6 +2,6 @@
   "jcr:primaryType": "nt:unstructured",
   "isLight": "false",
   "isRounded": "false",
-  "size": "is-small",
+  "size": "is-normal",
   "variant": ""
 }
