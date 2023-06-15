@@ -17,7 +17,7 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarDropdownComponent">
-  <div class="navbar-item has-dropdown is-hoverable ${model.isDropup ? 'has-dropdown-up' : ''}">
+  <div class="navbar-item has-dropdown is-hoverable ${model.isDropup ? 'has-dropdown-up' : ''}" tabindex="0">
     <a class="navbar-link ${model.hasArrow ? '' : 'is-arrowless'}">
       <sly data-sly-test="${model.icon && model.icon != 'none'}">
         <span class="icon">
