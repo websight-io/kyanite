@@ -15,7 +15,7 @@
  */
 
 const switchTab = () => {
-    const check = document.querySelector('#check');
+    const check = document.querySelector('.js-edit-check');
     let isPreviewMode = false;
     if (check != null && check.dataset.editCheck == 'false') {
         isPreviewMode = true;
@@ -35,7 +35,7 @@ const switchTab = () => {
                 }
             });
 
-            const tabContentBoxes = document.querySelectorAll('#tab-content > div');
+            const tabContentBoxes = document.querySelectorAll('.tabs-content > div');
             tabContentBoxes.forEach(box => {
                 tabContainersTabs.forEach(tabs => {
                     if (box.getAttribute('id') === tabs[0].dataset.target) {
