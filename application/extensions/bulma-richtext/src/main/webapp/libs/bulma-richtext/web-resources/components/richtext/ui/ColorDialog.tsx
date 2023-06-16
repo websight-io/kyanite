@@ -119,16 +119,13 @@ const ColorDialog = ({ configuration, state, action }) => {
         `;
     }, []);
 
-    const filterColor = (colorClassName: string) => {
-        const filteredColor = COLORS.filter(color => color.colorClassName === colorClassName);
-        if (filteredColor.length) {
-            return filteredColor[0].value;
-        }
-        return RTE_DEFAULT_BUTTON_COLOR;
+    const getColorValue = (colorClassName: string) => {
+        const color = COLORS.find(color => color.colorClassName === colorClassName);
+        return color ? color.value : RTE_DEFAULT_BUTTON_COLOR;
     };
 
     const applyActiveColor = (color): string => {
-        return isActive ? filterColor(color) : RTE_DEFAULT_BUTTON_COLOR;
+        return isActive ? getColorValue(color) : RTE_DEFAULT_BUTTON_COLOR;
     };
 
     const open = () => {
