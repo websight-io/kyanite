@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,12 +109,6 @@ public class TitleComponent {
   @SlingObject
   private Resource resource;
 
-  @Getter
-  private String textColorVariant;
-
-  @Getter
-  private String subtitleColorVariant;
-
   @PostConstruct
   private void init() {
     List<String> titleClassList = new ArrayList<>();
@@ -133,19 +127,26 @@ public class TitleComponent {
     if (isSpaced) {
       titleClassList.add("is-spaced");
     }
+
+    String textColorVariant = getColorVariant(color, shadeBw, shadeGrey, shadeRest);
+    String subtitleColorVariant = getColorVariant(
+        subtitleColor, subtitleShadeBw, subtitleShadeGrey, subtitleShadeRest);
+
+    if (textColorVariant != null && !textColorVariant.isEmpty()) {
+      titleClassList.add(textColorVariant);
+    }
+    if (subtitleColorVariant != null && !subtitleColorVariant.isEmpty()) {
+      subtitleClassList.add(subtitleColorVariant);
+    }
     titleClasses = titleClassList.toArray(new String[]{});
     subtitleClasses = subtitleClassList.toArray(new String[]{});
+  }
 
-    ColorService colorService
-        = new ColorService(resource, "bulma/components/common/text/color",
-        this.color, this.shadeBw, this.shadeGrey, this.shadeRest);
+  private String getColorVariant(String color, String shadeBw, String shadeGrey, String shadeRest) {
+    ColorService colorService = new ColorService(resource, "bulma/components/common/text/color",
+        color, shadeBw, shadeGrey, shadeRest);
 
-    this.textColorVariant = colorService.getTextColorVariant();
-
-    colorService = new ColorService(resource, "bulma/components/common/text/color",
-        this.subtitleColor, this.subtitleShadeBw, this.subtitleShadeGrey, this.subtitleShadeRest);
-
-    this.subtitleColorVariant = colorService.getTextColorVariant();
+    return colorService.getTextColorVariant();
   }
 
   public String getSubtitle() {
