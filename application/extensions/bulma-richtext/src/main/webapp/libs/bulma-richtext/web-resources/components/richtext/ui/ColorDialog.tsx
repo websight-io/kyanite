@@ -119,7 +119,7 @@ const ColorDialog = ({ configuration, state, action }) => {
         `;
     }, []);
 
-    const getColorValue = (colorClassName: string) => {
+    const getColorValue = (colorClassName: string): string => {
         const color = COLORS.find(color => color.colorClassName === colorClassName);
         return color ? color.value : RTE_DEFAULT_BUTTON_COLOR;
     };
