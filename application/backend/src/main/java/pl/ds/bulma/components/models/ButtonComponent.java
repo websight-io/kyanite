@@ -25,10 +25,12 @@ import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Required;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import pl.ds.bulma.components.helpers.IconContainerService;
 import pl.ds.bulma.components.helpers.IconService;
 import pl.ds.bulma.components.utils.LinkUtil;
 
@@ -147,6 +149,10 @@ public class ButtonComponent {
   @SlingObject
   private Resource resource;
 
+  @OSGiService
+  @Required
+  private IconService iconService;
+
   @PostConstruct
   private void init() {
     List<String> classes = new ArrayList<>();
@@ -168,27 +174,21 @@ public class ButtonComponent {
       classes.add("is-fullwidth");
     }
     buttonClasses = classes.toArray(new String[]{});
-
-    IconContainerService iconContainerService = new IconContainerService(resource);
-    String mappingPath
-            = "bulma/components/common/icon/containersize/defaultsizemappings";
+    ResourceResolver resourceResolver = resource.getResourceResolver();
 
     this.iconContainerSizeLeft
-            = iconContainerService.calculateContainerSize(this.iconLibTypeLeft,
-            mappingPath, this.iconSizeLeft);
+        = iconService.calculateContainerSize(this.iconLibTypeLeft,
+        this.iconSizeLeft, resourceResolver);
     this.iconContainerSizeRight
-            = iconContainerService.calculateContainerSize(this.iconLibTypeRight,
-            mappingPath, this.iconSizeRight);
-
-    IconService iconService = new IconService(resource);
-    String iconMappingPath = "bulma/components/common/icon/icons/mappings";
+        = iconService.calculateContainerSize(this.iconLibTypeRight,
+        this.iconSizeRight, resourceResolver);
 
     this.mappedIconLeft
-            = iconService.getIconIdByIconLibType(this.iconLibTypeLeft,
-            iconMappingPath, this.iconLeft);
+        = iconService.getIconIdByIconLibType(this.iconLibTypeLeft,
+        this.iconLeft, resourceResolver);
     this.mappedIconRight
-            = iconService.getIconIdByIconLibType(this.iconLibTypeRight,
-            iconMappingPath, this.iconRight);
+        = iconService.getIconIdByIconLibType(this.iconLibTypeRight,
+        this.iconRight, resourceResolver);
   }
 
   public String getUrl() {

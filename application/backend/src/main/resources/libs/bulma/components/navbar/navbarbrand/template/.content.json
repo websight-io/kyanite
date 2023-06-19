@@ -6,6 +6,8 @@
     "sling:resourceType": "bulma/components/navbar/navbaritem",
     "label": "Brand",
     "type": "link",
+    "selectOrType": "select",
+    "addIcon": false,
     "icon": "home",
     "iconLibType": "mdi",
     "iconSize": "mdi-36px"

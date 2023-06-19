@@ -16,24 +16,26 @@
 
 package pl.ds.bulma.components.helpers;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
+import org.osgi.service.component.annotations.Component;
+import pl.ds.bulma.components.services.SvgImageService;
 
+@Component (service = IconService.class)
 public class IconService {
 
-  private Resource resource;
+  public static final String ICON_MAPPING_PATH = "bulma/components/common/icon/icons/mappings";
 
-  public IconService(Resource resource) {
-    this.resource = resource;
-  }
+  public static final String MAPPING_PATH =
+      "bulma/components/common/icon/containersize/defaultsizemappings";
 
-  public String getIconIdByIconLibType(String iconLibType,
-                                        String mappingPath, String icon) {
+  public String getIconIdByIconLibType(String iconLibType, String icon,
+      ResourceResolver resourceResolver) {
 
     if (iconLibType != null && !iconLibType.isEmpty()) {
-      ValueMap iconMapping = getIconMapping(
-              mappingPath + "/" + iconLibType);
+      ValueMap iconMapping = getMapping(ICON_MAPPING_PATH + "/" + iconLibType, resourceResolver);
 
       Object mappedIcon = iconMapping.get(icon);
       if (mappedIcon != null) {
@@ -44,18 +46,32 @@ public class IconService {
     return icon;
   }
 
-  private ValueMap getIconMapping(String resourcePath) {
-    if (resource != null) {
-      ResourceResolver resourceResolver = resource.getResourceResolver();
+  private ValueMap getMapping(String resourcePath, ResourceResolver resourceResolver) {
+    if (StringUtils.isNotBlank(resourcePath)) {
       Resource iconMapping = resourceResolver
-              .getResource(resourcePath);
+          .getResource(resourcePath);
 
       if (iconMapping != null) {
         return iconMapping.getValueMap();
       }
     }
-
     return ValueMap.EMPTY;
+  }
+
+  public String calculateContainerSize(String iconLibType, String iconSize,
+      ResourceResolver resourceResolver) {
+
+    if (iconLibType != null && !iconLibType.isEmpty()) {
+      ValueMap containerSizeMapping = getMapping(
+          MAPPING_PATH + "/" + iconLibType, resourceResolver);
+
+      Object mappedContainerSize = containerSizeMapping.get(iconSize);
+      if (mappedContainerSize != null) {
+        return mappedContainerSize.toString();
+      }
+    }
+
+    return StringUtils.EMPTY;
   }
 
 }

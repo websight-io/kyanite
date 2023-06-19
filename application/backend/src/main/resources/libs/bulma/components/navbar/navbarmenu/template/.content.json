@@ -9,6 +9,8 @@
       "sling:resourceType": "bulma/components/navbar/navbaritem",
       "label": "Item",
       "type": "link",
+      "addIcon": false,
+      "selectOrType": "select",
       "icon": "home",
       "iconLibType": "mdi",
       "iconSize": "mdi-36px"
@@ -38,6 +40,8 @@
       "sling:resourceType": "bulma/components/navbar/navbaritem",
       "label": "Item",
       "type": "link",
+      "addIcon": false,
+      "selectOrType": "select",
       "icon": "home",
       "iconLibType": "mdi",
       "iconSize": "mdi-36px"

@@ -2,6 +2,8 @@
   "jcr:primaryType": "nt:unstructured",
   "label":"Tab",
   "icon": "home",
+  "addIcon": false,
+  "selectOrType": "select",
   "iconLibType": "mdi",
   "iconSize": "mdi-36px",
   "tabcontent": {

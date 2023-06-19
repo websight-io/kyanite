@@ -5,6 +5,8 @@
     "sling:resourceType": "bulma/components/tabs/tab",
     "label":"Tab 1",
     "icon": "home",
+    "addIcon": false,
+    "selectOrType": "select",
     "iconLibType": "mdi",
     "iconSize": "mdi-36px",
     "tabcontent": {
@@ -17,6 +19,8 @@
     "sling:resourceType": "bulma/components/tabs/tab",
     "label":"Tab 2",
     "icon": "home",
+    "selectOrType": "select",
+    "addIcon": false,
     "iconLibType": "mdi",
     "iconSize": "mdi-36px",
     "tabcontent": {
@@ -29,6 +33,8 @@
     "sling:resourceType": "bulma/components/tabs/tab",
     "label":"Tab 3",
     "icon": "home",
+    "addIcon": false,
+    "selectOrType": "select",
     "iconLibType": "mdi",
     "iconSize": "mdi-36px",
     "tabcontent": {

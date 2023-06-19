@@ -20,11 +20,13 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Required;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import pl.ds.bulma.components.helpers.IconContainerService;
 import pl.ds.bulma.components.helpers.IconService;
 import pl.ds.bulma.components.models.ImageComponent;
 import pl.ds.bulma.components.utils.LinkUtil;
@@ -88,21 +90,21 @@ public class NavbarItemComponent {
   @Getter
   private String containerSize;
 
+  @OSGiService
+  @Required
+  private IconService iconService;
+
   @PostConstruct
   private void init() {
-    IconContainerService iconContainerService = new IconContainerService(this.resource);
-    String mappingPath = "bulma/components/common/icon/containersize/defaultsizemappings";
+    ResourceResolver resourceResolver = resource.getResourceResolver();
 
     this.containerSize
-            = iconContainerService.calculateContainerSize(this.iconLibType,
-            mappingPath, this.iconSize);
-
-    IconService iconService = new IconService(resource);
-    String iconMappingPath = "bulma/components/common/icon/icons/mappings";
+        = iconService.calculateContainerSize(this.iconLibType,
+        this.iconSize, resourceResolver);
 
     this.mappedIcon
-            = iconService.getIconIdByIconLibType(this.iconLibType,
-            iconMappingPath, this.icon);
+        = iconService.getIconIdByIconLibType(this.iconLibType,
+        this.icon, resourceResolver);
   }
 
   public String getUrl() {
