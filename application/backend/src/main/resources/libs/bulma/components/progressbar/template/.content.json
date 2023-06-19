@@ -1,5 +1,6 @@
 {
   "jcr:primaryType": "nt:unstructured",
   "size": "is-normal",
-  "variant": ""
+  "variant": "",
+  "value": 50
 }
