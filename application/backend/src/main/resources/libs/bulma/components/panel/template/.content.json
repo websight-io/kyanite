@@ -3,7 +3,12 @@
   "title": "Panel Title",
   "panelblock1": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/panel/panelblock"
+    "sling:resourceType": "bulma/components/panel/panelblock",
+    "icon": "home",
+    "addIcon": false,
+    "selectOrType": "select",
+    "iconLibType": "mdi",
+    "iconSize": "mdi-36px"
   },
   "paneltabs1": {
     "jcr:primaryType": "nt:unstructured",
@@ -17,15 +22,30 @@
         "sling:resourceType": "bulma/components/panel/paneltabs/paneltabcontent",
         "panelblock1": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "icon": "home",
+          "addIcon": false,
+          "selectOrType": "select",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px"
         },
         "panelblock2": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "icon": "home",
+          "addIcon": false,
+          "selectOrType": "select",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px"
         },
         "panelblock3": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "icon": "home",
+          "addIcon": false,
+          "selectOrType": "select",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px"
         }
       }
     },
@@ -38,15 +58,30 @@
         "sling:resourceType": "bulma/components/panel/paneltabs/paneltabcontent",
         "panelblock1": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "icon": "home",
+          "addIcon": false,
+          "selectOrType": "select",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px"
         },
         "panelblock2": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "icon": "home",
+          "addIcon": false,
+          "selectOrType": "select",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px"
         },
         "panelblock3": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "icon": "home",
+          "addIcon": false,
+          "selectOrType": "select",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px"
         }
       }
     },
@@ -59,15 +94,29 @@
         "sling:resourceType": "bulma/components/panel/paneltabs/paneltabcontent",
         "panelblock1": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "icon": "home",
+          "addIcon": false,
+          "selectOrType": "select",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px"
         },
         "panelblock2": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "icon": "home",
+          "addIcon": false,
+          "selectOrType": "select",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px"
         },
         "panelblock3": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "icon": "home",
+          "addIcon": false,
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px"
         }
       }
     }

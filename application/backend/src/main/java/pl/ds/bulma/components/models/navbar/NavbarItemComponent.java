@@ -16,13 +16,18 @@
 
 package pl.ds.bulma.components.models.navbar;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Required;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.bulma.components.helpers.IconService;
 import pl.ds.bulma.components.models.ImageComponent;
 import pl.ds.bulma.components.utils.LinkUtil;
 
@@ -62,7 +67,45 @@ public class NavbarItemComponent {
 
   @Inject
   @Getter
+  private boolean addIcon;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi-home-outline")
   private String icon;
+
+  @Getter
+  private String mappedIcon;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi")
+  private String iconLibType;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi-36px")
+  private String iconSize;
+
+  @Getter
+  private String containerSize;
+
+  @OSGiService
+  @Required
+  private IconService iconService;
+
+  @PostConstruct
+  private void init() {
+    ResourceResolver resourceResolver = resource.getResourceResolver();
+
+    this.containerSize
+        = iconService.calculateContainerSize(this.iconLibType,
+        this.iconSize, resourceResolver);
+
+    this.mappedIcon
+        = iconService.getIconIdByIconLibType(this.iconLibType,
+        this.icon, resourceResolver);
+  }
 
   public String getUrl() {
     return LinkUtil.handleLink(url, resource.getResourceResolver());

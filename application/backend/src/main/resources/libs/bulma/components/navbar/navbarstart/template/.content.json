@@ -4,7 +4,13 @@
   "item": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "bulma/components/navbar/navbaritem",
-    "label": "Item"
+    "label": "Item",
+    "type": "link",
+    "addIcon": false,
+    "icon": "home",
+    "selectOrType": "select",
+    "iconLibType": "mdi",
+    "iconSize": "mdi-36px"
   },
   "dropdown": {
     "jcr:primaryType": "nt:unstructured",

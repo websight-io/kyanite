@@ -19,9 +19,9 @@
 <sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarItemComponent">
   <sly data-sly-test="${model.type == 'link'}">
     <a class="navbar-item" href="${model.url}">
-      <sly data-sly-test="${model.icon && model.icon != 'none'}">
-        <span class="icon">
-          <i class="${model.icon}"></i>
+      <sly data-sly-test="${model.addIcon && model.mappedIcon}">
+        <span class="icon ${model.containerSize}">
+          <i class="${model.iconLibType} ${model.iconSize} ${model.mappedIcon}" aria-hidden="true"></i>
         </span>
       </sly>
       <span>${model.label}</span>

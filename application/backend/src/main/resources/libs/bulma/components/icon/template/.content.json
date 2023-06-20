@@ -2,7 +2,8 @@
   "jcr:primaryType": "nt:unstructured",
   "sling:resourceType": "bulma/components/icon",
   "addText": "false",
-  "icon": "mdi-home-outline",
+  "addIcon": false,
+  "icon": "home",
   "iconLibType": "mdi",
   "iconSize": "mdi-36px",
   "selectOrType": "select"

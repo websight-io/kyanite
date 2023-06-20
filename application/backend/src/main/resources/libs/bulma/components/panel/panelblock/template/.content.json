@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "addIcon": false,
+  "iconLibType": "mdi",
+  "selectOrType": "select"
+}

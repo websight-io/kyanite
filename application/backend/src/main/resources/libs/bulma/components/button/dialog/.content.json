@@ -138,7 +138,7 @@
           "selectableIcon": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "bulma/components/common/icon/icons/fontawesome",
+              "sling:resourceSuperType": "bulma/components/common/icon/icons",
               "name": "iconLeft",
               "label": "Left icon"
             },
@@ -169,7 +169,7 @@
           "selectableIcon": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "bulma/components/common/icon/icons/materialdesign",
+              "sling:resourceSuperType": "bulma/components/common/icon/icons",
               "name": "iconLeft",
               "label": "Left icon"
             },
@@ -254,7 +254,7 @@
           "selectableIcon": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "bulma/components/common/icon/icons/fontawesome",
+              "sling:resourceSuperType": "bulma/components/common/icon/icons",
               "name": "iconRight",
               "label": "Right icon"
             },
@@ -285,7 +285,7 @@
           "selectableIcon": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "bulma/components/common/icon/icons/materialdesign",
+              "sling:resourceSuperType": "bulma/components/common/icon/icons",
               "name": "iconRight",
               "label": "Right icon"
             },

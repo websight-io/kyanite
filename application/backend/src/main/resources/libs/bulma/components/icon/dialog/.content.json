@@ -41,7 +41,7 @@
         "sling:resourceType": "wcm/dialogs/components/container",
         "selectableIcon": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "bulma/components/common/icon/icons/fontawesome",
+          "path": "bulma/components/common/icon/icons",
           "ws:display": {
             "condition": {
               "sourceName": "selectOrType",
@@ -64,7 +64,7 @@
         "sling:resourceType": "wcm/dialogs/components/container",
         "selectableIcon": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "bulma/components/common/icon/icons/materialdesign",
+          "path": "bulma/components/common/icon/icons",
           "ws:display": {
             "condition": {
               "sourceName": "selectOrType",
