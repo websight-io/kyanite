@@ -1,0 +1,22 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "type": "button",
+  "size": "is-normal",
+  "actionType": "",
+  "variant": "is-primary",
+  "openModal": "open-modal",
+  "selectOrTypeLeft": "select",
+  "selectOrTypeRight": "select",
+  "iconLibTypeLeft": "mdi",
+  "iconLibTypeRight": "mdi",
+  "iconLeft": "mdi-home-outline",
+  "iconRight": "mdi-home-outline",
+  "iconSizeLeft": "fa-lg",
+  "iconSizeRight": "fa-lg",
+  "isInverted": "false",
+  "isOutlined": "false",
+  "isDisabled": "false",
+  "isFullWidth": "false",
+  "isLight": "false",
+  "isRounded": "false"
+}

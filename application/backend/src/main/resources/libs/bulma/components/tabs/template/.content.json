@@ -1,5 +1,7 @@
 {
   "jcr:primaryType": "nt:unstructured",
+  "alignment": "",
+  "size": "is-normal",
   "tab1": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "bulma/components/tabs/tab",
