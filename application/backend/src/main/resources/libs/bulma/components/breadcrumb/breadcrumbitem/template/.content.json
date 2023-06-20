@@ -3,6 +3,7 @@
   "label": "Label",
   "url": "",
   "addIcon": false,
+  "selectOrType": "select",
   "icon": "home",
   "iconLibType": "mdi",
   "iconSize": "mdi-36px"
