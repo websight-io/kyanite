@@ -26,9 +26,13 @@
   <sly data-sly-test="${!model.isSvg}">
     <figure class="image ${model.style}">
       <sly data-sly-test="${model.isVideo}">
-      <iframe class="${model.isRounded ? 'is-rounded' : ''}" src="${model.assetReference}"
-           alt="${model.alt}">
-      </iframe>
+        <video class="video__video"
+               width="${model.width}"
+               height="${model.height}"
+               src="${model.assetReference}"
+               data-sly-attribute="${model.attributes}"
+               controlslist="nodownload" preload="none">
+        </video>
     </sly>
     <sly data-sly-test="${!model.isVideo}">
       <img class="${model.isRounded ? 'is-rounded' : ''}" src="${model.assetReference}"
