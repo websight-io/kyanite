@@ -2,6 +2,7 @@
   "jcr:primaryType": "nt:unstructured",
   "type": "button",
   "size": "is-normal",
+  "actionType": "",
   "variant": "is-primary",
   "openModal": "open-modal",
   "selectOrTypeLeft": "select",
