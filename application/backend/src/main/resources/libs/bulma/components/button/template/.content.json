@@ -4,6 +4,8 @@
   "label": "Label",
   "type": "button",
   "addIcon": false,
+  "selectOrTypeRight": "select",
+  "selectOrTypeLeft": "select",
   "variant": "is-primary",
   "iconLeft": "home",
   "iconLibTypeLeft": "mdi",
