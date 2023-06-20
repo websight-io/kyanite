@@ -25,15 +25,22 @@ import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import pl.ds.bulma.components.helpers.IconService;
 
-@ExtendWith(SlingContextExtension.class)
+@ExtendWith({SlingContextExtension.class, MockitoExtension.class})
 class ButtonComponentTest {
 
   private static final String PATH = "/content/button";
   private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
 
+  @Mock
+  private IconService iconService;
+
   @BeforeEach
   public void init() {
+    context.registerService(IconService.class, iconService);
     context.addModelsForClasses(ButtonComponent.class);
     context.load().json(requireNonNull(
         Thread.currentThread().getContextClassLoader().getResourceAsStream("button.json")), PATH);

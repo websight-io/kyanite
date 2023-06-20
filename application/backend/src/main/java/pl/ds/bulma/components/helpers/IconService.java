@@ -21,7 +21,6 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 import org.osgi.service.component.annotations.Component;
-import pl.ds.bulma.components.services.SvgImageService;
 
 @Component (service = IconService.class)
 public class IconService {
