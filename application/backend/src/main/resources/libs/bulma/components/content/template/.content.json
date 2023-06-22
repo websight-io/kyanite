@@ -2,5 +2,7 @@
   "jcr:primaryType": "nt:unstructured",
   "color": "grey_has-text-grey",
   "shadeGrey": "darker",
-  "text": "<p>Content</p>"
+  "text": "<p>Content</p>",
+  "size": "is-normal",
+  "textWeight": "has-text-weight-normal"
 }
