@@ -23,6 +23,60 @@
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "alt",
         "label": "Alt text"
+      },
+      "hasVideoOptions": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "hasVideoOptions",
+        "label": "Video options"
+      },
+      "videoOptions": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "width": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "width",
+          "label": "Player width"
+        },
+        "height": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "height",
+          "label": "Player height"
+        },
+        "customThumbnail": {
+          "sling:resourceType": "wcm/dialogs/components/assetreference",
+          "rootPath": "/content",
+          "mimeTypes": [
+            "image/*"
+          ],
+          "name": "thumbnail",
+          "description": "Choose a Thumbnail",
+          "label": "Thumbnail"
+        },
+        "autoplay": {
+          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "description": "This function works when isMuted property is disabled",
+          "name": "autoplay",
+          "label": "Autoplay"
+        },
+        "loop": {
+          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "name": "isLooped",
+          "label": "Loop"
+        },
+        "muted": {
+          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "name": "isMuted",
+          "checkedByDefault": true,
+          "label": "Muted"
+        },
+        "controls": {
+          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "name": "hasControls",
+          "label": "Controls"
+        },
+        "ws:display": {"condition": {
+          "sourceName": "hasVideoOptions",
+          "values": true
+        }}
       }
     },
     "styleTab": {
