@@ -45,7 +45,8 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "shade": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "bulma/components/common/text/shade/bw"
+            "path": "bulma/components/common/text/shade/bw",
+            "namespace": "bw"
           },
           "ws:display": {
             "condition": {
@@ -64,6 +65,7 @@
             "path": "bulma/components/common/text/shade/grey",
             "include": {
               "sling:resourceSuperType": "bulma/components/common/text/shade/grey",
+              "name": "grey/shade",
               "default": {
                 "selected": false
               },
@@ -85,7 +87,8 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "shade": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "bulma/components/common/text/shade/rest"
+            "path": "bulma/components/common/text/shade/rest",
+            "namespace": "rest"
           },
           "ws:display": {
             "condition": {

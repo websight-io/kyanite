@@ -22,14 +22,18 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Required;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import pl.ds.bulma.components.helpers.ColorService;
+import pl.ds.bulma.components.services.ColorService;
 
-@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+@Model(adaptables = SlingHttpServletRequest.class,
+    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class TitleComponent {
 
   @Inject
@@ -78,33 +82,13 @@ public class TitleComponent {
   private String subtitleColor;
 
   @Inject
-  @Default(values = StringUtils.EMPTY)
-  private String shadeBw;
-
-  @Inject
-  @Default(values = StringUtils.EMPTY)
-  private String shadeGrey;
-
-  @Inject
-  @Default(values = StringUtils.EMPTY)
-  private String shadeRest;
-
-  @Inject
-  @Default(values = StringUtils.EMPTY)
-  private String subtitleShadeBw;
-
-  @Inject
-  @Default(values = StringUtils.EMPTY)
-  private String subtitleShadeGrey;
-
-  @Inject
-  @Default(values = StringUtils.EMPTY)
-  private String subtitleShadeRest;
-
-  @Inject
   @Getter
   @Default(values = "")
   private String anchorId;
+
+  @OSGiService
+  @Required
+  private ColorService colorService;
 
   @SlingObject
   private Resource resource;
@@ -128,26 +112,14 @@ public class TitleComponent {
       titleClassList.add("is-spaced");
     }
 
-    String textColorVariant = getColorVariant(color, shadeBw, shadeGrey, shadeRest);
-    String subtitleColorVariant = getColorVariant(
-        subtitleColor, subtitleShadeBw, subtitleShadeGrey, subtitleShadeRest);
+    titleClassList.add(colorService.getShadeClass(resource, color, "shade"));
+    subtitleClassList.add(colorService.getShadeClass(resource, subtitleColor,
+        "subtitleShade"));
 
-    if (textColorVariant != null && !textColorVariant.isEmpty()) {
-      titleClassList.add(textColorVariant);
-    }
-    if (subtitleColorVariant != null && !subtitleColorVariant.isEmpty()) {
-      subtitleClassList.add(subtitleColorVariant);
-    }
     titleClasses = titleClassList.toArray(new String[]{});
     subtitleClasses = subtitleClassList.toArray(new String[]{});
   }
 
-  private String getColorVariant(String color, String shadeBw, String shadeGrey, String shadeRest) {
-    ColorService colorService = new ColorService(resource, "bulma/components/common/text/color",
-        color, shadeBw, shadeGrey, shadeRest);
-
-    return colorService.getTextColorVariant();
-  }
 
   public String getSubtitle() {
     return addSubtitle ? subtitle : "";

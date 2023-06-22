@@ -25,16 +25,23 @@ import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import pl.ds.bulma.components.services.ColorService;
 
-@ExtendWith(SlingContextExtension.class)
+@ExtendWith({SlingContextExtension.class, MockitoExtension.class})
 class TitleComponentTest {
 
   private static final String PATH = "/content/title";
   private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
 
+  @Mock
+  private ColorService colorService;
+
   @BeforeEach
   public void init() {
     context.addModelsForClasses(TitleComponent.class);
+    context.registerService(ColorService.class, colorService);
     context.load().json(requireNonNull(
         Thread.currentThread().getContextClassLoader().getResourceAsStream("title.json")), PATH);
   }
