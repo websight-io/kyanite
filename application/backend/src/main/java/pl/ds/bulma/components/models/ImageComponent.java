@@ -80,6 +80,10 @@ public class ImageComponent {
   private boolean hasVideoOptions;
 
   @ValueMapValue
+  @Getter
+  private boolean hasShadow;
+
+  @ValueMapValue
   @Default(values = StringUtils.EMPTY)
   private String thumbnail;
 
