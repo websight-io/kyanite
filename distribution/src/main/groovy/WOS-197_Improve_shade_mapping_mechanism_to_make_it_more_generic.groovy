@@ -14,7 +14,13 @@
  * limitations under the License.
  */
 
-dryRun = false
+/*
+ * This script changes the content structure of the title and content
+ * components. Shade and subtitleShade properties will be created
+ *  for every shade in the node. Old ones will be removed.
+ */
+
+dryRun = true
 rootPaths = ['/content']
 changeCounter = 0
 
@@ -32,6 +38,10 @@ def processColorShadeChanges(Resource res) {
         def grey = createShadeNode(res, 'grey', shadeGrey);
         def bw = createShadeNode(res, 'bw', shadeBw);
         def rest = createShadeNode(res, 'rest', shadeRest);
+        def modifiableValueMap = res.adaptTo(org.apache.sling.api.resource.ModifiableValueMap)
+        modifiableValueMap.remove('shadeGrey')
+        modifiableValueMap.remove('shadeBw')
+        modifiableValueMap.remove('shadeRest')
         if (vm['subtitleColor']) {
             def subtitleShadeGrey = vm['subtitleShadeGrey']
             def subtitleShadeBw = vm['subtitleShadeBw']
@@ -39,34 +49,50 @@ def processColorShadeChanges(Resource res) {
             changeShadeNode(grey, subtitleShadeGrey)
             changeShadeNode(bw, subtitleShadeBw)
             changeShadeNode(rest, subtitleShadeRest)
-            println(" The shade structure of subtitle was changed path: " + res.path)
+            modifiableValueMap.remove('subtitleShadeGrey')
+            modifiableValueMap.remove('subtitleShadeBw')
+            modifiableValueMap.remove('subtitleShadeRest')
         }
-        println(" The shade structure of title was changed path: " + res.path)
+
         println("--------------------------")
     }
 }
 
 def changeShadeNode(resource, shadeValue) {
-    def modifiableValueMap = resource.adaptTo(org.apache.sling.api.resource.ModifiableValueMap)
-    if (modifiableValueMap && shadeValue) {
-        modifiableValueMap.put("subtitleShade", shadeValue)
+    if(resource != null) {
+        def modifiableValueMap = resource.adaptTo(org.apache.sling.api.resource.ModifiableValueMap)
+        if (modifiableValueMap && shadeValue) {
+            modifiableValueMap.put("subtitleShade", shadeValue)
+            println(" The shade structure of subtitle was changed path: " + resource.path)
+            changeCounter++
+        }
     }
 }
 
 def createShadeNode(resource, nodeName, shadeValue) {
+    def res = null;
     def properties = ['jcr:primaryType': 'nt:unstructured']
     if (shadeValue) {
         properties = ['jcr:primaryType': 'nt:unstructured', 'shade': shadeValue]
     }
-    resourceResolver.create(resource, nodeName, properties)
+
+    if (!resource.getChild(nodeName)) {
+        res = resourceResolver.create(resource, nodeName, properties)
+        println(" The shade structure of title was changed path: " + resource.path)
+        changeCounter++
+    }
+    return res;
 }
 
 rootPaths.each {
     rootPath ->
         findTitleAndContentComponents(rootPath).each {
             res ->
-                processColorShadeChanges(res)
-                changeCounter++
+                try {
+                    processColorShadeChanges(res)
+                } catch (Exception e) {
+                    println("Error processing resource: " + res.path + " with error: " + e.getMessage())
+                }
         }
 }
 

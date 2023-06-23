@@ -18,7 +18,12 @@ package pl.ds.bulma.components.models;
 
 import static java.util.Objects.requireNonNull;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.when;
 
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
 import org.apache.sling.testing.mock.sling.junit5.SlingContext;
 import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
@@ -26,6 +31,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
+import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 import pl.ds.bulma.components.services.ColorService;
 
@@ -40,17 +46,18 @@ class TitleComponentTest {
 
   @BeforeEach
   public void init() {
+
     context.addModelsForClasses(TitleComponent.class);
     context.registerService(ColorService.class, colorService);
     context.load().json(requireNonNull(
         Thread.currentThread().getContextClassLoader().getResourceAsStream("title.json")), PATH);
+    when(colorService.getShadeClass(any(),anyString(), anyString())).thenReturn("has-text-black");
   }
 
   @Test
   void defaultTitleComponentModelTest() {
     TitleComponent model = context.resourceResolver().getResource(PATH + "/default")
         .adaptTo(TitleComponent.class);
-
     assertThat(model).isNotNull();
     assertThat(model.getText()).isEqualTo("Title");
     assertThat(model.getElement()).isEqualTo("h2");
