@@ -16,6 +16,7 @@
 
 package pl.ds.bulma.components.utils;
 
+import java.util.Objects;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -26,6 +27,8 @@ import pl.ds.websight.assets.core.api.AssetsConstants;
 public class LinkUtil {
 
   private static final String ANCHOR_LINK_PREFIX = "#";
+  public static final String PUBLISHED = "/published";
+  public static final String CONTENT = "/content";
 
   private LinkUtil() {
     // no instance
@@ -49,7 +52,9 @@ public class LinkUtil {
     if (isAsset(link, resourceResolver)) {
       Asset asset = getAssetForProvidedLink(link, resourceResolver);
       if (asset != null && asset.getOriginalRendition() != null) {
-        return asset.getOriginalRendition().getPath();
+        return isPublished(link) ? StringUtils.replaceFirst(asset.getOriginalRendition().getPath(),
+            CONTENT,
+            PUBLISHED) : asset.getOriginalRendition().getPath();
       }
 
       return null;
@@ -67,11 +72,11 @@ public class LinkUtil {
   }
 
   public static boolean isInternal(String link, ResourceResolver resourceResolver) {
-    return resourceResolver.getResource(link) != null;
+    return Objects.nonNull(getResource(link, resourceResolver));
   }
 
   private static boolean isAsset(String link, ResourceResolver resourceResolver) {
-    Resource resource = resourceResolver.getResource(link);
+    Resource resource = getResource(link, resourceResolver);
     return AssetsConstants.NT_ASSET.equals(getPrimaryType(resource));
   }
 
@@ -85,12 +90,23 @@ public class LinkUtil {
 
   @Nullable
   private static Asset getAssetForProvidedLink(String link, ResourceResolver resourceResolver) {
-    Resource assetResource = resourceResolver.getResource(link);
+    Resource assetResource = getResource(link, resourceResolver);
     Asset asset = null;
     if (assetResource != null) {
       asset = assetResource.adaptTo(Asset.class);
     }
     return asset;
+  }
+
+  public static Resource getResource(String link, ResourceResolver resourceResolver) {
+    if (link.startsWith(PUBLISHED)) {
+      return resourceResolver.getResource(link.replaceFirst(PUBLISHED, CONTENT));
+    }
+    return resourceResolver.getResource(link);
+  }
+
+  public static boolean isPublished(String link) {
+    return link.startsWith(PUBLISHED);
   }
 
   private static String getPrimaryType(Resource resource) {
