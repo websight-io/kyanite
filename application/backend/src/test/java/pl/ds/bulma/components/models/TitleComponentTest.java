@@ -39,9 +39,10 @@ import pl.ds.bulma.components.services.ColorService;
 class TitleComponentTest {
 
   private static final String PATH = "/content/title";
+  private static final String SHADE_PATH = "/libs/bulma/components/common/text/shade";
   private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
 
-  @Mock
+  @Spy
   private ColorService colorService;
 
   @BeforeEach
@@ -51,7 +52,8 @@ class TitleComponentTest {
     context.registerService(ColorService.class, colorService);
     context.load().json(requireNonNull(
         Thread.currentThread().getContextClassLoader().getResourceAsStream("title.json")), PATH);
-    when(colorService.getShadeClass(any(),anyString(), anyString())).thenReturn("has-text-black");
+    context.load().json(requireNonNull(
+        Thread.currentThread().getContextClassLoader().getResourceAsStream("titleShade.json")), SHADE_PATH);
   }
 
   @Test
@@ -73,12 +75,40 @@ class TitleComponentTest {
         .adaptTo(TitleComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getText()).isEqualTo("Nice subtitle");
+    assertThat(model.getText()).isEqualTo("Nice title");
+    assertThat(model.getSubtitle()).isEqualTo("Nice subtitle");
     assertThat(model.getElement()).isEqualTo("p");
     assertThat(model.getAnchorId()).isEqualTo("anchorId");
-    assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("title", "is-2", "is-spaced", "has-text-black");
-    assertThat(model.getSubtitleClasses()).containsExactlyInAnyOrder("subtitle", "is-4", "has-text-black");
+    assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("title", "is-2", "is-spaced", "has-text-black-ter");
+    assertThat(model.getSubtitleClasses()).containsExactlyInAnyOrder("subtitle", "is-4", "has-text-grey-lighter");
     assertThat(model.getSize()).isEqualTo("is-2");
     assertThat(model.isSpaced()).isTrue();
+  }
+
+  @Test
+  void titleComponentModelWithoutShadeTest() {
+    TitleComponent model = context.resourceResolver().getResource(PATH + "/complex1")
+        .adaptTo(TitleComponent.class);
+
+    assertThat(model).isNotNull();
+    assertThat(model.getText()).isEqualTo("Nice title");
+    assertThat(model.getSubtitle()).isEqualTo("Nice subtitle");
+    assertThat(model.getElement()).isEqualTo("p");
+    assertThat(model.getAnchorId()).isEqualTo("anchorId");
+    assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("title", "is-4", "has-text-dark");
+    assertThat(model.getSubtitleClasses()).containsExactlyInAnyOrder("subtitle", "is-6", "has-text-light");
+    assertThat(model.getSize()).isEqualTo("is-4");
+  }
+
+  @Test
+  void titleComponentModelNewShadeTest() {
+    TitleComponent model = context.resourceResolver().getResource(PATH + "/newShade")
+        .adaptTo(TitleComponent.class);
+
+    assertThat(model).isNotNull();
+    assertThat(model.getText()).isEqualTo("Nice title");
+    assertThat(model.getSubtitle()).isEqualTo("Nice subtitle");
+    assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("title", "has-text-black-test");
+    assertThat(model.getSubtitleClasses()).containsExactlyInAnyOrder("subtitle", "has-text-grey-test1");
   }
 }
