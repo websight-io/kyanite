@@ -22,6 +22,7 @@ import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonObjectBuilder;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -35,7 +36,7 @@ public class RteConfiguration {
   private Resource colorsObject;
 
   @Getter
-  private String colors;
+  private String colors = StringUtils.EMPTY;
 
   @PostConstruct
   private void init() {
