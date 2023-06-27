@@ -97,30 +97,5 @@
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Chevron down",
     "value": "chevron-down"
-  },
-  "cubes": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Cubes",
-    "value": "cubes"
-  },
-  "arrowTopRight": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Arrow top right",
-    "value": "arrow-top-right"
-  },
-  "creation": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Creation",
-    "value": "creation"
-  },
-  "bulma": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Bulma",
-    "value": "bulma"
-  },
-  "form": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Form",
-    "value": "form"
   }
 }
