@@ -61,6 +61,10 @@ describe('Message component', function () {
     .click();
 
     cy.getByTestId('ModalDialog_Message')
+    .findByTestId('Input_Createheader')
+    .click();
+
+    cy.getByTestId('ModalDialog_Message')
     .findByTestId('Input_Headercontent')
     .clear()
     .type('Header content');

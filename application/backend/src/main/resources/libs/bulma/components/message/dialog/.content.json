@@ -35,7 +35,6 @@
       "showHeader": {
         "sling:resourceType": "wcm/dialogs/components/toggle",
         "name": "showHeader",
-        "checkedByDefault": true,
         "label": "Create header"
       },
       "container": {
