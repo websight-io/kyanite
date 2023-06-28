@@ -113,6 +113,11 @@
         "name": "isRounded",
         "checkedByDefault": false,
         "label": "Rounded"
+      },
+      "hasShadow": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "hasShadow",
+        "label": "Has shadow"
       }
     }
   }

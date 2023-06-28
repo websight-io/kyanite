@@ -23,8 +23,9 @@
            data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType}"></sly>
     </div>
   </sly>
+  <sly data-sly-test.shadowClass="${model.hasShadow ? 'has-shadow' : ''}"></sly>
   <sly data-sly-test="${!model.isSvg}">
-    <figure class="image ${model.style}">
+    <figure class="image ${model.style} ${shadowClass}">
       <sly data-sly-test="${model.isVideo}">
         <video class="video__video"
                width="${model.width}"
@@ -41,6 +42,6 @@
     </figure>
   </sly>
   <sly data-sly-test="${model.isSvg}">
-    <span class="image ${model.style}">${model.assetLink @ context='unsafe'}</span>
+    <span class="image ${model.style} ${shadowClass}">${model.assetLink @ context='unsafe'}</span>
   </sly>
 </sly>
