@@ -25,7 +25,7 @@ public class SimpleDataSource implements DataSource {
   private final ListIteratorWrapper<Resource> wrapper;
 
   public SimpleDataSource(final Iterator<Resource> iterator) {
-    this.wrapper = (ListIteratorWrapper<Resource>) new ListIteratorWrapper(iterator);
+    this.wrapper = new ListIteratorWrapper<>(iterator);
   }
 
   @Override

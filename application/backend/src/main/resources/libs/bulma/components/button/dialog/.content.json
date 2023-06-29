@@ -94,12 +94,12 @@
       "iconLeftContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
         "iconLibType": {
-          "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "bulma/components/common/icon/libs",
-          "include": {
-            "sling:resourceSuperType": "bulma/components/common/icon/libs",
-            "name": "iconLibTypeLeft",
-            "label": "Left Icon Library"
+          "sling:resourceType": "wcm/dialogs/components/select",
+          "name": "iconLibTypeLeft",
+          "label": "Left Icon Library",
+          "required": true,
+          "datasource": {
+            "sling:resourceType": "/apps/iconLibraryDatasource"
           }
         },
         "selectOrTypeLeft": {
@@ -210,12 +210,12 @@
       "iconRightContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
         "iconLibType": {
-          "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "bulma/components/common/icon/libs",
-          "include": {
-            "sling:resourceSuperType": "bulma/components/common/icon/libs",
-            "name": "iconLibTypeRight",
-            "label": "Right Icon Library"
+          "sling:resourceType": "wcm/dialogs/components/select",
+          "name": "iconLibTypeRight",
+          "label": "Right Icon Library",
+          "required": true,
+          "datasource": {
+            "sling:resourceType": "/apps/iconLibraryDatasource"
           }
         },
         "selectOrTypeRight": {

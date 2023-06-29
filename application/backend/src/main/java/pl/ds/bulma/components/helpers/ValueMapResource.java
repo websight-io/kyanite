@@ -23,6 +23,7 @@ import org.apache.sling.api.resource.ResourceMetadata;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.SyntheticResource;
 import org.apache.sling.api.resource.ValueMap;
+import org.jetbrains.annotations.NotNull;
 
 public class ValueMapResource extends SyntheticResource {
 
@@ -53,13 +54,15 @@ public class ValueMapResource extends SyntheticResource {
     this.children = children;
   }
 
-  public <Type> Type adaptTo(final Class<Type> type) {
+  @Override
+  public <T> T adaptTo(final Class<T> type) {
     if (ValueMap.class.equals(type)) {
-      return (Type) this.vm;
+      return (T) this.vm;
     }
-    return (Type) super.adaptTo((Class) type);
+    return (T) super.adaptTo((Class) type);
   }
 
+  @Override
   public Resource getChild(final String relPath) {
     if (this.children == null) {
       return super.getChild(relPath);
@@ -73,17 +76,20 @@ public class ValueMapResource extends SyntheticResource {
     return null;
   }
 
-  public Iterator<Resource> listChildren() {
+  @Override
+  public @NotNull Iterator<Resource> listChildren() {
     if (this.children == null) {
       return super.listChildren();
     }
     return this.children.iterator();
   }
 
-  public Iterable<Resource> getChildren() {
+  @Override
+  public @NotNull Iterable<Resource> getChildren() {
     return ValueMapResource.this::listChildren;
   }
 
+  @Override
   public boolean hasChildren() {
     if (this.children == null) {
       return super.hasChildren();

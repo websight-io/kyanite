@@ -41,7 +41,6 @@ public class SelectModel {
   @ScriptVariable
   private SlingHttpServletResponse response;
 
-  @Getter
   private DataSource dataSource;
 
   @Getter
@@ -52,9 +51,9 @@ public class SelectModel {
     Resource resource = request.getResource();
     Resource datasource = resource.getChild("datasource");
     if (Objects.nonNull(datasource)) {
-      dataSource = get(datasource, DataSource.class);
+      this.dataSource = this.getDatasource(datasource, DataSource.class);
       if (Objects.nonNull(dataSource)) {
-        dataSource.iterator().forEachRemaining(selectItems::add);
+        this.dataSource.iterator().forEachRemaining(selectItems::add);
       }
     }
   }
@@ -63,7 +62,7 @@ public class SelectModel {
     return Objects.nonNull(dataSource);
   }
 
-  public <T> T get(Resource resource, Class<T> type)
+  public <T> T getDatasource(Resource resource, Class<T> type)
       throws ServletException, IOException {
     try {
       RequestDispatcher dispatcher = this.request.getRequestDispatcher(resource,

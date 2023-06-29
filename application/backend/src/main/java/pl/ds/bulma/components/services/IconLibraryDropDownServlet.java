@@ -28,6 +28,8 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.apache.sling.api.wrappers.ValueMapDecorator;
+import org.jetbrains.annotations.NotNull;
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
@@ -41,14 +43,18 @@ import pl.ds.bulma.components.helpers.ValueMapResource;
     })
 public class IconLibraryDropDownServlet extends SlingSafeMethodsServlet {
 
-  private static Logger LOGGER = LoggerFactory.getLogger(IconLibraryDropDownServlet.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(IconLibraryDropDownServlet.class);
 
-  @Reference
-  private LibraryIconFactoryConfig config;
+  private final transient LibraryIconFactoryConfig config;
+
+  @Activate
+  public IconLibraryDropDownServlet(@Reference LibraryIconFactoryConfig config) {
+    this.config = config;
+  }
 
   @Override
-  protected void doGet(SlingHttpServletRequest request,
-      SlingHttpServletResponse response) {
+  protected void doGet(@NotNull SlingHttpServletRequest request,
+      @NotNull SlingHttpServletResponse response) {
     try {
       List<LibraryIconFactoryConfig> allConfigs = config.getAllConfigs();
       ResourceResolver resourceResolver = request.getResourceResolver();

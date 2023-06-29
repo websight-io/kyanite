@@ -19,13 +19,16 @@ package pl.ds.bulma.components.services;
 import java.util.List;
 
 public interface LibraryIconFactoryConfig {
-    public String getLabel();
 
-    public String getId();
+  String getLabel();
 
-    public String getLibraryUrl();
+  String getId();
 
-    public String[] getAttributes();
-    public LibraryIconFactoryConfig get(String id);
-    public List<LibraryIconFactoryConfig> getAllConfigs();
+  String getLibraryUrl();
+
+  String[] getAttributes();
+
+  LibraryIconFactoryConfig get(String id);
+
+  List<LibraryIconFactoryConfig> getAllConfigs();
 }

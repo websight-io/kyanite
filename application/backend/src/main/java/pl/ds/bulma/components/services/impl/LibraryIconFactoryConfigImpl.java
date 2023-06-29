@@ -26,22 +26,18 @@ import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
 import org.osgi.service.metatype.annotations.Designate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import pl.ds.bulma.components.configurations.IconLibraryFactoryConfigiguration;
 import pl.ds.bulma.components.services.LibraryIconFactoryConfig;
 
 
-@Component(service = LibraryIconFactoryConfig.class, configurationPolicy = ConfigurationPolicy.REQUIRE)
+@Component(service = LibraryIconFactoryConfig.class,
+    configurationPolicy = ConfigurationPolicy.REQUIRE)
 @Designate(ocd = IconLibraryFactoryConfigiguration.class, factory = true)
 public class LibraryIconFactoryConfigImpl implements LibraryIconFactoryConfig {
-
-  private static final Logger LOGGER = LoggerFactory.getLogger(LibraryIconFactoryConfigImpl.class);
 
   private String label;
   private String id;
   private String libraryUrl;
-
   private String[] attributes;
 
   private List<LibraryIconFactoryConfig> configsList;
@@ -57,7 +53,7 @@ public class LibraryIconFactoryConfigImpl implements LibraryIconFactoryConfig {
 
   @Reference(service = LibraryIconFactoryConfig.class,
       cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC,
-      bind="bind", unbind="unbind")
+      bind = "bind", unbind = "unbind")
   public synchronized void bind(final LibraryIconFactoryConfig config) {
     if (configsList == null) {
       configsList = new ArrayList<>();
