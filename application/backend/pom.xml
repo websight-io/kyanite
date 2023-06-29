@@ -56,6 +56,28 @@
           </archive>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <executions>
+          <execution>
+            <id>run-java</id>
+            <phase>package</phase>
+            <goals>
+              <goal>java</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <executable>java</executable>
+          <classpathScope>compile</classpathScope>
+          <arguments>
+            <argument>pl.ds.bulma.components.services.GenerateTestContent</argument>
+          </arguments>
+          <mainClass>pl.ds.bulma.components.services.GenerateTestContent</mainClass>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 

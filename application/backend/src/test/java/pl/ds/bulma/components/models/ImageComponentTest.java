@@ -27,7 +27,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import pl.ds.bulma.components.services.GenerateTestContent;
 import pl.ds.bulma.components.services.SvgImageService;
+import java.io.IOException;
 
 @ExtendWith({SlingContextExtension.class, MockitoExtension.class})
 class ImageComponentTest {
@@ -47,7 +49,8 @@ class ImageComponentTest {
   }
 
   @Test
-  void imageWithFixedType() {
+  void imageWithFixedType() throws IOException, IllegalAccessException, InstantiationException {
+    GenerateTestContent.main(new String[]{""});
     ImageComponent model = requireNonNull(
         context.resourceResolver().getResource(PATH + "/fixed")).adaptTo(ImageComponent.class);
 

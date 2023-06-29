@@ -25,6 +25,7 @@ import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.bulma.components.utils.ContentGeneration;
 import pl.ds.bulma.components.helpers.ColorService;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
@@ -36,11 +37,13 @@ public class ContentComponent {
   @Inject
   @Getter
   @Default(values = DEFAULT_TEXT)
+  @ContentGeneration(values = {"", "test"})
   private String text;
 
   @Inject
   @Getter
   @Default(values = StringUtils.EMPTY)
+  @ContentGeneration(values = {"is-2", "is-3"})
   private String size;
 
   @Inject
