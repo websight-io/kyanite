@@ -1,0 +1,17 @@
+<sly data-sly-use.model="pl.ds.bulma.components.models.SelectModel"></sly>
+{
+    "type": "/apps/websight-dialogs-view/web-resources/components/Select.js",
+    "props": {
+        "name": "${properties.name}",
+        "label": "${properties.label}",
+        "description": "${properties.description}",
+        "required": ${properties.required || false},
+        "options": [
+            <sly data-sly-use.selectitem="./selectitem/selectitem.json.html">
+              <sly data-sly-list.item="${model.hasDataSource ? model.selectItems : resource.children}">
+                <sly data-sly-call="${selectitem.item @ item=item}"></sly><sly data-sly-test="${!itemList.last}">,</sly>
+              </sly>
+            </sly>
+        ]
+    }
+}

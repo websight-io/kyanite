@@ -16,9 +16,6 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.bulma.components.models.PageModel"></sly>
-<sly data-sly-list="${model.iconLibraryConfigs}">
-  <sly data-sly-use.template="./icon-libs.html" data-sly-call="${template.iconLib @ item = item}"></sly>
-</sly>
-<link rel="stylesheet" href="/libs/bulma/web_root/main.css" type="text/css">
-<link data-sly-test="${wcmmode.isEdit}" href="/libs/bulma/author/author.css" rel="stylesheet" type="text/css">
+<template data-sly-template.iconLib="${ @ item}">
+  <link rel="stylesheet" href="${item.libraryUrl}" data-sly-attribute="${item.attributes}">
+</template>
