@@ -2,7 +2,10 @@
   "jcr:primaryType": "nt:unstructured",
   "sling:resourceType": "bulma/components/navbar/navbaritem",
   "label": "Item",
-  "icon": "none",
   "type": "link",
-  "url": ""
+  "addIcon": false,
+  "selectOrType": "select",
+  "icon": "mdi-home-outline",
+  "iconLibType": "mdi",
+  "iconSize": "mdi-36px"
 }

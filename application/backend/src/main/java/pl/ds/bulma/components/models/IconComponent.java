@@ -19,19 +19,26 @@ package pl.ds.bulma.components.models;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
+import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Required;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import pl.ds.bulma.components.helpers.IconContainerService;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import pl.ds.bulma.components.services.IconService;
 
-@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+@Model(adaptables = SlingHttpServletRequest.class,
+    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class IconComponent {
 
+  public static final String COMMON_ICON_CONTAINERSIZE_DEFAULTSIZEMAPPINGS
+      = "bulma/components/common/icon/containersize/defaultsizemappings";
   @Inject
   @Getter
   @Default(values = "mdi-home-outline")
@@ -58,6 +65,11 @@ public class IconComponent {
   @Getter
   private boolean colorOnText;
 
+  @ValueMapValue
+  @Getter
+  @Default(values = "false")
+  private String hidden;
+
   @Inject
   @Getter
   @Default(values = "mdi")
@@ -80,12 +92,34 @@ public class IconComponent {
 
   @PostConstruct
   private void init() {
-    IconContainerService iconContainerService = new IconContainerService(this.resource);
-    String mappingPath = "bulma/components/common/icon/containersize/defaultsizemappings";
-
     this.containerSize
-            = iconContainerService.calculateContainerSize(this.iconLibType,
-            mappingPath, this.iconSize);
+        = calculateContainerSize(this.iconLibType, this.iconSize);
+  }
+
+  public String calculateContainerSize(String iconLibType, String iconSize) {
+    if (iconLibType != null && !iconLibType.isEmpty()) {
+      ValueMap containerSizeMapping = getContainerSizeMapping(
+          COMMON_ICON_CONTAINERSIZE_DEFAULTSIZEMAPPINGS + "/" + iconLibType);
+
+      Object mappedContainerSize = containerSizeMapping.get(iconSize);
+      if (mappedContainerSize != null) {
+        return mappedContainerSize.toString();
+      }
+    }
+    return StringUtils.EMPTY;
+  }
+
+  private ValueMap getContainerSizeMapping(String resourcePath) {
+    if (resource != null) {
+      ResourceResolver resourceResolver = resource.getResourceResolver();
+      Resource iconContainerDefaultSizeMapping = resourceResolver
+          .getResource(resourcePath);
+
+      if (iconContainerDefaultSizeMapping != null) {
+        return iconContainerDefaultSizeMapping.getValueMap();
+      }
+    }
+    return ValueMap.EMPTY;
   }
 
 }

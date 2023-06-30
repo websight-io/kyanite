@@ -3,6 +3,7 @@
   "label": "Tab",
   "icon": "mdi-home-outline",
   "addIcon": false,
+  "hidden": "true",
   "selectOrType": "select",
   "iconLibType": "mdi",
   "iconSize": "mdi-36px",

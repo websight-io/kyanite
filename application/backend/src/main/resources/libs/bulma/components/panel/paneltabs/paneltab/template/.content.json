@@ -6,15 +6,30 @@
     "sling:resourceType": "bulma/components/panel/paneltabs/paneltabcontent",
     "panelblock1": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "bulma/components/panel/panelblock"
+      "sling:resourceType": "bulma/components/panel/panelblock",
+      "addIcon": false,
+      "selectOrType": "select",
+      "icon": "mdi-home-outline",
+      "iconLibType": "mdi",
+      "iconSize": "mdi-36px"
     },
     "panelblock2": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "bulma/components/panel/panelblock"
+      "sling:resourceType": "bulma/components/panel/panelblock",
+      "addIcon": false,
+      "selectOrType": "select",
+      "icon": "mdi-home-outline",
+      "iconLibType": "mdi",
+      "iconSize": "mdi-36px"
     },
     "panelblock3": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "bulma/components/panel/panelblock"
+      "sling:resourceType": "bulma/components/panel/panelblock",
+      "addIcon": false,
+      "selectOrType": "select",
+      "icon": "mdi-home-outline",
+      "iconLibType": "mdi",
+      "iconSize": "mdi-36px"
     }
   }
 }
