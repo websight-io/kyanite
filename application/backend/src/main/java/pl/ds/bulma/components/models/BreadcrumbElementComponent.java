@@ -25,6 +25,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import pl.ds.bulma.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
@@ -43,6 +44,11 @@ public class BreadcrumbElementComponent {
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String icon;
+
+  @ValueMapValue
+  @Getter
+  private boolean addIcon;
+
 
   @SlingObject
   private Resource resource;

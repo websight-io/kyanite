@@ -12,7 +12,12 @@
       sling:resourceType="bulma/components/pagecontainer">
       <breadcrumb
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="bulma/components/breadcrumb"/>
+        sling:resourceType="bulma/components/breadcrumb">
+        <breadcrumbitem
+          jcr:primaryType="nt:unstructured"
+          label="Label"
+          sling:resourceType="bulma/components/breadcrumb/breadcrumbitem"/>
+      </breadcrumb>
     </pagecontainer>
   </jcr:content>
 </jcr:root>

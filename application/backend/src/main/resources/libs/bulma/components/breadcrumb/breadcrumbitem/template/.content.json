@@ -1,0 +1,10 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "label": "Label",
+  "url": "",
+  "addIcon": false,
+  "selectOrType": "select",
+  "icon": "mdi-home-outline",
+  "iconLibType": "mdi",
+  "iconSize": "mdi-36px"
+}
