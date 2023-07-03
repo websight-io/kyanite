@@ -27,8 +27,10 @@ import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import pl.ds.bulma.components.utils.ContentGeneration;
 import pl.ds.bulma.components.helpers.ColorService;
+import pl.ds.bulma.components.utils.BooleanContent;
+import pl.ds.bulma.components.utils.ContentGeneration;
+import pl.ds.bulma.components.utils.StringContent;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class TitleComponent {
@@ -36,12 +38,15 @@ public class TitleComponent {
   @Inject
   @Getter
   @Default(values = "Title")
-  @ContentGeneration(values = {"textExample1", "textExample2", "textExample3", ""})
+  @ContentGeneration(strings =
+      @StringContent(values = {"textExample1", "textExample2", "textExample3", ""}))
   private String text;
 
   @Inject
   @Default(values = "Subtitle")
-  @ContentGeneration(values = {"subtitle1", "subtitle2", ""})
+  @ContentGeneration(strings =
+      @StringContent(values = {"subtitle1", "subtitle2", ""})
+  )
   private String subtitle;
 
   @Inject
@@ -57,13 +62,18 @@ public class TitleComponent {
   @Inject
   @Getter
   @Default(booleanValues = false)
-  //@ContentGeneration(values = {"true"})
+  @ContentGeneration(bools =
+      @BooleanContent(values = {false, true})
+  )
+
   private boolean addSubtitle;
 
   @Inject
   @Getter
   @Default(values = StringUtils.EMPTY)
-  @ContentGeneration(values = {"is-2", "is-3"})
+  @ContentGeneration(strings =
+      @StringContent(values = {"is-2", "is-3"})
+  )
   private String size;
 
   @Inject

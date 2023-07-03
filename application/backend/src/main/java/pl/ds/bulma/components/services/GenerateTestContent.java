@@ -22,22 +22,22 @@ import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import org.apache.commons.lang3.reflect.FieldUtils;
 import pl.ds.bulma.components.models.ContentComponent;
 import pl.ds.bulma.components.models.TitleComponent;
 import pl.ds.bulma.components.utils.ContentGeneration;
 
 public class GenerateTestContent {
-  public static void main(String[] args) throws IllegalAccessException, IOException, InstantiationException {
+  public static void main(String[] args)
+      throws IllegalAccessException, IOException, InstantiationException {
     generateTestContent(TitleComponent.class);
     generateTestContent(ContentComponent.class);
   }
 
-  private static <T> void generateTestContent(Class<T> classT) throws IOException, IllegalAccessException, InstantiationException {
+  private static <T> void generateTestContent(Class<T> classT)
+      throws IOException, IllegalAccessException, InstantiationException {
     System.out.println("Auto-generating test content");
 
     String rootPath = "./content/src/main/content/jcr_root/content/bulma/pages/";
@@ -52,12 +52,18 @@ public class GenerateTestContent {
     }
     var fieldNameToValues = classFields.stream()
         .collect(Collectors.toMap(Field::getName,
-            it -> Arrays.stream(it.getAnnotation(ContentGeneration.class).values()).toList()));
+            it -> it.getAnnotation(ContentGeneration.class)));
 
     var fieldNames = fieldNameToValues.keySet().stream().sorted().toList();
 
-    List<List<String>> perm = permuteLists(
-        fieldNames.stream().map(fieldNameToValues::get).toList());
+    List<List<Object>> perm = permuteLists(
+        fieldNames.stream().map(it -> {
+          var annotation = fieldNameToValues.get(it);
+          if (annotation.bools().values().length > 0) {
+            return List.<Object>of(annotation.bools().values());
+          }
+          return List.<Object>of(annotation.strings().values());
+        }).toList());
 
     //TODO typy
     //TODO inne klasy
@@ -68,7 +74,7 @@ public class GenerateTestContent {
       var componentInstance = classT.newInstance();
       for (int i = 0; i < fieldNames.size(); i++) {
         var fieldName = fieldNames.get(i);
-        String fieldValue = permutationInstance.get(i);
+        Object fieldValue = permutationInstance.get(i);
         var field = classFields.stream().filter(it -> it.getName().equals(fieldName)).findFirst();
         field.get().set(componentInstance, fieldValue);
       }
@@ -102,21 +108,21 @@ public class GenerateTestContent {
     System.out.println(testContent);
   }
 
-  public static List<List<String>> permuteLists(List<List<String>> lists) {
-    List<List<String>> permutations = new ArrayList<>();
+  public static List<List<Object>> permuteLists(List<List<Object>> lists) {
+    List<List<Object>> permutations = new ArrayList<>();
     permuteListsImpl(lists, 0, new ArrayList<>(), permutations);
     return permutations;
   }
 
-  private static void permuteListsImpl(List<List<String>> lists, int index,
-                                       List<String> current, List<List<String>> permutations) {
+  private static void permuteListsImpl(List<List<Object>> lists, int index,
+                                       List<Object> current, List<List<Object>> permutations) {
     if (index == lists.size()) {
       permutations.add(new ArrayList<>(current));
       return;
     }
 
-    List<String> list = lists.get(index);
-    for (String s : list) {
+    List<Object> list = lists.get(index);
+    for (Object s : list) {
       current.add(s);
       permuteListsImpl(lists, index + 1, current, permutations);
       current.remove(current.size() - 1);
