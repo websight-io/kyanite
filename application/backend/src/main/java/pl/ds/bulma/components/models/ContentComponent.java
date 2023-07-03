@@ -38,18 +38,14 @@ public class ContentComponent {
   @Inject
   @Getter
   @Default(values = DEFAULT_TEXT)
-  @ContentGeneration(strings =
-      @StringContent(values = {"test", ""})
-  )
+  @ContentGeneration(stringValues = {"test", ""})
   private String text;
 
   @Inject
   @Getter
   @Default(values = StringUtils.EMPTY)
 
-  @ContentGeneration(strings =
-      @StringContent(values = {"is-2", "is-3"})
-  )
+  @ContentGeneration(stringValues = {"is-2", "is-3"})
   private String size;
 
   @Inject

@@ -49,8 +49,7 @@ class ImageComponentTest {
   }
 
   @Test
-  void imageWithFixedType() throws IOException, IllegalAccessException, InstantiationException {
-    GenerateTestContent.main(new String[]{""});
+  void imageWithFixedType() {
     ImageComponent model = requireNonNull(
         context.resourceResolver().getResource(PATH + "/fixed")).adaptTo(ImageComponent.class);
 

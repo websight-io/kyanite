@@ -38,15 +38,12 @@ public class TitleComponent {
   @Inject
   @Getter
   @Default(values = "Title")
-  @ContentGeneration(strings =
-      @StringContent(values = {"textExample1", "textExample2", "textExample3", ""}))
+  @ContentGeneration(stringValues = {"textExample1", ""})
   private String text;
 
   @Inject
   @Default(values = "Subtitle")
-  @ContentGeneration(strings =
-      @StringContent(values = {"subtitle1", "subtitle2", ""})
-  )
+  @ContentGeneration(stringValues = {"subtitle1", ""})
   private String subtitle;
 
   @Inject
@@ -62,18 +59,13 @@ public class TitleComponent {
   @Inject
   @Getter
   @Default(booleanValues = false)
-  @ContentGeneration(bools =
-      @BooleanContent(values = {false, true})
-  )
-
+  @ContentGeneration(booleanValues = {false, true})
   private boolean addSubtitle;
 
   @Inject
   @Getter
   @Default(values = StringUtils.EMPTY)
-  @ContentGeneration(strings =
-      @StringContent(values = {"is-2", "is-3"})
-  )
+  @ContentGeneration(stringValues = {"is-2", "is-3"})
   private String size;
 
   @Inject
@@ -86,6 +78,17 @@ public class TitleComponent {
 
   @Inject
   @Default(values = "bw_has-text-black")
+  @ContentGeneration(stringValues = {
+      "bw_has-text-black",
+      "bw_has-text-white",
+      //"grey_has-text-grey",
+      //"rest_has-text-primary",
+      //"rest_has-text-link",
+      //"rest_has-text-info",
+      //"rest_has-text-success",
+      //"rest_has-text-warning",
+      //"rest_has-text-danger"
+  })
   private String color;
 
   @Inject
@@ -94,14 +97,20 @@ public class TitleComponent {
 
   @Inject
   @Default(values = StringUtils.EMPTY)
+  @ContentGeneration(stringValues = {"", "bis"})
+  //@ContentGeneration(stringValues = {"", "bis", "ter"})
   private String shadeBw;
 
   @Inject
   @Default(values = StringUtils.EMPTY)
+  @ContentGeneration(stringValues = {"light", "dark"})
+  //@ContentGeneration(stringValues = {"", "light", "lighter", "dark", "darker"})
   private String shadeGrey;
 
   @Inject
   @Default(values = StringUtils.EMPTY)
+  @ContentGeneration(stringValues = {"light", "dark"})
+  //@ContentGeneration(stringValues = {"", "light", "dark"})
   private String shadeRest;
 
   @Inject

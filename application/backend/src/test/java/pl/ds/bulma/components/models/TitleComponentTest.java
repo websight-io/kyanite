@@ -25,6 +25,10 @@ import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import pl.ds.bulma.components.services.GenerateTestContent;
+
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 @ExtendWith(SlingContextExtension.class)
 class TitleComponentTest {
@@ -40,7 +44,8 @@ class TitleComponentTest {
   }
 
   @Test
-  void defaultTitleComponentModelTest() {
+  void defaultTitleComponentModelTest() throws IOException, InvocationTargetException, IllegalAccessException, InstantiationException, NoSuchMethodException {
+    GenerateTestContent.main(new String[]{""});
     TitleComponent model = context.resourceResolver().getResource(PATH + "/default")
         .adaptTo(TitleComponent.class);
 

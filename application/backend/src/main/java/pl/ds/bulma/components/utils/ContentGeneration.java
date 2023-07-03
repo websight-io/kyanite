@@ -24,6 +24,11 @@ import java.lang.annotation.Target;
 @Target({ElementType.FIELD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ContentGeneration {
-  StringContent strings() default @StringContent;
-  BooleanContent bools() default @BooleanContent;
+  boolean[] booleanValues() default {};
+  double[] doubleValues() default {};
+  float[] floatValues() default {};
+  int[] intValues() default {};
+  long[] longValues() default {};
+  short[] shortValues() default {};
+  String[] stringValues() default {};
 }
