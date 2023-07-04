@@ -27,7 +27,6 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import pl.ds.bulma.components.helpers.ColorService;
 import pl.ds.bulma.components.utils.ContentGeneration;
-import pl.ds.bulma.components.utils.StringContent;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContentComponent {

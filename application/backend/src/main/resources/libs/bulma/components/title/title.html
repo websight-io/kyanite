@@ -19,6 +19,7 @@
 <sly data-sly-use.model="pl.ds.bulma.components.models.TitleComponent">
   <h1 id="${model.anchorId}" data-sly-element="${model.element}" class="${model.titleClasses @ join=' '}">
     ${model.text}
+    ${model.myTest}
   </h1>
   <sly data-sly-test="${model.addSubtitle}">
     <h1 data-sly-element="${model.element}" class="${model.subtitleClasses @ join=' '}">

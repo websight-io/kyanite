@@ -26,19 +26,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.apache.commons.lang3.reflect.FieldUtils;
+import org.jetbrains.annotations.NotNull;
 import pl.ds.bulma.components.models.ContentComponent;
 import pl.ds.bulma.components.models.TitleComponent;
 import pl.ds.bulma.components.utils.ContentGeneration;
 
 public class GenerateTestContent {
   public static void main(String[] args)
-      throws IllegalAccessException, IOException, InstantiationException, InvocationTargetException, NoSuchMethodException {
+      throws IllegalAccessException, IOException,
+      InstantiationException, InvocationTargetException, NoSuchMethodException {
     generateTestContent(TitleComponent.class);
     generateTestContent(ContentComponent.class);
   }
 
   private static <T> void generateTestContent(Class<T> classT)
-      throws IOException, IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+      throws IOException, IllegalAccessException,
+      InstantiationException, NoSuchMethodException, InvocationTargetException {
     System.out.println("Auto-generating test content");
 
     String rootPath = "./content/src/main/content/jcr_root/content/bulma/pages/";
@@ -47,10 +50,7 @@ public class GenerateTestContent {
     Files.createDirectories(Paths.get(classPath));
     String contentFilePath = classPath + "/" + ".content.xml";
 
-    var classFields = FieldUtils.getFieldsListWithAnnotation(classT, ContentGeneration.class);
-    for (var a : classFields) {
-      a.setAccessible(true);
-    }
+    List<Field> classFields = getClassFields(classT);
     var fieldNameToValues = classFields.stream()
         .collect(Collectors.toMap(Field::getName,
             it -> it.getAnnotation(ContentGeneration.class)));
@@ -67,7 +67,7 @@ public class GenerateTestContent {
         }).toList());
 
     StringBuilder testContent = new StringBuilder();
-    for (int j = 0; j < perm.size() && j < 950; j++) {
+    for (int j = 0; j < perm.size(); j++) {
       var permutationInstance = perm.get(j);
       var componentInstance = classT.getDeclaredConstructor().newInstance();
       for (int i = 0; i < fieldNames.size(); i++) {
@@ -104,6 +104,14 @@ public class GenerateTestContent {
 
     System.out.println("Auto-generated test content done");
     System.out.println(testContent);
+  }
+
+  public static <T> List<Field> getClassFields(Class<T> classT) {
+    var classFields = FieldUtils.getFieldsListWithAnnotation(classT, ContentGeneration.class);
+    for (var a : classFields) {
+      a.setAccessible(true);
+    }
+    return classFields;
   }
 
   public static List<List<Object>> permuteLists(List<List<Object>> lists) {
