@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,20 +20,16 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.Required;
-import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-import pl.ds.bulma.components.services.IconService;
 
-@Model(adaptables = SlingHttpServletRequest.class,
+@Model(adaptables = Resource.class,
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class IconComponent {
 
@@ -85,10 +81,6 @@ public class IconComponent {
 
   @SlingObject
   private Resource resource;
-
-  @OSGiService
-  @Required
-  private IconService iconService;
 
   @PostConstruct
   private void init() {
