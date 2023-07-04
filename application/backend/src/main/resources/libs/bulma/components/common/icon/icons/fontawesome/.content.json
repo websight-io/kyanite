@@ -67,15 +67,10 @@
     "label": "Gauge",
     "value": "fa-gauge-simple-high"
   },
-  "dashboard": {
-    "sling:resourceType": "wcm/dialogs/components/selectItem",
-    "label": "Dashboard",
-    "value": "fa-objects-column"
-  },
   "link": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
     "label": "Link",
-    "value": "fa-link-simple"
+    "value": "fa-link"
   },
   "bookmark": {
     "sling:resourceType": "wcm/dialogs/components/selectItem",
