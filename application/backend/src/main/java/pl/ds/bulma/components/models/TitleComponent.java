@@ -73,7 +73,7 @@ public class TitleComponent {
   @Getter
   @Default(values = StringUtils.EMPTY)
   //@ContentGeneration(stringValues = {"is-2", "is-3"})
-  @ContentGeneration(useDialog = {true})
+  @ContentGeneration(useDialog = true)
   private String size;
 
   @Inject
@@ -186,14 +186,14 @@ public class TitleComponent {
     for (var entry : fieldNameToValues.entrySet()) {
       var name = entry.getKey();
       var content = entry.getValue();
-      if (content.useDialog().length > 0) {
+      if (content.useDialog()) {
         String fieldIncludePath = getDescendants(dialogResource).stream()
             .filter(it -> it.getName().equals(name))
             .map(it -> it.getValueMap().get("path"))
             .findFirst().get().toString();
         String joinedAllowedValues = getDescendants(resourceResolver.resolve(fieldIncludePath))
             .stream().map(it -> it.getValueMap().get("value").toString())
-            .collect(Collectors.joining(". "));
+            .collect(Collectors.joining(", "));
         return joinedAllowedValues;
       }
     }

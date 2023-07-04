@@ -31,5 +31,5 @@ public @interface ContentGeneration {
   long[] longValues() default {};
   short[] shortValues() default {};
   String[] stringValues() default {};
-  boolean[] useDialog() default {};
+  boolean useDialog() default false;
 }
