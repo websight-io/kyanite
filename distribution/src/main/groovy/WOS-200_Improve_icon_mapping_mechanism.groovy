@@ -29,7 +29,7 @@ def findButtonComponents(String rootPath) {
             "[sling:resourceType]='bulma/components/button'", "JCR-SQL2")
 }
 
-def processColorShadeChanges(Resource res) {
+def processIconChanges(Resource res) {
     def vm = res.getValueMap()
     def modifiableValueMap = res.adaptTo(org.apache.sling.api.resource.ModifiableValueMap)
     if (vm['iconLeft']) {
@@ -79,7 +79,7 @@ rootPaths.each {
         findButtonComponents(rootPath).each {
             res ->
                 try {
-                    processColorShadeChanges(res)
+                    processIconChanges(res)
                 } catch (Exception e) {
                     println("Error processing resource: " + res.path + " with error: " + e.getMessage())
                 }
