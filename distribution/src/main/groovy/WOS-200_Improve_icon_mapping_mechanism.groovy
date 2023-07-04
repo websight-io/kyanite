@@ -15,9 +15,10 @@
  */
 
 /*
- * This script changes the content structure of the title and content
- * components. Shade and subtitleShade properties will be created
- *  for every shade in the node. Old ones will be removed.
+ * This script changes the content structure of the button components
+ * what has two bunch for icons properties (right and left)
+ * For every bunch properties will be created as separate nodes
+ * and old properties will be removed.
  */
 
 dryRun = true
