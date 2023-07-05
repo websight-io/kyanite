@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.apache.commons.lang3.reflect.FieldUtils;
-import org.jetbrains.annotations.NotNull;
 import pl.ds.bulma.components.models.ContentComponent;
 import pl.ds.bulma.components.models.TitleComponent;
 import pl.ds.bulma.components.utils.ContentGeneration;
@@ -50,6 +49,16 @@ public class GenerateTestContent {
     Files.createDirectories(Paths.get(classPath));
     String contentFilePath = classPath + "/" + ".content.xml";
 
+    String page = generatePageContent(classT, className);
+
+    Files.writeString(Paths.get(contentFilePath), page, Charset.defaultCharset());
+
+    System.out.println("Auto-generated test content done");
+  }
+
+  public static <T> String generatePageContent(Class<T> classT, String className)
+      throws InstantiationException, IllegalAccessException,
+      InvocationTargetException, NoSuchMethodException {
     List<Field> classFields = getClassFields(classT);
     var fieldNameToValues = classFields.stream()
         .collect(Collectors.toMap(Field::getName,
@@ -62,6 +71,9 @@ public class GenerateTestContent {
           var annotation = fieldNameToValues.get(it);
           if (annotation.booleanValues().length > 0) {
             return List.<Object>of(Boolean.FALSE, Boolean.TRUE);
+          }
+          if (annotation.useDialog()) {
+            // will be possible with CMS context
           }
           return List.<Object>of(annotation.stringValues());
         }).toList());
@@ -99,11 +111,8 @@ public class GenerateTestContent {
             </jcr:content>
         </jcr:root>
         """.formatted(className, testContent);
-
-    Files.writeString(Paths.get(contentFilePath), page, Charset.defaultCharset());
-
-    System.out.println("Auto-generated test content done");
     System.out.println(testContent);
+    return page;
   }
 
   public static <T> List<Field> getClassFields(Class<T> classT) {

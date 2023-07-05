@@ -72,8 +72,8 @@ public class TitleComponent {
   @Inject
   @Getter
   @Default(values = StringUtils.EMPTY)
-  //@ContentGeneration(stringValues = {"is-2", "is-3"})
-  @ContentGeneration(useDialog = true)
+  @ContentGeneration(stringValues = {"is-2", "is-3"}, useDialog = true)
+  //@ContentGeneration(useDialog = true)
   private String size;
 
   @Inject
