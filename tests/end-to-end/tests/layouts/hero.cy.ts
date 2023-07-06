@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  hero: 'ComponentOverlay_/content/bulma-tests/pages/hero/jcr:content/pagecontainer/hero'
+  hero: 'ComponentOverlay_/content/kyanite-tests/pages/hero/jcr:content/pagecontainer/hero'
 };
 
 describe('Hero component', function () {
@@ -26,7 +26,7 @@ describe('Hero component', function () {
   });
 
   it('renders correctly in preview mode', function () {
-    cy.visit('/content/bulma-tests/pages/hero.html');
+    cy.visit('/content/kyanite-tests/pages/hero.html');
     cy.percySnapshotPreview('Hero preview');
   });
 
@@ -37,7 +37,7 @@ describe('Hero component', function () {
     ).as('saveProperties');
 
     cy.visit(
-      '/apps/websight/index.html/content/bulma-tests/pages/hero::editor'
+      '/apps/websight/index.html/content/kyanite-tests/pages/hero::editor'
     );
 
     cy.getByTestId(paths.hero)
@@ -64,12 +64,12 @@ describe('Hero component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-      '/content/bulma-tests/pages/hero/jcr:content/pagecontainer/hero.json'
+      '/content/kyanite-tests/pages/hero/jcr:content/pagecontainer/hero.json'
     )
       .its('body')
       .should('deep.eq', {
         size: 'is-large',
-        'sling:resourceType': 'bulma/components/hero',
+        'sling:resourceType': 'kyanite/components/hero',
         'jcr:primaryType': 'nt:unstructured',
         variant: 'is-link'
       });

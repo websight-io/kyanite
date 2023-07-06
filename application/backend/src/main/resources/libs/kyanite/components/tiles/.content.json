@@ -1,0 +1,8 @@
+{
+  "isContainer": true,
+  "isLayout": true,
+  "group": "Kyanite Layouts",
+  "allowedComponents": ["/libs/kyanite/components/tiles/tileparent"],
+  "sling:resourceType": "ws:Component",
+  "title": "Tiles"
+}

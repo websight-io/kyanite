@@ -1,0 +1,11 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "sling:resourceType": "kyanite/components/icon",
+  "addText": "false",
+  "icon": "mdi-home-outline",
+  "elementType": "span",
+  "iconLibType": "mdi",
+  "iconSize": "mdi-36px",
+  "selectOrType": "select",
+  "textVariant": ""
+}

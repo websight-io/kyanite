@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  container: 'ComponentOverlay_/content/bulma-tests/pages/container/jcr:content/pagecontainer/container'
+  container: 'ComponentOverlay_/content/kyanite-tests/pages/container/jcr:content/pagecontainer/container'
 };
 
 describe('Container layout', function () {
@@ -32,7 +32,7 @@ describe('Container layout', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/bulma-tests/pages/container::editor'
+        '/apps/websight/index.html/content/kyanite-tests/pages/container::editor'
     );
 
     cy.getByTestId(paths.container)
@@ -51,12 +51,12 @@ describe('Container layout', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/bulma-tests/pages/container/jcr:content/pagecontainer/container.json'
+        '/content/kyanite-tests/pages/container/jcr:content/pagecontainer/container.json'
     )
     .its('body')
     .should('deep.eq', {
       containerStyle: 'is-fullhd',
-      'sling:resourceType': 'bulma/components/container',
+      'sling:resourceType': 'kyanite/components/container',
       'jcr:primaryType': 'nt:unstructured'
     });
   });

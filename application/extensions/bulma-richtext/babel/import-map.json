@@ -1,9 +1,0 @@
-{
-  "rootDir": "",
-  "aliases": {
-    "is-dark-color": "/libs/bulma-richtext/web-resources/is-dark-color.js",
-    "^(components.*)": "/apps/websight-dialogs-view/web-resources/\\1.js",
-    "^(.*)": "/apps/websight-atlaskit-esm/web-resources/\\1.js"
-  },
-  "devAliases": {}
-}

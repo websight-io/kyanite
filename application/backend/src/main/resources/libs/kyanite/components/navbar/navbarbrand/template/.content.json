@@ -1,0 +1,12 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "sling:resourceType": "kyanite/components/navbar/navbarbrand",
+  "item": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/components/navbar/navbaritem",
+    "label": "Brand",
+    "icon": "none",
+    "type": "link",
+    "url": ""
+  }
+}

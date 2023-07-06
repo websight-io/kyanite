@@ -1,0 +1,89 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "type",
+        "label": "Create container positioning on side",
+        "required": true,
+        "description": "Type of the navbar item",
+        "link": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Link",
+          "value": "link",
+          "selected": true
+        },
+        "image": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Image",
+          "value": "image"
+        },
+        "container": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Container",
+          "value": "container"
+        }
+      },
+      "linkContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "label": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Item label"
+        },
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL connected to item"
+        },
+        "icon": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/libs/kyanite/components/common/menuicon"
+        },
+        "ws:display": {"condition": {
+          "sourceName": "type",
+          "values": "link"
+        }}
+      },
+      "imageContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "assetReference": {
+          "sling:resourceType": "wcm/dialogs/components/assetreference",
+          "mimeTypes": ["image/*"],
+          "name": "image/assetReference",
+          "description": "Default image source",
+          "label": "Choose image"
+        },
+        "src": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "name": "image/src",
+          "label": "Secondary image src"
+        },
+        "alt": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "image/alt",
+          "label": "Image alt"
+        },
+        "width": {
+          "sling:resourceType": "wcm/dialogs/components/numberfield",
+          "name": "imageWidth",
+          "label": "Image width (px)"
+        },
+        "height": {
+          "sling:resourceType": "wcm/dialogs/components/numberfield",
+          "name": "imageHeight",
+          "label": "Image height (px)"
+        },
+        "ws:display": {"condition": {
+          "sourceName": "type",
+          "values": "image"
+        }}
+      }
+    }
+  }
+}

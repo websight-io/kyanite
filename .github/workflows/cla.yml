@@ -1,4 +1,4 @@
-# Copyright (C) 2022 Dynamic Solutions
+# Copyright (C) 2023 Dynamic Solutions
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -36,7 +36,7 @@ jobs:
 
           create-file-commit-message: 'Creating file for storing individual CLA Signatures'
           signed-commit-message: '$contributorName has signed the individual CLA in #$pullRequestNo'
-          custom-notsigned-prcomment: 'You must sign a [Contributor License Agreement](https://github.com/websight-io/bulma/blob/main/CONTRIBUTING.md#contributor-license-agreement-cla) (CLA) to accept your pull request. You only need to do this once. If you submit a pull request for the first time, our CLA bot will automatically ask you to sign before merging the pull request.'
+          custom-notsigned-prcomment: 'You must sign a [Contributor License Agreement](https://github.com/websight-io/kyanite/blob/main/CONTRIBUTING.md#contributor-license-agreement-cla) (CLA) to accept your pull request. You only need to do this once. If you submit a pull request for the first time, our CLA bot will automatically ask you to sign before merging the pull request.'
           custom-pr-sign-comment: 'I have read the Dynamic Solutions Individual Contributor License Agreement (CLA) Document and I hereby sign the CLA'
           custom-allsigned-prcomment: '**CLA bot** All Contributors have signed the [Dynamic Solutions Individual Contributor License Agreement](https://www.websight.io/product/cla/individual/v1/)'
           lock-pullrequest-aftermerge: true

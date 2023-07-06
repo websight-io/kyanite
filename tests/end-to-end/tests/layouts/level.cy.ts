@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  level: 'ComponentOverlay_/content/bulma-tests/pages/level/jcr:content/pagecontainer/level_3'
+  level: 'ComponentOverlay_/content/kyanite-tests/pages/level/jcr:content/pagecontainer/level_3'
 };
 
 describe('Level component', function () {
@@ -26,7 +26,7 @@ describe('Level component', function () {
   });
 
   it('renders correctly in preview mode', function () {
-    cy.visit('/content/bulma-tests/pages/level.html');
+    cy.visit('/content/kyanite-tests/pages/level.html');
     cy.percySnapshotPreview('Level preview');
 
     cy.contains('Search').click();
@@ -40,29 +40,29 @@ describe('Level component', function () {
     ).as('saveProperties');
 
     cy.visit(
-      '/apps/websight/index.html/content/bulma-tests/pages/level::editor'
+      '/apps/websight/index.html/content/kyanite-tests/pages/level::editor'
     );
 
 
     cy.percySnapshotPageEditor('Level editor');
 
     cy.request(
-      '/content/bulma-tests/pages/level/jcr:content/pagecontainer/level_2.json'
+      '/content/kyanite-tests/pages/level/jcr:content/pagecontainer/level_2.json'
     )
       .its('body')
       .should('deep.eq', {
-        'sling:resourceType': 'bulma/components/level',
+        'sling:resourceType': 'kyanite/components/level',
         'jcr:primaryType': 'nt:unstructured'
       });
 
     cy.request(
-        '/content/bulma-tests/pages/level/jcr:content/pagecontainer/level_3_1.json'
+        '/content/kyanite-tests/pages/level/jcr:content/pagecontainer/level_3_1.json'
     )
     .its('body')
     .should('deep.eq', {
       isVertical: 'false',
       'jcr:primaryType': 'nt:unstructured',
-      'sling:resourceType': 'bulma/components/level',
+      'sling:resourceType': 'kyanite/components/level',
     });
   });
 });

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Copyright (C) 2022 Dynamic Solutions
+    Copyright (C) 2023 Dynamic Solutions
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -19,14 +19,15 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>pl.ds.bulma</groupId>
-    <artifactId>bulma-application</artifactId>
+    <groupId>pl.ds.kyanite</groupId>
+    <artifactId>kyanite-application</artifactId>
     <version>1.3.9-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>bulma-backend</artifactId>
-  <name>Bulma Components Project - Backend</name>
+  <artifactId>kyanite-backend</artifactId>
+  <version>1.3.9-SNAPSHOT</version>
+  <name>Kyanite Components Project - Backend</name>
   <description>Contains application backend.</description>
 
   <build>

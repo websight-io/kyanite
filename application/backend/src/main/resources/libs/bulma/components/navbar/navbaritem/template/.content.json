@@ -1,8 +1,0 @@
-{
-  "jcr:primaryType": "nt:unstructured",
-  "sling:resourceType": "bulma/components/navbar/navbaritem",
-  "label": "Item",
-  "icon": "none",
-  "type": "link",
-  "url": ""
-}

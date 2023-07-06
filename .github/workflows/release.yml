@@ -1,4 +1,4 @@
-# Copyright (C) 2022 Dynamic Solutions
+# Copyright (C) 2023 Dynamic Solutions
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Release Bulma
+name: Release Kyanite
 
 on:
   workflow_dispatch:
@@ -41,7 +41,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: ${{ secrets.AWS_CI_ROLE_TO_ASSUME }}
-          role-session-name: BulmaRelease
+          role-session-name: KyaniteRelease
           aws-region: ${{ env.AWS_REGION }}
       - name: Cache local Maven repository
         uses: actions/cache@v3

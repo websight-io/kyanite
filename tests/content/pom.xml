@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Copyright (C) 2022 Dynamic Solutions
+    Copyright (C) 2023 Dynamic Solutions
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -19,14 +19,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>pl.ds.bulma</groupId>
-    <artifactId>bulma-tests</artifactId>
+    <groupId>pl.ds.kyanite</groupId>
+    <artifactId>kyanite-tests</artifactId>
     <version>1.3.9-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>bulma-tests-content</artifactId>
-  <name>Bulma Components Project - Tests: Content</name>
+  <artifactId>kyanite-tests-content</artifactId>
+  <name>Kyanite Components Project - Tests: Content</name>
   <description>Contains content used for end to end tests.</description>
   <packaging>content-package</packaging>
 

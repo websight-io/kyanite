@@ -1,7 +1,0 @@
-{
-  "group": "Bulma.io Components",
-  "isContainer": true,
-  "allowedComponents": ["/libs/bulma/components/card/cardcontent"],
-  "sling:resourceType": "ws:Component",
-  "title": "Card"
-}

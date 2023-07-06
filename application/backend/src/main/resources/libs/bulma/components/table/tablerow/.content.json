@@ -1,7 +1,0 @@
-{
-  "isContainer": true,
-  "group": "Bulma.io sub-elements",
-  "allowedComponents": ["/libs/bulma/components/table/tablecell", "/libs/bulma/components/table/tableheadcell"],
-  "sling:resourceType": "ws:Component",
-  "title": "Table row"
-}

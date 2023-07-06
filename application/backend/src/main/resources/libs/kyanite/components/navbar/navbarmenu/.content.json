@@ -1,0 +1,10 @@
+{
+  "isContainer": true,
+  "allowedComponents": [
+    "/libs/kyanite/components/navbar/navbarstart",
+    "/libs/kyanite/components/navbar/navbarend"
+  ],
+  "group": "Kyanite sub-components",
+  "sling:resourceType": "ws:Component",
+  "title": "Navbar menu"
+}

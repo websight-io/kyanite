@@ -1,25 +1,25 @@
 {
   "default": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/hero"
+    "sling:resourceType": "kyanite/components/hero"
   },
   "onlySize": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/hero",
+    "sling:resourceType": "kyanite/components/hero",
     "title": "Nice title",
     "subTitle": "Subtitle",
     "size": "is-medium"
   },
   "onlyVariant": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/hero",
+    "sling:resourceType": "kyanite/components/hero",
     "title": "Nice title",
     "subTitle": "Subtitle",
     "variant": "is-warning"
   },
   "bothStyles": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/hero",
+    "sling:resourceType": "kyanite/components/hero",
     "title": "Nice title",
     "subTitle": "Subtitle",
     "size": "is-medium",

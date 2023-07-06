@@ -1,0 +1,12 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "label": "Tab",
+  "addIcon": "false",
+  "icon": "mdi-home-outline",
+  "iconLibType": "mdi",
+  "selectOrType": "select",
+  "tabcontent": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/components/tabs/tabcontent"
+  }
+}

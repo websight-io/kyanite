@@ -1,36 +1,36 @@
 {
   "bundles": [
     {
-      "id": "pl.ds.bulma:bulma-backend:${project.version}",
+      "id": "pl.ds.kyanite:kyanite-backend:${project.version}",
       "start-order": "25"
     },
     {
-      "id": "pl.ds.bulma:bulma-frontend:${project.version}",
+      "id": "pl.ds.kyanite:kyanite-frontend:${project.version}",
       "start-order": "25"
     },
     {
-      "id": "pl.ds.bulma:bulma-table-service:${project.version}",
+      "id": "pl.ds.kyanite:kyanite-table-service:${project.version}",
       "start-order": "25"
     },
     {
-      "id": "pl.ds.bulma:bulma-table-view:${project.version}",
+      "id": "pl.ds.kyanite:kyanite-table-view:${project.version}",
       "start-order": "25"
     },
     {
-      "id": "pl.ds.bulma:bulma-richtext:${project.version}",
+      "id": "pl.ds.kyanite:kyanite-richtext:${project.version}",
       "start-order": "25"
     }
   ],
   "configurations": {
-    "org.apache.sling.commons.log.LogManager.factory.config~bulma-project.log": {
+    "org.apache.sling.commons.log.LogManager.factory.config~kyanite-project.log": {
       "org.apache.sling.commons.log.packagingDataEnabled": true,
       "org.apache.sling.commons.log.pattern": "%d{dd.MM.yyyy HH:mm:ss.SSS} *%level* [%thread] %logger %msg%n",
       "org.apache.sling.commons.log.level": "$[env:PROJECT_LOG_LEVEL;default=info]",
-      "org.apache.sling.commons.log.file": "logs/bulma-project.log",
+      "org.apache.sling.commons.log.file": "logs/kyanite-project.log",
       "org.apache.sling.commons.log.file.number:Integer": "8",
       "org.apache.sling.commons.log.file.size": "'.'yyyy-MM-dd",
       "org.apache.sling.commons.log.names": [
-        "pl.ds.bulma"
+        "pl.ds.kyanite"
       ],
       "org.apache.sling.commons.log.additiv": true
     },
@@ -39,7 +39,7 @@
     }
   },
   "content-packages:ARTIFACTS|true": [
-    "pl.ds.bulma:bulma-content:zip:${project.version}"
+    "pl.ds.kyanite:kyanite-content:zip:${project.version}"
   ]
 }
   

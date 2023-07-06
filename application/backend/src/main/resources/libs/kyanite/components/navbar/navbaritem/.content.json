@@ -1,0 +1,12 @@
+{
+  "isContainer": true,
+  "allowedComponents": [
+    "Kyanite Columns",
+    "Kyanite Components",
+    "Kyanite Elements",
+    "Kyanite Layouts"
+  ],
+  "sling:resourceType": "ws:Component",
+  "title": "Navbar item",
+  "group": "Kyanite sub-components"
+}

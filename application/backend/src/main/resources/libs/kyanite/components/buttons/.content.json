@@ -1,0 +1,7 @@
+{
+  "isContainer": true,
+  "group": "Kyanite Elements",
+  "allowedComponents": ["/libs/kyanite/components/button"],
+  "sling:resourceType": "ws:Component",
+  "title": "Buttons"
+}

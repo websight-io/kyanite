@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  card: 'ComponentOverlay_/content/bulma-tests/pages/card/jcr:content/pagecontainer/card'
+  card: 'ComponentOverlay_/content/kyanite-tests/pages/card/jcr:content/pagecontainer/card'
 };
 
 describe('Card component', function () {
@@ -32,7 +32,7 @@ describe('Card component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/bulma-tests/pages/card::editor'
+        '/apps/websight/index.html/content/kyanite-tests/pages/card::editor'
     );
 
     cy.getByTestId(paths.card)
@@ -68,16 +68,16 @@ describe('Card component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/bulma-tests/pages/card/jcr:content/pagecontainer/card.infinity.json'
+        '/content/kyanite-tests/pages/card/jcr:content/pagecontainer/card.infinity.json'
     )
     .its('body')
     .should('deep.eq', {
       header: 'Card header',
       'jcr:primaryType': 'nt:unstructured',
-      'sling:resourceType': 'bulma/components/card',
+      'sling:resourceType': 'kyanite/components/card',
       'cardcontent': {
         'jcr:primaryType': 'nt:unstructured',
-        'sling:resourceType': 'bulma/components/card/cardcontent'
+        'sling:resourceType': 'kyanite/components/card/cardcontent'
       },
       'image': {
         alt: 'Alt text',

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright (C) 2022 Dynamic Solutions
+# Copyright (C) 2023 Dynamic Solutions
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,6 +16,6 @@
 
 docker compose down
 
-docker volume rm local_bulma-project_cms_logs
-docker volume rm local_bulma-project_mongo_repository
-docker volume rm local_bulma-project_site_repository
+docker volume rm local_kyanite-project_cms_logs
+docker volume rm local_kyanite-project_mongo_repository
+docker volume rm local_kyanite-project_site_repository

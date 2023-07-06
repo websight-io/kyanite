@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Copyright (C) 2022 Dynamic Solutions
+    Copyright (C) 2023 Dynamic Solutions
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -19,14 +19,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>pl.ds.bulma</groupId>
-    <artifactId>bulma</artifactId>
+    <groupId>pl.ds.kyanite</groupId>
+    <artifactId>kyanite</artifactId>
     <version>1.3.9-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>bulma-tests</artifactId>
-  <name>Bulma Components Project - Tests</name>
+  <artifactId>kyanite-tests</artifactId>
+  <name>Kyanite Components Project - Tests</name>
   <description>Tests modules parent.</description>
   <packaging>pom</packaging>
 

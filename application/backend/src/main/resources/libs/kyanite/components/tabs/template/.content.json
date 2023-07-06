@@ -1,0 +1,32 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "alignment": "",
+  "size": "is-normal",
+  "tab1": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/components/tabs/tab",
+    "label":"Tab 1",
+    "tabcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/components/tabs/tabcontent"
+    }
+  },
+  "tab2": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/components/tabs/tab",
+    "label":"Tab 2",
+    "tabcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/components/tabs/tabcontent"
+    }
+  },
+  "tab3": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/components/tabs/tab",
+    "label":"Tab 3",
+    "tabcontent": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/components/tabs/tabcontent"
+    }
+  }
+}

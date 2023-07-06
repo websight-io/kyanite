@@ -1,9 +1,0 @@
-{
-  "isContainer": true,
-  "group": "Bulma.io sub-components",
-  "allowedComponents": [
-    "/libs/bulma/components/tiles/tileparent",
-    "/libs/bulma/components/tiles/tilechild"],
-  "sling:resourceType": "ws:Component",
-  "title": "Parent tile"
-}

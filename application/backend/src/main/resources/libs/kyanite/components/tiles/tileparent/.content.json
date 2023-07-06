@@ -1,0 +1,9 @@
+{
+  "isContainer": true,
+  "group": "Kyanite sub-components",
+  "allowedComponents": [
+    "/libs/kyanite/components/tiles/tileparent",
+    "/libs/kyanite/components/tiles/tilechild"],
+  "sling:resourceType": "ws:Component",
+  "title": "Parent tile"
+}

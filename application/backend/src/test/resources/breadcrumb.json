@@ -1,11 +1,11 @@
 {
   "default": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/breadcrumb"
+    "sling:resourceType": "kyanite/components/breadcrumb"
   },
   "complex": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/breadcrumb",
+    "sling:resourceType": "kyanite/components/breadcrumb",
     "alignment": "center",
     "size": "is-small",
     "separator": "has-bullet-separator",

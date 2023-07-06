@@ -1,11 +1,11 @@
 {
   "default": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/container"
+    "sling:resourceType": "kyanite/components/container"
   },
   "complex": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/container",
+    "sling:resourceType": "kyanite/components/container",
     "containerStyle": "is-fullhd"
   }
 }

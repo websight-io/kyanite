@@ -1,4 +1,4 @@
-# Copyright (C) 2022 Dynamic Solutions
+# Copyright (C) 2023 Dynamic Solutions
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -34,4 +34,4 @@ HEALTHCHECK --interval=15s --timeout=3s --start-period=5s CMD curl --fail http:/
 
 WORKDIR /websight
 ENTRYPOINT [ "/websight/bin/launch.sh" ]
-CMD ["websight-cms-bulma-project"]
+CMD ["websight-cms-kyanite-project"]

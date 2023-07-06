@@ -1,10 +1,10 @@
 {
   "default": {
-    "sling:resourceType": "bulma/components/columns/column",
+    "sling:resourceType": "kyanite/components/columns/column",
     "jcr:primaryType": "nt:unstructured"
   },
   "complex": {
-    "sling:resourceType": "bulma/components/columns/column",
+    "sling:resourceType": "kyanite/components/columns/column",
     "jcr:primaryType": "nt:unstructured",
     "mobileColumnStyle": {
       "isNormalColumn": false
@@ -21,7 +21,7 @@
     }
   },
   "nested": {
-    "sling:resourceType": "bulma/components/columns/column",
+    "sling:resourceType": "kyanite/components/columns/column",
     "jcr:primaryType": "nt:unstructured",
     "mobileColumnStyle": {
       "isNormalColumn": false
@@ -37,14 +37,14 @@
       "isNormalColumn": false
     },
     "columns": {
-      "sling:resourceType": "bulma/components/columns",
+      "sling:resourceType": "kyanite/components/columns",
       "jcr:primaryType": "nt:unstructured",
       "column1": {
-        "sling:resourceType": "bulma/components/columns/column",
+        "sling:resourceType": "kyanite/components/columns/column",
         "jcr:primaryType": "nt:unstructured"
       },
       "column2": {
-        "sling:resourceType": "bulma/components/columns/column",
+        "sling:resourceType": "kyanite/components/columns/column",
         "jcr:primaryType": "nt:unstructured",
         "mobileColumnStyle": {
           "isNormalColumn": false

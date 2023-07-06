@@ -1,0 +1,27 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "parentOptions": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "size": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "/libs/kyanite/components/tiles/attributes/size",
+            "name": "size",
+            "label": "Tile size"
+          }
+        },
+        "vertical": {
+          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "name": "isVertical",
+          "label": "Vertical",
+          "description": "Enable if you want to stack tiles vertically instead of horizontally"
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 # Releasing
-Bulma release is done using GitHub Actions `Release Bulma` workflow.
+Kyanite release is done using GitHub Actions `Release Kyanite` workflow.
 
 The 'Prepare release' step requires configuring:
 - a public key as [deploy keys](https://docs.github.com/v3/guides/managing-deploy-keys/#deploy-keys) 
