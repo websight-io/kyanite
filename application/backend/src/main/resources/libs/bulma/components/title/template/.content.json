@@ -1,5 +1,9 @@
 {
   "jcr:primaryType": "nt:unstructured",
+  "text": "Title",
+  "subtitle": "Subtitle",
+  "element": "h2",
+  "isSpaced": false,
   "size": "is-2",
   "color": "bw_has-text-black",
   "shadeBw": "",
