@@ -18,7 +18,7 @@ const rollupPluginPostcss = require('rollup-plugin-postcss');
 const rollupPluginNodePolyfills = require('rollup-plugin-node-polyfills');
 
 module.exports = {
-    webDependencies: [],
+    webDependencies: ['is-dark-color'],
     rollup: {
         plugins: [rollupPluginPostcss(), rollupPluginNodePolyfills()]
     }

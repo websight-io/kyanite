@@ -1,20 +1,56 @@
 {
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/title"
+  },
   "complex": {
     "jcr:primaryType": "nt:unstructured",
-    "text": "Title",
-    "subtitle": "Subtitle",
-    "element": "h2",
-    "isSpaced": false,
-    "addSubtitle": false,
+    "sling:resourceType": "bulma/components/title",
+    "text": "Nice title",
+    "subtitle": "Nice subtitle",
+    "addSubtitle": true,
+    "element": "p",
+    "anchorId": "anchorId",
     "size": "is-2",
     "color": "bw_has-text-black",
-    "shadeBw": "",
-    "shadeGrey": "",
-    "shadeRest": "",
-    "subtitleColor": "bw_has-text-black",
-    "subtitleShadeBw": "",
-    "subtitleSGrey": "",
-    "subtitleSRest": "",
-    "anchorId": ""
+    "subtitleColor": "grey_has-text-grey",
+    "isSpaced": true,
+    "bw": {
+      "shade": "ter"
+    },
+    "grey": {
+      "subtitleShade": "lighter"
+    }
+  },
+  "complex1": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/title",
+    "text": "Nice title",
+    "subtitle": "Nice subtitle",
+    "addSubtitle": true,
+    "element": "p",
+    "anchorId": "anchorId",
+    "size": "is-4",
+    "color": "has-text-dark",
+    "subtitleColor": "has-text-light"
+  },
+  "newShade": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "bulma/components/title",
+    "text": "Nice title",
+    "subtitle": "Nice subtitle",
+    "addSubtitle": true,
+    "color": "new_has-text-black",
+    "subtitleColor": "new_has-text-grey",
+    "bw": {
+      "shade": "ter"
+    },
+    "grey": {
+      "subtitleShade": "lighter"
+    },
+    "new": {
+      "shade": "test",
+      "subtitleShade": "test1"
+    }
   }
 }

@@ -47,10 +47,8 @@ public class ContactFormComponentTest {
         .adaptTo(ContactFormComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.isSubject()).isFalse();
-    assertThat(model.isPhoneNumber()).isFalse();
     assertThat(model.getSubmitLabel()).isEqualTo("Send");
-    assertThat(model.getConsentText()).isEqualTo("<p>Consent</p>");
+    assertThat(model.getConsentText()).isEqualTo("<p>Contact Us</p>");
   }
 
   @Test
@@ -59,8 +57,6 @@ public class ContactFormComponentTest {
         .adaptTo(ContactFormComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.isSubject()).isTrue();
-    assertThat(model.isPhoneNumber()).isTrue();
     assertThat(model.getSubmitLabel()).isEqualTo("Send Message");
     assertThat(model.getConsentText()).isEqualTo("I consent");
   }

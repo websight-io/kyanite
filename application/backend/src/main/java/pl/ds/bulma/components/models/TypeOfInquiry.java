@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,19 +16,25 @@
 
 package pl.ds.bulma.components.models;
 
+import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.OSGiService;
-import pl.ds.bulma.components.services.ContactFormConfigurationService;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class PageComponent {
+public class TypeOfInquiry {
 
-  @OSGiService
-  private ContactFormConfigurationService contactFormConfigurationService;
+  @ValueMapValue
+  @Getter
+  @Default(values = "Message from website.")
+  private String label;
 
-  public String getConfigEndpoint() {
-    return contactFormConfigurationService.getConfigEndpoint();
-  }
+  @ValueMapValue
+  @Getter
+  @Default(values = StringUtils.EMPTY)
+  private String email;
+
 }

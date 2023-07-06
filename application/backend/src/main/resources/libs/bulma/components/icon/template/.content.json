@@ -3,7 +3,10 @@
   "sling:resourceType": "bulma/components/icon",
   "addText": "false",
   "icon": "mdi-home-outline",
+  "elementType": "span",
   "iconLibType": "mdi",
   "iconSize": "mdi-36px",
-  "selectOrType": "select"
+  "selectOrType": "select",
+  "hidden": true,
+  "textVariant": ""
 }

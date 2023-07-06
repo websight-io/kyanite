@@ -22,27 +22,6 @@
           "sling:resourceSuperType": "/libs/bulma/components/common/alignment",
           "left": {"value": ""}
         }
-      },
-      "elements": {
-        "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "elements",
-        "label": "Elements",
-        "ws:disallowedContext": ["edit:panel"],
-        "labelText": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "label",
-          "label": "Label"
-        },
-        "url": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "rootPath": "/content",
-          "name": "url",
-          "label": "URL"
-        },
-        "icon": {
-          "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/libs/bulma/components/common/icon/icons/fontawesome"
-        }
       }
     }
   }

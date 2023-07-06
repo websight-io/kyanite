@@ -16,6 +16,10 @@
  */
 
 import styled, {css} from 'styled-components';
+import isDarkColor from 'is-dark-color';
+
+const WHITE = '#ffffff';
+const BLACK = '#000000';
 
 export const createGlobalCSS = (colors) => {
     let styles = '';
@@ -45,6 +49,7 @@ export const createCSS = (colors) => {
             }
             & + svg {
                 background-color: ${color.value};
+                fill: ${isDarkColor(color.value) ? WHITE : BLACK} !important;
             }
          }
        `;
@@ -54,6 +59,7 @@ export const createCSS = (colors) => {
 };
 
 export const PopupContainer = styled.div`
+    position: relative;
     & > div > div {
         padding: 0;
         display: flex;

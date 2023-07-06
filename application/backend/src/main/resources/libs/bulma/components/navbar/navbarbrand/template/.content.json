@@ -4,6 +4,13 @@
   "item": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "bulma/components/navbar/navbaritem",
-    "label": "Brand"
+    "label": "Brand",
+    "type": "link",
+    "url": "",
+    "selectOrType": "select",
+    "addIcon": false,
+    "icon": "mdi-home-outline",
+    "iconLibType": "mdi",
+    "iconSize": "mdi-36px"
   }
 }

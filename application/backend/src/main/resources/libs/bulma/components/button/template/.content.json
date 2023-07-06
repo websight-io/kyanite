@@ -1,0 +1,28 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "type": "button",
+  "size": "is-normal",
+  "actionType": "",
+  "variant": "is-primary",
+  "openModal": "open-modal",
+  "showIconLeft": false,
+  "showIconRight": false,
+  "leftIcon": {
+    "selectOrType": "select",
+    "iconLibType": "mdi",
+    "icon": "mdi-home-outline",
+    "iconSize": "fa-lg"
+  },
+  "rightIcon": {
+    "selectOrType": "select",
+    "iconLibType": "mdi",
+    "icon": "mdi-home-outline",
+    "iconSize": "fa-lg"
+  },
+  "isInverted": "false",
+  "isOutlined": "false",
+  "isDisabled": "false",
+  "isFullWidth": "false",
+  "isLight": "false",
+  "isRounded": "false"
+}

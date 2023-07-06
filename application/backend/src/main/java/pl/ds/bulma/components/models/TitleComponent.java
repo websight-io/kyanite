@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,13 +23,15 @@ import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Required;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import pl.ds.bulma.components.helpers.ColorService;
+import pl.ds.bulma.components.services.ColorService;
 
-@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+@Model(adaptables = Resource.class,
+    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class TitleComponent {
 
   @Inject
@@ -71,35 +73,15 @@ public class TitleComponent {
   private String subtitleColor;
 
   @Inject
-  private String shadeBw;
-
-  @Inject
-  private String shadeGrey;
-
-  @Inject
-  private String shadeRest;
-
-  @Inject
-  private String subtitleShadeBw;
-
-  @Inject
-  private String subtitleShadeGrey;
-
-  @Inject
-  private String subtitleShadeRest;
-
-  @Inject
   @Getter
   private String anchorId;
 
+  @OSGiService
+  @Required
+  private ColorService colorService;
+
   @SlingObject
   private Resource resource;
-
-  @Getter
-  private String textColorVariant;
-
-  @Getter
-  private String subtitleColorVariant;
 
   @PostConstruct
   private void init() {
@@ -119,18 +101,13 @@ public class TitleComponent {
     if (isSpaced) {
       titleClassList.add("is-spaced");
     }
+
+    titleClassList.add(colorService.getShadeClass(resource, color, "shade"));
+    subtitleClassList.add(colorService.getShadeClass(resource, subtitleColor,
+        "subtitleShade"));
+
     titleClasses = titleClassList.toArray(new String[]{});
     subtitleClasses = subtitleClassList.toArray(new String[]{});
-
-    ColorService colorService
-        = new ColorService(resource, "bulma/components/common/text/color",
-        this.color, this.shadeBw, this.shadeGrey, this.shadeRest);
-
-    this.textColorVariant = colorService.getTextColorVariant();
-
-    colorService = new ColorService(resource, "bulma/components/common/text/color",
-        this.subtitleColor, this.subtitleShadeBw, this.subtitleShadeGrey, this.subtitleShadeRest);
-
-    this.subtitleColorVariant = colorService.getTextColorVariant();
   }
+
 }

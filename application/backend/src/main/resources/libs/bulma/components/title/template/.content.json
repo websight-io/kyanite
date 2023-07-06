@@ -4,15 +4,10 @@
   "subtitle": "Subtitle",
   "element": "h2",
   "isSpaced": false,
-  "addSubtitle": false,
   "size": "is-2",
   "color": "bw_has-text-black",
   "shadeBw": "",
-  "shadeGrey": "",
-  "shadeRest": "",
   "subtitleColor": "bw_has-text-black",
-  "subtitleShadeBw": "",
-  "subtitleSGrey": "",
-  "subtitleSRest": "",
-  "anchorId": ""
+  "addSubtitle": "false",
+  "subtitleShadeBw": ""
 }

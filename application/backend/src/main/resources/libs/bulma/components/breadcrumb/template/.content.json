@@ -1,0 +1,10 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "breadcrumbitem": {
+    "sling:resourceType": "bulma/components/breadcrumb/breadcrumbitem",
+    "url": "",
+    "label": "Label",
+    "addIcon": false,
+    "icon": "mdi-home-outline"
+  }
+}

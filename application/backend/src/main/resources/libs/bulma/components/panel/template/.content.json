@@ -1,9 +1,15 @@
 {
   "jcr:primaryType": "nt:unstructured",
   "title": "Panel Title",
+  "variant": "",
   "panelblock1": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/panel/panelblock"
+    "sling:resourceType": "bulma/components/panel/panelblock",
+    "addIcon": false,
+    "icon": "mdi-home-outline",
+    "iconLibType": "mdi",
+    "iconSize": "mdi-36px",
+    "selectOrType": "select"
   },
   "paneltabs1": {
     "jcr:primaryType": "nt:unstructured",
@@ -17,15 +23,30 @@
         "sling:resourceType": "bulma/components/panel/paneltabs/paneltabcontent",
         "panelblock1": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "addIcon": false,
+          "icon": "mdi-home-outline",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px",
+          "selectOrType": "select"
         },
         "panelblock2": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "addIcon": false,
+          "icon": "mdi-home-outline",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px",
+          "selectOrType": "select"
         },
         "panelblock3": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "addIcon": false,
+          "icon": "mdi-home-outline",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px",
+          "selectOrType": "select"
         }
       }
     },
@@ -38,15 +59,30 @@
         "sling:resourceType": "bulma/components/panel/paneltabs/paneltabcontent",
         "panelblock1": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "addIcon": false,
+          "icon": "mdi-home-outline",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px",
+          "selectOrType": "select"
         },
         "panelblock2": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "addIcon": false,
+          "icon": "mdi-home-outline",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px",
+          "selectOrType": "select"
         },
         "panelblock3": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "addIcon": false,
+          "icon": "mdi-home-outline",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px",
+          "selectOrType": "select"
         }
       }
     },
@@ -59,15 +95,30 @@
         "sling:resourceType": "bulma/components/panel/paneltabs/paneltabcontent",
         "panelblock1": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "addIcon": false,
+          "icon": "mdi-home-outline",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px",
+          "selectOrType": "select"
         },
         "panelblock2": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "addIcon": false,
+          "icon": "mdi-home-outline",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px",
+          "selectOrType": "select"
         },
         "panelblock3": {
           "jcr:primaryType": "nt:unstructured",
-          "sling:resourceType": "bulma/components/panel/panelblock"
+          "sling:resourceType": "bulma/components/panel/panelblock",
+          "addIcon": false,
+          "icon": "mdi-home-outline",
+          "iconLibType": "mdi",
+          "iconSize": "mdi-36px",
+          "selectOrType": "select"
         }
       }
     }

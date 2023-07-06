@@ -16,32 +16,58 @@
 
 package pl.ds.bulma.components.models;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 import javax.inject.Inject;
+import javax.json.Json;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import pl.ds.bulma.components.services.ContactFormConfigurationService;
+import pl.ds.bulma.components.services.RecaptchaConfigurationService;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContactFormComponent {
 
-  @Inject
-  @Getter
-  private boolean isSubject;
+  @OSGiService
+  private ContactFormConfigurationService contactFormConfigurationService;
+  @OSGiService
+  private RecaptchaConfigurationService recaptchaConfigurationService;
 
   @Inject
-  @Getter
-  private boolean isPhoneNumber;
+  private List<TypeOfInquiry> types = new ArrayList<>();
 
-  @Inject
+  @ValueMapValue
   @Getter
   @Default(values = "Send")
   private String submitLabel;
 
-  @Inject
+  @ValueMapValue
   @Getter
-  @Default(values = "<p>Consent</p>")
+  @Default(values = "<p>Contact Us</p>")
   private String consentText;
+
+  public String getCaptchaPublicKey() {
+    return recaptchaConfigurationService.getCaptchaPublicKey();
+  }
+
+  public Map<String, String> getTypeOfInquiryValue() {
+    return types.stream().collect(Collectors.toMap(
+        TypeOfInquiry::getLabel,
+        elem -> Json.createObjectBuilder().add("subject", elem.getLabel())
+            .add("email", elem.getEmail())
+            .build()
+            .toString()));
+  }
+
+  public String getConfigEndpoint() {
+    return contactFormConfigurationService.getConfigEndpoint();
+  }
 
 }
