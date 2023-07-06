@@ -91,12 +91,12 @@ describe('Button component', function () {
     .findByTestId('RadioElement_select')
     .click();
     cy.getByTestId('ModalDialog_Button')
-    .find('div[id^="iconLibTypeLeft-uid"]')
+    .find('div[id^="leftIcon/iconLibType-uid"]')
     .click();
     cy.contains('.Input_LeftIconLibrary__option', 'Material Design')
     .click();
     cy.getByTestId('ModalDialog_Button')
-    .find('div[id^="iconLeft-uid"]').click();
+    .find('div[id^="leftIcon/icon-uid"]').click();
     cy.contains('Cube').click({force: true});
 
     cy.getByTestId('ModalDialog_Button')
@@ -115,21 +115,17 @@ describe('Button component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/bulma-tests/pages/button/jcr:content/pagecontainer/button.json'
+        '/content/bulma-tests/pages/button/jcr:content/pagecontainer/button.infinity.json'
     )
     .its('body')
     .should('deep.eq',
         {
           'jcr:primaryType': 'nt:unstructured',
           'showIconRight': 'false',
-          'iconSizeLeft': '',
           'showIconLeft': 'true',
-          'iconLeft': 'mdi-cube-outline',
           'isOutlined': 'true',
           'isDisabled': 'true',
-          'selectOrTypeLeft': 'select',
           'isFullWidth': 'true',
-          'iconLibTypeLeft': 'mdi',
           'isInverted': 'false',
           'size': 'is-medium',
           'type': 'button',
@@ -139,7 +135,13 @@ describe('Button component', function () {
           'modalId': 'Modal ID',
           'sling:resourceType': 'bulma/components/button',
           'actionType': 'open-modal',
-          'isLight': 'true'
+          'isLight': 'true',
+          'leftIcon': {
+              'jcr:primaryType': 'nt:unstructured',
+              'iconLibType': 'mdi',
+              'icon': 'mdi-cube-outline',
+              'selectOrType': 'select'
+          }
         });
   });
 
@@ -195,10 +197,8 @@ describe('Button component', function () {
           'isFullWidth': 'false',
           'isInverted': 'false',
           'url': '/content',
-          'size': 'is-small',
           'type': 'a',
           'label': 'Label',
-          'variant': '',
           'isRounded': 'false',
           'sling:resourceType': 'bulma/components/button',
           'openInNewTab': 'true',

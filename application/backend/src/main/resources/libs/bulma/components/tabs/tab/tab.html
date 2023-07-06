@@ -24,12 +24,12 @@
                     <ul>
                         <sly data-sly-list="${parent.children}">
                             <sly data-sly-test="${item.resourceType == 'bulma/components/tabs/tab'}">
-                                <li class="${model.label == item.label ? 'is-active' : ''}"
+                                <sly data-sly-test.isCurrent="${model.label == item.label}"></sly>
+                                <li class="${isCurrent ? 'is-active' : ''}"
                                     data-target="${item.label}">
                                     <a>
-                                        <sly data-sly-test="${item.addIcon && item.icon}">
-                                                <span class="icon ${item.containerSize}"><i class="${item.iconLibType} ${item.iconSize} ${item.icon}"
-                                                                               aria-hidden="true"></i></span>
+                                        <sly data-sly-test="${item.addIcon && item.icon && isCurrent}">
+                                            <sly data-sly-resource="${resource @ resourceType = 'bulma/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
                                         </sly>
                                         <span>${item.label}</span>
                                     </a>
@@ -59,7 +59,7 @@
         <li data-target="${resource.path}">
             <a>
                 <sly data-sly-test="${model.addIcon && model.icon}">
-                    <span class="icon ${model.containerSize}"><i class="${model.iconLibType} ${model.iconSize} ${model.icon}" aria-hidden="true"></i></span>
+                    <sly data-sly-resource="${resource @ resourceType = 'bulma/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
                 </sly>
                 <span>${model.label}</span>
             </a>

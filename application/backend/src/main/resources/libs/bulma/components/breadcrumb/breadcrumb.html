@@ -18,27 +18,17 @@
 
 <sly data-sly-use.model="pl.ds.bulma.components.models.BreadcrumbComponent">
   <nav class="breadcrumb  ${model.classes @ join=' '}" aria-label="breadcrumbs">
-    <ul>
-      <sly data-sly-list.element="${model.elements}">
-        <li>
-          <a href="${element.url}">
-            <sly data-sly-test="${element.icon}">
-                        <span class="icon ${model.size ? model.size : 'is-small'}">
-                             <i class="fas ${element.icon}" aria-hidden="true"></i>
-                         </span>
-            </sly>
-            <span>${element.label}</span>
-          </a>
-        </li>
-      </sly>
-      <sly data-sly-test="${!model.elements}">
-        <li>
-          <a href="#">
-            <span>Test</span>
-          </a>
-        </li>
-      </sly>
-    </ul>
+    <sly data-sly-test="${resource.hasChildren}">
+      <nav class="breadcrumb  ${model.classes @ join=' '}" aria-label="breadcrumbs">
+        <ul>
+          <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+        </ul>
+      </nav>
+    </sly>
+    <sly data-sly-test="${!resource.hasChildren}">
+      <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
+           data-sly-call="${lib.placeholder @ classes='breadcrumb'}"></sly>
+    </sly>
   </nav>
   <!--    Add functionality to add active class to selected element-->
 </sly>
