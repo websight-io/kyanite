@@ -33,25 +33,20 @@ import pl.ds.bulma.components.services.ColorService;
 public class ContentComponent {
 
   private static final String DEFAULT_TEXT = "Content";
-  public static final String TEXT_WEIGHT_DEFAULT = "has-text-weight-normal";
 
   @Inject
   @Getter
-  @Default(values = DEFAULT_TEXT)
   private String text;
 
   @Inject
   @Getter
-  @Default(values = StringUtils.EMPTY)
   private String size;
 
   @Inject
   @Getter
-  @Default(values = TEXT_WEIGHT_DEFAULT)
   private String textWeight;
 
   @Inject
-  @Default(values = "grey_has-text-grey")
   private String color;
 
   @SlingObject

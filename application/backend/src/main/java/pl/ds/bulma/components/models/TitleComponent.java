@@ -23,7 +23,6 @@ import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Required;
@@ -37,31 +36,26 @@ public class TitleComponent {
 
   @Inject
   @Getter
-  @Default(values = "Title")
   private String text;
 
   @Inject
-  @Default(values = "Subtitle")
+  @Getter
   private String subtitle;
 
   @Inject
   @Getter
-  @Default(values = "h2")
   private String element;
 
   @Inject
   @Getter
-  @Default(booleanValues = false)
   private boolean isSpaced;
 
   @Inject
   @Getter
-  @Default(booleanValues = false)
   private boolean addSubtitle;
 
   @Inject
   @Getter
-  @Default(values = StringUtils.EMPTY)
   private String size;
 
   @Inject
@@ -73,16 +67,13 @@ public class TitleComponent {
   private String[] subtitleClasses;
 
   @Inject
-  @Default(values = "bw_has-text-black")
   private String color;
 
   @Inject
-  @Default(values = "bw_has-text-black")
   private String subtitleColor;
 
   @Inject
   @Getter
-  @Default(values = "")
   private String anchorId;
 
   @OSGiService
@@ -119,8 +110,4 @@ public class TitleComponent {
     subtitleClasses = subtitleClassList.toArray(new String[]{});
   }
 
-
-  public String getSubtitle() {
-    return addSubtitle ? subtitle : "";
-  }
 }

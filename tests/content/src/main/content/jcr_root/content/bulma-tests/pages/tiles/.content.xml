@@ -119,11 +119,13 @@
               element="h2"
               sling:resourceType="bulma/components/title"
               text="Title"
+              color="grey_has-text-grey"
               type="title"/>
             <content
               jcr:primaryType="nt:unstructured"
               size="is-medium"
               sling:resourceType="bulma/components/content"
+              color="grey_has-text-grey"
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam. Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor."/>
           </tile1>
         </tile2>
