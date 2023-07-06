@@ -21,11 +21,12 @@
   <parent>
     <groupId>pl.ds.bulma</groupId>
     <artifactId>bulma-application</artifactId>
-    <version>1.3.9-SNAPSHOT</version>
+    <version>1.4.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>bulma-backend</artifactId>
+  <version>1.4.0-SNAPSHOT</version>
   <name>Bulma Components Project - Backend</name>
   <description>Contains application backend.</description>
 
