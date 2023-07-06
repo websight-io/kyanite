@@ -37,6 +37,9 @@ public class ColorService {
 
 
   public String getShadeClass(Resource resource, String color, String propertyName) {
+    if (Objects.isNull(color)) {
+      return StringUtils.EMPTY;
+    }
     String shade = this.getShadeByColor(resource, color, propertyName);
     Map<String, List<String>> colorShadeMapping = this.getColorShadeMapping(resource);
 
