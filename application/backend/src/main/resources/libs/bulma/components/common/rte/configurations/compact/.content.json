@@ -9,6 +9,13 @@
     "plugin": {
       "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color"
     },
+    "colorsObject": {
+      "has-text-primary": "#00d1b2",
+      "has-text-dark": "#363636",
+      "has-text-light": "#f5f5f5",
+      "has-text-black": "#000000",
+      "has-text-white": "#ffffff"
+    },
     "sling:orderBefore": "bulletlist"
   },
   "code": {
