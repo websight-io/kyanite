@@ -61,17 +61,17 @@ class TitleComponentTest {
     TitleComponent model = context.resourceResolver().getResource(PATH + "/complex")
         .adaptTo(TitleComponent.class);
     assertThat(model).isNotNull();
-    assertThat(model.getText()).isEqualTo("Title");
-    assertThat(model.getSubtitle()).isEqualTo("Subtitle");
-    assertThat(model.getElement()).isEqualTo("h2");
-    assertThat(model.isSpaced()).isFalse();
-    assertThat(model.isAddSubtitle()).isFalse();
+    assertThat(model.getText()).isEqualTo("Nice title");
+    assertThat(model.getSubtitle()).isEqualTo("Nice subtitle");
+    assertThat(model.getElement()).isEqualTo("p");
+    assertThat(model.isSpaced()).isTrue();
+    assertThat(model.isAddSubtitle()).isTrue();
     assertThat(model.getSize()).isEqualTo("is-2");
 
-    assertThat(model.getAnchorId()).isEqualTo("");
+    assertThat(model.getAnchorId()).isEqualTo("anchorId");
 
-    assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("title", "is-2", "is-spaced");
-    assertThat(model.getSubtitleClasses()).containsExactlyInAnyOrder("subtitle", "is-4");
+    assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("title", "is-2", "is-spaced", "has-text-black-ter");
+    assertThat(model.getSubtitleClasses()).containsExactlyInAnyOrder("subtitle", "is-4", "has-text-grey-lighter");
   }
 
   @Test

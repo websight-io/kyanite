@@ -18,8 +18,9 @@ import RestClient from 'restclient';
 
 function findTable(component) {
   while (component.parent) {
-    if (component.domNodes[0].tagName === 'TABLE')
+    if (component.domNodes[0].tagName === 'TABLE') {
       return component;
+    }
     component = component.parent;
   }
   return null;
