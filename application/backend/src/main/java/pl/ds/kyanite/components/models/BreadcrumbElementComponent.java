@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2022 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import pl.ds.kyanite.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
@@ -43,6 +44,11 @@ public class BreadcrumbElementComponent {
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String icon;
+
+  @ValueMapValue
+  @Getter
+  private boolean addIcon;
+
 
   @SlingObject
   private Resource resource;

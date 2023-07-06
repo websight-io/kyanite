@@ -1,0 +1,88 @@
+{
+  "bw": {
+    "sling:resourceType": "wcm/dialogs/components/select",
+    "name": "shade",
+    "label": "Shade",
+    "primary": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Primary",
+      "value": ""
+    },
+    "secondary": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Secondary",
+      "value": "bis"
+    },
+    "tertiary": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Tertiary",
+      "value": "ter"
+    }
+  },
+  "grey": {
+    "sling:resourceType": "wcm/dialogs/components/select",
+    "name": "shade",
+    "label": "Shade",
+    "default": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Default",
+      "value": "",
+      "selected": true
+    },
+    "light": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Light",
+      "value": "light"
+    },
+    "lighter": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Lighter",
+      "value": "lighter"
+    },
+    "dark": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Dark",
+      "value": "dark"
+    },
+    "darker": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Darker",
+      "value": "darker"
+    }
+  },
+  "rest": {
+    "sling:resourceType": "wcm/dialogs/components/select",
+    "name": "shade",
+    "label": "Shade",
+    "default": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Default",
+      "value": ""
+    },
+    "light": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Light",
+      "value": "light"
+    },
+    "dark": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Dark",
+      "value": "dark"
+    }
+  },
+  "new": {
+    "sling:resourceType": "wcm/dialogs/components/select",
+    "name": "shade",
+    "label": "Shade",
+    "test": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "test",
+      "value": "test"
+    },
+    "test1": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "test1",
+      "value": "test1"
+    }
+  }
+}

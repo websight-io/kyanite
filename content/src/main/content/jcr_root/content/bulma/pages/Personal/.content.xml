@@ -227,7 +227,7 @@
                                 sling:resourceType="kyanite/components/image"
                                 alt="\0"
                                 isRounded="false"
-                                src="/content/bulma/assets/images/personal/AboutMe.png"
+                                src="/content/kyanite/assets/images/personal/AboutMe.png"
                                 type="fixed"/>
                         </column2>
                         <column
@@ -484,7 +484,7 @@
                                                     sling:resourceType="kyanite/components/image"
                                                     alt="\0"
                                                     isRounded="false"
-                                                    src="/content/bulma/assets/images/personal/PortfolioAdmin.png"
+                                                    src="/content/kyanite/assets/images/personal/PortfolioAdmin.png"
                                                     type="fixed"/>
                                             </cardcontent>
                                         </card>
@@ -545,7 +545,7 @@
                                                     sling:resourceType="kyanite/components/image"
                                                     alt="\0"
                                                     isRounded="false"
-                                                    src="/content/bulma/assets/images/personal/PortfolioCards.png"
+                                                    src="/content/kyanite/assets/images/personal/PortfolioCards.png"
                                                     type="fixed"/>
                                             </cardcontent>
                                         </card>
@@ -606,7 +606,7 @@
                                                     sling:resourceType="kyanite/components/image"
                                                     alt="\0"
                                                     isRounded="false"
-                                                    src="/content/bulma/assets/images/personal/PortfolioForum.png"
+                                                    src="/content/kyanite/assets/images/personal/PortfolioForum.png"
                                                     type="fixed"/>
                                             </cardcontent>
                                         </card>
@@ -680,7 +680,7 @@
                                                     sling:resourceType="kyanite/components/image"
                                                     alt="\0"
                                                     isRounded="false"
-                                                    src="/content/bulma/assets/images/personal/PortfolioBand.png"
+                                                    src="/content/kyanite/assets/images/personal/PortfolioBand.png"
                                                     type="fixed"/>
                                             </cardcontent>
                                         </card>
@@ -741,7 +741,7 @@
                                                     sling:resourceType="kyanite/components/image"
                                                     alt="\0"
                                                     isRounded="false"
-                                                    src="/content/bulma/assets/images/personal/PortfolioCheatsheet.png"
+                                                    src="/content/kyanite/assets/images/personal/PortfolioCheatsheet.png"
                                                     type="fixed"/>
                                             </cardcontent>
                                         </card>
@@ -802,7 +802,7 @@
                                                     sling:resourceType="kyanite/components/image"
                                                     alt="\0"
                                                     isRounded="false"
-                                                    src="/content/bulma/assets/images/personal/PortfolioHero.png"
+                                                    src="/content/kyanite/assets/images/personal/PortfolioHero.png"
                                                     type="fixed"/>
                                             </cardcontent>
                                         </card>
@@ -876,7 +876,7 @@
                                                     sling:resourceType="kyanite/components/image"
                                                     alt="\0"
                                                     isRounded="false"
-                                                    src="/content/bulma/assets/images/personal/PortfolioBlog.png"
+                                                    src="/content/kyanite/assets/images/personal/PortfolioBlog.png"
                                                     type="fixed"/>
                                             </cardcontent>
                                         </card>

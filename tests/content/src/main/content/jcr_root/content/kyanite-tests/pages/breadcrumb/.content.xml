@@ -12,7 +12,12 @@
       sling:resourceType="kyanite/components/pagecontainer">
       <breadcrumb
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="kyanite/components/breadcrumb"/>
+        sling:resourceType="kyanite/components/breadcrumb">
+        <breadcrumbitem
+          jcr:primaryType="nt:unstructured"
+          label="Label"
+          sling:resourceType="kyanite/components/breadcrumb/breadcrumbitem"/>
+      </breadcrumb>
     </pagecontainer>
   </jcr:content>
 </jcr:root>

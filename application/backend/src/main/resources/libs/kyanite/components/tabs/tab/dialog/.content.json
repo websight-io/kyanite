@@ -18,8 +18,13 @@
       "iconContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
         "iconLibType": {
-          "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "kyanite/components/common/icon/libs"
+          "sling:resourceType": "wcm/dialogs/components/select",
+          "name": "iconLibType",
+          "label": "Icon Library",
+          "required": true,
+          "datasource": {
+            "sling:resourceType": "/apps/iconLibraryDatasource"
+          }
         },
         "selectOrType": {
           "sling:resourceType": "wcm/dialogs/components/radio",

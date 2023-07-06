@@ -1,0 +1,14 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "hidden": true,
+  "addText": "true",
+  "iconSize": "mdi-36px",
+  "textVariant": "has-text-primary",
+  "iconLibType": "mdi",
+  "icon": "mdi-home-outline",
+  "label": "Icon Text",
+  "elementType": "span",
+  "colorOnText": "true",
+  "sling:resourceType": "kyanite/components/icon",
+  "selectOrType": "select"
+}

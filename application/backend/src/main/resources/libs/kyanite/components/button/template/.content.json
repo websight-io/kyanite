@@ -5,14 +5,20 @@
   "actionType": "",
   "variant": "is-primary",
   "openModal": "open-modal",
-  "selectOrTypeLeft": "select",
-  "selectOrTypeRight": "select",
-  "iconLibTypeLeft": "mdi",
-  "iconLibTypeRight": "mdi",
-  "iconLeft": "mdi-home-outline",
-  "iconRight": "mdi-home-outline",
-  "iconSizeLeft": "fa-lg",
-  "iconSizeRight": "fa-lg",
+  "showIconLeft": false,
+  "showIconRight": false,
+  "leftIcon": {
+    "selectOrType": "select",
+    "iconLibType": "mdi",
+    "icon": "mdi-home-outline",
+    "iconSize": "fa-lg"
+  },
+  "rightIcon": {
+    "selectOrType": "select",
+    "iconLibType": "mdi",
+    "icon": "mdi-home-outline",
+    "iconSize": "fa-lg"
+  },
   "isInverted": "false",
   "isOutlined": "false",
   "isDisabled": "false",

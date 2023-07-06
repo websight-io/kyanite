@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2022 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,16 +20,16 @@ import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIO
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import pl.ds.kyanite.components.helpers.IconContainerService;
 import pl.ds.kyanite.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
@@ -46,41 +46,7 @@ public class ButtonComponent {
 
   @Inject
   @Getter
-  @Default(values = "mdi")
-  private String iconLibTypeLeft;
-
-  @Inject
-  @Getter
-  private String iconLeft;
-
-  @Inject
-  @Getter
-  @Default(values = "mdi-36px")
-  private String iconSizeLeft;
-
-  @Getter
-  private String iconContainerSizeLeft;
-
-  @Inject
-  @Getter
   private boolean showIconRight;
-
-  @Inject
-  @Getter
-  @Default(values = "mdi")
-  private String iconLibTypeRight;
-
-  @Inject
-  @Getter
-  private String iconRight;
-
-  @Inject
-  @Getter
-  @Default(values = "mdi-36px")
-  private String iconSizeRight;
-
-  @Getter
-  private String iconContainerSizeRight;
 
   @Inject
   @Getter
@@ -95,6 +61,12 @@ public class ButtonComponent {
   @Inject
   @Getter
   private String size;
+
+  @ChildResource
+  private Resource leftIcon;
+
+  @ChildResource
+  private Resource rightIcon;
 
   @Inject
   private boolean isLight;
@@ -162,17 +134,14 @@ public class ButtonComponent {
       classes.add("is-fullwidth");
     }
     buttonClasses = classes.toArray(new String[]{});
+  }
 
-    IconContainerService iconContainerService = new IconContainerService(resource);
-    String mappingPath
-            = "kyanite/components/common/icon/containersize/defaultsizemappings";
+  public boolean hasLeftIcon() {
+    return Objects.nonNull(leftIcon);
+  }
 
-    this.iconContainerSizeLeft
-            = iconContainerService.calculateContainerSize(this.iconLibTypeLeft,
-            mappingPath, this.iconSizeLeft);
-    this.iconContainerSizeRight
-            = iconContainerService.calculateContainerSize(this.iconLibTypeRight,
-            mappingPath, this.iconSizeRight);
+  public boolean hasRightIcon() {
+    return Objects.nonNull(rightIcon);
   }
 
   public String getUrl() {

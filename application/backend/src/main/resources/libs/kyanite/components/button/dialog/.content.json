@@ -94,17 +94,17 @@
       "iconLeftContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
         "iconLibType": {
-          "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "kyanite/components/common/icon/libs",
-          "include": {
-            "sling:resourceSuperType": "kyanite/components/common/icon/libs",
-            "name": "iconLibTypeLeft",
-            "label": "Left Icon Library"
+          "sling:resourceType": "wcm/dialogs/components/select",
+          "name": "leftIcon/iconLibType",
+          "label": "Left Icon Library",
+          "required": true,
+          "datasource": {
+            "sling:resourceType": "/apps/iconLibraryDatasource"
           }
         },
         "selectOrTypeLeft": {
           "sling:resourceType": "wcm/dialogs/components/radio",
-          "name": "selectOrTypeLeft",
+          "name": "leftIcon/selectOrType",
           "label": "Select icon or type it",
           "required": true,
           "select": {
@@ -123,12 +123,12 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "iconLeft": {
             "sling:resourceType": "wcm/dialogs/components/textfield",
-            "name": "iconLeft",
+            "name": "leftIcon/icon",
             "label": "Name of the left icon"
           },
           "ws:display": {
             "condition": {
-              "sourceName": "selectOrTypeLeft",
+              "sourceName": "leftIcon/selectOrType",
               "values": "type"
             }
           }
@@ -139,12 +139,12 @@
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
               "sling:resourceSuperType": "kyanite/components/common/icon/icons/fontawesome",
-              "name": "iconLeft",
+              "name": "leftIcon/icon",
               "label": "Left icon"
             },
             "ws:display": {
               "condition": {
-                "sourceName": "selectOrTypeLeft",
+                "sourceName": "leftIcon/selectOrType",
                 "values": "select"
               }
             }
@@ -153,13 +153,13 @@
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
               "sling:resourceSuperType": "kyanite/components/common/icon/iconsize/fontawesome",
-              "name": "iconSizeLeft",
+              "name": "leftIcon/iconSize",
               "label": "Left icon size"
             }
           },
           "ws:display": {
             "condition": {
-              "sourceName": "iconLibTypeLeft",
+              "sourceName": "leftIcon/iconLibType",
               "values": "fas"
             }
           }
@@ -170,12 +170,12 @@
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
               "sling:resourceSuperType": "kyanite/components/common/icon/icons/materialdesign",
-              "name": "iconLeft",
+              "name": "leftIcon/icon",
               "label": "Left icon"
             },
             "ws:display": {
               "condition": {
-                "sourceName": "selectOrTypeLeft",
+                "sourceName": "leftIcon/selectOrType",
                 "values": "select"
               }
             }
@@ -184,13 +184,13 @@
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
               "sling:resourceSuperType": "kyanite/components/common/icon/iconsize/materialdesign",
-              "name": "iconSizeLeft",
+              "name": "leftIcon/iconSize",
               "label": "Left icon size"
             }
           },
           "ws:display": {
             "condition": {
-              "sourceName": "iconLibTypeLeft",
+              "sourceName": "leftIcon/iconLibType",
               "values": "mdi"
             }
           }
@@ -210,17 +210,17 @@
       "iconRightContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
         "iconLibType": {
-          "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "kyanite/components/common/icon/libs",
-          "include": {
-            "sling:resourceSuperType": "kyanite/components/common/icon/libs",
-            "name": "iconLibTypeRight",
-            "label": "Right Icon Library"
+          "sling:resourceType": "wcm/dialogs/components/select",
+          "name": "rightIcon/iconLibType",
+          "label": "Right Icon Library",
+          "required": true,
+          "datasource": {
+            "sling:resourceType": "/apps/iconLibraryDatasource"
           }
         },
         "selectOrTypeRight": {
           "sling:resourceType": "wcm/dialogs/components/radio",
-          "name": "selectOrTypeRight",
+          "name": "rightIcon/selectOrType",
           "label": "Select icon or type it",
           "required": true,
           "select": {
@@ -239,12 +239,12 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "iconRight": {
             "sling:resourceType": "wcm/dialogs/components/textfield",
-            "name": "iconRight",
+            "name": "rightIcon/icon",
             "label": "Name of the right icon"
           },
           "ws:display": {
             "condition": {
-              "sourceName": "selectOrTypeRight",
+              "sourceName": "rightIcon/selectOrType",
               "values": "type"
             }
           }
@@ -255,12 +255,12 @@
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
               "sling:resourceSuperType": "kyanite/components/common/icon/icons/fontawesome",
-              "name": "iconRight",
+              "name": "rightIcon/icon",
               "label": "Right icon"
             },
             "ws:display": {
               "condition": {
-                "sourceName": "selectOrTypeRight",
+                "sourceName": "rightIcon/selectOrType",
                 "values": "select"
               }
             }
@@ -269,13 +269,13 @@
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
               "sling:resourceSuperType": "kyanite/components/common/icon/iconsize/fontawesome",
-              "name": "iconSizeRight",
+              "name": "rightIcon/iconSize",
               "label": "Right icon size"
             }
           },
           "ws:display": {
             "condition": {
-              "sourceName": "iconLibTypeRight",
+              "sourceName": "rightIcon/iconLibType",
               "values": "fas"
             }
           }
@@ -286,12 +286,12 @@
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
               "sling:resourceSuperType": "kyanite/components/common/icon/icons/materialdesign",
-              "name": "iconRight",
+              "name": "rightIcon/icon",
               "label": "Right icon"
             },
             "ws:display": {
               "condition": {
-                "sourceName": "selectOrTypeRight",
+                "sourceName": "rightIcon/selectOrType",
                 "values": "select"
               }
             }
@@ -300,13 +300,13 @@
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
               "sling:resourceSuperType": "kyanite/components/common/icon/iconsize/materialdesign",
-              "name": "iconSizeRight",
+              "name": "rightIcon/iconSize",
               "label": "Right icon size"
             }
           },
           "ws:display": {
             "condition": {
-              "sourceName": "iconLibTypeRight",
+              "sourceName": "rightIcon/iconLibType",
               "values": "mdi"
             }
           }

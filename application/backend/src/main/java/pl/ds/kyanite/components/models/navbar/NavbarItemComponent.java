@@ -62,6 +62,11 @@ public class NavbarItemComponent {
 
   @Inject
   @Getter
+  private boolean addIcon;
+
+  @Inject
+  @Getter
+  @Default(values = "mdi-home-outline")
   private String icon;
 
   public String getUrl() {

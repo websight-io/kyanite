@@ -51,7 +51,7 @@ describe('Card component', function () {
       .findByTestId('Input_Alttext').clear().type('Alt text');
     cy.getByTestId('ModalDialog_Card')
       .findByTestId('Input_Usethisifyouwantalinktoimagefromweb')
-        .clear().type('/content/bulma/assets/images/personal/PortfolioForum.png');
+        .clear().type('/content/kyanite-tests/assets/images/personal/PortfolioForum.png');
     cy.getByTestId('ModalDialog_Card')
       .find('div[class^="Input_Imageratio__control"]').click();
     cy.contains('16 by 9').click({ force: true });
@@ -81,7 +81,7 @@ describe('Card component', function () {
       },
       'image': {
         alt: 'Alt text',
-        src: '/content/bulma/assets/images/personal/PortfolioForum.png',
+        src: '/content/kyanite-tests/assets/images/personal/PortfolioForum.png',
         style: 'is-16by9',
         'jcr:primaryType': 'nt:unstructured',
       },

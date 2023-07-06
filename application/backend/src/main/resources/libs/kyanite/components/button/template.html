@@ -13,16 +13,12 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 */-->
-<template data-sly-template.buttonContent="${ @ label, showIconLeft, iconLibTypeLeft, iconLeft, iconSizeLeft, iconContainerSizeLeft, showIconRight, iconLibTypeRight, iconRight, iconSizeRight, iconContainerSizeRight}">
-    <sly data-sly-test="${showIconLeft && iconLeft}">
-          <span class="icon ${iconContainerSizeLeft}">
-            <i class="${iconLibTypeLeft} ${iconSizeLeft} ${iconLeft}"></i>
-          </span>
+<template data-sly-template.buttonContent="${ @ model}">
+    <sly data-sly-test="${model.showIconLeft && model.hasLeftIcon}">
+        <sly data-sly-resource="${'leftIcon' @ resourceType = 'kyanite/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
     </sly>
-    <span data-sly-unwrap="${label == ''}">${label}</span>
-    <sly data-sly-test="${showIconright && iconRight}">
-          <span class="icon ${iconContainerSizeRight}">
-            <i class="${iconLibTypeRight} ${iconSizeRight} ${iconRight}"></i>
-          </span>
+    <span data-sly-unwrap="${model.label == ''}">${model.label}</span>
+    <sly data-sly-test="${model.showIconRight && model.hasRightIcon}">
+        <sly data-sly-resource="${'rightIcon' @ resourceType = 'kyanite/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
     </sly>
 </template>

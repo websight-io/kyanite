@@ -7,5 +7,6 @@
   "iconLibType": "mdi",
   "iconSize": "mdi-36px",
   "selectOrType": "select",
+  "hidden": true,
   "textVariant": ""
 }

@@ -15,17 +15,15 @@
   ~     limitations under the License.
   ~
 */-->
-<template data-sly-template.navbar="${ @ model}">
-  <sly data-sly-set.classes="navbar ${model.navbarStyle}"></sly>
-  <sly data-sly-test="${resource.hasChildren}">
-    <nav class="${classes}" role="navigation" aria-label="main navigation">
-      <div class="container ${model.containerStyle}">
-        <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-      </div>
-    </nav>
-  </sly>
-  <sly data-sly-test="${!resource.hasChildren}">
-    <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
-         data-sly-call="${lib.placeholder @ classes=classes}"></sly>
-  </sly>
-</template>
+
+<sly data-sly-use.model="pl.ds.kyanite.components.models.BreadcrumbElementComponent">
+  <li>
+    <a href="${model.url}">
+      <sly data-sly-test="${model.addIcon && model.icon}">
+        <sly data-sly-resource="${resource @ resourceType = 'kyanite/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
+      </sly>
+      <span>${model.label}</span>
+    </a>
+  </li>
+  <!--    Add functionality to add active class to selected element-->
+</sly>

@@ -1,6 +1,10 @@
 {
   "jcr:primaryType": "nt:unstructured",
-  "alignment": "",
-  "separator": "",
-  "size": "is-medium"
+  "breadcrumbitem": {
+    "sling:resourceType": "kyanite/components/breadcrumb/breadcrumbitem",
+    "url": "",
+    "label": "Label",
+    "addIcon": false,
+    "icon": "mdi-home-outline"
+  }
 }

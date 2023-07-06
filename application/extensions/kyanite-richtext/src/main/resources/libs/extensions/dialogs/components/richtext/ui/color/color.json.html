@@ -15,17 +15,19 @@
   ~     limitations under the License.
   ~
 */-->
-
+<sly data-sly-use.model="pl.ds.kyanite.rte.components.models.RteConfiguration">
 {
     "type": "/libs/kyanite-richtext/web-resources/components/richtext/ui/ColorDialog.js",
     "configuration": {
         "title": "${properties.title}",
         "icon": "${properties.icon}",
-        "colors": "${properties.colors}"
+        "colors": "${properties.colors}",
+        "colorsObject": ${model.colors @ context ='unsafe'}
     }
     <sly data-sly-list="${resource.children}">
-        <sly data-sly-test="itemList.first">,
+        <sly data-sly-test="${item.name == 'plugin'}">,
             "plugin": <sly data-sly-resource="${item}"></sly>
         </sly>
     </sly>
 }
+</sly>

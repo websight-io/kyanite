@@ -19,11 +19,9 @@
 <sly data-sly-use.model="pl.ds.kyanite.components.models.navbar.NavbarItemComponent">
   <sly data-sly-test="${model.type == 'link'}">
     <a class="navbar-item" href="${model.url}">
-      <sly data-sly-test="${model.icon && model.icon != 'none'}">
-        <span class="icon">
-          <i class="${model.icon}"></i>
-        </span>
-      </sly>
+        <sly data-sly-test="${model.addIcon && model.icon}">
+          <sly data-sly-resource="${resource @ resourceType = 'kyanite/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
+        </sly>
       <span>${model.label}</span>
     </a>
   </sly>

@@ -37,7 +37,8 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "intensity": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/components/common/text/shade/bw"
+            "path": "kyanite/components/common/text/shade/bw",
+            "namespace": "bw"
           },
           "ws:display": {
             "condition": {
@@ -53,7 +54,8 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "intensity": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/components/common/text/shade/grey"
+            "path": "kyanite/components/common/text/shade/grey",
+            "namespace": "grey"
           },
           "ws:display": {
             "condition": {
@@ -68,7 +70,8 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "intensity": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/components/common/text/shade/rest"
+            "path": "kyanite/components/common/text/shade/rest",
+            "namespace": "rest"
           },
           "ws:display": {
             "condition": {
@@ -132,7 +135,7 @@
               "include": {
                 "sling:resourceSuperType": "kyanite/components/common/text/shade/bw",
                 "label": "Subtitle shade",
-                "name": "subtitleShadeBw"
+                "name": "bw/subtitleShade"
               },
               "ws:display": {
                 "condition": {
@@ -151,7 +154,7 @@
                 "include": {
                   "sling:resourceSuperType": "kyanite/components/common/text/shade/grey",
                   "label": "Subtitle shade",
-                  "name": "subtitleShadeGrey"
+                  "name": "grey/subtitleShade"
                 }
               },
               "ws:display": {
@@ -170,7 +173,7 @@
                 "include": {
                   "sling:resourceSuperType": "kyanite/components/common/text/shade/rest",
                   "label": "Subtitle shade",
-                  "name": "subtitleShadeRest"
+                  "name": "rest/subtitleShade"
                 }
               },
               "ws:display": {

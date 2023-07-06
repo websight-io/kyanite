@@ -70,7 +70,7 @@
         <configuration>
           <title>Bulma Table Service API</title>
           <actionPackages>
-            <param>pl.ds.bulma.rest</param>
+            <param>pl.ds.kyanite.rest</param>
           </actionPackages>
         </configuration>
       </plugin>

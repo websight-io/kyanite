@@ -53,11 +53,6 @@ describe('Breadcrumb component', function () {
     cy.getByTestId('ModalDialog_Breadcrumb')
       .findByTestId('RadioElement_is-right').click();
 
-    cy.getByTestId('ModalDialog_Breadcrumb')
-      .findByTestId('Button_Multifield_Add').click({ force: true });
-    cy.getByTestId('ModalDialog_Breadcrumb')
-      .findByTestId('Input_elements/0/label').clear().type('Label');
-
     cy.getByTestId(testIds.dialogSubmitButton).click();
 
     cy.wait('@saveProperties');
@@ -72,13 +67,10 @@ describe('Breadcrumb component', function () {
       'sling:resourceType': 'kyanite/components/breadcrumb',
       separator: 'has-bullet-separator',
       alignment: 'is-right',
-      'elements': {
+      'breadcrumbitem': {
         'jcr:primaryType':'nt:unstructured',
-        '0': {
-          'jcr:primaryType':'nt:unstructured',
-          icon: 'fa-home',
-          'label':'Label'
-        }
+        label: "Label",
+        'sling:resourceType': 'kyanite/components/breadcrumb/breadcrumbitem'
       }
     });
   });

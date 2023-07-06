@@ -1,6 +1,6 @@
 <!--/*
   ~
-  ~     Copyright (C) 2023 Dynamic Solutions
+  ~     Copyright (C) 2022 Dynamic Solutions
   ~
   ~     Licensed under the Apache License, Version 2.0 (the "License");
   ~     you may not use this file except in compliance with the License.
@@ -16,9 +16,9 @@
   ~
 */-->
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css"
-      integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0"
-      crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.materialdesignicons.com/7.2.96/css/materialdesignicons.min.css" crossorigin="anonymous">
+<sly data-sly-use.model="pl.ds.kyanite.components.models.PageModel"></sly>
+<sly data-sly-list="${model.iconLibraryConfigs}">
+  <sly data-sly-use.template="./icon-libs.html" data-sly-call="${template.iconLib @ item = item}"></sly>
+</sly>
 <link rel="stylesheet" href="/libs/kyanite/web_root/main.css" type="text/css">
 <link data-sly-test="${wcmmode.isEdit}" href="/libs/kyanite/author/author.css" rel="stylesheet" type="text/css">

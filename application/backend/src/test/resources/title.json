@@ -6,14 +6,51 @@
   "complex": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "kyanite/components/title",
-    "text": "Nice subtitle",
+    "text": "Nice title",
     "subtitle": "Nice subtitle",
     "addSubtitle": true,
     "element": "p",
     "anchorId": "anchorId",
     "size": "is-2",
-    "color": "has-text-black",
-    "shadeBw": "bis",
-    "isSpaced": true
+    "color": "bw_has-text-black",
+    "subtitleColor": "grey_has-text-grey",
+    "isSpaced": true,
+    "bw": {
+      "shade": "ter"
+    },
+    "grey": {
+      "subtitleShade": "lighter"
+    }
+  },
+  "complex1": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/components/title",
+    "text": "Nice title",
+    "subtitle": "Nice subtitle",
+    "addSubtitle": true,
+    "element": "p",
+    "anchorId": "anchorId",
+    "size": "is-4",
+    "color": "has-text-dark",
+    "subtitleColor": "has-text-light"
+  },
+  "newShade": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/components/title",
+    "text": "Nice title",
+    "subtitle": "Nice subtitle",
+    "addSubtitle": true,
+    "color": "new_has-text-black",
+    "subtitleColor": "new_has-text-grey",
+    "bw": {
+      "shade": "ter"
+    },
+    "grey": {
+      "subtitleShade": "lighter"
+    },
+    "new": {
+      "shade": "test",
+      "subtitleShade": "test1"
+    }
   }
 }
