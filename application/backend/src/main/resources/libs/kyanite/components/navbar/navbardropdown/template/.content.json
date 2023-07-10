@@ -1,4 +1,8 @@
 {
   "jcr:primaryType": "nt:unstructured",
-  "icon": "none"
+  "addIcon": false,
+  "selectOrType": "select",
+  "icon": "mdi-home-outline",
+  "iconLibType": "mdi",
+  "iconSize": "mdi-36px"
 }

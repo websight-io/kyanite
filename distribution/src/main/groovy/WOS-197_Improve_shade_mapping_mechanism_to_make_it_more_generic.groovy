@@ -31,7 +31,24 @@ def findTitleAndContentComponents(String rootPath) {
 
 def processColorShadeChanges(Resource res) {
     def vm = res.getValueMap()
-    if (vm['color']) {
+    def color = vm['color']
+    if (color == null && res.resourceType == 'bulma/components/content') {
+        color = "grey_has-text-grey"
+        addColorIfNotExist(res, 'color', color)
+    }
+    if (color == null && res.resourceType == 'bulma/components/title') {
+        color = "rest_has-text-grey"
+        addColorIfNotExist(res, 'color', color)
+    }
+    if (color != null && !(color.startsWith("grey_") || color.startsWith("rest_") || color.startsWith("bw_"))) {
+        if (res.resourceType == 'bulma/components/content' && color == "has-text-primary") {
+            changeColorIfNotExist(res, 'color', "rest_has-text-primary")
+        }
+        if (res.resourceType == 'bulma/components/title' && color == "has-text-black") {
+            changeColorIfNotExist(res, 'color', "")
+        }
+    }
+    if (color) {
         def shadeGrey = vm['shadeGrey']
         def shadeBw = vm['shadeBw']
         def shadeRest = vm['shadeRest']
@@ -42,7 +59,12 @@ def processColorShadeChanges(Resource res) {
         modifiableValueMap.remove('shadeGrey')
         modifiableValueMap.remove('shadeBw')
         modifiableValueMap.remove('shadeRest')
-        if (vm['subtitleColor']) {
+        def subtitleColor = vm['subtitleColor']
+        if (subtitleColor == null && res.resourceType == 'bulma/components/title') {
+            subtitleColor = "bw_has-text-black"
+            addColorIfNotExist(res, 'subtitleColor', subtitleColor)
+        }
+        if (subtitleColor) {
             def subtitleShadeGrey = vm['subtitleShadeGrey']
             def subtitleShadeBw = vm['subtitleShadeBw']
             def subtitleShadeRest = vm['subtitleShadeRest']
@@ -69,11 +91,38 @@ def changeShadeNode(resource, shadeValue) {
     }
 }
 
+def addColorIfNotExist(resource, colorPropertyName, colorValue) {
+    if(resource != null) {
+        def modifiableValueMap = resource.adaptTo(org.apache.sling.api.resource.ModifiableValueMap)
+        if (modifiableValueMap && colorValue) {
+            modifiableValueMap.put(colorPropertyName, colorValue)
+            println(" The default color was added path: " + resource.path)
+        }
+    }
+}
+
+def changeColorIfNotExist(resource, colorPropertyName, colorValue) {
+    if(resource != null) {
+        def modifiableValueMap = resource.adaptTo(org.apache.sling.api.resource.ModifiableValueMap)
+        if (modifiableValueMap) {
+            modifiableValueMap.replace(colorPropertyName, colorValue)
+            println(" The default color was changed to empty: " + resource.path)
+        }
+    }
+}
+
 def createShadeNode(resource, nodeName, shadeValue) {
     def res = null;
     def properties = ['jcr:primaryType': 'nt:unstructured']
     if (shadeValue) {
         properties = ['jcr:primaryType': 'nt:unstructured', 'shade': shadeValue]
+    }
+    if (resource.resourceType == 'bulma/components/content' && nodeName == 'grey' && shadeValue == null) {
+        properties = ['jcr:primaryType': 'nt:unstructured', 'shade': "darker"]
+    }
+
+    if (resource.resourceType == 'bulma/components/title' && nodeName == 'rest' && shadeValue == null) {
+        properties = ['jcr:primaryType': 'nt:unstructured', 'shade': "900"]
     }
 
     if (!resource.getChild(nodeName)) {

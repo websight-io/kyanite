@@ -47,6 +47,10 @@ public class NavbarDropdownComponent {
 
   @Inject
   @Getter
+  private boolean addIcon;
+
+  @Inject
+  @Getter
   private String icon;
 
   @Inject
