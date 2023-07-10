@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Copyright (C) 2022 Dynamic Solutions
+    Copyright (C) 2023 Dynamic Solutions
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -19,14 +19,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>pl.ds.bulma</groupId>
-    <artifactId>bulma-tests</artifactId>
-    <version>1.4.2-SNAPSHOT</version>
+    <groupId>pl.ds.kyanite</groupId>
+    <artifactId>kyanite-tests</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>bulma-tests-e2e</artifactId>
-  <name>Bulma Components Project - Tests: End to end</name>
+  <artifactId>kyanite-tests-e2e</artifactId>
+  <name>Kyanite Components Project - Tests: End to end</name>
   <description>Contains functional and visual tests for the project distribution.</description>
   <packaging>pom</packaging>
 
@@ -44,16 +44,16 @@
 
   <dependencies>
     <dependency>
-      <groupId>pl.ds.bulma</groupId>
-      <artifactId>bulma-distribution</artifactId>
-      <version>1.4.2-SNAPSHOT</version>
-      <classifier>websight-cms-bulma-project</classifier>
+      <groupId>pl.ds.kyanite</groupId>
+      <artifactId>kyanite-distribution</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <classifier>websight-cms-kyanite-project</classifier>
       <type>slingosgifeature</type>
     </dependency>
     <dependency>
-      <groupId>pl.ds.bulma</groupId>
-      <artifactId>bulma-tests-content</artifactId>
-      <version>1.4.2-SNAPSHOT</version>
+      <groupId>pl.ds.kyanite</groupId>
+      <artifactId>kyanite-tests-content</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
   </dependencies>
@@ -86,26 +86,26 @@
           </replacePropertyVariables>
           <aggregates>
             <aggregate>
-              <classifier>bulma-project-tests</classifier>
+              <classifier>kyanite-project-tests</classifier>
               <filesInclude>*.json</filesInclude>
-              <title>Bulma Components Project distribution with test data</title>
+              <title>Kyanite Components Project distribution with test data</title>
               <includeArtifact>
-                <groupId>pl.ds.bulma</groupId>
-                <artifactId>bulma-distribution</artifactId>
+                <groupId>pl.ds.kyanite</groupId>
+                <artifactId>kyanite-distribution</artifactId>
                 <version>${project.version}</version>
-                <classifier>websight-cms-bulma-project</classifier>
+                <classifier>websight-cms-kyanite-project</classifier>
                 <type>slingosgifeature</type>
               </includeArtifact>
             </aggregate>
           </aggregates>
           <scans>
             <scan>
-              <includeClassifier>bulma-project-tests</includeClassifier>
+              <includeClassifier>kyanite-project-tests</includeClassifier>
             </scan>
           </scans>
           <repositories>
             <repository>
-              <includeClassifier>bulma-project-tests</includeClassifier>
+              <includeClassifier>kyanite-project-tests</includeClassifier>
             </repository>
           </repositories>
           <outputDir>target</outputDir>
@@ -209,12 +209,12 @@
         <configuration>
           <launches>
             <launch>
-              <id>bulma-project-tests</id>
+              <id>kyanite-project-tests</id>
               <feature>
-                <groupId>pl.ds.bulma</groupId>
-                <artifactId>bulma-tests-e2e</artifactId>
+                <groupId>pl.ds.kyanite</groupId>
+                <artifactId>kyanite-tests-e2e</artifactId>
                 <version>${project.version}</version>
-                <classifier>bulma-project-tests</classifier>
+                <classifier>kyanite-project-tests</classifier>
                 <type>slingosgifeature</type>
               </feature>
               <launcherArguments>
@@ -315,25 +315,6 @@
                 <CYPRESS_baseUrl>http://localhost:${cms.port}</CYPRESS_baseUrl>
                 <CYPRESS_loginUsername>${websight.admin.username}</CYPRESS_loginUsername>
                 <CYPRESS_loginPassword>${websight.admin.password}</CYPRESS_loginPassword>
-                <TERM>xterm</TERM>
-                <CI>1</CI>
-              </environmentVariables>
-            </configuration>
-          </execution>
-          <execution>
-            <id>npx visual test</id>
-            <goals>
-              <goal>npx</goal>
-            </goals>
-            <phase>integration-test</phase>
-            <configuration>
-             <skip>${e2e.skip.visual}</skip>
-              <arguments>percy exec -- cypress run</arguments>
-              <environmentVariables>
-                <CYPRESS_baseUrl>http://localhost:${cms.port}</CYPRESS_baseUrl>
-                <CYPRESS_loginUsername>${websight.admin.username}</CYPRESS_loginUsername>
-                <CYPRESS_loginPassword>${websight.admin.password}</CYPRESS_loginPassword>
-                <PERCY_TOKEN>${env.BULMA_PERCY_TOKEN}</PERCY_TOKEN>
                 <TERM>xterm</TERM>
                 <CI>1</CI>
               </environmentVariables>

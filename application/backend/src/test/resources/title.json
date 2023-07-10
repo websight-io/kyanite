@@ -1,11 +1,11 @@
 {
   "default": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/title"
+    "sling:resourceType": "kyanite/components/title"
   },
   "complex": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/title",
+    "sling:resourceType": "kyanite/components/title",
     "text": "Nice title",
     "subtitle": "Nice subtitle",
     "addSubtitle": true,
@@ -24,7 +24,7 @@
   },
   "complex1": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/title",
+    "sling:resourceType": "kyanite/components/title",
     "text": "Nice title",
     "subtitle": "Nice subtitle",
     "addSubtitle": true,
@@ -36,7 +36,7 @@
   },
   "newShade": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/title",
+    "sling:resourceType": "kyanite/components/title",
     "text": "Nice title",
     "subtitle": "Nice subtitle",
     "addSubtitle": true,

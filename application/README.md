@@ -1,6 +1,6 @@
 ## Description:
 
-Module contains components logic for Bulma
+Module contains components logic for Kyanite
 
 ## Usage:
 

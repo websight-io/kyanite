@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Copyright (C) 2022 Dynamic Solutions
+    Copyright (C) 2023 Dynamic Solutions
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -19,13 +19,13 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>pl.ds.bulma</groupId>
-    <artifactId>bulma</artifactId>
-    <version>1.4.2-SNAPSHOT</version>
+    <groupId>pl.ds.kyanite</groupId>
+    <artifactId>kyanite</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <artifactId>bulma-distribution</artifactId>
-  <name>Bulma Components Project - Distribution</name>
+  <artifactId>kyanite-distribution</artifactId>
+  <name>Kyanite Components Project - Distribution</name>
   <description>Distribution module builds OSGi feature model and Docker Image for the projects running on WebSight.</description>
 
   <dependencies>
@@ -44,27 +44,27 @@
       <type>slingosgifeature</type>
     </dependency>
     <dependency>
-      <groupId>pl.ds.bulma</groupId>
-      <artifactId>bulma-backend</artifactId>
-      <version>1.4.2-SNAPSHOT</version>
+      <groupId>pl.ds.kyanite</groupId>
+      <artifactId>kyanite-backend</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
     <dependency>
-      <groupId>pl.ds.bulma</groupId>
-      <artifactId>bulma-frontend</artifactId>
-      <version>1.4.2-SNAPSHOT</version>
+      <groupId>pl.ds.kyanite</groupId>
+      <artifactId>kyanite-frontend</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
     <dependency>
-      <groupId>pl.ds.bulma</groupId>
-      <artifactId>bulma-table-view</artifactId>
-      <version>1.4.2-SNAPSHOT</version>
+      <groupId>pl.ds.kyanite</groupId>
+      <artifactId>kyanite-table-view</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
     <dependency>
-      <groupId>pl.ds.bulma</groupId>
-      <artifactId>bulma-richtext</artifactId>
-      <version>1.4.2-SNAPSHOT</version>
+      <groupId>pl.ds.kyanite</groupId>
+      <artifactId>kyanite-richtext</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
   </dependencies>
@@ -97,8 +97,8 @@
           </replacePropertyVariables>
           <aggregates>
             <aggregate>
-              <classifier>websight-cms-bulma-project</classifier>
-              <title>WebSight CMS with Bulma Components Project project</title>
+              <classifier>websight-cms-kyanite-project</classifier>
+              <title>WebSight CMS with Kyanite Components Project project</title>
               <filesInclude>*.json</filesInclude>
               <includeArtifact>
                 <groupId>pl.ds.websight</groupId>
@@ -118,12 +118,12 @@
           </aggregates>
           <scans>
             <scan>
-              <includeClassifier>websight-cms-bulma-project</includeClassifier>
+              <includeClassifier>websight-cms-kyanite-project</includeClassifier>
             </scan>
           </scans>
           <repositories>
             <repository>
-              <includeClassifier>websight-cms-bulma-project</includeClassifier>
+              <includeClassifier>websight-cms-kyanite-project</includeClassifier>
             </repository>
           </repositories>
           <outputDir>target</outputDir>

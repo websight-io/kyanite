@@ -1,0 +1,7 @@
+{
+  "group": "Kyanite Components",
+  "isContainer": true,
+  "allowedComponents": ["/libs/kyanite/components/card/cardcontent"],
+  "sling:resourceType": "ws:Component",
+  "title": "Card"
+}

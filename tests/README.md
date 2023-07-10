@@ -1,5 +1,5 @@
-# Bulma tests
-This module is responsible for the automatic validation of the Bulma components.
+# Kyanite tests
+This module is responsible for the automatic validation of the Kyanite components.
 
 It contains:
 - [content](./content) - providing test content
@@ -19,5 +19,5 @@ Then from `end-to-end` run the CMS with debug mode:
 ```bash
 java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=localhost:5005 \
 -jar target/dependency/org.apache.sling.feature.launcher.jar  \
--f target/slingfeature-tmp/feature-bulma-project-tests.json
+-f target/slingfeature-tmp/feature-kyanite-project-tests.json
 ```

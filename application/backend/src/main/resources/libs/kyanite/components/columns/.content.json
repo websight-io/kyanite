@@ -1,0 +1,8 @@
+{
+  "isContainer": true,
+  "isLayout": true,
+  "group": "Kyanite Columns",
+  "allowedComponents": ["/libs/kyanite/components/columns/column"],
+  "sling:resourceType": "ws:Component",
+  "title": "Columns"
+}

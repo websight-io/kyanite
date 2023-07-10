@@ -17,7 +17,7 @@
 import {selectors, testIds} from "../../support/consts";
 
 const paths = {
-  tag: 'ComponentOverlay_/content/bulma-tests/pages/tag/jcr:content/pagecontainer/tag'
+  tag: 'ComponentOverlay_/content/kyanite-tests/pages/tag/jcr:content/pagecontainer/tag'
 };
 
 describe('Tag component', function () {
@@ -33,7 +33,7 @@ describe('Tag component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/bulma-tests/pages/tag::editor'
+        '/apps/websight/index.html/content/kyanite-tests/pages/tag::editor'
     );
 
     cy.getByTestId(paths.tag)
@@ -69,7 +69,7 @@ describe('Tag component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/bulma-tests/pages/tag/jcr:content/pagecontainer/tag.json'
+        '/content/kyanite-tests/pages/tag/jcr:content/pagecontainer/tag.json'
     )
     .its('body')
     .should('deep.eq',
@@ -79,7 +79,7 @@ describe('Tag component', function () {
           'label': 'Label',
           'variant': 'is-success',
           'isRounded': 'true',
-          'sling:resourceType': 'bulma/components/tag',
+          'sling:resourceType': 'kyanite/components/tag',
           'isLight': 'true'
         });
   });

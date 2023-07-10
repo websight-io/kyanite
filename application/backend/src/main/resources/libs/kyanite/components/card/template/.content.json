@@ -1,0 +1,11 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "cardcontent": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/components/card/cardcontent"
+  },
+  "image": {
+    "jcr:primaryType": "nt:unstructured",
+    "style": "is-4by3"
+  }
+}

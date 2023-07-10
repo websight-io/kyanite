@@ -9,6 +9,6 @@
   "label": "Icon Text",
   "elementType": "span",
   "colorOnText": "true",
-  "sling:resourceType": "bulma/components/icon",
+  "sling:resourceType": "kyanite/components/icon",
   "selectOrType": "select"
 }

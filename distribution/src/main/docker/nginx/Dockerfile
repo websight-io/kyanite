@@ -1,4 +1,4 @@
-# Copyright (C) 2022 Dynamic Solutions
+# Copyright (C) 2023 Dynamic Solutions
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,4 +15,4 @@
 FROM nginx
 
 COPY src/main/docker/nginx/default.conf /etc/nginx/conf.d/default.conf
-COPY src/main/docker/nginx/html/homepage.html /usr/share/nginx/html/content/bulma/pages/homepage.html
+COPY src/main/docker/nginx/html/homepage.html /usr/share/nginx/html/content/kyanite/pages/homepage.html

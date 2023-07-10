@@ -1,7 +1,7 @@
-[![CI](https://github.com/websight-io/bulma/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/websight-io/bulma/actions/workflows/ci.yml)
-# Bulma
+[![CI](https://github.com/websight-io/kyanite/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/websight-io/kyanite/actions/workflows/ci.yml)
+# Kyanite
 
-Bulma is a sample component library for the [WebSight CMS](https://www.websight.io/) based on [Bulma](https://bulma.io/).
+Kyanite is a sample component library for the [WebSight CMS](https://www.websight.io/) based on [Bulma](https://bulma.io/).
 
 ![](assets/bulma-template.png)
 ## Using
@@ -56,4 +56,4 @@ Please read our [Contributing Guide](./CONTRIBUTING.md) before submitting a Pull
 Please check the community support section in [WebSight Starter](https://github.com/websight-io/starter#community-support).
 
 ## License
-Bulma components is `open-source` project with `Apache License 2.0` license.
+Kyanite components is `open-source` project with `Apache License 2.0` license.

@@ -1,11 +1,11 @@
 {
   "default": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/table"
+    "sling:resourceType": "kyanite/components/table"
   },
   "complex": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/table",
+    "sling:resourceType": "kyanite/components/table",
     "isBordered": true,
     "isFullwidth": true,
     "isHoverable": true,

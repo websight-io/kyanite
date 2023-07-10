@@ -1,5 +1,5 @@
 # How to contribute
-Bulma is a sample open-source project built on top of the Websight CMS Community Edition administered by the [Dynamic Solution](https://www.ds.pl/). We appreciate your interest and efforts to contribute to Bulma. See the [LICENSE](./LICENSE) licensing information and the [contributing](#contributor-license-agreement-cla) (CLA) information.
+Kyanite is a sample open-source project built on top of the Websight CMS Community Edition administered by the [Dynamic Solution](https://www.ds.pl/). We appreciate your interest and efforts to contribute to Kyanite. See the [LICENSE](./LICENSE) licensing information and the [contributing](#contributor-license-agreement-cla) (CLA) information.
 
 We highly appreciate your effort to contribute, but we recommend you [discuss](https://github.com/websight-io/starter/discussions) to a maintainer before spending a lot of time making a pull request that may not align with the project roadmap.
 
@@ -7,7 +7,7 @@ We highly appreciate your effort to contribute, but we recommend you [discuss](h
 Feature Requests by the community are highly encouraged. Feel free to [submit a new one](https://github.com/websight-io/starter/issues/new?assignees=&labels=&template=feature_request.md&title=).
 
 ## Bugs
-Bulma is using [GitHub issues](https://github.com/websight-io/bulma/issues) to manage bugs. We keep a close eye on them. Before filing a new issue, try to ensure your problem does not already exist.
+Kyanite is using [GitHub issues](https://github.com/websight-io/kyanite/issues) to manage bugs. We keep a close eye on them. Before filing a new issue, try to ensure your problem does not already exist.
 
 ## Code of Conduct
 This project, and everyone participating in it, are governed by the [WebSight Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold it. Make sure to read the [full text](CODE_OF_CONDUCT.md) to understand which type of actions may or may not be tolerated.
@@ -40,8 +40,8 @@ checkstyle issue, our `mvn clean install` should fail with the message:
 
 ```bash
 Starting audit...
-[WARN] /Users/pawel/Documents/workspace/github/bulma/application/backend/src/main/java/pl/ds/bulma/components/models/BreadcrumbComponent.java:49:5: 'member def modifier' has incorrect indentation level 4, expected level should be 2. [Indentation]
-[WARN] /Users/pawel/Documents/workspace/github/bulma/application/backend/src/main/java/pl/ds/bulma/components/models/URLComponent.java:28:14: Abbreviation in name 'URLComponent' must contain no more than '1' consecutive capital letters. [AbbreviationAsWordInName]
+[WARN] /Users/pawel/Documents/workspace/github/kyanite/application/backend/src/main/java/pl/ds/kyanite/components/models/BreadcrumbComponent.java:49:5: 'member def modifier' has incorrect indentation level 4, expected level should be 2. [Indentation]
+[WARN] /Users/pawel/Documents/workspace/github/kyanite/application/backend/src/main/java/pl/ds/kyanite/components/models/URLComponent.java:28:14: Abbreviation in name 'URLComponent' must contain no more than '1' consecutive capital letters. [AbbreviationAsWordInName]
 Audit done.
 ```
 

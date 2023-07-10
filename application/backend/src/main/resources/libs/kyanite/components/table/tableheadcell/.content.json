@@ -1,0 +1,5 @@
+{
+  "group": "Kyanite sub-elements",
+  "sling:resourceType": "ws:Component",
+  "title": "Table head cell"
+}

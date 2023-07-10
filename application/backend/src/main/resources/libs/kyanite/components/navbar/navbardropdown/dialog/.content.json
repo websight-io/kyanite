@@ -1,0 +1,155 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "dropdownLabel": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "label",
+        "label": "Label of a dropdown"
+      },
+      "addIcon": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "addIcon",
+        "label": "Add icon?"
+      },
+      "iconContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "iconLibType": {
+          "sling:resourceType": "wcm/dialogs/components/select",
+          "name": "iconLibType",
+          "label": "Icon Library",
+          "required": true,
+          "datasource": {
+            "sling:resourceType": "/apps/iconLibraryDatasource"
+          }
+        },
+        "selectOrType": {
+          "sling:resourceType": "wcm/dialogs/components/radio",
+          "name": "selectOrType",
+          "label": "Select icon or type it",
+          "required": true,
+          "select": {
+            "sling:resourceType": "wcm/dialogs/components/radio/option",
+            "label": "Select it",
+            "value": "select",
+            "selected": true
+          },
+          "type": {
+            "sling:resourceType": "wcm/dialogs/components/radio/option",
+            "label": "Type it",
+            "value": "type"
+          }
+        },
+        "typedIcon": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "icon",
+          "label": "Name of the icon",
+          "ws:display": {
+            "condition": {
+              "sourceName": "selectOrType",
+              "values": "type"
+            }
+          }
+        },
+        "iconFA": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "selectableIcon": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "kyanite/components/common/icon/icons/fontawesome",
+            "ws:display": {
+              "condition": {
+                "sourceName": "selectOrType",
+                "values": "select"
+              }
+            }
+          },
+          "iconSize": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "kyanite/components/common/icon/iconsize/fontawesome"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "iconLibType",
+              "values": "fas"
+            }
+          }
+        },
+        "iconMD": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "selectableIcon": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "kyanite/components/common/icon/icons/materialdesign",
+            "ws:display": {
+              "condition": {
+                "sourceName": "selectOrType",
+                "values": "select"
+              }
+            }
+          },
+          "iconSize": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "kyanite/components/common/icon/iconsize/materialdesign"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "iconLibType",
+              "values": "mdi"
+            }
+          }
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "addIcon",
+            "values": "true"
+          }
+        }
+      },
+      "hasArrow": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "hasArrow",
+        "label": "Dropdown with arrow",
+        "checkedByDefault":"true"
+      },
+      "isBoxed": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isBoxed",
+        "label": "Boxed version of dropdown",
+        "description": " When having a transparent navbar, it is preferable to use the boxed version of the dropdown, by using the is-boxed modifier."
+      },
+      "isDropup": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isDropup",
+        "label": "Revert expanding direction"
+      },
+      "items": {
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "name": "items",
+        "label": "Elements in the dropdown",
+        "ws:disallowedContext": ["edit:panel"],
+        "text": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Item label"
+        },
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL connected to item"
+        },
+        "icon": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/libs/kyanite/components/common/menuicon"
+        },
+        "hasDivider": {
+          "sling:resourceType": "wcm/dialogs/components/checkbox",
+          "name": "hasDivider",
+          "label": "Has divider after item"
+        }
+      }
+    }
+  }
+}

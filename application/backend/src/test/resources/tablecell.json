@@ -1,11 +1,11 @@
 {
   "default": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/tablecell"
+    "sling:resourceType": "kyanite/components/tablecell"
   },
   "complex": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/tablecell",
+    "sling:resourceType": "kyanite/components/tablecell",
     "text": "Table cell text",
     "rowspan": 2,
     "colspan": 3

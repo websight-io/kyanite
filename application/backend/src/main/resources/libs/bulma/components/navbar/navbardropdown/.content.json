@@ -1,5 +1,0 @@
-{
-  "group": "Bulma.io sub-components",
-  "sling:resourceType": "ws:Component",
-  "title": "Navbar dropdown"
-}

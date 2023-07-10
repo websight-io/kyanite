@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  dropdown: 'ComponentOverlay_/content/bulma-tests/pages/dropdown/jcr:content/pagecontainer/dropdown'
+  dropdown: 'ComponentOverlay_/content/kyanite-tests/pages/dropdown/jcr:content/pagecontainer/dropdown'
 };
 
 describe('Dropdown component', function () {
@@ -32,7 +32,7 @@ describe('Dropdown component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/bulma-tests/pages/dropdown::editor'
+        '/apps/websight/index.html/content/kyanite-tests/pages/dropdown::editor'
     );
 
     cy.getByTestId(paths.dropdown)
@@ -63,7 +63,7 @@ describe('Dropdown component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/bulma-tests/pages/dropdown/jcr:content/pagecontainer/dropdown.infinity.json'
+        '/content/kyanite-tests/pages/dropdown/jcr:content/pagecontainer/dropdown.infinity.json'
     )
     .its('body')
     .should('deep.eq', {
@@ -72,7 +72,7 @@ describe('Dropdown component', function () {
       isRight: 'true',
       isUp: 'true',
       'jcr:primaryType': 'nt:unstructured',
-      'sling:resourceType': 'bulma/components/dropdown',
+      'sling:resourceType': 'kyanite/components/dropdown',
       items: {
         'jcr:primaryType': 'nt:unstructured',
         '0': {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -109,11 +109,11 @@ module.exports = {
                     copy: [
                         {
                             source: path.join(__dirname, 'dist/main'),
-                            destination: path.join(__dirname, '../backend/src/main/resources/libs/bulma/web_root')
+                            destination: path.join(__dirname, '../backend/src/main/resources/libs/kyanite/web_root')
                         },
                         {
                             source: path.join(__dirname, 'dist/author'),
-                            destination: path.join(__dirname, '../backend/src/main/resources/libs/bulma/author')
+                            destination: path.join(__dirname, '../backend/src/main/resources/libs/kyanite/author')
                         }
                     ]
                 }

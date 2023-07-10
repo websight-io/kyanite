@@ -1,5 +1,5 @@
 {
-  "name": "Bulma-Frontend-Module",
+  "name": "Kyanite-Frontend-Module",
   "version": "1.0.0",
   "description": "",
   "repository": {
@@ -12,7 +12,7 @@
   "scripts": {
     "prod": "webpack --config ./webpack.prod.js",
     "watch": "webpack --config ./webpack.prod.js --watch",
-    "sync": "websight-localsync target-folder=dist provider-root-suffix=bulma/web_root"
+    "sync": "websight-localsync target-folder=dist provider-root-suffix=kyanite/web_root"
   },
   "dependencies": {
     "bulma": "^0.9.4"

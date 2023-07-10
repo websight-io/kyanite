@@ -1,7 +1,0 @@
-{
-  "isContainer": true,
-  "group": "Bulma.io Elements",
-  "allowedComponents": ["/libs/bulma/components/tag"],
-  "sling:resourceType": "ws:Component",
-  "title": "Tags list"
-}

@@ -1,0 +1,294 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "mobileStyleTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Mobile column style",
+      "isNormalColumn": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "mobileColumnStyle/isNormalColumn",
+        "label": "Normal column",
+        "description": "Disable this, so the column will only take the actual space it needs.",
+        "checkedByDefault": true
+      },
+      "widthContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "sizeType": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/type",
+            "name": "mobileColumnStyle/sizeType",
+            "label": "Type of the column size"
+          }
+        },
+        "evenNumber": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "size": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/evennumber",
+              "name": "mobileColumnStyle/size",
+              "label": "Column size"
+            }
+          },
+          "ws:display": {"condition": {
+            "sourceName": "mobileColumnStyle/sizeType",
+            "values": "evenNumber"
+          }}
+        },
+        "fraction": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "style": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/fraction",
+              "name": "mobileColumnStyle/size",
+              "label": "Column size"
+            }
+          },
+          "ws:display": {"condition": {
+            "sourceName": "mobileColumnStyle/sizeType",
+            "values": "fraction"
+          }}
+        },
+        "offsetType": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/type",
+            "name": "mobileColumnStyle/offsetType",
+            "label": "Type of the offset size"
+          }
+        },
+        "offsetEvenNumber": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "size": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/evennumber",
+              "name": "offset",
+              "label": "Offset size",
+              "sling:hideChildren": ["twelve"]
+            }
+          },
+          "ws:display": {"condition": {
+            "sourceName": "mobileColumnStyle/offsetType",
+            "values": "evenNumber"
+          }}
+        },
+        "offsetFraction": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "style": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/fraction",
+              "name": "mobileColumnStyle/offset",
+              "label": "Offset size",
+              "sling:hideChildren": ["full"]
+            }
+          },
+          "ws:display": {"condition": {
+            "sourceName": "mobileColumnStyle/offsetType",
+            "values": "fraction"
+          }}
+        },
+        "ws:display": {"condition": {
+          "sourceName": "mobileColumnStyle/isNormalColumn",
+          "values": true
+        }}
+      }
+    },
+    "tabletStyleTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Tablet column style",
+      "isNormalColumn": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "tabletColumnStyle/isNormalColumn",
+        "label": "Normal column",
+        "description": "Disable this, so the column will only take the actual space it needs.",
+        "checkedByDefault": true
+      },
+      "widthContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "sizeType": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/type",
+            "name": "tabletColumnStyle/sizeType",
+            "label": "Type of the column size"
+          }
+        },
+        "evenNumber": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "size": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/evennumber",
+              "name": "tabletColumnStyle/size",
+              "label": "Column size"
+            }
+          },
+          "ws:display": {"condition": {
+            "sourceName": "tabletColumnStyle/sizeType",
+            "values": "evenNumber"
+          }}
+        },
+        "fraction": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "style": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/fraction",
+              "name": "tabletColumnStyle/size",
+              "label": "Column size"
+            }
+          },
+          "ws:display": {"condition": {
+            "sourceName": "tabletColumnStyle/sizeType",
+            "values": "fraction"
+          }}
+        },
+        "offsetType": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/type",
+            "name": "tabletColumnStyle/offsetType",
+            "label": "Type of the offset size"
+          }
+        },
+        "offsetEvenNumber": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "size": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/evennumber",
+              "name": "tabletColumnStyle/offset",
+              "label": "Offset size",
+              "sling:hideChildren": ["twelve"]
+            }
+          },
+          "ws:display": {"condition": {
+            "sourceName": "tabletColumnStyle/offsetType",
+            "values": "evenNumber"
+          }}
+        },
+        "offsetFraction": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "style": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/fraction",
+              "name": "tabletColumnStyle/offset",
+              "label": "Offset size",
+              "sling:hideChildren": ["full"]
+            }
+          },
+          "ws:display": {"condition": {
+            "sourceName": "tabletColumnStyle/offsetType",
+            "values": "fraction"
+          }}
+        },
+        "ws:display": {"condition": {
+          "sourceName": "tabletColumnStyle/isNormalColumn",
+          "values": true
+        }}
+      }
+    },
+    "desktopStyleTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Desktop column style",
+      "isNormalColumn": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "desktopColumnStyle/isNormalColumn",
+        "label": "Normal column",
+        "description": "Disable this, so the column will only take the actual space it needs.",
+        "checkedByDefault": true
+      },
+      "widthContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "sizeType": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/type",
+            "name": "desktopColumnStyle/sizeType",
+            "label": "Type of the column size"
+          }
+        },
+        "evenNumber": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "size": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/evennumber",
+              "name": "desktopColumnStyle/size",
+              "label": "Column size"
+            }
+          },
+          "ws:display": {"condition": {
+            "sourceName": "desktopColumnStyle/sizeType",
+            "values": "evenNumber"
+          }}
+        },
+        "fraction": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "style": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/fraction",
+              "name": "desktopColumnStyle/size",
+              "label": "Column size"
+            }
+          },
+          "ws:display": {"condition": {
+            "sourceName": "desktopColumnStyle/sizeType",
+            "values": "fraction"
+          }}
+        },
+        "offsetType": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/type",
+            "name": "desktopColumnStyle/offsetType",
+            "label": "Type of the offset size"
+          }
+        },
+        "offsetEvenNumber": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "size": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/evennumber",
+              "name": "desktopColumnStyle/offset",
+              "label": "Offset size",
+              "sling:hideChildren": ["twelve"]
+            }
+          },
+          "ws:display": {"condition": {
+            "sourceName": "desktopColumnStyle/offsetType",
+            "values": "evenNumber"
+          }}
+        },
+        "offsetFraction": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "style": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/fraction",
+              "name": "desktopColumnStyle/offset",
+              "label": "Offset size",
+              "sling:hideChildren": ["full"]
+            }
+          },
+          "ws:display": {"condition": {
+            "sourceName": "desktopColumnStyle/offsetType",
+            "values": "fraction"
+          }}
+        },
+        "ws:display": {"condition": {
+          "sourceName": "desktopColumnStyle/isNormalColumn",
+          "values": true
+        }}
+      }
+    }
+  }
+}

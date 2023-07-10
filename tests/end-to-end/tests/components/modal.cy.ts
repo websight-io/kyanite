@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 
 const paths = {
-  modal: 'ComponentOverlay_/content/bulma-tests/pages/modal/jcr:content/pagecontainer/modal'
+  modal: 'ComponentOverlay_/content/kyanite-tests/pages/modal/jcr:content/pagecontainer/modal'
 };
 
 describe('Modal component', function () {
@@ -24,7 +24,7 @@ describe('Modal component', function () {
   });
 
   it('renders correctly in preview mode', function () {
-    cy.visit('/content/bulma-tests/pages/modal.html');
+    cy.visit('/content/kyanite-tests/pages/modal.html');
     cy.contains('Open JS example modal').click();
 
     cy.percySnapshotPreview('Modal preview');
@@ -34,7 +34,7 @@ describe('Modal component', function () {
   it('renders correctly in edit mode', function () {
 
     cy.visit(
-        '/apps/websight/index.html/content/bulma-tests/pages/modal::editor'
+        '/apps/websight/index.html/content/kyanite-tests/pages/modal::editor'
     );
 
     cy.percySnapshotPageEditor('Hero editor');

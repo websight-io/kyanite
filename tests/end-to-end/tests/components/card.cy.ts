@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  card: 'ComponentOverlay_/content/bulma-tests/pages/card/jcr:content/pagecontainer/card'
+  card: 'ComponentOverlay_/content/kyanite-tests/pages/card/jcr:content/pagecontainer/card'
 };
 
 describe('Card component', function () {
@@ -32,7 +32,7 @@ describe('Card component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/bulma-tests/pages/card::editor'
+        '/apps/websight/index.html/content/kyanite-tests/pages/card::editor'
     );
 
     cy.getByTestId(paths.card)
@@ -51,7 +51,7 @@ describe('Card component', function () {
       .findByTestId('Input_Alttext').clear().type('Alt text');
     cy.getByTestId('ModalDialog_Card')
       .findByTestId('Input_Usethisifyouwantalinktoimagefromweb')
-        .clear().type('/content/bulma/assets/images/personal/PortfolioForum.png');
+        .clear().type('/content/kyanite-tests/assets/images/personal/PortfolioForum.png');
     cy.getByTestId('ModalDialog_Card')
       .find('div[class^="Input_Imageratio__control"]').click();
     cy.contains('16 by 9').click({ force: true });
@@ -68,20 +68,20 @@ describe('Card component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/bulma-tests/pages/card/jcr:content/pagecontainer/card.infinity.json'
+        '/content/kyanite-tests/pages/card/jcr:content/pagecontainer/card.infinity.json'
     )
     .its('body')
     .should('deep.eq', {
       header: 'Card header',
       'jcr:primaryType': 'nt:unstructured',
-      'sling:resourceType': 'bulma/components/card',
+      'sling:resourceType': 'kyanite/components/card',
       'cardcontent': {
         'jcr:primaryType': 'nt:unstructured',
-        'sling:resourceType': 'bulma/components/card/cardcontent'
+        'sling:resourceType': 'kyanite/components/card/cardcontent'
       },
       'image': {
         alt: 'Alt text',
-        src: '/content/bulma/assets/images/personal/PortfolioForum.png',
+        src: '/content/kyanite-tests/assets/images/personal/PortfolioForum.png',
         style: 'is-16by9',
         'jcr:primaryType': 'nt:unstructured',
       },

@@ -17,8 +17,8 @@
 import {selectors, testIds} from "../../support/consts";
 
 const paths = {
-  button: 'ComponentOverlay_/content/bulma-tests/pages/button/jcr:content/pagecontainer/button',
-  anchor: 'ComponentOverlay_/content/bulma-tests/pages/button/jcr:content/pagecontainer/anchor'
+  button: 'ComponentOverlay_/content/kyanite-tests/pages/button/jcr:content/pagecontainer/button',
+  anchor: 'ComponentOverlay_/content/kyanite-tests/pages/button/jcr:content/pagecontainer/anchor'
 };
 
 describe('Button component', function () {
@@ -34,7 +34,7 @@ describe('Button component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/bulma-tests/pages/button::editor'
+        '/apps/websight/index.html/content/kyanite-tests/pages/button::editor'
     );
 
     cy.getByTestId(paths.button)
@@ -115,7 +115,7 @@ describe('Button component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/bulma-tests/pages/button/jcr:content/pagecontainer/button.infinity.json'
+        '/content/kyanite-tests/pages/button/jcr:content/pagecontainer/button.infinity.json'
     )
     .its('body')
     .should('deep.eq',
@@ -133,7 +133,7 @@ describe('Button component', function () {
           'variant': 'is-success',
           'isRounded': 'true',
           'modalId': 'Modal ID',
-          'sling:resourceType': 'bulma/components/button',
+          'sling:resourceType': 'kyanite/components/button',
           'actionType': 'open-modal',
           'isLight': 'true',
           'leftIcon': {
@@ -152,7 +152,7 @@ describe('Button component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/bulma-tests/pages/button::editor'
+        '/apps/websight/index.html/content/kyanite-tests/pages/button::editor'
     );
 
     cy.getByTestId(paths.anchor)
@@ -185,7 +185,7 @@ describe('Button component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/bulma-tests/pages/button/jcr:content/pagecontainer/anchor.json'
+        '/content/kyanite-tests/pages/button/jcr:content/pagecontainer/anchor.json'
     )
     .its('body')
     .should('deep.eq',
@@ -200,7 +200,7 @@ describe('Button component', function () {
           'type': 'a',
           'label': 'Label',
           'isRounded': 'false',
-          'sling:resourceType': 'bulma/components/button',
+          'sling:resourceType': 'kyanite/components/button',
           'openInNewTab': 'true',
           'isLight': 'false'
         });

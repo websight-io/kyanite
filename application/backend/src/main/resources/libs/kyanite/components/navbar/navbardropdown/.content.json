@@ -1,0 +1,5 @@
+{
+  "group": "Kyanite sub-components",
+  "sling:resourceType": "ws:Component",
+  "title": "Navbar dropdown"
+}

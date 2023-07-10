@@ -1,6 +1,6 @@
 ## Description
 
-Module contains Front-End for port of Bulma components. During build it copy build results to web root folder in core module.
+Module contains Front-End for port of Kyanite components. During build it copy build results to web root folder in core module.
 
 ## Usage:
 

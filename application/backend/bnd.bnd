@@ -1,2 +1,2 @@
-Sling-Bundle-Resources: /libs/bulma,/apps/wcm/dialogs/components/select
-WebSight-Apps-WebRoot: /libs/bulma/web_root
+Sling-Bundle-Resources: /libs/kyanite,/apps/wcm/dialogs/components/select
+WebSight-Apps-WebRoot: /libs/kyanite/web_root

@@ -1,0 +1,6 @@
+{
+  "allowedChildren": ["/libs/kyanite/templates/basicpage"],
+  "sling:resourceType": "ws:PageTemplate",
+  "description": "Kyanite",
+  "title": "Basic page"
+}

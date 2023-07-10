@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  breadcrumb: 'ComponentOverlay_/content/bulma-tests/pages/breadcrumb/jcr:content/pagecontainer/breadcrumb'
+  breadcrumb: 'ComponentOverlay_/content/kyanite-tests/pages/breadcrumb/jcr:content/pagecontainer/breadcrumb'
 };
 
 describe('Breadcrumb component', function () {
@@ -32,7 +32,7 @@ describe('Breadcrumb component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/bulma-tests/pages/breadcrumb::editor'
+        '/apps/websight/index.html/content/kyanite-tests/pages/breadcrumb::editor'
     );
 
     cy.getByTestId(paths.breadcrumb)
@@ -58,19 +58,19 @@ describe('Breadcrumb component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/bulma-tests/pages/breadcrumb/jcr:content/pagecontainer/breadcrumb.infinity.json'
+        '/content/kyanite-tests/pages/breadcrumb/jcr:content/pagecontainer/breadcrumb.infinity.json'
     )
     .its('body')
     .should('deep.eq', {
       'jcr:primaryType': 'nt:unstructured',
       size: 'is-medium',
-      'sling:resourceType': 'bulma/components/breadcrumb',
+      'sling:resourceType': 'kyanite/components/breadcrumb',
       separator: 'has-bullet-separator',
       alignment: 'is-right',
       'breadcrumbitem': {
         'jcr:primaryType':'nt:unstructured',
         label: "Label",
-        'sling:resourceType': 'bulma/components/breadcrumb/breadcrumbitem'
+        'sling:resourceType': 'kyanite/components/breadcrumb/breadcrumbitem'
       }
     });
   });

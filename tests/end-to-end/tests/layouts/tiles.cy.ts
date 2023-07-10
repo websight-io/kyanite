@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,9 +17,9 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  tiles: 'ComponentOverlay_/content/bulma-tests/pages/tiles/jcr:content/pagecontainer/tiles',
-  tileParent: 'ComponentOverlay_/content/bulma-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2',
-  tileChild: 'ComponentOverlay_/content/bulma-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2/tile1'
+  tiles: 'ComponentOverlay_/content/kyanite-tests/pages/tiles/jcr:content/pagecontainer/tiles',
+  tileParent: 'ComponentOverlay_/content/kyanite-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2',
+  tileChild: 'ComponentOverlay_/content/kyanite-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2/tile1'
 };
 
 describe('Tiles layout', function () {
@@ -30,7 +30,7 @@ describe('Tiles layout', function () {
   beforeEach('visit tiles page', function () {
 
     cy.visit(
-        '/apps/websight/index.html/content/bulma-tests/pages/tiles::editor'
+        '/apps/websight/index.html/content/kyanite-tests/pages/tiles::editor'
     );
   });
 
@@ -59,13 +59,13 @@ describe('Tiles layout', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/bulma-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2.json'
+        '/content/kyanite-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2.json'
     )
     .its('body')
     .should('deep.eq', {
       size: 'is-7',
       isVertical: 'true',
-      'sling:resourceType': 'bulma/components/tiles/tileparent',
+      'sling:resourceType': 'kyanite/components/tiles/tileparent',
       'jcr:primaryType': 'nt:unstructured'
     });
   });
@@ -96,13 +96,13 @@ describe('Tiles layout', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/bulma-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2/tile1.json'
+        '/content/kyanite-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2/tile1.json'
     )
     .its('body')
     .should('deep.eq', {
       type: 'notification',
       variant: 'is-warning',
-      'sling:resourceType': 'bulma/components/tiles/tilechild',
+      'sling:resourceType': 'kyanite/components/tiles/tilechild',
       'jcr:primaryType': 'nt:unstructured'
     });
   });

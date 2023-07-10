@@ -1,10 +1,10 @@
 {
   "default": {
-    "sling:resourceType": "bulma/components/columns",
+    "sling:resourceType": "kyanite/components/columns",
     "jcr:primaryType": "nt:unstructured"
   },
   "complex": {
-    "sling:resourceType": "bulma/components/columns",
+    "sling:resourceType": "kyanite/components/columns",
     "jcr:primaryType": "nt:unstructured",
     "columnsActivationLevel": "is-mobile",
     "isCustomGapLevel": true,

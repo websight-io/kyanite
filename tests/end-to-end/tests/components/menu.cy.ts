@@ -17,7 +17,7 @@
 import {selectors, testIds} from "../../support/consts";
 
 const paths = {
-  menu: 'ComponentOverlay_/content/bulma-tests/pages/menu/jcr:content/pagecontainer/menu'
+  menu: 'ComponentOverlay_/content/kyanite-tests/pages/menu/jcr:content/pagecontainer/menu'
 };
 
 describe('Menu component', function () {
@@ -33,7 +33,7 @@ describe('Menu component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/bulma-tests/pages/menu::editor'
+        '/apps/websight/index.html/content/kyanite-tests/pages/menu::editor'
     );
 
     cy.getByTestId(paths.menu)
@@ -82,12 +82,12 @@ describe('Menu component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/bulma-tests/pages/menu/jcr:content/pagecontainer/menu.infinity.json'
+        '/content/kyanite-tests/pages/menu/jcr:content/pagecontainer/menu.infinity.json'
     )
     .its('body')
     .should('deep.eq', {
       'jcr:primaryType': 'nt:unstructured',
-      'sling:resourceType': 'bulma/components/menu',
+      'sling:resourceType': 'kyanite/components/menu',
       'menuSections': {
         'jcr:primaryType': 'nt:unstructured',
         '0': {

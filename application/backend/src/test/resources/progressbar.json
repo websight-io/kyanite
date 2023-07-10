@@ -1,11 +1,11 @@
 {
   "default": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/progressbar"
+    "sling:resourceType": "kyanite/components/progressbar"
   },
   "isIntermediate": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/progressbar",
+    "sling:resourceType": "kyanite/components/progressbar",
     "value": 45,
     "isIntermediate": true,
     "size": "is-medium",
@@ -13,7 +13,7 @@
   },
   "valueSet": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "bulma/components/progressbar",
+    "sling:resourceType": "kyanite/components/progressbar",
     "value": 45,
     "isIntermediate": false,
     "size": "is-medium",

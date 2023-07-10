@@ -1,49 +1,49 @@
 {
   "bundles": [
     {
-      "id": "pl.ds.bulma:bulma-backend:${project.version}",
+      "id": "pl.ds.kyanite:kyanite-backend:${project.version}",
       "start-order": "25"
     },
     {
-      "id": "pl.ds.bulma:bulma-frontend:${project.version}",
+      "id": "pl.ds.kyanite:kyanite-frontend:${project.version}",
       "start-order": "25"
     },
     {
-      "id": "pl.ds.bulma:bulma-table-service:${project.version}",
+      "id": "pl.ds.kyanite:kyanite-table-service:${project.version}",
       "start-order": "25"
     },
     {
-      "id": "pl.ds.bulma:bulma-table-view:${project.version}",
+      "id": "pl.ds.kyanite:kyanite-table-view:${project.version}",
       "start-order": "25"
     },
     {
-      "id": "pl.ds.bulma:bulma-richtext:${project.version}",
+      "id": "pl.ds.kyanite:kyanite-richtext:${project.version}",
       "start-order": "25"
     }
   ],
   "configurations": {
-    "org.apache.sling.commons.log.LogManager.factory.config~bulma-project.log": {
+    "org.apache.sling.commons.log.LogManager.factory.config~kyanite-project.log": {
       "org.apache.sling.commons.log.packagingDataEnabled": true,
       "org.apache.sling.commons.log.pattern": "%d{dd.MM.yyyy HH:mm:ss.SSS} *%level* [%thread] %logger %msg%n",
       "org.apache.sling.commons.log.level": "$[env:PROJECT_LOG_LEVEL;default=info]",
-      "org.apache.sling.commons.log.file": "logs/bulma-project.log",
+      "org.apache.sling.commons.log.file": "logs/kyanite-project.log",
       "org.apache.sling.commons.log.file.number:Integer": "8",
       "org.apache.sling.commons.log.file.size": "'.'yyyy-MM-dd",
       "org.apache.sling.commons.log.names": [
-        "pl.ds.bulma"
+        "pl.ds.kyanite"
       ],
       "org.apache.sling.commons.log.additiv": true
     },
     "pl.ds.websight.publishing.staticprocessor.PagePublishProcessor": {
       "shorten.paths": true
     },
-    "pl.ds.bulma.components.services.impl.LibraryIconFactoryConfigImpl~fas": {
+    "pl.ds.kyanite.components.services.impl.LibraryIconFactoryConfigImpl~fas": {
       "id": "fas",
       "label": "Font Awesome",
       "libraryUrl": "https://use.fontawesome.com/releases/v6.4.0/css/all.css",
       "attributes": ["crossorigin=anonymous","integrity=sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0"]
     },
-    "pl.ds.bulma.components.services.impl.LibraryIconFactoryConfigImpl~mdi": {
+    "pl.ds.kyanite.components.services.impl.LibraryIconFactoryConfigImpl~mdi": {
       "id": "mdi",
       "label": "Material Design",
       "libraryUrl": "https://cdn.materialdesignicons.com/7.2.96/css/materialdesignicons.min.css",
@@ -51,7 +51,7 @@
     }
   },
   "content-packages:ARTIFACTS|true": [
-    "pl.ds.bulma:bulma-content:zip:${project.version}"
+    "pl.ds.kyanite:kyanite-content:zip:${project.version}"
   ]
 }
   
