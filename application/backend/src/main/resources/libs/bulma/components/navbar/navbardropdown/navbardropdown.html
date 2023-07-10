@@ -19,10 +19,8 @@
 <sly data-sly-use.model="pl.ds.bulma.components.models.navbar.NavbarDropdownComponent">
   <div class="navbar-item has-dropdown is-hoverable ${model.isDropup ? 'has-dropdown-up' : ''}" tabindex="0">
     <a class="navbar-link ${model.hasArrow ? '' : 'is-arrowless'}">
-      <sly data-sly-test="${model.icon && model.icon != 'none'}">
-        <span class="icon">
-          <i class="${model.icon}"></i>
-        </span>
+      <sly data-sly-test="${model.addIcon && model.icon}">
+        <sly data-sly-resource="${resource @ resourceType = 'bulma/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
       </sly>
       ${model.label}
     </a>
@@ -30,10 +28,8 @@
     <div class="navbar-dropdown ${model.isBoxed ? 'is-boxed' : ''}">
       <sly data-sly-list.item="${model.items}">
         <a class="navbar-item" href="${item.url}">
-          <sly data-sly-test="${item.icon && item.icon != 'none'}">
-              <span class="icon">
-                <i class="${item.icon}"></i>
-              </span>
+          <sly data-sly-test="${model.addIcon && model.icon}">
+            <sly data-sly-resource="${resource @ resourceType = 'bulma/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
           </sly>
           ${item.label}
         </a>
