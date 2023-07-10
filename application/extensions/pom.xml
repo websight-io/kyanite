@@ -21,12 +21,12 @@
     <parent>
         <groupId>pl.ds.kyanite</groupId>
         <artifactId>kyanite-application</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.2-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>kyanite-extensions</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2-SNAPSHOT</version>
     <name>Bulma Components Project - Extensions</name>
     <description>Parent for extension modules.</description>
     <packaging>pom</packaging>
