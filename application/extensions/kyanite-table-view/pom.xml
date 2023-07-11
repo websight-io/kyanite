@@ -26,7 +26,7 @@
 
   <artifactId>kyanite-table-view</artifactId>
   <version>0.0.2-SNAPSHOT</version>
-  <name>Bulma Components Project - Table View</name>
+  <name>Kyanite Components Project - Table View</name>
   <description>Table View module</description>
 
   <properties>

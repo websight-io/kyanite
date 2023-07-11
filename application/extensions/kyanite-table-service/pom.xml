@@ -26,7 +26,7 @@
 
   <artifactId>kyanite-table-service</artifactId>
   <version>0.0.2-SNAPSHOT</version>
-  <name>Bulma Components Project - Table Service</name>
+  <name>Kyanite Components Project - Table Service</name>
   <description>Table Service module</description>
 
   <build>
@@ -68,7 +68,7 @@
           </execution>
         </executions>
         <configuration>
-          <title>Bulma Table Service API</title>
+          <title>Kyanite Table Service API</title>
           <actionPackages>
             <param>pl.ds.kyanite.rest</param>
           </actionPackages>

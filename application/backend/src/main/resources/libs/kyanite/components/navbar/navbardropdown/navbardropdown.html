@@ -20,7 +20,7 @@
   <div class="navbar-item has-dropdown is-hoverable ${model.isDropup ? 'has-dropdown-up' : ''}" tabindex="0">
     <a class="navbar-link ${model.hasArrow ? '' : 'is-arrowless'}">
       <sly data-sly-test="${model.addIcon && model.icon}">
-        <sly data-sly-resource="${resource @ resourceType = 'bulma/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
+        <sly data-sly-resource="${resource @ resourceType = 'kyanite/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
       </sly>
       ${model.label}
     </a>
@@ -29,7 +29,7 @@
       <sly data-sly-list.item="${model.items}">
         <a class="navbar-item" href="${item.url}">
           <sly data-sly-test="${model.addIcon && model.icon}">
-            <sly data-sly-resource="${resource @ resourceType = 'bulma/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
+            <sly data-sly-resource="${resource @ resourceType = 'kyanite/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
           </sly>
           ${item.label}
         </a>
