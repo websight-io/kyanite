@@ -7,41 +7,46 @@
     "label": "None",
     "value": ""
   },
-  "black": {
-    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
-    "label": "Black",
-    "value": "bw_has-text-black",
-    "selected": true
-  },
   "white": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "White",
     "value": "bw_has-text-white"
   },
-  "grey": {
+  "black": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
-    "label": "Grey",
-    "value": "grey_has-text-grey"
-  },
-  "dark": {
-    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
-    "label": "Dark",
-    "value": "has-text-dark"
+    "label": "Black",
+    "value": "bw_has-text-black"
   },
   "light": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Light",
     "value": "has-text-light"
   },
+  "dark": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Dark",
+    "value": "has-text-dark"
+  },
   "primary": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Primary",
     "value": "rest_has-text-primary"
   },
+  "secondary": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Secondary",
+    "value": "has-text-secondary"
+  },
+  "grey": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Grey",
+    "value": "rest_has-text-grey",
+    "selected": true
+  },
   "link": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Link",
-    "value": "rest_has-text-link"
+    "value": "grey_has-text-link"
   },
   "info": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
