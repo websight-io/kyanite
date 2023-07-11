@@ -16,9 +16,59 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.kyanite.components.models.PageModel"></sly>
-<sly data-sly-list="${model.iconLibraryConfigs}">
-  <sly data-sly-use.template="./icon-libs.html" data-sly-call="${template.iconLib @ item = item}"></sly>
-</sly>
-<link rel="stylesheet" href="/libs/kyanite/web_root/main.css" type="text/css">
-<link data-sly-test="${wcmmode.isEdit}" href="/libs/kyanite/author/author.css" rel="stylesheet" type="text/css">
+<!-- Google Tag Manager -->
+<script type="text/plain" data-cookiecategory="analytics">
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-M2B8LK4');
+</script>
+<!-- End Google Tag Manager -->
+
+<link
+  data-sly-attribute.crossorigin="${wcmmode.isEdit ? 'anonymous' : ''}"
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Roboto&display=swap"
+/>
+
+<link
+  data-sly-attribute.crossorigin="${wcmmode.isEdit ? 'anonymous' : ''}"
+  rel="preload"
+  as="style"
+  href="/apps/websight-io/webroot/material-design-icons/css/materialdesignicons@7.2.96.min.css"
+/>
+
+<link
+  rel="preload"
+  as="style"
+  href="https://use.fontawesome.com/releases/v6.4.0/css/all.css"
+  integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0"
+  crossorigin="anonymous"
+/>
+
+<link
+  rel="stylesheet"
+  href="/apps/websight-io/webroot/main.css"
+  type="text/css"
+/>
+
+<link
+  data-sly-test="${wcmmode.isEdit}"
+  href="/libs/kyanite/author/author.css"
+  rel="stylesheet"
+  type="text/css"
+/>
+
+<link
+  rel="stylesheet"
+  type="text/css"
+  data-sly-test="${!(wcmmode.isEdit || wcmmode.isPreview) && project.version }"
+  href="/apps/websight-io/webroot/${project.version}/main.published.css"
+/>
+<link
+  rel="stylesheet"
+  type="text/css"
+  data-sly-test="${!(wcmmode.isEdit || wcmmode.isPreview) && !project.version}"
+  href="/apps/websight-io/webroot/main.published.css"
+/>
