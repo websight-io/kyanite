@@ -60,6 +60,18 @@ public class TabsComponent {
 
   @Inject
   @Getter
+  private String contentId;
+
+  @Inject
+  private boolean autoSwitch;
+
+  @Inject
+  @Getter
+  @Default(values = "5")
+  private String switchingTime;
+
+  @Inject
+  @Getter
   private String[] tabClasses;
 
   @PostConstruct
@@ -85,5 +97,9 @@ public class TabsComponent {
     }
 
     tabClasses = styles.toArray(new String[]{});
+  }
+
+  public String getAutoSwitch(){
+    return String.valueOf(autoSwitch);
   }
 }
