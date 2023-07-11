@@ -12,6 +12,22 @@
         "label": "The level is vertical on mobile",
         "description": "If you want the level to be horizontal on mobile as well uncheck that box."
       },
+      "spacing": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "spacing",
+        "label": "Spacing",
+        "fluid": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Fluid",
+          "value": ""
+        },
+        "fixed": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Fixed",
+          "value": "level-with-gaps",
+          "selected": true
+        }
+      },
       "verticalAlignment": {
         "sling:resourceType": "wcm/dialogs/components/radio",
         "name": "verticalAlignment",
@@ -19,13 +35,13 @@
         "start": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",
           "label": "start",
-          "value": "is-align-items-flex-start"
+          "value": "is-align-items-flex-start",
+          "selected": true
         },
         "center": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",
           "label": "center",
-          "value": "",
-          "selected": true
+          "value": "is-align-items-center"
         },
         "end": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",

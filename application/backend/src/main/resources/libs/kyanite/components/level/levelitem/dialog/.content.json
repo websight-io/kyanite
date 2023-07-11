@@ -16,6 +16,36 @@
         "include": {
           "sling:resourceSuperType": "kyanite/components/common/alignmentvertical"
         }
+      },
+      "variant": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "classes",
+        "label": "Variant",
+        "none": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "None",
+          "value": ""
+        },
+        "feature": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Feature",
+          "value": "feature"
+        },
+        "featureSmall": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Feature Small",
+          "value": "feature-sm"
+        },
+        "featureLarge": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Feature Large",
+          "value": "feature-lg"
+        },
+        "featureStats": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Feature Stats",
+          "value": "stats"
+        }
       }
     }
   }
