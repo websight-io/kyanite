@@ -18,7 +18,7 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.components.models.CardComponent">
   <div data-sly-unwrap="${!wcmmode.isEdit}" style="min-width: 125px; min-height: 50px">
-    <div class="card">
+    <div class="card ${model.heightVariant}">
 
       <sly data-sly-test="${model.header}">
         <header class="card-header">
