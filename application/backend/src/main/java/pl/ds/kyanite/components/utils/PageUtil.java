@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.utils;
+package pl.ds.kyanite.components.utils;
 
 import java.util.ArrayList;
 import java.util.List;

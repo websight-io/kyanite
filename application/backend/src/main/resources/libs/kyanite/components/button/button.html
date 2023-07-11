@@ -41,7 +41,7 @@
         </sly>
     </sly>
     <sly data-sly-test="${model.type == 'a'}">
-        <a href="${model.url}" class="button ${model.buttonClasses @ join=' '}"
+        <a href="${model.url}" data-part1="${model.mailPart1}" data-part2="${model.mailPart2}" data-part3="${model.mailPart3}"  class="button ${model.buttonClasses @ join=' '}"
            target="${model.openInNewTab && model.url != '' ? '_blank' : ''}">
             <sly data-sly-use.template="./template.html"
                  data-sly-call="${template.buttonContent @ model = model}"></sly>
