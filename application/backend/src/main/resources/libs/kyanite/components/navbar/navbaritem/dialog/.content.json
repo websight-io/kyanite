@@ -162,6 +162,31 @@
           "name": "image/alt",
           "label": "Image alt"
         },
+        "isLink": {
+          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "name": "isLink",
+          "label": "Is link"
+        },
+        "linkContainer": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "url": {
+            "sling:resourceType": "wcm/dialogs/components/pathpicker",
+            "rootPath": "/content",
+            "name": "imageUrl",
+            "label": "URL"
+          },
+          "openInNewTab": {
+            "sling:resourceType": "wcm/dialogs/components/toggle",
+            "name": "openInNewTab",
+            "label": "Open link in a new tab"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "isLink",
+              "values": "true"
+            }
+          }
+        },
         "width": {
           "sling:resourceType": "wcm/dialogs/components/numberfield",
           "name": "imageWidth",
