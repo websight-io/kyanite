@@ -20,6 +20,7 @@ import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIO
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
@@ -27,79 +28,90 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ChildResource;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.kyanite.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
-
-public class TabsComponent {
-
-  @Inject
-  @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String alignment;
+public class LinkComponent {
 
   @Inject
   @Getter
+  @Default(values = "Label")
+  private String label;
+
+  @Inject
   @Default(values = StringUtils.EMPTY)
+  private String link;
+
+  @Inject
+  @Getter
+  @Default(values = "false")
+  private String openInNewTab;
+
+  @Inject
+  @Getter
+  private boolean showIconLeft;
+
+  @Inject
+  @Getter
+  private String iconLeft;
+
+  @Inject
+  @Getter
+  private boolean showIconRight;
+
+  @Inject
+  @Getter
+  private String iconRight;
+
+  @Inject
+  @Getter
+  @Default(values = "is-dark")
+  private String variant;
+
+  @Inject
+  @Getter
+  @Default(values = "is-medium")
   private String size;
 
-  @Inject
   @Getter
-  private boolean boxed;
-
-  @Inject
+  private String[] linkClasses;
   @Getter
-  private boolean fullWidth;
-
-  @Inject
+  private String iconLibType;
   @Getter
-  private boolean toggle;
-
-  @Inject
+  private String iconSize;
   @Getter
-  private boolean toggleRounded;
+  private String iconContainerSize;
 
-  @Inject
-  @Getter
-  private String contentId;
+  @SlingObject
+  private Resource resource;
 
-  @Inject
-  private boolean autoSwitch;
+  @ChildResource
+  private Resource leftIcon;
 
-  @Inject
-  @Getter
-  @Default(values = "5")
-  private String switchingTime;
-
-  @Inject
-  @Getter
-  private String[] tabClasses;
+  @ChildResource
+  private Resource rightIcon;
 
   @PostConstruct
   private void init() {
-    List<String> styles = new ArrayList<>();
-    if (StringUtils.isNotEmpty(size)) {
-      styles.add(size);
-    }
-    if (StringUtils.isNotEmpty(alignment)) {
-      styles.add(alignment);
-    }
-    if (boxed) {
-      styles.add("is-boxed");
-    }
-    if (fullWidth) {
-      styles.add("is-fullwidth");
-    }
-    if (toggle) {
-      styles.add("is-toggle");
-      if (toggleRounded) {
-        styles.add("is-toggle-rounded");
-      }
-    }
+    List<String> classes = new ArrayList<>();
+    classes.add(size);
+    classes.add(variant);
 
-    tabClasses = styles.toArray(new String[]{});
+    this.linkClasses = classes.toArray(new String[]{});
   }
 
-  public String getAutoSwitch() {
-    return String.valueOf(autoSwitch);
+  public String getLink() {
+    return LinkUtil.handleLink(link, resource.getResourceResolver());
   }
+
+  public boolean hasLeftIcon() {
+    return Objects.nonNull(leftIcon);
+  }
+
+  public boolean hasRightIcon() {
+    return Objects.nonNull(rightIcon);
+  }
+
 }
