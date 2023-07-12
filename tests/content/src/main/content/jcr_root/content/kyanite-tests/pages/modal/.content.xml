@@ -6,7 +6,7 @@
     jcr:primaryType="ws:PageContent"
     jcr:title="Modal"
     sling:resourceType="kyanite/components/page"
-    ws:template="/libs/kyanite/templates/basicpage">
+    ws:template="kyanite/templates/basicpage">
     <pagecontainer
       jcr:primaryType="nt:unstructured"
       sling:resourceType="kyanite/components/pagecontainer">

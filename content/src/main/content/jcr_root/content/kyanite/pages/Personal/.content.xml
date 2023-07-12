@@ -5,7 +5,7 @@
         jcr:primaryType="ws:PageContent"
         jcr:title="Personal"
         sling:resourceType="kyanite/components/page"
-        ws:template="/libs/kyanite/templates/basicpage"
+        ws:template="kyanite/templates/basicpage"
         navbarFixed="true"
         navbarFixedPosition="has-navbar-fixed-top">
         <pagecontainer
@@ -937,7 +937,7 @@
                                                     sling:resourceType="kyanite/components/image"
                                                     alt="\0"
                                                     isRounded="false"
-                                                    src="/content/bulma/assets/images/personal/PortfolioCover.png"
+                                                    src="/content/kyanite/assets/images/personal/PortfolioCover.png"
                                                     type="fixed"/>
                                             </cardcontent>
                                         </card>
@@ -998,7 +998,7 @@
                                                     sling:resourceType="kyanite/components/image"
                                                     alt="\0"
                                                     isRounded="false"
-                                                    src="/content/bulma/assets/images/personal/PortfolioInbox.png"
+                                                    src="/content/kyanite/assets/images/personal/PortfolioInbox.png"
                                                     type="fixed"/>
                                             </cardcontent>
                                         </card>
