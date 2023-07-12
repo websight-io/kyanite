@@ -1,0 +1,56 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "fileName": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "fileName",
+        "label": "File name"
+      },
+      "fileType": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "fileType",
+        "label": "File type",
+        "empty": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Default",
+          "value": "language-java",
+          "selected": "true"
+        },
+        "html": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "html",
+          "value": "language-html"
+        },
+        "java": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "java",
+          "value": "language-java"
+        },
+        "json": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "json",
+          "value": "language-json"
+        },
+        "ts": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "ts",
+          "value": "language-ts"
+        },
+        "yaml": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "yaml",
+          "value": "language-yaml"
+        }
+      },
+      "code": {
+        "sling:resourceType": "wcm/dialogs/components/textarea",
+        "name": "code",
+        "label": "Code"
+      }
+    }
+  }
+}
