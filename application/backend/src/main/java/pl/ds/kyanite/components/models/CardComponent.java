@@ -50,6 +50,11 @@ public class CardComponent {
   @Getter
   private boolean content;
 
+  @Inject
+  @Getter
+  @Default(values = StringUtils.EMPTY)
+  private String heightVariant;
+
   @SlingObject
   private Resource resource;
 

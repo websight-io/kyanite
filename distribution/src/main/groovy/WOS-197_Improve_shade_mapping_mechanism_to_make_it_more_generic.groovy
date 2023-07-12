@@ -26,7 +26,7 @@ changeCounter = 0
 
 def findTitleAndContentComponents(String rootPath) {
     return resourceResolver.findResources("SELECT * FROM [nt:base] AS s WHERE ISDESCENDANTNODE([$rootPath]) AND" +
-            " ([sling:resourceType]='kyanite/components/title' OR [sling:resourceType]='kyanite/components/content')", "JCR-SQL2")
+            " ([sling:resourceType]='bulma/components/title' OR [sling:resourceType]='bulma/components/content')", "JCR-SQL2")
 }
 
 def processColorShadeChanges(Resource res) {

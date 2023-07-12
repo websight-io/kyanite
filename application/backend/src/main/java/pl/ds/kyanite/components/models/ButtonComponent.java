@@ -30,6 +30,7 @@ import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import pl.ds.kyanite.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
@@ -113,6 +114,21 @@ public class ButtonComponent {
   @SlingObject
   private Resource resource;
 
+  @ValueMapValue
+  @Default(values = StringUtils.EMPTY)
+  private String mail;
+
+  @ValueMapValue
+  @Getter
+  private String isMailto;
+
+  @Getter
+  private String mailPart1;
+  @Getter
+  private String mailPart2;
+  @Getter
+  private String mailPart3;
+
   @PostConstruct
   private void init() {
     List<String> classes = new ArrayList<>();
@@ -134,6 +150,19 @@ public class ButtonComponent {
       classes.add("is-fullwidth");
     }
     buttonClasses = classes.toArray(new String[]{});
+
+    if ("true".equals(isMailto)) {
+      List<String> parts = pl.ds.kyanite.components.utils.StringUtils.encryptEmail(mail);
+      if (parts.size() == 3) {
+        mailPart1 = parts.get(0);
+        mailPart2 = parts.get(1);
+        mailPart3 = parts.get(2);
+      }
+    } else {
+      mailPart1 = "";
+      mailPart2 = "";
+      mailPart3 = "";
+    }
   }
 
   public boolean hasLeftIcon() {

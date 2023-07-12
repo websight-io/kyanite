@@ -18,7 +18,8 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.components.models.level.LevelComponent">
   <sly data-sly-test="${resource.hasChildren}">
-    <div class="level ${model.verticalAlignment} ${model.isVertical ? '' : 'is-mobile'}">
+    <div
+        class="level ${model.spacing} ${model.verticalAlignment} ${model.isVertical ? '' : 'is-mobile'}">
       <sly
           data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
     </div>

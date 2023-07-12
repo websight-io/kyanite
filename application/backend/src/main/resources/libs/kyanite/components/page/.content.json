@@ -2,5 +2,5 @@
   "sling:resourceSuperType": "wcm/core/components/page",
   "group": ".hidden",
   "sling:resourceType": "ws:Component",
-  "title": "Kyanite page"
+  "title": "Page"
 }

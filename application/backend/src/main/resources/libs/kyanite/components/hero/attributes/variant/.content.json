@@ -13,6 +13,11 @@
       "sling:resourceType": "wcm/dialogs/components/select/selectitem",
       "label": "Dark",
       "value": "is-dark"
+    },
+    "gray-900": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Grey-900",
+      "value": "is-grey-900"
     }
   }
 }

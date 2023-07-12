@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.components.models;
+package pl.ds.kyanite.components.helpers;
 
 import java.io.IOException;
 import java.util.ArrayList;

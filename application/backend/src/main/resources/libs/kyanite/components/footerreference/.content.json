@@ -1,0 +1,5 @@
+{
+  "sling:resourceType": "ws:Component",
+  "title": "Footer Reference",
+  "group": ".hidden"
+}

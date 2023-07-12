@@ -10,14 +10,14 @@
         "name": "text",
         "label": "Text",
         "ws:disallowedContext": ["edit:panel"],
-        "configuration": "/libs/kyanite/components/common/rte/configurations/default"
+        "configuration": "kyanite/components/common/rte/configurations/default"
       },
       "panelText": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "text",
         "label": "Text",
         "ws:disallowedContext": ["edit:dialog"],
-        "configuration": "/libs/kyanite/components/common/rte/configurations/compact"
+        "configuration": "kyanite/components/common/rte/configurations/compact"
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
@@ -25,19 +25,11 @@
       },
       "textweight": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/common/textweight"
+        "path": "kyanite/components/common/textweight"
       },
       "color": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "include": {
-          "sling:resourceSuperType": "kyanite/components/common/text/color",
-          "black": {
-            "selected": false
-          },
-          "grey": {
-            "selected": true
-          }
-        }
+        "path": "kyanite/components/common/text/color"
       },
       "shadeContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
@@ -52,8 +44,8 @@
             "condition": {
               "sourceName": "color",
               "values": [
-                "bw_has-text-black",
-                "bw_has-text-white"
+                "bw_has-text-white",
+                "bw_has-text-black"
               ]
             }
           }
@@ -66,11 +58,11 @@
             "include": {
               "sling:resourceSuperType": "kyanite/components/common/text/shade/grey",
               "name": "grey/shade",
-              "default": {
-                "selected": false
-              },
-              "darker": {
+              "light": {
                 "selected": true
+              },
+              "dark": {
+                "selected": false
               }
             }
           },
@@ -78,7 +70,7 @@
             "condition": {
               "sourceName": "color",
               "values": [
-                "grey_has-text-grey"
+                "grey_has-text-link"
               ]
             }
           }
@@ -88,16 +80,24 @@
           "shade": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "path": "kyanite/components/common/text/shade/rest",
-            "namespace": "rest"
+            "include": {
+              "sling:resourceSuperType": "kyanite/components/common/text/shade/rest",
+              "name": "rest/shade",
+              "dark": {
+                "selected": true
+              },
+              "900": {
+                "selected": false
+              }
+            }
           },
           "ws:display": {
             "condition": {
               "sourceName": "color",
               "values": [
                 "rest_has-text-primary",
-                "rest_has-text-link",
+                "rest_has-text-grey",
                 "rest_has-text-info",
-                "rest_has-text-success",
                 "rest_has-text-success",
                 "rest_has-text-warning",
                 "rest_has-text-danger"
@@ -109,13 +109,12 @@
           "condition": {
             "sourceName": "color",
             "values": [
-              "bw_has-text-black",
               "bw_has-text-white",
-              "grey_has-text-grey",
+              "bw_has-text-black",
+              "grey_has-text-link",
               "rest_has-text-primary",
-              "rest_has-text-link",
+              "rest_has-text-grey",
               "rest_has-text-info",
-              "rest_has-text-success",
               "rest_has-text-success",
               "rest_has-text-warning",
               "rest_has-text-danger"

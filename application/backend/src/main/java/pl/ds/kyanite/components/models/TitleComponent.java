@@ -18,22 +18,27 @@ package pl.ds.kyanite.components.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.Required;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.jetbrains.annotations.NotNull;
 import pl.ds.kyanite.components.services.ColorService;
 
 @Model(adaptables = Resource.class,
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class TitleComponent {
 
+  public static final String STR = "\"";
+  public static final String SPACE = " ";
   @Inject
   @Getter
   private String text;
@@ -76,6 +81,17 @@ public class TitleComponent {
   @Getter
   private String anchorId;
 
+  @Getter
+  private String titleAlign;
+
+  @Inject
+  @Getter
+  private boolean addEyebrow;
+
+  @Inject
+  private String eyebrowText;
+
+
   @OSGiService
   @Required
   private ColorService colorService;
@@ -108,6 +124,57 @@ public class TitleComponent {
 
     titleClasses = titleClassList.toArray(new String[]{});
     subtitleClasses = subtitleClassList.toArray(new String[]{});
+    titleAlign = this.searchTitleAlign();
   }
 
+  private String searchTitleAlign() {
+    if (StringUtils.isBlank(text)) {
+      return StringUtils.EMPTY;
+    }
+    String textAlignToken = "text-align: ";
+    if (text.contains(textAlignToken)) {
+      int styleStart = text.indexOf(textAlignToken);
+      String substring = text.substring(styleStart);
+      if (substring.contains(STR)) {
+        int styleEnd = substring.indexOf(STR);
+
+        return text.substring(styleStart + textAlignToken.length(), styleStart + styleEnd);
+      }
+    }
+
+    return StringUtils.EMPTY;
+  }
+
+  private String enforceCorrectTags(String value) {
+    boolean containsAnyTags = Stream.of("<p>", "<p ", "<h1>", "<h2>", "<h3>", "<h4>", "<h5>",
+        "<h6>").anyMatch(value::contains);
+    return containsAnyTags
+        ? replaceP(value)
+        : embedInTags(value);
+  }
+
+  @NotNull
+  private String replaceP(String value) {
+    return value.replace("<p>",
+            "<%s class=\"%s\">".formatted(element, String.join(SPACE, titleClasses)))
+        .replace("<p ", "<%s class=\"%s\" ".formatted(element, String.join(SPACE, titleClasses)))
+        .replace("</p>", "</%s>".formatted(element));
+  }
+
+  private String embedInTags(String value) {
+    return "<%s class=\"%s\">%s</%s>".formatted(element, String.join(SPACE, titleClasses), value,
+        element);
+  }
+
+  public String getTextAsOneLine() {
+    return this.text.replaceAll("<p[^>]*>", "").replace("</p>", SPACE);
+  }
+
+  public String getRawText() {
+    return this.text.replaceAll("<[^>]*>", SPACE).replace("  ", SPACE);
+  }
+
+  public String getEyebrowText() {
+    return addEyebrow ? eyebrowText : StringUtils.EMPTY;
+  }
 }

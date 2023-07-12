@@ -1,0 +1,5 @@
+{
+  "group": "Kyanite.io Elements",
+  "sling:resourceType": "ws:Component",
+  "title": "Link"
+}
