@@ -1,0 +1,116 @@
+/*!
+ * <!--
+ *     Copyright (C) 2023 Dynamic Solutions
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ * -->
+ */
+
+@use 'sass:map';
+@use 'src/bulma-overwrite/variables' as spacing;
+@use 'src/atomic-design-system/00-token/t.spacing';
+@use 'src/atomic-design-system/00-token/t.color' as colors;
+@use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
+@use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
+
+@mixin o-footer {
+  @extend .t-background-color__grey--1000;
+  @extend .py-6_4;
+
+  text-align: center;
+  @include breakpoint.media-breakpoint-medium {
+    text-align: unset;
+  }
+
+  .image {
+    margin: auto; // center
+    @extend .mb-5;
+
+    display: flex;
+    justify-content: center;
+
+    @include breakpoint.media-breakpoint-medium {
+      display: block;
+      margin: 0; // center - remove
+    }
+
+    &.is-3by1 {
+      padding-top: 0;
+    }
+
+    img {
+      width: map.get(spacing.$spacing-values, '6_2');
+      height: map.get(spacing.$spacing-values, '6_2');
+      position: unset;
+    }
+  }
+
+  .content,
+  .content.has-text-grey-darker {
+    color: map.get(colors.$map_t-color-by-id, 'grey--100') !important;
+
+    &.is-small {
+      @extend .mt-5_1;
+      @extend .t-font-size--12;
+    }
+  }
+
+  .icon {
+    @extend .t-color__grey--100;
+
+    &:not(:last-of-type) {
+      margin-right: map.get(spacing.$spacing-values, '5');
+      @include breakpoint.media-breakpoint-medium {
+        margin-right: map.get(spacing.$spacing-values, '1_2');
+      }
+      @include breakpoint.media-breakpoint-large {
+        margin-right: map.get(spacing.$spacing-values, '5');
+      }
+    }
+  }
+
+  .column:not(:last-of-type) {
+    @extend .mb-6;
+    @include breakpoint.media-breakpoint-medium {
+      margin-bottom: 0;
+    }
+  }
+
+  .menu {
+    display: grid;
+    @extend .t-gap-5_4;
+
+    .menu-label {
+      margin: 0;
+      text-transform: unset;
+      @extend .t-color__grey--400;
+      @extend .t-font-size--16;
+    }
+
+    .menu-list {
+      display: grid;
+      @extend .t-gap-5_1;
+    }
+
+    a {
+      display: inline-block;
+      @include link.a-animated-underline-link;
+      @extend .p-0;
+      @extend .t-color__grey--100;
+
+      &:hover {
+        background-color: unset;
+      }
+    }
+  }
+}

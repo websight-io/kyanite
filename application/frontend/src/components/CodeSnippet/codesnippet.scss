@@ -1,0 +1,107 @@
+/*!
+ * <!--
+ *     Copyright (C) 2023 Dynamic Solutions
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ * -->
+ */
+
+@use 'sass:map';
+
+@use 'node_modules/highlight.js/styles/github.css';
+
+@use 'src/bulma-overwrite/variables' as variables;
+@use 'src/bulma-overwrite/bulma-spacing' as spacing;
+
+@use 'src/atomic-design-system/00-token/t.font' as font;
+@use 'src/atomic-design-system/00-token/t.color' as color;
+@use 'src/atomic-design-system/00-token/t.border' as border;
+
+.code-snippet {
+  $z-index-code-snippet: 0;
+  $z-index-code-snippet-copy: 1;
+
+  @extend .mb-4_3;
+
+  position: relative;
+  z-index: $z-index-code-snippet;
+
+  &__file-name {
+    @extend .p-2;
+
+    @extend .t-font-size--14;
+    @extend .t-font-weight--700;
+    @extend .t-color__grey--900;
+
+    background-color: variables.$code-background;
+    word-wrap: break-word;
+  }
+
+  // code
+  &__pre {
+    @extend .p-0;
+
+    @extend .t-border-weight-top--1;
+    @extend .t-border-color__grey--300;
+
+    > code {
+      @extend .px-5;
+
+      background-color: variables.$code-background !important; // overwrite hljs (highlight.js)
+    }
+  }
+
+  > .code-snippet__icon {
+    @extend .t-color__grey--300;
+
+    display: block;
+    z-index: $z-index-code-snippet-copy;
+    position: absolute;
+
+    // `margin` instead of `top` used as height of `__file-name` is dynamic
+    margin-top: map.get(spacing.$spacing-values, '4');
+    right: map.get(spacing.$spacing-values, '2');
+    cursor: pointer;
+  }
+
+  // icon - on container hover
+  &:hover > .code-snippet__icon {
+    @extend .t-color__grey--900;
+
+    &:hover {
+      @extend .t-color__primary--600;
+    }
+  }
+
+  .icon__message {
+    @extend .t-font-size--14;
+    @extend .t-color__primary--600;
+
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s linear, opacity 0.3s linear;
+    position: absolute;
+    right: 0;
+    user-select: none;
+
+    // fits text in 1 line, can not do 100% as it's just icons width, have to do it manually like that
+    width: 140px;
+    text-align: right;
+
+    &.visible {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+/*!
+ * <!--
+ *     Copyright (C) 2023 Dynamic Solutions
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ * -->
+ */
+
+@use 'sass:map';
+@use 'sass:math';
+
+@use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
+
+// 16px as base
+$map_t-font-sizes: (
+  'base': 1rem,
+  '12': 0.75rem,
+  '14': 0.875rem,
+  '16': 1rem,
+  '18': 1.125rem,
+  '20': 1.25rem,
+  '22': 1.375rem,
+  '24': 1.5rem,
+  '28': 1.75rem,
+  '32': 2rem,
+  '40': 2.5rem,
+  '48': 3rem,
+  '56': 3.5rem,
+  '64': 4rem,
+  '80': 5rem,
+  '128': 8rem,
+);
+
+@mixin t-font-size($name) {
+  font-size: map.get($map_t-font-sizes, #{$name});
+}
+
+@each $name, $value in $map_t-font-sizes {
+  // i.e. `.t-font-size--12`
+  .t-font-size--#{$name} {
+    @include t-font-size(#{$name});
+  }
+}
+
+// source https://levelup.gitconnected.com/css-responsive-fluid-typography-a23a9aab19a
+// $min - Minimum font size (px, rem)
+// $max - Maximum font size (px, rem)
+// $min-vw - Minimum viewport value lock range (px) --(optional)
+// $max-vw - Maximum viewport value lock range (px) --(optional)
+@mixin t-font-size-fluid(
+  $min,
+  $max,
+  $min-vw: map.get(breakpoint.$map_t-breakpoints-px, medium),
+  $max-vw: map.get(breakpoint.$map_t-breakpoints-px, maximum)
+) {
+  $min: map.get($map_t-font-sizes, #{$min});
+  $max: map.get($map_t-font-sizes, #{$max});
+
+  $min-no-unit: strip-units($min);
+  $max-no-unit: strip-units($max);
+
+  $min-vw-no-unit: strip-units($min-vw);
+  $max-vw-no-unit: strip-units($max-vw);
+
+  @if getUnit($min) == 'rem' or getUnit($min) == 'em' {
+    $min-no-unit: strip-units($min) * 16;
+    $max-no-unit: strip-units($max) * 16;
+  }
+
+  // output example "font-size: calc(10px + 1.5625vw)"
+  $responsive: calc(
+    #{$min-no-unit}px + (#{$max-no-unit} - #{$min-no-unit}) *
+      ((100vw - #{$min-vw}) / (#{$max-vw-no-unit} - #{$min-vw-no-unit}))
+  );
+
+  // mobile first
+  font-size: $min;
+
+  // medium
+  @include breakpoint.media-breakpoint-min-width(#{$min-vw}) {
+    font-size: $responsive;
+  }
+
+  // maximum
+  @include breakpoint.media-breakpoint-min-width(#{$max-vw}) {
+    font-size: $max;
+  }
+}
+@function strip-units($number) {
+  @return math.div($number, ($number * 0 + 1));
+}
+@function getUnit($value) {
+  @return str-slice($value * 0 + '', 2, -1);
+}

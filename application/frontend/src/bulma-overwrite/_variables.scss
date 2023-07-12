@@ -1,0 +1,127 @@
+/*!
+ * <!--
+ *     Copyright (C) 2023 Dynamic Solutions
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ * -->
+ */
+
+@use 'sass:map';
+
+@use 'src/atomic-design-system/00-token/t.zindex' as zindex;
+@use 'src/atomic-design-system/00-token/t.color' as color;
+@use 'src/atomic-design-system/00-token/t.font' as font;
+@use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
+
+// Bulma initial variables https://github.com/jgthms/bulma/blob/master/sass/utilities/initial-variables.sass
+
+/* Navbar */
+$navbar-z: zindex.$z-index-navbar;
+$navbar-fixed-z: $navbar-z;
+
+/* Colors */
+$grey-dark: map.get(color.$map_t-color-by-id, 'grey--700');
+$grey: map.get(color.$map_t-color-by-id, 'grey--600');
+$yellow: map.get(color.$map_t-color-by-id, 'warning--600');
+$green: map.get(color.$map_t-color-by-id, 'success--600');
+$blue: map.get(
+  color.$map_t-color-by-id,
+  'primary--600'
+); // value used also in cookie-consent.scss
+$red: map.get(color.$map_t-color-by-id, 'danger--600');
+$primary: $blue;
+$link: $blue;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+$info: map.get(color.$map_t-color-by-id, 'info--600');
+$light: map.get(color.$map_t-color-by-id, 'grey--400');
+$dark: map.get(color.$map_t-color-by-id, 'grey--800');
+$black: color.$black;
+$white: color.$white;
+$custom-colors: (
+  'grey-900': (
+    map.get(color.$map_t-color-by-id, 'grey--900'),
+    map.get(color.$map_t-color-by-id, 'grey--100'),
+  ),
+); // these colors are merged with bulma $colors variable, which defines e.g. hero variants, in this case "is-grey-900" is added
+
+/* Code colors */
+$pre-background: color.$code-background;
+
+// FYI - below are fallback defaults, code is styled using hljs (highlight.js)
+$code-background: color.$code-background;
+$code: color.$code-text;
+$pre: color.$code-text;
+
+/* Font */
+$family-sans-serif: map.get(
+  font.$map_t-fonts,
+  'BeVietnamPro'
+); // value used also in cookie-consent.scss
+
+$weight-light: map.get(font.$map_t-font-weights, 'light');
+$weight-normal: map.get(font.$map_t-font-weights, 'normal');
+$weight-medium: map.get(font.$map_t-font-weights, 'medium');
+$weight-semibold: map.get(font.$map_t-font-weights, 'semibold');
+$weight-bold: map.get(font.$map_t-font-weights, 'bold');
+
+/* Breakpoints */
+$tablet: map.get(breakpoint.$map_t-breakpoints-px, 'medium');
+$desktop: map.get(breakpoint.$map_t-breakpoints-px, 'large');
+$widescreen: map.get(breakpoint.$map_t-breakpoints-px, 'xlarge');
+$fullhd: map.get(breakpoint.$map_t-breakpoints-px, 'maximum');
+
+/* Spacing */
+$spacing-shortcuts: (
+  'margin': 'm',
+  'padding': 'p',
+);
+$spacing-directions: (
+  'top': 't',
+  'right': 'r',
+  'bottom': 'b',
+  'left': 'l',
+);
+$spacing-horizontal: 'x';
+$spacing-vertical: 'y';
+$spacing-values: (
+  '0': 0,
+  '0_1': 0.063rem,
+  '0_2': 0.188rem,
+  '1': 0.25rem,
+  '1_1': 0.313rem,
+  '1_2': 0.375rem,
+  '2': 0.5rem,
+  '3': 0.75rem,
+  '4': 1rem,
+  '4_1': 1.063rem,
+  '4_2': 1.125rem,
+  '4_3': 1.25rem,
+  '4_4': 1.375rem,
+  '5': 1.5rem,
+  '5_1': 1.75rem,
+  '5_2': 2rem,
+  '5_3': 2.25rem,
+  '5_4': 2.5rem,
+  '5_5': 2.75rem,
+  '6': 3rem,
+  '6_1': 3.5rem,
+  '6_2': 4rem,
+  '6_3': 5rem,
+  '6_4': 6rem,
+  '6_5': 8rem,
+  '6_6': 10rem,
+  '6_7': 16rem,
+  'auto': auto,
+);

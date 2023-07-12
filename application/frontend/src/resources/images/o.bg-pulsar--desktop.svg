@@ -1,0 +1,29 @@
+<!--
+ *     Copyright (C) 2023 Dynamic Solutions
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ * -->
+<svg width="3910" height="3910" viewBox="0 0 3910 3910" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M1350.53 3909C1350.53 3909 1252.15 2657.86 1955.02 1954.99C2657.89 1252.12 3909 1350.53 3909 1350.53" stroke="#0053FF"/>
+  <path d="M1125.61 3684.08C1125.61 3684.08 1252.15 2657.86 1955.02 1954.99C2657.89 1252.12 3684.08 1125.61 3684.08 1125.61" stroke="#0053FF"/>
+  <path d="M900.685 3459.16C900.685 3459.16 1252.15 2657.86 1955.02 1954.99C2657.89 1252.12 3459.16 900.686 3459.16 900.686" stroke="#0053FF"/>
+  <path d="M3234 675.607L675.667 3233.94" stroke="#0053FF"/>
+  <path d="M450.843 3009.32C450.843 3009.32 1252.15 2657.86 1955.02 1954.99C2657.89 1252.12 3009.32 450.845 3009.32 450.845" stroke="#0053FF"/>
+  <path d="M225.922 2784.4C225.922 2784.4 1252.15 2657.86 1955.02 1954.99C2657.89 1252.12 2784.4 225.924 2784.4 225.924" stroke="#0053FF"/>
+  <path d="M1.00113 2559.48C1.00113 2559.48 1252.15 2657.86 1955.02 1954.99C2657.89 1252.12 2559.48 1.00283 2559.48 1.00283" stroke="#0053FF"/>
+  <circle opacity="0.3" cx="1955" cy="1955" r="8" fill="#99BAFF">
+    <animate id="dScale" attributeName="r" values="9px;28px" begin="0s;dScale.end+2s" dur="0.5s"/>
+    <animate id="dOpacity" attributeName="opacity" values="1;0" begin="0s;dOpacity.end+2s" dur="0.5s"/>
+  </circle>
+  <circle cx="1955" cy="1955" r="8" fill="#0053FF"/>
+</svg>

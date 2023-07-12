@@ -1,0 +1,29 @@
+<!--
+ *     Copyright (C) 2023 Dynamic Solutions
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ * -->
+<svg width="768" height="1069" viewBox="0 0 768 1069" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M376.842 1068C376.842 1068 346.382 680.619 564.005 462.996C781.628 245.373 1169 275.842 1169 275.842" stroke="#0053FF"/>
+  <path d="M307.202 998.361C307.202 998.361 346.382 680.619 564.005 462.996C781.628 245.373 1099.36 206.202 1099.36 206.202" stroke="#0053FF"/>
+  <path d="M237.561 928.72C237.561 928.72 346.382 680.619 564.005 462.996C781.628 245.373 1029.72 136.562 1029.72 136.562" stroke="#0053FF"/>
+  <path d="M960.005 66.8726L167.891 858.987" stroke="#0053FF"/>
+  <path d="M98.2809 789.44C98.2809 789.44 346.382 680.619 564.005 462.996C781.628 245.373 890.439 -2.71862 890.439 -2.71862" stroke="#0053FF"/>
+  <path d="M28.6406 719.799C28.6406 719.799 346.382 680.619 564.005 462.996C781.628 245.373 820.799 -72.3589 820.799 -72.3589" stroke="#0053FF"/>
+  <path d="M-40.9997 650.159C-40.9997 650.159 346.382 680.619 564.005 462.996C781.628 245.373 751.159 -141.999 751.159 -141.999" stroke="#0053FF"/>
+  <circle opacity="0.3" cx="564" cy="463" r="9" fill="#99BAFF">
+    <animate id="tScale" attributeName="r" values="9px;28px" begin="0s;tScale.end+2s" dur="0.5s"/>
+    <animate id="tOpacity" attributeName="opacity" values="1;0" begin="0s;tOpacity.end+2s" dur="0.5s"/>
+  </circle>
+  <circle cx="564" cy="463" r="8" fill="#0053FF"/>
+</svg>

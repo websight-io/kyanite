@@ -1,0 +1,78 @@
+/*!
+ * <!--
+ *     Copyright (C) 2023 Dynamic Solutions
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ * -->
+ */
+
+@use 'sass:map';
+
+@use 'src/bulma-overwrite/bulma-spacing';
+
+@use 'src/atomic-design-system/00-token/t.spacing' as gap;
+@use 'src/atomic-design-system/00-token/t.color' as color;
+@use 'src/atomic-design-system/00-token/t.font' as font;
+@use 'src/atomic-design-system/00-token/t.border';
+
+@mixin m-article-thumbnail {
+  @extend .t-color__grey--900;
+  @extend .mb-5_4;
+
+  .content {
+    @extend .mt-4;
+
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .content-info {
+    flex-grow: 1;
+
+    .title {
+      @extend .mb-4;
+      @extend .t-color__grey--900;
+    }
+  }
+
+  .mdi {
+    @extend .px-1;
+    @extend .t-line-height--150;
+    @include font.t-font-size-fluid(22, 32);
+
+    color: color.$black;
+    transform: rotate(45deg);
+  }
+
+  .image-hero img {
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .content-info-details {
+    .author-content {
+      @extend .t-color__grey--900;
+      @extend .pr-5;
+    }
+
+    .date-content {
+      @extend .t-color__grey--700;
+      @extend .pr-3;
+    }
+
+    .time-content {
+      @extend .t-color__grey--700;
+    }
+  }
+}

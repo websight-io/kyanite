@@ -1,0 +1,26 @@
+<!--
+ *     Copyright (C) 2023 Dynamic Solutions
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ * -->
+<svg width="1000" height="898" viewBox="0 0 1000 898" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="40.5" y="804.567" width="52.9326" height="52.9326" stroke="#0053FF"/>
+<rect x="40.5" y="772.208" width="85.2921" height="85.2921" stroke="#0053FF"/>
+<rect x="40.5" y="718.275" width="139.225" height="139.225" stroke="#0053FF"/>
+<rect x="40.5" y="631.983" width="225.517" height="225.517" stroke="#0053FF"/>
+<rect x="40.5" y="491.758" width="365.742" height="365.742" stroke="#0053FF"/>
+<rect x="40.5" y="265.242" width="592.258" height="592.258" stroke="#0053FF"/>
+<rect x="40.5" y="-101.5" width="959" height="959" stroke="#0053FF"/>
+<circle opacity="0.3" cx="40" cy="858" r="9" fill="#99BAFF"/>
+<circle cx="40" cy="858" r="8" fill="#0053FF"/>
+</svg>

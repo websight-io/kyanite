@@ -2,12 +2,13 @@
     "compilerOptions": {
         "target": "es5",
         "module": "es6",
-        "baseUrl": "../ui.frontend",
+        "baseUrl": "../frontend",
         "removeComments": true,
-        "allowJs": true,
+        "allowJs": false,
         "preserveConstEnums": true,
         "allowSyntheticDefaultImports": true,
-        "sourceMap": true
+        "sourceMap": true,
+        "moduleResolution": "node"
     },
     "include": [ "./src/**/*.ts" ]
 }

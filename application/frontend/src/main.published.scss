@@ -16,8 +16,8 @@
  * -->
  */
 
-.level-item { 
-    & > .content {
-        margin-bottom: 0;
-    }
-}
+/**
+ * This file is loaded only in WCM disabled mode. It's not present in edit or publish mode.
+ * Used only for end-user.
+ */
+@use './cookies/cookie-consent';
