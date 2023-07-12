@@ -27,7 +27,7 @@
 
   <artifactId>kyanite-richtext</artifactId>
   <version>0.0.2-SNAPSHOT</version>
-  <name>Bulma Components Project - RTE extensions module</name>
+  <name>Kyanite Components Project - RTE extensions module</name>
   <description>RTE extensions module</description>
 
   <properties>

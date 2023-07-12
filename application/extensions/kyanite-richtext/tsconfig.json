@@ -3,7 +3,7 @@
     "../src/main/webapp/**/*"
   ],
   "compilerOptions": {
-    "baseUrl": "./bulma-richtext",
+    "baseUrl": "./kyanite-richtext",
     "lib": [
       "esnext",
       "dom",

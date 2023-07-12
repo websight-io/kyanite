@@ -30,7 +30,7 @@ describe('Level component', function () {
     cy.percySnapshotPreview('Level preview');
 
     cy.contains('Search').click();
-    cy.contains('Bulma').should('be.visible');
+    cy.contains('Kyanite').should('be.visible');
   });
 
   it('renders correctly in edit mode', function () {

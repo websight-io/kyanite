@@ -27,7 +27,7 @@
 
     <artifactId>kyanite-extensions</artifactId>
   <version>0.0.2-SNAPSHOT</version>
-    <name>Bulma Components Project - Extensions</name>
+    <name>Kyanite Components Project - Extensions</name>
     <description>Parent for extension modules.</description>
     <packaging>pom</packaging>
 
