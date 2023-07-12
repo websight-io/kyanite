@@ -6,9 +6,27 @@
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
       "text": {
-        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "text",
-        "label": "Text"
+        "label": "Text",
+        "configuration": {
+          "sling:resourceSuperType": "kyanite/components/common/rte/configurations/default",
+          "color": {
+            "sling:resourceType": "extensions/dialogs/components/richtext/ui/color",
+            "title": "Color",
+            "icon": "format_color_text",
+            "colors": {
+              "sling:resourceType": "wcm/dialogs/components/include",
+              "path": "kyanite/components/common/rte/ui/colors"
+            },
+            "plugin": {
+              "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color"
+            },
+            "sling:orderBefore": "bulletlist"
+          },
+          "sling:hideChildren": [
+            "italic", "bold", "underline", "strikethrough", "bulletlist", "orderedlist", "link", "unsetlink", "textstyle"]
+        }
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
@@ -26,81 +44,22 @@
         "name": "anchorId",
         "label": "AnchorId text"
       },
-      "color": {
-        "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "kyanite/components/common/text/color",
-        "value": "bw_has-text-black"
+      "addEyebrow": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "addEyebrow",
+        "label": "Add eyebrow text"
       },
-      "shadeContainer": {
+      "eyebrowContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
-        "blackAndWhiteShade": {
-          "sling:resourceType": "wcm/dialogs/components/container",
-          "intensity": {
-            "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/components/common/text/shade/bw",
-            "namespace": "bw"
-          },
-          "ws:display": {
-            "condition": {
-              "sourceName": "color",
-              "values": [
-                "bw_has-text-black",
-                "bw_has-text-white"
-              ]
-            }
-          }
-        },
-        "greyShade": {
-          "sling:resourceType": "wcm/dialogs/components/container",
-          "intensity": {
-            "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/components/common/text/shade/grey",
-            "namespace": "grey"
-          },
-          "ws:display": {
-            "condition": {
-              "sourceName": "color",
-              "values": [
-                "grey_has-text-grey"
-              ]
-            }
-          }
-        },
-        "restShade": {
-          "sling:resourceType": "wcm/dialogs/components/container",
-          "intensity": {
-            "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/components/common/text/shade/rest",
-            "namespace": "rest"
-          },
-          "ws:display": {
-            "condition": {
-              "sourceName": "color",
-              "values": [
-                "rest_has-text-primary",
-                "rest_has-text-link",
-                "rest_has-text-info",
-                "rest_has-text-success",
-                "rest_has-text-warning",
-                "rest_has-text-danger"
-              ]
-            }
-          }
+        "eyebrowText": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "eyebrowText",
+          "label": "Eyebrow text"
         },
         "ws:display": {
           "condition": {
-            "sourceName": "color",
-            "values": [
-              "bw_has-text-black",
-              "bw_has-text-white",
-              "grey_has-text-grey",
-              "rest_has-text-primary",
-              "rest_has-text-link",
-              "rest_has-text-info",
-              "rest_has-text-success",
-              "rest_has-text-warning",
-              "rest_has-text-danger"
-            ]
+            "sourceName": "addEyebrow",
+            "values": "true"
           }
         }
       },
@@ -222,12 +181,7 @@
         "ws:display": {
           "condition": {
             "sourceName": "size",
-            "values": [
-              "is-1",
-              "is-2",
-              "is-3",
-              "is-4"
-            ]
+            "values": ["is-1", "is-2", "is-3", "is-4"]
           }
         }
       }

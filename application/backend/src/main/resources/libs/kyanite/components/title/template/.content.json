@@ -5,9 +5,9 @@
   "element": "h2",
   "isSpaced": false,
   "size": "is-2",
-  "color": "bw_has-text-black",
-  "shadeBw": "",
+  "color": "rest_has-text-grey",
   "subtitleColor": "bw_has-text-black",
-  "addSubtitle": "false",
-  "subtitleShadeBw": ""
+  "rest": {
+    "shade": "900"
+  }
 }
