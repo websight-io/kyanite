@@ -31,7 +31,16 @@ module.exports = {
   env: {
     browser: true,
   },
-  ignorePatterns: ['**/*.js', '!src/**/*', 'src/main/resources', "**/*/emailDecryption.js"],
+  ignorePatterns: ['**/*.js', '!src/**/*', 'src/main/resources',
+    "**/*/emailDecryption.js",
+    "**/*/contactForm.js",
+    "**/*/dropdown.js",
+    "**/*/modal.js",
+    "**/*/message.js",
+    "**/*/navbar.js",
+    "**/*/notification.js",
+    "**/*/panelTabs.js",
+    "**/*/switchTab.js"],
   rules: {
     '@typescript-eslint/no-misused-promises': [
       'error',

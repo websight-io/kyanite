@@ -37,17 +37,10 @@
     "pl.ds.websight.publishing.staticprocessor.PagePublishProcessor": {
       "shorten.paths": true
     },
-    "pl.ds.kyanite.components.services.impl.LibraryIconFactoryConfigImpl~fas": {
-      "id": "fas",
-      "label": "Font Awesome",
-      "libraryUrl": "https://use.fontawesome.com/releases/v6.4.0/css/all.css",
-      "attributes": ["crossorigin=anonymous","integrity=sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0"]
-    },
     "pl.ds.kyanite.components.services.impl.LibraryIconFactoryConfigImpl~mdi": {
       "id": "mdi",
       "label": "Material Design",
-      "libraryUrl": "https://cdn.materialdesignicons.com/7.2.96/css/materialdesignicons.min.css",
-      "attributes": ["crossorigin=anonymous"]
+      "libraryUrl": "/libs/kyanite/webroot/material-design-icons/css/materialdesignicons@7.2.96.min.css"
     }
   },
   "content-packages:ARTIFACTS|true": [

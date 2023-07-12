@@ -15,6 +15,13 @@
  */
 
 import './CodeSnippet/codesnippet';
+import './ContactForm/contactForm';
+import './Dropdown/dropdown';
+import './Modal/modal';
+import './Message/message';
+import './Navbar/navbar';
+import './Notification/notification';
+import './PanelTabs/panelTabs';
 import './Tabs/tabs';
 import './Title/title';
 

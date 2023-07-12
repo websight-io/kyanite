@@ -105,7 +105,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new ESLintPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'main/[name].css',
+      filename: (file) => (file.chunk.name === 'author' ? 'author': 'main') + '/[name].css'
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -131,7 +131,7 @@ module.exports = {
               source: path.join(__dirname, 'dist/main'),
               destination: path.join(
                   __dirname,
-                  'src/main/resources/apps/kyanite/webroot'
+                  'src/main/resources/libs/kyanite/webroot'
               ),
             },
             {
