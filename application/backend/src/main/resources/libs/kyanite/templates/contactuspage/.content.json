@@ -1,0 +1,5 @@
+{
+  "sling:resourceType": "ws:PageTemplate",
+  "title": "Contact us page",
+  "description": "Contact us page"
+}
