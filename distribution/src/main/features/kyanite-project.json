@@ -40,7 +40,7 @@
     "pl.ds.kyanite.components.services.impl.LibraryIconFactoryConfigImpl~mdi": {
       "id": "mdi",
       "label": "Material Design",
-      "libraryUrl": "/apps/websight-io/webroot/material-design-icons/css/materialdesignicons@7.2.96.min.css"
+      "libraryUrl": "/libs/kyanite/webroot/material-design-icons/css/materialdesignicons@7.2.96.min.css"
     }
   },
   "content-packages:ARTIFACTS|true": [
