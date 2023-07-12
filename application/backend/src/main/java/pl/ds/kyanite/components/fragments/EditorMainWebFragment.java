@@ -29,7 +29,7 @@ public class EditorMainWebFragment implements WebFragment {
 
   @Override
   public String getFragment() {
-    return "/apps/websight-io/webroot/webfragment.editor.main.js";
+    return "/libs/kyanite/webroot/webfragment.editor.main.js";
   }
 
   @Override

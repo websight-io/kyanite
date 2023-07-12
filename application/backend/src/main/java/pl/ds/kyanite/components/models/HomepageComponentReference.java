@@ -43,7 +43,7 @@ public abstract class HomepageComponentReference {
       Page rootPage = PageUtil.findTopLevelParentPageForCurrentPage(
           Objects.requireNonNull(pageManager.getContainingPage(resource.getPath())));
       homepage = PageUtil.findSiblingPageForCurrentPage(rootPage,
-          "/apps/websight-io/templates/homepage");
+          "/libs/kyanite/templates/homepage");
 
       if (Objects.nonNull(homepage)) {
         data = homepage.getChild(getPath()) != null ? homepage.getChild(getPath()) : null;

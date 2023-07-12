@@ -263,11 +263,11 @@
       "label": "Style",
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/websight-io/components/link/attributes/size"
+        "path": "kyanite/components/link/attributes/size"
       },
       "variant": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/apps/websight-io/components/link/attributes/variant"
+        "path": "kyanite/components/link/attributes/variant"
       }
     }
   }
