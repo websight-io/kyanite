@@ -38,7 +38,7 @@
     },
     "link": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "websight-io/components/link",
+      "sling:resourceType": "kyanite/components/link",
       "size": "is-medium",
       "selectOrTypeLeft": "select",
       "selectOrTypeRight": "selectRight",
