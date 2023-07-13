@@ -16,9 +16,11 @@
 
 package pl.ds.kyanite.components.models;
 
+import static pl.ds.kyanite.components.utils.LinkUtil.CONTENT;
+
+import java.util.Objects;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import java.util.Objects;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
@@ -30,8 +32,6 @@ import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.factory.ModelFactory;
 import pl.ds.kyanite.components.utils.LinkUtil;
-
-import static pl.ds.kyanite.components.utils.LinkUtil.CONTENT;
 
 @Model(
     adaptables = {Resource.class},
@@ -56,7 +56,8 @@ public class BlogArticleAuthorBioComponent {
 
   @Inject
   public BlogArticleAuthorBioComponent(@SlingObject Resource resource,
-                                       @SlingObject ResourceResolver resourceResolver, @OSGiService ModelFactory modelFactory) {
+                                       @SlingObject ResourceResolver resourceResolver,
+                                       @OSGiService ModelFactory modelFactory) {
     this.resource = resource;
     this.resourceResolver = resourceResolver;
     this.modelFactory = modelFactory;

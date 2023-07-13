@@ -16,6 +16,8 @@
 
 package pl.ds.kyanite.components.models;
 
+import static pl.ds.kyanite.components.utils.LinkUtil.CONTENT;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -42,7 +44,6 @@ import pl.ds.kyanite.components.utils.PageUtil;
 import pl.ds.websight.pages.core.api.Page;
 import pl.ds.websight.pages.core.api.PageManager;
 
-import static pl.ds.kyanite.components.utils.LinkUtil.CONTENT;
 
 @Model(
     adaptables = {Resource.class},
@@ -70,7 +71,8 @@ public class BlogListComponent {
   @Inject
   public BlogListComponent(@SlingObject ResourceResolver resourceResolver,
                            @SlingObject Resource resource,
-                           @OSGiService BlogArticleService blogArticleService, @OSGiService ModelFactory modelFactory) {
+                           @OSGiService BlogArticleService blogArticleService,
+                           @OSGiService ModelFactory modelFactory) {
     this.resourceResolver = resourceResolver;
     this.blogArticleService = blogArticleService;
     this.modelFactory = modelFactory;

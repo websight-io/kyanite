@@ -16,9 +16,9 @@
 
 package pl.ds.kyanite.components.models;
 
+import java.util.Objects;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import java.util.Objects;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;

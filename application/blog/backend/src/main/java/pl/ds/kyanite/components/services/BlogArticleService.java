@@ -39,10 +39,12 @@ import pl.ds.websight.pages.core.api.Page;
 @Component(service = {BlogArticleService.class})
 public class BlogArticleService {
 
-  public static final String FEATURE_BLOG_ARTICLE_RESOURCE_TYPE = "websight-io/components/featuredblogarticle";
+  public static final String FEATURE_BLOG_ARTICLE_RESOURCE_TYPE =
+      "websight-io/components/featuredblogarticle";
 
   public static final String JCR_SQL_2 = "JCR-SQL2";
-  public static final String TEMPLATE_BLOGARTICLE_PAGE = "/apps/websight-io/templates/blogarticlepage";
+  public static final String TEMPLATE_BLOGARTICLE_PAGE =
+      "/apps/websight-io/templates/blogarticlepage";
 
   public List<Resource> getListBlogArticlePages(String path, ResourceResolver resourceResolver) {
     final String pagesQuery = """
@@ -58,6 +60,22 @@ public class BlogArticleService {
         Spliterators.spliteratorUnknownSize(iterator, Spliterator.ORDERED),
         false
     ).toList();
+  }
+
+  public List<Resource> getListBlogArticlePages(Page page) {
+    return page.streamOfChildrenRecursively()
+        .map(Page::getContentResource)
+        .filter(this::isBlogArticlePage)
+        .sorted(Comparator.comparing(this::getBlogArticleCreationDate,
+            Comparator.nullsLast(Comparator.reverseOrder())))
+        .toList();
+  }
+
+  public List<Resource> findFeatureBlogsOnPage(Resource resource) {
+    return this.getDescendants(resource).stream()
+        .filter(
+            res -> StringUtils.equals(FEATURE_BLOG_ARTICLE_RESOURCE_TYPE, res.getResourceType()))
+        .toList();
   }
 
   public List<Resource> findFeatureBlogsOnPage(String path, ResourceResolver resourceResolver) {
@@ -80,15 +98,6 @@ public class BlogArticleService {
         Spliterators.spliteratorUnknownSize(resources, Spliterator.ORDERED),
         false
     );
-  }
-
-  public List<Resource> getListBlogArticlePages(Page page) {
-    return page.streamOfChildrenRecursively()
-        .map(Page::getContentResource)
-        .filter(this::isBlogArticlePage)
-        .sorted(Comparator.comparing(this::getBlogArticleCreationDate,
-            Comparator.nullsLast(Comparator.reverseOrder())))
-        .toList();
   }
 
   public boolean isBlogArticlePage(Resource resource) {
@@ -118,13 +127,6 @@ public class BlogArticleService {
                 .map(this::getDescendants)
                 .flatMap(Collection::stream))
             .collect(Collectors.toSet());
-  }
-
-  public List<Resource> findFeatureBlogsOnPage(Resource resource) {
-    return this.getDescendants(resource).stream()
-        .filter(
-            res -> StringUtils.equals(FEATURE_BLOG_ARTICLE_RESOURCE_TYPE, res.getResourceType()))
-        .toList();
   }
 
 }
