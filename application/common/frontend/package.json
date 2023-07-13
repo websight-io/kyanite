@@ -12,7 +12,7 @@
   "scripts": {
     "prod": "webpack --config ./webpack.prod.js",
     "watch": "webpack --config ./webpack.prod.js --watch",
-    "watch:sync": "websight-localsync --container-name websight-cms-kyanite target-folder=src/main/resources/apps/kyanite/webroot provider-root-suffix=kyanite/webroot",
+    "watch:sync": "websight-localsync --container-name websight-cms-kyanite target-folder=src/main/resources/libs/kyanite/webroot provider-root-suffix=kyanite/webroot",
     "prettier": "prettier --check src",
     "prettier:fix": "prettier --write src",
     "eslint": "eslint src --ext .ts --max-warnings 0",
