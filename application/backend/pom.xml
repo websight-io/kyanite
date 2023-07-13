@@ -21,12 +21,12 @@
   <parent>
     <groupId>pl.ds.kyanite</groupId>
     <artifactId>kyanite-application</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>kyanite-backend</artifactId>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.2</version>
   <name>Kyanite Components Project - Backend</name>
   <description>Contains application backend.</description>
 
