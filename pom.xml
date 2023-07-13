@@ -11,7 +11,7 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>application</module>
+    <module>applications</module>
     <module>content</module>
     <module>distribution</module>
     <module>tests</module>
