@@ -21,7 +21,7 @@
   <parent>
     <groupId>pl.ds.kyanite</groupId>
     <artifactId>kyanite</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3-SNAPSHOT</version>
   </parent>
 
   <artifactId>kyanite-distribution</artifactId>
@@ -46,25 +46,25 @@
     <dependency>
       <groupId>pl.ds.kyanite</groupId>
       <artifactId>kyanite-backend</artifactId>
-      <version>0.0.2</version>
+      <version>0.0.3-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
     <dependency>
       <groupId>pl.ds.kyanite</groupId>
       <artifactId>kyanite-frontend</artifactId>
-      <version>0.0.2</version>
+      <version>0.0.3-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
     <dependency>
       <groupId>pl.ds.kyanite</groupId>
       <artifactId>kyanite-table-view</artifactId>
-      <version>0.0.2</version>
+      <version>0.0.3-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
     <dependency>
       <groupId>pl.ds.kyanite</groupId>
       <artifactId>kyanite-richtext</artifactId>
-      <version>0.0.2</version>
+      <version>0.0.3-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
   </dependencies>
