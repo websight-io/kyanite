@@ -1,0 +1,43 @@
+{
+  "sling:resourceType": "kyanite/components/level/levelitem",
+  "jcr:primaryType": "nt:unstructured",
+  "classes": "feature",
+  "container": {
+    "jcr:primaryType": "nt:unstructured",
+    "smColSize": 12,
+    "mdColSize": 12,
+    "lgColSize": 6,
+    "sling:resourceType": "kyanite/components/container",
+    "image": {
+      "sling:resourceType": "kyanite/components/image",
+      "isRounded": "false",
+      "type": "fixed",
+      "style": "is-64x64"
+    },
+    "content": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/components/content",
+      "size": "is-small",
+      "textWeight": "has-text-weight-medium",
+      "color": "has-text-primary",
+      "text": "<p>Zero latency / High throughput</p>"
+    },
+    "content1": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/components/content",
+      "size": "is-large",
+      "textWeight": "has-text-weight-bold",
+      "color": "rest_has-text-grey",
+      "shadeRest": "900",
+      "text": "<p>Even at high data volumes</p>"
+    },
+    "content2": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/components/content",
+      "size": "is-medium",
+      "textWeight": "has-text-weight-medium",
+      "color": "",
+      "text": "<p>Catchy short description about this feature or functionality.</p>"
+    }
+  }
+}
