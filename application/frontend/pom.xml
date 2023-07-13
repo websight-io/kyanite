@@ -124,6 +124,7 @@
                 <exclude>/.node_version</exclude>
                 <exclude>/node/**</exclude>
                 <exclude>/node_modules/**</exclude>
+                <exclude>/src/main/resources/**</exclude>
                 <exclude>/target/**</exclude>
                 <exclude>/dist/**</exclude>
                 <exclude>.babelrc</exclude>
