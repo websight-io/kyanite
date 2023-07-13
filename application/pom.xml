@@ -31,9 +31,8 @@
   <packaging>pom</packaging>
 
   <modules>
-    <module>frontend</module>
-    <module>backend</module>
     <module>extensions</module>
+    <module>common</module>
   </modules>
 
   <properties>
