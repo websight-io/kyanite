@@ -40,17 +40,17 @@ import pl.ds.websight.pages.core.api.Page;
 public class BlogArticleService {
 
   public static final String FEATURE_BLOG_ARTICLE_RESOURCE_TYPE =
-      "websight-io/components/featuredblogarticle";
+      "kyanite/components/featuredblogarticle";
 
   public static final String JCR_SQL_2 = "JCR-SQL2";
   public static final String TEMPLATE_BLOGARTICLE_PAGE =
-      "/apps/websight-io/templates/blogarticlepage";
+      "/libs/kyanite/templates/blogarticlepage";
 
   public List<Resource> getListBlogArticlePages(String path, ResourceResolver resourceResolver) {
     final String pagesQuery = """
         SELECT p.* FROM [ws:PageContent]
         AS p WHERE ISDESCENDANTNODE(p, '%s')
-        AND p.[ws:template] = '/apps/websight-io/templates/blogarticlepage'
+        AND p.[ws:template] = '/libs/kyanite/templates/blogarticlepage'
         ORDER BY p.[publicationDate] DESC""";
     final String formattedQuery = pagesQuery.formatted(path);
     final Iterator<Resource> iterator = resourceResolver.findResources(

@@ -1,0 +1,139 @@
+{
+  "jcr:primaryType": "ws:Page",
+  "jcr:content": {
+    "jcr:primaryType": "ws:PageContent",
+    "sling:resourceType": "kyanite/components/blogArticle",
+    "navbarFixed": "true",
+    "navbarFixedPosition": "has-navbar-fixed-top",
+    "pagecontainer": {
+      "sling:resourceType": "kyanite/components/pagecontainer",
+      "navbarreference": {
+        "sling:resourceType": "kyanite/components/navbarreference"
+      },
+      "section": {
+        "sling:resourceType": "kyanite/components/section",
+        "container": {
+          "sling:resourceType": "kyanite/components/container",
+          "columns1": {
+            "sling:resourceType": "kyanite/components/columns",
+            "columnsActivationLevel": "is-desktop",
+            "isMultiline": "true",
+            "column1": {
+              "sling:resourceType": "kyanite/components/columns/column",
+              "customClass": "sticky-container",
+              "desktopColumnStyle": {
+                "jcr:primaryType": "nt:unstructured",
+                "size": "two",
+                "sizeType": "evenNumber",
+                "offsetType": "evenNumber",
+                "isNormalColumn": "true"
+              },
+              "tabletColumnStyle": {
+                "jcr:primaryType": "nt:unstructured",
+                "sizeType": "evenNumber",
+                "offsetType": "evenNumber",
+                "isNormalColumn": "true"
+              },
+              "mobileColumnStyle": {
+                "jcr:primaryType": "nt:unstructured",
+                "sizeType": "evenNumber",
+                "offsetType": "evenNumber",
+                "isNormalColumn": "true"
+              },
+              "backbutton": {
+                "sling:resourceType": "kyanite/components/blogpostbackbutton"
+              }
+            },
+            "column2": {
+              "sling:resourceType": "kyanite/components/columns/column",
+              "desktopColumnStyle": {
+                "jcr:primaryType": "nt:unstructured",
+                "size": "eight",
+                "sizeType": "evenNumber",
+                "offsetType": "evenNumber",
+                "isNormalColumn": "true"
+              },
+              "tabletColumnStyle": {
+                "jcr:primaryType": "nt:unstructured",
+                "sizeType": "evenNumber",
+                "offsetType": "evenNumber",
+                "isNormalColumn": "true"
+              },
+              "mobileColumnStyle": {
+                "jcr:primaryType": "nt:unstructured",
+                "sizeType": "evenNumber",
+                "offsetType": "evenNumber",
+                "isNormalColumn": "true"
+              },
+              "blogarticleheader": {
+                "sling:resourceType": "kyanite/components/blogarticleheader"
+              }
+            },
+            "column3": {
+              "sling:resourceType": "kyanite/components/columns/column",
+              "customClass": "sticky-container",
+              "desktopColumnStyle": {
+                "jcr:primaryType": "nt:unstructured",
+                "size": "two"
+              },
+              "blogposttableofcontents": {
+                "sling:resourceType": "kyanite/components/blogposttableofcontents",
+                "maxHeadingLevel": "2"
+              },
+              "desktopColumnStyle": {
+                "jcr:primaryType": "nt:unstructured",
+                "sizeType": "evenNumber",
+                "offsetType": "evenNumber",
+                "isNormalColumn": "true"
+              },
+              "tabletColumnStyle": {
+                "jcr:primaryType": "nt:unstructured",
+                "sizeType": "evenNumber",
+                "offsetType": "evenNumber",
+                "isNormalColumn": "true"
+              },
+              "mobileColumnStyle": {
+                "jcr:primaryType": "nt:unstructured",
+                "sizeType": "evenNumber",
+                "offsetType": "evenNumber",
+                "isNormalColumn": "true"
+              }
+            },
+            "column4": {
+              "sling:resourceType": "kyanite/components/columns/column",
+              "desktopColumnStyle": {
+                "jcr:primaryType": "nt:unstructured",
+                "size": "eight",
+                "offset": "two",
+                "sizeType": "evenNumber",
+                "offsetType": "evenNumber",
+                "isNormalColumn": "true"
+              },
+              "tabletColumnStyle": {
+                "jcr:primaryType": "nt:unstructured",
+                "sizeType": "evenNumber",
+                "offsetType": "evenNumber",
+                "isNormalColumn": "true"
+              },
+              "mobileColumnStyle": {
+                "jcr:primaryType": "nt:unstructured",
+                "sizeType": "evenNumber",
+                "offsetType": "evenNumber",
+                "isNormalColumn": "true"
+              },
+              "title": {
+                "sling:resourceType": "kyanite/components/title"
+              },
+              "content": {
+                "sling:resourceType": "kyanite/components/content"
+              }
+            }
+          }
+        }
+      },
+      "footerreference": {
+        "sling:resourceType": "kyanite/components/footerreference"
+      }
+    }
+  }
+}

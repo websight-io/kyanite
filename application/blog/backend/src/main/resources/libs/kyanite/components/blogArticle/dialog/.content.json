@@ -1,0 +1,72 @@
+{
+  "tabs": {
+    "metadata": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Metadata",
+      "authorName": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "authorName",
+        "label": "Author name"
+      },
+      "authorPhoto": {
+        "sling:resourceType": "wcm/dialogs/components/pathpicker",
+        "rootPath": "/content/kyanite/assets",
+        "name": "authorPhoto",
+        "description": "Author photo",
+        "label": "Author photo"
+      },
+      "authorPhotoAlt": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "authorPhotoAlt",
+        "description": "Author photo alt",
+        "label": "Author photo alt"
+      },
+      "authorRole": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "authorRole",
+        "label": "Author role"
+      },
+      "authorDescription": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "authorDescription",
+        "label": "Author description"
+      },
+      "publicationDate": {
+        "sling:resourceType": "wcm/dialogs/components/datepicker",
+        "name": "publicationDate",
+        "label": "Publication date"
+      },
+      "readTime": {
+        "sling:resourceType": "wcm/dialogs/components/numberfield",
+        "name": "readTime",
+        "label": "Read time",
+        "min": "0",
+        "max": "999"
+      },
+      "heroImage": {
+        "sling:resourceType": "wcm/dialogs/components/pathpicker",
+        "rootPath": "/content/kyanite/assets",
+        "name": "heroImage",
+        "description": "Hero image",
+        "label": "Hero image"
+      },
+      "heroImageAlt": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "heroImageAlt",
+        "description": "Hero image alt",
+        "label": "Hero image alt"
+      },
+      "tags": {
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "name": "tags",
+        "label": "Tags",
+        "text": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "text",
+          "label": "Tag text",
+          "required": true
+        }
+      }
+    }
+  }
+}
