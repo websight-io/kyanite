@@ -191,10 +191,11 @@ describe('Button component', function () {
     .should('deep.eq',
         {
           'jcr:primaryType': 'nt:unstructured',
-          'showIconLeft': 'false',
           'showIconRight': 'false',
+          'showIconLeft': 'false',
           'isOutlined': 'false',
           'isFullWidth': 'false',
+          "isMailto": "false",
           'isInverted': 'false',
           'url': '/content',
           'type': 'a',

@@ -26,7 +26,10 @@
     </a>
   </sly>
   <sly data-sly-test="${model.type == 'image'}">
-    <a class="navbar-item">
+    <a data-sly-test="${!model.isLink}" class="navbar-item">
+      <img src="${model.image.src}" width="${model.imageWidth}" height="${model.imageHeight}"
+           alt="${model.image.alt}"></a>
+    <a data-sly-test="${model.isLink}" class="navbar-item" href="${model.imageUrl}" target="${model.openInNewTab && model.imageUrl != '' ? '_blank' : ''}">
       <img src="${model.image.src}" width="${model.imageWidth}" height="${model.imageHeight}"
            alt="${model.image.alt}">
     </a>

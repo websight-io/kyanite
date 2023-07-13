@@ -16,16 +16,47 @@
       },
       "container": {
         "sling:resourceType": "wcm/dialogs/components/container",
-        "url": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "rootPath": "/content",
-          "name": "url",
-          "label": "URL"
-        },
-        "openInNewTab": {
-          "sling:resourceType": "wcm/dialogs/components/toggle",
-          "name": "openInNewTab",
-          "label": "Open link in a new tab"
+        "container": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "mailto": {
+            "sling:resourceType": "wcm/dialogs/components/toggle",
+            "name": "isMailto",
+            "label": "Is mail"
+          },
+          "container1": {
+            "sling:resourceType": "wcm/dialogs/components/container",
+            "url": {
+              "sling:resourceType": "wcm/dialogs/components/textfield",
+              "name": "mail",
+              "label": "Mail"
+            },
+            "ws:display": {
+              "condition": {
+                "sourceName": "isMailto",
+                "values": "true"
+              }
+            }
+          },
+          "container": {
+            "sling:resourceType": "wcm/dialogs/components/container",
+            "url": {
+              "sling:resourceType": "wcm/dialogs/components/pathpicker",
+              "rootPath": "/content",
+              "name": "url",
+              "label": "URL"
+            },
+            "openInNewTab": {
+              "sling:resourceType": "wcm/dialogs/components/toggle",
+              "name": "openInNewTab",
+              "label": "Open link in a new tab"
+            },
+            "ws:display": {
+              "condition": {
+                "sourceName": "isMailto",
+                "values": "false"
+              }
+            }
+          }
         },
         "ws:display": {
           "condition": {
@@ -40,7 +71,7 @@
       },
       "variant": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/button/attributes/variant"
+        "path": "kyanite/components/button/attributes/variant"
       }
     },
     "modifiers": {

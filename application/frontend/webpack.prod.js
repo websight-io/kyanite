@@ -24,9 +24,7 @@ module.exports = merge(common, {
     optimization: {
         minimize: true,
         minimizer: [
-            new TerserPlugin({
-                extractComments: false,
-            }),
+            new TerserPlugin(),
             new CssMinimizerPlugin({
                 minimizerOptions: {
                     preset: ['default', {

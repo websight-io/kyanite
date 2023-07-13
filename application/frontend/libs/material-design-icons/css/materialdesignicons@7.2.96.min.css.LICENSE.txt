@@ -1,0 +1,6 @@
+/*!
+ * Material Design Icons v2.9.0
+ * https://pictogrammers.com/docs/general/license
+ * Author Pictogrammers
+ * Released under the Apache License 2.0
+ */

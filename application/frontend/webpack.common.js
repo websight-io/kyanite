@@ -21,119 +21,145 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TSConfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
 const SOURCE_ROOT = __dirname + '/src';
 
 const resolve = {
-    extensions: ['.js', '.ts'],
-    plugins: [new TSConfigPathsPlugin({
-        configFile: './tsconfig.json'
-    })]
+  extensions: ['.js', '.ts'],
+  plugins: [
+    new TSConfigPathsPlugin({
+      configFile: './tsconfig.json',
+    }),
+  ],
 };
 
 module.exports = {
-    resolve: resolve,
-    entry: {
-        main: {import: SOURCE_ROOT + '/main.ts', filename: 'main/main.js'},
-        author: {import: SOURCE_ROOT + '/author.ts', filename: 'author/author.js'},
+  resolve: resolve,
+  entry: {
+    main: { import: `${SOURCE_ROOT}/main.ts`, filename: 'main/main.js' },
+    'main.published': {
+      import: `${SOURCE_ROOT}/main.published.ts`,
+      filename: 'main/main.published.js',
     },
-    output: {
-        filename: (chunkData) => {
-            return chunkData.chunk.name === 'dependencies' ? 'dependencies/[name].js' : '[name].js';
+    author: {import: SOURCE_ROOT + '/author.ts', filename: 'author/author.js'},
+  },
+  output: {
+    filename: (chunkData) => {
+      return chunkData.chunk.name === 'dependencies'
+          ? 'dependencies/[name].js'
+          : '[name].js';
+    },
+    path: path.resolve(__dirname, 'dist'),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'ts-loader',
+          },
+          {
+            loader: 'glob-import-loader',
+            options: {
+              resolve: resolve,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins() {
+                return [require('autoprefixer')];
+              },
+            },
+          },
+          {
+            loader: 'sass-loader',
+          },
+          {
+            loader: 'glob-import-loader',
+            options: {
+              resolve: resolve,
+            },
+          },
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new ESLintPlugin(),
+    new MiniCssExtractPlugin({
+      filename: (file) => (file.chunk.name === 'author' ? 'author': 'main') + '/[name].css'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, SOURCE_ROOT + '/resources'),
+          to: './main',
         },
-        path: path.resolve(__dirname, 'dist')
-    },
-    module: {
-        rules: [
+        {
+          from: path.resolve(
+              __dirname,
+              'webfragment/webfragment.editor.main.js'
+          ),
+          to: './main',
+        },
+        { from: path.resolve(__dirname, 'libs'), to: './main' },
+      ],
+    }),
+    new FileManagerPlugin({
+      events: {
+        onEnd: {
+          copy: [
             {
-                test: /\.tsx?$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'ts-loader'
-                    },
-                    {
-                        loader: 'glob-import-loader',
-                        options: {
-                            resolve: resolve
-                        }
-                    }
-                ]
+              source: path.join(__dirname, 'dist/main'),
+              destination: path.join(
+                  __dirname,
+                  'src/main/resources/libs/kyanite/webroot'
+              ),
             },
             {
-                test: /\.scss$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            url: false
-                        }
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                            plugins() {
-                                return [
-                                    require('autoprefixer')
-                                ];
-                            }
-                        }
-                    },
-                    {
-                        loader: 'sass-loader',
-                    },
-                    {
-                        loader: 'glob-import-loader',
-                        options: {
-                            resolve: resolve
-                        }
-                    }
-                ]
+              source: path.join(__dirname, 'dist/author'),
+              destination: path.join(
+                  __dirname,
+                  'src/main/resources/libs/kyanite/author'
+              )
             }
-        ]
-    },
-    plugins: [
-        new CleanWebpackPlugin(),
-        new ESLintPlugin({
-            extensions: ['js', 'ts', 'tsx']
-        }),
-        new MiniCssExtractPlugin({
-            filename: '[name]/[name].css'
-        }),
-        new FileManagerPlugin({
-            events: {
-                onEnd: {
-                    copy: [
-                        {
-                            source: path.join(__dirname, 'dist/main'),
-                            destination: path.join(__dirname, '../backend/src/main/resources/libs/kyanite/web_root')
-                        },
-                        {
-                            source: path.join(__dirname, 'dist/author'),
-                            destination: path.join(__dirname, '../backend/src/main/resources/libs/kyanite/author')
-                        }
-                    ]
-                }
-            }
-        })
-    ],
-    stats: {
-        assetsSort: 'chunks',
-        builtAt: true,
-        children: false,
-        chunkGroups: true,
-        chunkOrigins: true,
-        colors: false,
-        errors: true,
-        errorDetails: true,
-        env: true,
-        modules: false,
-        performance: true,
-        providedExports: false,
-        source: false,
-        warnings: true
-    }
+          ],
+        },
+      },
+    }),
+  ],
+  stats: {
+    assetsSort: 'chunks',
+    builtAt: true,
+    children: false,
+    chunkGroups: true,
+    chunkOrigins: true,
+    colors: false,
+    errors: true,
+    errorDetails: true,
+    env: true,
+    modules: false,
+    performance: true,
+    providedExports: false,
+    source: false,
+    warnings: true,
+  },
 };

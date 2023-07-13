@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-// Stylesheets
-import "./main.scss";
+// styles
+import './main.scss';
 
-// Javascript or Typescript
-import "./**/*.js";
+// scripts
+import './components';
+import './emailDecryption';

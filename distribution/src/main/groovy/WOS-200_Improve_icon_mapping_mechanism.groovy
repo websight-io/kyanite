@@ -27,7 +27,7 @@ changeCounter = 0
 
 def findButtonComponents(String rootPath) {
     return resourceResolver.findResources("SELECT * FROM [nt:base] AS s WHERE ISDESCENDANTNODE([$rootPath]) AND" +
-            "[sling:resourceType]='kyanite/components/button'", "JCR-SQL2")
+            "[sling:resourceType]='bulma/components/button'", "JCR-SQL2")
 }
 
 def processIconChanges(Resource res) {

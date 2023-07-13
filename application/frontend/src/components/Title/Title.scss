@@ -1,0 +1,77 @@
+/*!
+ * <!--
+ *     Copyright (C) 2023 Dynamic Solutions
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ * -->
+ */
+
+@use 'src/atomic-design-system/01-atom/a.title';
+
+.title {
+  @extend .a-title;
+  @extend .t-font-weight--700;
+
+  &.is-1 {
+    @extend .a-title-1;
+  }
+
+  &.is-2 {
+    @extend .a-title-2;
+  }
+
+  &.is-3 {
+    @extend .a-title-3;
+  }
+
+  &.is-4 {
+    @extend .a-title-4;
+  }
+
+  &.is-5 {
+    @extend .a-title-5;
+  }
+
+  &.is-6 {
+    @extend .a-title-6;
+  }
+}
+
+.subtitle {
+  @extend .a-subtitle;
+  @extend .t-font-weight--600;
+
+  &.is-1 {
+    @extend .a-subtitle-1;
+  }
+
+  &.is-2 {
+    @extend .a-subtitle-2;
+  }
+
+  &.is-3 {
+    @extend .a-subtitle-3;
+  }
+
+  &.is-4 {
+    @extend .a-subtitle-4;
+  }
+
+  &.is-5 {
+    @extend .a-subtitle-5;
+  }
+
+  &.is-6 {
+    @extend .a-subtitle-6;
+  }
+}

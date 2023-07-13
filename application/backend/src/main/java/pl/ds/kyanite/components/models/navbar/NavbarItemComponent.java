@@ -46,6 +46,17 @@ public class NavbarItemComponent {
 
   @Inject
   @Getter
+  private boolean isLink;
+
+  @Inject
+  private String imageUrl;
+
+  @Inject
+  @Getter
+  private boolean openInNewTab;
+
+  @Inject
+  @Getter
   private ImageComponent image;
 
   @Inject
@@ -71,5 +82,9 @@ public class NavbarItemComponent {
 
   public String getUrl() {
     return LinkUtil.handleLink(url, resource.getResourceResolver());
+  }
+
+  public String getImageUrl() {
+    return LinkUtil.handleLink(imageUrl, resource.getResourceResolver());
   }
 }

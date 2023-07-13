@@ -13,6 +13,11 @@
       "sling:resourceType": "wcm/dialogs/components/select/selectitem",
       "label": "Ghost",
       "value": "is-ghost"
+    },
+    "secondary": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Secondary",
+      "value": "is-secondary"
     }
   }
 }

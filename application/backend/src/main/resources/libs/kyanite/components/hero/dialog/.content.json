@@ -11,7 +11,7 @@
       },
       "variant": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/hero/attributes/variant"
+        "path": "kyanite/components/hero/attributes/variant"
       }
     }
   }

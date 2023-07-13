@@ -1,2 +1,2 @@
-Sling-Bundle-Resources: /libs/kyanite/webroot
+Sling-Bundle-Resources: /libs/kyanite/webroot;/libs/kyanite/author
 WebSight-Apps-WebRoot: /libs/kyanite/webroot

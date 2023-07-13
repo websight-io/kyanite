@@ -1,0 +1,112 @@
+/*!
+ * <!--
+ *     Copyright (C) 2023 Dynamic Solutions
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ * -->
+ */
+
+@use 'sass:map';
+
+@use 'src/bulma-overwrite/variables' as spacing;
+@use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
+
+$gap: map.get(spacing.$spacing-values, '6');
+$paddingTopBottomMobile: map.get(spacing.$spacing-values, '5_2');
+$paddingTopBottom: map.get(spacing.$spacing-values, '5_4');
+
+@mixin o-level {
+  // fluid
+  padding: $paddingTopBottomMobile 0;
+  display: flex;
+  flex-flow: column wrap;
+  margin-bottom: 0;
+  gap: $gap;
+
+  &:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  &:not(.level-with-gaps) .level-item {
+    margin-bottom: 0;
+    padding: 0;
+    flex: 1;
+  }
+
+  // fixed
+  &.level-with-gaps {
+    justify-content: flex-start;
+    align-items: center;
+    gap: $gap;
+
+    .level-item {
+      padding: 0;
+      margin: 0;
+      flex: 1;
+
+      & > .container {
+        margin: 0;
+      }
+    }
+  }
+  @include breakpoint.media-breakpoint-min-width(
+    map.get(breakpoint.$map_t-breakpoints-px, 'medium')
+  ) {
+    // fluid
+    padding: $paddingTopBottom 0;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &.is-mobile {
+      flex-direction: column;
+    }
+
+    // fixed
+    &.level-with-gaps {
+      .level-item {
+        padding: 0;
+        flex: 0 0 calc(50% - ($gap / 2)); // every item has 50% of parent container
+      }
+    }
+  }
+  @include breakpoint.media-breakpoint-min-width(
+    map.get(breakpoint.$map_t-breakpoints-px, 'large')
+  ) {
+    padding: $paddingTopBottom map.get(spacing.$spacing-values, '6_4');
+
+    &:not(.level-with-gaps) .level-item {
+      flex: initial;
+      flex-grow: initial;
+      max-width: 300px;
+    }
+
+    &.level-with-gaps {
+      padding: $paddingTopBottom 0;
+
+      .level-item {
+        padding: 0;
+        flex: 1; // every item has equal space
+      }
+    }
+  }
+
+  @include breakpoint.media-breakpoint-min-width(
+    map.get(breakpoint.$map_t-breakpoints-px, 'maximum')
+  ) {
+    padding: $paddingTopBottom map.get(spacing.$spacing-values, '6');
+
+    &:not(.level-with-gaps) .level-item {
+      max-width: 480px;
+    }
+  }
+}

@@ -36,5 +36,10 @@
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "128x128px",
     "value": "is-128x128"
+  },
+  "is-160x160": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "160x160px",
+    "value": "is-160x160"
   }
 }

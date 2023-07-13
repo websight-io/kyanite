@@ -14,29 +14,69 @@
  * limitations under the License.
  */
 
-module.exports =  {
-    parser:  '@typescript-eslint/parser',  // Specifies the ESLint parser
-    extends:  [
-      'plugin:@typescript-eslint/recommended',  // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  extends: [
+    'airbnb-base',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'prettier',
+  ],
+  parserOptions: {
+    project: true,
+    tsconfigRootDir: __dirname,
+  },
+  root: true,
+  plugins: ['@typescript-eslint', 'import'],
+  env: {
+    browser: true,
+  },
+  ignorePatterns: ['**/*.js', '!src/**/*', 'src/main/resources',
+    "**/*/emailDecryption.js",
+    "**/*/contactForm.js",
+    "**/*/dropdown.js",
+    "**/*/modal.js",
+    "**/*/message.js",
+    "**/*/navbar.js",
+    "**/*/notification.js",
+    "**/*/panelTabs.js",
+    "**/*/switchTab.js"],
+  rules: {
+    '@typescript-eslint/no-misused-promises': [
+      'error',
+      { checksVoidReturn: { arguments: false } },
+    ], // this breaks events https://github.com/typescript-eslint/typescript-eslint/issues/4619
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        mjs: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ], // airbnb styleguide only handles js, here we add support also for ts
+    'no-new': 0, // not compatible with current approach. We create components as classes and we don't use the instances later (for now).
+    'import/prefer-default-export': 0,
+    'lines-between-class-members': 0, // no point of adding a blank line between every class member
+    'no-plusplus': 0, // we need it for loops. Airbnb bans this because their style guide is against loops.
+    'no-restricted-syntax': [
+      // copied from Airbnb style guide with a change to enable loops
+      'error',
+      'LabeledStatement',
+      'WithStatement',
     ],
-    parserOptions:  {
-      ecmaVersion:  2018,  // Allows for the parsing of modern ECMAScript features
-      sourceType:  'module',  // Allows for the use of imports
+  },
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
-    rules:  {
-        "curly": 1,
-        "@typescript-eslint/explicit-function-return-type": [0],
-        "@typescript-eslint/no-explicit-any": [0],
-        "ordered-imports": [0],
-        "object-literal-sort-keys": [0],
-        "max-len": [1, 120],
-        "new-parens": 1,
-        "no-bitwise": 1,
-        "no-cond-assign": 1,
-        "no-trailing-spaces": 0,
-        "eol-last": 1,
-        "func-style": ["error", "declaration", { "allowArrowFunctions": true }],
-        "semi": 1,
-        "no-var": 0
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+        project: 'tsconfig.json',
+      },
     },
-  };
+  },
+};

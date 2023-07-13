@@ -1,0 +1,122 @@
+/*!
+ * <!--
+ *     Copyright (C) 2023 Dynamic Solutions
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ * -->
+ */
+
+@use 'sass:map';
+
+$border-weights: (1, 2, 3, 4);
+$map_t-border-weight: (
+  1: 1px,
+  2: 2px,
+  3: 4px,
+  4: 8px,
+);
+$border-radiuses: (0, 1, 2, 3, 4);
+$map_t-border-radius: (
+  0: 0,
+  1: 2px,
+  2: 4px,
+  3: 8px,
+  4: 16px,
+);
+$radius-positions: ('top-left', 'top-right', 'bottom-left', 'bottom-right');
+
+@mixin t-border-weight($weight) {
+  border: map.get($map_t-border-weight, $weight) solid;
+}
+
+@mixin t-outline-weight($weight) {
+  outline: map.get($map_t-border-weight, $weight) solid;
+}
+
+@mixin t-border-weight-top($weight) {
+  border-top: map.get($map_t-border-weight, $weight) solid;
+}
+
+@mixin t-border-weight-right($weight) {
+  border-right: map.get($map_t-border-weight, $weight) solid;
+}
+
+@mixin t-border-weight-bottom($weight) {
+  border-bottom: map.get($map_t-border-weight, $weight) solid;
+}
+
+@mixin t-border-weight-left($weight) {
+  border-left: map.get($map_t-border-weight, $weight) solid;
+}
+
+@mixin t-border-radius($radius) {
+  border-radius: map.get($map_t-border-radius, $radius);
+}
+
+@each $weight in $border-weights {
+  // i.e. `.t-border-weight--2`
+  .t-border-weight--#{$weight} {
+    @include t-border-weight($weight);
+  }
+}
+
+@each $weight in $border-weights {
+  // i.e. `.t-border-weight--2`
+  .t-outline-weight--#{$weight} {
+    @include t-outline-weight($weight);
+  }
+}
+
+@each $weight in $border-weights {
+  // i.e. `.t-border-weight-top--2`
+  .t-border-weight-top--#{$weight} {
+    @include t-border-weight-top($weight);
+  }
+}
+
+@each $weight in $border-weights {
+  // i.e. `.t-border-weight-right--2`
+  .t-border-weight-right--#{$weight} {
+    @include t-border-weight-right($weight);
+  }
+}
+
+@each $weight in $border-weights {
+  // i.e. `.t-border-weight-bottom--2`
+  .t-border-weight-bottom--#{$weight} {
+    @include t-border-weight-bottom($weight);
+  }
+}
+
+@each $weight in $border-weights {
+  // i.e. `.t-border-weight-left--2`
+  .t-border-weight-left--#{$weight} {
+    @include t-border-weight-left($weight);
+  }
+}
+
+@each $radius in $border-radiuses {
+  // i.e. `.t-border-radius--2`
+  .t-border-radius--#{$radius} {
+    @include t-border-radius($radius);
+  }
+}
+
+@each $radius in $border-radiuses {
+  @each $radius-position in $radius-positions {
+    // i.e. `.t-border-top-left-radius--2`
+    .t-border-#{$radius-position}-radius--#{$radius} {
+      border-#{$radius-position}-radius: map.get($map_t-border-radius, $radius);
+    }
+  }
+}

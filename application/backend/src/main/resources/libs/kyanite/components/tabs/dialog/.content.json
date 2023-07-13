@@ -22,6 +22,29 @@
             "value": ""
           }
         }
+      },
+      "contentId": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "contentId",
+        "label": "Content id"
+      },
+      "autoSwitch": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "autoSwitch",
+        "label": "Auto switching"
+      },
+      "switchingTime": {
+        "sling:resourceType": "wcm/dialogs/components/numberfield",
+        "name": "switchingTime",
+        "label": "Switching time",
+        "min": 1,
+        "max": 999,
+        "ws:display": {
+          "condition": {
+            "sourceName": "autoSwitch",
+            "values": true
+          }
+        }
       }
     },
     "modifiers": {

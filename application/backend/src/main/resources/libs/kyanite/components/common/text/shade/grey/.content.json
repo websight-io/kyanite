@@ -11,7 +11,8 @@
   "light": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Light",
-    "value": "light"
+    "value": "light",
+    "selected": true
   },
   "lighter": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",

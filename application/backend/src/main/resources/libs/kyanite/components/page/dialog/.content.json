@@ -34,6 +34,26 @@
             "values": true
           }
         }
+      },
+      "fancyBackground": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "fancyBackground",
+        "label": "Fancy background",
+        "description": "Check if the page should have a fancy background."
+      }
+    },
+    "metadata": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Metadata",
+      "title": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "title",
+        "label": "Title"
+      },
+      "description": {
+        "sling:resourceType": "wcm/dialogs/components/textarea",
+        "name": "description",
+        "label": "Description"
       }
     }
   }
