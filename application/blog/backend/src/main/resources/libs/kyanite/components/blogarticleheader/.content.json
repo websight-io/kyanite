@@ -1,0 +1,5 @@
+{
+  "sling:resourceType": "ws:Component",
+  "title": "Blog article header",
+  "group": "Kyanite Components"
+}

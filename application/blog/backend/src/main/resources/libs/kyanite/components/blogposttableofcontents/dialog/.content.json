@@ -1,0 +1,46 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "title": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "Title",
+        "name": "title"
+      },
+      "maxHeadingLevel": {
+        "sling:resourceType": "wcm/dialogs/components/numberfield",
+        "label": "Max heading level",
+        "name": "maxHeadingLevel",
+        "min": 1,
+        "max": 6
+      },
+      "showBackToTopButton": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "showBackToTopButton",
+        "label": "Display back to top button",
+        "checkedByDefault": "true"
+      },
+      "container": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "backToTopButtonLabel": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "backToTopButtonLabel",
+          "label": "Back to top button label"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "showBackToTopButton",
+            "values": "true"
+          }
+        }
+      }
+    },
+    "gridTab": {
+      "sling:resourceType": "wcm/dialogs/components/include",
+      "path": "/libs/howlite/components/common/gridTab"
+    }
+  }
+}
