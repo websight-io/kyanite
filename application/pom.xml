@@ -33,6 +33,7 @@
   <modules>
     <module>extensions</module>
     <module>common</module>
+    <module>blog</module>
   </modules>
 
   <properties>
