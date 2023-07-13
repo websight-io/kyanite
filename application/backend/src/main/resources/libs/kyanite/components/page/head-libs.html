@@ -31,7 +31,7 @@
   rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Roboto&display=swap"
 />
-
+<sly data-sly-use.model="pl.ds.kyanite.components.helpers.PageModel"></sly>
 <sly data-sly-list="${model.iconLibraryConfigs}">
   <sly data-sly-use.template="./icon-libs.html" data-sly-call="${template.iconLib @ item = item}"></sly>
 </sly>
