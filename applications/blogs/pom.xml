@@ -25,9 +25,9 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>kyanite-blog</artifactId>
-    <name>Kyanite Components Project - Blog</name>
-    <description>Contains blog components.</description>
+    <artifactId>kyanite-blogs</artifactId>
+    <name>Kyanite Components Project - Blogs</name>
+    <description>Contains blogs components.</description>
     <packaging>pom</packaging>
 
     <modules>
