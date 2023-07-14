@@ -25,9 +25,9 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>blog-backend</artifactId>
+  <artifactId>kyanite-blog-backend</artifactId>
   <version>0.0.2-SNAPSHOT</version>
-  <name>Blog Components Project - Backend</name>
+  <name>Kyanite Components Project - Blog backend</name>
   <description>Contains blog backend.</description>
 
   <build>

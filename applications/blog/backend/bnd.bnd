@@ -1,1 +1,1 @@
-Sling-Bundle-Resources: /libs/kyanite
+Sling-Bundle-Resources: /libs/kyanite/components/blogarticleauthorbio,/libs/kyanite/components/blogarticlepage,/libs/kyanite/components/blogarticleheader,/libs/kyanite/components/bloglist,/libs/kyanite/components/blogpostbackbutton,/libs/kyanite/components/blogposttableofcontents,/libs/kyanite/components/featuredblogarticle,/libs/kyanite/templates/articlepage,/libs/kyanite/templates/blogarticlepage,/libs/kyanite/templates/blogcategorypage,/libs/kyanite/templates/bloglistingpage

@@ -10,7 +10,7 @@
       },
       "authorPhoto": {
         "sling:resourceType": "wcm/dialogs/components/pathpicker",
-        "rootPath": "/content/kyanite/assets",
+        "rootPath": "/content",
         "name": "authorPhoto",
         "description": "Author photo",
         "label": "Author photo"
@@ -45,7 +45,7 @@
       },
       "heroImage": {
         "sling:resourceType": "wcm/dialogs/components/pathpicker",
-        "rootPath": "/content/kyanite/assets",
+        "rootPath": "/content",
         "name": "heroImage",
         "description": "Hero image",
         "label": "Hero image"

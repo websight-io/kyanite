@@ -24,9 +24,9 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>kyanite-frontend</artifactId>
+  <artifactId>kyanite-common-frontend</artifactId>
   <version>0.0.2-SNAPSHOT</version>
-  <name>Kyanite Components Project - Frontend</name>
+  <name>Kyanite Components Project - Common frontend</name>
   <description>Contains application frontend.</description>
 
   <properties>

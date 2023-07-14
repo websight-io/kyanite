@@ -25,9 +25,9 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>kyanite-backend</artifactId>
+  <artifactId>kyanite-common-backend</artifactId>
   <version>0.0.2-SNAPSHOT</version>
-  <name>Kyanite Components Project - Backend</name>
+  <name>Kyanite Components Project - Common backend</name>
   <description>Contains application backend.</description>
 
   <build>
