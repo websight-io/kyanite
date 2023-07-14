@@ -10,7 +10,7 @@
         "type": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "include": {
-            "sling:resourceSuperType": "/libs/kyanite/components/tiles/attributes/type",
+            "sling:resourceSuperType": "/libs/kyanite/common/components/tiles/attributes/type",
             "name": "type",
             "label": "Type"
           }
@@ -19,7 +19,7 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "variant": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "/libs/kyanite/components/common/variant"
+            "path": "/libs/kyanite/common/components/common/variant"
           },
           "ws:display": {
             "condition": {

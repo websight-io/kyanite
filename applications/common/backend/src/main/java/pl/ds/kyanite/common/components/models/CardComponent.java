@@ -31,7 +31,7 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class CardComponent {
 
-  public static final String CARD_CONTENT_TYPE = "kyanite/components/card/cardcontent";
+  public static final String CARD_CONTENT_TYPE = "kyanite/common/components/card/cardcontent";
 
   @Inject
   @Getter

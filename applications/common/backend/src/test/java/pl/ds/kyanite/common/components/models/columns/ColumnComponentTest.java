@@ -106,7 +106,7 @@ public class ColumnComponentTest {
 
     Resource nestedColumnsResource = model.getChildrenComponents().get(0);
     assertThat(nestedColumnsResource.adaptTo(ColumnsComponent.class)).isNotNull();
-    assertThat(nestedColumnsResource.getResourceType()).isEqualTo("kyanite/components/columns");
+    assertThat(nestedColumnsResource.getResourceType()).isEqualTo("kyanite/common/components/columns");
 
     List<ColumnComponent> nestedColumnList = StreamSupport
         .stream(nestedColumnsResource.getChildren().spliterator(), false)

@@ -20,7 +20,7 @@
   <sly data-sly-test="${resource.hasChildren}">
       <a class="panel-block ${model.containerSize}" id="${model.id}">
         <sly data-sly-test="${model.addIcon && model.icon}">
-          <sly data-sly-resource="${resource @ resourceType = 'kyanite/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
+          <sly data-sly-resource="${resource @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
         </sly>
         <sly data-sly-list="${resource.children}">
           <sly data-sly-resource="${item}"></sly>

@@ -33,8 +33,8 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 @Model(adaptables = SlingHttpServletRequest.class)
 public class DeleteTableColumnRestModel {
 
-  private static final String TABLE_RESOURCE_TYPE = "kyanite/components/table";
-  private static final String TABLEROW_RESOURCE_TYPE = "kyanite/components/table/tablerow";
+  private static final String TABLE_RESOURCE_TYPE = "kyanite/common/components/table";
+  private static final String TABLEROW_RESOURCE_TYPE = "kyanite/common/components/table/tablerow";
   private static final String COLSPAN = "colspan";
   private static final String ROWSPAN = "rowspan";
 

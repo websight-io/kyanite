@@ -12,7 +12,7 @@
       },
       "variant": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/common/variant"
+        "path": "/libs/kyanite/common/components/common/variant"
       }
     }
   }

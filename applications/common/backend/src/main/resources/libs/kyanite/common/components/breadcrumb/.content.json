@@ -3,5 +3,5 @@
   "isContainer": true,
   "sling:resourceType": "ws:Component",
   "title": "Breadcrumb",
-  "allowedComponents": ["/libs/kyanite/components/breadcrumb/breadcrumbitem"]
+  "allowedComponents": ["/libs/kyanite/common/components/breadcrumb/breadcrumbitem"]
 }

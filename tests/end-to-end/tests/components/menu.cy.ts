@@ -87,7 +87,7 @@ describe('Menu component', function () {
     .its('body')
     .should('deep.eq', {
       'jcr:primaryType': 'nt:unstructured',
-      'sling:resourceType': 'kyanite/components/menu',
+      'sling:resourceType': 'kyanite/common/components/menu',
       'menuSections': {
         'jcr:primaryType': 'nt:unstructured',
         '0': {

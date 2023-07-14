@@ -27,8 +27,8 @@ const config = {
   },
   action: 'delete-table-row',
   allowedComponents: [
-    "/libs/kyanite/components/table/tableheadcell",
-    "/libs/kyanite/components/table/tablecell"
+    "/libs/kyanite/common/components/table/tableheadcell",
+    "/libs/kyanite/common/components/table/tablecell"
   ]
 };
 

@@ -10,26 +10,26 @@
         "name": "text",
         "label": "Text",
         "ws:disallowedContext": ["edit:panel"],
-        "configuration": "kyanite/components/common/rte/configurations/default"
+        "configuration": "kyanite/common/components/common/rte/configurations/default"
       },
       "panelText": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "text",
         "label": "Text",
         "ws:disallowedContext": ["edit:dialog"],
-        "configuration": "kyanite/components/common/rte/configurations/compact"
+        "configuration": "kyanite/common/components/common/rte/configurations/compact"
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "kyanite/components/common/size"
+        "path": "kyanite/common/components/common/size"
       },
       "textweight": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "kyanite/components/common/textweight"
+        "path": "kyanite/common/components/common/textweight"
       },
       "color": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "kyanite/components/common/text/color"
+        "path": "kyanite/common/components/common/text/color"
       },
       "shadeContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
@@ -37,7 +37,7 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "shade": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/components/common/text/shade/bw",
+            "path": "kyanite/common/components/common/text/shade/bw",
             "namespace": "bw"
           },
           "ws:display": {
@@ -54,9 +54,9 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "shade": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/components/common/text/shade/grey",
+            "path": "kyanite/common/components/common/text/shade/grey",
             "include": {
-              "sling:resourceSuperType": "kyanite/components/common/text/shade/grey",
+              "sling:resourceSuperType": "kyanite/common/components/common/text/shade/grey",
               "name": "grey/shade",
               "light": {
                 "selected": true
@@ -79,9 +79,9 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "shade": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/components/common/text/shade/rest",
+            "path": "kyanite/common/components/common/text/shade/rest",
             "include": {
-              "sling:resourceSuperType": "kyanite/components/common/text/shade/rest",
+              "sling:resourceSuperType": "kyanite/common/components/common/text/shade/rest",
               "name": "rest/shade",
               "dark": {
                 "selected": true

@@ -52,7 +52,7 @@
         "mobileGapLevel": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "include": {
-            "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/gaplevel",
+            "sling:resourceSuperType": "/libs/kyanite/common/components/columns/attributes/gaplevel",
             "name": "mobileGapLevel",
             "label": "Gap level on Mobile"
           }
@@ -60,7 +60,7 @@
         "tabletGapLevel": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "include": {
-            "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/gaplevel",
+            "sling:resourceSuperType": "/libs/kyanite/common/components/columns/attributes/gaplevel",
             "name": "tabletGapLevel",
             "label": "Gap level on Tablet"
           }
@@ -68,7 +68,7 @@
         "desktopGapLevel": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "include": {
-            "sling:resourceSuperType": "/libs/kyanite/components/columns/attributes/gaplevel",
+            "sling:resourceSuperType": "/libs/kyanite/common/components/columns/attributes/gaplevel",
             "name": "desktopGapLevel",
             "label": "Gap level on Desktop"
           }

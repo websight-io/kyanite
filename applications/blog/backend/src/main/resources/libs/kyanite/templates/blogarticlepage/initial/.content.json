@@ -6,20 +6,20 @@
     "navbarFixed": "true",
     "navbarFixedPosition": "has-navbar-fixed-top",
     "pagecontainer": {
-      "sling:resourceType": "kyanite/components/pagecontainer",
+      "sling:resourceType": "kyanite/common/components/pagecontainer",
       "navbarreference": {
-        "sling:resourceType": "kyanite/components/navbarreference"
+        "sling:resourceType": "kyanite/common/components/navbarreference"
       },
       "section": {
-        "sling:resourceType": "kyanite/components/section",
+        "sling:resourceType": "kyanite/common/components/section",
         "container": {
-          "sling:resourceType": "kyanite/components/container",
+          "sling:resourceType": "kyanite/common/components/container",
           "columns1": {
-            "sling:resourceType": "kyanite/components/columns",
+            "sling:resourceType": "kyanite/common/components/columns",
             "columnsActivationLevel": "is-desktop",
             "isMultiline": "true",
             "column1": {
-              "sling:resourceType": "kyanite/components/columns/column",
+              "sling:resourceType": "kyanite/common/components/columns/column",
               "customClass": "sticky-container",
               "desktopColumnStyle": {
                 "jcr:primaryType": "nt:unstructured",
@@ -45,7 +45,7 @@
               }
             },
             "column2": {
-              "sling:resourceType": "kyanite/components/columns/column",
+              "sling:resourceType": "kyanite/common/components/columns/column",
               "desktopColumnStyle": {
                 "jcr:primaryType": "nt:unstructured",
                 "size": "eight",
@@ -70,7 +70,7 @@
               }
             },
             "column3": {
-              "sling:resourceType": "kyanite/components/columns/column",
+              "sling:resourceType": "kyanite/common/components/columns/column",
               "customClass": "sticky-container",
               "desktopColumnStyle": {
                 "jcr:primaryType": "nt:unstructured",
@@ -100,7 +100,7 @@
               }
             },
             "column4": {
-              "sling:resourceType": "kyanite/components/columns/column",
+              "sling:resourceType": "kyanite/common/components/columns/column",
               "desktopColumnStyle": {
                 "jcr:primaryType": "nt:unstructured",
                 "size": "eight",
@@ -122,17 +122,17 @@
                 "isNormalColumn": "true"
               },
               "title": {
-                "sling:resourceType": "kyanite/components/title"
+                "sling:resourceType": "kyanite/common/components/title"
               },
               "content": {
-                "sling:resourceType": "kyanite/components/content"
+                "sling:resourceType": "kyanite/common/components/content"
               }
             }
           }
         }
       },
       "footerreference": {
-        "sling:resourceType": "kyanite/components/footerreference"
+        "sling:resourceType": "kyanite/common/components/footerreference"
       }
     }
   }

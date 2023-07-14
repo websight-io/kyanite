@@ -3,10 +3,10 @@
   "label":"Tab",
   "paneltabcontent": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/panel/paneltabs/paneltabcontent",
+    "sling:resourceType": "kyanite/common/components/panel/paneltabs/paneltabcontent",
     "panelblock1": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "kyanite/components/panel/panelblock",
+      "sling:resourceType": "kyanite/common/components/panel/panelblock",
       "addIcon": false,
       "selectOrType": "select",
       "icon": "mdi-home-outline",
@@ -15,7 +15,7 @@
     },
     "panelblock2": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "kyanite/components/panel/panelblock",
+      "sling:resourceType": "kyanite/common/components/panel/panelblock",
       "addIcon": false,
       "selectOrType": "select",
       "icon": "mdi-home-outline",
@@ -24,7 +24,7 @@
     },
     "panelblock3": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "kyanite/components/panel/panelblock",
+      "sling:resourceType": "kyanite/common/components/panel/panelblock",
       "addIcon": false,
       "selectOrType": "select",
       "icon": "mdi-home-outline",

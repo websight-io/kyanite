@@ -7,7 +7,7 @@
       "label": "General",
       "alignment": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/common/alignment"
+        "path": "/libs/kyanite/common/components/common/alignment"
       },
       "hasAddons": {
         "sling:resourceType": "wcm/dialogs/components/toggle",
@@ -17,7 +17,7 @@
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/buttons/attributes/size"
+        "path": "/libs/kyanite/common/components/buttons/attributes/size"
       }
     }
   }

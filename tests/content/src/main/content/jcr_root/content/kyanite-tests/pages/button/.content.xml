@@ -5,17 +5,17 @@
   <jcr:content
     jcr:primaryType="ws:PageContent"
     jcr:title="Button"
-    sling:resourceType="kyanite/components/page"
-    ws:template="kyanite/templates/basicpage">
+    sling:resourceType="kyanite/common/components/page"
+    ws:template="kyanite/common/templates/basicpage">
     <pagecontainer
       jcr:primaryType="nt:unstructured"
-      sling:resourceType="kyanite/components/pagecontainer">
+      sling:resourceType="kyanite/common/components/pagecontainer">
       <button
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="kyanite/components/button"/>
+        sling:resourceType="kyanite/common/components/button"/>
       <anchor
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="kyanite/components/button"/>
+        sling:resourceType="kyanite/common/components/button"/>
     </pagecontainer>
   </jcr:content>
 </jcr:root>

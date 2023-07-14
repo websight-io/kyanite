@@ -10,7 +10,7 @@
         "name": "variant",
         "label": "Variant",
         "include": {
-          "sling:resourceSuperType": "/libs/kyanite/components/common/extendedvariant",
+          "sling:resourceSuperType": "/libs/kyanite/common/components/common/extendedvariant",
           "black": {
             "sling:resourceType": "wcm/dialogs/components/select/selectitem",
             "label": "Black",

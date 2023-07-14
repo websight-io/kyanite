@@ -31,7 +31,7 @@ public class ModalCardComponent extends ModalComponent {
   public static final String ID_PREFIX = "modalcard";
 
   public static final String MODEL_CARD_FOOTER_RESOURCE_TYPE
-      = "kyanite/components/modelcard/modelcardfooter";
+      = "kyanite/common/components/modelcard/modelcardfooter";
 
   @ValueMapValue
   @Getter

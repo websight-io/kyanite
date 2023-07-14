@@ -3,9 +3,9 @@
   "isLayout": true,
   "group": "Kyanite Layouts",
   "allowedComponents": [
-    "/libs/kyanite/components/mediaobject/medialeft",
-    "/libs/kyanite/components/mediaobject/mediacontent",
-    "/libs/kyanite/components/mediaobject/mediaright"],
+    "/libs/kyanite/common/components/mediaobject/medialeft",
+    "/libs/kyanite/common/components/mediaobject/mediacontent",
+    "/libs/kyanite/common/components/mediaobject/mediaright"],
   "sling:resourceType": "ws:Component",
   "title": "Media Object"
 }

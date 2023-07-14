@@ -23,7 +23,7 @@
   <sly data-sly-test="${wcmmode.isEdit}">
     <div style="padding-top: 20px; padding-bottom: 20px; margin-bottom: 10px; margin-top: 10px">
       <sly data-sly-list="${resource.children}">
-        <sly data-sly-test="${item.resourceType == 'kyanite/components/panel/paneltabs/paneltab'}">
+        <sly data-sly-test="${item.resourceType == 'kyanite/common/components/panel/paneltabs/paneltab'}">
           <sly data-sly-resource="${item}"></sly>
         </sly>
       </sly>
@@ -35,7 +35,7 @@
   <sly data-sly-test="${!wcmmode.isEdit}">
     <p class="panel-tabs">
       <sly data-sly-list="${resource.children}">
-        <sly data-sly-test="${item.resourceType == 'kyanite/components/panel/paneltabs/paneltab'}">
+        <sly data-sly-test="${item.resourceType == 'kyanite/common/components/panel/paneltabs/paneltab'}">
           <sly data-sly-resource="${item}"></sly>
         </sly>
       </sly>
@@ -43,12 +43,12 @@
 
     <div class="px-2" id="panel-tab-content">
       <sly data-sly-list="${resource.children}">
-        <sly data-sly-test="${item.resourceType == 'kyanite/components/panel/paneltabs/paneltab'}">
+        <sly data-sly-test="${item.resourceType == 'kyanite/common/components/panel/paneltabs/paneltab'}">
           <sly data-sly-test="${item.hasChildren}">
             <sly data-sly-set.path="${item.path}">
               <sly data-sly-list="${item.children}">
                 <sly
-                    data-sly-test="${item.resourceType == 'kyanite/components/panel/paneltabs/paneltabcontent'}">
+                    data-sly-test="${item.resourceType == 'kyanite/common/components/panel/paneltabs/paneltabcontent'}">
                   <div id="${path}" class="is-hidden">
                     <sly data-sly-resource="${item}"></sly>
                   </div>

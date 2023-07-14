@@ -2,7 +2,7 @@
   "jcr:primaryType": "nt:unstructured",
   "column1": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/columns/column",
+    "sling:resourceType": "kyanite/common/components/columns/column",
     "desktopColumnStyle": {
       "jcr:primaryType": "nt:unstructured",
       "sizeType": "evenNumber",
@@ -33,7 +33,7 @@
   },
   "column2": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/columns/column",
+    "sling:resourceType": "kyanite/common/components/columns/column",
     "desktopColumnStyle": {
       "jcr:primaryType": "nt:unstructured",
       "sizeType": "evenNumber",

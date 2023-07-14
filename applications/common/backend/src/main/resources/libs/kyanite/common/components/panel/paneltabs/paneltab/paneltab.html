@@ -24,7 +24,7 @@
           <ul>
             <sly data-sly-list="${parent.children}">
               <sly
-                  data-sly-test="${item.resourceType == 'kyanite/components/panel/paneltabs/paneltab'}">
+                  data-sly-test="${item.resourceType == 'kyanite/common/components/panel/paneltabs/paneltab'}">
                 <li class="${resource.path == item.path ? 'is-active' : ''}"
                     data-target="${item.id}">
                   <a>
@@ -41,7 +41,7 @@
         <sly data-sly-test=" ${resource.hasChildren}">
           <sly data-sly-list="${resource.children}">
             <sly
-                data-sly-test="${item.resourceType == 'kyanite/components/panel/paneltabs/paneltabcontent'}">
+                data-sly-test="${item.resourceType == 'kyanite/common/components/panel/paneltabs/paneltabcontent'}">
               <div>
                 <sly data-sly-resource="${item}"></sly>
               </div>
@@ -57,7 +57,7 @@
   <sly data-sly-test="${!wcmmode.isEdit}">
     <sly data-sly-test.parent="${resource.parent}">
       <sly data-sly-list="${parent.children}">
-        <sly data-sly-test="${item.resourceType == 'kyanite/components/panel/paneltabs/paneltab'}">
+        <sly data-sly-test="${item.resourceType == 'kyanite/common/components/panel/paneltabs/paneltab'}">
           <sly data-sly-test="${resource.path == item.path}">
             <a data-target="${item.path}">
               ${model.label}

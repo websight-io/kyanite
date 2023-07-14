@@ -28,7 +28,8 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class LevelComponent {
 
-  static final String LEVEL_ITEM_COMPONENT_RESOURCE_TYPE = "kyanite/components/level/levelitem";
+  static final String LEVEL_ITEM_COMPONENT_RESOURCE_TYPE
+      = "kyanite/common/components/level/levelitem";
 
 
   @Inject

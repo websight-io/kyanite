@@ -37,7 +37,7 @@ import pl.ds.websight.pages.core.api.PageManager;
 public class BlogPostTableOfContentsComponent {
   private static final String BLOG_CONTENT_CONTAINER_REL_PATH =
       "/jcr:content/pagecontainer/section/container/columns1/column4";
-  private static final String TITLE_RESOURCE_PATH = "kyanite/components/title";
+  private static final String TITLE_RESOURCE_PATH = "kyanite/common/components/title";
 
   @Getter
   @Inject

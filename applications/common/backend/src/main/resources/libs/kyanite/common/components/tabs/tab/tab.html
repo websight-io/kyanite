@@ -23,13 +23,13 @@
                 <div class="tabs ${parent.size ? parent.size : ''} ${parent.alignment ? parent.alignment : ''} ${parent.boxed ? 'is-boxed' : ''} ${parent.fullWidth ? 'is-fullwidth' : ''} ${parent.toggle ? 'is-toggle' : ''} ${parent.toggleRounded ? 'is-toggle-rounded' : ''}">
                     <ul>
                         <sly data-sly-list="${parent.children}">
-                            <sly data-sly-test="${item.resourceType == 'kyanite/components/tabs/tab'}">
+                            <sly data-sly-test="${item.resourceType == 'kyanite/common/components/tabs/tab'}">
                                 <sly data-sly-test.isCurrent="${model.label == item.label}"></sly>
                                 <li class="${isCurrent ? 'is-active' : ''}"
                                     data-target="${item.label}">
                                     <a>
                                         <sly data-sly-test="${item.addIcon && item.icon && isCurrent}">
-                                            <sly data-sly-resource="${resource @ resourceType = 'kyanite/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
+                                            <sly data-sly-resource="${resource @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
                                         </sly>
                                         <span>${item.label}</span>
                                     </a>
@@ -42,7 +42,7 @@
             <div class="px-2" id="tab-content">
                 <sly data-sly-test=" ${resource.hasChildren}">
                     <sly data-sly-list="${resource.children}">
-                        <sly data-sly-test="${item.resourceType == 'kyanite/components/tabs/tabcontent'}">
+                        <sly data-sly-test="${item.resourceType == 'kyanite/common/components/tabs/tabcontent'}">
                             <div>
                                 <sly data-sly-resource="${item}"></sly>
                             </div>
@@ -59,7 +59,7 @@
         <li data-target="${resource.path}">
             <a>
                 <sly data-sly-test="${model.addIcon && model.icon}">
-                    <sly data-sly-resource="${resource @ resourceType = 'kyanite/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
+                    <sly data-sly-resource="${resource @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
                 </sly>
                 <span>${model.label}</span>
             </a>

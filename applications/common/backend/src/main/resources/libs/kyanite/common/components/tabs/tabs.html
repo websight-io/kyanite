@@ -25,7 +25,7 @@
         <sly data-sly-test="${wcmmode.isEdit}">
             <div style="padding-top: 10px; padding-bottom: 10px;">
                 <sly data-sly-list="${resource.children}">
-                    <sly data-sly-test="${item.resourceType == 'kyanite/components/tabs/tab'}">
+                    <sly data-sly-test="${item.resourceType == 'kyanite/common/components/tabs/tab'}">
                         <sly data-sly-resource="${item}"></sly>
                     </sly>
                 </sly>
@@ -39,7 +39,7 @@
                     <div style="padding-top: 20px; padding-bottom: 20px;" data-sly-unwrap="${!wcmmode.isEdit}">
                         <ul>
                             <sly data-sly-list="${resource.children}">
-                                <sly data-sly-test="${item.resourceType == 'kyanite/components/tabs/tab'}">
+                                <sly data-sly-test="${item.resourceType == 'kyanite/common/components/tabs/tab'}">
                                     <sly data-sly-resource="${item}"></sly>
                                 </sly>
                             </sly>
@@ -48,11 +48,11 @@
                 </div>
                 <div class="px-2 tabs-content">
                     <sly data-sly-list="${resource.children}">
-                        <sly data-sly-test="${item.resourceType == 'kyanite/components/tabs/tab'}">
+                        <sly data-sly-test="${item.resourceType == 'kyanite/common/components/tabs/tab'}">
                             <sly data-sly-test="${item.hasChildren}">
                                 <sly data-sly-set.tabid="${item.path}">
                                     <sly data-sly-list="${item.children}">
-                                        <sly data-sly-test="${item.resourceType == 'kyanite/components/tabs/tabcontent'}">
+                                        <sly data-sly-test="${item.resourceType == 'kyanite/common/components/tabs/tabcontent'}">
                                             <div id="${tabid}" class="is-hidden">
                                                 <sly data-sly-resource="${item}"></sly>
                                             </div>

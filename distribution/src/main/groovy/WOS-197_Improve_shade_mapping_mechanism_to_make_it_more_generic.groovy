@@ -32,19 +32,19 @@ def findTitleAndContentComponents(String rootPath) {
 def processColorShadeChanges(Resource res) {
     def vm = res.getValueMap()
     def color = vm['color']
-    if (color == null && res.resourceType == 'kyanite/components/content') {
+    if (color == null && res.resourceType == 'bulma/components/content') {
         color = "grey_has-text-grey"
         addColorIfNotExist(res, 'color', color)
     }
-    if (color == null && res.resourceType == 'kyanite/components/title') {
+    if (color == null && res.resourceType == 'bulma/components/title') {
         color = "rest_has-text-grey"
         addColorIfNotExist(res, 'color', color)
     }
     if (color != null && !(color.startsWith("grey_") || color.startsWith("rest_") || color.startsWith("bw_"))) {
-        if (res.resourceType == 'kyanite/components/content' && color == "has-text-primary") {
+        if (res.resourceType == 'bulma/components/content' && color == "has-text-primary") {
             changeColorIfNotExist(res, 'color', "rest_has-text-primary")
         }
-        if (res.resourceType == 'kyanite/components/title' && color == "has-text-black") {
+        if (res.resourceType == 'bulma/components/title' && color == "has-text-black") {
             changeColorIfNotExist(res, 'color', "")
         }
     }
@@ -117,11 +117,11 @@ def createShadeNode(resource, nodeName, shadeValue) {
     if (shadeValue) {
         properties = ['jcr:primaryType': 'nt:unstructured', 'shade': shadeValue]
     }
-    if (resource.resourceType == 'kyanite/components/content' && nodeName == 'grey' && shadeValue == null) {
+    if (resource.resourceType == 'bulma/components/content' && nodeName == 'grey' && shadeValue == null) {
         properties = ['jcr:primaryType': 'nt:unstructured', 'shade': "darker"]
     }
 
-    if (resource.resourceType == 'kyanite/components/title' && nodeName == 'rest' && shadeValue == null) {
+    if (resource.resourceType == 'bulma/components/title' && nodeName == 'rest' && shadeValue == null) {
         properties = ['jcr:primaryType': 'nt:unstructured', 'shade': "900"]
     }
 

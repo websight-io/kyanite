@@ -93,7 +93,7 @@ public class ColorService {
     }
     ResourceResolver resourceResolver = resource.getResourceResolver();
     Resource textColorsResource = resourceResolver
-        .getResource("kyanite/components/common/text/shade");
+        .getResource("kyanite/common/components/common/text/shade");
     if (textColorsResource != null) {
       List<Resource> resources = StreamSupport.stream(Spliterators
               .spliteratorUnknownSize(textColorsResource.listChildren(),

@@ -84,13 +84,13 @@
       "label": "Style of image",
       "type": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/image/attributes/type"
+        "path": "/libs/kyanite/common/components/image/attributes/type"
       },
       "ratio": {
         "sling:resourceType": "wcm/dialogs/components/container",
         "style": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/libs/kyanite/components/image/attributes/ratio"
+          "path": "/libs/kyanite/common/components/image/attributes/ratio"
         },
         "ws:display": {"condition": {
           "sourceName": "type",
@@ -101,7 +101,7 @@
         "sling:resourceType": "wcm/dialogs/components/container",
         "style": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/libs/kyanite/components/image/attributes/fixed"
+          "path": "/libs/kyanite/common/components/image/attributes/fixed"
         },
         "ws:display": {"condition": {
           "sourceName": "type",

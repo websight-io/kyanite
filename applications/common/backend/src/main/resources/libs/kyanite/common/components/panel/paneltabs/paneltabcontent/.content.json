@@ -2,7 +2,7 @@
   "isContainer": true,
   "group": ".hidden",
   "allowedComponents": [
-    "/libs/kyanite/components/panel/panelblock"
+    "/libs/kyanite/common/components/panel/panelblock"
   ],
   "sling:resourceType": "ws:Component",
   "title": "Panel Tab Content"

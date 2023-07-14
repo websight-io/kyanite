@@ -1,6 +1,6 @@
 {
   "sling:resourceType": "wcm/dialogs/components/select",
-  "sling:resourceSuperType": "/libs/kyanite/components/common/variant",
+  "sling:resourceSuperType": "/libs/kyanite/common/components/common/variant",
   "name": "variant",
   "label": "Variant",
   "white": {

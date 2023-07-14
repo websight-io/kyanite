@@ -74,10 +74,10 @@ describe('Card component', function () {
     .should('deep.eq', {
       header: 'Card header',
       'jcr:primaryType': 'nt:unstructured',
-      'sling:resourceType': 'kyanite/components/card',
+      'sling:resourceType': 'kyanite/common/components/card',
       'cardcontent': {
         'jcr:primaryType': 'nt:unstructured',
-        'sling:resourceType': 'kyanite/components/card/cardcontent'
+        'sling:resourceType': 'kyanite/common/components/card/cardcontent'
       },
       'image': {
         alt: 'Alt text',

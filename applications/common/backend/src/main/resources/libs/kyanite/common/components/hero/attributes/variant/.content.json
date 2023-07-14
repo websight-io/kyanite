@@ -3,7 +3,7 @@
   "name": "variant",
   "label": "Variant of hero banner",
   "include": {
-    "sling:resourceSuperType": "/libs/kyanite/components/common/variant",
+    "sling:resourceSuperType": "/libs/kyanite/common/components/common/variant",
     "light": {
       "sling:resourceType": "wcm/dialogs/components/select/selectitem",
       "label": "Light",

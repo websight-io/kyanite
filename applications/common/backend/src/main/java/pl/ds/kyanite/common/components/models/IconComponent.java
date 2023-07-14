@@ -34,7 +34,7 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 public class IconComponent {
 
   public static final String COMMON_ICON_CONTAINERSIZE_DEFAULTSIZEMAPPINGS
-      = "kyanite/components/common/icon/containersize/defaultsizemappings";
+      = "kyanite/common/components/common/icon/containersize/defaultsizemappings";
   @Inject
   @Getter
   @Default(values = "mdi-home-outline")

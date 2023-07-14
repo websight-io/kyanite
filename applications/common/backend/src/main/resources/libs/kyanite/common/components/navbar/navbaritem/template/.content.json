@@ -1,6 +1,6 @@
 {
   "jcr:primaryType": "nt:unstructured",
-  "sling:resourceType": "kyanite/components/navbar/navbaritem",
+  "sling:resourceType": "kyanite/common/components/navbar/navbaritem",
   "label": "Item",
   "type": "link",
   "addIcon": false,

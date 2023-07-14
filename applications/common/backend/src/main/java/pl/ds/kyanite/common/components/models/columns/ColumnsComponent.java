@@ -32,7 +32,8 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class ColumnsComponent {
 
-  private static final String COLUMN_COMPONENT_RESOURCE_TYPE = "kyanite/components/columns/column";
+  private static final String COLUMN_COMPONENT_RESOURCE_TYPE
+      = "kyanite/common/components/columns/column";
   private static final String SLING_RESOURCE_TYPE = "sling:resourceType";
 
   @SlingObject

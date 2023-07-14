@@ -9,6 +9,6 @@
   "iconSize": "mdi-36px",
   "tabcontent": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/tabs/tabcontent"
+    "sling:resourceType": "kyanite/common/components/tabs/tabcontent"
   }
 }

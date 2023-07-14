@@ -10,14 +10,14 @@
         "name": "text",
         "label": "Text",
         "configuration": {
-          "sling:resourceSuperType": "kyanite/components/common/rte/configurations/default",
+          "sling:resourceSuperType": "kyanite/common/components/common/rte/configurations/default",
           "color": {
             "sling:resourceType": "extensions/dialogs/components/richtext/ui/color",
             "title": "Color",
             "icon": "format_color_text",
             "colors": {
               "sling:resourceType": "wcm/dialogs/components/include",
-              "path": "kyanite/components/common/rte/ui/colors"
+              "path": "kyanite/common/components/common/rte/ui/colors"
             },
             "plugin": {
               "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color"
@@ -30,12 +30,12 @@
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/common/issize"
+        "path": "/libs/kyanite/common/components/common/issize"
       },
       "element": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "include": {
-          "sling:resourceSuperType": "/libs/kyanite/components/common/headinglevel",
+          "sling:resourceSuperType": "/libs/kyanite/common/components/common/headinglevel",
           "name": "element"
         }
       },
@@ -81,7 +81,7 @@
           "subtitleColor": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "kyanite/components/common/text/color",
+              "sling:resourceSuperType": "kyanite/common/components/common/text/color",
               "name": "subtitleColor",
               "label": "Subtitle color"
             },
@@ -92,7 +92,7 @@
             "subtitleShadeBw": {
               "sling:resourceType": "wcm/dialogs/components/include",
               "include": {
-                "sling:resourceSuperType": "kyanite/components/common/text/shade/bw",
+                "sling:resourceSuperType": "kyanite/common/components/common/text/shade/bw",
                 "label": "Subtitle shade",
                 "name": "bw/subtitleShade"
               },
@@ -111,7 +111,7 @@
               "subtitleShadeGrey": {
                 "sling:resourceType": "wcm/dialogs/components/include",
                 "include": {
-                  "sling:resourceSuperType": "kyanite/components/common/text/shade/grey",
+                  "sling:resourceSuperType": "kyanite/common/components/common/text/shade/grey",
                   "label": "Subtitle shade",
                   "name": "grey/subtitleShade"
                 }
@@ -130,7 +130,7 @@
               "subtitleShadeRest": {
                 "sling:resourceType": "wcm/dialogs/components/include",
                 "include": {
-                  "sling:resourceSuperType": "kyanite/components/common/text/shade/rest",
+                  "sling:resourceSuperType": "kyanite/common/components/common/text/shade/rest",
                   "label": "Subtitle shade",
                   "name": "rest/subtitleShade"
                 }

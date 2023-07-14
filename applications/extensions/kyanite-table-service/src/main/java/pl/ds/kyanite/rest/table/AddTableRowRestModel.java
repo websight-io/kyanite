@@ -32,12 +32,12 @@ import pl.ds.websight.request.parameters.support.annotations.RequestParameter;
 @Model(adaptables = SlingHttpServletRequest.class)
 public class AddTableRowRestModel {
 
-  private static final String TABLE_RESOURCE_TYPE = "kyanite/components/table";
+  private static final String TABLE_RESOURCE_TYPE = "kyanite/common/components/table";
 
-  private static final String TABLEROW_RESOURCE_TYPE = "kyanite/components/table/tablerow";
+  private static final String TABLEROW_RESOURCE_TYPE = "kyanite/common/components/table/tablerow";
 
   private static final Pattern cellResourceType = Pattern.compile(
-      "kyanite/components/table/(tablecell|tableheadcell)");
+      "kyanite/common/components/table/(tablecell|tableheadcell)");
 
   @SlingObject
   private Resource resource;

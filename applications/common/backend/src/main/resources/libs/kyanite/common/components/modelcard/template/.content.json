@@ -2,10 +2,10 @@
   "jcr:primaryType": "nt:unstructured",
   "modelcardcontent": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/modelcard/modelcardcontent"
+    "sling:resourceType": "kyanite/common/components/modelcard/modelcardcontent"
   },
   "modelcardfooter": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/modelcard/modelcardfooter"
+    "sling:resourceType": "kyanite/common/components/modelcard/modelcardfooter"
   }
 }

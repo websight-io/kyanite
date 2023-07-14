@@ -133,7 +133,7 @@ describe('Button component', function () {
           'variant': 'is-success',
           'isRounded': 'true',
           'modalId': 'Modal ID',
-          'sling:resourceType': 'kyanite/components/button',
+          'sling:resourceType': 'kyanite/common/components/button',
           'actionType': 'open-modal',
           'isLight': 'true',
           'leftIcon': {
@@ -201,7 +201,7 @@ describe('Button component', function () {
           'type': 'a',
           'label': 'Label',
           'isRounded': 'false',
-          'sling:resourceType': 'kyanite/components/button',
+          'sling:resourceType': 'kyanite/common/components/button',
           'openInNewTab': 'true',
           'isLight': 'false'
         });

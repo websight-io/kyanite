@@ -1,7 +1,7 @@
 {
   "default": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/button"
+    "sling:resourceType": "kyanite/common/components/button"
   },
   "complex": {
     "jcr:primaryType": "nt:unstructured",

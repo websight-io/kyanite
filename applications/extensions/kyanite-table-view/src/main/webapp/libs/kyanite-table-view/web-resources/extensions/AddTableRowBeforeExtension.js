@@ -28,9 +28,9 @@ const config = {
   action: 'add-table-row',
   insertBefore: true,
   allowedComponents: [
-    "/libs/kyanite/components/table/tablerow",
-    "/libs/kyanite/components/table/tableheadcell",
-    "/libs/kyanite/components/table/tablecell"
+    "/libs/kyanite/common/components/table/tablerow",
+    "/libs/kyanite/common/components/table/tableheadcell",
+    "/libs/kyanite/common/components/table/tablecell"
   ]
 };
 

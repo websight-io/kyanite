@@ -5,20 +5,20 @@
   <jcr:content
     jcr:primaryType="ws:PageContent"
     jcr:title="Hero"
-    sling:resourceType="kyanite/components/page"
-    ws:template="kyanite/templates/basicpage">
+    sling:resourceType="kyanite/common/components/page"
+    ws:template="kyanite/common/templates/basicpage">
     <pagecontainer
       jcr:primaryType="nt:unstructured"
-      sling:resourceType="kyanite/components/pagecontainer">
+      sling:resourceType="kyanite/common/components/pagecontainer">
       <hero
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="kyanite/components/hero"/>
+        sling:resourceType="kyanite/common/components/hero"/>
       <container
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="kyanite/components/container">
+        sling:resourceType="kyanite/common/components/container">
         <hero
           jcr:primaryType="nt:unstructured"
-          sling:resourceType="kyanite/components/hero"
+          sling:resourceType="kyanite/common/components/hero"
           size="is-medium"
           subTitle="Warning"
           title="Medium"
@@ -26,10 +26,10 @@
       </container>
       <container_1
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="kyanite/components/container">
+        sling:resourceType="kyanite/common/components/container">
         <hero
           jcr:primaryType="nt:unstructured"
-          sling:resourceType="kyanite/components/hero"
+          sling:resourceType="kyanite/common/components/hero"
           size="is-large"
           subTitle="Danger"
           title="Large"
@@ -37,10 +37,10 @@
       </container_1>
       <container_2
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="kyanite/components/container">
+        sling:resourceType="kyanite/common/components/container">
         <hero
           jcr:primaryType="nt:unstructured"
-          sling:resourceType="kyanite/components/hero"
+          sling:resourceType="kyanite/common/components/hero"
           size="is-halfheight"
           subTitle="Info"
           title="Half-height"
@@ -48,10 +48,10 @@
       </container_2>
       <container_3
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="kyanite/components/container">
+        sling:resourceType="kyanite/common/components/container">
         <hero
           jcr:primaryType="nt:unstructured"
-          sling:resourceType="kyanite/components/hero"
+          sling:resourceType="kyanite/common/components/hero"
           size="is-small"
           subTitle="Primary"
           title="Small"
@@ -59,10 +59,10 @@
       </container_3>
       <container_3_1
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="kyanite/components/container">
+        sling:resourceType="kyanite/common/components/container">
         <hero
           jcr:primaryType="nt:unstructured"
-          sling:resourceType="kyanite/components/hero"
+          sling:resourceType="kyanite/common/components/hero"
           size="is-small"
           subTitle="Success"
           title="Small"
@@ -70,10 +70,10 @@
       </container_3_1>
       <container_3_1_1
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="kyanite/components/container">
+        sling:resourceType="kyanite/common/components/container">
         <hero
           jcr:primaryType="nt:unstructured"
-          sling:resourceType="kyanite/components/hero"
+          sling:resourceType="kyanite/common/components/hero"
           size="is-small"
           subTitle="Light"
           title="Small"
@@ -81,10 +81,10 @@
       </container_3_1_1>
       <container_3_1_2
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="kyanite/components/container">
+        sling:resourceType="kyanite/common/components/container">
         <hero
           jcr:primaryType="nt:unstructured"
-          sling:resourceType="kyanite/components/hero"
+          sling:resourceType="kyanite/common/components/hero"
           size="is-small"
           subTitle="Dark"
           title="Small"

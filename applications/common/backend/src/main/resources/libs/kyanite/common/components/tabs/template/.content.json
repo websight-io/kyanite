@@ -5,7 +5,7 @@
   "switchingTime": "5",
   "tab1": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/tabs/tab",
+    "sling:resourceType": "kyanite/common/components/tabs/tab",
     "label":"Tab 1",
     "icon": "mdi-home-outline",
     "addIcon": false,
@@ -15,12 +15,12 @@
     "iconSize": "mdi-36px",
     "tabcontent": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "kyanite/components/tabs/tabcontent"
+      "sling:resourceType": "kyanite/common/components/tabs/tabcontent"
     }
   },
   "tab2": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/tabs/tab",
+    "sling:resourceType": "kyanite/common/components/tabs/tab",
     "label":"Tab 2",
     "icon": "mdi-home-outline",
     "addIcon": false,
@@ -30,12 +30,12 @@
     "iconSize": "mdi-36px",
     "tabcontent": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "kyanite/components/tabs/tabcontent"
+      "sling:resourceType": "kyanite/common/components/tabs/tabcontent"
     }
   },
   "tab3": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/tabs/tab",
+    "sling:resourceType": "kyanite/common/components/tabs/tab",
     "label":"Tab 3",
     "icon": "mdi-home-outline",
     "addIcon": false,
@@ -45,7 +45,7 @@
     "iconSize": "mdi-36px",
     "tabcontent": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "kyanite/components/tabs/tabcontent"
+      "sling:resourceType": "kyanite/common/components/tabs/tabcontent"
     }
   }
 }

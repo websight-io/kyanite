@@ -1,7 +1,7 @@
 {
   "jcr:primaryType": "nt:unstructured",
   "breadcrumbitem": {
-    "sling:resourceType": "kyanite/components/breadcrumb/breadcrumbitem",
+    "sling:resourceType": "kyanite/common/components/breadcrumb/breadcrumbitem",
     "url": "",
     "label": "Label",
     "addIcon": false,

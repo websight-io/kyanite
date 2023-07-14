@@ -20,7 +20,7 @@
   <sly data-sly-test="${model.type == 'link'}">
     <a class="navbar-item" href="${model.url}">
         <sly data-sly-test="${model.addIcon && model.icon}">
-          <sly data-sly-resource="${resource @ resourceType = 'kyanite/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
+          <sly data-sly-resource="${resource @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
         </sly>
       <span>${model.label}</span>
     </a>

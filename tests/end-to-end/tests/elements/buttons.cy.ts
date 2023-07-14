@@ -65,7 +65,7 @@ describe('Button component', function () {
       'jcr:primaryType': 'nt:unstructured',
       'hasAddons': 'true',
       'size': 'are-medium',
-      'sling:resourceType': 'kyanite/components/buttons',
+      'sling:resourceType': 'kyanite/common/components/buttons',
       'alignment': 'is-centered'
     });
   });

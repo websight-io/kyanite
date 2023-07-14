@@ -8,13 +8,13 @@
       "alignment": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "include": {
-          "sling:resourceSuperType": "kyanite/components/common/alignment"
+          "sling:resourceSuperType": "kyanite/common/components/common/alignment"
         }
       },
       "alignmentVertical": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "include": {
-          "sling:resourceSuperType": "kyanite/components/common/alignmentvertical"
+          "sling:resourceSuperType": "kyanite/common/components/common/alignmentvertical"
         }
       },
       "variant": {

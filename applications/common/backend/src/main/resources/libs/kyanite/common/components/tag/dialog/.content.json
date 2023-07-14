@@ -12,11 +12,11 @@
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/common/size"
+        "path": "/libs/kyanite/common/components/common/size"
       },
       "variant": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/tag/attributes/variant"
+        "path": "/libs/kyanite/common/components/tag/attributes/variant"
       },
       "isLight": {
         "sling:resourceType": "wcm/dialogs/components/toggle",

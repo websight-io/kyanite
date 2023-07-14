@@ -1,11 +1,11 @@
 {
   "default": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/message"
+    "sling:resourceType": "kyanite/common/components/message"
   },
   "styled": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/message",
+    "sling:resourceType": "kyanite/common/components/message",
     "header": "Header",
     "content": "Content",
     "variant": "is-info",

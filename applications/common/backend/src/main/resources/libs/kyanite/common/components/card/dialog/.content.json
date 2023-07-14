@@ -34,7 +34,7 @@
         "sling:resourceType": "wcm/dialogs/components/include",
         "namespace": "image",
         "include": {
-          "sling:resourceSuperType": "kyanite/components/card/common/image",
+          "sling:resourceSuperType": "kyanite/common/components/card/common/image",
           "fixedStyle": {"sling:hideResource": true}
         }
       }

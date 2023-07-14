@@ -1,8 +1,8 @@
 {
   "isContainer": true,
   "allowedComponents": [
-    "/libs/kyanite/components/navbar/navbarstart",
-    "/libs/kyanite/components/navbar/navbarend"
+    "/libs/kyanite/common/components/navbar/navbarstart",
+    "/libs/kyanite/common/components/navbar/navbarend"
   ],
   "group": "Kyanite sub-components",
   "sling:resourceType": "ws:Component",

@@ -12,7 +12,7 @@
       },
       "type": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/button/attributes/type"
+        "path": "/libs/kyanite/common/components/button/attributes/type"
       },
       "container": {
         "sling:resourceType": "wcm/dialogs/components/container",
@@ -67,11 +67,11 @@
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/common/size"
+        "path": "/libs/kyanite/common/components/common/size"
       },
       "variant": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "kyanite/components/button/attributes/variant"
+        "path": "kyanite/common/components/button/attributes/variant"
       }
     },
     "modifiers": {
@@ -169,7 +169,7 @@
           "selectableIcon": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "kyanite/components/common/icon/icons/fontawesome",
+              "sling:resourceSuperType": "kyanite/common/components/common/icon/icons/fontawesome",
               "name": "leftIcon/icon",
               "label": "Left icon"
             },
@@ -183,7 +183,7 @@
           "iconSizeLeft": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "kyanite/components/common/icon/iconsize/fontawesome",
+              "sling:resourceSuperType": "kyanite/common/components/common/icon/iconsize/fontawesome",
               "name": "leftIcon/iconSize",
               "label": "Left icon size"
             }
@@ -200,7 +200,7 @@
           "selectableIcon": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "kyanite/components/common/icon/icons/materialdesign",
+              "sling:resourceSuperType": "kyanite/common/components/common/icon/icons/materialdesign",
               "name": "leftIcon/icon",
               "label": "Left icon"
             },
@@ -214,7 +214,7 @@
           "iconSize": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "kyanite/components/common/icon/iconsize/materialdesign",
+              "sling:resourceSuperType": "kyanite/common/components/common/icon/iconsize/materialdesign",
               "name": "leftIcon/iconSize",
               "label": "Left icon size"
             }
@@ -285,7 +285,7 @@
           "selectableIcon": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "kyanite/components/common/icon/icons/fontawesome",
+              "sling:resourceSuperType": "kyanite/common/components/common/icon/icons/fontawesome",
               "name": "rightIcon/icon",
               "label": "Right icon"
             },
@@ -299,7 +299,7 @@
           "iconSizeRight": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "kyanite/components/common/icon/iconsize/fontawesome",
+              "sling:resourceSuperType": "kyanite/common/components/common/icon/iconsize/fontawesome",
               "name": "rightIcon/iconSize",
               "label": "Right icon size"
             }
@@ -316,7 +316,7 @@
           "selectableIcon": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "kyanite/components/common/icon/icons/materialdesign",
+              "sling:resourceSuperType": "kyanite/common/components/common/icon/icons/materialdesign",
               "name": "rightIcon/icon",
               "label": "Right icon"
             },
@@ -330,7 +330,7 @@
           "iconSizeRight": {
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
-              "sling:resourceSuperType": "kyanite/components/common/icon/iconsize/materialdesign",
+              "sling:resourceSuperType": "kyanite/common/components/common/icon/iconsize/materialdesign",
               "name": "rightIcon/iconSize",
               "label": "Right icon size"
             }
@@ -355,7 +355,7 @@
       "label": "Action",
       "actionType": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/common/actions"
+        "path": "/libs/kyanite/common/components/common/actions"
       },
       "action": {
         "sling:resourceType": "wcm/dialogs/components/container",

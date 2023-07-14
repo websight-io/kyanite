@@ -1,11 +1,11 @@
 {
   "default": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/dropdown"
+    "sling:resourceType": "kyanite/common/components/dropdown"
   },
   "complex": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/dropdown",
+    "sling:resourceType": "kyanite/common/components/dropdown",
     "label": "Dropdown",
     "isHoverable": true,
     "isRight": true,

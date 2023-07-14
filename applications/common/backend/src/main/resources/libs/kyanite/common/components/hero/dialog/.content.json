@@ -7,11 +7,11 @@
       "label": "General",
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/hero/attributes/size"
+        "path": "/libs/kyanite/common/components/hero/attributes/size"
       },
       "variant": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "kyanite/components/hero/attributes/variant"
+        "path": "kyanite/common/components/hero/attributes/variant"
       }
     }
   }

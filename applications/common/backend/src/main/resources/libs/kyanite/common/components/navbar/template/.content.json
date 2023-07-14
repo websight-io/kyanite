@@ -5,10 +5,10 @@
   "fixedOption": "is-fixed-top",
   "brand": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/navbar/navbarbrand",
+    "sling:resourceType": "kyanite/common/components/navbar/navbarbrand",
     "item": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "kyanite/components/navbar/navbaritem",
+      "sling:resourceType": "kyanite/common/components/navbar/navbaritem",
       "label": "Brand",
       "url": "",
       "type": "link",
@@ -21,13 +21,13 @@
   },
   "menu": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/navbar/navbarmenu",
+    "sling:resourceType": "kyanite/common/components/navbar/navbarmenu",
     "start": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "kyanite/components/navbar/navbarstart",
+      "sling:resourceType": "kyanite/common/components/navbar/navbarstart",
       "item": {
         "jcr:primaryType": "nt:unstructured",
-        "sling:resourceType": "kyanite/components/navbar/navbaritem",
+        "sling:resourceType": "kyanite/common/components/navbar/navbaritem",
         "label": "Item",
         "type": "link",
         "addIcon": false,
@@ -38,7 +38,7 @@
       },
       "dropdown": {
         "jcr:primaryType": "nt:unstructured",
-        "sling:resourceType": "kyanite/components/navbar/navbardropdown",
+        "sling:resourceType": "kyanite/common/components/navbar/navbardropdown",
         "label": "Dropdown",
         "items": {
           "jcr:primaryType": "nt:unstructured",
@@ -55,10 +55,10 @@
     },
     "end": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "kyanite/components/navbar/navbarend",
+      "sling:resourceType": "kyanite/common/components/navbar/navbarend",
       "item": {
         "jcr:primaryType": "nt:unstructured",
-        "sling:resourceType": "kyanite/components/navbar/navbaritem",
+        "sling:resourceType": "kyanite/common/components/navbar/navbaritem",
         "label": "Item",
         "type": "link",
         "addIcon": false,

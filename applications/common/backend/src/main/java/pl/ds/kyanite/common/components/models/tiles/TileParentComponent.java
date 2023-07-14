@@ -36,7 +36,7 @@ public class TileParentComponent {
 
   private static final String PARENT_TYPE = "is-parent";
   private static final String IS_VERTICAL = "is-vertical";
-  private static final String CHILD_RESOURCE_TYPE = "kyanite/components/tiles/tilechild";
+  private static final String CHILD_RESOURCE_TYPE = "kyanite/common/components/tiles/tilechild";
 
   @SlingObject
   private Resource resource;

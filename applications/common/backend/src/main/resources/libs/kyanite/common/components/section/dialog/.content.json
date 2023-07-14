@@ -13,7 +13,7 @@
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/hero/attributes/size"
+        "path": "/libs/kyanite/common/components/hero/attributes/size"
       }
     }
   }

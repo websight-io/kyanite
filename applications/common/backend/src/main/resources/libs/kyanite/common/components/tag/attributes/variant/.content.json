@@ -2,5 +2,5 @@
   "sling:resourceType": "wcm/dialogs/components/include",
   "name": "variant",
   "label": "Variant",
-  "include": {"sling:resourceSuperType": "/libs/kyanite/components/common/extendedvariant"}
+  "include": {"sling:resourceSuperType": "/libs/kyanite/common/components/common/extendedvariant"}
 }

@@ -1,10 +1,10 @@
 {
   "isContainer": true,
   "allowedComponents": [
-    "/libs/kyanite/components/table/tablehead",
-    "/libs/kyanite/components/table/tablefoot",
-    "/libs/kyanite/components/table/tablebody",
-    "/libs/kyanite/components/table/tablerow"
+    "/libs/kyanite/common/components/table/tablehead",
+    "/libs/kyanite/common/components/table/tablefoot",
+    "/libs/kyanite/common/components/table/tablebody",
+    "/libs/kyanite/common/components/table/tablerow"
   ],
   "group": "Kyanite Elements",
   "sling:resourceType": "ws:Component",

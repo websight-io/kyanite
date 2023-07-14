@@ -1,11 +1,11 @@
 {
   "default": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/table"
+    "sling:resourceType": "kyanite/common/components/table"
   },
   "complex": {
     "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/components/table",
+    "sling:resourceType": "kyanite/common/components/table",
     "isBordered": true,
     "isFullwidth": true,
     "isHoverable": true,

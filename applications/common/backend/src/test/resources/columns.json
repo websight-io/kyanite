@@ -1,10 +1,10 @@
 {
   "default": {
-    "sling:resourceType": "kyanite/components/columns",
+    "sling:resourceType": "kyanite/common/components/columns",
     "jcr:primaryType": "nt:unstructured"
   },
   "complex": {
-    "sling:resourceType": "kyanite/components/columns",
+    "sling:resourceType": "kyanite/common/components/columns",
     "jcr:primaryType": "nt:unstructured",
     "columnsActivationLevel": "is-mobile",
     "isCustomGapLevel": true,

@@ -85,7 +85,7 @@ describe('Message component', function () {
           'showButton': 'true',
           'showHeader': 'true',
           'content': '<p>Content</p>',
-          'sling:resourceType': 'kyanite/components/message'
+          'sling:resourceType': 'kyanite/common/components/message'
         });
   });
 });

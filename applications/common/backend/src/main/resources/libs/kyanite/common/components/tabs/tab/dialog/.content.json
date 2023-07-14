@@ -58,7 +58,7 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "selectableIcon": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/components/common/icon/icons/fontawesome",
+            "path": "kyanite/common/components/common/icon/icons/fontawesome",
             "ws:display": {
               "condition": {
                 "sourceName": "selectOrType",
@@ -68,7 +68,7 @@
           },
           "iconSize": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/components/common/icon/iconsize/fontawesome"
+            "path": "kyanite/common/components/common/icon/iconsize/fontawesome"
           },
           "ws:display": {
             "condition": {
@@ -81,7 +81,7 @@
           "sling:resourceType": "wcm/dialogs/components/container",
           "selectableIcon": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/components/common/icon/icons/materialdesign",
+            "path": "kyanite/common/components/common/icon/icons/materialdesign",
             "ws:display": {
               "condition": {
                 "sourceName": "selectOrType",
@@ -91,7 +91,7 @@
           },
           "iconSize": {
             "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/components/common/icon/iconsize/materialdesign"
+            "path": "kyanite/common/components/common/icon/iconsize/materialdesign"
           },
           "ws:display": {
             "condition": {

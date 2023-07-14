@@ -1,6 +1,6 @@
 {
   "sling:resourceType": "ws:Component",
-  "sling:resourceSuperType": "kyanite/components/page",
+  "sling:resourceSuperType": "kyanite/common/components/page",
   "title": "Page Blog Article",
   "group": ".hidden"
 }

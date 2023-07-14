@@ -80,7 +80,7 @@ public class ColumnsComponentTest {
 
   @Test
   void hasOnlyColumnsWhichHasNoChildrenWorksWhenChildColumnIsEmptyTest() {
-    addChildResourceType("column1", PATH + "/default", "kyanite/components/columns/column");
+    addChildResourceType("column1", PATH + "/default", "kyanite/common/components/columns/column");
     ColumnsComponent model = context.resourceResolver().getResource(PATH + "/default")
         .adaptTo(ColumnsComponent.class);
 
@@ -90,8 +90,8 @@ public class ColumnsComponentTest {
 
   @Test
   void hasOnlyColumnsWhichHasNoChildrenWorksWhenChildColumnIsNotEmptyTest() {
-    addChildResourceType("column1", PATH + "/default", "kyanite/components/columns/column");
-    addChildResourceType("button", PATH + "/default/column1", "kyanite/components/button");
+    addChildResourceType("column1", PATH + "/default", "kyanite/common/components/columns/column");
+    addChildResourceType("button", PATH + "/default/column1", "kyanite/common/components/button");
     ColumnsComponent model = context.resourceResolver().getResource(PATH + "/default")
         .adaptTo(ColumnsComponent.class);
 

@@ -10,7 +10,7 @@
         "size": {
           "sling:resourceType": "wcm/dialogs/components/include",
           "include": {
-            "sling:resourceSuperType": "/libs/kyanite/components/tiles/attributes/size",
+            "sling:resourceSuperType": "/libs/kyanite/common/components/tiles/attributes/size",
             "name": "size",
             "label": "Tile size"
           }

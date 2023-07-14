@@ -7,19 +7,19 @@
       "label": "General",
       "separator": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/components/common/separator"
+        "path": "/libs/kyanite/common/components/common/separator"
       },
       "sizeInclude": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "include": {
-          "sling:resourceSuperType": "/libs/kyanite/components/common/size",
+          "sling:resourceSuperType": "/libs/kyanite/common/components/common/size",
           "normal": {"sling:hideResource": true}
         }
       },
       "alignment": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "include": {
-          "sling:resourceSuperType": "/libs/kyanite/components/common/alignment",
+          "sling:resourceSuperType": "/libs/kyanite/common/components/common/alignment",
           "left": {"value": ""}
         }
       }

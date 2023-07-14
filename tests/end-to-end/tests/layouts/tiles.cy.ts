@@ -65,7 +65,7 @@ describe('Tiles layout', function () {
     .should('deep.eq', {
       size: 'is-7',
       isVertical: 'true',
-      'sling:resourceType': 'kyanite/components/tiles/tileparent',
+      'sling:resourceType': 'kyanite/common/components/tiles/tileparent',
       'jcr:primaryType': 'nt:unstructured'
     });
   });
@@ -102,7 +102,7 @@ describe('Tiles layout', function () {
     .should('deep.eq', {
       type: 'notification',
       variant: 'is-warning',
-      'sling:resourceType': 'kyanite/components/tiles/tilechild',
+      'sling:resourceType': 'kyanite/common/components/tiles/tilechild',
       'jcr:primaryType': 'nt:unstructured'
     });
   });

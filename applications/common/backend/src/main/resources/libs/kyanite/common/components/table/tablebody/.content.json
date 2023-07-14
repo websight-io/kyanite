@@ -1,7 +1,7 @@
 {
   "isContainer": true,
   "group": "Kyanite sub-elements",
-  "allowedComponents": ["/libs/kyanite/components/table/tablerow"],
+  "allowedComponents": ["/libs/kyanite/common/components/table/tablerow"],
   "sling:resourceType": "ws:Component",
   "title": "Table body"
 }

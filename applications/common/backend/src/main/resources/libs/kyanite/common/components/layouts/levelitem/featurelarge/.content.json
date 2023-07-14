@@ -3,6 +3,6 @@
   "isContainer": true,
   "isLayout": true,
   "group": "Kyanite Layouts",
-  "instanceResourceType": "kyanite/components/level/levelitem",
+  "instanceResourceType": "kyanite/common/components/level/levelitem",
   "title": "Level Item - Feature large"
 }

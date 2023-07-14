@@ -64,13 +64,13 @@ describe('Breadcrumb component', function () {
     .should('deep.eq', {
       'jcr:primaryType': 'nt:unstructured',
       size: 'is-medium',
-      'sling:resourceType': 'kyanite/components/breadcrumb',
+      'sling:resourceType': 'kyanite/common/components/breadcrumb',
       separator: 'has-bullet-separator',
       alignment: 'is-right',
       'breadcrumbitem': {
         'jcr:primaryType':'nt:unstructured',
         label: "Label",
-        'sling:resourceType': 'kyanite/components/breadcrumb/breadcrumbitem'
+        'sling:resourceType': 'kyanite/common/components/breadcrumb/breadcrumbitem'
       }
     });
   });
