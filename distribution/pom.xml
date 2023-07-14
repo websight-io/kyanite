@@ -45,13 +45,19 @@
     </dependency>
     <dependency>
       <groupId>pl.ds.kyanite</groupId>
-      <artifactId>kyanite-backend</artifactId>
+      <artifactId>kyanite-common-backend</artifactId>
       <version>0.0.2-SNAPSHOT</version>
       <type>pom</type>
     </dependency>
     <dependency>
       <groupId>pl.ds.kyanite</groupId>
-      <artifactId>kyanite-frontend</artifactId>
+      <artifactId>kyanite-blogs-backend</artifactId>
+      <version>0.0.2-SNAPSHOT</version>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>pl.ds.kyanite</groupId>
+      <artifactId>kyanite-common-frontend</artifactId>
       <version>0.0.2-SNAPSHOT</version>
       <type>pom</type>
     </dependency>

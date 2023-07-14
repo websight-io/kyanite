@@ -139,7 +139,7 @@
     </dependency>
     <dependency>
       <groupId>pl.ds.kyanite</groupId>
-      <artifactId>kyanite-backend</artifactId>
+      <artifactId>kyanite-common-backend</artifactId>
       <version>0.0.2-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>

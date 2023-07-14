@@ -16,7 +16,7 @@
 
 package pl.ds.kyanite.blogs.components.models;
 
-import static pl.ds.kyanite.components.utils.LinkUtil.CONTENT;
+import static pl.ds.kyanite.common.components.utils.LinkUtil.CONTENT;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,8 +39,8 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.factory.ModelFactory;
 import pl.ds.kyanite.blogs.components.services.BlogArticleService;
-import pl.ds.kyanite.components.utils.LinkUtil;
-import pl.ds.kyanite.components.utils.PageUtil;
+import pl.ds.kyanite.common.components.utils.LinkUtil;
+import pl.ds.kyanite.common.components.utils.PageUtil;
 import pl.ds.websight.pages.core.api.Page;
 import pl.ds.websight.pages.core.api.PageManager;
 

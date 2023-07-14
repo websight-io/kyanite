@@ -1,11 +1,15 @@
 {
   "bundles": [
     {
-      "id": "pl.ds.kyanite:kyanite-backend:${project.version}",
+      "id": "pl.ds.kyanite:kyanite-common-backend:${project.version}",
       "start-order": "25"
     },
     {
-      "id": "pl.ds.kyanite:kyanite-frontend:${project.version}",
+      "id": "pl.ds.kyanite:kyanite-common-frontend:${project.version}",
+      "start-order": "25"
+    },
+    {
+      "id": "pl.ds.kyanite:kyanite-blogs-backend:${project.version}",
       "start-order": "25"
     },
     {
@@ -37,7 +41,7 @@
     "pl.ds.websight.publishing.staticprocessor.PagePublishProcessor": {
       "shorten.paths": true
     },
-    "pl.ds.kyanite.components.services.impl.LibraryIconFactoryConfigImpl~mdi": {
+    "pl.ds.kyanite.common.components.services.impl.LibraryIconFactoryConfigImpl~mdi": {
       "id": "mdi",
       "label": "Material Design",
       "libraryUrl": "/libs/kyanite/webroot/material-design-icons/css/materialdesignicons@7.2.96.min.css"

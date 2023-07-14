@@ -32,8 +32,8 @@ import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.factory.ModelFactory;
-import pl.ds.kyanite.components.utils.DateFormatterUtil;
-import pl.ds.kyanite.components.utils.LinkUtil;
+import pl.ds.kyanite.common.components.utils.DateFormatterUtil;
+import pl.ds.kyanite.common.components.utils.LinkUtil;
 
 @Model(
     adaptables = {Resource.class},

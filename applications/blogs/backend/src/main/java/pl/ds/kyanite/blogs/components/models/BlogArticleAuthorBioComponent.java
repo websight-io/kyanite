@@ -16,7 +16,7 @@
 
 package pl.ds.kyanite.blogs.components.models;
 
-import static pl.ds.kyanite.components.utils.LinkUtil.CONTENT;
+import static pl.ds.kyanite.common.components.utils.LinkUtil.CONTENT;
 
 import java.util.Objects;
 import javax.annotation.PostConstruct;
@@ -31,7 +31,7 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.factory.ModelFactory;
-import pl.ds.kyanite.components.utils.LinkUtil;
+import pl.ds.kyanite.common.components.utils.LinkUtil;
 
 @Model(
     adaptables = {Resource.class},
