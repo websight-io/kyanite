@@ -20,15 +20,15 @@
 
   <parent>
     <groupId>pl.ds.kyanite</groupId>
-    <artifactId>kyanite-blog</artifactId>
+    <artifactId>kyanite-blogs</artifactId>
     <version>0.0.2-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <artifactId>kyanite-blog-backend</artifactId>
+  <artifactId>kyanite-blogs-backend</artifactId>
   <version>0.0.2-SNAPSHOT</version>
-  <name>Kyanite Components Project - Blog backend</name>
-  <description>Contains blog backend.</description>
+  <name>Kyanite Components Project - Blogs backend</name>
+  <description>Contains blogs backend.</description>
 
   <build>
     <plugins>
