@@ -1,1 +1,1 @@
-Sling-Bundle-Resources: /libs/kyanite,/apps/wcm/dialogs/components/select
+Sling-Bundle-Resources: /libs/kyanite/common,/apps/wcm/dialogs/components/select
