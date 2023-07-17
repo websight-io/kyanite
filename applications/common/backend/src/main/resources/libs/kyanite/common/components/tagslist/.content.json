@@ -1,0 +1,7 @@
+{
+  "isContainer": true,
+  "group": "Kyanite Elements",
+  "allowedComponents": ["/libs/kyanite/common/components/tag"],
+  "sling:resourceType": "ws:Component",
+  "title": "Tags list"
+}

@@ -1,0 +1,10 @@
+{
+  "isContainer": true,
+  "group": "Kyanite Components",
+  "allowedComponents": [
+    "/libs/kyanite/common/components/panel/panelblock",
+    "/libs/kyanite/common/components/panel/paneltabs"
+  ],
+  "sling:resourceType": "ws:Component",
+  "title": "Panel"
+}

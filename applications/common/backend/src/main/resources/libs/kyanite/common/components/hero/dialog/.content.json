@@ -1,0 +1,18 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "size": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/hero/attributes/size"
+      },
+      "variant": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "kyanite/common/components/hero/attributes/variant"
+      }
+    }
+  }
+}

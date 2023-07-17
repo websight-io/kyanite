@@ -1,8 +1,0 @@
-{
-  "sling:resourceType": "ws:Component",
-  "isContainer": true,
-  "isLayout": true,
-  "group": "Kyanite Layouts",
-  "instanceResourceType": "kyanite/components/level/levelitem",
-  "title": "Level Item - Feature"
-}

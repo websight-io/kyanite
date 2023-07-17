@@ -1,0 +1,7 @@
+{
+  "group": "Kyanite Components",
+  "isContainer": true,
+  "sling:resourceType": "ws:Component",
+  "title": "Breadcrumb",
+  "allowedComponents": ["/libs/kyanite/common/components/breadcrumb/breadcrumbitem"]
+}

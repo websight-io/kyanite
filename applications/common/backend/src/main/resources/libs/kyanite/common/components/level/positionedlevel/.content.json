@@ -1,0 +1,10 @@
+{
+  "isContainer": true,
+  "allowedComponents": [
+    "/libs/kyanite/common/components/level/levelitem",
+    "/libs/kyanite/common/components/layouts/featuresmall"
+  ],
+  "sling:resourceType": "ws:Component",
+  "title": "Positioned level",
+  "group": "Kyanite sub-components"
+}

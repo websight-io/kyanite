@@ -1,0 +1,19 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/include",
+  "name": "variant",
+  "label": "Variant",
+  "include": {
+    "sling:resourceSuperType": "/libs/kyanite/common/components/common/extendedvariant",
+    "dark": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Dark",
+      "value": "is-dark",
+      "selected": true
+    },
+    "light": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Light",
+      "value": "is-light"
+    }
+  }
+}

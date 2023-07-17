@@ -72,7 +72,7 @@ describe('Dropdown component', function () {
       isRight: 'true',
       isUp: 'true',
       'jcr:primaryType': 'nt:unstructured',
-      'sling:resourceType': 'kyanite/components/dropdown',
+      'sling:resourceType': 'kyanite/common/components/dropdown',
       items: {
         'jcr:primaryType': 'nt:unstructured',
         '0': {

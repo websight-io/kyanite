@@ -69,7 +69,7 @@ describe('Hero component', function () {
       .its('body')
       .should('deep.eq', {
         size: 'is-large',
-        'sling:resourceType': 'kyanite/components/hero',
+        'sling:resourceType': 'kyanite/common/components/hero',
         'jcr:primaryType': 'nt:unstructured',
         variant: 'is-link'
       });

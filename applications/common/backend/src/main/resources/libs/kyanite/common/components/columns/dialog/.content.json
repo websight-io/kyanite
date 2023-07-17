@@ -1,0 +1,83 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "columnsActivationLevel": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "columnsActivationLevel",
+        "label": "Activate columns structure from the viewport of:",
+        "isMobile": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Mobile",
+          "value": "is-mobile"
+        },
+        "isTablet": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Tablet",
+          "selected": true,
+          "value": "is-tablet"
+        },
+        "isDesktop": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Desktop",
+          "value": "is-desktop"
+        }
+      },
+      "isMultiline": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isMultiline",
+        "label": "Treat columns as multiline",
+        "description": "Overrides the default behavior of a row. This way you can add more columns, what would normally fit in a single row."
+      },
+      "isVerticallyCentered": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isVerticallyCentered",
+        "label": "Align the columns vertically centered"
+      },
+      "isCentered": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isCentered",
+        "label": "Align the columns horizontally centered"
+      },
+      "isCustomGapLevel": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isCustomGapLevel",
+        "label": "Override the space between columns"
+      },
+      "gapLevelContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "mobileGapLevel": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "/libs/kyanite/common/components/columns/attributes/gaplevel",
+            "name": "mobileGapLevel",
+            "label": "Gap level on Mobile"
+          }
+        },
+        "tabletGapLevel": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "/libs/kyanite/common/components/columns/attributes/gaplevel",
+            "name": "tabletGapLevel",
+            "label": "Gap level on Tablet"
+          }
+        },
+        "desktopGapLevel": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "/libs/kyanite/common/components/columns/attributes/gaplevel",
+            "name": "desktopGapLevel",
+            "label": "Gap level on Desktop"
+          }
+        },
+        "ws:display": {"condition": {
+          "sourceName": "isCustomGapLevel",
+          "values": true
+        }}
+      }
+    }
+  }
+}

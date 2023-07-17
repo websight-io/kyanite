@@ -79,7 +79,7 @@ describe('Tag component', function () {
           'label': 'Label',
           'variant': 'is-success',
           'isRounded': 'true',
-          'sling:resourceType': 'kyanite/components/tag',
+          'sling:resourceType': 'kyanite/common/components/tag',
           'isLight': 'true'
         });
   });

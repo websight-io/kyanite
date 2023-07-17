@@ -1,0 +1,18 @@
+{
+  "default": {
+    "sling:resourceType": "kyanite/common/components/columns",
+    "jcr:primaryType": "nt:unstructured"
+  },
+  "complex": {
+    "sling:resourceType": "kyanite/common/components/columns",
+    "jcr:primaryType": "nt:unstructured",
+    "columnsActivationLevel": "is-mobile",
+    "isCustomGapLevel": true,
+    "mobileGapLevel": "is-0",
+    "tabletGapLevel": "is-2",
+    "desktopGapLevel": "is-8",
+    "isMultiline": true,
+    "isVerticallyCentered": true,
+    "isCentered": true
+  }
+}

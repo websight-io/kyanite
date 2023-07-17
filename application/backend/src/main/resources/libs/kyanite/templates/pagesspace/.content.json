@@ -1,5 +1,0 @@
-{
-  "sling:resourceType": "ws:PagesTemplate",
-  "title": "Kyanite website Pages",
-  "allowedChildren": ["/libs/kyanite/templates/homepage","/libs/kyanite/templates/contactuspage","/libs/kyanite/templates/articlepage","/libs/kyanite/templates/bloglistingpage"]
-}

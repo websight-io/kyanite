@@ -1,0 +1,28 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/breadcrumb"
+  },
+  "complex": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/breadcrumb",
+    "alignment": "center",
+    "size": "is-small",
+    "separator": "has-bullet-separator",
+    "elements": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "url": "#",
+        "label": "Test1",
+        "icon": "fa-file"
+
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "url": "www.com",
+        "label": "Test2"
+      }
+    }
+  }
+}

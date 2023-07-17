@@ -1,7 +1,0 @@
-{
-  "isContainer": false,
-  "group": "Kyanite sub-components",
-  "allowedComponents": ["/libs/kyanite/components/panel/paneltabs/paneltabcontent"],
-  "sling:resourceType": "ws:Component",
-  "title": "Panel Tab"
-}

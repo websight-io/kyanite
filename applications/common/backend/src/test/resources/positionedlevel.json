@@ -1,0 +1,11 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/level/positionedlevel"
+  },
+  "positioned": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/positionedlevel",
+    "positionedStyle": "level-left"
+  }
+}

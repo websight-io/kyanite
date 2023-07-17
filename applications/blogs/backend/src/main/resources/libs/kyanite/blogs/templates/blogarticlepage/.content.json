@@ -1,0 +1,5 @@
+{
+  "sling:resourceType": "ws:PageTemplate",
+  "title": "Blog article page",
+  "description": "Blog article page"
+}

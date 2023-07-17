@@ -1,0 +1,6 @@
+{
+  "sling:resourceType": "ws:PageTemplate",
+  "title": "Blog listing page",
+  "description": "Blog listing page",
+  "allowedChildren": ["/libs/kyanite/blogs/templates/blogcategorypage", "/libs/kyanite/blogs/templates/blogarticlepage"]
+}

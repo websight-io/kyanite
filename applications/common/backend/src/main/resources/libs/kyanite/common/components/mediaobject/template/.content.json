@@ -1,0 +1,15 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "mediaLeft": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/mediaobject/medialeft"
+  },
+  "mediaContent": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/mediaobject/mediacontent"
+  },
+  "mediaRight": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/mediaobject/mediaright"
+  }
+}

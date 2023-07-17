@@ -1,0 +1,19 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/include",
+  "name": "size",
+  "label": "Size",
+  "include": {
+    "sling:resourceSuperType": "/libs/kyanite/common/components/common/size",
+    "normal": {"sling:hideResource": true},
+    "halfheight": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Half height",
+      "value": "is-halfheight"
+    },
+    "fullheight": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Full height",
+      "value": "is-fullheight"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/hero"
+  },
+  "onlySize": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/hero",
+    "title": "Nice title",
+    "subTitle": "Subtitle",
+    "size": "is-medium"
+  },
+  "onlyVariant": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/hero",
+    "title": "Nice title",
+    "subTitle": "Subtitle",
+    "variant": "is-warning"
+  },
+  "bothStyles": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/hero",
+    "title": "Nice title",
+    "subTitle": "Subtitle",
+    "size": "is-medium",
+    "variant": "is-warning"
+  }
+}

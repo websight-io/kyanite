@@ -56,7 +56,7 @@ describe('Container layout', function () {
     .its('body')
     .should('deep.eq', {
       containerStyle: 'is-fullhd',
-      'sling:resourceType': 'kyanite/components/container',
+      'sling:resourceType': 'kyanite/common/components/container',
       'jcr:primaryType': 'nt:unstructured'
     });
   });

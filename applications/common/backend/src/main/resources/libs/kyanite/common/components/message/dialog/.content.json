@@ -1,0 +1,60 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "dialogContent": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "content",
+        "label": "Content",
+        "ws:disallowedContext": ["edit:panel"],
+        "required": true
+      },
+      "panelContent": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "content",
+        "label": "Content",
+        "ws:disallowedContext": ["edit:dialog"],
+        "required": true,
+        "configuration": "wcm/dialogs/components/richtext/configurations/compact"
+      },
+      "size": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/common/size"
+      },
+      "variant": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/common/variant"
+      }
+    },
+    "modifiers": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Header",
+      "showHeader": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "showHeader",
+        "checkedByDefault": true,
+        "label": "Create header"
+      },
+      "container": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "header": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "header",
+          "label": "Header content"
+        },
+        "showButton": {
+          "sling:resourceType": "wcm/dialogs/components/checkbox",
+          "name": "showButton",
+          "label": "Has delete button"
+        },
+        "ws:display": {"condition": {
+          "sourceName": "showHeader",
+          "values": true
+        }}
+      }
+    }
+  }
+}

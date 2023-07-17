@@ -51,7 +51,7 @@ describe('Level component', function () {
     )
       .its('body')
       .should('deep.eq', {
-        'sling:resourceType': 'kyanite/components/level',
+        'sling:resourceType': 'kyanite/common/components/level',
         'jcr:primaryType': 'nt:unstructured'
       });
 
@@ -62,7 +62,7 @@ describe('Level component', function () {
     .should('deep.eq', {
       isVertical: 'false',
       'jcr:primaryType': 'nt:unstructured',
-      'sling:resourceType': 'kyanite/components/level',
+      'sling:resourceType': 'kyanite/common/components/level',
     });
   });
 });

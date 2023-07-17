@@ -1,0 +1,6 @@
+{
+  "sling:resourceType": "ws:PageTemplate",
+  "title": "Article page",
+  "description": "Article page",
+  "allowedChildren": ["/libs/kyanite/blogs/templates/articlepage"]
+}
