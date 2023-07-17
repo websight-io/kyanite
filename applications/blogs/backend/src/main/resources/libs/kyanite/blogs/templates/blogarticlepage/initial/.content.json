@@ -2,7 +2,7 @@
   "jcr:primaryType": "ws:Page",
   "jcr:content": {
     "jcr:primaryType": "ws:PageContent",
-    "sling:resourceType": "kyanite/components/blogarticlepage",
+    "sling:resourceType": "kyanite/blogs/components/blogarticlepage",
     "navbarFixed": "true",
     "navbarFixedPosition": "has-navbar-fixed-top",
     "pagecontainer": {
@@ -41,7 +41,7 @@
                 "isNormalColumn": "true"
               },
               "backbutton": {
-                "sling:resourceType": "kyanite/components/blogpostbackbutton"
+                "sling:resourceType": "kyanite/blogs/components/blogpostbackbutton"
               }
             },
             "column2": {
@@ -66,7 +66,7 @@
                 "isNormalColumn": "true"
               },
               "blogarticleheader": {
-                "sling:resourceType": "kyanite/components/blogarticleheader"
+                "sling:resourceType": "kyanite/blogs/components/blogarticleheader"
               }
             },
             "column3": {
@@ -77,7 +77,7 @@
                 "size": "two"
               },
               "blogposttableofcontents": {
-                "sling:resourceType": "kyanite/components/blogposttableofcontents",
+                "sling:resourceType": "kyanite/blogs/components/blogposttableofcontents",
                 "maxHeadingLevel": "2"
               },
               "desktopColumnStyle": {

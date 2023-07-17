@@ -15,7 +15,7 @@
         "container": {
           "sling:resourceType": "kyanite/common/components/container",
           "featuredblogarticle": {
-            "sling:resourceType": "kyanite/components/featuredblogarticle"
+            "sling:resourceType": "kyanite/blogs/components/featuredblogarticle"
           },
           "bloglist": {
             "sling:resourceType": "kyanite/common/components/bloglist"

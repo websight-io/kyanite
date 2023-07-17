@@ -2,5 +2,5 @@
   "sling:resourceType": "ws:PageTemplate",
   "title": "Home Page",
   "description": "Home Page",
-  "allowedChildren": ["/libs/kyanite/templates/articlepage"]
+  "allowedChildren": ["/libs/kyanite/blogs/templates/articlepage"]
 }

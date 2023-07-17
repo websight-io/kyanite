@@ -73,7 +73,7 @@ public class BlogPostBackButtonComponent {
           .map(Resource::getValueMap)
           .map(valueMap -> valueMap.get("ws:template", String.class))
           .orElse(StringUtils.EMPTY);
-      if ("/libs/kyanite/templates/bloglistingpage".equals(template)) {
+      if ("/libs/kyanite/blogs/templates/bloglistingpage".equals(template)) {
         return parentPage;
       }
     }
