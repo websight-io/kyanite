@@ -39,6 +39,10 @@ public class HeroComponent {
 
   @Inject
   @Getter
+  private String background;
+
+  @Inject
+  @Getter
   private String[] heroClasses;
 
   @PostConstruct
@@ -49,6 +53,9 @@ public class HeroComponent {
     }
     if (variant != null) {
       classes.add(variant);
+    }
+    if (background != null) {
+      classes.add(background);
     }
 
     heroClasses = classes.toArray(new String[]{});
