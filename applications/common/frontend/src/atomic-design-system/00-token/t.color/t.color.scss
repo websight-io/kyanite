@@ -114,6 +114,10 @@ $map_t-color-by-id: (
   info--1000: #002c4d,
 );
 
+$map_t-color-shadows: (
+  shadow--1: #605e78,
+);
+
 @mixin t-color($id, $shade) {
   color: map.get(
     $map_t-color-by-id,

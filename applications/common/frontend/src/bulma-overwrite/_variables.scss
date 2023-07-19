@@ -125,3 +125,12 @@ $spacing-values: (
   '6_7': 16rem,
   'auto': auto,
 );
+
+/* section */
+$section-padding: map.get($spacing-values, '6_3') map.get($spacing-values, '0');
+$section-padding-desktop: map.get($spacing-values, '6_5')
+  map.get($spacing-values, '0');
+$section-padding-medium: map.get($spacing-values, '6_3')
+  map.get($spacing-values, '0');
+$section-padding-large: map.get($spacing-values, '6_5')
+  map.get($spacing-values, '0');
