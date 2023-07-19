@@ -5,7 +5,7 @@
 
   <groupId>pl.ds.kyanite</groupId>
   <artifactId>kyanite</artifactId>
-  <version>0.0.6</version>
+  <version>0.0.7-SNAPSHOT</version>
 
   <name>Kyanite Components Project</name>
   <packaging>pom</packaging>
@@ -28,7 +28,7 @@
     <connection>scm:git:git://github.com/websight-io/kyanite.git</connection>
     <developerConnection>scm:git:git@github.com:websight-io/kyanite.git</developerConnection>
     <url>https://github.com/websight-io/kyanite</url>
-    <tag>v0.0.6</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <organization>
