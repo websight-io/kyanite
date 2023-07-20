@@ -42,4 +42,9 @@ public class LevelComponent {
   @Default(values = StringUtils.EMPTY)
   protected String verticalAlignment;
 
+  @ValueMapValue
+  @Getter
+  @Default(values = "level-with-gaps")
+  private String spacing;
+
 }
