@@ -40,6 +40,26 @@
         "name": "fancyBackground",
         "label": "Fancy background",
         "description": "Check if the page should have a fancy background."
+      },
+      "pageBackground": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "pageBackground",
+        "label": "Page background",
+        "nobackground": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "No background",
+          "value": ""
+        },
+        "lines": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Lines",
+          "value": "lines"
+        },
+        "squares": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Squares",
+          "value": "squares"
+        }
       }
     },
     "metadata": {
