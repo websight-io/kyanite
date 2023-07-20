@@ -32,4 +32,8 @@ public @interface GoogleAnalyticsConfiguration {
       description = "Enter url provided by Google Analytics")
   String url() default StringUtils.EMPTY;
 
+  @AttributeDefinition(name = "Google Analytics script url",
+      description = "Enter script url provided by Google Analytics")
+  String scriptUrl() default StringUtils.EMPTY;
+
 }

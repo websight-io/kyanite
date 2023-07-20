@@ -71,8 +71,19 @@ public class PageModel {
     return this.googleAnalyticsConfigurationService.getGoogleAnalyticsUrl();
   }
 
+  public String getGoogleAnalyticsScriptUrl() {
+    return this.googleAnalyticsConfigurationService.getGoogleAnalyticsScriptUrl();
+  }
+
+  public String getGoogleAnalyticsTrackingId() {
+    return this.googleAnalyticsConfigurationService.getGoogleAnalyticsTrackingId();
+  }
+
   public boolean hasAnalyticsUrl() {
-    return StringUtils.isNotBlank(this.googleAnalyticsConfigurationService.getGoogleAnalyticsUrl());
+    return StringUtils.isNotBlank(
+        this.googleAnalyticsConfigurationService.getGoogleAnalyticsTrackingId())
+        && StringUtils.isNotBlank(
+            this.googleAnalyticsConfigurationService.getGoogleAnalyticsScriptUrl());
   }
 
   @AllArgsConstructor

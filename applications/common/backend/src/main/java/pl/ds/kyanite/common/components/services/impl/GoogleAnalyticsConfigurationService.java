@@ -17,6 +17,11 @@
 package pl.ds.kyanite.common.components.services.impl;
 
 public interface GoogleAnalyticsConfigurationService {
+
+  String getGoogleAnalyticsTrackingId();
+
   String getGoogleAnalyticsUrl();
+
+  String getGoogleAnalyticsScriptUrl();
 
 }

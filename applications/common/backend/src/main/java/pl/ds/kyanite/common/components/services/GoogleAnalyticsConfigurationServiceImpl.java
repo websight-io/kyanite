@@ -16,6 +16,7 @@
 
 package pl.ds.kyanite.common.components.services;
 
+import java.util.Objects;
 import org.apache.commons.lang3.StringUtils;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
@@ -50,5 +51,15 @@ public class GoogleAnalyticsConfigurationServiceImpl implements
       url += "?id=" + trackingId;
     }
     return url;
+  }
+
+  @Override
+  public String getGoogleAnalyticsTrackingId() {
+    return Objects.nonNull(config.gaTrackingId()) ? config.gaTrackingId() : StringUtils.EMPTY;
+  }
+
+  @Override
+  public String getGoogleAnalyticsScriptUrl() {
+    return Objects.nonNull(config.scriptUrl()) ? config.scriptUrl() : StringUtils.EMPTY;
   }
 }

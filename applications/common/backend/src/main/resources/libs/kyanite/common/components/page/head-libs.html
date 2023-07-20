@@ -16,13 +16,14 @@
   ~
 */-->
 
+<sly data-sly-use.model="pl.ds.kyanite.common.components.helpers.PageModel"></sly>
 <!-- Google Tag Manager -->
 <script type="text/plain" data-cookiecategory="analytics">
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-M2B8LK4');
+      '${model.googleAnalyticsScriptUrl @ context='uri'}?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','${model.googleAnalyticsTrackingId @ context='text'}');
 </script>
 <!-- End Google Tag Manager -->
 
@@ -31,7 +32,6 @@
   rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Roboto&display=swap"
 />
-<sly data-sly-use.model="pl.ds.kyanite.common.components.helpers.PageModel"></sly>
 <sly data-sly-list="${model.iconLibraryConfigs}">
   <sly data-sly-use.template="./icon-libs.html" data-sly-call="${template.iconLib @ item = item}"></sly>
 </sly>
