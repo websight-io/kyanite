@@ -1,5 +1,5 @@
 {
   "sling:resourceType": "ws:Application",
   "components": ["common/components", "blogs/components"],
-  "templates": "common/templates"
+  "templates": ["common/templates", "blogs/templates"]
 }
