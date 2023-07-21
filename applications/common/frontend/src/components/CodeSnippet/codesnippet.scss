@@ -26,6 +26,8 @@
 @use 'src/atomic-design-system/00-token/t.font' as font;
 @use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/atomic-design-system/00-token/t.border' as border;
+@use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
+@use 'src/atomic-design-system/00-token/t.zindex' as zindex;
 
 .code-snippet {
   $z-index-code-snippet: 0;
@@ -49,7 +51,7 @@
 
   // code
   &__pre {
-    @extend .p-0;
+    @extend .p-0, .pr-6_1;
 
     @extend .t-border-weight-top--1;
     @extend .t-border-color__grey--300;
@@ -62,42 +64,107 @@
   }
 
   > .code-snippet__icon {
-    @extend .t-color__grey--300;
-
-    display: block;
-    z-index: $z-index-code-snippet-copy;
+    /* Positioning */
     position: absolute;
+    right: map.get(spacing.$spacing-values, '2');
+    z-index: $z-index-code-snippet-copy;
+
+    /* Display & Box Model */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     // `margin` instead of `top` used as height of `__file-name` is dynamic
     margin-top: map.get(spacing.$spacing-values, '4');
-    right: map.get(spacing.$spacing-values, '2');
+
+    /* Color */
+    color: map.get(color.$map_t-color-by-id, 'grey--900');
+
+    /* Others */
     cursor: pointer;
+
+    @include breakpoint.media-breakpoint-large {
+      color: map.get(color.$map_t-color-by-id, 'grey--300');
+    }
   }
 
-  // icon - on container hover
-  &:hover > .code-snippet__icon {
-    @extend .t-color__grey--900;
+  @include breakpoint.media-breakpoint-large {
+    // icon - on container hover
+    &:hover > .code-snippet__icon {
+      color: map.get(color.$map_t-color-by-id, 'grey--900');
 
-    &:hover {
-      @extend .t-color__primary--600;
+      &:hover {
+        color: map.get(color.$map_t-color-by-id, 'primary--600');
+      }
     }
   }
 
   .icon__message {
     @extend .t-font-size--14;
-    @extend .t-color__primary--600;
 
+    /* Positioning */
+    position: absolute;
+    top: map.get(spacing.$spacing-values, '0');
+
+    // 5px = 0.313rem ('1_1') is a distance between tooltip and end of tooltip arrow.
+    left: calc(50% - #{map.get(spacing.$spacing-values, '1_1')});
+
+    /* Display & Box Model */
     display: block;
+    padding: map.get(spacing.$spacing-values, '1_1');
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0.3s linear, opacity 0.3s linear;
-    position: absolute;
-    right: 0;
-    user-select: none;
+    z-index: zindex.$z-index-tooltip;
+    border-radius: map.get(border.$map_t-border-radius, 2);
 
     // fits text in 1 line, can not do 100% as it's just icons width, have to do it manually like that
-    width: 140px;
-    text-align: right;
+    width: 170px;
+
+    // 16px = 1rem ('4') is a distance between edge of the tooltip and  endge of the icon container.
+    transform: translateX(
+      calc(-100% - #{map.get(spacing.$spacing-values, '4')})
+    );
+
+    /* Colors */
+    background-color: map.get(color.$map_t-color-by-id, 'primary--600');
+    color: map.get(color.$map_t-color-by-id, 'primary--100');
+
+    /* Text */
+    text-align: center;
+
+    /* Others */
+    transition: visibility 0.3s linear, opacity 0.3s linear;
+    user-select: none;
+
+    // tootlip right arrow
+    &::before {
+      /* Positioning */
+      position: absolute;
+      top: 50%;
+      bottom: map.get(spacing.$spacing-values, '0');
+
+      // 32px = 2rem ('5_2') is width of the icon container
+      left: calc(100% - #{map.get(spacing.$spacing-values, '5_2')});
+
+      /* Display & Box Model */
+      display: block;
+      width: map.get(spacing.$spacing-values, '4');
+      height: map.get(spacing.$spacing-values, '4');
+      z-index: zindex.$z-index-tooltip;
+
+      // 5px = 0.313rem ('1_1') is a distance between tooltip and end of tooltip arrow.
+      transform: translate(
+          calc(100% + #{map.get(spacing.$spacing-values, '1_1')}),
+          -50%
+        )
+        rotate(45deg);
+
+      /* Colors */
+      background-color: map.get(color.$map_t-color-by-id, 'primary--600');
+
+      /* Others */
+      content: ' ';
+    }
 
     &.visible {
       visibility: visible;
