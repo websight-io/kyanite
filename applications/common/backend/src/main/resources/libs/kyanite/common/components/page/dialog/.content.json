@@ -58,7 +58,7 @@
     },
     "metadataTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
-      "label": "Additional Metadata",
+      "label": "Social media metadata",
       "ogImage": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "label": "Property og:image",
