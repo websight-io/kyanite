@@ -21,27 +21,38 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import pl.ds.kyanite.common.components.services.LibraryIconFactoryConfig;
+import pl.ds.kyanite.common.components.services.impl.GoogleAnalyticsConfigurationService;
 
 @Model(adaptables = SlingHttpServletRequest.class)
 public class PageModel {
 
-  @OSGiService
-  private LibraryIconFactoryConfig configuration;
+  private final LibraryIconFactoryConfig libraryIconFactoryConfig;
+
+  private final GoogleAnalyticsConfigurationService googleAnalyticsConfigurationService;
 
   @Getter
   private List<IconLibraryConfig> iconLibraryConfigs = new ArrayList<>();
 
+  @Inject
+  public PageModel(@OSGiService LibraryIconFactoryConfig libraryIconFactoryConfig,
+      @OSGiService GoogleAnalyticsConfigurationService googleAnalyticsConfigurationService) {
+    this.libraryIconFactoryConfig = libraryIconFactoryConfig;
+    this.googleAnalyticsConfigurationService = googleAnalyticsConfigurationService;
+  }
+
   @PostConstruct
   public void init() {
-    List<LibraryIconFactoryConfig> allConfigs = configuration.getAllConfigs();
+    List<LibraryIconFactoryConfig> allConfigs = libraryIconFactoryConfig.getAllConfigs();
     iconLibraryConfigs = allConfigs
         .stream().map(config -> {
           List<String> attrs = List.of(config.getAttributes());
@@ -54,6 +65,25 @@ public class PageModel {
               .build();
         })
         .toList();
+  }
+
+  public String getGoogleAnalyticsUrl() {
+    return this.googleAnalyticsConfigurationService.getGoogleAnalyticsUrl();
+  }
+
+  public String getGoogleAnalyticsScriptUrl() {
+    return this.googleAnalyticsConfigurationService.getGoogleAnalyticsScriptUrl();
+  }
+
+  public String getGoogleAnalyticsTrackingId() {
+    return this.googleAnalyticsConfigurationService.getGoogleAnalyticsTrackingId();
+  }
+
+  public boolean hasAnalyticsUrl() {
+    return StringUtils.isNotBlank(
+        this.googleAnalyticsConfigurationService.getGoogleAnalyticsTrackingId())
+        && StringUtils.isNotBlank(
+            this.googleAnalyticsConfigurationService.getGoogleAnalyticsScriptUrl());
   }
 
   @AllArgsConstructor
