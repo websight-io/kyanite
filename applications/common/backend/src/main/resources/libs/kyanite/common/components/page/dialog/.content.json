@@ -35,12 +35,6 @@
           }
         }
       },
-      "fancyBackground": {
-        "sling:resourceType": "wcm/dialogs/components/checkbox",
-        "name": "fancyBackground",
-        "label": "Fancy background",
-        "description": "Check if the page should have a fancy background."
-      },
       "pageBackground": {
         "sling:resourceType": "wcm/dialogs/components/radio",
         "name": "pageBackground",
