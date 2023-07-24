@@ -16,13 +16,12 @@
 
 package pl.ds.kyanite.common.components.models;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
+import java.util.stream.Stream;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 
@@ -47,17 +46,9 @@ public class HeroComponent {
 
   @PostConstruct
   private void init() {
-    List<String> classes = new ArrayList<>();
-    if (size != null) {
-      classes.add(size);
-    }
-    if (variant != null) {
-      classes.add(variant);
-    }
-    if (background != null) {
-      classes.add(background);
-    }
-
-    heroClasses = classes.toArray(new String[]{});
+    heroClasses = Stream.of(size, variant,background)
+        .filter(Objects::nonNull)
+        .toList()
+        .toArray(new String[]{});
   }
 }
