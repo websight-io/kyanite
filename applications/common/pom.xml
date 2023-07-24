@@ -34,60 +34,9 @@
         <module>backend</module>
     </modules>
 
-    <properties>
-        <!-- admin user default credentials for autoInstallBundle profile -->
-        <sling.user>${websight.admin.username}</sling.user>
-        <sling.password>${websight.admin.password}</sling.password>
-
-        <!-- plugins -->
-        <bnd.version>6.2.0</bnd.version>
-        <sling.models.bnd.version>1.0.0</sling.models.bnd.version>
-        <sling.scriptbundle.version>0.5.2</sling.scriptbundle.version>
-
-        <!-- testing -->
-        <jupiter.version>5.9.0</jupiter.version>
-        <mockito.version>4.6.1</mockito.version>
-        <sling.mocks.version>3.3.0</sling.mocks.version>
-    </properties>
-
     <build>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>biz.aQute.bnd</groupId>
-                    <artifactId>bnd-maven-plugin</artifactId>
-                    <version>${bnd.version}</version>
-                    <executions>
-                        <execution>
-                            <id>bnd-process</id>
-                            <goals>
-                                <goal>bnd-process</goal>
-                            </goals>
-                            <configuration>
-                                <bnd><![CDATA[
-                  Bundle-Category: pl.ds.kyanite
-                  Bundle-Description : ${project.name}
-                  -exportcontents: ${removeall;${packages;VERSIONED};${packages;CONDITIONAL}}
-                  -noextraheaders: true
-                  -snapshot: SNAPSHOT
-                  -plugin org.apache.sling.bnd.models.ModelsScannerPlugin
-                ]]></bnd>
-                            </configuration>
-                        </execution>
-                    </executions>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.apache.sling</groupId>
-                            <artifactId>org.apache.sling.bnd.models</artifactId>
-                            <version>${sling.models.bnd.version}</version>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.apache.sling</groupId>
-                            <artifactId>scriptingbundle-maven-plugin</artifactId>
-                            <version>${sling.scriptbundle.version}</version>
-                        </dependency>
-                    </dependencies>
-                </plugin>
                 <plugin>
                     <groupId>biz.aQute.bnd</groupId>
                     <artifactId>bnd-baseline-maven-plugin</artifactId>
@@ -149,36 +98,6 @@
                                     <goals>
                                         <goal>install</goal>
                                     </goals>
-                                </execution>
-                            </executions>
-                        </plugin>
-                    </plugins>
-                </pluginManagement>
-            </build>
-        </profile>
-        <profile>
-            <id>autoInstallBundleEnvironment</id>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-            </activation>
-            <build>
-                <pluginManagement>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.apache.sling</groupId>
-                            <artifactId>sling-maven-plugin</artifactId>
-                            <executions>
-                                <execution>
-                                    <id>install-bundle</id>
-                                    <goals>
-                                        <goal>install</goal>
-                                    </goals>
-                                    <configuration>
-                                        <slingUrl>${env.WEBSIGHT_URL}:${env.WEBSIGHT_PORT}/system/console
-                                        </slingUrl>
-                                        <user>${env.WEBSIGHT_ADMIN_USER}</user>
-                                        <password>${env.WEBSIGHT_ADMIN_PASSWORD}</password>
-                                    </configuration>
                                 </execution>
                             </executions>
                         </plugin>
