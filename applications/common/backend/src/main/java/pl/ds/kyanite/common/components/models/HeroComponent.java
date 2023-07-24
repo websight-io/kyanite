@@ -46,7 +46,7 @@ public class HeroComponent {
 
   @PostConstruct
   private void init() {
-    heroClasses = Stream.of(size, variant,background)
+    heroClasses = Stream.of(size, variant, background)
         .filter(Objects::nonNull)
         .toList()
         .toArray(new String[]{});
