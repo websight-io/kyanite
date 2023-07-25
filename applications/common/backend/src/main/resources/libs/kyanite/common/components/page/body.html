@@ -20,9 +20,8 @@
   <sly data-sly-set.templateMarker="template-${extra.templateName}"></sly>
   <sly data-sly-set.pageMarker="page-${extra.pageName}"></sly>
   <sly data-sly-set.navbarFixed="${properties.navbarFixed ? properties.navbarFixedPosition : ''}"></sly>
-  <sly data-sly-set.fancyBackground="${properties.fancyBackground ? 'feat-fancy-bg' : ''}"></sly>
 
-  <body class="${properties.defaultTemplateCSS} ${templateMarker} ${pageMarker} ${navbarFixed} ${fancyBackground}">
+  <body class="${properties.defaultTemplateCSS} ${templateMarker} ${pageMarker} ${navbarFixed} ${properties.pageBackground}">
   <sly data-sly-include="body-content.html"></sly>
   </body>
 </sly>
