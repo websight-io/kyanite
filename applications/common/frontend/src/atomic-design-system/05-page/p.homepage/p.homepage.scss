@@ -18,14 +18,9 @@
 
 @use 'src/atomic-design-system/03-organism/o.body-background' as
   o-body-background;
-@use 'src/atomic-design-system/03-organism/o.hero-background' as
-  o-hero-background;
+
 
 // `page-homepage` is the name of the "homepage.html" page
 body.page-home-page.feat-fancy-bg {
   @include o-body-background.o-body-background--hero-lines;
-
-  .hero:last-of-type {
-    @include o-hero-background.o-background;
-  }
 }

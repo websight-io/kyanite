@@ -22,8 +22,13 @@
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/bulma-overwrite/variables' as variables;
 @use 'src/bulma-overwrite/bulma-spacing' as bulma-spacing;
+@use 'src/atomic-design-system/03-organism/o.hero-background' as o-hero-background;
 
 @mixin o-hero {
+  &.hero--bg-circles {
+    @include o-hero-background.o-background-circles;
+  }
+
   .hero-body {
     @extend .mx-0;
 

@@ -12,6 +12,21 @@
       "variant": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "path": "kyanite/common/components/hero/attributes/variant"
+      },
+      "background": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "background",
+        "label": "Background",
+        "nobackground": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "No background",
+          "value": ""
+        },
+        "circles": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Circles",
+          "value": "hero--bg-circles"
+        }
       }
     }
   }
