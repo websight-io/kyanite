@@ -1,6 +1,26 @@
 {
   "tabs": {
     "generalTab": {
+      "pageBackground": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "pageBackground",
+        "label": "Background",
+        "nobackground": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "No background",
+          "value": ""
+        },
+        "lines": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Lines",
+          "value": "lines"
+        },
+        "squares": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Squares",
+          "value": "squares"
+        }
+      },
       "navbarFixed": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "name": "navbarFixed",
@@ -33,26 +53,6 @@
             "sourceName": "navbarFixed",
             "values": true
           }
-        }
-      },
-      "pageBackground": {
-        "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "pageBackground",
-        "label": "Page background",
-        "nobackground": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "No background",
-          "value": ""
-        },
-        "lines": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Lines",
-          "value": "lines"
-        },
-        "squares": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Squares",
-          "value": "squares"
         }
       }
     },
