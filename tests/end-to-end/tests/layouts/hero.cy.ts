@@ -71,7 +71,8 @@ describe('Hero component', function () {
         size: 'is-large',
         'sling:resourceType': 'kyanite/common/components/hero',
         'jcr:primaryType': 'nt:unstructured',
-        variant: 'is-link'
+        variant: 'is-link',
+        background: ''
       });
   });
 });
