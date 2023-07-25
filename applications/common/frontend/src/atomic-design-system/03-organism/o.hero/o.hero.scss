@@ -26,7 +26,7 @@
 
 @mixin o-hero {
   &.hero--bg-circles {
-    @include o-hero-background.o-background;
+    @include o-hero-background.o-background-circles;
   }
 
   .hero-body {
