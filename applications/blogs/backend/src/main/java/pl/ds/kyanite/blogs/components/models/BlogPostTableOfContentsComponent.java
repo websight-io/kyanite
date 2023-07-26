@@ -82,7 +82,7 @@ public class BlogPostTableOfContentsComponent {
       for (Resource contentTitle : titles) {
         TitleComponent titleComponent = contentTitle.adaptTo(TitleComponent.class);
 
-        if (!titleComponent.getElement().equals("p")) {
+        if (!"p".equals(titleComponent.getElement())) {
           BlogPostTableOfContentsItemComponent contentItem =
               prepareNewContentItem(titleComponent);
           if (contentItem != null) {

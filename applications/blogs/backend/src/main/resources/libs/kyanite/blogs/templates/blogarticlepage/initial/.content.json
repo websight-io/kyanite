@@ -122,10 +122,18 @@
                 "isNormalColumn": "true"
               },
               "title": {
-                "sling:resourceType": "kyanite/common/components/title"
+                "sling:resourceType": "kyanite/common/components/title",
+                "text": "Title",
+                "element": "h2"
               },
               "content": {
-                "sling:resourceType": "kyanite/common/components/content"
+                "sling:resourceType": "kyanite/common/components/content",
+                "color": "rest_has-text-grey",
+                "rest": {
+                  "shade": "700"
+                },
+                "text": "<p>Content</p>",
+                "size": "is-medium"
               }
             }
           }

@@ -18,7 +18,7 @@
             "sling:resourceType": "kyanite/blogs/components/featuredblogarticle"
           },
           "bloglist": {
-            "sling:resourceType": "kyanite/common/components/bloglist"
+            "sling:resourceType": "kyanite/blogs/components/bloglist"
           }
         }
       },
