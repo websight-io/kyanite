@@ -16,9 +16,4 @@
  * -->
  */
 
-@use 'src/atomic-design-system/03-organism/o.body-background' as
-  o-body-background;
-
-body.page-partners.feat-fancy-bg {
-  @include o-body-background.o-body-background--squares;
-}
+@forward 'p.page';

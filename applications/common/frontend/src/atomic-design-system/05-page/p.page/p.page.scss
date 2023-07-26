@@ -20,7 +20,10 @@
   o-body-background;
 
 
-// `page-homepage` is the name of the "homepage.html" page
-body.page-home-page.feat-fancy-bg {
-  @include o-body-background.o-body-background--hero-lines;
+body.lines {
+  @include o-body-background.o-body-background--lines;
+}
+
+body.squares {
+  @include o-body-background.o-body-background--squares;
 }
