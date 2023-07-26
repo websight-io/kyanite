@@ -1,0 +1,26 @@
+{
+  "tabs": {
+    "generalTab": {
+      "url": {
+        "sling:resourceType": "wcm/dialogs/components/pathpicker",
+        "rootPath": "/content",
+        "name": "url",
+        "label": "Redirection URL"
+      }
+    },
+    "metadata": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Metadata",
+      "title": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "title",
+        "label": "Title"
+      },
+      "description": {
+        "sling:resourceType": "wcm/dialogs/components/textarea",
+        "name": "description",
+        "label": "Description"
+      }
+    }
+  }
+}

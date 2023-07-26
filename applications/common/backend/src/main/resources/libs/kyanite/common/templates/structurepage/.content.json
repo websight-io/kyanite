@@ -1,0 +1,9 @@
+{
+  "sling:resourceType": "ws:PageTemplate",
+  "title": "Structure Page",
+  "description": "Structure Page",
+  "allowedComponents": [],
+  "allowedChildren": [
+    "/libs/kyanite/common/templates/structurepage"
+  ]
+}
