@@ -65,7 +65,7 @@
     <websight.admin.omitAdminPw>true</websight.admin.omitAdminPw>
 
     <!-- WebSight CMS Version -->
-    <websight.cms.version>1.15.0</websight.cms.version>
+    <websight.cms.version>1.17.0</websight.cms.version>
     <!-- WebSight Dependencies Versions -->
     <websight.rest.version>1.0.10</websight.rest.version>
     <websight.pages.version>3.0.0</websight.pages.version>

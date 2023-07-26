@@ -12,10 +12,12 @@
       sling:resourceType="kyanite/common/components/pagecontainer">
       <button
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="kyanite/common/components/button"/>
+        sling:resourceType="kyanite/common/components/button"
+        isMailto="false"/>
       <anchor
         jcr:primaryType="nt:unstructured"
-        sling:resourceType="kyanite/common/components/button"/>
+        sling:resourceType="kyanite/common/components/button"
+        isMailto="false"/>
     </pagecontainer>
   </jcr:content>
 </jcr:root>

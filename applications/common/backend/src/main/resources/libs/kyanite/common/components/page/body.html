@@ -21,7 +21,7 @@
   <sly data-sly-set.pageMarker="page-${extra.pageName}"></sly>
   <sly data-sly-set.navbarFixed="${properties.navbarFixed ? properties.navbarFixedPosition : ''}"></sly>
 
-  <body class="${properties.defaultTemplateCSS} ${templateMarker} ${pageMarker} ${navbarFixed} ${properties.pageBackground}">
+  <body class="${properties.defaultTemplateCSS} ${templateMarker} ${pageMarker} ${navbarFixed} ${properties.background}">
   <sly data-sly-include="body-content.html"></sly>
   </body>
 </sly>
