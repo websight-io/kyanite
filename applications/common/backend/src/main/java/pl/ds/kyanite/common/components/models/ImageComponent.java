@@ -162,6 +162,15 @@ public class ImageComponent {
     return LinkUtil.handleLink(src, resource.getResourceResolver());
   }
 
+  public String getImageWidth() {
+    //TODO implement read from file...
+    return "100";
+  }
+
+  public String getImageHeight() {
+    return "100";
+  }
+
   public String getAssetReference() {
     return LinkUtil.handleLink(assetReference, resource.getResourceResolver());
   }

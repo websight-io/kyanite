@@ -36,7 +36,10 @@
         </video>
     </sly>
     <sly data-sly-test="${!model.isVideo}">
-      <img class="${model.isRounded ? 'is-rounded' : ''}" src="${model.assetReference}"
+      <img class="${model.isRounded ? 'is-rounded' : ''}"
+           width="${model.imageWidth}"
+           height="${model.imageHeight}"
+           src="${model.assetReference}"
            alt="${model.alt}">
     </sly>
     </figure>
