@@ -77,7 +77,6 @@ describe('Dropdown component', function () {
         'jcr:primaryType': 'nt:unstructured',
         '0': {
           label: 'Item 1',
-          hasDivider: 'false',
           'jcr:primaryType': 'nt:unstructured',
         },
       }

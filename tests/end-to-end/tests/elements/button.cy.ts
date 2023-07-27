@@ -121,15 +121,14 @@ describe('Button component', function () {
     .should('deep.eq',
         {
           'jcr:primaryType': 'nt:unstructured',
-          'showIconRight': 'false',
           'showIconLeft': 'true',
           'isOutlined': 'true',
           'isDisabled': 'true',
           'isFullWidth': 'true',
-          'isInverted': 'false',
           'size': 'is-medium',
           'type': 'button',
           'label': 'Label',
+          'isMailto': 'false',
           'variant': 'is-success',
           'isRounded': 'true',
           'modalId': 'Modal ID',
@@ -191,19 +190,12 @@ describe('Button component', function () {
     .should('deep.eq',
         {
           'jcr:primaryType': 'nt:unstructured',
-          'showIconRight': 'false',
-          'showIconLeft': 'false',
-          'isOutlined': 'false',
-          'isFullWidth': 'false',
-          "isMailto": "false",
-          'isInverted': 'false',
           'url': '/content',
           'type': 'a',
           'label': 'Label',
-          'isRounded': 'false',
           'sling:resourceType': 'kyanite/common/components/button',
           'openInNewTab': 'true',
-          'isLight': 'false'
+          'isMailto': 'false'
         });
   });
 });
