@@ -26,6 +26,10 @@
   @extend .t-line-height--150;
   @extend .t-letter-spacing--default;
 
+  strong {
+    color: unset;
+  }
+
   &-xs {
     @extend .t-font-size--12;
   }
