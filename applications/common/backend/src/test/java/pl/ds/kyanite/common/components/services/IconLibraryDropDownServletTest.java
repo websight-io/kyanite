@@ -29,9 +29,6 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ValueMap;
 import org.apache.sling.testing.mock.sling.junit5.SlingContext;
 import org.junit.jupiter.api.Test;
-import pl.ds.kyanite.common.components.services.DataSource;
-import pl.ds.kyanite.common.components.services.IconLibraryDropDownServlet;
-import pl.ds.kyanite.common.components.services.LibraryIconFactoryConfig;
 
 class IconLibraryDropDownServletTest {
 
@@ -42,7 +39,7 @@ class IconLibraryDropDownServletTest {
 
   @Test
   void doGet() {
-    LibraryIconFactoryConfig factoryConfig = mock(LibraryIconFactoryConfig.class);
+    LibraryIconConfigStore factoryConfig = mock(LibraryIconConfigStore.class);
     LibraryIconConfig config = mock(LibraryIconConfig.class);
     IconLibraryDropDownServlet iconLibraryDropDownServlet = new IconLibraryDropDownServlet(
         factoryConfig);

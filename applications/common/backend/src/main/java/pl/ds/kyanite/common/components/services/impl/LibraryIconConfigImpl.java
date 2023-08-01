@@ -17,12 +17,14 @@
 package pl.ds.kyanite.common.components.services.impl;
 
 import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.metatype.annotations.Designate;
-import pl.ds.kyanite.common.components.configurations.IconLibraryFactoryConfigiguration;
+import pl.ds.kyanite.common.components.configurations.LibraryIconConfigOcd;
 import pl.ds.kyanite.common.components.services.LibraryIconConfig;
 
-@Designate(ocd = IconLibraryFactoryConfigiguration.class, factory = true)
+@Component(service = LibraryIconConfigImpl.class)
+@Designate(ocd = LibraryIconConfigOcd.class, factory = true)
 public class LibraryIconConfigImpl implements LibraryIconConfig {
 
   private String label;
@@ -52,7 +54,7 @@ public class LibraryIconConfigImpl implements LibraryIconConfig {
 
   @Activate
   @Modified
-  protected void activate(final IconLibraryFactoryConfigiguration config) {
+  protected void activate(final LibraryIconConfigOcd config) {
     this.label = config.label();
     this.id = config.id();
     this.libraryUrl = config.libraryUrl();

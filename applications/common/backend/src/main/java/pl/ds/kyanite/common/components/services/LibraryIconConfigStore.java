@@ -18,7 +18,7 @@ package pl.ds.kyanite.common.components.services;
 
 import java.util.List;
 
-public interface LibraryIconFactoryConfig {
+public interface LibraryIconConfigStore {
   LibraryIconConfig get(String id);
 
   List<LibraryIconConfig> getAllConfigs();

@@ -22,7 +22,7 @@ import org.osgi.service.metatype.annotations.AttributeType;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
 @ObjectClassDefinition(name = "Icon library - OSGi Factory Configuration")
-public @interface IconLibraryFactoryConfigiguration {
+public @interface LibraryIconConfigOcd {
 
   @AttributeDefinition(
       name = "Library name",

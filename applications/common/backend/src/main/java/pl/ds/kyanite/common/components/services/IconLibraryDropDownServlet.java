@@ -45,10 +45,10 @@ public class IconLibraryDropDownServlet extends SlingSafeMethodsServlet {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(IconLibraryDropDownServlet.class);
 
-  private final transient LibraryIconFactoryConfig config;
+  private final transient LibraryIconConfigStore config;
 
   @Activate
-  public IconLibraryDropDownServlet(@Reference LibraryIconFactoryConfig config) {
+  public IconLibraryDropDownServlet(@Reference LibraryIconConfigStore config) {
     this.config = config;
   }
 

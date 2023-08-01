@@ -18,22 +18,18 @@ package pl.ds.kyanite.common.components.services.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ConfigurationPolicy;
-import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
-import org.osgi.service.metatype.annotations.Designate;
-import pl.ds.kyanite.common.components.configurations.IconLibraryFactoryConfigiguration;
 import pl.ds.kyanite.common.components.services.LibraryIconConfig;
-import pl.ds.kyanite.common.components.services.LibraryIconFactoryConfig;
+import pl.ds.kyanite.common.components.services.LibraryIconConfigStore;
 
 
-@Component(service = LibraryIconFactoryConfig.class,
+@Component(service = LibraryIconConfigStore.class,
     configurationPolicy = ConfigurationPolicy.REQUIRE)
-public class LibraryIconFactoryConfigImpl implements LibraryIconFactoryConfig {
+public class LibraryIconConfigStoreImpl implements LibraryIconConfigStore {
 
   private List<LibraryIconConfig> configsList;
 
