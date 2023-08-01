@@ -24,6 +24,16 @@
         "name": "alt",
         "label": "Alt text"
       },
+      "width": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "width",
+        "label": "Player width"
+      },
+      "height": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "height",
+        "label": "Player height"
+      },
       "hasVideoOptions": {
         "sling:resourceType": "wcm/dialogs/components/toggle",
         "name": "hasVideoOptions",
@@ -31,16 +41,6 @@
       },
       "videoOptions": {
         "sling:resourceType": "wcm/dialogs/components/container",
-        "width": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "width",
-          "label": "Player width"
-        },
-        "height": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "height",
-          "label": "Player height"
-        },
         "customThumbnail": {
           "sling:resourceType": "wcm/dialogs/components/assetreference",
           "rootPath": "/content",
