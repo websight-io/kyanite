@@ -32,22 +32,22 @@ public class LibraryIconConfigImpl implements LibraryIconConfig {
 
   @Override
   public String getLabel() {
-    return null;
+    return label;
   }
 
   @Override
   public String getId() {
-    return null;
+    return id;
   }
 
   @Override
   public String getLibraryUrl() {
-    return null;
+    return libraryUrl;
   }
 
   @Override
   public String[] getAttributes() {
-    return new String[0];
+    return attributes;
   }
 
   @Activate
