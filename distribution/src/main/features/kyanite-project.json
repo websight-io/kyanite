@@ -41,7 +41,7 @@
     "pl.ds.websight.publishing.staticprocessor.PagePublishProcessor": {
       "shorten.paths": true
     },
-    "pl.ds.kyanite.common.components.services.impl.LibraryIconFactoryConfigImpl~mdi": {
+    "pl.ds.kyanite.common.components.services.impl.LibraryIconConfigImpl~mdi": {
       "id": "mdi",
       "label": "Material Design",
       "libraryUrl": "/libs/kyanite/webroot/material-design-icons/css/materialdesignicons@7.2.96.min.css"

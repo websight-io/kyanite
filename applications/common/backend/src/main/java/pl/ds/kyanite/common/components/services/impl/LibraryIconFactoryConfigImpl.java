@@ -27,34 +27,20 @@ import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
 import org.osgi.service.metatype.annotations.Designate;
 import pl.ds.kyanite.common.components.configurations.IconLibraryFactoryConfigiguration;
+import pl.ds.kyanite.common.components.services.LibraryIconConfig;
 import pl.ds.kyanite.common.components.services.LibraryIconFactoryConfig;
 
 
 @Component(service = LibraryIconFactoryConfig.class,
     configurationPolicy = ConfigurationPolicy.REQUIRE)
-@Designate(ocd = IconLibraryFactoryConfigiguration.class, factory = true)
 public class LibraryIconFactoryConfigImpl implements LibraryIconFactoryConfig {
 
-  private String label;
-  private String id;
-  private String libraryUrl;
-  private String[] attributes;
+  private List<LibraryIconConfig> configsList;
 
-  private List<LibraryIconFactoryConfig> configsList;
-
-  @Activate
-  @Modified
-  protected void activate(final IconLibraryFactoryConfigiguration config) {
-    this.label = config.label();
-    this.id = config.id();
-    this.libraryUrl = config.libraryUrl();
-    this.attributes = config.attributes();
-  }
-
-  @Reference(service = LibraryIconFactoryConfig.class,
+  @Reference(service = LibraryIconConfig.class,
       cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC,
       bind = "bind", unbind = "unbind")
-  public synchronized void bind(final LibraryIconFactoryConfig config) {
+  public synchronized void bind(final LibraryIconConfig config) {
     if (configsList == null) {
       configsList = new ArrayList<>();
     }
@@ -62,35 +48,18 @@ public class LibraryIconFactoryConfigImpl implements LibraryIconFactoryConfig {
 
   }
 
-  public synchronized void unbind(final LibraryIconFactoryConfig config) {
+  public synchronized void unbind(final LibraryIconConfig config) {
     configsList.remove(config);
   }
 
-  public String getLabel() {
-    return label;
-  }
-
-  public String getId() {
-    return id;
-  }
-
   @Override
-  public String getLibraryUrl() {
-    return libraryUrl;
-  }
-
-  public String[] getAttributes() {
-    return attributes;
-  }
-
-  @Override
-  public List<LibraryIconFactoryConfig> getAllConfigs() {
+  public List<LibraryIconConfig> getAllConfigs() {
     return configsList;
   }
 
   @Override
-  public LibraryIconFactoryConfig get(String id) {
-    for (LibraryIconFactoryConfig confFact : configsList) {
+  public LibraryIconConfig get(String id) {
+    for (LibraryIconConfig confFact : configsList) {
       if (id.equals(confFact.getId())) {
         return confFact;
       }

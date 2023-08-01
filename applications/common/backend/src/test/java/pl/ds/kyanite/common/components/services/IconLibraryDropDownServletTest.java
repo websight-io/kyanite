@@ -42,10 +42,11 @@ class IconLibraryDropDownServletTest {
 
   @Test
   void doGet() {
-    LibraryIconFactoryConfig config = mock(LibraryIconFactoryConfig.class);
+    LibraryIconFactoryConfig factoryConfig = mock(LibraryIconFactoryConfig.class);
+    LibraryIconConfig config = mock(LibraryIconConfig.class);
     IconLibraryDropDownServlet iconLibraryDropDownServlet = new IconLibraryDropDownServlet(
-        config);
-    when(config.getAllConfigs()).thenReturn(List.of(config));
+        factoryConfig);
+    when(factoryConfig.getAllConfigs()).thenReturn(List.of(config));
     when(config.getId()).thenReturn(MDP);
     when(config.getLabel()).thenReturn(MATERIAL_DESIGN);
     SlingHttpServletRequest request = context.request();
