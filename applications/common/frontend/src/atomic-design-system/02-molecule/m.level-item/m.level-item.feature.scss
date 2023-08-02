@@ -24,7 +24,7 @@
 
 @mixin m-level-item-feature {
   > .container {
-    margin: 0;
+    margin: #{var(--spacing-value-0)};
 
     > .image {
       &:first-of-type {

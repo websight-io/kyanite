@@ -22,14 +22,15 @@
 @use 'src/bulma-overwrite/bulma-spacing';
 
 @mixin a-tag {
-  @extend .t-background-color__grey--900;
-  @extend .t-border-radius--1;
-  @extend .t-font-weight--600;
+  background-color: #{var(--color-grey--900)} !important;
+
+  border-radius: #{var(--border-radius-1)};
+  font-weight: #{var(--font-weight-600)};
   @extend .px-4;
 
-  color: color.$white;
+  color: #{var(--base-color-white)};
 
   &.is-normal {
-    @extend .t-font-size--14;
+    font-size: #{var(--font-size-14)};
   }
 }

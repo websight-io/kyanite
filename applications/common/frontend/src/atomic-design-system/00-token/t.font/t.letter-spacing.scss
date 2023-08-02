@@ -22,13 +22,13 @@ $map_t-letter-spacings: (
   'default': 0%,
 );
 
-@mixin t-letter-spacing($name) {
-  letter-spacing: map.get($map_t-letter-spacings, #{$name});
-}
+// @mixin t-letter-spacing($name) {
+//   letter-spacing: map.get($map_t-letter-spacings, #{$name});
+// }
 
-@each $name, $value in $map_t-letter-spacings {
-  // i.e. `.t-letter-spacing--default`
-  .t-letter-spacing--#{$name} {
-    @include t-letter-spacing(#{$name});
-  }
-}
+// @each $name, $value in $map_t-letter-spacings {
+//   // i.e. `.t-letter-spacing--default`
+//   .t-letter-spacing--#{$name} {
+//     @include t-letter-spacing(#{$name});
+//   }
+// }

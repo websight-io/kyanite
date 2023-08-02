@@ -23,44 +23,92 @@
 @use 'src/atomic-design-system/00-token/t.color' as color;
 
 .a-title {
-  @extend .t-font-weight--700;
+  font-weight: #{var(--font-weight-700)};
 }
 
 .a-subtitle {
-  @extend .t-font-weight--600;
+  font-weight: #{var(--font-weight-600)};
 }
 
 .a-title,
 .a-subtitle {
-  @extend .t-letter-spacing--default;
+  letter-spacing: default;
 
   &-1 {
-    @extend .t-line-height--100;
-    @include font.t-font-size-fluid(56, 128);
+    line-height: 100%;
+    font-size: 3.5rem;
+  
+    @media (min-width: 768px) {
+      font-size: calc(56px + (128 - 56) * ((100vw - 768px) / (1408 - 768)));
+    }
+    
+    @media (min-width: 1408px) {
+      font-size: 8rem;
+    }
   }
 
   &-2 {
-    @extend .t-line-height--150;
-    @include font.t-font-size-fluid(40, 80);
+    line-height: 150%;
+    font-size: 2.5rem;
+
+    @media (min-width: 768px) {
+      font-size: calc(40px + (80 - 40) * ((100vw - 768px) / (1408 - 768)));
+    }
+
+    @media (min-width: 1408px) {
+      font-size: 5rem;
+    }
   }
 
   &-3 {
-    @extend .t-line-height--150;
-    @include font.t-font-size-fluid(32, 64);
+    line-height: 150%;
+    font-size: 2rem;
+    
+    @media (min-width: 768px) {
+      font-size: calc(32px + (64 - 32) * ((100vw - 768px) / (1408 - 768)));
+    }
+
+    @media (min-width: 1408px) {
+      font-size: 4rem;
+    }
   }
 
   &-4 {
-    @extend .t-line-height--150;
-    @include font.t-font-size-fluid(28, 48);
+    line-height: 150%;
+    font-size: 1.75rem;
+
+    @media (min-width: 768px) {
+      font-size: calc(28px + (48 - 28) * ((100vw - 768px) / (1408 - 768)));
+    }
+
+    @media (min-width: 1408px) {
+      font-size: 3rem;
+    }
   }
 
   &-5 {
-    @extend .t-line-height--150;
-    @include font.t-font-size-fluid(24, 40);
+    line-height: 150%;
+    font-size: 1.5rem;
+
+    @media (min-width: 768px) {
+      font-size: calc(24px + (40 - 24) * ((100vw - 768px) / (1408 - 768)));
+    }
+
+    @media (min-width: 1408px) {
+      font-size: 2.5rem;
+    }
   }
 
   &-6 {
-    @extend .t-line-height--150;
-    @include font.t-font-size-fluid(22, 32);
+    line-height: 150%;
+    font-size: 1.375rem;
+
+    @media (min-width: 768px) {
+      font-size: calc(22px + (32 - 22) * ((100vw - 768px) / (1408 - 768)));
+    }
+
+    @media (min-width: 1408px) {
+      font-size: 2rem;
+    }
   }
 }

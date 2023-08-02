@@ -24,13 +24,13 @@ $map_t-line-heights: (
   '155': 155%,
 );
 
-@mixin t-line-height($name) {
-  line-height: map.get($map_t-line-heights, #{$name});
-}
+// @mixin t-line-height($name) {
+//   line-height: map.get($map_t-line-heights, #{$name});
+// }
 
-@each $name, $value in $map_t-line-heights {
-  // i.e. `.t-line-height--100`
-  .t-line-height--#{$name} {
-    @include t-line-height(#{$name});
-  }
-}
+// @each $name, $value in $map_t-line-heights {
+//   // i.e. `.t-line-height--100`
+//   .t-line-height--#{$name} {
+//     @include t-line-height(#{$name});
+//   }
+// }

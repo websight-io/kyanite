@@ -22,7 +22,7 @@
 
 @mixin o-body-background--lines {
   .navbar {
-    z-index: zindex.$z-index-navbar;
+    z-index: #{var(--z-index-navbar)};
   }
 
   @at-root {
@@ -32,7 +32,7 @@
 
       @include position.center-absolute;
 
-      z-index: zindex.$z-index-background-of-body;
+      z-index: #{var(--z-index-background-of-body)};
 
       width: auto;
       max-width: 414px;

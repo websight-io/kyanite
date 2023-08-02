@@ -41,11 +41,11 @@
 
     > .title {
       @extend .mb-4;
-      @extend .t-font-weight--700;
+      font-weight: #{var(--font-weight-700)};
     }
 
     > .button.is-ghost {
-      @extend .t-color__grey--1000;
+      color: #{var(--color-grey--1000)} !important;
       @extend .px-0;
       @include link.a-animated-underline-link;
 
@@ -56,25 +56,16 @@
   @include breakpoint.media-breakpoint-medium {
     .container {
       > .title {
-        margin-bottom: map.get(
-          spacing.$spacing-values,
-          '5_2'
-        ) !important; // overwriting bulma class (above @extend)
+        margin-bottom: #{var(--spacing-value-5_2)} !important; // overwriting bulma class (above @extend)
       }
 
       > .content {
         &:first-of-type {
-          margin-bottom: map.get(
-            spacing.$spacing-values,
-            '4'
-          ) !important; // overwriting bulma class (above @extend)
+          margin-bottom: #{var(--spacing-value-4)} !important; // overwriting bulma class (above @extend)
         }
 
         &:last-of-type {
-          margin-bottom: map.get(
-            spacing.$spacing-values,
-            '4'
-          ) !important; // overwriting bulma class (above @extend)
+          margin-bottom: #{var(--spacing-value-4)} !important; // overwriting bulma class (above @extend)
         }
       }
     }

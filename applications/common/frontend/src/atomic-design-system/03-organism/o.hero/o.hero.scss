@@ -34,11 +34,11 @@
 
     // currently designs show only medium hero component
     // for now force the same horizontal padding like on medium hero component
-    padding-left: map.get(variables.$spacing-values, '5') !important;
-    padding-right: map.get(variables.$spacing-values, '5') !important;
+    padding-left: #{var(--spacing-value-5)} !important;
+    padding-right: #{var(--spacing-value-5)} !important;
     @include breakpoint.media-breakpoint-large {
-      padding-left: map.get(variables.$spacing-values, '6') !important;
-      padding-right: map.get(variables.$spacing-values, '6') !important;
+      padding-left: #{var(--spacing-value-6)} !important;
+      padding-right: #{var(--spacing-value-6)} !important;
     }
 
     display: flex;
@@ -47,7 +47,7 @@
 
     .container {
       @include breakpoint.media-breakpoint-large {
-        row-gap: map.get(variables.$spacing-values, '6_3');
+        row-gap: #{var(--spacing-value-6_3)};
       }
 
       *:not(.eyebrow) {
@@ -63,12 +63,12 @@
 
 @mixin o-hero-medium {
   .hero-body {
-    padding-top: map.get(variables.$spacing-values, '6_3');
-    padding-bottom: map.get(variables.$spacing-values, '6_3');
+    padding-top: #{var(--spacing-value-6_3)};
+    padding-bottom: #{var(--spacing-value-6_3)};
 
     @include breakpoint.media-breakpoint-large {
-      padding-top: map.get(variables.$spacing-values, '8');
-      padding-bottom: map.get(variables.$spacing-values, '8');
+      padding-top: #{var(--spacing-value-8)};
+      padding-bottom: #{var(--spacing-value-8)};
     }
   }
 }

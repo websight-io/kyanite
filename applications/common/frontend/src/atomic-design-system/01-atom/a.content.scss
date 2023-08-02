@@ -23,47 +23,42 @@
 @use 'src/atomic-design-system/00-token/t.color' as color;
 
 .a-content {
-  @extend .t-line-height--150;
-  @extend .t-letter-spacing--default;
+  line-height: 150%;
+  letter-spacing: default;
 
   &-xs {
-    @extend .t-font-size--12;
+    font-size: #{var(--font-size-12)};
   }
 
   &-sm {
-    @extend .t-line-height--155;
-    @extend .t-font-size--14;
+    line-height: 155%;
+    font-size: #{var(--font-size-14)};
   }
 
   &-md {
-    @extend .t-font-size--16;
+    font-size: #{var(--font-size-16)};
   }
 
   &-lg {
-    @include font.t-font-size-fluid(18, 20);
+    font-size: 1.125rem;
+
+    @media (min-width: 768px) {
+        font-size: calc(18px + (20 - 18) * ((100vw - 768px) / (1408 - 768)));
+    }
+    @media (min-width: 1408px) {
+        font-size: 1.25rem;
+    }
   }
 
   &-xl {
-    @include font.t-font-size-fluid(20, 24);
-  }
+    font-size: 1.25rem;
 
-  &-300 {
-    @extend .t-font-weight--300;
-  }
-
-  &-400 {
-    @extend .t-font-weight--400;
-  }
-
-  &-500 {
-    @extend .t-font-weight--500;
-  }
-
-  &-600 {
-    @extend .t-font-weight--600;
-  }
-
-  &-700 {
-    @extend .t-font-weight--700;
+    @media (min-width: 768px) {
+        font-size: calc(20px + (24 - 20) * ((100vw - 768px) / (1408 - 768)));
+    }
+    
+    @media (min-width: 1408px) {
+      font-size: 1.5rem;
+    }
   }
 }

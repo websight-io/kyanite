@@ -28,7 +28,7 @@
   border: none;
 
   &::after {
-    background-color: map.get(color.$map_t-color-by-id, 'primary--600');
+    background-color: #{var(--color-primary--600)};
     content: '';
     display: block;
     margin-top: 3px;
@@ -38,8 +38,8 @@
   }
 
   .icon {
-    margin-left: map.get(spacing.$spacing-values, '0');
-    margin-right: map.get(spacing.$spacing-values, '0');
+    margin-left: #{var(--spacing-value-0)};
+    margin-right: #{var(--spacing-value-0)};
     justify-content: flex-end;
   }
 

@@ -25,13 +25,13 @@ body {
 
   --cc-btn-primary-bg: #0053ff; // value comes from bulma-overwrite/_variables.scss
   --cc-btn-primary-hover-bg: #0042cc; // value comes from bulma-overwrite/_variables.scss
-  --cc-toggle-bg-on: var(--cc-btn-primary-bg);
+  --cc-toggle-bg-on:  #{var(--cc-btn-primary-bg)};
   --cc-border-radius: 4px;
   --cc-btn-border-radius: 2px;
 }
 
 .cc_div a {
-  color: var(--cc-btn-primary-bg);
+  color:  #{var(--cc-btn-primary-bg)};
 }
 
 .c-bl {

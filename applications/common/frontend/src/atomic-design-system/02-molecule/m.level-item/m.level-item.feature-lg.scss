@@ -20,7 +20,7 @@
 
 @mixin m-level-item-feature-lg {
   > .container {
-    margin: 0;
+    margin: #{var(--spacing-value-0)};
 
     > .image {
       &:first-of-type {
@@ -33,7 +33,7 @@
     }
 
     > .content {
-      margin: 0;
+      margin: #{var(--spacing-value-0)};
     }
   }
 }
