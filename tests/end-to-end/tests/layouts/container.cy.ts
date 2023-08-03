@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  container: 'ComponentOverlay_/content/kyanite-tests/pages/container/jcr:content/pagecontainer/container'
+  container: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/container/jcr:content/pagecontainer/container'
 };
 
 describe('Container layout', function () {
@@ -32,7 +32,7 @@ describe('Container layout', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/kyanite-tests/pages/container::editor'
+        '/apps/websight/index.html/content/kyanite-e2e-tests/pages/container::editor'
     );
 
     cy.getByTestId(paths.container)
@@ -51,7 +51,7 @@ describe('Container layout', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/kyanite-tests/pages/container/jcr:content/pagecontainer/container.json'
+        '/content/kyanite-e2e-tests/pages/container/jcr:content/pagecontainer/container.json'
     )
     .its('body')
     .should('deep.eq', {

@@ -138,7 +138,9 @@
                 <exclude>**/*.md</exclude>
                 <exclude>**/*.json</exclude>
                 <exclude>**/*.txt</exclude>
+                <exclude>**/*.svg</exclude>
                 <exclude>**/.content.xml</exclude>
+                <exclude>**/sitemap.xml/**/*</exclude>
               </excludes>
             </configuration>
           </execution>

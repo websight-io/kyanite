@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="ws:Page">
+    <jcr:content
+        jcr:lastModified="{Date}2023-05-15T13:10:40.253Z"
+        jcr:lastModifiedBy="wsadmin"
+        jcr:primaryType="ws:PageContent"
+        jcr:title="Level"
+        sling:resourceType="kyanite/common/components/page"
+        ws:lastModified="{Date}2023-05-15T13:58:41.080Z"
+        ws:lastModifiedBy="wsadmin"
+        ws:template="/libs/kyanite/common/templates/articlepage"
+        navbarFixed="false">
+        <pagecontainer
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="kyanite/common/components/pagecontainer">
+            <section
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="kyanite/common/components/section">
+                <level_1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/level">
+                    <stats
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/level/levelitem">
+                        <container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/container"
+                            lgColSize="{Long}6"
+                            mdColSize="{Long}12"
+                            smColSize="{Long}12">
+                            <title1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/title"
+                                color="has-text-primary"
+                                element="h2"
+                                size="is-2"
+                                subtitleColor="bw_has-text-black"
+                                text="68,715"
+                                textWeight="has-text-weight-bold"
+                                type="title">
+                                <grey jcr:primaryType="nt:unstructured"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="900"/>
+                            </title1>
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="has-text-black"
+                                size="is-large"
+                                text="&lt;p>API requests served per second&lt;/p>"
+                                textWeight="has-text-weight-bold">
+                                <grey
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="darker"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest jcr:primaryType="nt:unstructured"/>
+                            </content>
+                            <content1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="\0"
+                                size="is-normal"
+                                text="&lt;p>Manage complex technological demands with a range of APIs built for enterprise scale experiences&lt;/p>"
+                                textWeight="has-text-weight-medium"/>
+                            <button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                addIcon="true"
+                                iconRight="fas fa-arrow-right"
+                                label="Learn more"
+                                selectOrTypeRight="typeRight"
+                                type="a"
+                                variant="is-ghost"/>
+                        </container>
+                    </stats>
+                </level_1>
+                <level_2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/level">
+                    <stats
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/level/levelitem">
+                        <container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/container"
+                            lgColSize="{Long}6"
+                            mdColSize="{Long}12"
+                            smColSize="{Long}12">
+                            <title1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/title"
+                                color="has-text-primary"
+                                element="h2"
+                                size="is-2"
+                                subtitleColor="bw_has-text-black"
+                                text="68,715"
+                                textWeight="has-text-weight-bold"
+                                type="title">
+                                <grey jcr:primaryType="nt:unstructured"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="900"/>
+                            </title1>
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="has-text-black"
+                                size="is-large"
+                                text="&lt;p>API requests served per second&lt;/p>"
+                                textWeight="has-text-weight-bold">
+                                <grey
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="darker"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest jcr:primaryType="nt:unstructured"/>
+                            </content>
+                            <content1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="\0"
+                                size="is-normal"
+                                text="&lt;p>Manage complex technological demands with a range of APIs built for enterprise scale experiences&lt;/p>"
+                                textWeight="has-text-weight-medium"/>
+                            <button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                addIcon="true"
+                                iconRight="fas fa-arrow-right"
+                                label="Learn more"
+                                selectOrTypeRight="typeRight"
+                                type="a"
+                                variant="is-ghost"/>
+                        </container>
+                    </stats>
+                    <stats_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/level/levelitem">
+                        <container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/container"
+                            lgColSize="{Long}6"
+                            mdColSize="{Long}12"
+                            smColSize="{Long}12">
+                            <title1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/title"
+                                color="has-text-primary"
+                                element="h2"
+                                size="is-2"
+                                subtitleColor="bw_has-text-black"
+                                text="297"
+                                textWeight="has-text-weight-bold"
+                                type="title">
+                                <grey jcr:primaryType="nt:unstructured"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="900"/>
+                            </title1>
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="has-text-black"
+                                size="is-large"
+                                text="&lt;p>TBs of assets delivered per day&lt;/p>"
+                                textWeight="has-text-weight-bold">
+                                <grey
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="darker"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest jcr:primaryType="nt:unstructured"/>
+                            </content>
+                            <content1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="\0"
+                                size="is-normal"
+                                text="&lt;p>Deliver lightning-fast response times through globally distributed content delivery networks, underpinned by a 99,99% uptime SLA.&lt;/p>"
+                                textWeight="has-text-weight-medium"/>
+                            <button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                addIcon="true"
+                                iconRight="fas fa-arrow-right"
+                                label="Learn more"
+                                selectOrTypeRight="typeRight"
+                                type="a"
+                                variant="is-ghost"/>
+                        </container>
+                    </stats_1>
+                </level_2>
+                <level_3
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/level">
+                    <stats
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/level/levelitem">
+                        <container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/container"
+                            lgColSize="{Long}6"
+                            mdColSize="{Long}12"
+                            smColSize="{Long}12">
+                            <title1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/title"
+                                color="has-text-primary"
+                                element="h2"
+                                size="is-2"
+                                subtitleColor="bw_has-text-black"
+                                text="68,715"
+                                textWeight="has-text-weight-bold"
+                                type="title">
+                                <grey jcr:primaryType="nt:unstructured"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="900"/>
+                            </title1>
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="has-text-black"
+                                size="is-large"
+                                text="&lt;p>API requests served per second&lt;/p>"
+                                textWeight="has-text-weight-bold">
+                                <grey
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="darker"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest jcr:primaryType="nt:unstructured"/>
+                            </content>
+                            <content1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="\0"
+                                size="is-normal"
+                                text="&lt;p>Manage complex technological demands with a range of APIs built for enterprise scale experiences&lt;/p>"
+                                textWeight="has-text-weight-medium"/>
+                            <button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                addIcon="true"
+                                iconRight="fas fa-arrow-right"
+                                label="Learn more"
+                                selectOrTypeRight="typeRight"
+                                type="a"
+                                variant="is-ghost"/>
+                        </container>
+                    </stats>
+                    <stats_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/level/levelitem">
+                        <container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/container"
+                            lgColSize="{Long}6"
+                            mdColSize="{Long}12"
+                            smColSize="{Long}12">
+                            <title1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/title"
+                                color="has-text-primary"
+                                element="h2"
+                                size="is-2"
+                                subtitleColor="bw_has-text-black"
+                                text="297"
+                                textWeight="has-text-weight-bold"
+                                type="title">
+                                <grey jcr:primaryType="nt:unstructured"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="900"/>
+                            </title1>
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="has-text-black"
+                                size="is-large"
+                                text="&lt;p>TBs of assets delivered per day&lt;/p>"
+                                textWeight="has-text-weight-bold">
+                                <grey
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="darker"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest jcr:primaryType="nt:unstructured"/>
+                            </content>
+                            <content1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="\0"
+                                size="is-normal"
+                                text="&lt;p>Deliver lightning-fast response times through globally distributed content delivery networks, underpinned by a 99,99% uptime SLA.&lt;/p>"
+                                textWeight="has-text-weight-medium"/>
+                            <button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                addIcon="true"
+                                iconRight="fas fa-arrow-right"
+                                label="Learn more"
+                                selectOrTypeRight="typeRight"
+                                type="a"
+                                variant="is-ghost"/>
+                        </container>
+                    </stats_1>
+                    <stats_2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/level/levelitem">
+                        <container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/container"
+                            lgColSize="{Long}6"
+                            mdColSize="{Long}12"
+                            smColSize="{Long}12">
+                            <title1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/title"
+                                color="has-text-primary"
+                                element="h2"
+                                size="is-2"
+                                subtitleColor="bw_has-text-black"
+                                text="90%"
+                                textWeight="has-text-weight-bold"
+                                type="title">
+                                <grey jcr:primaryType="nt:unstructured"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="900"/>
+                            </title1>
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="has-text-black"
+                                size="is-large"
+                                text="&lt;p>Reduction in production time&lt;/p>"
+                                textWeight="has-text-weight-bold">
+                                <grey
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="darker"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest jcr:primaryType="nt:unstructured"/>
+                            </content>
+                            <content1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="\0"
+                                size="is-normal"
+                                text="&lt;p>Business have saved up to 90% of team time previously spent on production since introducing DXP&lt;/p>"
+                                textWeight="has-text-weight-medium"/>
+                            <button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                addIcon="true"
+                                iconRight="fas fa-arrow-right"
+                                label="Learn more"
+                                selectOrTypeRight="typeRight"
+                                type="a"
+                                variant="is-ghost"/>
+                        </container>
+                    </stats_2>
+                </level_3>
+                <level_2_1
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/level">
+                    <stats
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/level/levelitem">
+                        <container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/container"
+                            lgColSize="{Long}6"
+                            mdColSize="{Long}12"
+                            smColSize="{Long}12">
+                            <title1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/title"
+                                color="has-text-primary"
+                                element="h2"
+                                size="is-2"
+                                subtitleColor="bw_has-text-black"
+                                text="68,715"
+                                textWeight="has-text-weight-bold"
+                                type="title">
+                                <grey jcr:primaryType="nt:unstructured"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="900"/>
+                            </title1>
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="has-text-black"
+                                size="is-large"
+                                text="&lt;p>API requests served per second&lt;/p>"
+                                textWeight="has-text-weight-bold">
+                                <grey
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="darker"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest jcr:primaryType="nt:unstructured"/>
+                            </content>
+                            <content1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="\0"
+                                size="is-normal"
+                                text="&lt;p>Manage complex technological demands with a range of APIs built for enterprise scale experiences&lt;/p>"
+                                textWeight="has-text-weight-medium"/>
+                            <button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                addIcon="true"
+                                iconRight="fas fa-arrow-right"
+                                label="Learn more"
+                                selectOrTypeRight="typeRight"
+                                type="a"
+                                variant="is-ghost"/>
+                        </container>
+                    </stats>
+                    <stats_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/level/levelitem">
+                        <container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/container"
+                            lgColSize="{Long}6"
+                            mdColSize="{Long}12"
+                            smColSize="{Long}12">
+                            <title1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/title"
+                                color="has-text-primary"
+                                element="h2"
+                                size="is-2"
+                                subtitleColor="bw_has-text-black"
+                                text="297"
+                                textWeight="has-text-weight-bold"
+                                type="title">
+                                <grey jcr:primaryType="nt:unstructured"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="900"/>
+                            </title1>
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="has-text-black"
+                                size="is-large"
+                                text="&lt;p>TBs of assets delivered per day&lt;/p>"
+                                textWeight="has-text-weight-bold">
+                                <grey
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="darker"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest jcr:primaryType="nt:unstructured"/>
+                            </content>
+                            <content1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="\0"
+                                size="is-normal"
+                                text="&lt;p>Deliver lightning-fast response times through globally distributed content delivery networks, underpinned by a 99,99% uptime SLA.&lt;/p>"
+                                textWeight="has-text-weight-medium"/>
+                            <button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                addIcon="true"
+                                iconRight="fas fa-arrow-right"
+                                label="Learn more"
+                                selectOrTypeRight="typeRight"
+                                type="a"
+                                variant="is-ghost"/>
+                        </container>
+                    </stats_1>
+                    <stats_2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/level/levelitem">
+                        <container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/container"
+                            lgColSize="{Long}6"
+                            mdColSize="{Long}12"
+                            smColSize="{Long}12">
+                            <title1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/title"
+                                color="has-text-primary"
+                                element="h2"
+                                size="is-2"
+                                subtitleColor="bw_has-text-black"
+                                text="90%"
+                                textWeight="has-text-weight-bold"
+                                type="title">
+                                <grey jcr:primaryType="nt:unstructured"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="900"/>
+                            </title1>
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="has-text-black"
+                                size="is-large"
+                                text="&lt;p>Reduction in production time&lt;/p>"
+                                textWeight="has-text-weight-bold">
+                                <grey
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="darker"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest jcr:primaryType="nt:unstructured"/>
+                            </content>
+                            <content1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="\0"
+                                size="is-normal"
+                                text="&lt;p>Business have saved up to 90% of team time previously spent on production since introducing DXP&lt;/p>"
+                                textWeight="has-text-weight-medium"/>
+                            <button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                addIcon="true"
+                                iconRight="fas fa-arrow-right"
+                                label="Learn more"
+                                selectOrTypeRight="typeRight"
+                                type="a"
+                                variant="is-ghost"/>
+                        </container>
+                    </stats_2>
+                    <stats_2_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/level/levelitem">
+                        <container
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/container"
+                            lgColSize="{Long}6"
+                            mdColSize="{Long}12"
+                            smColSize="{Long}12">
+                            <title1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/title"
+                                color="has-text-primary"
+                                element="h2"
+                                size="is-2"
+                                subtitleColor="bw_has-text-black"
+                                text="100"
+                                textWeight="has-text-weight-bold"
+                                type="title">
+                                <grey jcr:primaryType="nt:unstructured"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="900"/>
+                            </title1>
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="has-text-black"
+                                size="is-large"
+                                text="&lt;p>Reduction in production time&lt;/p>"
+                                textWeight="has-text-weight-bold">
+                                <grey
+                                    jcr:primaryType="nt:unstructured"
+                                    shade="darker"/>
+                                <bw jcr:primaryType="nt:unstructured"/>
+                                <rest jcr:primaryType="nt:unstructured"/>
+                            </content>
+                            <content1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                color="\0"
+                                size="is-normal"
+                                text="&lt;p>Business have saved up to 100&lt;/p>"
+                                textWeight="has-text-weight-medium"/>
+                            <button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                addIcon="true"
+                                iconRight="fas fa-arrow-right"
+                                label="Learn more"
+                                selectOrTypeRight="typeRight"
+                                type="a"
+                                variant="is-ghost"/>
+                        </container>
+                    </stats_2_1>
+                </level_2_1>
+            </section>
+        </pagecontainer>
+    </jcr:content>
+</jcr:root>

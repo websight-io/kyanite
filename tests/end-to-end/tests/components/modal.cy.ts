@@ -15,7 +15,7 @@
  */
 
 const paths = {
-  modal: 'ComponentOverlay_/content/kyanite-tests/pages/modal/jcr:content/pagecontainer/modal'
+  modal: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/modal/jcr:content/pagecontainer/modal'
 };
 
 describe('Modal component', function () {
@@ -24,20 +24,15 @@ describe('Modal component', function () {
   });
 
   it('renders correctly in preview mode', function () {
-    cy.visit('/content/kyanite-tests/pages/modal.html');
+    cy.visit('/content/kyanite-e2e-tests/pages/modal.html');
     cy.contains('Open JS example modal').click();
 
-    cy.percySnapshotPreview('Modal preview');
     cy.contains('Nice header').should('be.visible');
   });
 
   it('renders correctly in edit mode', function () {
-
     cy.visit(
-        '/apps/websight/index.html/content/kyanite-tests/pages/modal::editor'
+        '/apps/websight/index.html/content/kyanite-e2e-tests/pages/modal::editor'
     );
-
-    cy.percySnapshotPageEditor('Hero editor');
-
   });
 });

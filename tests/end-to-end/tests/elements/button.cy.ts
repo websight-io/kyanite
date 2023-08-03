@@ -17,8 +17,8 @@
 import {selectors, testIds} from "../../support/consts";
 
 const paths = {
-  button: 'ComponentOverlay_/content/kyanite-tests/pages/button/jcr:content/pagecontainer/button',
-  anchor: 'ComponentOverlay_/content/kyanite-tests/pages/button/jcr:content/pagecontainer/anchor'
+  button: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/button/jcr:content/pagecontainer/button',
+  anchor: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/button/jcr:content/pagecontainer/anchor'
 };
 
 describe('Button component', function () {
@@ -34,7 +34,7 @@ describe('Button component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/kyanite-tests/pages/button::editor'
+        '/apps/websight/index.html/content/kyanite-e2e-tests/pages/button::editor'
     );
 
     cy.getByTestId(paths.button)
@@ -115,7 +115,7 @@ describe('Button component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/kyanite-tests/pages/button/jcr:content/pagecontainer/button.infinity.json'
+        '/content/kyanite-e2e-tests/pages/button/jcr:content/pagecontainer/button.infinity.json'
     )
     .its('body')
     .should('deep.eq',
@@ -151,7 +151,7 @@ describe('Button component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/kyanite-tests/pages/button::editor'
+        '/apps/websight/index.html/content/kyanite-e2e-tests/pages/button::editor'
     );
 
     cy.getByTestId(paths.anchor)
@@ -184,7 +184,7 @@ describe('Button component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/kyanite-tests/pages/button/jcr:content/pagecontainer/anchor.json'
+        '/content/kyanite-e2e-tests/pages/button/jcr:content/pagecontainer/anchor.json'
     )
     .its('body')
     .should('deep.eq',

@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  level: 'ComponentOverlay_/content/kyanite-tests/pages/level/jcr:content/pagecontainer/level_3'
+  level: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/level/jcr:content/pagecontainer/level_3'
 };
 
 describe('Level component', function () {
@@ -26,8 +26,7 @@ describe('Level component', function () {
   });
 
   it('renders correctly in preview mode', function () {
-    cy.visit('/content/kyanite-tests/pages/level.html');
-    cy.percySnapshotPreview('Level preview');
+    cy.visit('/content/kyanite-e2e-tests/pages/level.html');
 
     cy.contains('Search').click();
     cy.contains('Kyanite').should('be.visible');
@@ -40,14 +39,11 @@ describe('Level component', function () {
     ).as('saveProperties');
 
     cy.visit(
-      '/apps/websight/index.html/content/kyanite-tests/pages/level::editor'
+      '/apps/websight/index.html/content/kyanite-e2e-tests/pages/level::editor'
     );
 
-
-    cy.percySnapshotPageEditor('Level editor');
-
     cy.request(
-      '/content/kyanite-tests/pages/level/jcr:content/pagecontainer/level_2.json'
+      '/content/kyanite-e2e-tests/pages/level/jcr:content/pagecontainer/level_2.json'
     )
       .its('body')
       .should('deep.eq', {
@@ -56,7 +52,7 @@ describe('Level component', function () {
       });
 
     cy.request(
-        '/content/kyanite-tests/pages/level/jcr:content/pagecontainer/level_3_1.json'
+        '/content/kyanite-e2e-tests/pages/level/jcr:content/pagecontainer/level_3_1.json'
     )
     .its('body')
     .should('deep.eq', {
