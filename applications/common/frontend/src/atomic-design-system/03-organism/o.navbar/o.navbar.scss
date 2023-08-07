@@ -43,18 +43,18 @@
 
   .navbar-item:not(.navbar-dropdown a.navbar-item):last-of-type {
     @include breakpoint.media-breakpoint-large {
-      padding: map.get(spacing.$spacing-values, '1')
-        map.get(spacing.$spacing-values, '0')
-        map.get(spacing.$spacing-values, '1')
-        map.get(spacing.$spacing-values, '0');
+      padding: #{var(--spacing-1)} 
+        #{var(--spacing-0)} 
+        #{var(--spacing-1)} 
+        #{var(--spacing-0)};
     }
   }
 
   .navbar-brand {
-    padding-left: map.get(spacing.$spacing-values, '4');
+    padding-left: #{var(--spacing-4)};
     align-items: center;
     @include breakpoint.media-breakpoint-large {
-      padding-left: map.get(spacing.$spacing-values, '0');
+      padding-left: 0;
     }
 
     img {
@@ -64,12 +64,12 @@
     .navbar-item {
       @extend .px-0;
 
-      padding-top: #{var(--spacing-value-0)};
-      padding-bottom: #{var(--spacing-value-0)};
+      padding-top: #{var(--spacing-0)};
+      padding-bottom: #{var(--spacing-0)};
 
       @include breakpoint.media-breakpoint-large {
-        padding-top: #{var(--spacing-value-1)};
-        padding-bottom: #{var(--spacing-value-1)};
+        padding-top: #{var(--spacing-1)};
+        padding-bottom: #{var(--spacing-1)};
       }
 
       &:hover {
@@ -85,24 +85,24 @@
   }
 
   .navbar-menu {
-    padding-left: #{var(--spacing-value-4)};
-    padding-right: #{var(--spacing-value-4)};
-    padding-bottom: #{var(--spacing-value-4)};
+    padding-left: #{var(--spacing-4)};
+    padding-right: #{var(--spacing-4)};
+    padding-bottom: #{var(--spacing-4)};
 
     @include breakpoint.media-breakpoint-large {
-      padding-bottom: #{var(--spacing-value-0)};
+      padding-bottom: #{var(--spacing-0)};
     }
 
     .navbar-end,
     .navbar-start {
       display: flex;
       flex-direction: column;
-      gap: #{var(--spacing-value-0)};
+      gap: #{var(--spacing-0)};
 
       @include breakpoint.media-breakpoint-large {
         flex-direction: row;
         align-items: baseline;
-        gap: #{var(--spacing-value-6)};
+        gap: #{var(--spacing-6)};
       }
     }
 
@@ -111,7 +111,7 @@
       @include breakpoint.media-breakpoint-large {
         @include link.a-animated-underline-link;
 
-        padding: #{var(--spacing-value-0)};
+        padding: #{var(--spacing-0)};
 
         &:hover {
           background-color: unset !important; // override Bulma complex selector
@@ -164,20 +164,20 @@
           @extend .mr-1;
         }
         @include breakpoint.media-breakpoint-large {
-          padding-left: #{var(--spacing-value-0)};
-          padding-right: #{var(--spacing-value-0)} !important; // overwrite above @extend .pr-3
+          padding-left: #{var(--spacing-0)};
+          padding-right: #{var(--spacing-0)} !important; // overwrite above @extend .pr-3
         }
       }
     }
 
     .button {
-      height: #{var(--spacing-value-5_2)};
+      height: #{var(--spacing-5_2)};
       @extend .mt-2;
       font-size: #{var(--font-size-14)};
       font-weight: #{var(--font-weight-600)};
 
       @include breakpoint.media-breakpoint-large {
-        margin-top: #{var(--spacing-value-0)} !important; // overwrite above @extend .mt-2
+        margin-top: #{var(--spacing-0)} !important; // overwrite above @extend .mt-2
       }
     }
   }

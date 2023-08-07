@@ -23,7 +23,7 @@
 @use 'src/atomic-design-system/00-token/t.color' as color;
 
 .a-content {
-  line-height: 150%;
+  line-height: #{var(--line-height-150)};
   letter-spacing: default;
 
   &-xs {
@@ -31,7 +31,7 @@
   }
 
   &-sm {
-    line-height: 155%;
+    line-height: #{var(--line-height-155)};
     font-size: #{var(--font-size-14)};
   }
 
@@ -40,25 +40,11 @@
   }
 
   &-lg {
-    font-size: 1.125rem;
-
-    @media (min-width: 768px) {
-        font-size: calc(18px + (20 - 18) * ((100vw - 768px) / (1408 - 768)));
-    }
-    @media (min-width: 1408px) {
-        font-size: 1.25rem;
-    }
+    @include font.t-font-size-fluid(18, 20);
   }
 
   &-xl {
-    font-size: 1.25rem;
+    @include font.t-font-size-fluid(20, 24);
 
-    @media (min-width: 768px) {
-        font-size: calc(20px + (24 - 20) * ((100vw - 768px) / (1408 - 768)));
-    }
-    
-    @media (min-width: 1408px) {
-      font-size: 1.5rem;
-    }
   }
 }

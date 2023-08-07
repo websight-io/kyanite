@@ -16,8 +16,6 @@
  * -->
  */
 
-@use 'sass:map';
-
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/atomic-design-system/00-token/t.font' as font;
 @use 'src/atomic-design-system/00-token/t.color' as color;
@@ -35,80 +33,32 @@
   letter-spacing: default;
 
   &-1 {
-    line-height: 100%;
-    font-size: 3.5rem;
-  
-    @media (min-width: 768px) {
-      font-size: calc(56px + (128 - 56) * ((100vw - 768px) / (1408 - 768)));
-    }
-    
-    @media (min-width: 1408px) {
-      font-size: 8rem;
-    }
+    line-height: #{var(--line-height-100)};
+    @include font.t-font-size-fluid(56, 128);
   }
 
   &-2 {
-    line-height: 150%;
-    font-size: 2.5rem;
-
-    @media (min-width: 768px) {
-      font-size: calc(40px + (80 - 40) * ((100vw - 768px) / (1408 - 768)));
-    }
-
-    @media (min-width: 1408px) {
-      font-size: 5rem;
-    }
+    line-height: #{var(--line-height-150)};
+    @include font.t-font-size-fluid(40, 80);
   }
 
   &-3 {
-    line-height: 150%;
-    font-size: 2rem;
-    
-    @media (min-width: 768px) {
-      font-size: calc(32px + (64 - 32) * ((100vw - 768px) / (1408 - 768)));
-    }
-
-    @media (min-width: 1408px) {
-      font-size: 4rem;
-    }
+    line-height: #{var(--line-height-150)};
+    @include font.t-font-size-fluid(32, 64);
   }
 
   &-4 {
-    line-height: 150%;
-    font-size: 1.75rem;
-
-    @media (min-width: 768px) {
-      font-size: calc(28px + (48 - 28) * ((100vw - 768px) / (1408 - 768)));
-    }
-
-    @media (min-width: 1408px) {
-      font-size: 3rem;
-    }
+    line-height: #{var(--line-height-150)};
+    @include font.t-font-size-fluid(28, 48);
   }
 
   &-5 {
-    line-height: 150%;
-    font-size: 1.5rem;
-
-    @media (min-width: 768px) {
-      font-size: calc(24px + (40 - 24) * ((100vw - 768px) / (1408 - 768)));
-    }
-
-    @media (min-width: 1408px) {
-      font-size: 2.5rem;
-    }
+    line-height: #{var(--line-height-150)};
+    @include font.t-font-size-fluid(24, 40);
   }
 
   &-6 {
-    line-height: 150%;
-    font-size: 1.375rem;
-
-    @media (min-width: 768px) {
-      font-size: calc(22px + (32 - 22) * ((100vw - 768px) / (1408 - 768)));
-    }
-
-    @media (min-width: 1408px) {
-      font-size: 2rem;
-    }
+    line-height: #{var(--line-height-150)};
+    @include font.t-font-size-fluid(22, 32);
   }
 }

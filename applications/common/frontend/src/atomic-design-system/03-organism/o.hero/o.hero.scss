@@ -34,11 +34,11 @@
 
     // currently designs show only medium hero component
     // for now force the same horizontal padding like on medium hero component
-    padding-left: #{var(--spacing-value-5)} !important;
-    padding-right: #{var(--spacing-value-5)} !important;
+    padding-left: #{var(--spacing-5)} !important;
+    padding-right: #{var(--spacing-5)} !important;
     @include breakpoint.media-breakpoint-large {
-      padding-left: #{var(--spacing-value-6)} !important;
-      padding-right: #{var(--spacing-value-6)} !important;
+      padding-left: #{var(--spacing-6)} !important;
+      padding-right: #{var(--spacing-6)} !important;
     }
 
     display: flex;
@@ -47,7 +47,7 @@
 
     .container {
       @include breakpoint.media-breakpoint-large {
-        row-gap: #{var(--spacing-value-6_3)};
+        row-gap: #{var(--spacing-6_3)};
       }
 
       *:not(.eyebrow) {
@@ -63,12 +63,19 @@
 
 @mixin o-hero-medium {
   .hero-body {
-    padding-top: #{var(--spacing-value-6_3)};
-    padding-bottom: #{var(--spacing-value-6_3)};
+    /* TODO: Determine what values for padding-top and padding-bottom the hero banner should have when size is specified as medium.
+     * According to designs on medium (tablet resolution) we should have padding-top and padding-bottom equal 3rem = --spacing-6.
+     * Currently on producion mentioned paddings have 5rem value (--spacing-6_3)
+     * 
+     * padding-top: #{var(--spacing-6)};
+     * padding-bottom: #{var(--spacing-6)};
+     */
+    padding-top: #{var(--spacing-6_3)};
+    padding-bottom: #{var(--spacing-6_3)};
 
     @include breakpoint.media-breakpoint-large {
-      padding-top: #{var(--spacing-value-8)};
-      padding-bottom: #{var(--spacing-value-8)};
+      padding-top: #{var(--spacing-6_3)};
+      padding-bottom: #{var(--spacing-6_3)};
     }
   }
 }

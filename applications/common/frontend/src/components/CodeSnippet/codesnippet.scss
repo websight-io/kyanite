@@ -65,7 +65,7 @@
   > .code-snippet__icon {
     /* Positioning */
     position: absolute;
-    right: #{var(--spacing-value-2)};
+    right: #{var(--spacing-2)};
     z-index: $z-index-code-snippet-copy;
 
     /* Display & Box Model */
@@ -74,7 +74,7 @@
     align-items: center;
 
     // `margin` instead of `top` used as height of `__file-name` is dynamic
-    margin-top: #{var(--spacing-value-4)};
+    margin-top: #{var(--spacing-4)};
 
     /* Color */
     color: #{var(--color-grey--900)};
@@ -103,14 +103,14 @@
 
     /* Positioning */
     position: absolute;
-    top: #{var(--spacing-value-0)};
+    top: #{var(--spacing-0)};
 
     // 5px = 0.313rem ('1_1') is a distance between tooltip and end of tooltip arrow.
-    left: calc(50% - #{var(--spacing-value-1_1)});
+    left: calc(50% - #{var(--spacing-1_1)});
 
     /* Display & Box Model */
     display: block;
-    padding: #{var(--spacing-value-1_1)};
+    padding: #{var(--spacing-1_1)};
     visibility: hidden;
     opacity: 0;
     z-index: #{var(--z-index-tooltip)};
@@ -121,7 +121,7 @@
 
     // 16px = 1rem ('4') is a distance between edge of the tooltip and  endge of the icon container.
     transform: translateX(
-      calc(-100% - #{var(--spacing-value-4)})
+      calc(-100% - #{var(--spacing-4)})
     );
 
     /* Colors */
@@ -140,20 +140,20 @@
       /* Positioning */
       position: absolute;
       top: 50%;
-      bottom: #{var(--spacing-value-0)};
+      bottom: #{var(--spacing-0)};
 
       // 32px = 2rem ('5_2') is width of the icon container
-      left: calc(100% - #{var(--spacing-value-5_2)});
+      left: calc(100% - #{var(--spacing-5_2)});
 
       /* Display & Box Model */
       display: block;
-      width: #{var(--spacing-value-4)};
-      height: #{var(--spacing-value-4)};
+      width: #{var(--spacing-4)};
+      height: #{var(--spacing-4)};
       z-index: #{var(--z-index-tooltip)};
 
       // 5px = 0.313rem ('1_1') is a distance between tooltip and end of tooltip arrow.
       transform: translate(
-          calc(100% + #{var(--spacing-value-1_1)}),
+          calc(100% + #{var(--spacing-1_1)}),
           -50%
         )
         rotate(45deg);

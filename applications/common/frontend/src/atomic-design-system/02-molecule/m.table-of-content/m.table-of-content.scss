@@ -48,7 +48,7 @@
       a {
         @include link.a-animated-underline-link;
         color: #{var(--color-grey--900)} !important;
-        line-height: 150%;
+        line-height: #{var(--line-height-150)};
       }
     }
   }

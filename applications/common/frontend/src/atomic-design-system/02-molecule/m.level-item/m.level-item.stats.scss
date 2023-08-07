@@ -56,16 +56,16 @@
   @include breakpoint.media-breakpoint-medium {
     .container {
       > .title {
-        margin-bottom: #{var(--spacing-value-5_2)} !important; // overwriting bulma class (above @extend)
+        margin-bottom: #{var(--spacing-5_2)} !important; // overwriting bulma class (above @extend)
       }
 
       > .content {
         &:first-of-type {
-          margin-bottom: #{var(--spacing-value-4)} !important; // overwriting bulma class (above @extend)
+          margin-bottom: #{var(--spacing-4)} !important; // overwriting bulma class (above @extend)
         }
 
         &:last-of-type {
-          margin-bottom: #{var(--spacing-value-4)} !important; // overwriting bulma class (above @extend)
+          margin-bottom: #{var(--spacing-4)} !important; // overwriting bulma class (above @extend)
         }
       }
     }

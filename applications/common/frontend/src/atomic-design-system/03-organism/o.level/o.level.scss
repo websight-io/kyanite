@@ -21,9 +21,9 @@
 @use 'src/bulma-overwrite/variables' as spacing;
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 
-$gap: #{var(--spacing-value-6)};
-$paddingTopBottomMobile: #{var(--spacing-value-5_2)};
-$paddingTopBottom: #{var(--spacing-value-5_4)};
+$gap: #{var(--spacing-6)};
+$paddingTopBottomMobile: #{var(--spacing-5_2)};
+$paddingTopBottom: #{var(--spacing-5_4)};
 
 @mixin o-level {
   // fluid
@@ -82,7 +82,7 @@ $paddingTopBottom: #{var(--spacing-value-5_4)};
   @include breakpoint.media-breakpoint-min-width(
     map.get(breakpoint.$map_t-breakpoints-px, 'large')
   ) {
-    padding: $paddingTopBottom #{var(--spacing-value-6_4)};
+    padding: $paddingTopBottom #{var(--spacing-6_4)};
 
     &:not(.level-with-gaps) .level-item {
       flex: initial;
@@ -103,7 +103,7 @@ $paddingTopBottom: #{var(--spacing-value-5_4)};
   @include breakpoint.media-breakpoint-min-width(
     map.get(breakpoint.$map_t-breakpoints-px, 'maximum')
   ) {
-    padding: $paddingTopBottom #{var(--spacing-value-6)};
+    padding: $paddingTopBottom #{var(--spacing-6)};
 
     &:not(.level-with-gaps) .level-item {
       max-width: 480px;

@@ -30,7 +30,7 @@
 
 :root {
     // Borders from: src/atomic-design-system/00-token/t.border
-    @include add-css-variables(borders.$map_t-border-radius, border-weight);
+    @include add-css-variables(borders.$map_t-border-weight, border-weight);
     @include add-css-variables(borders.$map_t-border-radius, border-radius);
 
     // Breakpoints from: src/atomic-design-system/00-token/t.breakpoint
@@ -52,5 +52,5 @@
      @include add-css-variables(zindex.$map_t-z-index, z-index);
 
     // Bulma overwited variables from: src/bulma-overwrite/variables
-    @include add-css-variables(variables.$spacing-values, spacing-value);
+    @include add-css-variables(variables.$spacing-values, spacing);
  }

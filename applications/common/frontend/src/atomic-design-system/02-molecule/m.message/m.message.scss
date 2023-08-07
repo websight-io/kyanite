@@ -19,11 +19,10 @@
 @use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/atomic-design-system/00-token/t.border';
 
-//$message-variants: ('primary', 'link', 'info', 'success', 'warning', 'danger');
 
 @mixin m-message {
   // "None" variant, base for the other variants
-  border-color: #{var(--color-gray--400)} !important;
+  border-color: #{var(--color-grey--400)} !important;
   border-left: #{var(--border-weight-3)} solid;
   border-radius: #{var(--border-radius-2)};
 

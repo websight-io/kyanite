@@ -16,8 +16,6 @@
  * -->
  */
 
-@use 'sass:map';
-
 $value_t-font__fallback:
     // MacOS/iOS
   'BlinkMacSystemFont', -apple-system,
@@ -40,17 +38,3 @@ $value_t-font__BeVietnamPro: 'Be Vietnam Pro', $value_t-font__fallback;
 $map_t-fonts: (
   'BeVietnamPro': $value_t-font__BeVietnamPro,
 );
-
-/* When adding new font uncomment, define your font in `$map_t-fonts` and CSS class and SCSS mixin will be created */
-// @mixin t-font-family($name) {
-//     font-family: map.get($map_t-fonts, $name) !important /* !important used as in Bulma */;
-// }
-
-// .t-font-family {
-//     @each $name in $map_t-fonts {
-//         // i.e. `.t-font-family--BeVietnamPro`
-//         &--#{$name} {
-//             @include t-font-family($name);
-//         }
-//     }
-// }
