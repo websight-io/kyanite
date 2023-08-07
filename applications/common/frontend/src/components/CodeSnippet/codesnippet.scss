@@ -44,7 +44,7 @@
     font-weight: var(--font-weight-700);
     color: var(--color-grey--900) !important;
 
-    background-color: #{var(--base-color-background)};
+    background-color: var(--base-color-background);
     word-wrap: break-word;
   }
 
