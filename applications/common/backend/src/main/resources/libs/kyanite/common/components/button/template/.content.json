@@ -6,6 +6,7 @@
   "variant": "is-primary",
   "openModal": "open-modal",
   "showIconLeft": false,
+  "isMailto": "false",
   "showIconRight": false,
   "leftIcon": {
     "selectOrType": "select",

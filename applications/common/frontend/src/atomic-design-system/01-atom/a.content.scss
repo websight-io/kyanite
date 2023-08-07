@@ -26,6 +26,10 @@
   line-height: #{var(--line-height-150)};
   letter-spacing: default;
 
+  strong {
+    color: unset;
+  }
+
   &-xs {
     font-size: #{var(--font-size-12)};
   }

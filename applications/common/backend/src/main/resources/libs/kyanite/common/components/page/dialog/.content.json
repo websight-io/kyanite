@@ -1,9 +1,9 @@
 {
   "tabs": {
     "generalTab": {
-      "pageBackground": {
+      "background": {
         "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "pageBackground",
+        "name": "background",
         "label": "Background",
         "nobackground": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",

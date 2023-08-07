@@ -17,45 +17,41 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.CardComponent">
-  <div data-sly-unwrap="${!wcmmode.isEdit}" style="min-width: 125px; min-height: 50px">
-    <div class="card ${model.heightVariant}">
+  <div class="card ${model.heightVariant}">
+    <sly data-sly-test="${model.header}">
+      <header class="card-header">
+        <p class="card-header-title">${model.header}</p>
+      </header>
+    </sly>
 
-      <sly data-sly-test="${model.header}">
-        <header class="card-header">
-          <p class="card-header-title">
-            ${model.header}
-          </p>
-        </header>
-      </sly>
+    <sly data-sly-test="${model.image.assetReference}">
+      <div class="card-image">
+        <figure class="image ${model.image.style}">
+          <img src="${model.image.assetReference}" alt="${model.image.alt}" />
+        </figure>
+      </div>
+    </sly>
 
-      <sly data-sly-test="${model.image.assetReference}">
-        <div class="card-image">
-          <figure class="image ${model.image.style}">
-            <img src="${model.image.assetReference}" alt="${model.image.alt}">
-          </figure>
-        </div>
-      </sly>
-
-      <sly data-sly-test="${model.content}">
-        <div class="card-content">
-          <sly data-sly-test="${resource.hasChildren}">
-            <sly data-sly-list="${resource.children}">
-              <sly data-sly-test="${item.resourceType == 'kyanite/common/components/card/cardcontent'}">
-                <sly data-sly-resource="${item}"></sly>
-              </sly>
+    <sly data-sly-test="${model.content}">
+      <div class="card-content">
+        <sly data-sly-test="${resource.hasChildren}">
+          <sly data-sly-list="${resource.children}">
+            <sly
+              data-sly-test="${item.resourceType == 'kyanite/common/components/card/cardcontent'}"
+            >
+              <sly data-sly-resource="${item}"></sly>
             </sly>
           </sly>
-        </div>
-      </sly>
-
-      <footer class="card-footer">
-        <sly data-sly-list.url="${model.urls}">
-          <sly data-sly-test="${url.label}">
-            <a href="${url.address}" class="card-footer-item">${url.label}</a>
-          </sly>
         </sly>
-      </footer>
+      </div>
+    </sly>
 
-    </div>
+    <footer class="card-footer">
+      <sly data-sly-list.url="${model.urls}">
+        <sly data-sly-test="${url.label}">
+          <a href="${url.address}" class="card-footer-item">${url.label}</a>
+        </sly>
+      </sly>
+    </footer>
   </div>
 </sly>
