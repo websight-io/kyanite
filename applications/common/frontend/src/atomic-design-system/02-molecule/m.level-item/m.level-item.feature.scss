@@ -24,7 +24,7 @@
 
 @mixin m-level-item-feature {
   > .container {
-    margin: var(--spacing-0);
+    margin: 0;
 
     > .image {
       &:first-of-type {
@@ -34,7 +34,7 @@
     }
 
     > .content {
-      margin: var(--spacing-0);
+      margin: 0;
 
       &:not(:last-child) {
         @extend .pb-2;

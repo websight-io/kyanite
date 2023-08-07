@@ -16,18 +16,7 @@
  * -->
  */
 
-@use 'sass:map';
 @use 'src/atomic-design-system/00-token/t.color' as colors;
-
-/* Text */
-// @each $id in colors.$map_t-color-ids {
-//   @each $shade in colors.$map_t-color-shades {
-//     // i.e. `.has-text-primary-100`
-//     .has-text-#{$id}-#{$shade} {
-//       @include colors.t-color(#{$id}, #{$shade});
-//     }
-//   }
-// }
 
 .has-text {
   &-primary,
@@ -102,16 +91,6 @@
   }
 }
 
-/* Background */
-// @each $id in colors.$map_t-color-ids {
-//   @each $shade in colors.$map_t-color-shades {
-//     // i.e. `.has-background-primary-100`
-//     .has-background-#{$id}-#{$shade} {
-//       @include colors.t-background-color(#{$id}, #{$shade});
-//     }
-//   }
-// }
-
 .has-background {
   &-primary,
   &-link {
@@ -185,12 +164,3 @@
   }
 }
 
-/* Border */
-// @each $id in colors.$map_t-color-ids {
-//   @each $shade in colors.$map_t-color-shades {
-//     // i.e. `.has-border-primary-100`
-//     .has-border-#{$id}-#{$shade} {
-//       @include colors.t-border-color(#{$id}, #{$shade});
-//     }
-//   }
-// }

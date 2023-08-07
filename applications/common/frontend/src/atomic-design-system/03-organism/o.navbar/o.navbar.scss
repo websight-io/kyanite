@@ -44,9 +44,9 @@
   .navbar-item:not(.navbar-dropdown a.navbar-item):last-of-type {
     @include breakpoint.media-breakpoint-large {
       padding: var(--spacing-1) 
-        var(--spacing-0) 
+        0 
         var(--spacing-1) 
-        var(--spacing-0);
+        0;
     }
   }
 
@@ -64,8 +64,8 @@
     .navbar-item {
       @extend .px-0;
 
-      padding-top: var(--spacing-0);
-      padding-bottom: var(--spacing-0);
+      padding-top: 0;
+      padding-bottom: 0;
 
       @include breakpoint.media-breakpoint-large {
         padding-top: var(--spacing-1);
@@ -90,14 +90,14 @@
     padding-bottom: var(--spacing-4);
 
     @include breakpoint.media-breakpoint-large {
-      padding-bottom: var(--spacing-0);
+      padding-bottom: 0;
     }
 
     .navbar-end,
     .navbar-start {
       display: flex;
       flex-direction: column;
-      gap: var(--spacing-0);
+      gap: 0;
 
       @include breakpoint.media-breakpoint-large {
         flex-direction: row;
@@ -111,7 +111,7 @@
       @include breakpoint.media-breakpoint-large {
         @include link.a-animated-underline-link;
 
-        padding: var(--spacing-0);
+        padding: 0;
 
         &:hover {
           background-color: unset !important; // override Bulma complex selector
@@ -164,8 +164,8 @@
           @extend .mr-1;
         }
         @include breakpoint.media-breakpoint-large {
-          padding-left: var(--spacing-0);
-          padding-right: var(--spacing-0) !important; // overwrite above @extend .pr-3
+          padding-left: 0;
+          padding-right: 0 !important; // overwrite above @extend .pr-3
         }
       }
     }
@@ -177,7 +177,7 @@
       font-weight: var(--font-weight-600);
 
       @include breakpoint.media-breakpoint-large {
-        margin-top: var(--spacing-0) !important; // overwrite above @extend .mt-2
+        margin-top: 0 !important; // overwrite above @extend .mt-2
       }
     }
   }

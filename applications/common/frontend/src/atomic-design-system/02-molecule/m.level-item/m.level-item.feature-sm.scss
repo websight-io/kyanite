@@ -29,7 +29,7 @@
   }
 
   > .container {
-    margin: var(--spacing-0);
+    margin: 0;
 
     > .content {
       // assumption: 1 Content Component + below it optional 2 Content Component - and no more

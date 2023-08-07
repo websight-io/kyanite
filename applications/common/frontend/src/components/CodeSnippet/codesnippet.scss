@@ -103,7 +103,7 @@
 
     /* Positioning */
     position: absolute;
-    top: var(--spacing-0);
+    top: 0;
 
     // 5px = 0.313rem ('1_1') is a distance between tooltip and end of tooltip arrow.
     left: calc(50% - var(--spacing-1_1));
@@ -140,7 +140,7 @@
       /* Positioning */
       position: absolute;
       top: 50%;
-      bottom: var(--spacing-0);
+      bottom: 0;
 
       // 32px = 2rem ('5_2') is width of the icon container
       left: calc(100% - var(--spacing-5_2));

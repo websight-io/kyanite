@@ -42,11 +42,11 @@
 
     @include breakpoint.media-breakpoint-medium {
       display: block;
-      margin: var(--spacing-0); // center - remove
+      margin: 0; // center - remove
     }
 
     &.is-3by1 {
-      padding-top: var(--spacing-0);
+      padding-top: 0;
     }
 
     img {
@@ -83,7 +83,7 @@
   .column:not(:last-of-type) {
     @extend .mb-6;
     @include breakpoint.media-breakpoint-medium {
-      margin-bottom: var(--spacing-0);
+      margin-bottom: 0;
     }
   }
 

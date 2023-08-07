@@ -58,28 +58,10 @@
   &-5 {
     line-height: var(--line-height-150);
     @include font.t-font-size-fluid(24, 40);
-    // font-size: 1.5rem;
-
-    // @media (min-width: 768px) {
-    //   font-size: calc(24px + (40 - 24) * ((100vw - 768px) / (1408 - 768)));
-    // }
-
-    // @media (min-width: 1408px) {
-    //   font-size: 2.5rem;
-    // }
   }
 
   &-6 {
     line-height: var(--line-height-150);
     @include font.t-font-size-fluid(22, 32);
-    // font-size: 1.375rem;
-
-    // @media (min-width: 768px) {
-    //   font-size: calc(22px + (32 - 22) * ((100vw - 768px) / (1408 - 768)));
-    // }
-
-    // @media (min-width: 1408px) {
-    //   font-size: 2rem;
-    // }
   }
 }
