@@ -30,7 +30,10 @@
 // }
 
 .has-text {
-  &-primary,
+  &-primary {
+    color: var(--color-primary--600) !important;
+  }
+
   &-link {
     &-light {
       color: var(--color-primary--500) !important; /* !important used as in Bulma */
@@ -62,6 +65,8 @@
   }
 
   &-info {
+    color: var(--color-info--600) !important;
+
     &-light {
       color: var(--color-info--500) !important; /* !important used as in Bulma */
     }
@@ -72,6 +77,8 @@
   }
 
   &-success {
+    color: var(--color-success--600) !important;
+
     &-light {
       color: var(--color-success--500) !important; /* !important used as in Bulma */
     }
@@ -82,6 +89,8 @@
   }
 
   &-warning {
+    color: var(--color-warning--600) !important;
+
     &-light {
       color: var(--color-warning--500) !important; /* !important used as in Bulma */
     }
@@ -92,6 +101,8 @@
   }
 
   &-danger {
+    color: var(--color-danger--600) !important;
+
     &-light {
       color: var(--color-danger--500) !important; /* !important used as in Bulma */
     }
@@ -113,14 +124,19 @@
 // }
 
 .has-background {
-  &-primary,
+  &-primary {
+    background-color: var(--color-primary--600) !important; /* !important used as in Bulma */
+  }
+
   &-link {
+    background-color: var(--color-link--600) !important; /* !important used as in Bulma */
+
     &-light {
-      background-color: var(--color-primary--500) !important; /* !important used as in Bulma */
+      background-color: var(--color-link--500) !important; /* !important used as in Bulma */
     }
 
     &-dark {
-      background-color: var(--color-primary--700) !important; /* !important used as in Bulma */
+      background-color: var(--color-link--700) !important; /* !important used as in Bulma */
     }
   }
 
@@ -145,6 +161,8 @@
   }
 
   &-info {
+    background-color: var(--color-info--600) !important; /* !important used as in Bulma */
+
     &-light {
       background-color: var(--color-info--500) !important; /* !important used as in Bulma */
     }
@@ -155,6 +173,8 @@
   }
 
   &-success {
+    background-color: var(--color-success--600) !important; /* !important used as in Bulma */
+
     &-light {
       background-color: var(--color-success--500) !important; /* !important used as in Bulma */
     }
@@ -165,6 +185,8 @@
   }
 
   &-warning {
+    background-color: var(--color-warning--600) !important; /* !important used as in Bulma */
+
     &-light {
       background-color: var(--color-warning--500) !important; /* !important used as in Bulma */
     }
@@ -175,6 +197,8 @@
   }
 
   &-danger {
+    background-color: var(--color-danger--600) !important; /* !important used as in Bulma */
+
     &-light {
       background-color: var(--color-danger--500) !important; /* !important used as in Bulma */
     }
