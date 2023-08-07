@@ -21,17 +21,17 @@
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 
 .section > .container {
-  padding-bottom:  #{var(--spacing-5_4)};
+  padding-bottom:  var(--spacing-5_4);
 
   @include breakpoint.media-breakpoint-medium {
-    padding-bottom:  #{var(--spacing-6)};
+    padding-bottom:  var(--spacing-6);
   }
 
   @include breakpoint.media-breakpoint-large {
-    padding-bottom:  #{var(--spacing-6_3)};
+    padding-bottom:  var(--spacing-6_3);
   }
 
   &:last-child {
-    padding-bottom:  #{var(--spacing-0)};
+    padding-bottom:  var(--spacing-0);
   }
 }

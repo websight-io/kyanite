@@ -23,9 +23,9 @@
 
 .navbar-link:not(.is-arrowless)::after,
 .select:not(.is-multiple, .is-loading)::after {
-  border-bottom: #{var(--border-weight-2)} solid;
-  border-left: #{var(--border-weight-2)} solid;
+  border-bottom: var(--border-weight-2) solid;
+  border-left: var(--border-weight-2) solid;
 
-  border-color: #{var(--color-grey--900)};
+  border-color: var(--color-grey--900);
   border-radius: 1px;
 }

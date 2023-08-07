@@ -31,8 +31,8 @@
   @extend .px-6_2;
   @extend .py-5_3;
 
-  border-top: #{var(--border-weight-1)} solid;
-  border-color: #{var(--color-primary--600)} !important;
+  border-top: var(--border-weight-1) solid;
+  border-color: var(--color-primary--600) !important;
 
   > .id {
     @extend .t-gap-5;
@@ -47,17 +47,17 @@
     .name {
       @extend .m-0;
 
-      font-size: #{var(--font-size-24)};
-      font-weight: #{var(--font-weight-600)};
-      color: #{var(--color-grey--900)} !important;
+      font-size: var(--font-size-24);
+      font-weight: var(--font-weight-600);
+      color: var(--color-grey--900) !important;
     }
 
     .role {
       @extend .m-0;
       @extend .mt-1_2;
 
-      font-weight: #{var(--font-weight-600)};
-      color: #{var(--color-primary--600)} !important;
+      font-weight: var(--font-weight-600);
+      color: var(--color-primary--600) !important;
     }
   }
 
@@ -65,7 +65,7 @@
     @extend .mt-5_3;
     @extend .mb-0;
 
-    color: #{var(--color-grey--800)} !important;
+    color: var(--color-grey--800) !important;
   }
 
   // will be enabled with TODO https://teamds.atlassian.net/browse/WSIO-176
@@ -73,6 +73,6 @@
     @extend .a-link;
 
     @extend .mt-5_3;
-    font-weight: #{var(--font-weight-500)};
+    font-weight: var(--font-weight-500);
   }
 }

@@ -16,16 +16,18 @@
  * -->
  */
 
+@use 'sass:map';
+
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/atomic-design-system/00-token/t.font' as font;
 @use 'src/atomic-design-system/00-token/t.color' as color;
 
 .a-title {
-  font-weight: #{var(--font-weight-700)};
+  font-weight: var(--font-weight-700);
 }
 
 .a-subtitle {
-  font-weight: #{var(--font-weight-600)};
+  font-weight: var(--font-weight-600);
 }
 
 .a-title,
@@ -33,32 +35,51 @@
   letter-spacing: default;
 
   &-1 {
-    line-height: #{var(--line-height-100)};
+    line-height: var(--line-height-100);
     @include font.t-font-size-fluid(56, 128);
   }
 
   &-2 {
-    line-height: #{var(--line-height-150)};
+    line-height: var(--line-height-150);
     @include font.t-font-size-fluid(40, 80);
   }
 
   &-3 {
-    line-height: #{var(--line-height-150)};
+    line-height: var(--line-height-150);
     @include font.t-font-size-fluid(32, 64);
   }
 
   &-4 {
-    line-height: #{var(--line-height-150)};
+    line-height: var(--line-height-150);
     @include font.t-font-size-fluid(28, 48);
+
   }
 
   &-5 {
-    line-height: #{var(--line-height-150)};
+    line-height: var(--line-height-150);
     @include font.t-font-size-fluid(24, 40);
+    // font-size: 1.5rem;
+
+    // @media (min-width: 768px) {
+    //   font-size: calc(24px + (40 - 24) * ((100vw - 768px) / (1408 - 768)));
+    // }
+
+    // @media (min-width: 1408px) {
+    //   font-size: 2.5rem;
+    // }
   }
 
   &-6 {
-    line-height: #{var(--line-height-150)};
+    line-height: var(--line-height-150);
     @include font.t-font-size-fluid(22, 32);
+    // font-size: 1.375rem;
+
+    // @media (min-width: 768px) {
+    //   font-size: calc(22px + (32 - 22) * ((100vw - 768px) / (1408 - 768)));
+    // }
+
+    // @media (min-width: 1408px) {
+    //   font-size: 2rem;
+    // }
   }
 }
