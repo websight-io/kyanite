@@ -27,8 +27,7 @@ import pl.ds.kyanite.common.components.services.LibraryIconConfig;
 import pl.ds.kyanite.common.components.services.LibraryIconConfigStore;
 
 
-@Component(service = LibraryIconConfigStore.class,
-    configurationPolicy = ConfigurationPolicy.REQUIRE)
+@Component(service = LibraryIconConfigStore.class, immediate = true)
 public class LibraryIconConfigStoreImpl implements LibraryIconConfigStore {
 
   private List<LibraryIconConfig> configsList;
@@ -41,7 +40,6 @@ public class LibraryIconConfigStoreImpl implements LibraryIconConfigStore {
       configsList = new ArrayList<>();
     }
     configsList.add(config);
-
   }
 
   public synchronized void unbind(final LibraryIconConfig config) {

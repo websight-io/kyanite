@@ -23,7 +23,7 @@ import org.osgi.service.metatype.annotations.Designate;
 import pl.ds.kyanite.common.components.configurations.LibraryIconConfigOcd;
 import pl.ds.kyanite.common.components.services.LibraryIconConfig;
 
-@Component(service = LibraryIconConfigImpl.class)
+@Component(service = LibraryIconConfig.class)
 @Designate(ocd = LibraryIconConfigOcd.class, factory = true)
 public class LibraryIconConfigImpl implements LibraryIconConfig {
 
