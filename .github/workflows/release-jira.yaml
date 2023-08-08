@@ -1,0 +1,23 @@
+name: Sync Github and Jira release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  jira_release:
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create Jira Release
+        id: jira-release
+        uses: rodush/github-action-jira-release@v1
+        with:
+          project_id: 10233
+          project_key: "KYAN"
+        env:
+          JIRA_API_USER: ${{ secrets.ATLASSIAN_CLOUD_USER }}
+          JIRA_API_TOKEN: ${{ secrets.ATLASSIAN_CLOUD_APIKEY }}
+          ATLASSIAN_CLOUD_DOMAIN: ${{ secrets.ATLASSIAN_CLOUD_DOMAIN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
