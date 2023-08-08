@@ -26,6 +26,10 @@
   line-height: var(--line-height-150);
   letter-spacing: default;
 
+  code {
+    word-break: break-word;
+  }
+
   strong {
     color: unset;
   }
