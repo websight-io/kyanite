@@ -20,18 +20,28 @@
 @use 'src/bulma-overwrite/variables' as spacing;
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 
+.container {
+  padding-left: var(--spacing-2);
+  padding-right: var(--spacing-2);
+
+  @include breakpoint.media-breakpoint-large {
+    padding-left: var(--spacing-0);
+    padding-right: var(--spacing-0);
+  }
+}
+
 .section > .container {
-  padding-bottom: map.get(spacing.$spacing-values, '5_4');
+  padding-bottom:  var(--spacing-5_4);
 
   @include breakpoint.media-breakpoint-medium {
-    padding-bottom: map.get(spacing.$spacing-values, '6');
+    padding-bottom:  var(--spacing-6);
   }
 
   @include breakpoint.media-breakpoint-large {
-    padding-bottom: map.get(spacing.$spacing-values, '6_3');
+    padding-bottom:  var(--spacing-6_3);
   }
 
   &:last-child {
-    padding-bottom: map.get(spacing.$spacing-values, '0');
+    padding-bottom:  0;
   }
 }

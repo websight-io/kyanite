@@ -16,8 +16,6 @@
  * -->
  */
 
-@use 'sass:map';
-
 $map_t-font-weights: (
   'light': 300,
   'normal': 400,
@@ -30,19 +28,3 @@ $map_t-font-weights: (
   '600': 600,
   '700': 700,
 );
-
-@mixin t-font-weight($name) {
-  font-weight: map.get($map_t-font-weights, #{$name});
-}
-
-@each $name, $value in $map_t-font-weights {
-  // i.e. `.t-font-weight--normal`
-  .t-font-weight--#{$name} {
-    @include t-font-weight($name);
-  }
-
-  // i.e. `.t-font-weight--400`
-  .t-font-weight--#{$value} {
-    @include t-font-weight($value);
-  }
-}

@@ -27,7 +27,6 @@
 @use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/atomic-design-system/00-token/t.border' as border;
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
-@use 'src/atomic-design-system/00-token/t.zindex' as zindex;
 
 .code-snippet {
   $z-index-code-snippet: 0;
@@ -41,11 +40,11 @@
   &__file-name {
     @extend .p-2;
 
-    @extend .t-font-size--14;
-    @extend .t-font-weight--700;
-    @extend .t-color__grey--900;
+    font-size: var(--font-size-14);
+    font-weight: var(--font-weight-700);
+    color: var(--color-grey--900) !important;
 
-    background-color: variables.$code-background;
+    background-color: var(--base-color-background);
     word-wrap: break-word;
   }
 
@@ -53,20 +52,20 @@
   &__pre {
     @extend .p-0, .pr-6_1;
 
-    @extend .t-border-weight-top--1;
-    @extend .t-border-color__grey--300;
+    border-top: var(--border-weight-1) solid;
+    border-color: var(--color-grey--300) !important;
 
     > code {
       @extend .px-5;
 
-      background-color: variables.$code-background !important; // overwrite hljs (highlight.js)
+      background-color: var(--base-color-background) !important; // overwrite hljs (highlight.js)
     }
   }
 
   > .code-snippet__icon {
     /* Positioning */
     position: absolute;
-    right: map.get(spacing.$spacing-values, '2');
+    right: var(--spacing-2);
     z-index: $z-index-code-snippet-copy;
 
     /* Display & Box Model */
@@ -75,59 +74,59 @@
     align-items: center;
 
     // `margin` instead of `top` used as height of `__file-name` is dynamic
-    margin-top: map.get(spacing.$spacing-values, '4');
+    margin-top: var(--spacing-4);
 
     /* Color */
-    color: map.get(color.$map_t-color-by-id, 'grey--900');
+    color: var(--color-grey--900);
 
     /* Others */
     cursor: pointer;
 
     @include breakpoint.media-breakpoint-large {
-      color: map.get(color.$map_t-color-by-id, 'grey--300');
+      color: var(--color-grey--300);
     }
   }
 
   @include breakpoint.media-breakpoint-large {
     // icon - on container hover
     &:hover > .code-snippet__icon {
-      color: map.get(color.$map_t-color-by-id, 'grey--900');
+      color: var(--color-grey--900);
 
       &:hover {
-        color: map.get(color.$map_t-color-by-id, 'primary--600');
+        color: var(--color-primary--600);
       }
     }
   }
 
   .icon__message {
-    @extend .t-font-size--14;
+    font-size: var(--font-size-14);
 
     /* Positioning */
     position: absolute;
-    top: map.get(spacing.$spacing-values, '0');
+    top: 0;
 
     // 5px = 0.313rem ('1_1') is a distance between tooltip and end of tooltip arrow.
-    left: calc(50% - #{map.get(spacing.$spacing-values, '1_1')});
+    left: calc(50% - var(--spacing-1_1));
 
     /* Display & Box Model */
     display: block;
-    padding: map.get(spacing.$spacing-values, '1_1');
+    padding: var(--spacing-1_1);
     visibility: hidden;
     opacity: 0;
-    z-index: zindex.$z-index-tooltip;
-    border-radius: map.get(border.$map_t-border-radius, 2);
+    z-index: var(--z-index-tooltip);
+    border-radius: var(--border-radius-2);
 
     // fits text in 1 line, can not do 100% as it's just icons width, have to do it manually like that
     width: 170px;
 
     // 16px = 1rem ('4') is a distance between edge of the tooltip and  endge of the icon container.
     transform: translateX(
-      calc(-100% - #{map.get(spacing.$spacing-values, '4')})
+      calc(-100% - var(--spacing-4))
     );
 
     /* Colors */
-    background-color: map.get(color.$map_t-color-by-id, 'primary--600');
-    color: map.get(color.$map_t-color-by-id, 'primary--100');
+    background-color: var(--color-primary--600);
+    color: var(--color-primary--100);
 
     /* Text */
     text-align: center;
@@ -141,26 +140,26 @@
       /* Positioning */
       position: absolute;
       top: 50%;
-      bottom: map.get(spacing.$spacing-values, '0');
+      bottom: 0;
 
       // 32px = 2rem ('5_2') is width of the icon container
-      left: calc(100% - #{map.get(spacing.$spacing-values, '5_2')});
+      left: calc(100% - var(--spacing-5_2));
 
       /* Display & Box Model */
       display: block;
-      width: map.get(spacing.$spacing-values, '4');
-      height: map.get(spacing.$spacing-values, '4');
-      z-index: zindex.$z-index-tooltip;
+      width: var(--spacing-4);
+      height: var(--spacing-4);
+      z-index: var(--z-index-tooltip);
 
       // 5px = 0.313rem ('1_1') is a distance between tooltip and end of tooltip arrow.
       transform: translate(
-          calc(100% + #{map.get(spacing.$spacing-values, '1_1')}),
+          calc(100% + var(--spacing-1_1)),
           -50%
         )
         rotate(45deg);
 
       /* Colors */
-      background-color: map.get(color.$map_t-color-by-id, 'primary--600');
+      background-color: var(--color-primary--600);
 
       /* Others */
       content: ' ';
