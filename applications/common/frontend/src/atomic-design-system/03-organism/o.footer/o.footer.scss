@@ -24,7 +24,8 @@
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
 
 @mixin o-footer {
-  @extend .t-background-color__grey--1000;
+  background-color: var(--color-grey--1000) !important;
+
   @extend .py-6_4;
 
   text-align: center;
@@ -49,32 +50,32 @@
     }
 
     img {
-      width: map.get(spacing.$spacing-values, '6_2');
-      height: map.get(spacing.$spacing-values, '6_2');
+      width: var(--spacing-6_2);
+      height: var(--spacing-6_2);
       position: unset;
     }
   }
 
   .content,
   .content.has-text-grey-darker {
-    color: map.get(colors.$map_t-color-by-id, 'grey--100') !important;
+    color: var(--color-grey--100) !important;
 
     &.is-small {
       @extend .mt-5_1;
-      @extend .t-font-size--12;
+      font-size: var(--font-size-12);
     }
   }
 
   .icon {
-    @extend .t-color__grey--100;
+    color: var(--color-grey--100) !important;
 
     &:not(:last-of-type) {
-      margin-right: map.get(spacing.$spacing-values, '5');
+      margin-right: var(--spacing-5);
       @include breakpoint.media-breakpoint-medium {
-        margin-right: map.get(spacing.$spacing-values, '1_2');
+        margin-right: var(--spacing-1_2);
       }
       @include breakpoint.media-breakpoint-large {
-        margin-right: map.get(spacing.$spacing-values, '5');
+        margin-right: var(--spacing-5);
       }
     }
   }
@@ -93,8 +94,8 @@
     .menu-label {
       margin: 0;
       text-transform: unset;
-      @extend .t-color__grey--400;
-      @extend .t-font-size--16;
+      color: var(--color-grey--400) !important;
+      font-size: var(--font-size-16);
     }
 
     .menu-list {
@@ -106,7 +107,7 @@
       display: inline-block;
       @include link.a-animated-underline-link;
       @extend .p-0;
-      @extend .t-color__grey--100;
+      color: var(--color-grey--100) !important;
 
       &:hover {
         background-color: unset;

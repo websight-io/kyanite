@@ -16,143 +16,77 @@
  * -->
  */
 
-@use 'sass:map';
 @use 'src/atomic-design-system/00-token/t.color' as colors;
-
-/* Text */
-@each $id in colors.$map_t-color-ids {
-  @each $shade in colors.$map_t-color-shades {
-    // i.e. `.has-text-primary-100`
-    .has-text-#{$id}-#{$shade} {
-      @include colors.t-color(#{$id}, #{$shade});
-    }
-  }
-}
 
 .has-text {
   &-primary,
   &-link {
     &-light {
-      color: map.get(
-        colors.$map_t-color-by-id,
-        'primary--500'
-      ) !important; /* !important used as in Bulma */
+      color: var(--color-primary--500) !important; /* !important used as in Bulma */
     }
 
     &-dark {
-      color: map.get(
-        colors.$map_t-color-by-id,
-        'primary--700'
-      ) !important; /* !important used as in Bulma */
+      color: var(--color-primary--700) !important; /* !important used as in Bulma */
     }
   }
 
   &-grey {
-    color: map.get(
-      colors.$map_t-color-by-id,
-      'grey--600'
-    ) !important; /* !important used as in Bulma */
+    color: var(--color-grey--600) !important; /* !important used as in Bulma */
 
     &-light {
-      color: map.get(
-        colors.$map_t-color-by-id,
-        'grey--500'
-      ) !important; /* !important used as in Bulma */
+      color: var(--color-grey--500) !important; /* !important used as in Bulma */
     }
 
     &-lighter {
-      color: map.get(
-        colors.$map_t-color-by-id,
-        'grey--400'
-      ) !important; /* !important used as in Bulma */
+      color: var(--color-grey--400) !important; /* !important used as in Bulma */
     }
 
     &-dark {
-      color: map.get(
-        colors.$map_t-color-by-id,
-        'grey--700'
-      ) !important; /* !important used as in Bulma */
+      color: var(--color-grey--700) !important; /* !important used as in Bulma */
     }
 
     &-darker {
-      color: map.get(
-        colors.$map_t-color-by-id,
-        'grey--800'
-      ) !important; /* !important used as in Bulma */
+      color: var(--color-grey--800) !important; /* !important used as in Bulma */
     }
   }
 
   &-info {
     &-light {
-      color: map.get(
-        colors.$map_t-color-by-id,
-        'info--500'
-      ) !important; /* !important used as in Bulma */
+      color: var(--color-info--500) !important; /* !important used as in Bulma */
     }
 
     &-dark {
-      color: map.get(
-        colors.$map_t-color-by-id,
-        'info--700'
-      ) !important; /* !important used as in Bulma */
+      color: var(--color-info--700) !important; /* !important used as in Bulma */
     }
   }
 
   &-success {
     &-light {
-      color: map.get(
-        colors.$map_t-color-by-id,
-        'success--500'
-      ) !important; /* !important used as in Bulma */
+      color: var(--color-success--500) !important; /* !important used as in Bulma */
     }
 
     &-dark {
-      color: map.get(
-        colors.$map_t-color-by-id,
-        'success--700'
-      ) !important; /* !important used as in Bulma */
+      color: var(--color-success--700) !important; /* !important used as in Bulma */
     }
   }
 
   &-warning {
     &-light {
-      color: map.get(
-        colors.$map_t-color-by-id,
-        'warning--500'
-      ) !important; /* !important used as in Bulma */
+      color: var(--color-warning--500) !important; /* !important used as in Bulma */
     }
 
     &-dark {
-      color: map.get(
-        colors.$map_t-color-by-id,
-        'warning--700'
-      ) !important; /* !important used as in Bulma */
+      color: var(--color-warning--700) !important; /* !important used as in Bulma */
     }
   }
 
   &-danger {
     &-light {
-      color: map.get(
-        colors.$map_t-color-by-id,
-        'danger--500'
-      ) !important; /* !important used as in Bulma */
+      color: var(--color-danger--500) !important; /* !important used as in Bulma */
     }
 
     &-dark {
-      color: map.get(
-        colors.$map_t-color-by-id,
-        'danger--700'
-      ) !important; /* !important used as in Bulma */
-    }
-  }
-}
-
-/* Background */
-@each $id in colors.$map_t-color-ids {
-  @each $shade in colors.$map_t-color-shades {
-    // i.e. `.has-background-primary-100`
-    .has-background-#{$id}-#{$shade} {
-      @include colors.t-background-color(#{$id}, #{$shade});
+      color: var(--color-danger--700) !important; /* !important used as in Bulma */
     }
   }
 }
@@ -161,126 +95,72 @@
   &-primary,
   &-link {
     &-light {
-      background-color: map.get(
-        colors.$map_t-color-by-id,
-        'primary--500'
-      ) !important; /* !important used as in Bulma */
+      background-color: var(--color-primary--500) !important; /* !important used as in Bulma */
     }
 
     &-dark {
-      background-color: map.get(
-        colors.$map_t-color-by-id,
-        'primary--700'
-      ) !important; /* !important used as in Bulma */
+      background-color: var(--color-primary--700) !important; /* !important used as in Bulma */
     }
   }
 
   &-grey {
-    background-color: map.get(
-      colors.$map_t-color-by-id,
-      'grey--600'
-    ) !important; /* !important used as in Bulma */
+    background-color: var(--color-grey--600) !important; /* !important used as in Bulma */
 
     &-light {
-      background-color: map.get(
-        colors.$map_t-color-by-id,
-        'grey--500'
-      ) !important; /* !important used as in Bulma */
+      background-color: var(--color-grey--500) !important; /* !important used as in Bulma */
     }
 
     &-lighter {
-      background-color: map.get(
-        colors.$map_t-color-by-id,
-        'grey--400'
-      ) !important; /* !important used as in Bulma */
+      background-color: var(--color-grey--400) !important; /* !important used as in Bulma */
     }
 
     &-dark {
-      background-color: map.get(
-        colors.$map_t-color-by-id,
-        'grey--700'
-      ) !important; /* !important used as in Bulma */
+      background-color: var(--color-grey--700) !important; /* !important used as in Bulma */
     }
 
     &-darker {
-      background-color: map.get(
-        colors.$map_t-color-by-id,
-        'grey--800'
-      ) !important; /* !important used as in Bulma */
+      background-color: var(--color-grey--800) !important; /* !important used as in Bulma */
     }
   }
 
   &-info {
     &-light {
-      background-color: map.get(
-        colors.$map_t-color-by-id,
-        'info--500'
-      ) !important; /* !important used as in Bulma */
+      background-color: var(--color-info--500) !important; /* !important used as in Bulma */
     }
 
     &-dark {
-      background-color: map.get(
-        colors.$map_t-color-by-id,
-        'info--700'
-      ) !important; /* !important used as in Bulma */
+      background-color: var(--color-info--700) !important; /* !important used as in Bulma */
     }
   }
 
   &-success {
     &-light {
-      background-color: map.get(
-        colors.$map_t-color-by-id,
-        'success--500'
-      ) !important; /* !important used as in Bulma */
+      background-color: var(--color-success--500) !important; /* !important used as in Bulma */
     }
 
     &-dark {
-      background-color: map.get(
-        colors.$map_t-color-by-id,
-        'success--700'
-      ) !important; /* !important used as in Bulma */
+      background-color: var(--color-success--700) !important; /* !important used as in Bulma */
     }
   }
 
   &-warning {
     &-light {
-      background-color: map.get(
-        colors.$map_t-color-by-id,
-        'warning--500'
-      ) !important; /* !important used as in Bulma */
+      background-color: var(--color-warning--500) !important; /* !important used as in Bulma */
     }
 
     &-dark {
-      background-color: map.get(
-        colors.$map_t-color-by-id,
-        'warning--700'
-      ) !important; /* !important used as in Bulma */
+      background-color: var(--color-warning--700) !important; /* !important used as in Bulma */
     }
   }
 
   &-danger {
     &-light {
-      background-color: map.get(
-        colors.$map_t-color-by-id,
-        'danger--500'
-      ) !important; /* !important used as in Bulma */
+      background-color: var(--color-danger--500) !important; /* !important used as in Bulma */
     }
 
     &-dark {
-      background-color: map.get(
-        colors.$map_t-color-by-id,
-        'danger--700'
-      ) !important; /* !important used as in Bulma */
+      background-color: var(--color-danger--700) !important; /* !important used as in Bulma */
     }
   }
 }
 
-/* Border */
-@each $id in colors.$map_t-color-ids {
-  @each $shade in colors.$map_t-color-shades {
-    // i.e. `.has-border-primary-100`
-    .has-border-#{$id}-#{$shade} {
-      @include colors.t-border-color(#{$id}, #{$shade});
-    }
-  }
-}

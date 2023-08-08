@@ -15,7 +15,8 @@
  *     limitations under the License.
  * -->
  */
-
-$z-index-navbar: 30;
-$z-index-background-of-body: 0;
-$z-index-tooltip: 999;
+$map_t-z-index: (
+    'navbar': 30,
+    'background-of-body': 0,
+    'tooltip': 999,
+)
