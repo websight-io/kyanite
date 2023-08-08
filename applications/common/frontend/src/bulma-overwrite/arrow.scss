@@ -23,9 +23,9 @@
 
 .navbar-link:not(.is-arrowless)::after,
 .select:not(.is-multiple, .is-loading)::after {
-  @extend .t-border-weight-bottom--2;
-  @extend .t-border-weight-left--2;
+  border-bottom: var(--border-weight-2) solid;
+  border-left: var(--border-weight-2) solid;
 
-  border-color: map.get(color.$map_t-color-by-id, 'grey--900');
+  border-color: var(--color-grey--900);
   border-radius: 1px;
 }
