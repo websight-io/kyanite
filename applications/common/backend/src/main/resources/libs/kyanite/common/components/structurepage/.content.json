@@ -1,6 +1,0 @@
-{
-  "sling:resourceType": "ws:Component",
-  "sling:resourceSuperType": "kyanite/common/components/page",
-  "title": "Structure Page",
-  "group": ".hidden"
-}
