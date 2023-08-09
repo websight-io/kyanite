@@ -48,6 +48,9 @@ public class LibraryIconConfigStoreImpl implements LibraryIconConfigStore {
 
   @Override
   public List<LibraryIconConfig> getAllConfigs() {
+    if (configsList == null) {
+      configsList = new ArrayList<>();
+    }
     return configsList;
   }
 
