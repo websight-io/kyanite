@@ -16,6 +16,8 @@ name: Sync Github and Jira release
 
 on:
   workflow_dispatch:
+  release:
+    types: [ published ]
 
 jobs:
   jira_release:
