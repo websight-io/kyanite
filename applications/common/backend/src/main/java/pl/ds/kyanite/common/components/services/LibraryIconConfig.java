@@ -16,10 +16,7 @@
 
 package pl.ds.kyanite.common.components.services;
 
-import java.util.List;
-
-public interface LibraryIconFactoryConfig {
-
+public interface LibraryIconConfig {
   String getLabel();
 
   String getId();
@@ -28,7 +25,4 @@ public interface LibraryIconFactoryConfig {
 
   String[] getAttributes();
 
-  LibraryIconFactoryConfig get(String id);
-
-  List<LibraryIconFactoryConfig> getAllConfigs();
 }

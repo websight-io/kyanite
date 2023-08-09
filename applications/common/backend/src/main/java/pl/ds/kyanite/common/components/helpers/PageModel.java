@@ -30,13 +30,14 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
-import pl.ds.kyanite.common.components.services.LibraryIconFactoryConfig;
+import pl.ds.kyanite.common.components.services.LibraryIconConfig;
+import pl.ds.kyanite.common.components.services.LibraryIconConfigStore;
 import pl.ds.kyanite.common.components.services.impl.GoogleAnalyticsConfigurationService;
 
 @Model(adaptables = SlingHttpServletRequest.class)
 public class PageModel {
 
-  private final LibraryIconFactoryConfig libraryIconFactoryConfig;
+  private final LibraryIconConfigStore libraryIconConfigStore;
 
   private final GoogleAnalyticsConfigurationService googleAnalyticsConfigurationService;
 
@@ -44,15 +45,15 @@ public class PageModel {
   private List<IconLibraryConfig> iconLibraryConfigs = new ArrayList<>();
 
   @Inject
-  public PageModel(@OSGiService LibraryIconFactoryConfig libraryIconFactoryConfig,
+  public PageModel(@OSGiService LibraryIconConfigStore libraryIconConfigStore,
       @OSGiService GoogleAnalyticsConfigurationService googleAnalyticsConfigurationService) {
-    this.libraryIconFactoryConfig = libraryIconFactoryConfig;
+    this.libraryIconConfigStore = libraryIconConfigStore;
     this.googleAnalyticsConfigurationService = googleAnalyticsConfigurationService;
   }
 
   @PostConstruct
   public void init() {
-    List<LibraryIconFactoryConfig> allConfigs = libraryIconFactoryConfig.getAllConfigs();
+    List<LibraryIconConfig> allConfigs = libraryIconConfigStore.getAllConfigs();
     iconLibraryConfigs = allConfigs
         .stream().map(config -> {
           List<String> attrs = List.of(config.getAttributes());
