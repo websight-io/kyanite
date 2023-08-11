@@ -1,0 +1,6 @@
+{
+  "sling:resourceType": "ws:PageTemplate",
+  "title": "Experience fragments",
+  "description": "Experience fragments",
+  "allowedChildren": ["/libs/kyanite/fragments/templates/fragmentpage"]
+}

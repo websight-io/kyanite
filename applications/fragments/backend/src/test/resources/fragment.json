@@ -1,0 +1,38 @@
+{
+  "empty": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/fragments/components/fragment"
+  },
+  "with-valid-resource": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/box",
+    "resource": "/content/fragments/pages/fragments/fragment"
+  },
+  "with-invalid-resource": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/box",
+    "resource": "/content/fragments/pages/fragments/invalid"
+  },
+  "with-not-existing-resource": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/box",
+    "resource": "/content/fragments/pages/fragments/not-existing"
+  },
+  "with-slash-at-the-end": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/box",
+    "resource": "/content/fragments/pages/fragments/fragment/"
+  },
+  "pages": {
+    "jcr:primaryType": "nt:unstructured",
+    "fragments": {
+      "jcr:primaryType": "nt:unstructured",
+      "fragment": {
+        "jcr:primaryType": "ws:Page"
+      },
+      "invalid": {
+        "jcr:primaryType": "nt:unstructured"
+      }
+    }
+  }
+}

@@ -13,6 +13,10 @@
       "start-order": "25"
     },
     {
+      "id": "pl.ds.kyanite:kyanite-fragments-backend:${project.version}",
+      "start-order": "25"
+    },
+    {
       "id": "pl.ds.kyanite:kyanite-table-service:${project.version}",
       "start-order": "25"
     },
