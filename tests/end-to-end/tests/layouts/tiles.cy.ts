@@ -17,9 +17,9 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  tiles: 'ComponentOverlay_/content/kyanite-tests/pages/tiles/jcr:content/pagecontainer/tiles',
-  tileParent: 'ComponentOverlay_/content/kyanite-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2',
-  tileChild: 'ComponentOverlay_/content/kyanite-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2/tile1'
+  tiles: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/tiles/jcr:content/pagecontainer/tiles',
+  tileParent: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2',
+  tileChild: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2/tile1'
 };
 
 describe('Tiles layout', function () {
@@ -30,7 +30,7 @@ describe('Tiles layout', function () {
   beforeEach('visit tiles page', function () {
 
     cy.visit(
-        '/apps/websight/index.html/content/kyanite-tests/pages/tiles::editor'
+        '/apps/websight/index.html/content/kyanite-e2e-tests/pages/tiles::editor'
     );
   });
 
@@ -59,7 +59,7 @@ describe('Tiles layout', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/kyanite-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2.json'
+        '/content/kyanite-e2e-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2.json'
     )
     .its('body')
     .should('deep.eq', {
@@ -96,7 +96,7 @@ describe('Tiles layout', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/kyanite-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2/tile1.json'
+        '/content/kyanite-e2e-tests/pages/tiles/jcr:content/pagecontainer/tiles/tile1/tile1/tile2/tile1.json'
     )
     .its('body')
     .should('deep.eq', {

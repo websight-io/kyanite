@@ -1,3 +1,6 @@
+#!/bin/bash
+
+#
 # Copyright (C) 2023 Dynamic Solutions
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,17 +14,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
-version: 2
-snapshot:
-  widths:
-    - 1280
-  minHeight: 1024
-discovery:
-  allowedHostnames: []
-  disallowedHostnames: []
-  networkIdleTimeout: 100
-upload:
-  files: '**/*.{png,jpg,jpeg}'
-  ignore: ''
-  stripExtensions: false
+# create session and receive session cookie value
+curl -s -o /dev/null -c - \
+  --location --request POST "$BASE_URL_CMS/apps/websight-authentication/j_security_check" \
+  --header 'Content-Type: application/x-www-form-urlencoded' \
+  --data-urlencode 'j_username=wsadmin' \
+  --data-urlencode 'j_password=wsadmin'

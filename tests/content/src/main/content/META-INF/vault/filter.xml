@@ -16,5 +16,6 @@
 -->
 
 <workspaceFilter version="1.0">
-  <filter root="/content/kyanite-tests"/>
+  <filter root="/content/kyanite-e2e-tests"/>
+  <filter root="/content/kyanite-visual-tests"/>
 </workspaceFilter>

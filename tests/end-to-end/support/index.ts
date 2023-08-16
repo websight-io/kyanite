@@ -15,8 +15,6 @@
  */
 
 import './commands';
-import '@percy/cypress';
-import { SnapshotOptions } from '@percy/core';
 import { ExecutableOperation, WebSightAction } from './ws-action';
 
 declare global {
@@ -35,10 +33,6 @@ declare global {
         alias: string
       ): void;
       login(): void;
-      percySnapshotWithAuth(name: string, options?: SnapshotOptions): void;
-      percySnapshotPreview(name: string, options?: SnapshotOptions): void;
-      percySnapshotPageEditor(name: string, options?: SnapshotOptions): void;
-      percySnapshotDialog(name?: string, options?: SnapshotOptions): void;
     }
   }
 }

@@ -17,7 +17,7 @@
 import {selectors, testIds} from "../../support/consts";
 
 const paths = {
-  buttons: 'ComponentOverlay_/content/kyanite-tests/pages/buttons/jcr:content/pagecontainer/buttons'
+  buttons: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/buttons/jcr:content/pagecontainer/buttons'
 };
 
 describe('Button component', function () {
@@ -33,7 +33,7 @@ describe('Button component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/kyanite-tests/pages/buttons::editor'
+        '/apps/websight/index.html/content/kyanite-e2e-tests/pages/buttons::editor'
     );
 
     cy.getByTestId(paths.buttons)
@@ -58,7 +58,7 @@ describe('Button component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/kyanite-tests/pages/buttons/jcr:content/pagecontainer/buttons.json'
+        '/content/kyanite-e2e-tests/pages/buttons/jcr:content/pagecontainer/buttons.json'
     )
     .its('body')
     .should('deep.eq', {
