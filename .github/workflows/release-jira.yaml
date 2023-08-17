@@ -26,12 +26,13 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Find latest tags
         run: |
+          git fetch --tags origin
           LATEST_TAG=$(git describe --tags --abbrev=0)
           echo "LATEST_TAG=${LATEST_TAG}" >> $GITHUB_ENV
           PREVIOUS_TAG=$(git describe --abbrev=0 --tags ${LATEST_TAG}^)
           echo "PREVIOUS_TAG=${PREVIOUS_TAG}" >> $GITHUB_ENV
       - name: Generate release note
-        uses: actions/jira-release-notes@v1.0.1
+        uses: patrixr/jira-release-notes@v1.0.1
         id: markdown_generator
         with:
           head: git show-ref ${LATEST_TAG} -s
