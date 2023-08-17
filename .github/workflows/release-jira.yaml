@@ -25,22 +25,9 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
-      - name: Find latest tags
-        run: |
-          LATEST_TAG=$(git describe --tags --abbrev=0)
-          echo "LATEST_TAG=${LATEST_TAG}" >> $GITHUB_ENV
-          PREVIOUS_TAG=$(git describe --abbrev=0 --tags ${LATEST_TAG}^)
-          echo "PREVIOUS_TAG=${PREVIOUS_TAG}" >> $GITHUB_ENV
-      - name: Generate release note
-        uses: patrixr/jira-release-notes@v1.0.1
-        id: markdown_generator
+      - uses: Medsien/release-to-jira@main
         with:
-          head: $(git show-ref ${LATEST_TAG} -s)
-          base: $(git show-ref ${PREVIOUS_TAG} -s)
-          jira-code: 'KYAN'
-          jira-host: teamds.atlassian.net
-          jira-username: ${{ secrets.ATLASSIAN_CLOUD_USER }}
-          jira-password: ${{ secrets.ATLASSIAN_CLOUD_APIKEY }}
-          app-name: 'Kyanite'
-      - name: Process the pdf
-        run: echo "The generated pdf was ${{ steps.markdown_generator.outputs.markdown }}"
+          jira_server: 'https://teamds.atlassian.net'
+          jira_project: 'KYAN'
+          jira_user: '${{ secrets.ATLASSIAN_CLOUD_USER }}'
+          jira_token: '${{ secrets.ATLASSIAN_CLOUD_APIKEY }}'
