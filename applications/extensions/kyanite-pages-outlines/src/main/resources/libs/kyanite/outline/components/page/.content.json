@@ -1,0 +1,5 @@
+{
+  "sling:resourceSuperType": "kyanite/common/components/page",
+  "title": "Outline page",
+  "description": "Outline page"
+}

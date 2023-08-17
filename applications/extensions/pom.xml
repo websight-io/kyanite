@@ -26,15 +26,16 @@
     </parent>
 
     <artifactId>kyanite-extensions</artifactId>
-  <version>0.1.1-SNAPSHOT</version>
+    <version>0.1.1-SNAPSHOT</version>
     <name>Kyanite Components Project - Extensions</name>
     <description>Parent for extension modules.</description>
     <packaging>pom</packaging>
 
     <modules>
-    <module>kyanite-table-service</module>
-    <module>kyanite-table-view</module>
-    <module>kyanite-richtext</module>
+      <module>kyanite-table-service</module>
+      <module>kyanite-table-view</module>
+      <module>kyanite-richtext</module>
+      <module>kyanite-pages-outlines</module>
     </modules>
 
     <properties>
