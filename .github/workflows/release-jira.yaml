@@ -38,7 +38,7 @@ jobs:
           head: $(git show-ref ${LATEST_TAG} -s)
           base: $(git show-ref ${PREVIOUS_TAG} -s)
           jira-code: 'KYAN'
-          jira-host: ${{ secrets.ATLASSIAN_CLOUD_DOMAIN }}
+          jira-host: teamds.atlassian.net
           jira-username: ${{ secrets.ATLASSIAN_CLOUD_USER }}
           jira-password: ${{ secrets.ATLASSIAN_CLOUD_APIKEY }}
           app-name: 'Kyanite'
