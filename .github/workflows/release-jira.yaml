@@ -35,8 +35,8 @@ jobs:
         uses: patrixr/jira-release-notes@v1.0.1
         id: markdown_generator
         with:
-          head: git show-ref ${LATEST_TAG} -s
-          base: git show-ref ${PREVIOUS_TAG} -s
+          head: $(git show-ref ${LATEST_TAG} -s)
+          base: $(git show-ref ${PREVIOUS_TAG} -s)
           jira-code: 'KYAN'
           jira-host: ${{ secrets.ATLASSIAN_CLOUD_DOMAIN }}
           jira-username: ${{ secrets.ATLASSIAN_CLOUD_USER }}
