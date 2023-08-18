@@ -20,6 +20,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.apache.sling.api.resource.Resource;
+import org.jetbrains.annotations.NotNull;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
@@ -30,6 +32,8 @@ import pl.ds.kyanite.page.outline.configuration.PageOutlineConfigStore;
 @Component(service = PageOutlineConfigStore.class, immediate = true)
 public class PageOutlineConfigStoreImpl implements PageOutlineConfigStore {
 
+  public static final String NN_JCR_CONTENT = "jcr:content";
+  public static final String PN_TEMPLATE = "ws:template";
   private final Map<String, List<PageOutlineConfig>> pageOutlineConfigs = new HashMap<>();
 
   @Reference(service = PageOutlineConfig.class,
@@ -50,7 +54,21 @@ public class PageOutlineConfigStoreImpl implements PageOutlineConfigStore {
   }
 
   @Override
+  public List<PageOutlineConfig> findAvailableOutlines(@NotNull Resource pageResource) {
+    String template = getTemplate(pageResource);
+
+    return findByPageTemplate(template);
+  }
+
   public List<PageOutlineConfig> findByPageTemplate(String pageTemplate) {
     return pageOutlineConfigs.getOrDefault(pageTemplate, new ArrayList<>());
+  }
+
+  private String getTemplate(Resource pageResource) {
+    Resource content = pageResource.getChild(NN_JCR_CONTENT);
+    if (content == null) {
+      return null;
+    }
+    return content.getValueMap().get(PN_TEMPLATE, String.class);
   }
 }

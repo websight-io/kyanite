@@ -17,9 +17,11 @@
 package pl.ds.kyanite.page.outline.configuration;
 
 import java.util.List;
+import org.apache.sling.api.resource.Resource;
+import org.jetbrains.annotations.NotNull;
 
 public interface PageOutlineConfigStore {
 
-  List<PageOutlineConfig> findByPageTemplate(String pageTemplate);
+  List<PageOutlineConfig> findAvailableOutlines(@NotNull Resource pageResource);
 
 }

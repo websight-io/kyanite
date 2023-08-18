@@ -16,13 +16,10 @@
 
 package pl.ds.kyanite.page.outline;
 
-import java.util.Optional;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import lombok.AccessLevel;
+import java.util.HashMap;
+import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.PersistenceException;
 import org.apache.sling.api.resource.Resource;
 import pl.ds.websight.pages.core.api.PageException;
@@ -30,89 +27,98 @@ import pl.ds.websight.pages.core.api.PageManager;
 import pl.ds.websight.pages.core.api.PageManager.CreateOptions;
 
 @Slf4j
-@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class PageOutline {
 
-  private static final String NN_OUTLINES = "outlines";
   private static final String RT_OUTLINE_PAGE_TEMPLATE_TYPE =
       "/libs/kyanite/outline/templates/outline";
+  private static final String NN_OUTLINES = "outlines";
+  public static final String PN_OUTLINE_TYPE = "outlineType";
+  public static final String PN_REFERENCE_PAGE = "referencePage";
+  public static final String PN_PRIMARY_TYPE = "jcr:primaryType";
+  public static final String PV_UNSTRUCTURED_TYPE = "nt:unstructured";
 
   private final Resource sourcePageResource;
 
-  private final String outlinesRoot;
-
   private final String outlineTypeName;
 
-  private final String outlinePageName;
-
-  public static Optional<PageOutline> from(Resource pageResource, String outlineTypeName) {
-    String pageSpace = findPageSpace(pageResource.getPath());
-    if (pageSpace == null) {
-      return Optional.empty();
-    }
-
-    String outlinesRoot = prepareOutlinesRoot(pageSpace);
-    String outlinePageName = prepareOutlinePageName(pageResource.getPath(), pageSpace);
-
-    return Optional.of(
-        new PageOutline(pageResource, outlinesRoot, outlineTypeName, outlinePageName));
-  }
-
-  public String getOutlinePagePath() {
-    return getOutlineParentPath() + outlinePageName;
-  }
-
-  private String getOutlineParentPath() {
-    return outlinesRoot + outlineTypeName + "/";
-  }
+  private final String outlineResourceType;
 
   public Resource getOutlineResource() {
-    return sourcePageResource.getResourceResolver().getResource(getOutlinePagePath());
-  }
-
-  public PageOutline delete() {
-    Resource outlineResource = getOutlineResource();
-    if (outlineResource != null) {
-      try {
-        outlineResource.getResourceResolver().delete(outlineResource);
-      } catch (PersistenceException e) {
-        log.error(e.getMessage());
-        throw new PageOutlineActionException(
-            "Cannot remove previous outline page: " + outlineResource.getPath());
-      }
+    Resource parentResource = getParentResource();
+    if (parentResource == null) {
+      return null;
     }
 
-    return this;
+    return sourcePageResource.getResourceResolver()
+        .getResource(parentResource, outlineTypeName);
   }
 
-  public PageOutline createPage(String outlineType) {
+  public void delete() {
+    if (exists()) {
+      deleteOutlineResource();
+      commit();
+    }
+  }
+
+  public void create() {
+    if (exists()) {
+      deleteOutlineResource();
+    }
+    createPage();
+    commit();
+  }
+
+  public boolean exists() {
+    return getOutlineResource() != null;
+  }
+
+  private Resource getParentResource() {
+    return sourcePageResource.getChild(NN_OUTLINES);
+  }
+
+  private Resource creatParentResource() throws PersistenceException {
+    Map<String, Object> properties = new HashMap<>();
+    properties.put(PN_PRIMARY_TYPE, PV_UNSTRUCTURED_TYPE);
+    return sourcePageResource.getResourceResolver()
+        .create(sourcePageResource, NN_OUTLINES, properties);
+  }
+
+  private void createPage() {
+    PageManager pageManager = getPageManager();
+    try {
+      pageManager.create(prepareOutlinesResource().getPath(), outlineTypeName,
+          prepareCreateOptions());
+    } catch (PageException | PersistenceException e) {
+      log.error(e.getMessage());
+      throw new PageOutlineActionException("Cannot create outline page.");
+    }
+  }
+
+  private PageManager getPageManager() {
     PageManager pageManager = sourcePageResource.getResourceResolver().adaptTo(PageManager.class);
     if (pageManager == null) {
       throw new PageOutlineActionException("Cannot create outline page. Page Manager unavailable.");
     }
-    try {
-      if (!existsPageOutlines()) {
-        createOutlineRootPage(findPageSpace(sourcePageResource.getPath()), NN_OUTLINES);
-      }
-
-      if (!existsPageOutlineType()) {
-        createOutlineRootPage(outlinesRoot, outlineTypeName);
-      }
-
-      pageManager.create(getOutlineParentPath(), outlinePageName,
-          CreateOptions.createOptions().resolveConflict(false)
-              .templatePath(RT_OUTLINE_PAGE_TEMPLATE_TYPE)
-              .property("outlineType", outlineType)
-              .property("referencePage", sourcePageResource.getPath()).build());
-    } catch (PageException e) {
-      log.error(e.getMessage());
-      throw new PageOutlineActionException("Cannot create outline page.");
-    }
-
-    return this;
+    return pageManager;
   }
 
-  public void commit() {
+  private CreateOptions prepareCreateOptions() {
+    return CreateOptions.createOptions().resolveConflict(false)
+        .templatePath(RT_OUTLINE_PAGE_TEMPLATE_TYPE)
+        .property(PN_OUTLINE_TYPE, outlineResourceType)
+        .property(PN_REFERENCE_PAGE, sourcePageResource.getPath()).build();
+  }
+
+  private Resource prepareOutlinesResource() throws PersistenceException {
+    Resource outlinesResource = getParentResource();
+    if (outlinesResource == null) {
+      outlinesResource = creatParentResource();
+    }
+    return outlinesResource;
+  }
+
+  private void commit() {
     try {
       sourcePageResource.getResourceResolver().commit();
     } catch (PersistenceException e) {
@@ -121,48 +127,14 @@ public class PageOutline {
     }
   }
 
-  private boolean existsPageOutlines() {
-    return sourcePageResource.getResourceResolver().getResource(outlinesRoot) != null;
-  }
-
-  private boolean existsPageOutlineType() {
-    return sourcePageResource.getResourceResolver().getResource(getOutlineParentPath()) != null;
-  }
-
-  private void createOutlineRootPage(String rootPath, String pageName) {
-    PageManager pageManager = sourcePageResource.getResourceResolver().adaptTo(PageManager.class);
-    if (pageManager == null) {
-      throw new PageOutlineActionException("Cannot create outline page. Page Manager unavailable.");
-    }
+  private void deleteOutlineResource() {
     try {
-      pageManager.create(rootPath, pageName, CreateOptions.createOptions().resolveConflict(false)
-          .templatePath(RT_OUTLINE_PAGE_TEMPLATE_TYPE).build());
-      ;
-    } catch (PageException e) {
+      sourcePageResource.getResourceResolver().delete(getOutlineResource());
+    } catch (PersistenceException e) {
       log.error(e.getMessage());
-      throw new PageOutlineActionException("Cannot create outline page.");
+      throw new PageOutlineActionException(
+          "Cannot remove previous outline page: " + getOutlineResource().getPath());
     }
-  }
-
-  private static String prepareOutlinesRoot(String pageSpacePath) {
-    return pageSpacePath + NN_OUTLINES + "/";
-  }
-
-  private static String prepareOutlinePageName(String resourcePath, String pageSpacePath) {
-    return resourcePath.substring(pageSpacePath.length()).replaceAll("/", "-");
-  }
-
-  private static String findPageSpace(String resourcePath) {
-    String regex = "^(/content/[^/]*/pages/).*";
-    if (StringUtils.isNotBlank(resourcePath)) {
-      final Pattern pattern = Pattern.compile(regex);
-      final Matcher matcher = pattern.matcher(resourcePath);
-
-      if (matcher.find()) {
-        return matcher.group(1);
-      }
-    }
-    return null;
   }
 
 }

@@ -29,13 +29,15 @@ import pl.ds.kyanite.page.outline.configuration.PageOutlineConfigStore;
 import pl.ds.websight.publishing.framework.PublishException;
 import pl.ds.websight.publishing.framework.PublishService;
 import pl.ds.websight.publishing.framework.spi.PublishingPostprocessor;
+import pl.ds.websight.publishing.framework.spi.PublishingPreprocessor;
 
 @Slf4j
-@Component(service = PublishingPostprocessor.class)
-public class PageOutlinePublishPostProcessor implements PublishingPostprocessor {
+@Component(service = PublishingPreprocessor.class)
+public class PageOutlinePublishPreProcessor implements PublishingPreprocessor {
 
-  public static final String NT_PAGE = "ws:Page";
-  public static final String PN_PRIMARY_TYPE = "jcr:primaryType";
+  private static final String NT_PAGE = "ws:Page";
+  private static final String PN_PRIMARY_TYPE = "jcr:primaryType";
+
   @Reference
   private PublishService publishService;
 
@@ -43,48 +45,44 @@ public class PageOutlinePublishPostProcessor implements PublishingPostprocessor 
   private PageOutlineConfigStore pageOutlineConfigStore;
 
   @Override
-  public void afterPublish(@NotNull List<Resource> resources) throws PublishException {
+  public void beforePublish(@NotNull List<Resource> resources) {
+
+  }
+
+  @Override
+  public void beforeUnpublish(@NotNull List<Resource> resources) {
     for (Resource resource : resources) {
       if (isPage(resource)) {
-        createPageOutlines(resource);
+        deletePageOutlines(resource);
       }
     }
   }
 
   @Override
-  public void afterUnpublish(@NotNull List<Resource> resources) {
-
-  }
-
-  @Override
   public @NotNull String getName() {
-    return "Page-Outline-Post-Processor";
+    return "Page-Outline-Pre-Processor";
   }
 
   private boolean isPage(Resource resource) {
     return NT_PAGE.equals(resource.getValueMap().get(PN_PRIMARY_TYPE));
   }
 
-  private void createPageOutlines(Resource pageResource) throws PublishException {
+  private void deletePageOutlines(Resource pageResource) {
     for (PageOutlineConfig config : pageOutlineConfigStore.findAvailableOutlines(pageResource)) {
-      createPageOutline(pageResource, config);
+      PageOutline pageOutline = new PageOutline(pageResource, config.getName(),
+          config.getOutlineResourceType());
+      if (pageOutline.exists()) {
+        unpublish(pageOutline);
+        pageOutline.delete();
+      }
     }
   }
 
-  private void createPageOutline(Resource pageResource, PageOutlineConfig config)
-      throws PublishException {
-    PageOutline pageOutline = new PageOutline(pageResource, config.getName(),
-        config.getOutlineResourceType());
+  private void unpublish(PageOutline pageOutline) {
     try {
-      pageOutline.create();
-    } catch (PageOutlineActionException e) {
-      throw new PublishException(e.getMessage());
+      publishService.unpublish(pageOutline.getOutlineResource());
+    } catch (PublishException e) {
+      log.warn(e.getMessage());
     }
-    publishOutlinePage(pageOutline);
   }
-
-  private void publishOutlinePage(PageOutline pageOutline) throws PublishException {
-    publishService.publish(pageOutline.getOutlineResource());
-  }
-
 }
