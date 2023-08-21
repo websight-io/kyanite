@@ -28,8 +28,12 @@ import pl.ds.kyanite.page.outline.configuration.PageOutlineConfigOcd;
 @Designate(ocd = PageOutlineConfigOcd.class, factory = true)
 public class PageOutlineConfigImpl implements PageOutlineConfig {
 
+
   @Getter
-  private String name;
+  private String id;
+
+  @Getter
+  private String label;
 
   @Getter
   private String pageTemplate;
@@ -40,7 +44,8 @@ public class PageOutlineConfigImpl implements PageOutlineConfig {
   @Activate
   @Modified
   protected void activate(final PageOutlineConfigOcd config) {
-    this.name = config.name();
+    this.id = config.id();
+    this.label = config.label();
     this.pageTemplate = config.page_template();
     this.outlineResourceType = config.outline_resource_type();
   }

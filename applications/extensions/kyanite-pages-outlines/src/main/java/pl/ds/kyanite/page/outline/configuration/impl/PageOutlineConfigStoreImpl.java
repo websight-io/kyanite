@@ -54,10 +54,24 @@ public class PageOutlineConfigStoreImpl implements PageOutlineConfigStore {
   }
 
   @Override
+  public List<PageOutlineConfig> getAll() {
+    return pageOutlineConfigs.values().stream().flatMap(List::stream).toList();
+  }
+
+  @Override
   public List<PageOutlineConfig> findAvailableOutlines(@NotNull Resource pageResource) {
     String template = getTemplate(pageResource);
 
     return findByPageTemplate(template);
+  }
+
+  @Override
+  public List<String> findTemplatesByOutlineType(@NotNull String outlineType) {
+    return pageOutlineConfigs.keySet().stream()
+        .filter(template -> pageOutlineConfigs
+            .get(template).stream()
+            .anyMatch(config -> outlineType.equals(config.getId())))
+        .toList();
   }
 
   public List<PageOutlineConfig> findByPageTemplate(String pageTemplate) {

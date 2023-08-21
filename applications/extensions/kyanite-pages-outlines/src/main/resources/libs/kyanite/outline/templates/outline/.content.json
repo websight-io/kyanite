@@ -1,6 +1,5 @@
 {
   "sling:resourceType": "ws:PageTemplate",
   "title": "Outline page",
-  "description": "Outline page",
-  "allowedChildren": ["/libs/kyanite/outline/templates/outline"]
+  "description": "Outline page"
 }

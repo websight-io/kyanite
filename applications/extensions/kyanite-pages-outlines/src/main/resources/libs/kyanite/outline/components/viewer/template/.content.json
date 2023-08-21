@@ -1,0 +1,17 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "elements": 0,
+  "desktop": {
+    "jcr:primaryType": "nt:unstructured",
+    "elementsInRow": 4
+  },
+  "tablet": {
+    "jcr:primaryType": "nt:unstructured",
+    "elementsInRow": 2
+  },
+  "mobile": {
+    "jcr:primaryType": "nt:unstructured",
+    "elementsInRow": 1
+  }
+
+}

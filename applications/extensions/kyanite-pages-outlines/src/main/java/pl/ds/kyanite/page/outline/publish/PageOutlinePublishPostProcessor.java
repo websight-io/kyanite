@@ -73,7 +73,7 @@ public class PageOutlinePublishPostProcessor implements PublishingPostprocessor 
 
   private void createPageOutline(Resource pageResource, PageOutlineConfig config)
       throws PublishException {
-    PageOutline pageOutline = new PageOutline(pageResource, config.getName(),
+    PageOutline pageOutline = new PageOutline(pageResource, config.getId(),
         config.getOutlineResourceType());
     try {
       pageOutline.create();

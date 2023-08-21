@@ -69,7 +69,7 @@ public class PageOutlinePublishPreProcessor implements PublishingPreprocessor {
 
   private void deletePageOutlines(Resource pageResource) {
     for (PageOutlineConfig config : pageOutlineConfigStore.findAvailableOutlines(pageResource)) {
-      PageOutline pageOutline = new PageOutline(pageResource, config.getName(),
+      PageOutline pageOutline = new PageOutline(pageResource, config.getId(),
           config.getOutlineResourceType());
       if (pageOutline.exists()) {
         unpublish(pageOutline);

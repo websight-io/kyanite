@@ -55,12 +55,14 @@
       "libraryUrl": "/libs/kyanite/webroot/material-design-icons/css/materialdesignicons@7.2.96.min.css"
     },
     "pl.ds.kyanite.page.outline.configuration.impl.PageOutlineConfigImpl~blog-thumbnail": {
-      "name":"blog-thumbnail",
+      "id": "blog-thumbnail",
+      "label":"Blog thumbnail",
       "page.template":"/libs/kyanite/blogs/templates/blogarticlepage",
       "outline.resource.type":"/libs/kyanite/blogs/components/thumbnail"
     },
     "pl.ds.kyanite.page.outline.configuration.impl.PageOutlineConfigImpl~blog-card-thumbnail": {
-      "name":"blog-card-thumbnail",
+      "id": "blog-card-thumbnail",
+      "label":"Blog card thumbnail",
       "page.template":"/libs/kyanite/blogs/templates/blogarticlepage",
       "outline.resource.type":"/libs/kyanite/blogs/components/cardthumbnail"
     }

@@ -18,7 +18,9 @@ package pl.ds.kyanite.page.outline.configuration;
 
 public interface PageOutlineConfig {
 
-  String getName();
+  String getId();
+
+  String getLabel();
 
   String getPageTemplate();
 

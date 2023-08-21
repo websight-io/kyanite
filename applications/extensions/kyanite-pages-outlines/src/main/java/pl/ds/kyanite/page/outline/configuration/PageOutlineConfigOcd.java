@@ -25,10 +25,14 @@ import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 public @interface PageOutlineConfigOcd {
 
   @AttributeDefinition(
-      name = "Outline name",
-      description = "Enter outline name",
+      name = "Outline id",
       type = AttributeType.STRING)
-  String name() default StringUtils.EMPTY;
+  String id() default StringUtils.EMPTY;
+
+  @AttributeDefinition(
+      name = "Outline name",
+      type = AttributeType.STRING)
+  String label() default StringUtils.EMPTY;
 
   @AttributeDefinition(
       name = "Page template",

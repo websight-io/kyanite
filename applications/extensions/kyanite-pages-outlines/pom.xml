@@ -147,6 +147,12 @@
       <groupId>pl.ds.websight</groupId>
       <artifactId>websight-publishing-framework-next</artifactId>
     </dependency>
+    <dependency>
+      <groupId>pl.ds.kyanite</groupId>
+      <artifactId>kyanite-common-backend</artifactId>
+      <version>${project.version}</version>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
 </project>

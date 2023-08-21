@@ -1,0 +1,66 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "outlineType": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "outlineType",
+        "label": "Outline type",
+        "datasource": {
+          "sling:resourceType": "/libs/kyanite/outlines/dropDownDatasource"
+        }
+      },
+      "rootPath": {
+        "sling:resourceType": "wcm/dialogs/components/pathpicker",
+        "name": "rootPath",
+        "label": "Root path",
+        "description": "Show elements under selected path"
+      },
+      "elements": {
+        "sling:resourceType": "wcm/dialogs/components/numberfield",
+        "name": "elements",
+        "label": "Number of elements",
+        "description": "Show all if 0"
+      },
+      "elementsInRow": {
+        "sling:resourceType": "wcm/dialogs/components/tabs",
+        "desktop": {
+          "sling:resourceType": "wcm/dialogs/components/tab",
+          "label": "Desktop",
+          "elementsInDesktopRow": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/outline/components/viewer/row",
+              "name": "desktop/elementsInRow"
+            }
+          }
+        },
+        "tablet": {
+          "sling:resourceType": "wcm/dialogs/components/tab",
+          "label": "Tablet",
+          "elementsInTabletpRow": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/outline/components/viewer/row",
+              "name": "tablet/elementsInRow"
+            }
+          }
+        },
+        "mobile": {
+          "sling:resourceType": "wcm/dialogs/components/tab",
+          "label": "Mobile",
+          "elementsInMobileRow": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/outline/components/viewer/row",
+              "name": "mobile/elementsInRow"
+            }
+          }
+        }
+      }
+    }
+  }
+}

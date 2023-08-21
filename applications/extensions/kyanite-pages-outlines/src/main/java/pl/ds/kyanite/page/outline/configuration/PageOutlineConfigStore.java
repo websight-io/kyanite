@@ -22,6 +22,10 @@ import org.jetbrains.annotations.NotNull;
 
 public interface PageOutlineConfigStore {
 
+  List<PageOutlineConfig> getAll();
+
   List<PageOutlineConfig> findAvailableOutlines(@NotNull Resource pageResource);
+
+  List<String> findTemplatesByOutlineType(@NotNull String outlineType);
 
 }
