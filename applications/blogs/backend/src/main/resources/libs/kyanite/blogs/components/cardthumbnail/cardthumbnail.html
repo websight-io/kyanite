@@ -16,7 +16,6 @@
   ~
 */-->
 <sly data-sly-use.model="pl.ds.kyanite.blogs.components.models.ThumbnailModel">
-  <a href="${resource.path}.html">
     <div class="card card--full-height">
       <div data-sly-test.heroImage="${model.article.heroImage}" class="card-image">
         <figure class="image is-3by2">
@@ -25,31 +24,30 @@
         </figure>
       </div>
       <div class="card-content">
-        <div class="content is-small has-text-weight-light has-text-grey-700">
+        <div class="content is-large has-text-weight-light has-text-grey-900">
           <p data-sly-test.title="${model.article.title}">
             <strong>${title}</strong>
           </p>
+        </div>
+        <div class="content is-normal has-text-weight-normal has-text-grey-700">
           <p>
-            <span
-                data-sly-test.authorName="${model.article.authorName}"
-                class="has-text-grey-900">
+            <span class="is-inline-block mr-2"
+                  data-sly-test.authorName="${model.article.authorName}">
               ${authorName}
             </span>
-            <span
-                data-sly-test.publicationDate="${model.article.formattedPublicationDate}"
-                class="has-text-dark">
+            <span class="is-inline-block mr-2"
+                  data-sly-test.publicationDate="${model.article.formattedPublicationDate}">
               ${publicationDate}
             </span>
-          </p>
-          <p>
-            <span
-                data-sly-test.readTime="${model.article.readTime}"
-                class="has-text-dark">
+            <span class="is-inline-block"
+                  data-sly-test.readTime="${model.article.readTime}">
               ${'{0} min read' @ format=[readTime], i18n}
             </span>
           </p>
         </div>
+        <a class="button is-normal is-secondary is-fullwidth" href="${resource.path}.html">
+          <span>Read more</span>
+        </a>
       </div>
     </div>
-  </a>
 </sly>
