@@ -23,9 +23,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.Spliterator;
 import java.util.Spliterators;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -46,20 +49,13 @@ public class BlogArticleService {
   public static final String TEMPLATE_BLOGARTICLE_PAGE =
       "/libs/kyanite/blogs/templates/blogarticlepage";
 
-  public List<Resource> getListBlogArticlePages(String path, ResourceResolver resourceResolver) {
-    final String pagesQuery = """
-        SELECT p.* FROM [ws:PageContent]
-        AS p WHERE ISDESCENDANTNODE(p, '%s')
-        AND p.[ws:template] = '/libs/kyanite/blogs/templates/blogarticlepage'
-        ORDER BY p.[publicationDate] DESC""";
-    final String formattedQuery = pagesQuery.formatted(path);
-    final Iterator<Resource> iterator = resourceResolver.findResources(
-        formattedQuery,
-        JCR_SQL_2);
-    return StreamSupport.stream(
-        Spliterators.spliteratorUnknownSize(iterator, Spliterator.ORDERED),
-        false
-    ).toList();
+  public List<Resource> getListBlogArticlePages(String resourcePath,
+      ResourceResolver resourceResolver) {
+    Stream<Page> rootPages = streamRootPages(resourcePath, resourceResolver);
+
+    return rootPages.map(this::getListBlogArticlePages)
+        .flatMap(List::stream)
+        .toList();
   }
 
   public List<Resource> getListBlogArticlePages(Page page) {
@@ -105,7 +101,15 @@ public class BlogArticleService {
         .map(Resource::getValueMap)
         .stream().anyMatch(vm -> {
           String template = vm.get("ws:template", String.class);
-          return TEMPLATE_BLOGARTICLE_PAGE.equals(template);
+          if (template == null) {
+            return false;
+          }
+          if (TEMPLATE_BLOGARTICLE_PAGE.equals(template)) {
+            return true;
+          }
+          Resource templateResource = resource.getResourceResolver().getResource(template);
+          return templateResource != null
+              && templateResource.isResourceType(TEMPLATE_BLOGARTICLE_PAGE);
         });
   }
 
@@ -127,6 +131,39 @@ public class BlogArticleService {
                 .map(this::getDescendants)
                 .flatMap(Collection::stream))
             .collect(Collectors.toSet());
+  }
+
+  private Stream<Page> streamRootPages(String resourcePath, ResourceResolver resourceResolver) {
+    Resource space = getSpace(resourcePath, resourceResolver);
+    if (space == null) {
+      return Stream.empty();
+    }
+
+    return StreamSupport.stream(space.getChildren().spliterator(), false)
+        .map(pageResource -> pageResource.adaptTo(Page.class))
+        .filter(Objects::nonNull);
+  }
+
+  private Resource getSpace(String resourcePath, ResourceResolver resourceResolver) {
+    String spacePath = getCurrentSpace(resourcePath);
+    if (spacePath == null) {
+      return null;
+    }
+
+    return resourceResolver.getResource(spacePath);
+  }
+
+  private String getCurrentSpace(String resourcePath) {
+    String regex = "^((/content|/published)/[^/]*/pages/).*";
+    if (StringUtils.isNotBlank(resourcePath)) {
+      final Pattern pattern = Pattern.compile(regex);
+      final Matcher matcher = pattern.matcher(resourcePath);
+
+      if (matcher.find()) {
+        return matcher.group(1);
+      }
+    }
+    return null;
   }
 
 }
