@@ -20,9 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Predicate;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.jetbrains.annotations.NotNull;
@@ -33,8 +30,6 @@ import pl.ds.websight.pages.core.api.PageManager;
 
 public class PageUtil {
   private static final String JCR_CONTENT = "jcr:content";
-
-  public static final String CONTENT = "/content";
 
   public static Page findTopLevelParentPageForCurrentPage(@NotNull Page page) {
     while (page.getParent() != null) {
@@ -60,10 +55,27 @@ public class PageUtil {
       if (resource.getChild(JCR_CONTENT) == null) {
         return false;
       }
-      Object o = resource.getChild(JCR_CONTENT).getValueMap()
-          .get(PageConstants.PN_WS_TEMPLATE);
-      return o != null && o.equals(template);
+      String templateResourcePath = resource.getChild(JCR_CONTENT).getValueMap()
+          .get(PageConstants.PN_WS_TEMPLATE, String.class);
+
+      if (templateResourcePath == null) {
+        return false;
+      }
+
+      return templateResourcePath.equals(template)
+          || isSuperResourceType(resource, templateResourcePath, template);
     };
+  }
+
+  private static boolean isSuperResourceType(Resource resource, String templateResourcePath,
+      String template) {
+    Resource templateResource = resource.getResourceResolver()
+        .getResource(templateResourcePath);
+    if (templateResource == null) {
+      return false;
+    }
+
+    return templateResource.isResourceType(template);
   }
 
   public static String getPageProperty(Resource resource, String propName) {
@@ -75,22 +87,6 @@ public class PageUtil {
 
   private PageUtil() {
     // no instance
-  }
-
-  public static String getCurrentPageSpace(String path) {
-    String regex = "^(\\/content\\/[^\\/]*\\/).*";
-    if (path.startsWith("/published")) {
-      regex = "^(\\/published\\/[^\\/]*\\/).*";
-    }
-    if (StringUtils.isNotBlank(path)) {
-      final Pattern pattern = Pattern.compile(regex);
-      final Matcher matcher = pattern.matcher(path);
-
-      if (matcher.find()) {
-        return matcher.group(1);
-      }
-    }
-    return CONTENT;
   }
 
 }
