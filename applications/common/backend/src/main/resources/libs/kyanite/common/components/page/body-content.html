@@ -17,16 +17,3 @@
 */-->
 
 <sly data-sly-resource="${'pagecontainer' @ resourceType=properties.resourceType}"></sly>
-
-<sly data-sly-use.model="pl.ds.kyanite.common.components.helpers.PageModel"></sly>
-<!-- Google Tag Manager (noscript) -->
-<noscript data-sly-test="${model.hasAnalyticsUrl}"><iframe src="${model.googleAnalyticsUrl}"
-                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-<script data-sly-test="${wcmmode.isDisabled && project.version}" src="/libs/kyanite/webroot/${project.version}/main.js"></script>
-<script data-sly-test="${wcmmode.isDisabled && !project.version}" src="/libs/kyanite/webroot/main.js"></script>
-<script data-sly-test="${!wcmmode.isDisabled}" src="/libs/kyanite/webroot/main.js"></script>
-
-<script data-sly-test="${wcmmode.isDisabled && project.version }" src="/libs/kyanite/webroot/${project.version}/main.published.js"></script>
-<script data-sly-test="${wcmmode.isDisabled && !project.version}" src="/libs/kyanite/webroot/main.published.js"></script>
