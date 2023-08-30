@@ -21,9 +21,13 @@ import java.util.stream.Stream;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.kyanite.common.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class HeroComponent {
@@ -44,11 +48,43 @@ public class HeroComponent {
   @Getter
   private String[] heroClasses;
 
+  @Inject
+  private String desktopBackgroundImage;
+
+  @Inject
+  private String tabletBackgroundImage;
+
+  @Inject
+  private String mobileBackgroundImage;
+
+  @SlingObject
+  private ResourceResolver resourceResolver;
+
   @PostConstruct
   private void init() {
     heroClasses = Stream.of(size, variant, background)
         .filter(Objects::nonNull)
         .toList()
         .toArray(new String[]{});
+  }
+
+  public String getDesktopBackgroundImage() {
+    return getBackgroundImage(desktopBackgroundImage);
+  }
+
+  public String getTabletBackgroundImage() {
+    return getBackgroundImage(tabletBackgroundImage);
+  }
+
+  public String getMobileBackgroundImage() {
+    return getBackgroundImage(mobileBackgroundImage);
+  }
+
+  private String getBackgroundImage(String src) {
+    if (StringUtils.isEmpty(src)) {
+      return null;
+    }
+
+    return LinkUtil.handleLink(src, resourceResolver);
   }
 }

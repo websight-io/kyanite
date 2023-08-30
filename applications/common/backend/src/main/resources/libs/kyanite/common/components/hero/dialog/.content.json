@@ -16,7 +16,7 @@
       "background": {
         "sling:resourceType": "wcm/dialogs/components/radio",
         "name": "background",
-        "label": "Background",
+        "label": "Fancy background",
         "nobackground": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",
           "label": "No background",
@@ -26,6 +26,139 @@
           "sling:resourceType": "wcm/dialogs/components/radio/option",
           "label": "Circles",
           "value": "hero--bg-circles"
+        }
+      },
+      "backgroundImages": {
+        "sling:resourceType": "wcm/dialogs/components/tabs",
+        "label": "Background images",
+        "desktopBackground": {
+          "sling:resourceType": "wcm/dialogs/components/tab",
+          "label": "Desktop",
+          "imageSrcType": {
+            "sling:resourceType": "wcm/dialogs/components/radio",
+            "name": "desktopImageSrcType",
+            "label": "Source type",
+            "asset": {
+              "sling:resourceType": "wcm/dialogs/components/radio/option",
+              "label": "Asset",
+              "value": "asset"
+            },
+            "link": {
+              "sling:resourceType": "wcm/dialogs/components/radio/option",
+              "label": "Link",
+              "value": "link"
+            }
+          },
+          "assetReference": {
+            "sling:resourceType": "wcm/dialogs/components/assetreference",
+            "mimeTypes": ["image/*"],
+            "name": "desktopBackgroundImage",
+            "description": "Default image source",
+            "label": "Background image",
+            "ws:display": {
+              "condition": {
+                "sourceName": "desktopImageSrcType",
+                "values": "asset"
+              }
+            }
+          },
+          "src": {
+            "sling:resourceType": "wcm/dialogs/components/pathpicker",
+            "name": "desktopBackgroundImage",
+            "label": "Background image",
+            "ws:display": {
+              "condition": {
+                "sourceName": "desktopImageSrcType",
+                "values": "link"
+              }
+            }
+          }
+        },
+        "tabletBackground": {
+          "sling:resourceType": "wcm/dialogs/components/tab",
+          "label": "Tablet",
+          "imageSrcType": {
+            "sling:resourceType": "wcm/dialogs/components/radio",
+            "name": "tabletImageSrcType",
+            "label": "Source type",
+            "asset": {
+              "sling:resourceType": "wcm/dialogs/components/radio/option",
+              "label": "Asset",
+              "value": "asset"
+            },
+            "link": {
+              "sling:resourceType": "wcm/dialogs/components/radio/option",
+              "label": "Link",
+              "value": "link"
+            }
+          },
+          "assetReference": {
+            "sling:resourceType": "wcm/dialogs/components/assetreference",
+            "mimeTypes": ["image/*"],
+            "name": "tabletBackgroundImage",
+            "description": "Default image source",
+            "label": "Background image",
+            "ws:display": {
+              "condition": {
+                "sourceName": "tabletImageSrcType",
+                "values": "asset"
+              }
+            }
+          },
+          "src": {
+            "sling:resourceType": "wcm/dialogs/components/pathpicker",
+            "name": "tabletBackgroundImage",
+            "label": "Background image",
+            "ws:display": {
+              "condition": {
+                "sourceName": "tabletImageSrcType",
+                "values": "link"
+              }
+            }
+          }
+        },
+        "mobileBackground": {
+          "sling:resourceType": "wcm/dialogs/components/tab",
+          "label": "Mobile",
+          "imageSrcType": {
+            "sling:resourceType": "wcm/dialogs/components/radio",
+            "name": "mobileImageSrcType",
+            "label": "Source type",
+            "asset": {
+              "sling:resourceType": "wcm/dialogs/components/radio/option",
+              "label": "Asset",
+              "value": "asset"
+            },
+            "link": {
+              "sling:resourceType": "wcm/dialogs/components/radio/option",
+              "label": "Link",
+              "value": "link"
+            }
+          },
+          "assetReference": {
+            "sling:resourceType": "wcm/dialogs/components/assetreference",
+            "mimeTypes": ["image/*"],
+            "name": "mobileBackgroundImage",
+            "description": "Default image source",
+            "label": "Background image",
+            "ws:display": {
+              "condition": {
+                "sourceName": "mobileImageSrcType",
+                "values": "asset"
+              }
+            }
+          },
+          "src": {
+            "sling:resourceType": "wcm/dialogs/components/pathpicker",
+            "name": "mobileBackgroundImage",
+            "label": "Background image",
+            "ws:display": {
+              "condition": {
+                "sourceName": "mobileImageSrcType",
+                "values": "link"
+              }
+            }
+          }
         }
       }
     }
