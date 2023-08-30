@@ -1,5 +1,7 @@
 {
   "group": "Kyanite Elements",
   "sling:resourceType": "ws:Component",
-  "title": "Preview"
+  "title": "Preview",
+  "isContainer": true,
+  "allowedComponents": "/libs/kyanite/common/components/image"
 }

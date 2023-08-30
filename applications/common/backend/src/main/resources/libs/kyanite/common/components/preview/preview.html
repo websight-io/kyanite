@@ -16,15 +16,15 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.kyanite.common.components.models.PreviewComponent">
-  <sly data-sly-test="${model.hasImages}">
-    <div class="block">
-      <img src="${model.images[0].src}" alt="${model.images[0].alt}">
-      <div class="columns" data-sly-list.image="${model.images}">
-        <div class="column">
-            <img src="${image.src}" alt="${image.alt}">
-        </div>
+<sly data-sly-test="${resource.hasChildren}">
+  <div class="block">
+    <sly data-sly-list.mainImage="${resource.listChildren}">
+      <sly data-sly-test="${mainImageList.first}" data-sly-resource="${mainImage @ resourceType=mainImage.resourceType}"></sly>
+    </sly>
+    <div class="columns" data-sly-list.image="${resource.listChildren}">
+      <div class="column">
+        <sly data-sly-resource="${image @ resourceType=image.resourceType}"></sly>
       </div>
     </div>
-  </sly>
+  </div>
 </sly>
