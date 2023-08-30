@@ -1,0 +1,18 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "variant": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "name": "variant",
+        "label": "Variant",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/common/background"
+        }
+      }
+    }
+  }
+}
