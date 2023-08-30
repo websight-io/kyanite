@@ -23,7 +23,7 @@
 # config
 BASEDIR=$(dirname "$0")
 NODEDIR="$BASEDIR"/../../../../tests/end-to-end
-BACKSTOPDIR="$NODEDIR"/backstop
+BACKSTOPDIR="$NODEDIR"/backstop_data
 
 # read report
 BACKSTOP_FAILS=$(sed -n 's/.*failures="\([0-9]*\)".*/\1/p' "${BACKSTOPDIR}/ci_report/xunit.xml");

@@ -25,7 +25,7 @@
 BASEDIR=$(dirname "$0")
 PWD=$(pwd)
 NODEDIR="$BASEDIR"/../../../../tests/end-to-end
-BACKSTOPDIR="$NODEDIR"/backstop
+BACKSTOPDIR="$NODEDIR"/backstop_data
 TEMP="${PWD}/artifacts-temp/visual"
 TARGET="${PWD}/artifacts/visual"
 PNGQUANT_ARGS=(--ext .png --force --speed=10 --quality=0-100)
