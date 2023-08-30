@@ -393,7 +393,7 @@
             </goals>
             <configuration>
               <excludes>
-                <exclude>*.md</exclude>
+                <exclude>**/*.md</exclude>
                 <exclude>/.node_version</exclude>
                 <exclude>/node/**</exclude>
                 <exclude>/node_modules/**</exclude>
