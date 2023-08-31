@@ -126,11 +126,12 @@ $spacing-values: (
   'auto': auto,
 );
 
-/* section */
-$section-padding: map.get($spacing-values, '6_3') map.get($spacing-values, '0');
+// we need to use the same values for horizontal padding as for hero component
+// to have a consistent design
+$section-padding: map.get($spacing-values, '6_3') map.get($spacing-values, '5');
 $section-padding-desktop: map.get($spacing-values, '6_5')
-  map.get($spacing-values, '0');
+  map.get($spacing-values, '6');
 $section-padding-medium: map.get($spacing-values, '6_3')
-  map.get($spacing-values, '0');
+  map.get($spacing-values, '5');
 $section-padding-large: map.get($spacing-values, '6_5')
-  map.get($spacing-values, '0');
+  map.get($spacing-values, '6');

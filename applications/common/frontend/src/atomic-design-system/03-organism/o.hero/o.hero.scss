@@ -34,6 +34,9 @@
 
     // currently designs show only medium hero component
     // for now force the same horizontal padding like on medium hero component
+    //
+    // we need to use the same values for horizontal padding as for section component
+    // to have a consistent design
     padding-left: var(--spacing-5) !important;
     padding-right: var(--spacing-5) !important;
     @include breakpoint.media-breakpoint-large {
