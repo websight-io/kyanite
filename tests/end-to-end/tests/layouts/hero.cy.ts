@@ -52,7 +52,10 @@ describe('Hero component', function () {
 
     cy.getByTestId('ModalDialog_Hero')
       .find('div[id^="variant-uid"]').click();
-    cy.contains('Link').click({ force: true });
+
+    cy.get('div.Input_Variant__menu')
+      .contains('Link')
+      .click({ force: true });
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
 
