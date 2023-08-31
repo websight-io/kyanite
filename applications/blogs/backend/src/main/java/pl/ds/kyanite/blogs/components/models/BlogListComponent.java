@@ -40,7 +40,6 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.factory.ModelFactory;
 import pl.ds.kyanite.blogs.components.services.BlogArticleService;
 import pl.ds.kyanite.common.components.utils.LinkUtil;
-import pl.ds.kyanite.common.components.utils.PageUtil;
 import pl.ds.websight.pages.core.api.Page;
 import pl.ds.websight.pages.core.api.PageManager;
 
@@ -84,14 +83,12 @@ public class BlogListComponent {
   private void init() {
     final String pagePath =
         StringUtils.substringBefore(resource.getPath(), JCR_CONTENT);
-    final String linkToFind = StringUtils.isNotBlank(link) && !link.equals(CONTENT) ? link
-        : PageUtil.getCurrentPageSpace(pagePath);
-    final Page page = pageManager.getPage(linkToFind);
+    final Page page = pageManager.getPage(link);
     final List<Resource> blogArticlePages;
     if (Objects.nonNull(page)) {
       blogArticlePages = this.blogArticleService.getListBlogArticlePages(page);
     } else {
-      blogArticlePages = this.blogArticleService.getListBlogArticlePages(linkToFind,
+      blogArticlePages = this.blogArticleService.getListBlogArticlePages(resource.getPath(),
           resourceResolver);
     }
     Resource curentPageResource = resourceResolver.getResource(pagePath);
