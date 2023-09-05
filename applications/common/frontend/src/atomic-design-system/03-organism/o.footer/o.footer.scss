@@ -66,6 +66,14 @@
     }
   }
 
+  .buttons {
+    justify-content: center;
+
+    @include breakpoint.media-breakpoint-medium {
+      justify-content: flex-start;
+    }  
+  }
+
   .icon {
     color: var(--color-grey--100) !important;
 
