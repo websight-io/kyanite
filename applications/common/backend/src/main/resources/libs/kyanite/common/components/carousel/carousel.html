@@ -30,7 +30,7 @@
         </span>
       </button>
     </div>
-    <div class="columns ${wcmmode.isEdit ? 'is-multiline ': ''}is-mobile">
+    <div class="columns is-mobile is-multiline">
       <sly data-sly-repeat.item="${model.items}">
         <div class="column is-${model.desktopColumns}-desktop is-${model.tabletColumns}-tablet is-${model.mobileColumns}-mobile">
           <sly data-sly-resource="${item.path @ resourceType=item.resourceType}"></sly>
