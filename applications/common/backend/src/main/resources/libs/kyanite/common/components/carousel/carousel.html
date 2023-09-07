@@ -17,25 +17,27 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.CarouselComponent">
-  <sly data-sly-test="${model.hasChildren}">
-    <div class="buttons is-right">
-      <button class="button">
-        <span class="icon">
-          <i class="mdi mdi-arrow-left"></i>
-        </span>
-      </button>
-      <button class="button">
-        <span class="icon">
-          <i class="mdi mdi-arrow-right"></i>
-        </span>
-      </button>
-    </div>
-    <div class="columns is-mobile is-multiline">
-      <sly data-sly-repeat.item="${model.items}">
-        <div class="column is-${model.desktopColumns}-desktop is-${model.tabletColumns}-tablet is-${model.mobileColumns}-mobile">
-          <sly data-sly-resource="${item.path @ resourceType=item.resourceType}"></sly>
-        </div>
-      </sly>
-    </div>
-  </sly>
+  <div class="carousel">
+    <sly data-sly-test="${model.hasChildren}">
+      <div class="buttons is-right">
+        <button class="button previous-page-button" disabled>
+          <span class="icon">
+            <i class="mdi mdi-arrow-left"></i>
+          </span>
+        </button>
+        <button class="button next-page-button">
+          <span class="icon">
+            <i class="mdi mdi-arrow-right"></i>
+          </span>
+        </button>
+      </div>
+      <div class="columns is-mobile is-multiline">
+        <sly data-sly-list.item="${model.items}">
+          <div class="carousel-item ${wcmmode.isEdit || itemList.index <= 3 ? 'visible' : ''} column is-${model.desktopColumns}-desktop is-${model.tabletColumns}-tablet is-${model.mobileColumns}-mobile">
+            <sly data-sly-resource="${item.path @ resourceType=item.resourceType}"></sly>
+          </div>
+        </sly>
+      </div>
+    </sly>
+  </div>
 </sly>
