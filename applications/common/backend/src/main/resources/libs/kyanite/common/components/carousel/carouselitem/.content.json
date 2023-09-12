@@ -1,0 +1,12 @@
+{
+  "group": "Kyanite sub-elements",
+  "isContainer": true,
+  "allowedComponents": [
+    "Kyanite Columns",
+    "Kyanite Components",
+    "Kyanite Elements",
+    "Kyanite Layouts"
+  ],
+  "sling:resourceType": "ws:Component",
+  "title": "Carousel item"
+}

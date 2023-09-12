@@ -16,28 +16,4 @@
  * -->
  */
 
-@use './Hero';
-@use './Level';
-@use './Title';
-@use './Content';
-@use './LevelItem';
-@use './Image';
-@use './Eyebrow';
-@use './Footer';
-@use './Button';
-@use './Tabs';
-@use './CodeSnippet';
-@use './Navbar';
-@use './BlogArticleHeader';
-@use './BlogArticleThumbnail';
-@use './BlogArticleFeatured';
-@use './Link';
-@use './BlogArticleAuthorBio';
-@use './Card';
-@use './Message';
-@use './Notification';
-@use './BlogTableOfContent';
-@use './BlogBackButton';
-@use './Column';
-@use './Container';
-@use './Carousel';
+@forward 'Carousel';
