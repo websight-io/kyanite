@@ -33,6 +33,7 @@ public class CarouselComponent {
   private static final String RT_CAROUSEL_ITEM = "kyanite/common/components/carousel/carouselitem";
   private static final String PN_ELEMENTS_IN_ROW = "elementsInRow";
   private static final int ROW_SIZE = 12;
+  private static final int VISIBLE_ITEMS_COUNT = 4;
 
   @ChildResource
   private Resource desktop;
@@ -60,6 +61,10 @@ public class CarouselComponent {
 
   public Boolean getHasChildren() {
     return items != null && !items.isEmpty();
+  }
+
+  public Boolean isPaginationNeeded() {
+    return items.size() > VISIBLE_ITEMS_COUNT;
   }
 
   @PostConstruct

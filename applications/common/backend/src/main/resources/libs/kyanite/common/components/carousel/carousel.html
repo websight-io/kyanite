@@ -19,7 +19,7 @@
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.CarouselComponent">
   <div class="carousel">
     <sly data-sly-test="${model.hasChildren}">
-      <div class="buttons is-right">
+      <div data-sly-test="${model.paginationNeeded}" class="buttons is-right">
         <button class="button previous-page-button" disabled>
           <span class="icon">
             <i class="mdi mdi-arrow-left"></i>
