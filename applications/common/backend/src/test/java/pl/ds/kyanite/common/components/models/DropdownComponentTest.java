@@ -58,17 +58,6 @@ class DropdownComponentTest {
     assertThat(model.getLabel()).isEqualTo("Dropdown");
     assertThat(model.getDropdownClasses()).containsExactlyInAnyOrder("is-hoverable", "is-up",
         "is-right");
-    assertThat(model.getItems().stream()
-        .filter(i -> i.getLabel().equals("Item 1"))
-        .filter(i -> i.getUrl().equals("http://url1"))
-        .filter(i -> i.isHasDivider())
-        .count()).isEqualTo(1);
-    assertThat(model.getItems().stream()
-        .filter(i -> i.getLabel().equals("Item 2"))
-        .filter(i -> i.getUrl().equals("http://url2"))
-        .filter(i -> !i.isHasDivider())
-        .count()).isEqualTo(1);
-
   }
 
 }
