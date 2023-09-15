@@ -53,7 +53,7 @@ class ImageComponentTest {
         context.resourceResolver().getResource(PATH + "/fixed")).adaptTo(ImageComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getAssetReference()).isEqualTo("http:///content/space/assets/imageLg.jpg");
+    assertThat(model.getAssetReference()).isEqualTo("/content/space/assets/imageLg.jpg");
     assertThat(model.getSrc()).isNull();
     assertThat(model.getType()).isEqualTo("fixed");
     assertThat(model.getStyle()).isEqualTo("is-16x16px");
@@ -67,8 +67,8 @@ class ImageComponentTest {
         context.resourceResolver().getResource(PATH + "/ratio")).adaptTo(ImageComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getAssetReference()).isEqualTo("http:///content/space/assets/imageLg.jpg");
-    assertThat(model.getSrc()).isEqualTo("http:///content/space/assets/imageSrc.jpg");
+    assertThat(model.getAssetReference()).isEqualTo("/content/space/assets/imageLg.jpg");
+    assertThat(model.getSrc()).isEqualTo("/content/space/assets/imageSrc.jpg");
     assertThat(model.getType()).isEqualTo("ratio");
     assertThat(model.getStyle()).isEqualTo("is-4by3");
     assertThat(model.getIsRounded()).isNull();
@@ -82,8 +82,8 @@ class ImageComponentTest {
         ImageComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getAssetReference()).isEqualTo("http:///content/space/assets/otherAsset.jpg");
-    assertThat(model.getSrc()).isEqualTo("http:///content/space/assets/otherAsset.jpg");
+    assertThat(model.getAssetReference()).isEqualTo("/content/space/assets/otherAsset.jpg");
+    assertThat(model.getSrc()).isEqualTo("/content/space/assets/otherAsset.jpg");
     assertThat(model.getType()).isEqualTo("fixed");
     assertThat(model.getStyle()).isEqualTo("is-16x16px");
     assertThat(model.getIsRounded()).isNull();
