@@ -76,10 +76,12 @@ public class BlogPostBackButtonComponent {
           .map(Resource::getValueMap)
           .map(valueMap -> valueMap.get("ws:template", String.class))
           .orElse(StringUtils.EMPTY);
+      if (TEMPLATES_BLOGLISTINGPAGE.equals(template)) {
+        return parentPage;
+      }
       Resource templateResource = resource.getResourceResolver().getResource(template);
-      boolean hasSuperTypeThisTemplate = templateResource != null
-          && templateResource.isResourceType(TEMPLATES_BLOGLISTINGPAGE);
-      if (TEMPLATES_BLOGLISTINGPAGE.equals(template) || hasSuperTypeThisTemplate) {
+      if (templateResource != null
+          && templateResource.isResourceType(TEMPLATES_BLOGLISTINGPAGE)) {
         return parentPage;
       }
     }
