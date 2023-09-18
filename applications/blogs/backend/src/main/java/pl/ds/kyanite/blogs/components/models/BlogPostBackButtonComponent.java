@@ -36,7 +36,10 @@ import pl.ds.websight.pages.core.api.PageManager;
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 public class BlogPostBackButtonComponent {
+
   public static final String JCR_CONTENT = "/jcr:content";
+  public static final String TEMPLATES_BLOGLISTINGPAGE =
+      "/libs/kyanite/blogs/templates/bloglistingpage";
   private final ResourceResolver resourceResolver;
   private final Resource resource;
 
@@ -73,7 +76,10 @@ public class BlogPostBackButtonComponent {
           .map(Resource::getValueMap)
           .map(valueMap -> valueMap.get("ws:template", String.class))
           .orElse(StringUtils.EMPTY);
-      if ("/libs/kyanite/blogs/templates/bloglistingpage".equals(template)) {
+      Resource templateResource = resource.getResourceResolver().getResource(template);
+      boolean hasSuperTypeThisTemplate = templateResource != null
+          && templateResource.isResourceType(TEMPLATES_BLOGLISTINGPAGE);
+      if (TEMPLATES_BLOGLISTINGPAGE.equals(template) || hasSuperTypeThisTemplate) {
         return parentPage;
       }
     }
