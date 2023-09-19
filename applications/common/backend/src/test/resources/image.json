@@ -15,12 +15,5 @@
     "src": "/content/space/assets/imageSrc.jpg",
     "type": "ratio",
     "style": "is-4by3"
-  },
-  "srcOverwrite": {
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/common/components/image",
-    "src": "/content/space/assets/otherAsset.jpg",
-    "type": "fixed",
-    "style": "is-16x16px"
   }
 }

@@ -42,9 +42,6 @@ import pl.ds.kyanite.common.components.utils.LinkUtil;
 public class ImageComponent {
 
   @Inject
-  private String src;
-
-  @Inject
   private String assetReference;
 
   @Inject
@@ -123,10 +120,6 @@ public class ImageComponent {
     if (Objects.nonNull(assetReference)) {
       this.processLink(assetReference, resourceResolver);
     }
-    if (Objects.isNull(assetReference) && Objects.nonNull(src)) {
-      this.processLink(src, resourceResolver);
-      assetReference = src;
-    }
     this.parameters.put("controls", hasControls);
     this.parameters.put("autoplay", autoplay);
     this.parameters.put("loop", isLooped);
@@ -156,10 +149,6 @@ public class ImageComponent {
 
   public String getThumbnail() {
     return LinkUtil.handleLink(thumbnail, resource.getResourceResolver());
-  }
-
-  public String getSrc() {
-    return LinkUtil.handleLink(src, resource.getResourceResolver());
   }
 
   public String getAssetReference() {

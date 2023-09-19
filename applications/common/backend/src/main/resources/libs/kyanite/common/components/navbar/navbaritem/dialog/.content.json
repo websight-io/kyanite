@@ -145,42 +145,16 @@
       },
       "imageContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
-        "imageSrcType": {
-          "sling:resourceType": "wcm/dialogs/components/radio",
-          "name": "imageSrcType",
-          "label": "Source type",
-          "asset": {
-            "sling:resourceType": "wcm/dialogs/components/radio/option",
-            "label": "Asset",
-            "value": "asset"
-          },
-          "link": {
-            "sling:resourceType": "wcm/dialogs/components/radio/option",
-            "label": "Link",
-            "value": "link"
-          }
-        },
-        "assetReference": {
-          "sling:resourceType": "wcm/dialogs/components/assetreference",
-          "mimeTypes": ["image/*"],
-          "name": "image/assetReference",
-          "description": "Default image source",
-          "label": "Choose image",
-          "ws:display": {
-            "condition": {
-              "sourceName": "imageSrcType",
-              "values": "asset"
-            }
-          }
-        },
-        "src": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "name": "image/src",
-          "label": "Choose image",
-          "ws:display": {
-            "condition": {
-              "sourceName": "imageSrcType",
-              "values": "link"
+        "imageSource": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
+            "assetReference": {
+              "mimeTypes": ["image/*"],
+              "name": "image/assetReference"
+            },
+            "src": {
+              "name": "image/assetReference"
             }
           }
         },
