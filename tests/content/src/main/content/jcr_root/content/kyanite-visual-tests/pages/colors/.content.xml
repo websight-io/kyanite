@@ -28,10 +28,12 @@
                     <item
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
                         label="Primary"
                         type="image">
                         <image
                             jcr:primaryType="nt:unstructured"
+                            assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"
                             src="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
                     </item>
                 </brand>
@@ -44,10 +46,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                     </start>
                     <end
@@ -69,10 +73,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"
                             type="container">
                             <button1
@@ -98,10 +104,12 @@
                     <item_1
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
                         label="Primary"
                         type="image">
                         <image
                             jcr:primaryType="nt:unstructured"
+                            assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"
                             src="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
                     </item_1>
                 </brand>
@@ -114,10 +122,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                     </start>
                     <end
@@ -139,10 +149,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"
                             type="container">
                             <button1
@@ -168,10 +180,12 @@
                     <item_1
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
                         label="Primary"
                         type="image">
                         <image
                             jcr:primaryType="nt:unstructured"
+                            assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"
                             src="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
                     </item_1>
                 </brand>
@@ -184,10 +198,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                     </start>
                     <end
@@ -209,10 +225,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"
                             type="container">
                             <button1
@@ -238,10 +256,12 @@
                     <item_1
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
                         label="Primary"
                         type="image">
                         <image
                             jcr:primaryType="nt:unstructured"
+                            assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"
                             src="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
                     </item_1>
                 </brand>
@@ -254,10 +274,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                     </start>
                     <end
@@ -279,10 +301,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"
                             type="container">
                             <button1
@@ -308,10 +332,12 @@
                     <item_1
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
                         label="Primary"
                         type="image">
                         <image
                             jcr:primaryType="nt:unstructured"
+                            assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"
                             src="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
                     </item_1>
                 </brand>
@@ -324,10 +350,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                     </start>
                     <end
@@ -349,10 +377,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"
                             type="container">
                             <button1
@@ -378,6 +408,7 @@
                     <item
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
                         label="Danger"
                         type="image">
                         <image
@@ -387,10 +418,12 @@
                     <item_2
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
                         label="Primary"
                         type="image">
                         <image
                             jcr:primaryType="nt:unstructured"
+                            assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"
                             src="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
                     </item_2>
                 </brand>
@@ -403,10 +436,12 @@
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                     </start>
                     <end
@@ -428,10 +463,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"
                             type="container">
                             <button1
@@ -457,10 +494,12 @@
                     <item_1
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
                         label="Primary"
                         type="image">
                         <image
                             jcr:primaryType="nt:unstructured"
+                            assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"
                             src="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
                     </item_1>
                 </brand>
@@ -473,10 +512,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                     </start>
                     <end
@@ -498,10 +539,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"
                             type="container">
                             <button1
@@ -527,10 +570,12 @@
                     <item_1
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
                         label="Primary"
                         type="image">
                         <image
                             jcr:primaryType="nt:unstructured"
+                            assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"
                             src="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
                     </item_1>
                 </brand>
@@ -543,10 +588,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                     </start>
                     <end
@@ -568,10 +615,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"
                             type="container">
                             <button1
@@ -597,10 +646,12 @@
                     <item_1
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
                         label="Primary"
                         type="image">
                         <image
                             jcr:primaryType="nt:unstructured"
+                            assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"
                             src="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
                     </item_1>
                 </brand>
@@ -613,10 +664,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                     </start>
                     <end
@@ -638,10 +691,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"
                             type="container">
                             <button1
@@ -667,10 +722,12 @@
                     <item_1
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
                         label="Primary"
                         type="image">
                         <image
                             jcr:primaryType="nt:unstructured"
+                            assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"
                             src="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
                     </item_1>
                 </brand>
@@ -683,10 +740,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                     </start>
                     <end
@@ -708,10 +767,12 @@
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"/>
                         <item_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
                             label="Item"
                             type="container">
                             <button1
