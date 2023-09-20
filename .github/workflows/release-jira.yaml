@@ -15,25 +15,18 @@
 name: Sync Github and Jira release
 
 on:
-  workflow_dispatch:
   release:
-    types: [ published ]
+    types: [published]
 
 jobs:
-  jira_release:
-    timeout-minutes: 5
+  create-jira-release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Create Jira Release
-        id: jira-release
-        uses: rodush/github-action-jira-release@v1
+      - name: create release
+        uses: Rorychan/jira-releases-action@v1
         with:
-          project_id: 10233
-          project_key: "KYAN"
-        env:
-          JIRA_API_USER: ${{ secrets.ATLASSIAN_CLOUD_USER }}
-          JIRA_API_TOKEN: ${{ secrets.ATLASSIAN_CLOUD_APIKEY }}
-          ATLASSIAN_CLOUD_DOMAIN: ${{ secrets.ATLASSIAN_CLOUD_DOMAIN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          jira-server: ${{ secrets.ATLASSIAN_CLOUD_DOMAIN }}
+          jira-email: ${{ secrets.ATLASSIAN_CLOUD_USER }}
+          jira-api-token: ${{ secrets.ATLASSIAN_CLOUD_APIKEY }}
+          project-name: "KYAN"
+          release-name: ${{ github.event.release.name }}
