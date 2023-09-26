@@ -40,8 +40,6 @@ public class LinkUtil {
         return handleInternalLink(link, resourceResolver);
       } else if (isAnchorLink(link)) {
         return link;
-      } else {
-        return handleExternalLink(link);
       }
     }
 
@@ -67,10 +65,6 @@ public class LinkUtil {
     return link.startsWith(ANCHOR_LINK_PREFIX);
   }
 
-  private static String handleExternalLink(String link) {
-    return addProtocolPrefixToLink(link);
-  }
-
   public static boolean isInternal(String link, ResourceResolver resourceResolver) {
     return Objects.nonNull(getResource(link, resourceResolver));
   }
@@ -78,10 +72,6 @@ public class LinkUtil {
   private static boolean isAsset(String link, ResourceResolver resourceResolver) {
     Resource resource = getResource(link, resourceResolver);
     return AssetsConstants.NT_ASSET.equals(getPrimaryType(resource));
-  }
-
-  private static String addProtocolPrefixToLink(String link) {
-    return link.startsWith("http") ? link : "http://" + link;
   }
 
   private static String addHtmlExtensionSuffixToLink(String link) {

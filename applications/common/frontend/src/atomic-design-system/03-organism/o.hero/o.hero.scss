@@ -22,18 +22,26 @@
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/bulma-overwrite/variables' as variables;
 @use 'src/bulma-overwrite/bulma-spacing' as bulma-spacing;
+@use 'src/atomic-design-system/03-organism/o.hero-background' as o-hero-background;
 
 @mixin o-hero {
+  &.hero--bg-circles {
+    @include o-hero-background.o-background-circles;
+  }
+
   .hero-body {
     @extend .mx-0;
 
     // currently designs show only medium hero component
     // for now force the same horizontal padding like on medium hero component
-    padding-left: map.get(variables.$spacing-values, '5') !important;
-    padding-right: map.get(variables.$spacing-values, '5') !important;
+    //
+    // we need to use the same values for horizontal padding as for section component
+    // to have a consistent design
+    padding-left: var(--spacing-5) !important;
+    padding-right: var(--spacing-5) !important;
     @include breakpoint.media-breakpoint-large {
-      padding-left: map.get(variables.$spacing-values, '6') !important;
-      padding-right: map.get(variables.$spacing-values, '6') !important;
+      padding-left: var(--spacing-6) !important;
+      padding-right: var(--spacing-6) !important;
     }
 
     display: flex;
@@ -42,7 +50,7 @@
 
     .container {
       @include breakpoint.media-breakpoint-large {
-        row-gap: map.get(variables.$spacing-values, '6_3');
+        row-gap: var(--spacing-6_3);
       }
 
       *:not(.eyebrow) {
@@ -58,12 +66,19 @@
 
 @mixin o-hero-medium {
   .hero-body {
-    padding-top: map.get(variables.$spacing-values, '6_3');
-    padding-bottom: map.get(variables.$spacing-values, '6_3');
+    /* TODO: Determine what values for padding-top and padding-bottom the hero banner should have when size is specified as medium.
+     * According to designs on medium (tablet resolution) we should have padding-top and padding-bottom equal 3rem = --spacing-6.
+     * Currently on producion mentioned paddings have 5rem value (--spacing-6_3)
+     * 
+     * padding-top: var(--spacing-6);
+     * padding-bottom: var(--spacing-6);
+     */
+    padding-top: var(--spacing-6_3);
+    padding-bottom: var(--spacing-6_3);
 
     @include breakpoint.media-breakpoint-large {
-      padding-top: map.get(variables.$spacing-values, '8');
-      padding-bottom: map.get(variables.$spacing-values, '8');
+      padding-top: var(--spacing-6_3);
+      padding-bottom: var(--spacing-6_3);
     }
   }
 }

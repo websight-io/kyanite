@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  breadcrumb: 'ComponentOverlay_/content/kyanite-tests/pages/breadcrumb/jcr:content/pagecontainer/breadcrumb'
+  breadcrumb: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/breadcrumb/jcr:content/pagecontainer/breadcrumb'
 };
 
 describe('Breadcrumb component', function () {
@@ -32,7 +32,7 @@ describe('Breadcrumb component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/kyanite-tests/pages/breadcrumb::editor'
+        '/apps/websight/index.html/content/kyanite-e2e-tests/pages/breadcrumb::editor'
     );
 
     cy.getByTestId(paths.breadcrumb)
@@ -58,7 +58,7 @@ describe('Breadcrumb component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/kyanite-tests/pages/breadcrumb/jcr:content/pagecontainer/breadcrumb.infinity.json'
+        '/content/kyanite-e2e-tests/pages/breadcrumb/jcr:content/pagecontainer/breadcrumb.infinity.json'
     )
     .its('body')
     .should('deep.eq', {

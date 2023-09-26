@@ -26,7 +26,7 @@
 @use 'src/atomic-design-system/00-token/t.border';
 
 @mixin m-article-thumbnail {
-  @extend .t-color__grey--900;
+  color: var(--color-grey--900) !important;
   @extend .mb-5_4;
 
   .content {
@@ -41,16 +41,17 @@
 
     .title {
       @extend .mb-4;
-      @extend .t-color__grey--900;
+      color: var(--color-grey--900) !important;
     }
   }
 
   .mdi {
     @extend .px-1;
-    @extend .t-line-height--150;
+    line-height: var(--line-height-150);
     @include font.t-font-size-fluid(22, 32);
 
-    color: color.$black;
+
+    color: var(--base-color-black);
     transform: rotate(45deg);
   }
 
@@ -62,17 +63,17 @@
 
   .content-info-details {
     .author-content {
-      @extend .t-color__grey--900;
+      color: var(--color-grey--900) !important;
       @extend .pr-5;
     }
 
     .date-content {
-      @extend .t-color__grey--700;
+      color: var(--color-grey--700) !important;
       @extend .pr-3;
     }
 
     .time-content {
-      @extend .t-color__grey--700;
+      color: var(--color-grey--700) !important;
     }
   }
 }

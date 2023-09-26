@@ -1,5 +1,12 @@
 {
   "sling:resourceType": "ws:PagesTemplate",
   "title": "Kyanite website Pages",
-  "allowedChildren": ["/libs/kyanite/common/templates/homepage","/libs/kyanite/common/templates/contactuspage","/libs/kyanite/blogs/templates/articlepage","/libs/kyanite/blogs/templates/bloglistingpage"]
+  "allowedChildren": [
+    "/libs/kyanite/common/templates/homepage",
+    "/libs/kyanite/common/templates/contactuspage",
+    "/libs/kyanite/common/templates/structurepage",
+    "/libs/kyanite/blogs/templates/articlepage",
+    "/libs/kyanite/blogs/templates/bloglistingpage",
+    "/libs/kyanite/fragments/templates/fragmentspage"
+  ]
 }

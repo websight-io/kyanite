@@ -1,0 +1,32 @@
+{
+  "sling:resourceType": "kyanite/common/components/carousel",
+  "jcr:primaryType": "nt:unstructured",
+  "desktop": {
+    "jcr:primaryType": "nt:unstructured",
+    "elementsInRow": 2
+  },
+  "tablet": {
+    "jcr:primaryType": "nt:unstructured",
+    "elementsInRow": 2
+  },
+  "mobile": {
+    "jcr:primaryType": "nt:unstructured",
+    "elementsInRow": 1
+  },
+  "carouselitem1": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/carousel/carouselitem"
+  },
+  "carouselitem2": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/carousel/carouselitem"
+  },
+  "carouselitem3": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/carousel/carouselitem"
+  },
+  "carouselitem4": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/carousel/carouselitem"
+  }
+}

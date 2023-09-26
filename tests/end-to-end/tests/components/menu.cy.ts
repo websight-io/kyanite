@@ -17,7 +17,7 @@
 import {selectors, testIds} from "../../support/consts";
 
 const paths = {
-  menu: 'ComponentOverlay_/content/kyanite-tests/pages/menu/jcr:content/pagecontainer/menu'
+  menu: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/menu/jcr:content/pagecontainer/menu'
 };
 
 describe('Menu component', function () {
@@ -33,7 +33,7 @@ describe('Menu component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/kyanite-tests/pages/menu::editor'
+        '/apps/websight/index.html/content/kyanite-e2e-tests/pages/menu::editor'
     );
 
     cy.getByTestId(paths.menu)
@@ -82,7 +82,7 @@ describe('Menu component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/kyanite-tests/pages/menu/jcr:content/pagecontainer/menu.infinity.json'
+        '/content/kyanite-e2e-tests/pages/menu/jcr:content/pagecontainer/menu.infinity.json'
     )
     .its('body')
     .should('deep.eq', {

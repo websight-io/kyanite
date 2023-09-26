@@ -21,11 +21,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
-import java.util.Spliterator;
-import java.util.Spliterators;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -39,36 +39,36 @@ import pl.ds.websight.pages.core.api.Page;
 @Component(service = {BlogArticleService.class})
 public class BlogArticleService {
 
-  public static final String FEATURE_BLOG_ARTICLE_RESOURCE_TYPE =
+  private static final String FEATURE_BLOG_ARTICLE_RESOURCE_TYPE =
       "kyanite/blogs/components/featuredblogarticle";
-
-  public static final String JCR_SQL_2 = "JCR-SQL2";
-  public static final String TEMPLATE_BLOGARTICLE_PAGE =
+  private static final String TEMPLATE_BLOGARTICLE_PAGE =
       "/libs/kyanite/blogs/templates/blogarticlepage";
 
-  public List<Resource> getListBlogArticlePages(String path, ResourceResolver resourceResolver) {
-    final String pagesQuery = """
-        SELECT p.* FROM [ws:PageContent]
-        AS p WHERE ISDESCENDANTNODE(p, '%s')
-        AND p.[ws:template] = '/libs/kyanite/blogs/templates/blogarticlepage'
-        ORDER BY p.[publicationDate] DESC""";
-    final String formattedQuery = pagesQuery.formatted(path);
-    final Iterator<Resource> iterator = resourceResolver.findResources(
-        formattedQuery,
-        JCR_SQL_2);
-    return StreamSupport.stream(
-        Spliterators.spliteratorUnknownSize(iterator, Spliterator.ORDERED),
-        false
-    ).toList();
+  public List<Resource> getListBlogArticlePages(String resourcePath,
+      ResourceResolver resourceResolver) {
+    Stream<Page> rootPages = streamRootPages(resourcePath, resourceResolver);
+
+    return rootPages.map(this::getListBlogArticlePages)
+        .flatMap(List::stream)
+        .sorted(creationDateComparator())
+        .toList();
   }
 
   public List<Resource> getListBlogArticlePages(Page page) {
-    return page.streamOfChildrenRecursively()
-        .map(Page::getContentResource)
-        .filter(this::isBlogArticlePage)
-        .sorted(Comparator.comparing(this::getBlogArticleCreationDate,
-            Comparator.nullsLast(Comparator.reverseOrder())))
+    return streamBlogArticles(page)
+        .sorted(creationDateComparator())
         .toList();
+  }
+
+  private Comparator<Resource> creationDateComparator() {
+    return Comparator.comparing(this::getBlogArticleCreationDate,
+        Comparator.nullsLast(Comparator.reverseOrder()));
+  }
+
+  private Stream<Resource> streamBlogArticles(Page page) {
+    return Stream.concat(Stream.of(page), page.streamOfChildrenRecursively())
+        .map(Page::getContentResource)
+        .filter(this::isBlogArticlePage);
   }
 
   public List<Resource> findFeatureBlogsOnPage(Resource resource) {
@@ -78,34 +78,20 @@ public class BlogArticleService {
         .toList();
   }
 
-  public List<Resource> findFeatureBlogsOnPage(String path, ResourceResolver resourceResolver) {
-    return getResourceStream(
-        path, FEATURE_BLOG_ARTICLE_RESOURCE_TYPE, resourceResolver)
-        .toList();
-  }
-
-  private Stream<Resource> getResourceStream(String path, String componentResourceType,
-      ResourceResolver resourceResolver) {
-    final String query = """
-        SELECT p.* FROM [nt:unstructured] AS p
-        WHERE ISDESCENDANTNODE(p, '%s')
-        AND p.[sling:resourceType] = '%s'""";
-    final String formattedQuery = query.formatted(path,
-        componentResourceType);
-    final Iterator<Resource> resources = resourceResolver.findResources(formattedQuery,
-        JCR_SQL_2);
-    return StreamSupport.stream(
-        Spliterators.spliteratorUnknownSize(resources, Spliterator.ORDERED),
-        false
-    );
-  }
-
   public boolean isBlogArticlePage(Resource resource) {
     return Optional.ofNullable(resource)
         .map(Resource::getValueMap)
         .stream().anyMatch(vm -> {
           String template = vm.get("ws:template", String.class);
-          return TEMPLATE_BLOGARTICLE_PAGE.equals(template);
+          if (template == null) {
+            return false;
+          }
+          if (TEMPLATE_BLOGARTICLE_PAGE.equals(template)) {
+            return true;
+          }
+          Resource templateResource = resource.getResourceResolver().getResource(template);
+          return templateResource != null
+              && templateResource.isResourceType(TEMPLATE_BLOGARTICLE_PAGE);
         });
   }
 
@@ -127,6 +113,39 @@ public class BlogArticleService {
                 .map(this::getDescendants)
                 .flatMap(Collection::stream))
             .collect(Collectors.toSet());
+  }
+
+  private Stream<Page> streamRootPages(String resourcePath, ResourceResolver resourceResolver) {
+    Resource space = getSpace(resourcePath, resourceResolver);
+    if (space == null) {
+      return Stream.empty();
+    }
+
+    return StreamSupport.stream(space.getChildren().spliterator(), false)
+        .map(pageResource -> pageResource.adaptTo(Page.class))
+        .filter(Objects::nonNull);
+  }
+
+  private Resource getSpace(String resourcePath, ResourceResolver resourceResolver) {
+    String spacePath = getCurrentSpace(resourcePath);
+    if (spacePath == null) {
+      return null;
+    }
+
+    return resourceResolver.getResource(spacePath);
+  }
+
+  private String getCurrentSpace(String resourcePath) {
+    String regex = "^((/content|/published)/[^/]*/pages/).*";
+    if (StringUtils.isNotBlank(resourcePath)) {
+      final Pattern pattern = Pattern.compile(regex);
+      final Matcher matcher = pattern.matcher(resourcePath);
+
+      if (matcher.find()) {
+        return matcher.group(1);
+      }
+    }
+    return null;
   }
 
 }

@@ -17,8 +17,8 @@
 import {selectors, testIds} from "../../support/consts";
 
 const paths = {
-  button: 'ComponentOverlay_/content/kyanite-tests/pages/button/jcr:content/pagecontainer/button',
-  anchor: 'ComponentOverlay_/content/kyanite-tests/pages/button/jcr:content/pagecontainer/anchor'
+  button: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/button/jcr:content/pagecontainer/button',
+  anchor: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/button/jcr:content/pagecontainer/anchor'
 };
 
 describe('Button component', function () {
@@ -34,7 +34,7 @@ describe('Button component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/kyanite-tests/pages/button::editor'
+        '/apps/websight/index.html/content/kyanite-e2e-tests/pages/button::editor'
     );
 
     cy.getByTestId(paths.button)
@@ -115,21 +115,20 @@ describe('Button component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/kyanite-tests/pages/button/jcr:content/pagecontainer/button.infinity.json'
+        '/content/kyanite-e2e-tests/pages/button/jcr:content/pagecontainer/button.infinity.json'
     )
     .its('body')
     .should('deep.eq',
         {
           'jcr:primaryType': 'nt:unstructured',
-          'showIconRight': 'false',
           'showIconLeft': 'true',
           'isOutlined': 'true',
           'isDisabled': 'true',
           'isFullWidth': 'true',
-          'isInverted': 'false',
           'size': 'is-medium',
           'type': 'button',
           'label': 'Label',
+          'isMailto': 'false',
           'variant': 'is-success',
           'isRounded': 'true',
           'modalId': 'Modal ID',
@@ -152,7 +151,7 @@ describe('Button component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/kyanite-tests/pages/button::editor'
+        '/apps/websight/index.html/content/kyanite-e2e-tests/pages/button::editor'
     );
 
     cy.getByTestId(paths.anchor)
@@ -185,25 +184,18 @@ describe('Button component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/kyanite-tests/pages/button/jcr:content/pagecontainer/anchor.json'
+        '/content/kyanite-e2e-tests/pages/button/jcr:content/pagecontainer/anchor.json'
     )
     .its('body')
     .should('deep.eq',
         {
           'jcr:primaryType': 'nt:unstructured',
-          'showIconRight': 'false',
-          'showIconLeft': 'false',
-          'isOutlined': 'false',
-          'isFullWidth': 'false',
-          "isMailto": "false",
-          'isInverted': 'false',
           'url': '/content',
           'type': 'a',
           'label': 'Label',
-          'isRounded': 'false',
           'sling:resourceType': 'kyanite/common/components/button',
           'openInNewTab': 'true',
-          'isLight': 'false'
+          'isMailto': 'false'
         });
   });
 });

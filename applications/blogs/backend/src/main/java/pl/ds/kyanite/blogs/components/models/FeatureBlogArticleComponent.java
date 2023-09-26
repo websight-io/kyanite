@@ -33,7 +33,6 @@ import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.factory.ModelFactory;
 import pl.ds.kyanite.blogs.components.services.BlogArticleService;
 import pl.ds.kyanite.common.components.utils.LinkUtil;
-import pl.ds.kyanite.common.components.utils.PageUtil;
 import pl.ds.websight.pages.core.api.Page;
 import pl.ds.websight.pages.core.api.PageManager;
 
@@ -81,11 +80,7 @@ public class FeatureBlogArticleComponent {
 
   @PostConstruct
   private void init() {
-    final String pagePath =
-        StringUtils.substringBefore(resource.getPath(), JCR_CONTENT);
-    final String linkToFind = StringUtils.isNotBlank(link) && !link.equals(CONTENT) ? link
-        : PageUtil.getCurrentPageSpace(pagePath);
-    final Resource blogPage = this.getArticlePage(linkToFind);
+    final Resource blogPage = this.getArticlePage();
     if (Objects.nonNull(blogPage)) {
       this.blogArticleHeader = modelFactory.createModel(blogPage, BlogArticleHeaderModel.class);
       this.blogArticleHeaderLink = LinkUtil.handleLink(
@@ -94,8 +89,8 @@ public class FeatureBlogArticleComponent {
   }
 
 
-  private Resource getArticlePage(String linkToFind) {
-    final Page page = pageManager.getPage(linkToFind);
+  private Resource getArticlePage() {
+    final Page page = pageManager.getPage(link);
     final List<Resource> blogArticlePages;
     if (Objects.nonNull(page)) {
       Resource pageResource = page.getContentResource();
@@ -104,7 +99,7 @@ public class FeatureBlogArticleComponent {
       }
       blogArticlePages = this.blogArticleService.getListBlogArticlePages(page);
     } else {
-      blogArticlePages = this.blogArticleService.getListBlogArticlePages(linkToFind,
+      blogArticlePages = this.blogArticleService.getListBlogArticlePages(resource.getPath(),
           resourceResolver);
     }
     return blogArticlePages

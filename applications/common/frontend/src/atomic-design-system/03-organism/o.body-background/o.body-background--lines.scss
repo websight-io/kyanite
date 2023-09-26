@@ -1,0 +1,77 @@
+/*!
+ * <!--
+ *     Copyright (C) 2023 Dynamic Solutions
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ * -->
+ */
+
+@use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
+@use 'src/atomic-design-system/00-token/t.position' as position;
+@use 'src/atomic-design-system/00-token/t.zindex' as zindex;
+
+@mixin o-body-background--lines {
+  .navbar {
+    z-index: var(--z-index-navbar);
+  }
+
+  @at-root {
+    &::before {
+      display: block;
+      content: '';
+
+      @include position.center-absolute;
+
+      z-index: var(--z-index-background-of-body);
+
+      width: auto;
+      max-width: 414px;
+      height: 506px;
+
+      background-image: url('./images/o.bg-pulsar--mobile.svg');
+      background-repeat: no-repeat;
+
+      background-position-x: 50%;
+      background-position-y: 50%;
+
+      pointer-events: none;
+
+      @include breakpoint.media-breakpoint-medium {
+        max-width: 768px;
+        height: 1069px;
+
+        background-image: url('./images/o.bg-pulsar--tablet.svg');
+      }
+
+      @include breakpoint.media-breakpoint-large {
+        max-width: 3910px;
+        height: 3910px;
+
+        background-image: url('./images/o.bg-pulsar--desktop.svg');
+
+        background-position-x: calc(-1984px + 50vw);
+        background-position-y: -1268px;
+      }
+
+      @include breakpoint.media-breakpoint-xlarge {
+        background-position-x: calc(-1884px + 50vw);
+        background-position-y: -1268px;
+      }
+
+      @include breakpoint.media-breakpoint-maximum {
+        background-position-x: calc(-1784px + 50vw);
+        background-position-y: -1268px;
+      }
+    }
+  }
+}

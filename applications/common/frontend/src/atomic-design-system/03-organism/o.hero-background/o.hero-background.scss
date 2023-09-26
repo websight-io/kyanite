@@ -53,12 +53,12 @@ $offset-y: $size * 0.5;
   background: #{$backgrounds};
 }
 
-@mixin o-background {
+@mixin o-background-circles {
   @at-root {
     // container
     & {
       position: relative;
-      margin-top: map.get(variables.$spacing-values, '6_2');
+      margin-top: var(--spacing-6_2);
     }
 
     &::before {

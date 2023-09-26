@@ -26,13 +26,14 @@
 @use 'src/atomic-design-system/00-token/t.border' as border;
 
 .a-button {
-  @extend .t-border-radius--1;
+  border-radius: var(--border-radius-1);
 
   &-primary {
-    @extend .t-background-color__primary--600;
+    background-color: var(--color-primary--600) !important;
 
     &:hover {
-      @extend .t-background-color__primary--500;
+      background-color: var(--color-primary--500) !important;
+
     }
 
     &:focus:not(:active) {
@@ -40,28 +41,30 @@
     }
 
     &:focus-visible {
-      @extend .t-background-color__primary--500;
-      @extend .t-outline-weight--3;
-      @extend .t-outline-color__primary--300;
+      background-color: var(--color-primary--500) !important;
+
+      outline: var(--border-weight-3) solid;
+      outline-color: var(--color-primary--300) !important;
 
       outline-offset: 0;
     }
 
     &:active {
-      @extend .t-background-color__primary--700;
+      background-color: var(--color-primary--700) !important;
+
 
       outline: none;
     }
   }
 
   &-secondary {
-    @extend .t-border-weight--1;
-    @extend .t-border-color__grey--300;
-    @extend .t-color__grey--900;
+    border: var(--border-weight-1) solid;
+    border-color: var(--color-grey--300) !important;
+    color: var(--color-grey--900) !important;
 
     &:hover {
-      @extend .t-border-color__primary--600;
-      @extend .t-color__primary--600;
+      border-color: var(--color-primary--600) !important;
+      color: var(--color-primary--900) !important;
     }
 
     &:focus:not(:active) {
@@ -69,26 +72,27 @@
     }
 
     &:focus-visible {
-      @extend .t-color__primary--600;
-      @extend .t-border-color__primary--600;
-      @extend .t-outline-weight--3;
-      @extend .t-outline-color__primary--300;
+      color: var(--color-primary--600) !important;
+      border-color: var(--color-primary--600) !important;
+      outline: var(--border-weight-3) solid;
+      outline-color: var(--color-primary--300) !important;
+
 
       outline-offset: 0;
     }
 
     &:active {
-      @extend .t-color__primary--700;
-      @extend .t-border-color__primary--700;
+      color: var(--color-primary--700) !important;
+      border-color: var(--color-primary--700) !important;
     }
   }
 
   &-ghost {
     border: none;
-    @extend .t-color__grey--900;
+    color: var(--color-grey--900) !important;
 
     &:hover {
-      @extend .t-color__primary--600;
+      color: var(--color-primary--600) !important;
 
       text-decoration: none;
     }
@@ -98,15 +102,14 @@
     }
 
     &:focus-visible {
-      @extend .t-color__primary--600;
-      @extend .t-outline-weight--3;
-      @extend .t-outline-color__primary--300;
-
+      color: var(--color-primary--600) !important;
+      outline: var(--border-weight-3) solid;
+      outline-color: var(--color-primary--300) !important;
       outline-offset: 0;
     }
 
     &:active {
-      @extend .t-color__primary--700;
+      color: var(--color-primary--700) !important;
     }
   }
 }
