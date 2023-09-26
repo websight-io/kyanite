@@ -74,13 +74,13 @@
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Social media metadata",
       "ogImage": {
-        "sling:resourceType": "wcm/dialogs/components/textfield",
-        "label": "Property og:image",
+        "sling:resourceType": "wcm/dialogs/components/pathpicker",
+        "label": "og:image",
         "name": "ogImage"
       },
       "ogType": {
         "sling:resourceType": "wcm/dialogs/components/select",
-        "label": "Property og:type",
+        "label": "og:type",
         "name": "ogType",
         "article": {
           "sling:resourceType": "wcm/dialogs/components/select/selectitem",
@@ -95,22 +95,22 @@
       },
       "ogUrl": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
-        "label": "Property og:url",
+        "label": "og:url",
         "name": "ogUrl"
       },
       "ogDescription": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
-        "label": "Property og:description",
+        "label": "og:description",
         "name": "ogDescription"
       },
       "ogTitle": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
-        "label": "Property og:title",
+        "label": "og:title",
         "name": "ogTitle"
       },
       "twitterCard": {
         "sling:resourceType": "wcm/dialogs/components/select",
-        "label": "Property twitter:card",
+        "label": "twitter:card",
         "name": "twitterCard",
         "summary": {
           "sling:resourceType": "wcm/dialogs/components/select/selectitem",
@@ -125,28 +125,28 @@
       },
       "twitterTitle": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
-        "label": "Property twitter:title",
+        "label": "twitter:title",
         "name": "twitterTitle"
+      },
+      "twitterImage": {
+        "sling:resourceType": "wcm/dialogs/components/pathpicker",
+        "label": "twitter:image",
+        "name": "twitterImage"
       },
       "twitterImageAlt": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
-        "label": "Property twitter:image:alt",
+        "label": "twitter:image:alt",
         "name": "twitterImageAlt"
       },
       "twitterSite": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
-        "label": "Property twitter:site",
+        "label": "twitter:site",
         "name": "twitterSite"
       },
       "twitterDescription": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
-        "label": "Property twitter:description",
+        "label": "twitter:description",
         "name": "twitterDescription"
-      },
-      "twitterImage": {
-        "sling:resourceType": "wcm/dialogs/components/textfield",
-        "label": "Property twitter:image",
-        "name": "twitterImage"
       }
     }
   }
