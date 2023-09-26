@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Sync Github and Jira release
+name: Create JIRA release
 
 on:
   workflow_dispatch:
@@ -26,28 +26,30 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Find fixed issues
+          fetch-depth: '0'
+      - name: Prepare release
         run: |
           PROJECT_NAME="KYAN"
           LATEST_TAG=$(git describe --tags --abbrev=0)
-          PREVIOUS_TAG=$(git describe --abbrev=0 ${LATEST_TAG}^)
-          COMMITS=$(git log ${PREVIOUS_TAG}..${LATEST_TAG} --pretty=format:"%s" | grep ${PROJECT_NAME})
-          TICKETS=$(echo "$COMMITS" | grep -o '${PROJECT_NAME}\-[0-9]\+' | sort -u | paste -sd "," -)
+          echo "Latest tag: ${LATEST_TAG}"
           
-          echo "Latest tag: $LATEST_TAG"
-          echo "Previous tag: $LATEST_TAG"
+          PREVIOUS_TAG=$(git describe --abbrev=0 ${LATEST_TAG}^)
+          echo "Previous tag: ${PREVIOUS_TAG}"
+          
+          COMMITS=$(git log ${PREVIOUS_TAG}..${LATEST_TAG} --pretty=format:"%s" | grep ${PROJECT_NAME})
+          TICKETS=$(echo "${COMMITS}" | grep -o ${PROJECT_NAME}'\-[0-9]\+' | sort -u | paste -sd "," -)
           echo "Tickets found in commit messages: ${TICKETS}"
           
-          echo "RELEASE_NAME=${LATEST_VERSION}" >> $GITHUB_ENV
+          echo "RELEASE_NAME=${LATEST_TAG}" >> $GITHUB_ENV
           echo "TICKETS=${TICKETS}" >> $GITHUB_ENV
-          if [ -z "TICKETS" ]; then
+          if [ -z "${TICKETS}" ]; then
             echo "HAS_TICKETS=false" >> $GITHUB_ENV
             echo "No tickets found. JIRA release won't be created."
           else
             echo "HAS_TICKETS=true" >> $GITHUB_ENV
           fi
 
-      - name: create release
+      - name: Create release
         if: ${{ env.HAS_TICKETS == 'true' }}
         uses: armona/jira-release-actions@v2.0.6
         with:
