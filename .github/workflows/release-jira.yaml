@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Sync Github and Jira release
+name: Create JIRA release
 
 on:
   workflow_dispatch:
@@ -27,7 +27,7 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: '0'
-      - name: Find fixed issues
+      - name: Prepare release
         run: |
           PROJECT_NAME="KYAN"
           LATEST_TAG=$(git describe --tags --abbrev=0)
@@ -40,7 +40,7 @@ jobs:
           TICKETS=$(echo "${COMMITS}" | grep -o ${PROJECT_NAME}'\-[0-9]\+' | sort -u | paste -sd "," -)
           echo "Tickets found in commit messages: ${TICKETS}"
           
-          echo "RELEASE_NAME=${LATEST_VERSION}" >> $GITHUB_ENV
+          echo "RELEASE_NAME=${LATEST_TAG}" >> $GITHUB_ENV
           echo "TICKETS=${TICKETS}" >> $GITHUB_ENV
           if [ -z "${TICKETS}" ]; then
             echo "HAS_TICKETS=false" >> $GITHUB_ENV
@@ -49,7 +49,7 @@ jobs:
             echo "HAS_TICKETS=true" >> $GITHUB_ENV
           fi
 
-      - name: create release
+      - name: Create release
         if: ${{ env.HAS_TICKETS == 'true' }}
         uses: armona/jira-release-actions@v2.0.6
         with:
