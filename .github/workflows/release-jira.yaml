@@ -30,12 +30,13 @@ jobs:
         run: |
           PROJECT_NAME="KYAN"
           LATEST_TAG=$(git describe --tags --abbrev=0)
+          echo "Latest tag: $LATEST_TAG"
+          
           PREVIOUS_TAG=$(git describe --abbrev=0 ${LATEST_TAG}^)
+          echo "Previous tag: $LATEST_TAG"
+          
           COMMITS=$(git log ${PREVIOUS_TAG}..${LATEST_TAG} --pretty=format:"%s" | grep ${PROJECT_NAME})
           TICKETS=$(echo "$COMMITS" | grep -o '${PROJECT_NAME}\-[0-9]\+' | sort -u | paste -sd "," -)
-          
-          echo "Latest tag: $LATEST_TAG"
-          echo "Previous tag: $LATEST_TAG"
           echo "Tickets found in commit messages: ${TICKETS}"
           
           echo "RELEASE_NAME=${LATEST_VERSION}" >> $GITHUB_ENV
