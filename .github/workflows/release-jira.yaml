@@ -31,6 +31,7 @@ jobs:
           PROJECT_NAME="KYAN"
           echo "Project name: $PROJECT_NAME"
           
+          echo "Latest tag: $(git describe --tags --abbrev=0)"
           LATEST_TAG=$(git describe --tags --abbrev=0)
           echo "Latest tag: $LATEST_TAG"
           
