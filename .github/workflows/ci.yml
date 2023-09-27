@@ -56,6 +56,8 @@ jobs:
 
   build-base-branch:
     if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+
     steps:
       - name: Clone base branch
         uses: actions/checkout@v3
@@ -79,6 +81,8 @@ jobs:
   build-and-test-visual:
     if: github.event_name == 'pull_request'
     needs: [build-and-test-functional, build-base-branch]
+    runs-on: ubuntu-latest
+
     steps:
       - name: Clone PR branch
         uses: actions/checkout@v3
