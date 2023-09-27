@@ -20,12 +20,8 @@ on:
     branches:
       - main
 
-env:
-  MAVEN_CACHE_VERSION: v7.0.0 # bump cache version number to invalidate cache i.e. v3 > v4
-  MAVEN_CACHE_PATH: ~/.m2/repository
-
 jobs:
-  build-and-test:
+  build-and-test-functional:
     runs-on: ubuntu-latest
 
     steps:
@@ -58,7 +54,10 @@ jobs:
           path: ${{ env.MAVEN_CACHE_PATH }}
           key: ${{ env.MAVEN_CACHE_VERSION }}-${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
 
-      - name: Switch to base branch
+  build-base-branch:
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Clone base branch
         uses: actions/checkout@v3
         with:
           ref: ${{ github.event.pull_request.base.ref }}
@@ -69,15 +68,25 @@ jobs:
           restore-keys: ${{ env.MAVEN_CACHE_VERSION }}-${{ runner.os }}-maven
       - name: Visual tests - create reference snapshots
         run: mvn --batch-mode clean verify -P e2e-visual-seed
-      - name: Temporarily store snapshot references
-        run: cp -R ./tests/end-to-end/backstop_data/bitmaps_reference $HOME/bitmaps_reference
-  
-      - name: Switch to PR branch
+      - name: Archive snapshot references
+        uses: actions/upload-artifact@v3
+        with:
+          name: snapshot-references
+          path: |
+            ./tests/end-to-end/backstop_data/bitmaps_reference
+          retention-days: 1
+
+  build-and-test-visual:
+    if: github.event_name == 'pull_request'
+    needs: [build-and-test-functional, build-base-branch]
+    steps:
+      - name: Clone PR branch
         uses: actions/checkout@v3
-      - name: Add snapshot references from base branch to the project
-        run: cp -R $HOME/bitmaps_reference ./tests/end-to-end/backstop_data
-      - name: Remove temporary storage of snapshot references
-        run: rm -r $HOME/bitmaps_reference
+      - name: Download snapshot references
+        uses: actions/download-artifact@v3
+        with:
+          name: snapshot-references
+          path: ./tests/end-to-end/backstop_data
       - uses: actions/cache/restore@v3
         with:
           path: ${{ env.MAVEN_CACHE_PATH }}
