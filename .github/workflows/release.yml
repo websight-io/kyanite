@@ -56,6 +56,7 @@ jobs:
           export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain websight --domain-owner ${{ secrets.AWS_ACCOUNT_ID }} --query authorizationToken --output text`
           echo "CODEARTIFACT_AUTH_TOKEN=${CODEARTIFACT_AUTH_TOKEN}" >> $GITHUB_ENV
       - name: Prepare release
+        id: prepare-release
         env:
           AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
         run: |
