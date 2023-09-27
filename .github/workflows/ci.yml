@@ -20,6 +20,10 @@ on:
     branches:
       - main
 
+env:
+  MAVEN_CACHE_VERSION: v7.0.0 # bump cache version number to invalidate cache i.e. v3 > v4
+  MAVEN_CACHE_PATH: ~/.m2/repository
+
 jobs:
   build-and-test-functional:
     runs-on: ubuntu-latest
