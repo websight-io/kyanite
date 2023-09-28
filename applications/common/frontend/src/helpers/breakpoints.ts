@@ -14,30 +14,8 @@
  * limitations under the License.
  */
 
-import { breakpoints } from '../../helpers/breakpoints';
-import {
-  initGlideJsSlider,
-} from '../../helpers/glide';
-
-const initCardsListGlideJs = () => {
-  initGlideJsSlider('.carousel.glide', (element) => {
-    return {
-      type: 'slider',
-      gap: 32,
-      bound: true,
-      rewind: false,
-      peek: 0,
-      perView: element.dataset.itemsPerRowLg,
-      breakpoints: {
-        [breakpoints.md]: {
-          perView: element.dataset.itemsPerRowSm,
-        },
-        [breakpoints.lg]: {
-          perView: element.dataset.itemsPerRowMd,
-        },
-      },
-    };
-  });
+export const breakpoints = {
+  sm: 0,
+  md: 768,
+  lg: 1024,
 };
-
-initCardsListGlideJs();

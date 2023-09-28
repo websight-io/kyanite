@@ -33,7 +33,6 @@ public class CarouselComponent {
   private static final String RT_CAROUSEL_ITEM = "kyanite/common/components/carousel/carouselitem";
   private static final String PN_ELEMENTS_IN_ROW = "elementsInRow";
   private static final int ROW_SIZE = 12;
-  private static final int VISIBLE_ITEMS_COUNT = 4;
 
   @ChildResource
   private Resource desktop;
@@ -43,6 +42,15 @@ public class CarouselComponent {
 
   @ChildResource
   private Resource mobile;
+
+  @Getter
+  private Integer desktopElementsInRow;
+
+  @Getter
+  private Integer tabletElementsInRow;
+
+  @Getter
+  private Integer mobileElementsInRow;
 
   @Getter
   private Integer desktopColumns;
@@ -63,15 +71,15 @@ public class CarouselComponent {
     return items != null && !items.isEmpty();
   }
 
-  public Boolean isPaginationNeeded() {
-    return items.size() > VISIBLE_ITEMS_COUNT;
-  }
-
   @PostConstruct
   void init() {
-    desktopColumns = calculateColumnSize(desktop, 2);
-    tabletColumns = calculateColumnSize(tablet, 2);
-    mobileColumns = calculateColumnSize(mobile, 1);
+    desktopElementsInRow = getElementsInRow(desktop, 2);
+    tabletElementsInRow = getElementsInRow(tablet, 2);
+    mobileElementsInRow = getElementsInRow(mobile, 1);
+
+    desktopColumns = calculateColumnSize(desktopElementsInRow);
+    tabletColumns = calculateColumnSize(tabletElementsInRow);
+    mobileColumns = calculateColumnSize(mobileElementsInRow);
     items = findCarouseItems();
   }
 
@@ -86,8 +94,8 @@ public class CarouselComponent {
         || resource.isResourceType(RT_CAROUSEL_ITEM);
   }
 
-  private Integer calculateColumnSize(Resource resource, Integer defaultElements) {
-    return ROW_SIZE / getElementsInRow(resource, defaultElements);
+  private Integer calculateColumnSize(Integer elementInRow) {
+    return ROW_SIZE / elementInRow;
   }
 
   private Integer getElementsInRow(Resource resource, Integer defaultValue) {

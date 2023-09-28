@@ -73,6 +73,7 @@
     "> 1%"
   ],
   "dependencies": {
+    "@glidejs/glide": "^3.6.0",
     "highlight.js": "^11.8.0",
     "vanilla-cookieconsent": "^2.9.1"
   }
