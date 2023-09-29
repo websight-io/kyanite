@@ -1,18 +1,5 @@
 {
   "jcr:primaryType": "nt:unstructured",
-  "listing": {
-    "jcr:primaryType": "nt:unstructured",
-    "container": {
-      "jcr:primaryType": "nt:unstructured",
-      "allowedComponents": [
-        "Kyanite Columns",
-        "Kyanite Components",
-        "Kyanite Elements",
-        "Kyanite Layouts",
-        "Kyanite Blog List Components"
-      ]
-    }
-  },
   "article": {
     "jcr:primaryType": "nt:unstructured",
     "container": {
