@@ -11,10 +11,10 @@
         "sling:resourceType": "kyanite/common/components/navbar",
         "fixedOption": "is-fixed-top"
       },
-      "container": {
-        "sling:resourceType": "kyanite/common/components/container",
-        "section": {
-          "sling:resourceType": "kyanite/common/components/section"
+      "section": {
+        "sling:resourceType": "kyanite/common/components/section",
+        "container": {
+          "sling:resourceType": "kyanite/common/components/container"
         }
       },
       "footer": {

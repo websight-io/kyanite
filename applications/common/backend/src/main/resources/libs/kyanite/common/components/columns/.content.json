@@ -2,7 +2,10 @@
   "isContainer": true,
   "isLayout": true,
   "group": "Kyanite Columns",
-  "allowedComponents": ["/libs/kyanite/common/components/columns/column"],
+  "allowedComponents": [
+    "/apps/kyanite/common/components/columns/column",
+    "/libs/kyanite/common/components/columns/column"
+  ],
   "sling:resourceType": "ws:Component",
   "title": "Columns"
 }

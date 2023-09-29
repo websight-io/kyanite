@@ -2,7 +2,7 @@
   "sling:resourceType": "ws:Component",
   "isContainer": true,
   "isLayout": true,
-  "group": "Kyanite Layouts",
+  "group": "Level building blocks",
   "instanceResourceType": "kyanite/common/components/level/levelitem",
   "title": "Level Item - Feature small"
 }

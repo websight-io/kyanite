@@ -1,7 +1,12 @@
 {
   "isContainer": true,
   "group": "Kyanite sub-elements",
-  "allowedComponents": ["/libs/kyanite/common/components/table/tablecell", "/libs/kyanite/common/components/table/tableheadcell"],
+  "allowedComponents": [
+    "/apps/kyanite/common/components/table/tablecell",
+    "/libs/kyanite/common/components/table/tablecell",
+    "/apps/kyanite/common/components/table/tableheadcell",
+    "/libs/kyanite/common/components/table/tableheadcell"
+  ],
   "sling:resourceType": "ws:Component",
   "title": "Table row"
 }
