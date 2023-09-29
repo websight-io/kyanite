@@ -17,7 +17,8 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.ContactFormComponent">
-  <form data-config-captcha-public-key='${model.captchaPublicKey}'
+  <form class="contact-form"
+        data-config-captcha-public-key='${model.captchaPublicKey}'
         data-config-http-end-point='${model.configEndpoint}'>
 
     <div class="field">
