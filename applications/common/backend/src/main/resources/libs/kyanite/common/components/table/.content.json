@@ -1,9 +1,13 @@
 {
   "isContainer": true,
   "allowedComponents": [
+    "/apps/kyanite/common/components/table/tablehead",
     "/libs/kyanite/common/components/table/tablehead",
+    "/apps/kyanite/common/components/table/tablefoot",
     "/libs/kyanite/common/components/table/tablefoot",
+    "/apps/kyanite/common/components/table/tablebody",
     "/libs/kyanite/common/components/table/tablebody",
+    "/apps/kyanite/common/components/table/tablerow",
     "/libs/kyanite/common/components/table/tablerow"
   ],
   "group": "Kyanite Elements",

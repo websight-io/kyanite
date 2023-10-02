@@ -2,7 +2,10 @@
   "isContainer": true,
   "isLayout": true,
   "group": "Kyanite Layouts",
-  "allowedComponents": ["/libs/kyanite/common/components/tiles/tileparent"],
+  "allowedComponents": [
+    "/apps/kyanite/common/components/tiles/tileparent",
+    "/libs/kyanite/common/components/tiles/tileparent"
+  ],
   "sling:resourceType": "ws:Component",
   "title": "Tiles"
 }

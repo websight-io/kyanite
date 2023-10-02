@@ -1,10 +1,12 @@
 {
   "isContainer": true,
   "allowedComponents": [
+    "/apps/kyanite/common/components/navbar/navbarbrand",
     "/libs/kyanite/common/components/navbar/navbarbrand",
+    "/apps/kyanite/common/components/navbar/navbarmenu",
     "/libs/kyanite/common/components/navbar/navbarmenu"
   ],
-  "group": "Kyanite Components",
+  "group": "Components",
   "sling:resourceType": "ws:Component",
   "title": "Navbar"
 }

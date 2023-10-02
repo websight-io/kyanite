@@ -1,5 +1,5 @@
 {
-  "group": ".hidden",
+  "group": "Kyanite Blog Article Components",
   "sling:resourceType": "ws:Component",
-  "title": "Blog Post Table Of Contents"
+  "title": "Blog article table of contents"
 }

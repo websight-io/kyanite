@@ -26,7 +26,7 @@
     </parent>
 
     <artifactId>kyanite-extensions</artifactId>
-  <version>0.2.0-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
     <name>Kyanite Components Project - Extensions</name>
     <description>Parent for extension modules.</description>
     <packaging>pom</packaging>
