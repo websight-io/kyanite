@@ -3,12 +3,11 @@
   "isLayout": true,
   "group": "Kyanite Layouts",
   "allowedComponents": [
-    "/libs/kyanite/common/components/level/positionedlevel",
+    "Level building blocks",
+    "/apps/kyanite/common/components/level/levelitem",
     "/libs/kyanite/common/components/level/levelitem",
-    "/libs/kyanite/common/components/layouts/levelitem/feature",
-    "/libs/kyanite/common/components/layouts/levelitem/featuresmall",
-    "/libs/kyanite/common/components/layouts/levelitem/featurelarge",
-    "/libs/kyanite/common/components/layouts/levelitem/stats"
+    "/apps/kyanite/common/components/level/positionedlevel",
+    "/libs/kyanite/common/components/level/positionedlevel"
   ],
   "sling:resourceType": "ws:Component",
   "title": "Level"

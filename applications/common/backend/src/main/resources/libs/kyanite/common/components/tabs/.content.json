@@ -2,6 +2,9 @@
   "group": "Kyanite Components",
   "sling:resourceType": "ws:Component",
   "isContainer": true,
-  "allowedComponents": ["/libs/kyanite/common/components/tabs/tab"],
+  "allowedComponents": [
+    "/apps/kyanite/common/components/tabs/tab",
+    "/libs/kyanite/common/components/tabs/tab"
+  ],
   "title": "Tabs"
 }

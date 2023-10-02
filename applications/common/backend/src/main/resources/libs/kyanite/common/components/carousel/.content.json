@@ -1,7 +1,10 @@
 {
   "group": "Kyanite Components",
   "isContainer": true,
-  "allowedComponents": ["/libs/kyanite/common/components/carousel/carouselitem"],
+  "allowedComponents": [
+    "/apps/kyanite/common/components/carousel/carouselitem",
+    "/libs/kyanite/common/components/carousel/carouselitem"
+  ],
   "sling:resourceType": "ws:Component",
   "title": "Carousel"
 }

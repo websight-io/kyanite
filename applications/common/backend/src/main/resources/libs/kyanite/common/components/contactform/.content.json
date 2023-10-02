@@ -1,10 +1,4 @@
 {
-  "allowedComponents": [
-    "Kyanite Columns",
-    "Kyanite Components",
-    "Kyanite Elements",
-    "Kyanite Layouts"
-  ],
   "group": "Kyanite Components",
   "sling:resourceType": "ws:Component",
   "title": "Contact form"
