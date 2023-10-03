@@ -5,19 +5,14 @@
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
-      "assetReference": {
-        "sling:resourceType": "wcm/dialogs/components/assetreference",
-        "mimeTypes": ["image/*", "video/*"],
-        "name": "assetReference",
-        "description": "Default image source",
-        "label": "Choose image"
-      },
-      "src": {
-        "sling:resourceType": "wcm/dialogs/components/pathpicker",
-        "rootPath": "/content",
-        "name": "src",
-        "description": "Secondary image source",
-        "label": "Use this if you want a link to image from web"
+      "imageSource": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
+          "assetReference": {
+            "mimeTypes": ["image/*", "video/*"]
+          }
+        }
       },
       "alt": {
         "sling:resourceType": "wcm/dialogs/components/textfield",

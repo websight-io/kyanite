@@ -30,12 +30,23 @@
     "imageTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Image",
-      "mainImage": {
+      "imageSource": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "namespace": "image",
         "include": {
-          "sling:resourceSuperType": "kyanite/common/components/card/common/image",
-          "fixedStyle": {"sling:hideResource": true}
+          "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
+          "assetReference": {
+            "mimeTypes": ["image/*"],
+            "name": "image/assetReference"
+          },
+          "src": {
+            "name": "image/assetReference"
+          }
+        }
+      },
+      "image": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "kyanite/common/components/card/common/image"
         }
       }
     },

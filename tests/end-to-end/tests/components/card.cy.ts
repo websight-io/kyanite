@@ -48,10 +48,12 @@ describe('Card component', function () {
     cy.getByTestId('ModalDialog_Card')
       .findByTestId('dialogTab_Image').click();
     cy.getByTestId('ModalDialog_Card')
-      .findByTestId('Input_Alttext').clear().type('Alt text');
+    .findByTestId('Input_Alttext').clear().type('Alt text');
     cy.getByTestId('ModalDialog_Card')
-      .findByTestId('Input_Usethisifyouwantalinktoimagefromweb')
-        .clear().type('/content/kyanite-e2e-tests/assets/images/personal/PortfolioForum.png');
+      .findByTestId('RadioElement_link').click();
+    cy.getByTestId('ModalDialog_Card')
+      .findByTestId("Input_Chooseimage")
+      .clear().type('/content/kyanite-e2e-tests/assets/images/personal/PortfolioForum.png');
     cy.getByTestId('ModalDialog_Card')
       .find('div[class^="Input_Imageratio__control"]').click();
     cy.contains('16 by 9').click({ force: true });
@@ -79,9 +81,10 @@ describe('Card component', function () {
         'jcr:primaryType': 'nt:unstructured',
         'sling:resourceType': 'kyanite/common/components/card/cardcontent'
       },
+      imageSrcType: 'link',
       'image': {
         alt: 'Alt text',
-        src: '/content/kyanite-e2e-tests/assets/images/personal/PortfolioForum.png',
+        assetReference: '/content/kyanite-e2e-tests/assets/images/personal/PortfolioForum.png',
         style: 'is-16by9',
         'jcr:primaryType': 'nt:unstructured',
       },

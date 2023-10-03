@@ -31,7 +31,8 @@
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/image"
                 alt="article-1"
-                assetReference="/content/kyanite-visual-tests/assets/blog-image-example.jpeg"/>
+                assetReference="/content/kyanite-visual-tests/assets/blog-image-example.jpeg"
+                imageSrcType="asset"/>
             <content
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/content"

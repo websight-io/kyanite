@@ -32,6 +32,8 @@
                         <image
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/image"
+                            assetReference="/content/kyanite-visual-tests/assets/basura.svg"
+                            imageSrcType="asset"
                             isRounded="false"
                             src="/content/kyanite-visual-tests/assets/basura.svg"
                             style="is-160x160"
@@ -175,6 +177,8 @@
                         <image
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/image"
+                            assetReference="/content/kyanite-visual-tests/assets/basura.svg"
+                            imageSrcType="asset"
                             isRounded="false"
                             src="/content/kyanite-visual-tests/assets/basura.svg"
                             style="is-128x128"
@@ -221,6 +225,8 @@
                         <image
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/image"
+                            assetReference="/content/kyanite-visual-tests/assets/basura.svg"
+                            imageSrcType="asset"
                             isRounded="false"
                             src="/content/kyanite-visual-tests/assets/basura.svg"
                             style="is-32x32"

@@ -1,22 +1,8 @@
 {
   "sling:resourceType": "wcm/dialogs/components/container",
-  "assetReference": {
-    "sling:resourceType": "wcm/dialogs/components/assetreference",
-    "mimeTypes": ["image/*"],
-    "name": "assetReference",
-    "description": "Default image source",
-    "label": "Choose image"
-  },
-  "src": {
-    "sling:resourceType": "wcm/dialogs/components/pathpicker",
-    "rootPath": "/content",
-    "name": "src",
-    "description": "Secondary image source",
-    "label": "Use this if you want a link to image from web"
-  },
   "alt": {
     "sling:resourceType": "wcm/dialogs/components/textfield",
-    "name": "alt",
+    "name": "image/alt",
     "label": "Alt text"
   },
   "style": {
@@ -30,15 +16,6 @@
       "is-9by16": {"sling:hideResource": true},
       "is-1by2": {"sling:hideResource": true},
       "is-1by3": {"sling:hideResource": true}
-    }
-  },
-  "fixedStyle": {
-    "sling:resourceType": "wcm/dialogs/components/include",
-    "include": {
-      "sling:resourceSuperType": "/libs/kyanite/common/components/image/attributes/fixed",
-      "name": "thumbnail/style",
-      "label": "Fixed size",
-      "is-48x48": {"selected": true}
     }
   }
 }
