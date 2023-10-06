@@ -31,14 +31,14 @@
 
       <section class="modal-card-body">
         <div class="container">
-          <sly data-sly-resource="${'modelcardcontent'}"></sly>
+          <sly data-sly-resource="${'modalcardcontent'}"></sly>
         </div>
       </section>
 
       <sly data-sly-test="${wcmmode.isEdit || (!wcmmode.isEdit && model.hasFooter)}">
         <footer class="modal-card-foot">
           <div class="container">
-            <sly data-sly-resource="${'modelcardfooter'}"></sly>
+            <sly data-sly-resource="${'modalcardfooter'}"></sly>
           </div>
         </footer>
       </sly>

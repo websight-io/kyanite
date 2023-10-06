@@ -8,7 +8,7 @@
       "header": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "header",
-        "label": "Model Card header"
+        "label": "Modal Card header"
       },
       "id": {
         "sling:resourceType": "wcm/dialogs/components/textfield",

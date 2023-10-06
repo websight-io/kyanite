@@ -76,13 +76,13 @@
             "jcr:primaryType": "nt:unstructured",
             "policy": "kyanite/blogs/policies/article/container"
           },
-          "modelcard": {
+          "modalcard": {
             "jcr:primaryType": "nt:unstructured",
-            "modelcardcontent": {
+            "modalcardcontent": {
               "jcr:primaryType": "nt:unstructured",
               "policy": "kyanite/blogs/policies/article/container"
             },
-            "modelcardfooter": {
+            "modalcardfooter": {
               "jcr:primaryType": "nt:unstructured",
               "policy": "kyanite/blogs/policies/article/container"
             }
