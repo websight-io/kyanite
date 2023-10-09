@@ -1,0 +1,11 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "modalcardcontent": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/modalcard/modalcardcontent"
+  },
+  "modalcardfooter": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/modalcard/modalcardfooter"
+  }
+}

@@ -8,5 +8,5 @@
     "Kyanite Layouts"
   ],
   "sling:resourceType": "ws:Component",
-  "title": "Model Card Footer"
+  "title": "Modal Card Content"
 }
