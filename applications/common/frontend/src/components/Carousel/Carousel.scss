@@ -27,9 +27,7 @@
     gap: var(--spacing-6_3);
   }
 
-  &--slider {
-    .glide__track {
-      cursor: grab;
-    }
+  .glide__track {
+    cursor: grab;
   }
 }

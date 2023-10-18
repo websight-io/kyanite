@@ -19,24 +19,21 @@
 <sly
   data-sly-use.model="pl.ds.kyanite.common.components.models.CarouselComponent"
 >
-  <sly
-    data-sly-set.CSSclasses="${model.classes @ join=' '}"
-  ></sly>
   <sly data-sly-test="${resource.hasChildren}">
     <sly data-sly-test="${!wcmmode.isEdit}">
       <div
-        class="carousel glide ${CSSclasses}"
+        class="carousel glide"
         data-items-per-row-sm="${model.mobileElementsInRow}"
         data-items-per-row-md="${model.tabletElementsInRow}"
         data-items-per-row-lg="${model.desktopElementsInRow}"
       >
         <div data-glide-el="controls" class="buttons is-right">
-          <button data-glide-dir="<" class="button previous-page-button">
+          <button data-glide-dir="<" class="button">
             <span class="icon">
               <i class="mdi mdi-arrow-left"></i>
             </span>
           </button>
-          <button data-glide-dir=">" class="button next-page-button">
+          <button data-glide-dir=">" class="button">
             <span class="icon">
               <i class="mdi mdi-arrow-right"></i>
             </span>
@@ -72,7 +69,7 @@
   <sly data-sly-test="${!resource.hasChildren}">
     <sly
       data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
-      data-sly-call="${lib.placeholder @ classes=CSSclasses}"
+      data-sly-call="${lib.placeholder}"
     >
     </sly>
   </sly>
