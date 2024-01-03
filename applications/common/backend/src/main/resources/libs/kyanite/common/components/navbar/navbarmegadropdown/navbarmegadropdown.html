@@ -16,13 +16,13 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.kyanite.common.components.models.navbar.NavbarDropdownComponent">
+<sly data-sly-use.model="pl.ds.kyanite.common.components.models.navbar.NavbarMegaDropdownComponent">
   <div class="navbar-item has-dropdown is-hoverable ${model.isDropup ? 'has-dropdown-up' : ''}" tabindex="0">
     <a class="navbar-link ${model.hasArrow ? '' : 'is-arrowless'}">
       <sly data-sly-test="${model.addIcon && model.icon}">
         <sly data-sly-resource="${resource @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
       </sly>
-      ${model.label}
+      ${model.dropdownLabel}
     </a>
 
     <div class="navbar-dropdown ${model.isBoxed ? 'is-boxed' : ''}">

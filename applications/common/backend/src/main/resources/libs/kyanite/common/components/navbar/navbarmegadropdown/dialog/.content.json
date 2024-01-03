@@ -7,111 +7,14 @@
       "label": "General",
       "dropdownLabel": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
-        "name": "label",
-        "label": "Label of a dropdown"
-      },
-      "addIcon": {
-        "sling:resourceType": "wcm/dialogs/components/toggle",
-        "name": "addIcon",
-        "label": "Add icon?"
-      },
-      "iconContainer": {
-        "sling:resourceType": "wcm/dialogs/components/container",
-        "iconLibType": {
-          "sling:resourceType": "wcm/dialogs/components/select",
-          "name": "iconLibType",
-          "label": "Icon Library",
-          "required": true,
-          "datasource": {
-            "sling:resourceType": "/apps/iconLibraryDatasource"
-          }
-        },
-        "selectOrType": {
-          "sling:resourceType": "wcm/dialogs/components/radio",
-          "name": "selectOrType",
-          "label": "Select icon or type it",
-          "required": true,
-          "select": {
-            "sling:resourceType": "wcm/dialogs/components/radio/option",
-            "label": "Select it",
-            "value": "select",
-            "selected": true
-          },
-          "type": {
-            "sling:resourceType": "wcm/dialogs/components/radio/option",
-            "label": "Type it",
-            "value": "type"
-          }
-        },
-        "typedIcon": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "icon",
-          "label": "Name of the icon",
-          "ws:display": {
-            "condition": {
-              "sourceName": "selectOrType",
-              "values": "type"
-            }
-          }
-        },
-        "iconFA": {
-          "sling:resourceType": "wcm/dialogs/components/container",
-          "selectableIcon": {
-            "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/common/components/common/icon/icons/fontawesome",
-            "ws:display": {
-              "condition": {
-                "sourceName": "selectOrType",
-                "values": "select"
-              }
-            }
-          },
-          "iconSize": {
-            "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/common/components/common/icon/iconsize/fontawesome"
-          },
-          "ws:display": {
-            "condition": {
-              "sourceName": "iconLibType",
-              "values": "fas"
-            }
-          }
-        },
-        "iconMD": {
-          "sling:resourceType": "wcm/dialogs/components/container",
-          "selectableIcon": {
-            "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/common/components/common/icon/icons/materialdesign",
-            "ws:display": {
-              "condition": {
-                "sourceName": "selectOrType",
-                "values": "select"
-              }
-            }
-          },
-          "iconSize": {
-            "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/common/components/common/icon/iconsize/materialdesign"
-          },
-          "ws:display": {
-            "condition": {
-              "sourceName": "iconLibType",
-              "values": "mdi"
-            }
-          }
-        },
-        "ws:display": {
-          "condition": {
-            "sourceName": "addIcon",
-            "values": "true"
-          }
-        }
+        "name": "dropdownLabel",
+        "label": "Label of a mega dropdown"
       },
       "hasArrow": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "name": "hasArrow",
         "label": "Dropdown with arrow",
-        "checkedByDefault":"true"
+        "checkedByDefault": "true"
       },
       "isBoxed": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
@@ -123,33 +26,411 @@
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "name": "isDropup",
         "label": "Revert expanding direction"
+      }
+    },
+    "firstColumn": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "First Column",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "dropdownColumn1/type",
+        "label": "Type of the column",
+        "links": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Links column",
+          "selected": true,
+          "value": "links"
+        },
+        "highlights": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Highlights column",
+          "value": "highlights"
+        }
       },
-      "items": {
+      "linksColumn": {
         "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "items",
-        "label": "Elements in the dropdown",
-        "ws:disallowedContext": ["edit:panel"],
+        "name": "dropdownColumn1/sections",
+        "label": "Elements in the link column",
         "text": {
           "sling:resourceType": "wcm/dialogs/components/textfield",
           "name": "label",
-          "label": "Item label"
+          "label": "Section label"
         },
         "url": {
           "sling:resourceType": "wcm/dialogs/components/pathpicker",
           "rootPath": "/content",
           "name": "url",
-          "label": "URL connected to item"
+          "label": "URL connected to section label"
         },
-        "icon": {
-          "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/libs/kyanite/common/components/common/menuicon"
+        "secondLevelItems": {
+          "sling:resourceType": "wcm/dialogs/components/multifield",
+          "name": "sectionItems",
+          "label": "Elements in the section of menu",
+          "text": {
+            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "name": "label",
+            "label": "Link label"
+          },
+          "url": {
+            "sling:resourceType": "wcm/dialogs/components/pathpicker",
+            "rootPath": "/content",
+            "name": "url",
+            "label": "URL connected to item"
+          }
         },
-        "hasDivider": {
-          "sling:resourceType": "wcm/dialogs/components/checkbox",
-          "name": "hasDivider",
-          "label": "Has divider after item"
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumn1/type",
+            "values": "links"
+          }
+        }
+      },
+      "highlights": {
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "name": "dropdownColumn1/highlights",
+        "label": "Elements in the highlights column",
+        "text": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Highligth text"
+        },
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL connected to highlight"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumn1/type",
+            "values": "highlights"
+          }
+        }
+      }
+    },
+    "secondColumn": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Second Column",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "dropdownColumn2/type",
+        "label": "Type of the column",
+        "links": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Links column",
+          "selected": true,
+          "value": "links"
+        },
+        "highlights": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Highlights column",
+          "value": "highlights"
+        }
+      },
+      "linksColumn": {
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "name": "dropdownColumn2/sections",
+        "label": "Elements in the link column",
+        "text": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Section label"
+        },
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL connected to section label"
+        },
+        "secondLevelItems": {
+          "sling:resourceType": "wcm/dialogs/components/multifield",
+          "name": "sectionItems",
+          "label": "Elements in the section of menu",
+          "text": {
+            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "name": "label",
+            "label": "Link label"
+          },
+          "url": {
+            "sling:resourceType": "wcm/dialogs/components/pathpicker",
+            "rootPath": "/content",
+            "name": "url",
+            "label": "URL connected to item"
+          }
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumn2/type",
+            "values": "links"
+          }
+        }
+      },
+      "highlights": {
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "name": "dropdownColumn2/highlights",
+        "label": "Elements in the highlights column",
+        "text": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Highligth text"
+        },
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL connected to highlight"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumn2/type",
+            "values": "highlights"
+          }
+        }
+      }
+    },
+    "thirdColumn": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Third Column",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "dropdownColumn3/type",
+        "label": "Type of the column",
+        "links": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Links column",
+          "selected": true,
+          "value": "links"
+        },
+        "highlights": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Highlights column",
+          "value": "highlights"
+        }
+      },
+      "linksColumn": {
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "name": "dropdownColumn3/sections",
+        "label": "Elements in the link column",
+        "text": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Section label"
+        },
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL connected to section label"
+        },
+        "secondLevelItems": {
+          "sling:resourceType": "wcm/dialogs/components/multifield",
+          "name": "sectionItems",
+          "label": "Elements in the section of menu",
+          "text": {
+            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "name": "label",
+            "label": "Link label"
+          },
+          "url": {
+            "sling:resourceType": "wcm/dialogs/components/pathpicker",
+            "rootPath": "/content",
+            "name": "url",
+            "label": "URL connected to item"
+          }
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumn3/type",
+            "values": "links"
+          }
+        }
+      },
+      "highlights": {
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "name": "dropdownColumn3/highlights",
+        "label": "Elements in the highlights column",
+        "text": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Highligth text"
+        },
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL connected to highlight"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumn3/type",
+            "values": "highlights"
+          }
+        }
+      }
+    },
+    "fourthColumn": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Fourth Column",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "dropdownColumn4/type",
+        "label": "Type of the column",
+        "links": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Links column",
+          "selected": true,
+          "value": "links"
+        },
+        "highlights": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Highlights column",
+          "value": "highlights"
+        }
+      },
+      "linksColumn": {
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "name": "dropdownColumn4/sections",
+        "label": "Elements in the link column",
+        "text": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Section label"
+        },
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL connected to section label"
+        },
+        "secondLevelItems": {
+          "sling:resourceType": "wcm/dialogs/components/multifield",
+          "name": "sectionItems",
+          "label": "Elements in the section of menu",
+          "text": {
+            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "name": "label",
+            "label": "Link label"
+          },
+          "url": {
+            "sling:resourceType": "wcm/dialogs/components/pathpicker",
+            "rootPath": "/content",
+            "name": "url",
+            "label": "URL connected to item"
+          }
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumn4/type",
+            "values": "links"
+          }
+        }
+      },
+      "highlights": {
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "name": "dropdownColumn4/highlights",
+        "label": "Elements in the highlights column",
+        "text": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Highligth text"
+        },
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL connected to highlight"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumn4/type",
+            "values": "highlights"
+          }
+        }
+      }
+    },
+    "fifthColumn": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Fifth Column",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "dropdownColumn5/type",
+        "label": "Type of the column",
+        "links": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Links column",
+          "selected": true,
+          "value": "links"
+        },
+        "highlights": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Highlights column",
+          "value": "highlights"
+        }
+      },
+      "linksColumn": {
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "name": "dropdownColumn5/sections",
+        "label": "Elements in the link column",
+        "text": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Section label"
+        },
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL connected to section label"
+        },
+        "secondLevelItems": {
+          "sling:resourceType": "wcm/dialogs/components/multifield",
+          "name": "sectionItems",
+          "label": "Elements in the section of menu",
+          "text": {
+            "sling:resourceType": "wcm/dialogs/components/textfield",
+            "name": "label",
+            "label": "Link label"
+          },
+          "url": {
+            "sling:resourceType": "wcm/dialogs/components/pathpicker",
+            "rootPath": "/content",
+            "name": "url",
+            "label": "URL connected to item"
+          }
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumn5/type",
+            "values": "links"
+          }
+        }
+      },
+      "highlights": {
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "name": "dropdownColumn5/highlights",
+        "label": "Elements in the highlights column",
+        "text": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Highligth text"
+        },
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL connected to highlight"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumn5/type",
+            "values": "highlights"
+          }
         }
       }
     }
+
+
+
+
   }
 }
