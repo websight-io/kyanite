@@ -17,38 +17,20 @@
 package pl.ds.kyanite.common.components.models.navbar;
 
 import java.util.List;
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import pl.ds.kyanite.common.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class ColumnSectionComponent {
-
-  @SlingObject
-  private ResourceResolver resourceResolver;
+public class TextSectionComponent {
 
   @Inject
   @Getter
   private String label;
 
   @Inject
-  private String url;
-
-  @Inject
   @Getter
   private List<NavbarItemComponent> sectionItems;
-
-  @Getter
-  private String processedUrl;
-
-  @PostConstruct
-  private void init() {
-    processedUrl = LinkUtil.handleLink(url, resourceResolver);
-  }
 }

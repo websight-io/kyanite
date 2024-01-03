@@ -8,7 +8,8 @@
       "dropdownLabel": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "dropdownLabel",
-        "label": "Label of a mega dropdown"
+        "label": "Label of a mega dropdown",
+        "required": true
       },
       "hasArrow": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
@@ -33,13 +34,12 @@
       "label": "First Column",
       "type": {
         "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "dropdownColumn1/type",
+        "name": "dropdownColumns/1/type",
         "label": "Type of the column",
-        "links": {
+        "text": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Links column",
-          "selected": true,
-          "value": "links"
+          "label": "Text column",
+          "value": "text"
         },
         "highlights": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",
@@ -47,29 +47,25 @@
           "value": "highlights"
         }
       },
-      "linksColumn": {
+      "textColumn": {
         "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumn1/sections",
+        "name": "dropdownColumns/1/sections",
         "label": "Elements in the link column",
         "text": {
           "sling:resourceType": "wcm/dialogs/components/textfield",
           "name": "label",
-          "label": "Section label"
+          "label": "Section label",
+          "required": true
         },
-        "url": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "rootPath": "/content",
-          "name": "url",
-          "label": "URL connected to section label"
-        },
-        "secondLevelItems": {
+        "sectionItems": {
           "sling:resourceType": "wcm/dialogs/components/multifield",
           "name": "sectionItems",
-          "label": "Elements in the section of menu",
+          "label": "Items in the section",
           "text": {
             "sling:resourceType": "wcm/dialogs/components/textfield",
             "name": "label",
-            "label": "Link label"
+            "label": "Item label",
+            "required": true
           },
           "url": {
             "sling:resourceType": "wcm/dialogs/components/pathpicker",
@@ -80,19 +76,20 @@
         },
         "ws:display": {
           "condition": {
-            "sourceName": "dropdownColumn1/type",
-            "values": "links"
+            "sourceName": "dropdownColumns/1/type",
+            "values": "text"
           }
         }
       },
       "highlights": {
         "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumn1/highlights",
+        "name": "dropdownColumns/1/highlights",
         "label": "Elements in the highlights column",
         "text": {
           "sling:resourceType": "wcm/dialogs/components/textfield",
           "name": "label",
-          "label": "Highligth text"
+          "label": "Highligth text",
+          "required": true
         },
         "url": {
           "sling:resourceType": "wcm/dialogs/components/pathpicker",
@@ -102,7 +99,7 @@
         },
         "ws:display": {
           "condition": {
-            "sourceName": "dropdownColumn1/type",
+            "sourceName": "dropdownColumns/1/type",
             "values": "highlights"
           }
         }
@@ -110,16 +107,16 @@
     },
     "secondColumn": {
       "sling:resourceType": "wcm/dialogs/components/tab",
-      "label": "Second Column",
+      "label": "Second",
       "type": {
         "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "dropdownColumn2/type",
+        "name": "dropdownColumns/2/type",
         "label": "Type of the column",
-        "links": {
+        "text": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Links column",
+          "label": "Text column",
           "selected": true,
-          "value": "links"
+          "value": "text"
         },
         "highlights": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",
@@ -127,29 +124,25 @@
           "value": "highlights"
         }
       },
-      "linksColumn": {
+      "textColumn": {
         "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumn2/sections",
+        "name": "dropdownColumns/2/sections",
         "label": "Elements in the link column",
         "text": {
           "sling:resourceType": "wcm/dialogs/components/textfield",
           "name": "label",
-          "label": "Section label"
+          "label": "Section label",
+          "required": true
         },
-        "url": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "rootPath": "/content",
-          "name": "url",
-          "label": "URL connected to section label"
-        },
-        "secondLevelItems": {
+        "sectionItems": {
           "sling:resourceType": "wcm/dialogs/components/multifield",
           "name": "sectionItems",
-          "label": "Elements in the section of menu",
+          "label": "Items in the section",
           "text": {
             "sling:resourceType": "wcm/dialogs/components/textfield",
             "name": "label",
-            "label": "Link label"
+            "label": "Item label",
+            "required": true
           },
           "url": {
             "sling:resourceType": "wcm/dialogs/components/pathpicker",
@@ -160,19 +153,20 @@
         },
         "ws:display": {
           "condition": {
-            "sourceName": "dropdownColumn2/type",
-            "values": "links"
+            "sourceName": "dropdownColumns/2/type",
+            "values": "text"
           }
         }
       },
       "highlights": {
         "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumn2/highlights",
+        "name": "dropdownColumns/2/highlights",
         "label": "Elements in the highlights column",
         "text": {
           "sling:resourceType": "wcm/dialogs/components/textfield",
           "name": "label",
-          "label": "Highligth text"
+          "label": "Highligth text",
+          "required": true
         },
         "url": {
           "sling:resourceType": "wcm/dialogs/components/pathpicker",
@@ -182,7 +176,7 @@
         },
         "ws:display": {
           "condition": {
-            "sourceName": "dropdownColumn2/type",
+            "sourceName": "dropdownColumns/2/type",
             "values": "highlights"
           }
         }
@@ -190,16 +184,16 @@
     },
     "thirdColumn": {
       "sling:resourceType": "wcm/dialogs/components/tab",
-      "label": "Third Column",
+      "label": "Third",
       "type": {
         "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "dropdownColumn3/type",
+        "name": "dropdownColumns/3/type",
         "label": "Type of the column",
-        "links": {
+        "text": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Links column",
+          "label": "Text column",
           "selected": true,
-          "value": "links"
+          "value": "text"
         },
         "highlights": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",
@@ -207,29 +201,25 @@
           "value": "highlights"
         }
       },
-      "linksColumn": {
+      "textColumn": {
         "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumn3/sections",
+        "name": "dropdownColumns/3/sections",
         "label": "Elements in the link column",
         "text": {
           "sling:resourceType": "wcm/dialogs/components/textfield",
           "name": "label",
-          "label": "Section label"
+          "label": "Section label",
+          "required": true
         },
-        "url": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "rootPath": "/content",
-          "name": "url",
-          "label": "URL connected to section label"
-        },
-        "secondLevelItems": {
+        "sectionItems": {
           "sling:resourceType": "wcm/dialogs/components/multifield",
           "name": "sectionItems",
-          "label": "Elements in the section of menu",
+          "label": "Items in the section",
           "text": {
             "sling:resourceType": "wcm/dialogs/components/textfield",
             "name": "label",
-            "label": "Link label"
+            "label": "Item label",
+            "required": true
           },
           "url": {
             "sling:resourceType": "wcm/dialogs/components/pathpicker",
@@ -240,19 +230,20 @@
         },
         "ws:display": {
           "condition": {
-            "sourceName": "dropdownColumn3/type",
-            "values": "links"
+            "sourceName": "dropdownColumns/3/type",
+            "values": "text"
           }
         }
       },
       "highlights": {
         "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumn3/highlights",
+        "name": "dropdownColumns/3/highlights",
         "label": "Elements in the highlights column",
         "text": {
           "sling:resourceType": "wcm/dialogs/components/textfield",
           "name": "label",
-          "label": "Highligth text"
+          "label": "Highligth text",
+          "required": true
         },
         "url": {
           "sling:resourceType": "wcm/dialogs/components/pathpicker",
@@ -262,7 +253,7 @@
         },
         "ws:display": {
           "condition": {
-            "sourceName": "dropdownColumn3/type",
+            "sourceName": "dropdownColumns/3/type",
             "values": "highlights"
           }
         }
@@ -270,16 +261,16 @@
     },
     "fourthColumn": {
       "sling:resourceType": "wcm/dialogs/components/tab",
-      "label": "Fourth Column",
+      "label": "Fourth",
       "type": {
         "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "dropdownColumn4/type",
+        "name": "dropdownColumns/4/type",
         "label": "Type of the column",
-        "links": {
+        "text": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Links column",
+          "label": "Text column",
           "selected": true,
-          "value": "links"
+          "value": "text"
         },
         "highlights": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",
@@ -287,29 +278,25 @@
           "value": "highlights"
         }
       },
-      "linksColumn": {
+      "textColumn": {
         "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumn4/sections",
+        "name": "dropdownColumns/4/sections",
         "label": "Elements in the link column",
         "text": {
           "sling:resourceType": "wcm/dialogs/components/textfield",
           "name": "label",
-          "label": "Section label"
+          "label": "Section label",
+          "required": true
         },
-        "url": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "rootPath": "/content",
-          "name": "url",
-          "label": "URL connected to section label"
-        },
-        "secondLevelItems": {
+        "sectionItems": {
           "sling:resourceType": "wcm/dialogs/components/multifield",
           "name": "sectionItems",
-          "label": "Elements in the section of menu",
+          "label": "Items in the section",
           "text": {
             "sling:resourceType": "wcm/dialogs/components/textfield",
             "name": "label",
-            "label": "Link label"
+            "label": "Item label",
+            "required": true
           },
           "url": {
             "sling:resourceType": "wcm/dialogs/components/pathpicker",
@@ -320,19 +307,20 @@
         },
         "ws:display": {
           "condition": {
-            "sourceName": "dropdownColumn4/type",
-            "values": "links"
+            "sourceName": "dropdownColumns/4/type",
+            "values": "text"
           }
         }
       },
       "highlights": {
         "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumn4/highlights",
+        "name": "dropdownColumns/4/highlights",
         "label": "Elements in the highlights column",
         "text": {
           "sling:resourceType": "wcm/dialogs/components/textfield",
           "name": "label",
-          "label": "Highligth text"
+          "label": "Highligth text",
+          "required": true
         },
         "url": {
           "sling:resourceType": "wcm/dialogs/components/pathpicker",
@@ -342,7 +330,7 @@
         },
         "ws:display": {
           "condition": {
-            "sourceName": "dropdownColumn4/type",
+            "sourceName": "dropdownColumns/4/type",
             "values": "highlights"
           }
         }
@@ -350,16 +338,16 @@
     },
     "fifthColumn": {
       "sling:resourceType": "wcm/dialogs/components/tab",
-      "label": "Fifth Column",
+      "label": "Fifth",
       "type": {
         "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "dropdownColumn5/type",
+        "name": "dropdownColumns/5/type",
         "label": "Type of the column",
-        "links": {
+        "text": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Links column",
+          "label": "Text column",
           "selected": true,
-          "value": "links"
+          "value": "text"
         },
         "highlights": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",
@@ -367,29 +355,25 @@
           "value": "highlights"
         }
       },
-      "linksColumn": {
+      "textColumn": {
         "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumn5/sections",
+        "name": "dropdownColumns/5/sections",
         "label": "Elements in the link column",
         "text": {
           "sling:resourceType": "wcm/dialogs/components/textfield",
           "name": "label",
-          "label": "Section label"
+          "label": "Section label",
+          "required": true
         },
-        "url": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "rootPath": "/content",
-          "name": "url",
-          "label": "URL connected to section label"
-        },
-        "secondLevelItems": {
+        "sectionItems": {
           "sling:resourceType": "wcm/dialogs/components/multifield",
           "name": "sectionItems",
-          "label": "Elements in the section of menu",
+          "label": "Items in the section",
           "text": {
             "sling:resourceType": "wcm/dialogs/components/textfield",
             "name": "label",
-            "label": "Link label"
+            "label": "Item label",
+            "required": true
           },
           "url": {
             "sling:resourceType": "wcm/dialogs/components/pathpicker",
@@ -400,19 +384,20 @@
         },
         "ws:display": {
           "condition": {
-            "sourceName": "dropdownColumn5/type",
-            "values": "links"
+            "sourceName": "dropdownColumns/5/type",
+            "values": "text"
           }
         }
       },
       "highlights": {
         "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumn5/highlights",
+        "name": "dropdownColumns/5/highlights",
         "label": "Elements in the highlights column",
         "text": {
           "sling:resourceType": "wcm/dialogs/components/textfield",
           "name": "label",
-          "label": "Highligth text"
+          "label": "Highligth text",
+          "required": true
         },
         "url": {
           "sling:resourceType": "wcm/dialogs/components/pathpicker",
@@ -422,15 +407,11 @@
         },
         "ws:display": {
           "condition": {
-            "sourceName": "dropdownColumn5/type",
+            "sourceName": "dropdownColumns/5/type",
             "values": "highlights"
           }
         }
       }
     }
-
-
-
-
   }
 }

@@ -17,25 +17,33 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.navbar.NavbarMegaDropdownComponent">
-  <div class="navbar-item has-dropdown is-hoverable ${model.isDropup ? 'has-dropdown-up' : ''}" tabindex="0">
+  <div class="navbar-item has-dropdown is-hoverable ${model.isDropup ? 'has-dropdown-up' : ''}"
+       tabindex="0">
     <a class="navbar-link ${model.hasArrow ? '' : 'is-arrowless'}">
-      <sly data-sly-test="${model.addIcon && model.icon}">
-        <sly data-sly-resource="${resource @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
-      </sly>
       ${model.dropdownLabel}
     </a>
 
     <div class="navbar-dropdown ${model.isBoxed ? 'is-boxed' : ''}">
-      <sly data-sly-list.item="${model.items}">
-        <a class="navbar-item" href="${item.url}">
-          <sly data-sly-test="${model.addIcon && model.icon}">
-            <sly data-sly-resource="${resource @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
+      <sly data-sly-list.column="${model.dropdownColumns}">
+        <div class="navbar-dropdown-column">
+          <sly data-sly-test="${column.type == 'text'}">
+            <sly data-sly-list.section="${column.sections}">
+              <p>${section.label} </p>
+              <sly data-sly-list.item="${section.sectionItems}">
+                <a class="navbar-item" href="${item.url}">
+                  ${item.label}
+                </a>
+              </sly>
+            </sly>
           </sly>
-          ${item.label}
-        </a>
-        <sly data-sly-test="${item.hasDivider}">
-          <hr class="navbar-divider">
-        </sly>
+          <sly data-sly-test="${column.type != 'text'}">
+            <sly data-sly-list.highlight="${column.highlights}">
+              <a class="navbar-item" href="${highlight.url}">
+                ${highlight.label}
+              </a>
+            </sly>
+          </sly>
+        </div>
       </sly>
     </div>
   </div>

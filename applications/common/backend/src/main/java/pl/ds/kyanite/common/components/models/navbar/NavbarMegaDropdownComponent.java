@@ -16,6 +16,7 @@
 
 package pl.ds.kyanite.common.components.models.navbar;
 
+import java.util.List;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
@@ -47,22 +48,5 @@ public class NavbarMegaDropdownComponent {
 
   @Inject
   @Getter
-  private MegaDropdownColumnComponent dropdownColumn1;
-
-  @Inject
-  @Getter
-  private MegaDropdownColumnComponent dropdownColumn2;
-
-  @Inject
-  @Getter
-  private MegaDropdownColumnComponent dropdownColumn3;
-
-  @Inject
-  @Getter
-  private MegaDropdownColumnComponent dropdownColumn4;
-
-  @Inject
-  @Getter
-  private MegaDropdownColumnComponent dropdownColumn5;
-
+  private List<MegaDropdownColumnComponent> dropdownColumns;
 }

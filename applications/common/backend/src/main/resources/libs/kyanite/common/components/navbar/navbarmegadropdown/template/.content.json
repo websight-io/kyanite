@@ -1,0 +1,27 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "hasArrow": true,
+  "dropdownColumns": {
+    "jcr:primaryType": "nt:unstructured",
+    "1": {
+      "jcr:primaryType": "nt:unstructured",
+      "type": "text"
+    },
+    "2": {
+      "jcr:primaryType": "nt:unstructured",
+      "type": "text"
+    },
+    "3": {
+      "jcr:primaryType": "nt:unstructured",
+      "type": "text"
+    },
+    "4": {
+      "jcr:primaryType": "nt:unstructured",
+      "type": "text"
+    },
+    "5": {
+      "jcr:primaryType": "nt:unstructured",
+      "type": "text"
+    }
+  }
+}

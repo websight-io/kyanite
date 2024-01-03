@@ -16,6 +16,7 @@
 
 package pl.ds.kyanite.common.components.models.navbar;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import lombok.Getter;
@@ -29,14 +30,14 @@ public class MegaDropdownColumnComponent {
 
   @Inject
   @Getter
-  @Default(values = "links")
+  @Default(values = "text")
   private String type;
 
   @Inject
   @Getter
-  private List<ColumnSectionComponent> sections;
+  private List<TextSectionComponent> sections = new ArrayList<>();
 
   @Inject
   @Getter
-  private List<NavbarItemComponent> highlights;
+  private List<NavbarItemComponent> highlights = new ArrayList<>();
 }
