@@ -35,12 +35,12 @@ $color-navbar-link: var(--color-grey--900);
     align-items: center;
   }
 
-  .navbar,
   .navbar-end,
   .navbar-menu,
   .navbar-start {
     @include breakpoint.media-breakpoint-large {
       align-items: center;
+      height: 100%;
     }
   }
 
@@ -101,7 +101,7 @@ $color-navbar-link: var(--color-grey--900);
 
       @include breakpoint.media-breakpoint-large {
         flex-direction: row;
-        align-items: baseline;
+        align-items: center;
         gap: var(--spacing-6);
       }
     }
@@ -120,6 +120,7 @@ $color-navbar-link: var(--color-grey--900);
     }
 
     .navbar-item.has-dropdown {
+      height: 100%;
       &:hover {
         .navbar-link {
           background-color: unset !important; // override Bulma complex selector
@@ -234,9 +235,11 @@ $color-navbar-link: var(--color-grey--900);
         .navbar-item + .navbar-item {
           margin-top: var(--spacing-4);
         }
+
         .navbar-section + .navbar-item {
           margin-top: var(--spacing-5);
         }
+
         .navbar-item + .navbar-section {
           margin-top: var(--spacing-6);
         }
