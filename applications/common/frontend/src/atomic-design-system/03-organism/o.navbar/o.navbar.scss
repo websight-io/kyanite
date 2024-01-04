@@ -35,7 +35,8 @@
   .navbar,
   .navbar-end,
   .navbar-menu,
-  .navbar-start {
+  .navbar-start,
+  .navbar-top {
     @include breakpoint.media-breakpoint-large {
       align-items: center;
     }
@@ -43,9 +44,9 @@
 
   .navbar-item:not(.navbar-dropdown a.navbar-item):last-of-type {
     @include breakpoint.media-breakpoint-large {
-      padding: var(--spacing-1) 
-        0 
-        var(--spacing-1) 
+      padding: var(--spacing-1)
+        0
+        var(--spacing-1)
         0;
     }
   }
@@ -89,12 +90,16 @@
     padding-right: var(--spacing-4);
     padding-bottom: var(--spacing-4);
 
+    flex-shrink: 1;
+
     @include breakpoint.media-breakpoint-large {
+      flex-wrap: wrap;
       padding-bottom: 0;
     }
 
     .navbar-end,
-    .navbar-start {
+    .navbar-start,
+    .navbar-top {
       display: flex;
       flex-direction: column;
       gap: 0;
@@ -103,6 +108,21 @@
         flex-direction: row;
         align-items: baseline;
         gap: var(--spacing-6);
+      }
+    }
+
+    .navbar-top {
+      .navbar-item {
+        font-size: var(--font-size-14);
+        font-weight: var(--font-weight-500);
+        line-height: var(--line-height-155);
+      }
+
+      @include breakpoint.media-breakpoint-large {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: var(--spacing-2);
       }
     }
 

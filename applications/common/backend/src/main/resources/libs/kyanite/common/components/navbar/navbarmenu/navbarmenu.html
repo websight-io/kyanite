@@ -18,13 +18,14 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.navbar.NavbarMenuComponent">
   <sly data-sly-test="${model.hasChildren}">
-    <p>${model.fixedOption}</p>
-    <sly data-sly-list.item="${model.metaNavigation}">
-      <a class="navbar-item" href="${item.url}">
-        ${item.label}
-      </a>
-    </sly>
     <div class="navbar-menu" id="navMenu">
+      <div data-sly-test="${model.metaNavigation}" class="navbar-top">
+        <sly data-sly-list.item="${model.metaNavigation}">
+          <a class="navbar-item" href="${item.url}">
+            ${item.label}
+          </a>
+        </sly>
+      </div>
       <sly data-sly-list.item="${model.items}">
         <sly
             data-sly-resource="${item.path @ resourceType=item.resourceType}"
