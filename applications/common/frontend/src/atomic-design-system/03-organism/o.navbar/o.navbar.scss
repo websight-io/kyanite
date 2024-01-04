@@ -181,19 +181,16 @@ $color-navbar-link: var(--color-grey--900);
     }
   }
 
-  @media(min-width: 1024px) {
-    .dupa {
-      display: none;
-    }
+  @include breakpoint.media-breakpoint-large {
     .navbar-mega-dropdown {
-      background-color: var(--color-grey--100); // TODO config?
+      background-color: var(--color-grey--100);
       border-radius: var(--border-radius-0);
       border: 0;
       box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
       padding: var(--spacing-5_2) 0;
 
       position: fixed;
-      width: 100vw;
+      width: 100%;
       left: 0;
       top: $navbar-height;
 
@@ -237,14 +234,13 @@ $color-navbar-link: var(--color-grey--900);
         .navbar-item + .navbar-item {
           margin-top: var(--spacing-4);
         }
-
         .navbar-section + .navbar-item {
           margin-top: var(--spacing-5);
         }
-
         .navbar-item + .navbar-section {
           margin-top: var(--spacing-6);
         }
+
       }
 
       .highlights-column {
@@ -253,6 +249,7 @@ $color-navbar-link: var(--color-grey--900);
         justify-content: center;
         align-items: flex-start;
 
+        // distance between elements:
         .navbar-item + .navbar-item {
           margin-top: var(--spacing-4);
         }
@@ -263,8 +260,8 @@ $color-navbar-link: var(--color-grey--900);
           line-height: var(--line-height-150);
           color: $color-navbar-link;
         }
-
       }
+
     }
   }
 }
