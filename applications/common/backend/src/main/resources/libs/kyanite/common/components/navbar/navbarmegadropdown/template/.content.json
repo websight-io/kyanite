@@ -5,23 +5,38 @@
     "jcr:primaryType": "nt:unstructured",
     "1": {
       "jcr:primaryType": "nt:unstructured",
-      "type": "text"
+      "type": "text",
+      "sections": {
+        "jcr:primaryType": "nt:unstructured"
+      }
     },
     "2": {
       "jcr:primaryType": "nt:unstructured",
-      "type": "text"
+      "type": "text",
+      "sections": {
+        "jcr:primaryType": "nt:unstructured"
+      }
     },
     "3": {
       "jcr:primaryType": "nt:unstructured",
-      "type": "text"
+      "type": "text",
+      "sections": {
+        "jcr:primaryType": "nt:unstructured"
+      }
     },
     "4": {
       "jcr:primaryType": "nt:unstructured",
-      "type": "text"
+      "type": "text",
+      "sections": {
+        "jcr:primaryType": "nt:unstructured"
+      }
     },
     "5": {
       "jcr:primaryType": "nt:unstructured",
-      "type": "text"
+      "type": "text",
+      "sections": {
+        "jcr:primaryType": "nt:unstructured"
+      }
     }
   }
 }

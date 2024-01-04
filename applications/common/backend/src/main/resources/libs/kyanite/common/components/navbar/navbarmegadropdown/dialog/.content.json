@@ -14,8 +14,7 @@
       "hasArrow": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "name": "hasArrow",
-        "label": "Dropdown with arrow",
-        "checkedByDefault": "true"
+        "label": "Dropdown with arrow"
       },
       "isBoxed": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
@@ -33,46 +32,15 @@
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "First Column",
       "type": {
-        "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "dropdownColumns/1/type",
-        "label": "Type of the column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Text column",
-          "value": "text"
-        },
-        "highlights": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Highlights column",
-          "value": "highlights"
-        }
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/type",
+        "namespace": "dropdownColumns/1"
       },
       "textColumn": {
-        "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumns/1/sections",
-        "label": "Elements in the link column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "label",
-          "label": "Section label",
-          "required": true
-        },
-        "sectionItems": {
-          "sling:resourceType": "wcm/dialogs/components/multifield",
-          "name": "sectionItems",
-          "label": "Items in the section",
-          "text": {
-            "sling:resourceType": "wcm/dialogs/components/textfield",
-            "name": "label",
-            "label": "Item label",
-            "required": true
-          },
-          "url": {
-            "sling:resourceType": "wcm/dialogs/components/pathpicker",
-            "rootPath": "/content",
-            "name": "url",
-            "label": "URL connected to item"
-          }
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/textColumn",
+          "name": "dropdownColumns/1/sections"
         },
         "ws:display": {
           "condition": {
@@ -82,20 +50,10 @@
         }
       },
       "highlights": {
-        "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumns/1/highlights",
-        "label": "Elements in the highlights column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "label",
-          "label": "Highligth text",
-          "required": true
-        },
-        "url": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "rootPath": "/content",
-          "name": "url",
-          "label": "URL connected to highlight"
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/highlights",
+          "name": "dropdownColumns/1/highlights"
         },
         "ws:display": {
           "condition": {
@@ -109,47 +67,15 @@
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Second",
       "type": {
-        "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "dropdownColumns/2/type",
-        "label": "Type of the column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Text column",
-          "selected": true,
-          "value": "text"
-        },
-        "highlights": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Highlights column",
-          "value": "highlights"
-        }
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/type",
+        "namespace": "dropdownColumns/2"
       },
       "textColumn": {
-        "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumns/2/sections",
-        "label": "Elements in the link column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "label",
-          "label": "Section label",
-          "required": true
-        },
-        "sectionItems": {
-          "sling:resourceType": "wcm/dialogs/components/multifield",
-          "name": "sectionItems",
-          "label": "Items in the section",
-          "text": {
-            "sling:resourceType": "wcm/dialogs/components/textfield",
-            "name": "label",
-            "label": "Item label",
-            "required": true
-          },
-          "url": {
-            "sling:resourceType": "wcm/dialogs/components/pathpicker",
-            "rootPath": "/content",
-            "name": "url",
-            "label": "URL connected to item"
-          }
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/textColumn",
+          "name": "dropdownColumns/2/sections"
         },
         "ws:display": {
           "condition": {
@@ -159,20 +85,10 @@
         }
       },
       "highlights": {
-        "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumns/2/highlights",
-        "label": "Elements in the highlights column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "label",
-          "label": "Highligth text",
-          "required": true
-        },
-        "url": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "rootPath": "/content",
-          "name": "url",
-          "label": "URL connected to highlight"
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/highlights",
+          "name": "dropdownColumns/2/highlights"
         },
         "ws:display": {
           "condition": {
@@ -186,47 +102,15 @@
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Third",
       "type": {
-        "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "dropdownColumns/3/type",
-        "label": "Type of the column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Text column",
-          "selected": true,
-          "value": "text"
-        },
-        "highlights": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Highlights column",
-          "value": "highlights"
-        }
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/type",
+        "namespace": "dropdownColumns/3"
       },
       "textColumn": {
-        "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumns/3/sections",
-        "label": "Elements in the link column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "label",
-          "label": "Section label",
-          "required": true
-        },
-        "sectionItems": {
-          "sling:resourceType": "wcm/dialogs/components/multifield",
-          "name": "sectionItems",
-          "label": "Items in the section",
-          "text": {
-            "sling:resourceType": "wcm/dialogs/components/textfield",
-            "name": "label",
-            "label": "Item label",
-            "required": true
-          },
-          "url": {
-            "sling:resourceType": "wcm/dialogs/components/pathpicker",
-            "rootPath": "/content",
-            "name": "url",
-            "label": "URL connected to item"
-          }
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/textColumn",
+          "name": "dropdownColumns/3/sections"
         },
         "ws:display": {
           "condition": {
@@ -236,20 +120,10 @@
         }
       },
       "highlights": {
-        "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumns/3/highlights",
-        "label": "Elements in the highlights column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "label",
-          "label": "Highligth text",
-          "required": true
-        },
-        "url": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "rootPath": "/content",
-          "name": "url",
-          "label": "URL connected to highlight"
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/highlights",
+          "name": "dropdownColumns/3/highlights"
         },
         "ws:display": {
           "condition": {
@@ -263,47 +137,15 @@
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Fourth",
       "type": {
-        "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "dropdownColumns/4/type",
-        "label": "Type of the column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Text column",
-          "selected": true,
-          "value": "text"
-        },
-        "highlights": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Highlights column",
-          "value": "highlights"
-        }
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/type",
+        "namespace": "dropdownColumns/4"
       },
       "textColumn": {
-        "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumns/4/sections",
-        "label": "Elements in the link column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "label",
-          "label": "Section label",
-          "required": true
-        },
-        "sectionItems": {
-          "sling:resourceType": "wcm/dialogs/components/multifield",
-          "name": "sectionItems",
-          "label": "Items in the section",
-          "text": {
-            "sling:resourceType": "wcm/dialogs/components/textfield",
-            "name": "label",
-            "label": "Item label",
-            "required": true
-          },
-          "url": {
-            "sling:resourceType": "wcm/dialogs/components/pathpicker",
-            "rootPath": "/content",
-            "name": "url",
-            "label": "URL connected to item"
-          }
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/textColumn",
+          "name": "dropdownColumns/4/sections"
         },
         "ws:display": {
           "condition": {
@@ -313,20 +155,10 @@
         }
       },
       "highlights": {
-        "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumns/4/highlights",
-        "label": "Elements in the highlights column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "label",
-          "label": "Highligth text",
-          "required": true
-        },
-        "url": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "rootPath": "/content",
-          "name": "url",
-          "label": "URL connected to highlight"
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/highlights",
+          "name": "dropdownColumns/4/highlights"
         },
         "ws:display": {
           "condition": {
@@ -340,47 +172,15 @@
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Fifth",
       "type": {
-        "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "dropdownColumns/5/type",
-        "label": "Type of the column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Text column",
-          "selected": true,
-          "value": "text"
-        },
-        "highlights": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Highlights column",
-          "value": "highlights"
-        }
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/type",
+        "namespace": "dropdownColumns/5"
       },
       "textColumn": {
-        "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumns/5/sections",
-        "label": "Elements in the link column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "label",
-          "label": "Section label",
-          "required": true
-        },
-        "sectionItems": {
-          "sling:resourceType": "wcm/dialogs/components/multifield",
-          "name": "sectionItems",
-          "label": "Items in the section",
-          "text": {
-            "sling:resourceType": "wcm/dialogs/components/textfield",
-            "name": "label",
-            "label": "Item label",
-            "required": true
-          },
-          "url": {
-            "sling:resourceType": "wcm/dialogs/components/pathpicker",
-            "rootPath": "/content",
-            "name": "url",
-            "label": "URL connected to item"
-          }
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/textColumn",
+          "name": "dropdownColumns/5/sections"
         },
         "ws:display": {
           "condition": {
@@ -390,20 +190,10 @@
         }
       },
       "highlights": {
-        "sling:resourceType": "wcm/dialogs/components/multifield",
-        "name": "dropdownColumns/5/highlights",
-        "label": "Elements in the highlights column",
-        "text": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "label",
-          "label": "Highligth text",
-          "required": true
-        },
-        "url": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "rootPath": "/content",
-          "name": "url",
-          "label": "URL connected to highlight"
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/highlights",
+          "name": "dropdownColumns/5/highlights"
         },
         "ws:display": {
           "condition": {
