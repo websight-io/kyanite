@@ -1,0 +1,26 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "metaNavigation": {
+        "sling:resourceType": "wcm/dialogs/components/multifield",
+        "name": "metaNavigation",
+        "label": "Items in the meta navigation",
+        "text": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "label",
+          "label": "Item label"
+        },
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL connected to item"
+        }
+      }
+    }
+  }
+}

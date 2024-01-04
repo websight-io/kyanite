@@ -18,6 +18,11 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.navbar.NavbarBrandComponent">
   <sly data-sly-test="${resource.hasChildren}">
+    <sly data-sly-list.item="${model.metaNavigation}">
+      <a class="navbar-item" href="${item.url}">
+        ${item.label}
+      </a>
+    </sly>
     <div class="navbar-menu" id="navMenu">
       <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
     </div>
