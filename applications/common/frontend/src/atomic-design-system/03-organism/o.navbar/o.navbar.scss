@@ -27,6 +27,8 @@
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
 @use 'src/atomic-design-system/00-token/t.font' as font;
 
+$navbar-height: 3.25rem;
+
 @mixin o-navbar {
   .container {
     align-items: center;
@@ -43,9 +45,9 @@
 
   .navbar-item:not(.navbar-dropdown a.navbar-item):last-of-type {
     @include breakpoint.media-breakpoint-large {
-      padding: var(--spacing-1) 
-        0 
-        var(--spacing-1) 
+      padding: var(--spacing-1)
+        0
+        var(--spacing-1)
         0;
     }
   }
@@ -163,6 +165,7 @@
           @extend .ml-3;
           @extend .mr-1;
         }
+
         @include breakpoint.media-breakpoint-large {
           padding-left: 0;
           padding-right: 0 !important; // overwrite above @extend .pr-3
@@ -178,6 +181,61 @@
 
       @include breakpoint.media-breakpoint-large {
         margin-top: 0 !important; // overwrite above @extend .mt-2
+      }
+    }
+  }
+
+  .navbar-mega-dropdown {
+    background-color: var(--color-grey--100); // TODO config?
+    border-radius: var(--border-radius-0);
+    border: 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+    padding: var(--spacing-5_2) 0;
+
+    position: fixed;
+    width: 100vw;
+    left: 0;
+    top: $navbar-height;
+
+    .navbar-item {
+      padding: 0;
+    }
+
+    .text-column {
+      display: flex;
+      flex-direction: column;
+
+      .navbar-section {
+        font-size: var(--font-size-16);
+        font-weight: var(--font-weight-600);
+        line-height: var(--line-height-150);
+        color: var(--color-grey--500);
+      }
+
+      // distance between elements:
+      .navbar-section + .navbar-section,
+      .navbar-item + .navbar-item {
+        @extend .mt-4;
+      }
+
+      .navbar-section + .navbar-item {
+        @extend .mt-5;
+      }
+
+      .navbar-item + .navbar-section {
+        @extend .mt-6;
+      }
+
+      // links hover effect
+      a.navbar-item, a.navbar-section {
+        display: inline-block;
+        width: fit-content;
+
+        @include link.a-animated-underline-link;
+
+        &:hover {
+          background-color: unset;
+        }
       }
     }
   }
