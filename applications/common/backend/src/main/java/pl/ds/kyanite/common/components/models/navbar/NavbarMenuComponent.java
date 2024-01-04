@@ -17,17 +17,33 @@
 package pl.ds.kyanite.common.components.models.navbar;
 
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class NavbarMenuComponent {
 
+  @SlingObject
+  private Resource resource;
+
   @Inject
   @Getter
   private List<NavbarItemComponent> metaNavigation;
+
+  @Getter
+  private String fixedOption;
+
+  @PostConstruct
+  private void init() {
+    NavbarComponent navbarComponent = resource.getParent().adaptTo(NavbarComponent.class);
+    if (navbarComponent != null) {
+      fixedOption = navbarComponent.getFixedOption();
+    }
+  }
 
 }
