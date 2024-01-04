@@ -141,9 +141,7 @@ $color-navbar-link: var(--color-grey--900);
       }
 
       .navbar-dropdown {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        display: block;
 
         @include breakpoint.media-breakpoint-large {
           display: none;
