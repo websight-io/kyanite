@@ -28,6 +28,13 @@
 @use 'src/atomic-design-system/00-token/t.font' as font;
 
 @mixin o-navbar {
+  padding-top: var(--spacing-4);
+
+  @include breakpoint.media-breakpoint-large {
+    padding-top: var(--spacing-5);
+    padding-bottom: var(--spacing-4);
+  }
+
   .container {
     align-items: center;
   }
