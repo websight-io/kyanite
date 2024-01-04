@@ -27,10 +27,13 @@
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
 @use 'src/atomic-design-system/00-token/t.font' as font;
 
-$navbar-height: 3.25rem;
 $color-navbar-link: var(--color-grey--900);
 
 @mixin o-navbar {
+  // causes the element to establish a containing block for all descendants (used for fixed-position descendants)
+  // https://www.w3.org/TR/css-transforms-1/#containing-block-for-all-descendants
+  transform: translateX(0);
+
   .container {
     align-items: center;
   }
@@ -193,7 +196,6 @@ $color-navbar-link: var(--color-grey--900);
       position: fixed;
       width: 100%;
       left: 0;
-      top: $navbar-height;
 
       // make sure columns layout will be 5 columns of equal width
       .column {
