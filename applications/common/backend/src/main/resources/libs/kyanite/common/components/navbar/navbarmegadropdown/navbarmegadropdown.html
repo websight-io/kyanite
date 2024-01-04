@@ -30,9 +30,9 @@
             <sly data-sly-test="${column.type == 'text'}">
               <div class="column text-column">
                 <sly data-sly-list.section="${column.sections}">
-                    <span class="navbar-section">
-                  ${section.label}
-                    </span>
+                  <span class="navbar-section">
+                    ${section.label}
+                  </span>
                   <sly data-sly-list.item="${section.sectionItems}">
                     <a class="navbar-item" href="${item.url}">
                       ${item.label}
@@ -42,7 +42,7 @@
               </div>
             </sly>
             <sly data-sly-test="${column.type == 'highlights'}">
-              <div class="column highlight-column">
+              <div class="column highlights-column">
                 <sly data-sly-list.highlight="${column.highlights}">
                   <a class="navbar-item" href="${highlight.url}">
                     ${highlight.label}
