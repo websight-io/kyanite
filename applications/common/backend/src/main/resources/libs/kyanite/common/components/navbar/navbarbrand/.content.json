@@ -4,7 +4,8 @@
     "/apps/kyanite/common/components/navbar/navbaritem",
     "/libs/kyanite/common/components/navbar/navbaritem",
     "/apps/kyanite/common/components/navbar/navbardropdown",
-    "/libs/kyanite/common/components/navbar/navbardropdown"
+    "/libs/kyanite/common/components/navbar/navbardropdown",
+    "/libs/kyanite/common/components/navbar/navbarmegadropdown"
   ],
   "group": "Kyanite sub-components",
   "sling:resourceType": "ws:Component",
