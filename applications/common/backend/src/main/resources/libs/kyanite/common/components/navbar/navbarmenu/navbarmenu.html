@@ -17,7 +17,7 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.navbar.NavbarMenuComponent">
-  <sly data-sly-test="${resource.hasChildren}">
+  <sly data-sly-test="${model.hasChildren}">
     <p>${model.fixedOption}</p>
     <sly data-sly-list.item="${model.metaNavigation}">
       <a class="navbar-item" href="${item.url}">
@@ -25,10 +25,14 @@
       </a>
     </sly>
     <div class="navbar-menu" id="navMenu">
-      <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+      <sly data-sly-list.item="${model.items}">
+        <sly
+            data-sly-resource="${item.path @ resourceType=item.resourceType}"
+        ></sly>
+      </sly>
     </div>
   </sly>
-  <sly data-sly-test="${!resource.hasChildren}">
+  <sly data-sly-test="${!model.hasChildren}">
     <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
          data-sly-call="${lib.placeholder @ classes='navbar-menu'}"></sly>
   </sly>

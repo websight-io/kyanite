@@ -17,6 +17,7 @@
 package pl.ds.kyanite.common.components.models.navbar;
 
 import java.util.List;
+import java.util.stream.StreamSupport;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
@@ -28,6 +29,9 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class NavbarMenuComponent {
 
+  private static final String NAVBAR_START = "kyanite/common/components/navbar/navbarstart";
+  private static final String NAVBAR_END = "kyanite/common/components/navbar/navbarend";
+
   @SlingObject
   private Resource resource;
 
@@ -38,12 +42,35 @@ public class NavbarMenuComponent {
   @Getter
   private String fixedOption;
 
+  @Getter
+  private List<Resource> items;
+
+  public Boolean getHasChildren() {
+    return items != null && !items.isEmpty();
+  }
+
   @PostConstruct
   private void init() {
     NavbarComponent navbarComponent = resource.getParent().adaptTo(NavbarComponent.class);
     if (navbarComponent != null) {
       fixedOption = navbarComponent.getFixedOption();
     }
+    items = findMenuItems();
   }
 
+  private List<Resource> findMenuItems() {
+    return StreamSupport.stream(resource.getChildren().spliterator(), false)
+        .filter(this::isCorrectItem)
+        .toList();
+  }
+
+  private boolean isCorrectItem(Resource resource) {
+    return this.isComponentType(resource, NAVBAR_START)
+        || this.isComponentType(resource, NAVBAR_END);
+  }
+
+  private boolean isComponentType(Resource resource, String componentName) {
+    return componentName.equals(resource.getResourceType())
+        || resource.isResourceType(componentName);
+  }
 }
