@@ -20,40 +20,6 @@
           "label": "Squares",
           "value": "squares"
         }
-      },
-      "navbarFixed": {
-        "sling:resourceType": "wcm/dialogs/components/checkbox",
-        "name": "navbarFixed",
-        "label": "Fixed navbar",
-        "description": "Check if the page contains a fixed navbar."
-      },
-      "position": {
-        "sling:resourceType": "wcm/dialogs/components/container",
-        "navbarFixedPosition": {
-          "sling:resourceType": "wcm/dialogs/components/radio",
-          "name": "navbarFixedPosition",
-          "label": "Navbar fixed position",
-          "required": true,
-          "navbarFixedTop": {
-            "sling:resourceType": "wcm/dialogs/components/radio/option",
-            "label": "Navbar fixed on the top",
-            "description": "Check if the page contains a navbar fixed on the top of the page.",
-            "value": "has-navbar-fixed-top",
-            "selected": true
-          },
-          "navbarFixedBottom": {
-            "sling:resourceType": "wcm/dialogs/components/radio/option",
-            "label": "Navbar fixed on the bottom",
-            "description": "Check if the page contains a navbar fixed on the bottom of the page.",
-            "value": "has-navbar-fixed-bottom"
-          }
-        },
-        "ws:display": {
-          "condition": {
-            "sourceName": "navbarFixed",
-            "values": true
-          }
-        }
       }
     },
     "metadata": {

@@ -40,9 +40,6 @@ public class NavbarMenuComponent {
   private List<NavbarItemComponent> metaNavigation;
 
   @Getter
-  private String fixedOption;
-
-  @Getter
   private List<Resource> items;
 
   public Boolean getHasChildren() {
@@ -51,10 +48,6 @@ public class NavbarMenuComponent {
 
   @PostConstruct
   private void init() {
-    NavbarComponent navbarComponent = resource.getParent().adaptTo(NavbarComponent.class);
-    if (navbarComponent != null) {
-      fixedOption = navbarComponent.getFixedOption();
-    }
     items = findMenuItems();
   }
 
