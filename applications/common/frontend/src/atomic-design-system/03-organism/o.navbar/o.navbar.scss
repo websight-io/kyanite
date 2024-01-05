@@ -45,12 +45,30 @@ $color-navbar-link: var(--color-grey--900);
     align-items: center;
   }
 
+  .navbar,
   .navbar-end,
+  .navbar-menu,
   .navbar-start,
   .navbar-top {
     @include breakpoint.media-breakpoint-large {
       align-items: center;
       height: 100%;
+    }
+  }
+
+  .navbar-menu {
+    &.has-navbar-top {
+      .navbar-end,
+      .navbar-start{
+        @include breakpoint.media-breakpoint-large {
+          height: 50%;
+        }
+      }
+      .navbar-top {
+        @include breakpoint.media-breakpoint-large {
+          height: calc(50% - var(--spacing-2));
+        }
+      }
     }
   }
 
@@ -115,7 +133,7 @@ $color-navbar-link: var(--color-grey--900);
 
       @include breakpoint.media-breakpoint-large {
         flex-direction: row;
-        align-items: center;
+        align-items: baseline;
         gap: var(--spacing-6);
       }
     }
@@ -222,6 +240,7 @@ $color-navbar-link: var(--color-grey--900);
       position: fixed;
       width: 100%;
       left: 0;
+      top: calc(100% - var(--spacing-4));
 
       // make sure columns layout will be 5 columns of equal width
       .column {

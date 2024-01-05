@@ -18,7 +18,7 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.navbar.NavbarMenuComponent">
   <sly data-sly-test="${model.hasChildren}">
-    <div class="navbar-menu" id="navMenu">
+    <div class="navbar-menu ${model.metaNavigation ? 'has-navbar-top': ''}" id="navMenu">
       <div data-sly-test="${model.metaNavigation}" class="navbar-top">
         <sly data-sly-list.item="${model.metaNavigation}">
           <a class="navbar-item" href="${item.url}">
