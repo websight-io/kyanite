@@ -33,6 +33,7 @@ services:
     volumes:
       - kyanite-project_cms_logs:/websight/logs
       - kyanite-project_site_repository:/websight/docroot
+      - ~/.ws-localsync:/ws-localsync
     secrets:
       - source: mongo_password
         target: mongo.password

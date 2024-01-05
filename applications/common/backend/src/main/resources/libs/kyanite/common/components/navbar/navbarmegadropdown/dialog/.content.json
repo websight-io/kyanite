@@ -1,0 +1,207 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "dropdownLabel": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "dropdownLabel",
+        "label": "Label of a mega dropdown",
+        "required": true
+      },
+      "hasArrow": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "hasArrow",
+        "label": "Dropdown with arrow"
+      },
+      "isBoxed": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isBoxed",
+        "label": "Boxed version of dropdown",
+        "description": " When having a transparent navbar, it is preferable to use the boxed version of the dropdown, by using the is-boxed modifier."
+      },
+      "isDropup": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isDropup",
+        "label": "Revert expanding direction"
+      }
+    },
+    "firstColumn": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "First Column",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/type",
+        "namespace": "dropdownColumns/1"
+      },
+      "textColumn": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/textColumn",
+          "name": "dropdownColumns/1/sections"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumns/1/type",
+            "values": "text"
+          }
+        }
+      },
+      "highlights": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/highlights",
+          "name": "dropdownColumns/1/highlights"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumns/1/type",
+            "values": "highlights"
+          }
+        }
+      }
+    },
+    "secondColumn": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Second",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/type",
+        "namespace": "dropdownColumns/2"
+      },
+      "textColumn": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/textColumn",
+          "name": "dropdownColumns/2/sections"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumns/2/type",
+            "values": "text"
+          }
+        }
+      },
+      "highlights": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/highlights",
+          "name": "dropdownColumns/2/highlights"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumns/2/type",
+            "values": "highlights"
+          }
+        }
+      }
+    },
+    "thirdColumn": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Third",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/type",
+        "namespace": "dropdownColumns/3"
+      },
+      "textColumn": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/textColumn",
+          "name": "dropdownColumns/3/sections"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumns/3/type",
+            "values": "text"
+          }
+        }
+      },
+      "highlights": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/highlights",
+          "name": "dropdownColumns/3/highlights"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumns/3/type",
+            "values": "highlights"
+          }
+        }
+      }
+    },
+    "fourthColumn": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Fourth",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/type",
+        "namespace": "dropdownColumns/4"
+      },
+      "textColumn": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/textColumn",
+          "name": "dropdownColumns/4/sections"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumns/4/type",
+            "values": "text"
+          }
+        }
+      },
+      "highlights": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/highlights",
+          "name": "dropdownColumns/4/highlights"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumns/4/type",
+            "values": "highlights"
+          }
+        }
+      }
+    },
+    "fifthColumn": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Fifth",
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/type",
+        "namespace": "dropdownColumns/5"
+      },
+      "textColumn": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/textColumn",
+          "name": "dropdownColumns/5/sections"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumns/5/type",
+            "values": "text"
+          }
+        }
+      },
+      "highlights": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/navbar/navbarmegadropdown/column/highlights",
+          "name": "dropdownColumns/5/highlights"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "dropdownColumns/5/type",
+            "values": "highlights"
+          }
+        }
+      }
+    }
+  }
+}

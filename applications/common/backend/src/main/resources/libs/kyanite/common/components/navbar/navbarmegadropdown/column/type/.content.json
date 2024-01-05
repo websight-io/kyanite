@@ -1,0 +1,15 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/radio",
+  "name": "type",
+  "label": "Type of the column",
+  "links": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "Text column",
+    "value": "text"
+  },
+  "highlights": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "Highlights column",
+    "value": "highlights"
+  }
+}

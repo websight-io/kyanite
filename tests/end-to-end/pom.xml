@@ -72,6 +72,8 @@
               <includes>
                 <include>launcher/**</include>
                 <include>coverage.ec</include>
+                <include>backstop_data/html_report/**</include>
+                <include>backstop_data/ci_report/**</include>
               </includes>
             </fileset>
           </filesets>
