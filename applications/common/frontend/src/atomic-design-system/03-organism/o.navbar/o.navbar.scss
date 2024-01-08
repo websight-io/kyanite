@@ -34,16 +34,41 @@ $color-navbar-link: var(--color-grey--900);
   // https://www.w3.org/TR/css-transforms-1/#containing-block-for-all-descendants
   transform: translateX(0);
 
+  padding-top: var(--spacing-4);
+
+  @include breakpoint.media-breakpoint-large {
+    padding-top: var(--spacing-5);
+    padding-bottom: var(--spacing-4);
+  }
+
   .container {
     align-items: center;
   }
 
+  .navbar,
   .navbar-end,
   .navbar-menu,
-  .navbar-start {
+  .navbar-start,
+  .navbar-top {
     @include breakpoint.media-breakpoint-large {
       align-items: center;
       height: 100%;
+    }
+  }
+
+  .navbar-menu {
+    &.has-navbar-top {
+      .navbar-end,
+      .navbar-start{
+        @include breakpoint.media-breakpoint-large {
+          height: 50%;
+        }
+      }
+      .navbar-top {
+        @include breakpoint.media-breakpoint-large {
+          height: calc(50% - var(--spacing-2));
+        }
+      }
     }
   }
 
@@ -92,12 +117,16 @@ $color-navbar-link: var(--color-grey--900);
     padding-right: var(--spacing-4);
     padding-bottom: var(--spacing-4);
 
+    flex-shrink: 1;
+
     @include breakpoint.media-breakpoint-large {
+      flex-wrap: wrap;
       padding-bottom: 0;
     }
 
     .navbar-end,
-    .navbar-start {
+    .navbar-start,
+    .navbar-top {
       display: flex;
       flex-direction: column;
       gap: 0;
@@ -109,7 +138,23 @@ $color-navbar-link: var(--color-grey--900);
       }
     }
 
+    .navbar-top {
+      .navbar-item {
+        font-size: var(--font-size-14);
+        font-weight: var(--font-weight-500);
+        line-height: var(--line-height-155);
+      }
+
+      @include breakpoint.media-breakpoint-large {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: var(--spacing-2);
+      }
+    }
+
     a.navbar-item:not(.navbar-dropdown a.navbar-item) {
+      height: 24px;
       display: inline-block;
       @include breakpoint.media-breakpoint-large {
         @include link.a-animated-underline-link;
@@ -196,6 +241,7 @@ $color-navbar-link: var(--color-grey--900);
       position: fixed;
       width: 100%;
       left: 0;
+      top: calc(100% - var(--spacing-4));
 
       // make sure columns layout will be 5 columns of equal width
       .column {

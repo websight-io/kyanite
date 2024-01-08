@@ -181,6 +181,20 @@
                                 label="Book a demo!"/>
                         </item>
                     </end>
+                    <metaNavigation jcr:primaryType="nt:unstructured">
+                        <_x0030_
+                            jcr:primaryType="nt:unstructured"
+                            label="About"
+                            url="https://www.websight.io/about/company.html"/>
+                        <_x0031_
+                            jcr:primaryType="nt:unstructured"
+                            label="Partners"
+                            url="https://www.websight.io/about/contact-us.html"/>
+                        <_x0032_
+                            jcr:primaryType="nt:unstructured"
+                            label="Contact"
+                            url="https://www.websight.io/about/company.html"/>
+                    </metaNavigation>
                 </menu>
             </navbar>
         </pagecontainer>

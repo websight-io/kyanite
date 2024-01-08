@@ -4,8 +4,6 @@
     "jcr:primaryType": "ws:PageContent",
     "sling:resourceType": "kyanite/common/components/page",
     "background": "",
-    "navbarFixed": "true",
-    "navbarFixedPosition": "has-navbar-fixed-top",
     "pagecontainer": {
       "sling:resourceType": "kyanite/common/components/pagecontainer",
       "navbarreference": {

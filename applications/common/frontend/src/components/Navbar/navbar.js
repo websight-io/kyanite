@@ -15,7 +15,9 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-
+    
+    handleFixedNavbarPosition();
+    
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
@@ -33,5 +35,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         });
     });
-
 });
+
+/**
+ * Bulma implements possibility to fix the navbar position to the top or bottom of the page.
+ * https://bulma.io/documentation/components/navbar/#fixed-navbar
+ *
+ * Documentation tells to add is-fixed-top/is-fixed-bottom class to the navbar
+ * and has-navbar-fixed-top/has-navbar-fixed-bottom class to the body.
+ * Classes added to the body use a static value for the navbar height, which is not correct -
+ * the navbar height may differ based on brand logo used and depending on if it contains meta-menu or not.
+ *
+ * Instead of adding the class to the body, navbar height is dynamically calculated and proper styles are added .
+ */
+function handleFixedNavbarPosition() {
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        const navbarHeight = navbar.getBoundingClientRect().height;
+        if (navbar.classList.contains('is-fixed-top')) {
+            document.body.style.paddingTop = `${navbarHeight}px`;
+        } else if (navbar.classList.contains('is-fixed-bottom')) {
+            document.body.style.paddingBottom = `${navbarHeight}px`;
+        }
+    }
+}
