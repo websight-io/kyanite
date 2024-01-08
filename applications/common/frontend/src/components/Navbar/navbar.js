@@ -50,10 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function handleFixedNavbarPosition() {
     const navbar = document.querySelector('.navbar');
-    const navbarHeight = navbar.getBoundingClientRect().height;
-    if (navbar.classList.contains('is-fixed-top')) {
-        document.body.style.paddingTop = `${navbarHeight}px`;
-    } else if (navbar.classList.contains('is-fixed-bottom')) {
-        document.body.style.paddingBottom = `${navbarHeight}px`;
+    if (navbar) {
+        const navbarHeight = navbar.getBoundingClientRect().height;
+        if (navbar.classList.contains('is-fixed-top')) {
+            document.body.style.paddingTop = `${navbarHeight}px`;
+        } else if (navbar.classList.contains('is-fixed-bottom')) {
+            document.body.style.paddingBottom = `${navbarHeight}px`;
+        }
     }
 }
