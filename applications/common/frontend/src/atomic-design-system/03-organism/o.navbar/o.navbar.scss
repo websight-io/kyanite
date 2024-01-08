@@ -133,7 +133,7 @@ $color-navbar-link: var(--color-grey--900);
 
       @include breakpoint.media-breakpoint-large {
         flex-direction: row;
-        align-items: baseline;
+        align-items: center;
         gap: var(--spacing-6);
       }
     }
@@ -154,6 +154,7 @@ $color-navbar-link: var(--color-grey--900);
     }
 
     a.navbar-item:not(.navbar-dropdown a.navbar-item) {
+      height: 24px;
       display: inline-block;
       @include breakpoint.media-breakpoint-large {
         @include link.a-animated-underline-link;
