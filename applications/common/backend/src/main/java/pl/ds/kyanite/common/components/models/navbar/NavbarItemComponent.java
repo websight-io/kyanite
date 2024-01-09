@@ -16,8 +16,10 @@
 
 package pl.ds.kyanite.common.components.models.navbar;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -79,6 +81,17 @@ public class NavbarItemComponent {
   @Getter
   @Default(values = "mdi-home-outline")
   private String icon;
+
+  @Getter
+  private boolean isExternalUrl;
+
+  @PostConstruct
+  private void init() {
+    isExternalUrl =
+        StringUtils.isNotEmpty(url) && !(LinkUtil.isInternal(url, resource.getResourceResolver())
+            || LinkUtil.isAnchorLink(url));
+
+  }
 
   public String getUrl() {
     return LinkUtil.handleLink(url, resource.getResourceResolver());

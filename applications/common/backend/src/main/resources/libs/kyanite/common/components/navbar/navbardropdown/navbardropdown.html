@@ -27,7 +27,7 @@
 
     <div class="navbar-dropdown ${model.isBoxed ? 'is-boxed' : ''}">
       <sly data-sly-list.item="${model.items}">
-        <a class="navbar-item" href="${item.url}">
+        <a class="navbar-item ${item.isExternalUrl ? 'external-url' : ''}" href="${item.url}" target="{item.isExternalUrl ? '_blank' : ''">
           <sly data-sly-test="${model.addIcon && model.icon}">
             <sly data-sly-resource="${resource @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
           </sly>

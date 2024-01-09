@@ -61,8 +61,8 @@ public class LinkUtil {
     return addHtmlExtensionSuffixToLink(link);
   }
 
-  private static boolean isAnchorLink(String link) {
-    return link.startsWith(ANCHOR_LINK_PREFIX);
+  public static boolean isAnchorLink(String link) {
+    return StringUtils.startsWith(link, ANCHOR_LINK_PREFIX);
   }
 
   public static boolean isInternal(String link, ResourceResolver resourceResolver) {
@@ -89,14 +89,14 @@ public class LinkUtil {
   }
 
   public static Resource getResource(String link, ResourceResolver resourceResolver) {
-    if (link.startsWith(PUBLISHED)) {
+    if (StringUtils.startsWith(link, PUBLISHED)) {
       return resourceResolver.getResource(link.replaceFirst(PUBLISHED, CONTENT));
     }
     return resourceResolver.getResource(link);
   }
 
   public static boolean isPublished(String link) {
-    return link.startsWith(PUBLISHED);
+    return StringUtils.startsWith(link, PUBLISHED);
   }
 
   private static String getPrimaryType(Resource resource) {

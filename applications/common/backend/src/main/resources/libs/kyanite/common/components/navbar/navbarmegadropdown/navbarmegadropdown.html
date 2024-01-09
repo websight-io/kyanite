@@ -34,7 +34,7 @@
                     ${section.label}
                   </span>
                   <sly data-sly-list.item="${section.sectionItems}">
-                    <a class="navbar-item" href="${item.url}">
+                    <a class="navbar-item ${item.isExternalUrl ? 'external-url' : ''}" href="${item.url}" target="${item.isExternalUrl ? '_blank' : ''}">
                       ${item.label}
                     </a>
                   </sly>
@@ -44,7 +44,7 @@
             <sly data-sly-test="${column.type == 'highlights'}">
               <div class="column highlights-column">
                 <sly data-sly-list.highlight="${column.highlights}">
-                  <a class="navbar-item" href="${highlight.url}">
+                  <a class="navbar-item ${highlight.isExternalUrl ? 'external-url' : ''}" href="${highlight.url}" target="${highlight.isExternalUrl ? '_blank' : ''}">
                     ${highlight.label}
                   </a>
                 </sly>
