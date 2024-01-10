@@ -21,7 +21,7 @@
     <div class="navbar-menu ${model.metaNavigation ? 'has-navbar-top': ''}" id="navMenu">
       <div data-sly-test="${model.metaNavigation}" class="navbar-top">
         <sly data-sly-list.item="${model.metaNavigation}">
-          <a class="navbar-item" href="${item.url}">
+          <a class="navbar-item ${item.isExternalUrl ? 'external-url' : ''}" href="${item.url}" target="${item.isExternalUrl ? '_blank': ''}">
             ${item.label}
           </a>
         </sly>
