@@ -16,7 +16,9 @@
 
 package pl.ds.kyanite.common.components.models.navbar;
 
+import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
@@ -48,5 +50,21 @@ public class NavbarMegaDropdownComponent {
 
   @Inject
   @Getter
-  private List<MegaDropdownColumnComponent> dropdownColumns;
+  private List<MegaDropdownColumnComponent> dropdownColumns = new ArrayList<>();
+
+  @PostConstruct
+  private void init() {
+    int consecutiveHiddenCount = 0;
+    for (int i = 1; i < dropdownColumns.size(); i++) {
+      MegaDropdownColumnComponent currentColumn = dropdownColumns.get(i);
+      if (currentColumn.isHideColumn()) {
+        consecutiveHiddenCount++;
+
+        MegaDropdownColumnComponent lastNotHidden = dropdownColumns.get(i - consecutiveHiddenCount);
+        lastNotHidden.setColSizeClass("column-" + (consecutiveHiddenCount + 1));
+      } else {
+        consecutiveHiddenCount = 0;
+      }
+    }
+  }
 }

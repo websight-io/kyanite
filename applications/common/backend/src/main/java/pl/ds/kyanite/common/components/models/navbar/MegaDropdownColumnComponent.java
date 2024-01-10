@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Inject;
 import lombok.Getter;
+import lombok.Setter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -30,8 +31,16 @@ public class MegaDropdownColumnComponent {
 
   @Inject
   @Getter
+  private boolean hideColumn;
+
+  @Inject
+  @Getter
   @Default(values = "text")
   private String type;
+
+  @Getter
+  @Setter
+  private String colSizeClass;
 
   @Inject
   @Getter

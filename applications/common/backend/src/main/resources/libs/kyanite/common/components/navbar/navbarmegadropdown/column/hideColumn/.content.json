@@ -1,0 +1,6 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/toggle",
+  "name": "hideColumn",
+  "label": "Hide Column",
+  "description": "If column is hidden then last not hidden is extended for example 2nd and 3rd hidden then first column is of size 3"
+}
