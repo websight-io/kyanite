@@ -250,6 +250,26 @@ $color-navbar-link: var(--color-grey--900);
         overflow: hidden;
       }
 
+      .column-2 {
+        min-width: 40%;
+        width: 40%;
+      }
+
+      .column-3 {
+        min-width: 60%;
+        width: 60%;
+      }
+
+      .column-4 {
+        min-width: 80%;
+        width: 80%;
+      }
+
+      .column-5 {
+        min-width: 100%;
+        width: 100%;
+      }
+
       // reset navbar-item style
       .navbar-item {
         padding: 0;

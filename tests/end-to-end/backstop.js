@@ -64,6 +64,10 @@ const scenarios = [
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label))
   },
+  { space: 'kyanite-visual-tests', page: 'navbar-megadropdown-columns', selectors: [selectors.body],
+    hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
+    viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label))
+  },
   { space: 'kyanite-visual-tests', page: 'blog-article-header/blog-article-page', selectors: [selectors.container] },
   { space: 'kyanite-visual-tests', page: 'blog-listing', selectors: [selectors.container] },
   { space: 'kyanite-visual-tests', page: 'blog-article-author-bio', selectors: [selectors.content] },
