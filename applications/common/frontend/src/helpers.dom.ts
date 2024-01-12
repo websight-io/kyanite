@@ -113,7 +113,7 @@ export const getAnchorTargetElement = (): Promise<Target> => {
   }
 
   return new Promise<Target>((resolve) => {
-    window.addEventListener(window.KYANITE_ON_LOAD || 'load', () => {
+    window.addEventListener(window.KYANITE_ON_LOAD, () => {
       // setTimeout used, so it resolves at next frame, when :target was already scrolled-to by browser
       setTimeout(() => {
         const result = document.querySelector(':target');
