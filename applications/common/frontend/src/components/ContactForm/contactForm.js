@@ -15,7 +15,7 @@
  */
 
 const initForm = () => {
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
         Array.from(document.getElementsByClassName("contact-form"))
         .forEach(function(contactForm) {
             contactForm.addEventListener('submit', (e) => {

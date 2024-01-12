@@ -223,7 +223,7 @@ export default cc.run({
   },
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
   const openModalLinks: NodeListOf<Element> = document.querySelectorAll(
     'a[href="#cookieSettings"'
   );

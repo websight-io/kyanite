@@ -18,7 +18,7 @@ export type EventCallback = (event: Event) => void;
 
 export const onDOMContentLoaded = (callback: EventCallback, options = {}) => {
   document.addEventListener(
-    'DOMContentLoaded',
+    window.KYANITE_ON_DOM_CONTENT_LOAD,
     (event: Event) => callback(event),
     {
       ...options,
@@ -113,7 +113,7 @@ export const getAnchorTargetElement = (): Promise<Target> => {
   }
 
   return new Promise<Target>((resolve) => {
-    window.addEventListener('load', () => {
+    window.addEventListener(window.KYANITE_ON_LOAD || 'load', () => {
       // setTimeout used, so it resolves at next frame, when :target was already scrolled-to by browser
       setTimeout(() => {
         const result = document.querySelector(':target');

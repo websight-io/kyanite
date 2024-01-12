@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-    
+document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
+
     handleFixedNavbarPosition();
-    
+
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 

@@ -15,7 +15,7 @@
  */
 
 const initNotificationDelete = () => {
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
         (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
             const $notification = $delete.parentNode;
 

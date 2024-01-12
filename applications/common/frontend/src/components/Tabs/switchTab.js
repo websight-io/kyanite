@@ -22,7 +22,7 @@ const switchTab = () => {
     }
 
     if (isPreviewMode) {
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener(window.KYANITE_ON_LOAD, () => {
             const tabContainers = document.querySelectorAll('.tabs');
             let tabContainersTabs = [];
             tabContainers.forEach(container => {
