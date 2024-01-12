@@ -25,7 +25,3 @@ declare global {
 
 window.KYANITE_ON_LOAD = window.KYANITE_ON_LOAD || 'load';
 window.KYANITE_ON_DOM_CONTENT_LOAD = window.KYANITE_ON_DOM_CONTENT_LOAD || 'DOMContentLoaded';
-
-
-console.log(window.KYANITE_ON_LOAD);
-console.log(window.KYANITE_ON_DOM_CONTENT_LOAD);
