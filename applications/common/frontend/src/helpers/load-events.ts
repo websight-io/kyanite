@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-/**
- * This file is loaded only in WCM disabled mode. It's not present in edit or publish mode.
- * Used only for end-user.
- * Loaded in `head-libs.html` & `body-content.html`
- */
+export {};
 
-// styles
-import './main.published.scss';
+declare global {
+  interface Window {
+    KYANITE_ON_LOAD: string;
+    KYANITE_ON_DOM_CONTENT_LOAD: string;
+  }
+}
 
-// scripts
-import './helpers/load-events';
-import './cookies/cookieConsents';
+window.KYANITE_ON_LOAD = window.KYANITE_ON_LOAD || 'load';
+window.KYANITE_ON_DOM_CONTENT_LOAD = window.KYANITE_ON_DOM_CONTENT_LOAD || 'DOMContentLoaded';

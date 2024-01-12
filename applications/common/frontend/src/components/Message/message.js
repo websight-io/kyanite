@@ -15,7 +15,7 @@
  */
 
 const initMessageDelete = () => {
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
         (document.querySelectorAll('.message .delete') || []).forEach(($delete) => {
             const $message = $delete.parentNode.parentNode;
 

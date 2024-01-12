@@ -18,5 +18,6 @@
 import './main.scss';
 
 // scripts
+import './helpers/load-events';
 import './components';
 import './emailDecryption';

@@ -65,5 +65,5 @@ export const initGlideJsSlider = (selector, optionsFn) => {
     }
   };
 
-  window.addEventListener('load', listener, { once: true });
+  window.addEventListener(window.KYANITE_ON_LOAD, listener, { once: true });
 };

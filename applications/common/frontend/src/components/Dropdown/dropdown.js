@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
 
   const dropdowns = document.querySelectorAll('.dropdown:not(.is-hoverable)');
 

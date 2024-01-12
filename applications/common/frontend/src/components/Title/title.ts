@@ -17,7 +17,7 @@
 import { TitleComponent } from './title.class';
 
 const initTitleComponents = () => {
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
     Array.from(document.querySelectorAll(TitleComponent.SELECTOR)).forEach(
       (component) => {
         new TitleComponent(component);
