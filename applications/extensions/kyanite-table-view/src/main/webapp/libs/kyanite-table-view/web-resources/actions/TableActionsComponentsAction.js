@@ -22,11 +22,14 @@ export default class TableActionsComponentsAction {
     this.components = components;
     this.editor = editor;
     this.config = config;
-    this.name = this.config?.name
   }
 
   get metadata() {
     return this.config?.metadata;
+  }
+
+  get name(){
+    return this.config?.name;
   }
 
   get conditions() {
