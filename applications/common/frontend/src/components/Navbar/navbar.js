@@ -35,6 +35,38 @@ document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
 
         });
     });
+
+    // Get all navbar mega items
+    const $navbarMega = [...document.querySelectorAll('.navbar-end .navbar-item.has-dropdown')];
+    const desktopMQ = window.matchMedia('(min-width: 1024px)');
+
+    const onClick = (el) => {
+        el.target.parentElement.classList.toggle('is-active');
+    }
+
+    const actionForNavbarMega = (desktopMQ) => {
+        // On desktop the meganav is hoverable
+        if (desktopMQ.matches) {
+            $navbarMega.forEach((el) => {
+                el.classList.add('is-hoverable');
+                el.classList.remove('is-active');
+                el.removeEventListener('click', onClick);
+            });
+
+            return;
+        }
+
+        // On mobile the meganav is clickable
+        $navbarMega.forEach((el) => {
+            el.classList.remove('is-hoverable');
+            el.classList.remove('is-active');
+            el.addEventListener('click', onClick);
+        });
+    }
+
+    actionForNavbarMega(desktopMQ);
+
+    desktopMQ.addEventListener('change', () => actionForNavbarMega(desktopMQ));
 });
 
 /**

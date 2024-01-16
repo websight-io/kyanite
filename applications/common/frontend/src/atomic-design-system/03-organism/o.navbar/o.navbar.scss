@@ -64,6 +64,7 @@ $color-navbar-link: var(--color-grey--900);
           height: 50%;
         }
       }
+
       .navbar-top {
         @include breakpoint.media-breakpoint-large {
           height: calc(50% - var(--spacing-2));
@@ -145,6 +146,10 @@ $color-navbar-link: var(--color-grey--900);
         line-height: var(--line-height-155);
       }
 
+      a.navbar-item:not(.navbar-dropdown a.navbar-item) {
+        height: 24px;
+      }
+
       @include breakpoint.media-breakpoint-large {
         flex-basis: 100%;
         display: flex;
@@ -154,7 +159,6 @@ $color-navbar-link: var(--color-grey--900);
     }
 
     a.navbar-item:not(.navbar-dropdown a.navbar-item) {
-      height: 24px;
       display: inline-block;
       @include breakpoint.media-breakpoint-large {
         @include link.a-animated-underline-link;
@@ -169,18 +173,22 @@ $color-navbar-link: var(--color-grey--900);
 
     .navbar-item.has-dropdown {
       height: 100%;
+
       &:hover {
         .navbar-link {
           background-color: unset !important; // override Bulma complex selector
         }
 
-        .navbar-dropdown {
-          display: block;
+        @include breakpoint.media-breakpoint-large {
+          .navbar-dropdown {
+            display: block;
+          }
         }
       }
 
       &.is-active {
-        .navbar-dropdown {
+        .navbar-dropdown,
+        .navbar-dropdown.navbar-mega-dropdown {
           display: block;
         }
       }
@@ -195,6 +203,10 @@ $color-navbar-link: var(--color-grey--900);
         @include breakpoint.media-breakpoint-large {
           display: none;
         }
+      }
+
+      .navbar-mega-dropdown {
+        display: none;
       }
 
       .navbar-link {
@@ -230,12 +242,17 @@ $color-navbar-link: var(--color-grey--900);
     }
   }
 
+  .navbar-mega-dropdown .columns {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+
   @include breakpoint.media-breakpoint-large {
     .navbar-mega-dropdown {
       background-color: var(--color-grey--100);
       border-radius: var(--border-radius-0);
       border: 0;
-      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+      box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
       padding: var(--spacing-5_2) 0;
 
       position: fixed;
