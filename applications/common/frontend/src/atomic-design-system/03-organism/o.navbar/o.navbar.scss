@@ -163,6 +163,7 @@ $color-navbar-link: var(--color-grey--900);
       @include breakpoint.media-breakpoint-large {
         @include link.a-animated-underline-link;
 
+        height: 24px;
         padding: 0;
 
         &:hover {
@@ -245,6 +246,11 @@ $color-navbar-link: var(--color-grey--900);
   .navbar-mega-dropdown .columns {
     margin-left: -0.5rem;
     margin-right: -0.5rem;
+
+    @include breakpoint.media-breakpoint-large {
+      margin-left: -0.75rem;
+      margin-right: -0.75rem;
+    }
   }
 
   @include breakpoint.media-breakpoint-large {
