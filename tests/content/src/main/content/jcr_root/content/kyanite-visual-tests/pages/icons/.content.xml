@@ -7,7 +7,7 @@
         jcr:primaryType="ws:PageContent"
         jcr:title="Icons"
         sling:resourceType="kyanite/common/components/page"
-        ws:lastModified="{Date}2023-05-17T11:57:37.538Z"
+        ws:lastModified="{Date}2024-01-17T15:02:52.581Z"
         ws:lastModifiedBy="wsadmin"
         ws:lastPublishAction="Publish"
         ws:lastPublished="{Date}2023-05-17T11:57:41.671Z"
@@ -29,7 +29,7 @@
                         color="rest_has-text-grey"
                         size="is-6"
                         subtitleColor="bw_has-text-black"
-                        text="MD default/es/s/m/l">
+                        text="&lt;p>Material Design default/es/s/m/l&lt;/p>">
                         <grey jcr:primaryType="nt:unstructured"/>
                         <bw jcr:primaryType="nt:unstructured"/>
                         <rest
@@ -86,7 +86,7 @@
                         color="rest_has-text-grey"
                         size="is-6"
                         subtitleColor="bw_has-text-black"
-                        text="MD default/es/s/m/l + color primary">
+                        text="&lt;p>Material Design default/es/s/m/l + color primary&lt;/p>">
                         <grey jcr:primaryType="nt:unstructured"/>
                         <bw jcr:primaryType="nt:unstructured"/>
                         <rest
@@ -139,16 +139,17 @@
                         selectOrType="select"
                         textVariant="has-text-primary"/>
                 </container_1>
-                <container_2
+                <container_3
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/container">
                     <title
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/title"
+                        anchorId="\0"
                         color="rest_has-text-grey"
                         size="is-6"
                         subtitleColor="bw_has-text-black"
-                        text="MD default (invisible)/s/m/l">
+                        text="&lt;p>Font Awesome default/s/m/l&lt;/p>">
                         <grey jcr:primaryType="nt:unstructured"/>
                         <bw jcr:primaryType="nt:unstructured"/>
                         <rest
@@ -159,7 +160,7 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/icon"
                         addText="false"
-                        icon="mdi-home"
+                        icon="fa-home"
                         iconLibType="fas"
                         iconSize="mdi-36px"
                         selectOrType="select"/>
@@ -187,31 +188,33 @@
                         iconLibType="fas"
                         iconSize="fa-2x"
                         selectOrType="select"/>
-                </container_2>
-                <container_2_1
+                </container_3>
+                <container_3_1
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/container">
-                    <title_1
+                    <title
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/title"
+                        anchorId="\0"
                         color="rest_has-text-grey"
                         size="is-6"
                         subtitleColor="bw_has-text-black"
-                        text="MD default (invisible)/s/m/l + color primary">
+                        text="&lt;p>Font Awesome default/s/m/l + primary color&lt;/p>">
                         <grey jcr:primaryType="nt:unstructured"/>
                         <bw jcr:primaryType="nt:unstructured"/>
                         <rest
                             jcr:primaryType="nt:unstructured"
                             shade="900"/>
-                    </title_1>
+                    </title>
                     <icon_1
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/icon"
                         addText="false"
-                        icon="mdi-home"
+                        icon="fa-home"
                         iconLibType="fas"
                         iconSize="mdi-36px"
-                        selectOrType="select"/>
+                        selectOrType="select"
+                        textVariant="has-text-primary"/>
                     <icon_2
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/icon"
@@ -239,7 +242,128 @@
                         iconSize="fa-2x"
                         selectOrType="select"
                         textVariant="has-text-primary"/>
-                </container_2_1>
+                </container_3_1>
+                <container_2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/container">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/title"
+                        anchorId="\0"
+                        color="rest_has-text-grey"
+                        size="is-6"
+                        subtitleColor="bw_has-text-black"
+                        text="&lt;p>HTML Symbol icons default/es/s/m/l&lt;/p>&lt;p>&lt;/p>">
+                        <grey jcr:primaryType="nt:unstructured"/>
+                        <bw jcr:primaryType="nt:unstructured"/>
+                        <rest
+                            jcr:primaryType="nt:unstructured"
+                            shade="900"/>
+                    </title>
+                    <icon_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/icon"
+                        addText="false"
+                        icon="&amp;#8962;"
+                        iconLibType="symbols"
+                        iconSize="mdi-36px"
+                        selectOrType="select"/>
+                    <icon_2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/icon"
+                        addText="false"
+                        icon="&amp;#8962;"
+                        iconLibType="symbols"
+                        iconSize="is-size-7"
+                        selectOrType="select"/>
+                    <icon_3
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/icon"
+                        addText="false"
+                        icon="&amp;#8962;"
+                        iconLibType="symbols"
+                        iconSize="is-size-6"
+                        selectOrType="select"/>
+                    <icon_4
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/icon"
+                        addText="false"
+                        icon="&amp;#8962;"
+                        iconLibType="symbols"
+                        iconSize="is-size-3"
+                        selectOrType="select"/>
+                    <icon_4_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/icon"
+                        addText="false"
+                        icon="&amp;#8962;"
+                        iconLibType="symbols"
+                        iconSize="is-size-1"
+                        selectOrType="select"/>
+                </container_2>
+                <container_2_2
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/container">
+                    <title
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/title"
+                        anchorId="\0"
+                        color="rest_has-text-grey"
+                        size="is-6"
+                        subtitleColor="bw_has-text-black"
+                        text="&lt;p>HTML Symbol icons default/es/s/m/l + color primary&lt;/p>">
+                        <grey jcr:primaryType="nt:unstructured"/>
+                        <bw jcr:primaryType="nt:unstructured"/>
+                        <rest
+                            jcr:primaryType="nt:unstructured"
+                            shade="900"/>
+                    </title>
+                    <icon_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/icon"
+                        addText="false"
+                        icon="&amp;#8962;"
+                        iconLibType="symbols"
+                        iconSize="mdi-36px"
+                        selectOrType="select"
+                        textVariant="has-text-primary"/>
+                    <icon_2
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/icon"
+                        addText="false"
+                        icon="&amp;#8962;"
+                        iconLibType="symbols"
+                        iconSize="is-size-7"
+                        selectOrType="select"
+                        textVariant="has-text-primary"/>
+                    <icon_3
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/icon"
+                        addText="false"
+                        icon="&amp;#8962;"
+                        iconLibType="symbols"
+                        iconSize="is-size-6"
+                        selectOrType="select"
+                        textVariant="has-text-primary"/>
+                    <icon_4
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/icon"
+                        addText="false"
+                        icon="&amp;#8962;"
+                        iconLibType="symbols"
+                        iconSize="is-size-3"
+                        selectOrType="select"
+                        textVariant="has-text-primary"/>
+                    <icon_4_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/icon"
+                        addText="false"
+                        icon="&amp;#8962;"
+                        iconLibType="symbols"
+                        iconSize="is-size-1"
+                        selectOrType="select"
+                        textVariant="has-text-primary"/>
+                </container_2_2>
             </section>
         </pagecontainer>
     </jcr:content>
