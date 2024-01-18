@@ -64,6 +64,11 @@ const scenarios = [
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label))
   },
+  { space: 'kyanite-visual-tests', page: 'navbar-megadropdown', selectors: [selectors.body],
+    clickSelectors: ['.navbar-burger', '.navbar-item.has-dropdown'],
+    viewports: viewports.filter((viewport) => ['md-mini', 'md'].includes(viewport.label)),
+    postInteractionWait: 1000,
+  },
   { space: 'kyanite-visual-tests', page: 'navbar-megadropdown-columns', selectors: [selectors.body],
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label))
@@ -84,7 +89,7 @@ const scenarios = [
       selectors.cookie_banner,
     ];
 
-    const scenarioConfig = {
+    const deafultScenarioConfig = {
       removeSelectors,
       label: scenario.page,
       cookiePath: 'backstop_data/engine_scripts/cookies.json',
@@ -101,18 +106,7 @@ const scenarios = [
       requireSameDimensions: false,
     };
 
-
-    if (scenario.selectors) {
-      scenarioConfig.selectors = scenario.selectors;
-    }
-
-    if (scenario.hoverSelector) {
-      scenarioConfig.hoverSelector = scenario.hoverSelector;
-    }
-
-    if (scenario.viewports) {
-      scenarioConfig.viewports = scenario.viewports;
-    }
+    const scenarioConfig = { ...deafultScenarioConfig, ...scenario };
 
     return scenarioConfig;
   });
