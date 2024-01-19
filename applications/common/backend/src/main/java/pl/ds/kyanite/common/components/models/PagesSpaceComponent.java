@@ -16,6 +16,8 @@
 
 package pl.ds.kyanite.common.components.models;
 
+import javax.annotation.PostConstruct;
+import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -30,7 +32,15 @@ public class PagesSpaceComponent {
   @SlingObject
   private Resource resource;
 
-  public String getStylesPath() {
+  @Getter
+  private String stylesPath;
+
+  @PostConstruct
+  private void init() {
+    stylesPath = initStylesPath();
+  }
+
+  private String initStylesPath() {
     Resource pageSpace = PagesSpaceUtil.getSpace(resource.getPath(),
         resource.getResourceResolver());
     if (pageSpace != null) {
