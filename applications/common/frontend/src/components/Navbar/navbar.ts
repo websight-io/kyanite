@@ -39,7 +39,7 @@ document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
     });
 
     // Get all navbar mega items
-    const $navbarMega = Array.prototype.slice.call('.navbar-end .navbar-item.has-dropdown');
+    const $navbarMega = Array.prototype.slice.call(document.querySelectorAll('.navbar-end .navbar-item.has-dropdown'));
     const desktopMQ = window.matchMedia(`(min-width: ${breakpoints.lg})`);
 
     const onClick = (el) => {
