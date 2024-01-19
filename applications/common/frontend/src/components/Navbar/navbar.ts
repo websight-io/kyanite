@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import { breakpoints } from "src/helpers/breakpoints";
+
 document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
 
     handleFixedNavbarPosition();
@@ -37,8 +39,8 @@ document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
     });
 
     // Get all navbar mega items
-    const $navbarMega = [...document.querySelectorAll('.navbar-end .navbar-item.has-dropdown')];
-    const desktopMQ = window.matchMedia('(min-width: 1024px)');
+    const $navbarMega = Array.prototype.slice.call('.navbar-end .navbar-item.has-dropdown');
+    const desktopMQ = window.matchMedia(`(min-width: ${breakpoints.lg})`);
 
     const onClick = (el) => {
         el.target.parentElement.classList.toggle('is-active');
