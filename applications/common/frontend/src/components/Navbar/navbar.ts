@@ -38,16 +38,16 @@ document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
         });
     });
 
-    // Get all navbar mega items
-    const $navbarMega = Array.prototype.slice.call('.navbar-end .navbar-item.has-dropdown');
-    const desktopMQ = window.matchMedia(`(min-width: ${breakpoints.lg})`);
+    // Get all dropdowns items
+    const $navbarMega = Array.prototype.slice.call(document.querySelectorAll('.navbar-end .navbar-item.has-dropdown'));
+    const desktopMQ = window.matchMedia(`(min-width: ${breakpoints.lg}px)`);
 
     const onClick = (el) => {
         el.target.parentElement.classList.toggle('is-active');
     }
 
     const actionForNavbarMega = (desktopMQ) => {
-        // On desktop the meganav is hoverable
+        // On desktop the dropdowns are hoverable
         if (desktopMQ.matches) {
             $navbarMega.forEach((el) => {
                 el.classList.add('is-hoverable');
@@ -58,7 +58,7 @@ document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
             return;
         }
 
-        // On mobile the meganav is clickable
+        // On mobile the dropdowns are clickable
         $navbarMega.forEach((el) => {
             el.classList.remove('is-hoverable');
             el.classList.remove('is-active');
