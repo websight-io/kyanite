@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:ws="http://ds.pl/websight"
+    jcr:description="Kyanite space for visual testing."
+    jcr:primaryType="ws:PagesSpace"
+    jcr:title="Kyanite Dark Mode Visual">
+    <pages/>
+    <assets/>
+</jcr:root>
