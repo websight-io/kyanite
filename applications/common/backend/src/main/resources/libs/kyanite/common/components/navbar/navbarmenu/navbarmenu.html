@@ -21,8 +21,13 @@
     <div class="navbar-menu ${model.metaNavigation ? 'has-navbar-top': ''}" id="navMenu">
       <div data-sly-test="${model.metaNavigation}" class="navbar-top">
         <sly data-sly-list.item="${model.metaNavigation}">
-          <a class="navbar-item ${item.isExternalUrl ? 'external-url' : ''}" href="${item.url}" target="${item.isExternalUrl ? '_blank': ''}">
+          <a class="navbar-item" href="${item.url}" target="${item.isExternalUrl ? '_blank': ''}">
             ${item.label}
+            <sly data-sly-test="${item.isExternalUrl}">
+              <span class="icon">
+                <i class="mdi mdi-open-in-new"></i>
+              </span>
+            </sly>
           </a>
         </sly>
       </div>

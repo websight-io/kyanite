@@ -64,6 +64,11 @@ const scenarios = [
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label))
   },
+  { space: 'kyanite-visual-tests', page: 'navbar-megadropdown', selectors: [selectors.body],
+    clickSelectors: ['.navbar-burger', '.navbar-item.has-dropdown'],
+    viewports: viewports.filter((viewport) => ['md-mini', 'md'].includes(viewport.label)),
+    postInteractionWait: 1000,
+  },
   { space: 'kyanite-visual-tests', page: 'navbar-megadropdown-columns', selectors: [selectors.body],
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label))
@@ -76,6 +81,16 @@ const scenarios = [
   { space: 'kyanite-visual-tests', page: 'message', selectors: [selectors.container] },
   { space: 'kyanite-visual-tests', page: 'table-of-content/table-of-content' },
   { space: 'kyanite-visual-tests', page: 'card-full-height-variant', selectors: [selectors.body] },
+  { space: 'kyanite-visual-tests', page: 'navbar-external-links', selectors: [selectors.body],
+    label: 'external-link-meganav',
+    clickSelector: '.navbar-item.has-dropdown.is-hoverable',
+    viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
+  },
+  { space: 'kyanite-visual-tests', page: 'navbar-external-links', selectors: [selectors.body],
+    label: 'external-link-dropdown-menu',
+    clickSelector: '.navbar-item.has-dropdown.is-hoverable:nth-of-type(2)',
+    viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
+  },
 ]
   .map((scenario) => {
     const removeSelectors = [
@@ -84,7 +99,7 @@ const scenarios = [
       selectors.cookie_banner,
     ];
 
-    const scenarioConfig = {
+    const deafultScenarioConfig = {
       removeSelectors,
       label: scenario.page,
       cookiePath: 'backstop_data/engine_scripts/cookies.json',
@@ -101,18 +116,7 @@ const scenarios = [
       requireSameDimensions: false,
     };
 
-
-    if (scenario.selectors) {
-      scenarioConfig.selectors = scenario.selectors;
-    }
-
-    if (scenario.hoverSelector) {
-      scenarioConfig.hoverSelector = scenario.hoverSelector;
-    }
-
-    if (scenario.viewports) {
-      scenarioConfig.viewports = scenario.viewports;
-    }
+    const scenarioConfig = { ...deafultScenarioConfig, ...scenario };
 
     return scenarioConfig;
   });

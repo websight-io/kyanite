@@ -15,7 +15,12 @@
 */-->
 <template data-sly-template.icon="${ @ colorOnText, textVariant, icon, addText, label, containerSize, iconSize, iconLibType, hidden}">
     <span class="icon ${containerSize} ${!colorOnText  && textVariant ? textVariant : ''}">
-      <i class="${iconLibType} ${iconSize} ${icon}" aria-hidden="${hidden}"></i>
+        <sly data-sly-test.symbols="${iconLibType == 'symbols'}">
+            <span class="${iconSize}">${icon @ context = 'html'}</span>
+        </sly>
+        <sly data-sly-test="${!symbols}">
+            <i class="${iconLibType} ${iconSize} ${icon}" aria-hidden="${hidden}"></i>
+        </sly>
     </span>
     <sly data-sly-test="${addText}">
         <span>${label}</span>
