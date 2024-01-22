@@ -106,6 +106,29 @@
             }
           }
         },
+        "iconSymbols": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "selectableIcon": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "kyanite/common/components/common/icon/icons/symbols",
+            "ws:display": {
+              "condition": {
+                "sourceName": "selectOrType",
+                "values": "select"
+              }
+            }
+          },
+          "iconSize": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "path": "kyanite/common/components/common/icon/iconsize/symbols"
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "iconLibType",
+              "values": "symbols"
+            }
+          }
+        },
         "ws:display": {
           "condition": {
             "sourceName": "addIcon",
