@@ -15,6 +15,7 @@
  */
 
 import '@4tw/cypress-drag-drop';
+import 'cypress-wait-until';
 import { SelectionMode } from './types';
 
 

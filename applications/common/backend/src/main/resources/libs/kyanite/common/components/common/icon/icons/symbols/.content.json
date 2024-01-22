@@ -1,0 +1,70 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "icon",
+  "label": "Icon",
+  "home": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Home",
+    "value": "\\u0026#8962;"
+  },
+  "cogs": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Gears",
+    "value": "\\u0026#9881;"
+  },
+  "arrowLeft": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Arrow left",
+    "value": "\\u0026#8592;"
+  },
+  "arrowRight": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Arrow right",
+    "value": "\\u0026#8594;"
+  },
+  "arrowUp": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Arrow up",
+    "value": "\\u0026#8593;"
+  },
+  "arrowDown": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Arrow down",
+    "value": "\\u0026#8595;"
+  },
+  "arrowUpRight": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Arrow up right",
+    "value": "\\u0026#8599;"
+  },
+  "arrowDownRight": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Arrow down right",
+    "value": "\\u0026#8600;"
+  },
+  "arrowUpLeft": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Arrow up left",
+    "value": "\\u0026#8598;"
+  },
+  "arrowDownLeft": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Arrow down left",
+    "value": "\\u0026#8601;"
+  },
+  "check": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Check",
+    "value": "\\u0026#10003;"
+  },
+  "close": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Close",
+    "value": "\\u0026#10005;"
+  },
+  "twitterx": {
+    "sling:resourceType": "wcm/dialogs/components/selectItem",
+    "label": "Twitter X",
+    "value": "\\u0026#120143;"
+  }
+}

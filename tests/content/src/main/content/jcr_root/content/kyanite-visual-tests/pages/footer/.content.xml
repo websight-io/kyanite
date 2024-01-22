@@ -7,7 +7,7 @@
         jcr:primaryType="ws:PageContent"
         jcr:title="Footer"
         sling:resourceType="kyanite/common/components/page"
-        ws:lastModified="{Date}2023-06-07T11:43:10.599Z"
+        ws:lastModified="{Date}2024-01-18T08:15:55.434Z"
         ws:lastModifiedBy="wsadmin"
         ws:lastPublishAction="Publish"
         ws:lastPublished="{Date}2023-05-18T09:25:55.008Z"
@@ -63,21 +63,25 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/icon"
                                 icon="fa fa-lg fa-check"
+                                iconLibType="fas"
                                 selectOrType="type"/>
                             <icon_1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/icon"
                                 icon="fa fa-lg fa-check"
+                                iconLibType="fas"
                                 selectOrType="type"/>
                             <icon_2
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/icon"
                                 icon="fa fa-lg fa-check"
+                                iconLibType="fas"
                                 selectOrType="type"/>
                             <icon_3
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/icon"
                                 icon="fa fa-lg fa-check"
+                                iconLibType="fas"
                                 selectOrType="type"/>
                             <content_1
                                 jcr:primaryType="nt:unstructured"

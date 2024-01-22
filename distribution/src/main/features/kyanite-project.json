@@ -49,6 +49,16 @@
       "id": "mdi",
       "label": "Material Design",
       "libraryUrl": "/libs/kyanite/webroot/material-design-icons/css/materialdesignicons@7.2.96.min.css"
+    },
+    "pl.ds.kyanite.common.components.services.impl.LibraryIconConfigImpl~symbols": {
+      "id": "symbols",
+      "label": "Symbols"
+    },
+    "pl.ds.kyanite.common.components.services.impl.LibraryIconConfigImpl~fas": {
+      "id": "fas",
+      "label": "Font Awesome",
+      "libraryUrl": "https://use.fontawesome.com/releases/v6.4.0/css/all.css",
+      "attributes": ["crossorigin=anonymous","integrity=sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0"]
     }
   },
   "content-packages:ARTIFACTS|true": [
