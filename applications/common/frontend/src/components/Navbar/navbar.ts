@@ -40,7 +40,7 @@ document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
 
     // Get all navbar mega items
     const $navbarMega = Array.prototype.slice.call(document.querySelectorAll('.navbar-end .navbar-item.has-dropdown'));
-    const desktopMQ = window.matchMedia(`(min-width: ${breakpoints.lg})`);
+    const desktopMQ = window.matchMedia(`(min-width: ${breakpoints.lg}px)`);
 
     const onClick = (el) => {
         el.target.parentElement.classList.toggle('is-active');
