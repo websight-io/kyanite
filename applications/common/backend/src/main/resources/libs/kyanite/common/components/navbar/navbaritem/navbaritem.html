@@ -18,11 +18,16 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.navbar.NavbarItemComponent">
   <sly data-sly-test="${model.type == 'link'}">
-    <a class="navbar-item ${model.isExternalUrl ? 'external-url' : ''}" href="${model.url}" target="${model.isExternalUrl ? '_blank' : ''}">
+    <a class="navbar-item" href="${model.url}" target="${model.isExternalUrl ? '_blank' : ''}">
         <sly data-sly-test="${model.addIcon && model.icon}">
           <sly data-sly-resource="${resource @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
         </sly>
       <span>${model.label}</span>
+      <sly data-sly-test="${item.isExternalUrl}">
+        <span class="icon">
+          <i class="mdi mdi-open-in-new"></i>
+        </span>
+      </sly>
     </a>
   </sly>
   <sly data-sly-test="${model.type == 'image'}">
