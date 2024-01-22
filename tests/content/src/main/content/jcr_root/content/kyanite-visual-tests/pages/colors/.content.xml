@@ -7,7 +7,7 @@
         jcr:primaryType="ws:PageContent"
         jcr:title="Colors"
         sling:resourceType="kyanite/common/components/page"
-        ws:lastModified="{Date}2023-06-12T13:57:35.997Z"
+        ws:lastModified="{Date}2024-01-19T15:20:17.092Z"
         ws:lastModifiedBy="wsadmin"
         ws:lastPublishAction="Publish"
         ws:lastPublished="{Date}2023-05-08T15:07:22.170Z"
@@ -415,17 +415,6 @@
                             jcr:primaryType="nt:unstructured"
                             assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
                     </item>
-                    <item_2
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="kyanite/common/components/navbar/navbaritem"
-                        imageSrcType="asset"
-                        label="Primary"
-                        type="image">
-                        <image
-                            jcr:primaryType="nt:unstructured"
-                            assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"
-                            src="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
-                    </item_2>
                 </brand>
                 <menu
                     jcr:primaryType="nt:unstructured"
@@ -787,6 +776,160 @@
                     </end>
                 </menu>
             </navbar_9>
+            <navbar_10
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="kyanite/common/components/navbar"
+                isTransparent="false"
+                variant="\0">
+                <brand
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/navbar/navbarbrand"
+                    createBurger="true">
+                    <item_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
+                        label="Primary"
+                        type="image">
+                        <image
+                            jcr:primaryType="nt:unstructured"
+                            assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"
+                            src="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
+                    </item_1>
+                </brand>
+                <menu
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/navbar/navbarmenu">
+                    <start
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/navbar/navbarstart">
+                        <item
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
+                            label="Item"/>
+                        <item_1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
+                            label="Item"/>
+                    </start>
+                    <end
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/navbar/navbarend">
+                        <dropdown
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbardropdown"
+                            label="Dropdown">
+                            <items jcr:primaryType="nt:unstructured">
+                                <_x0030_
+                                    jcr:primaryType="nt:unstructured"
+                                    label="Dropdown Item"/>
+                                <_x0031_
+                                    jcr:primaryType="nt:unstructured"
+                                    label="Dropdown Item"/>
+                            </items>
+                        </dropdown>
+                        <item
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
+                            label="Item"/>
+                        <item_1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
+                            label="Item"
+                            type="container">
+                            <button1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                addIcon="false"
+                                isInverted="false"
+                                isOutlined="false"
+                                label="Primary"
+                                variant="is-primary"/>
+                        </item_1>
+                    </end>
+                </menu>
+            </navbar_10>
+            <navbar_11
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="kyanite/common/components/navbar"
+                isTransparent="true"
+                variant="\0">
+                <brand
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/navbar/navbarbrand"
+                    createBurger="true">
+                    <item_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
+                        label="Primary"
+                        type="image">
+                        <image
+                            jcr:primaryType="nt:unstructured"
+                            assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"
+                            src="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
+                    </item_1>
+                </brand>
+                <menu
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/navbar/navbarmenu">
+                    <start
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/navbar/navbarstart">
+                        <item
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
+                            label="Item"/>
+                        <item_1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
+                            label="Item"/>
+                    </start>
+                    <end
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/navbar/navbarend">
+                        <dropdown
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbardropdown"
+                            label="Dropdown">
+                            <items jcr:primaryType="nt:unstructured">
+                                <_x0030_
+                                    jcr:primaryType="nt:unstructured"
+                                    label="Dropdown Item"/>
+                                <_x0031_
+                                    jcr:primaryType="nt:unstructured"
+                                    label="Dropdown Item"/>
+                            </items>
+                        </dropdown>
+                        <item
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
+                            label="Item"/>
+                        <item_1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
+                            label="Item"
+                            type="container">
+                            <button1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                addIcon="false"
+                                isInverted="false"
+                                isOutlined="false"
+                                label="Primary"
+                                variant="is-primary"/>
+                        </item_1>
+                    </end>
+                </menu>
+            </navbar_11>
             <container
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/container">
@@ -857,6 +1000,11 @@
                                 sling:resourceType="kyanite/common/components/button"
                                 label="Ghost"
                                 variant="is-ghost"/>
+                            <button_7_1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                label="Secondary"
+                                variant="is-secondary"/>
                         </buttons_1_1_1>
                     </column1>
                     <column2
@@ -932,6 +1080,12 @@
                                 isLight="true"
                                 label="Ghost-light"
                                 variant="is-ghost"/>
+                            <button_7_1
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                isLight="true"
+                                label="Secondary-light"
+                                variant="is-secondary"/>
                         </buttons_1>
                     </column2>
                 </columns>
@@ -2109,9 +2263,9 @@
                                     <button2
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="kyanite/common/components/button"
-                                        isInverted="true"
-                                        isOutlined="true"
-                                        variant="is-primary"/>
+                                        isInverted="false"
+                                        isOutlined="false"
+                                        variant="is-secondary"/>
                                 </buttons>
                                 <content1
                                     jcr:primaryType="nt:unstructured"
