@@ -19,13 +19,13 @@
   <parent>
     <groupId>pl.ds.kyanite</groupId>
     <artifactId>kyanite-applications</artifactId>
-    <version>0.3.3</version>
+    <version>0.3.4-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>kyanite-table-view</artifactId>
-  <version>0.3.3</version>
+  <version>0.3.4-SNAPSHOT</version>
   <name>Kyanite Components Project - Extensions Table View</name>
   <description>Table View module</description>
 
