@@ -36,5 +36,6 @@ module.exports = {
     baseUrlsPublish: {
         'kyanite-e2e-tests': getBaseUrlPublish('kyanite-e2e-tests'),
         'kyanite-visual-tests': getBaseUrlPublish('kyanite-visual-tests'),
+        'kyanite-visual-tests-dark-mode': getBaseUrlPublish('kyanite-visual-tests-dark-mode'),
     },
 }

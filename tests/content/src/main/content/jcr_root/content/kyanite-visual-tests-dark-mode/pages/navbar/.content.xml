@@ -7,7 +7,6 @@
         jcr:primaryType="ws:PageContent"
         jcr:title="Navbar"
         sling:resourceType="kyanite/common/components/page"
-        ws:lastModified="{Date}2024-01-19T20:44:46.538Z"
         ws:lastModifiedBy="wsadmin"
         ws:lastPublishAction="Publish"
         ws:lastPublished="{Date}2023-05-24T13:16:15.706Z"
@@ -23,7 +22,7 @@
                 sling:resourceType="kyanite/common/components/navbar"
                 fixedOption="is-fixed-top"
                 isTransparent="false"
-                variant="\0">
+                variant="is-white">
                 <brand
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/navbar/navbarbrand"

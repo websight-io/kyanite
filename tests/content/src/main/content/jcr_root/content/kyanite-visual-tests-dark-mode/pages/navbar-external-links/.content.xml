@@ -5,16 +5,25 @@
         jcr:lastModified="{Date}2023-05-08T10:49:01.046Z"
         jcr:lastModifiedBy="sling-package-install"
         jcr:primaryType="ws:PageContent"
-        jcr:title="Navbar Mega Dropdown"
+        jcr:title="Navbar external links"
         sling:resourceType="kyanite/common/components/page"
-        ws:lastModified="{Date}2024-01-05T09:31:02.464Z"
+        ws:lastModified="{Date}2024-01-18T13:23:28.354Z"
         ws:lastModifiedBy="wsadmin"
         ws:lastPublishAction="Publish"
         ws:lastPublished="{Date}2023-05-24T13:16:15.706Z"
         ws:lastPublishedBy="wsadmin"
         ws:template="/libs/kyanite/common/templates/articlepage"
+        description="\0"
         navbarFixed="true"
-        navbarFixedPosition="has-navbar-fixed-top">
+        navbarFixedPosition="has-navbar-fixed-top"
+        ogDescription="\0"
+        ogTitle="\0"
+        ogUrl="\0"
+        title="\0"
+        twitterDescription="\0"
+        twitterImageAlt="\0"
+        twitterSite="\0"
+        twitterTitle="\0">
         <pagecontainer
             jcr:primaryType="nt:unstructured"
             sling:resourceType="kyanite/common/components/pagecontainer">
@@ -51,7 +60,9 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
                             imageSrcType="asset"
-                            label="Platform"/>
+                            label="Platform"
+                            type="link"
+                            url="\0"/>
                         <navbarmegadropdown
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbarmegadropdown"
@@ -60,21 +71,23 @@
                             <dropdownColumns jcr:primaryType="nt:unstructured">
                                 <_x0031_
                                     jcr:primaryType="nt:unstructured"
+                                    hideColumn="false"
                                     type="highlights">
                                     <sections jcr:primaryType="nt:unstructured"/>
                                     <highlights jcr:primaryType="nt:unstructured">
                                         <_x0030_
                                             jcr:primaryType="nt:unstructured"
                                             label="Service Mesh"
-                                            url="/content/kyanite-visual-tests/pages/navbar-megadropdown"/>
+                                            url="/content/kyanite-visual-tests/pages/navbar-external-links"/>
                                         <_x0031_
                                             jcr:primaryType="nt:unstructured"
                                             label="Streaming Framework"
-                                            url="/content/kyanite-visual-tests/pages/blog-listing"/>
+                                            url="https://www.google.com/"/>
                                     </highlights>
                                 </_x0031_>
                                 <_x0032_
                                     jcr:primaryType="nt:unstructured"
+                                    hideColumn="true"
                                     type="text">
                                     <sections jcr:primaryType="nt:unstructured">
                                         <_x0030_
@@ -103,6 +116,7 @@
                                 </_x0032_>
                                 <_x0033_
                                     jcr:primaryType="nt:unstructured"
+                                    hideColumn="false"
                                     type="text">
                                     <sections jcr:primaryType="nt:unstructured">
                                         <_x0030_
@@ -128,13 +142,14 @@
                                                 <_x0034_
                                                     jcr:primaryType="nt:unstructured"
                                                     label="Connectors Roadmap"
-                                                    url="https://commercetools.com"/>
+                                                    url="https://www.google.com/"/>
                                             </sectionItems>
                                         </_x0030_>
                                     </sections>
                                 </_x0033_>
                                 <_x0034_
                                     jcr:primaryType="nt:unstructured"
+                                    hideColumn="true"
                                     type="text">
                                     <sections jcr:primaryType="nt:unstructured">
                                         <_x0030_
@@ -151,6 +166,7 @@
                                 </_x0034_>
                                 <_x0035_
                                     jcr:primaryType="nt:unstructured"
+                                    hideColumn="true"
                                     type="text"/>
                             </dropdownColumns>
                         </navbarmegadropdown>
@@ -164,11 +180,27 @@
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
                             imageSrcType="asset"
                             label="Architecture"/>
-                        <navbaritem_3
+                        <navbardropdown
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="kyanite/common/components/navbar/navbaritem"
-                            imageSrcType="asset"
-                            label="Pricing"/>
+                            sling:resourceType="kyanite/common/components/navbar/navbardropdown"
+                            addIcon="false"
+                            icon="mdi-home-outline"
+                            iconLibType="mdi"
+                            iconSize="mdi-36px"
+                            label="Pricing"
+                            selectOrType="select">
+                            <items jcr:primaryType="nt:unstructured">
+                                <_x0030_
+                                    jcr:primaryType="nt:unstructured"
+                                    icon="mdi-home-outline"
+                                    label="1 year"
+                                    url="https://www.google.com/"/>
+                                <_x0031_
+                                    jcr:primaryType="nt:unstructured"
+                                    icon="mdi-home-outline"
+                                    label="2 years"/>
+                            </items>
+                        </navbardropdown>
                         <item
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
@@ -189,7 +221,7 @@
                         <_x0031_
                             jcr:primaryType="nt:unstructured"
                             label="Partners"
-                            url="https://www.websight.io/about/contact-us.html"/>
+                            url="https://www.google.com/"/>
                         <_x0032_
                             jcr:primaryType="nt:unstructured"
                             label="Contact"

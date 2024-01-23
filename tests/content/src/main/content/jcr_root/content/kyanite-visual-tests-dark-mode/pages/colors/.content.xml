@@ -7,7 +7,7 @@
         jcr:primaryType="ws:PageContent"
         jcr:title="Colors"
         sling:resourceType="kyanite/common/components/page"
-        ws:lastModified="{Date}2024-01-19T20:10:40.789Z"
+        ws:lastModified="{Date}2024-01-19T15:20:17.092Z"
         ws:lastModifiedBy="wsadmin"
         ws:lastPublishAction="Publish"
         ws:lastPublished="{Date}2023-05-08T15:07:22.170Z"
@@ -2270,7 +2270,7 @@
                                 <content1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="\0"
+                                    color="grey_has-text-grey"
                                     text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
                                     <grey
                                         jcr:primaryType="nt:unstructured"
@@ -2323,7 +2323,7 @@
                                 <content1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="\0"
+                                    color="grey_has-text-grey"
                                     text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
                                     <grey
                                         jcr:primaryType="nt:unstructured"
@@ -2376,7 +2376,7 @@
                                 <content1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="\0"
+                                    color="grey_has-text-grey"
                                     text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
                                     <grey
                                         jcr:primaryType="nt:unstructured"
@@ -2429,7 +2429,7 @@
                                 <content1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="\0"
+                                    color="grey_has-text-grey"
                                     text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
                                     <grey
                                         jcr:primaryType="nt:unstructured"
@@ -2482,7 +2482,7 @@
                                 <content1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="\0"
+                                    color="grey_has-text-grey"
                                     text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
                                     <grey
                                         jcr:primaryType="nt:unstructured"
@@ -2535,7 +2535,7 @@
                                 <content1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="\0"
+                                    color="grey_has-text-grey"
                                     text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
                                     <grey
                                         jcr:primaryType="nt:unstructured"
@@ -2588,7 +2588,7 @@
                                 <content1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="\0"
+                                    color="grey_has-text-grey"
                                     text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
                                     <grey
                                         jcr:primaryType="nt:unstructured"
@@ -2613,7 +2613,7 @@
                         <content
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="\0"
+                            color="grey_has-text-grey"
                             text="&lt;p>Default&lt;/p>">
                             <grey
                                 jcr:primaryType="nt:unstructured"
@@ -2624,7 +2624,7 @@
                         <content_2
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="\0"
+                            color="grey_has-text-grey"
                             text="&lt;p>Primary&lt;/p>">
                             <grey
                                 jcr:primaryType="nt:unstructured"
@@ -2635,7 +2635,7 @@
                         <content_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="\0"
+                            color="grey_has-text-grey"
                             text="&lt;p>Link&lt;/p>">
                             <grey
                                 jcr:primaryType="nt:unstructured"
@@ -2646,7 +2646,7 @@
                         <content_3
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="\0"
+                            color="grey_has-text-grey"
                             text="&lt;p>Info&lt;/p>">
                             <grey
                                 jcr:primaryType="nt:unstructured"
@@ -2661,7 +2661,7 @@
                         <content_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="\0"
+                            color="grey_has-text-grey"
                             text="&lt;p>Success&lt;/p>">
                             <grey
                                 jcr:primaryType="nt:unstructured"
@@ -2672,7 +2672,7 @@
                         <content_2
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="\0"
+                            color="grey_has-text-grey"
                             text="&lt;p>Warning&lt;/p>">
                             <grey
                                 jcr:primaryType="nt:unstructured"
@@ -2683,7 +2683,7 @@
                         <content
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="\0"
+                            color="grey_has-text-grey"
                             text="&lt;p>Danger&lt;/p>">
                             <grey
                                 jcr:primaryType="nt:unstructured"
@@ -2694,7 +2694,7 @@
                         <content_3
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="\0"
+                            color="grey_has-text-grey"
                             text="&lt;p>Light&lt;/p>">
                             <grey
                                 jcr:primaryType="nt:unstructured"
@@ -2705,7 +2705,7 @@
                         <content_4
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="\0"
+                            color="grey_has-text-grey"
                             text="&lt;p>Dark&lt;/p>">
                             <grey
                                 jcr:primaryType="nt:unstructured"

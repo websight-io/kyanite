@@ -26,6 +26,7 @@ export const API_ACTION = {
 export enum CONTENT_SPACE {
     E2E_TESTS = 'kyanite-e2e-tests',
     VISUAL_TESTS = 'kyanite-visual-tests',
+    VISUAL_TESTS_DARK_MODE = 'kyanite-visual-tests-dark-mode',
 }
 
 export interface ResponseGetAssets {

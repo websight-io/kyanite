@@ -7,7 +7,7 @@
         jcr:primaryType="ws:PageContent"
         jcr:title="Tabs"
         sling:resourceType="kyanite/common/components/page"
-        ws:lastModified="{Date}2024-01-19T20:27:18.659Z"
+        ws:lastModified="{Date}2023-05-22T09:32:30.890Z"
         ws:lastModifiedBy="wsadmin"
         ws:template="/libs/kyanite/blogs/templates/articlepage"
         navbarFixed="false">
@@ -20,11 +20,7 @@
                 <tab1
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/tabs/tab"
-                    addIcon="false"
-                    icon="mdi-home-outline"
-                    iconLibType="mdi"
-                    label="Tab 1"
-                    selectOrType="select">
+                    label="Tab 1">
                     <tabcontent
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/tabs/tabcontent"/>

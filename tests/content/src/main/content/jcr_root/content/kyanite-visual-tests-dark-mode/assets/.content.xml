@@ -1,14 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:ws="http://ds.pl/websight"
     jcr:primaryType="ws:Assets">
-    <Frame_x0020_3.png/>
-    <account-circle.png/>
-    <WebSight_x0020_logo_x0020_-_x0020_working.png/>
-    <WebSight_x0020_logo.svg/>
-    <Windows_x0020_XP.png/>
-    <basura.svg/>
-    <blog-article-author-bio.png/>
-    <blog-image-example.jpeg/>
-    <Event-driven.png/>
-    <static/>
 </jcr:root>
