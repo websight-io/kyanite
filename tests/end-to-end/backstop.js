@@ -88,7 +88,7 @@ const scenarios = spaces.flatMap(space => [
   { space: space, page: 'table-of-content/table-of-content' },
   { space: space, page: 'card-full-height-variant', selectors: [selectors.body] },
   { space: space, page: 'navbar-external-links', selectors: [selectors.body],
-    label: `${space}:external-link-meganav`,
+    label: `${space}_external-link-meganav`,
     clickSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
   },
