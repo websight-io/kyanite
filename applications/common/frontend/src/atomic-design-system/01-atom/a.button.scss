@@ -29,10 +29,10 @@
   border-radius: var(--border-radius-1);
 
   &-primary {
-    background-color: var(--color-primary--600) !important;
+    background-color: var(--color-primary--600);
 
     &:hover {
-      background-color: var(--color-primary--500) !important;
+      background-color: var(--color-primary--500);
 
     }
 
@@ -41,30 +41,48 @@
     }
 
     &:focus-visible {
-      background-color: var(--color-primary--500) !important;
+      background-color: var(--color-primary--500);
 
       outline: var(--border-weight-3) solid;
-      outline-color: var(--color-primary--300) !important;
+      outline-color: var(--color-primary--300);
 
       outline-offset: 0;
     }
 
     &:active {
-      background-color: var(--color-primary--700) !important;
-
-
+      background-color: var(--color-primary--700);
       outline: none;
+    }
+
+    &.is-light {
+      background-color: var(--color-primary--100);
+      color: var(--color-primary--600);
+
+      &:hover {
+        background-color: var(--color-primary--200);
+        color: var(--color-primary--700);
+      }
+
+      &:active {
+        background-color: var(--color-primary--300);
+        color: var(--color-primary--700);
+      }
+    }
+
+    &.is-inverted {
+      color: var(--color-primary--600);
     }
   }
 
   &-secondary {
+    background-color: var(--base-color-body-background);
     border: var(--border-weight-1) solid;
-    border-color: var(--color-grey--300) !important;
-    color: var(--color-grey--900) !important;
+    border-color: var(--color-secondary--500, var(--color-grey--300));
+    color: var(--base-color-body-text, var(--color-grey--900));
 
     &:hover {
-      border-color: var(--color-primary--600) !important;
-      color: var(--color-primary--900) !important;
+      border-color: var(--color-secondary--600, var(--color-primary--600));
+      color: var(--color-secondary--900, var(--color-primary--900));
     }
 
     &:focus:not(:active) {
@@ -72,27 +90,47 @@
     }
 
     &:focus-visible {
-      color: var(--color-primary--600) !important;
-      border-color: var(--color-primary--600) !important;
+      color: var(--color-secondary--600, var(--color-primary--600));
+      border-color: var(--color-secondary--600, var(--color-primary--600));
       outline: var(--border-weight-3) solid;
-      outline-color: var(--color-primary--300) !important;
+      outline-color: var(--color-secondary--300, var(--color-primary--300));
 
 
       outline-offset: 0;
     }
 
     &:active {
-      color: var(--color-primary--700) !important;
-      border-color: var(--color-primary--700) !important;
+      color: var(--color-secondary--700, var(--color-primary--700));
+      border-color: var(--color-secondary--700, var(--color-primary--700));
+    }
+
+    &.is-light {
+      background-color: var(--base-color-body-background);
+      color: var(--base-color-body-text, var(--color-grey--900));
+
+      &:hover {
+        border-color: var(--color-secondary--300, var(--color-primary--300));
+      }
+
+      &:focus-visible {
+        color: var(--color-secondary--300, var(--color-primary--300));
+        border-color: var(--color-secondary--300, var(--color-primary--300));
+        outline-color: var(--color-secondary--100, var(--color-primary--100));
+      }
+
+      &:active {
+        color: var(--color-secondary--400, var(--color-primary--400));
+        border-color: var(--color-secondary--400, var(--color-primary--400));
+      }
     }
   }
 
   &-ghost {
     border: none;
-    color: var(--color-grey--900) !important;
+    color: var(--base-color-body-text, var(--color-grey--900));
 
     &:hover {
-      color: var(--color-primary--600) !important;
+      color: var(--color-primary--600);
 
       text-decoration: none;
     }
@@ -102,14 +140,36 @@
     }
 
     &:focus-visible {
-      color: var(--color-primary--600) !important;
+      color: var(--color-primary--600);
       outline: var(--border-weight-3) solid;
-      outline-color: var(--color-primary--300) !important;
+      outline-color: var(--color-primary--300);
       outline-offset: 0;
     }
 
     &:active {
-      color: var(--color-primary--700) !important;
+      color: var(--color-primary--700);
+    }
+  }
+
+  &-text {
+    color: var(--color-grey--700);
+
+    &.is-light {
+      background-color: transparent;
+    }
+
+    &.is-focused,
+    &.is-hovered,
+    &:focus,
+    &:hover {
+      background-color: var(--color-grey--200);
+      color: var(--color-grey--800)
+    }
+
+    &.is-active,
+    &:active {
+      background-color: var(--color-grey--300);
+      color: var(--color-grey--800)
     }
   }
 }

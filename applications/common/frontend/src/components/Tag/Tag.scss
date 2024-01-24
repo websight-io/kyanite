@@ -16,24 +16,9 @@
  * -->
  */
 
-@use 'src/atomic-design-system/01-atom/a.button';
+@use 'sass:map';
+@use 'src/atomic-design-system/02-molecule/m.tag' as tag;
 
-.button {
-  @extend .a-button;
-
-  &.is-primary {
-    @extend .a-button-primary;
-  }
-
-  &.is-secondary {
-    @extend .a-button-secondary;
-  }
-
-  &.is-ghost {
-    @extend .a-button-ghost;
-  }
-
-  &.is-text {
-    @extend .a-button-text;
-  }
+.tag {
+  @include tag.m-tag;
 }

@@ -1,6 +1,6 @@
 /*!
  * <!--
- *     Copyright (C) 2023 Dynamic Solutions
+ *     Copyright (C) 2024 Dynamic Solutions
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
  *     you may not use this file except in compliance with the License.
@@ -16,24 +16,17 @@
  * -->
  */
 
-@use 'src/atomic-design-system/01-atom/a.button';
+@use 'sass:map';
+@use 'src/atomic-design-system/00-token/t.color' as color;
 
-.button {
-  @extend .a-button;
+@mixin m-tag {
 
-  &.is-primary {
-    @extend .a-button-primary;
-  }
+  &:not(body).is-primary {
+    background-color: var(--color-primary--600);
 
-  &.is-secondary {
-    @extend .a-button-secondary;
-  }
-
-  &.is-ghost {
-    @extend .a-button-ghost;
-  }
-
-  &.is-text {
-    @extend .a-button-text;
+    &.is-light {
+      background-color: var(--color-primary--100);
+      color: var(--color-primary--600);
+    }
   }
 }
