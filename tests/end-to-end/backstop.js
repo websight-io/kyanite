@@ -128,7 +128,7 @@ const scenarios = spaces.flatMap(space => [
   });
 
 const config = {
-  id: 'websight.io',
+  id: 'kyanite',
   viewports: viewports,
   onBeforeScript: 'puppet/onBefore.js',
   onReadyScript: 'puppet/onReady.js',
