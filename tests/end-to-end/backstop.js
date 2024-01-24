@@ -39,6 +39,10 @@ const viewports = [
 ];
 
 const getPublishedPageUrl = ({ space, page }) => {
+  //FIXME: WS-3121
+  if (space === 'kyanite-visual-tests-dark-mode') {
+    return `${baseUrlsPublish[space]}/content/${space}/pages/${page}.html`;
+  }
   return `${baseUrlsPublish[space]}/published/${space}/pages/${page}.html`;
 };
 
@@ -124,7 +128,7 @@ const scenarios = spaces.flatMap(space => [
   });
 
 const config = {
-  id: 'kyanite',
+  id: 'websight.io',
   viewports: viewports,
   onBeforeScript: 'puppet/onBefore.js',
   onReadyScript: 'puppet/onReady.js',
