@@ -16,9 +16,6 @@
  * -->
  */
 
-@use 'sass:map';
-@use 'src/atomic-design-system/00-token/t.color' as color;
-
 @mixin m-panel {
 
   .panel-tabs {
