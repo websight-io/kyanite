@@ -22,7 +22,9 @@ $map_t-base-color: (
 );
 
 $map_t-color-ids: (
-  'primary'
+  'primary',
+  'secondary',
+  'gray'
 );
 
 $map_t-color-by-id: (
@@ -37,5 +39,27 @@ $map_t-color-by-id: (
   primary--800: #5901D6,
   primary--900: #4A03AF,
   primary--950: #2C0077,
-
+  //
+  secondary--50: #EFFEFB,
+  secondary--100: #C7FFF5,
+  secondary--200: #8FFFEC,
+  secondary--300: #4FF9E1,
+  secondary--400: #1BE6CF,
+  secondary--500: #1BE6CF,
+  secondary--600: #00A297,
+  secondary--700: #048179,
+  secondary--800: #096662,
+  secondary--900: #0D5450,
+  secondary--950: #003433,
+  //
+  grey--100: #181818,
+  grey--200: #2a2a2a,
+  grey--300: #494949,
+  grey--400: #686868,
+  grey--500: #7f7f7f,
+  grey--600: #959595,
+  grey--700: #bbbbbb,
+  grey--800: #e1e1e1,
+  grey--900: #f2f3f5,
+  grey--1000: #f9f9fa,
 );
