@@ -27,10 +27,8 @@
                         <title_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
-                            color="bw_has-text-black"
                             element="h2"
                             size="is-1"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-1&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -42,10 +40,8 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
                             addEyebrow="true"
-                            color="bw_has-text-black"
                             eyebrowText="Eyebrow"
                             size="is-1"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-1&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -61,7 +57,6 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
                             addSubtitle="true"
-                            color="bw_has-text-black"
                             size="is-1"
                             subtitle="Subtitle"
                             subtitleColor="\0"
@@ -77,7 +72,6 @@
                             sling:resourceType="kyanite/common/components/title"
                             addEyebrow="true"
                             addSubtitle="true"
-                            color="bw_has-text-black"
                             eyebrowText="Eyebrow"
                             size="is-1"
                             subtitle="Subtitle"
@@ -100,9 +94,7 @@
                         <title_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
-                            color="bw_has-text-black"
                             size="is-2"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-2&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -114,10 +106,8 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
                             addEyebrow="true"
-                            color="bw_has-text-black"
                             eyebrowText="Eyebrow"
                             size="is-2"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-2&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -133,7 +123,6 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
                             addSubtitle="true"
-                            color="bw_has-text-black"
                             size="is-2"
                             subtitle="Subtitle"
                             subtitleColor="\0"
@@ -149,7 +138,6 @@
                             sling:resourceType="kyanite/common/components/title"
                             addEyebrow="true"
                             addSubtitle="true"
-                            color="bw_has-text-black"
                             eyebrowText="Eyebrow"
                             size="is-2"
                             subtitle="Subtitle"
@@ -172,9 +160,7 @@
                         <title_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
-                            color="bw_has-text-black"
                             size="is-3"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-3&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -186,10 +172,8 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
                             addEyebrow="true"
-                            color="bw_has-text-black"
                             eyebrowText="Eyebrow"
                             size="is-3"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-3&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -205,7 +189,6 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
                             addSubtitle="true"
-                            color="bw_has-text-black"
                             size="is-3"
                             subtitle="Subtitle"
                             subtitleColor="\0"
@@ -221,7 +204,6 @@
                             sling:resourceType="kyanite/common/components/title"
                             addEyebrow="true"
                             addSubtitle="true"
-                            color="bw_has-text-black"
                             eyebrowText="Eyebrow"
                             size="is-3"
                             subtitle="Subtitle"
@@ -244,9 +226,7 @@
                         <title_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
-                            color="bw_has-text-black"
                             size="is-4"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-4&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -258,10 +238,8 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
                             addEyebrow="true"
-                            color="bw_has-text-black"
                             eyebrowText="Eyebrow"
                             size="is-4"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-4&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -277,7 +255,6 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
                             addSubtitle="true"
-                            color="bw_has-text-black"
                             size="is-4"
                             subtitle="Subtitle"
                             subtitleColor="\0"
@@ -293,7 +270,6 @@
                             sling:resourceType="kyanite/common/components/title"
                             addEyebrow="true"
                             addSubtitle="true"
-                            color="bw_has-text-black"
                             eyebrowText="Eyebrow"
                             size="is-4"
                             subtitle="Subtitle"
@@ -316,9 +292,7 @@
                         <title_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
-                            color="bw_has-text-black"
                             size="is-5"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-5&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -330,10 +304,8 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
                             addEyebrow="true"
-                            color="bw_has-text-black"
                             eyebrowText="Eyebrow"
                             size="is-5"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-5&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -349,9 +321,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
                             addSubtitle="true"
-                            color="bw_has-text-black"
                             size="is-5"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-5 (no subtitle option)&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -364,10 +334,8 @@
                             sling:resourceType="kyanite/common/components/title"
                             addEyebrow="true"
                             addSubtitle="true"
-                            color="bw_has-text-black"
                             eyebrowText="Eyebrow"
                             size="is-5"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-5 (no subtitle option)&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -386,9 +354,7 @@
                         <title_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
-                            color="bw_has-text-black"
                             size="is-6"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-6&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -400,10 +366,8 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
                             addEyebrow="true"
-                            color="bw_has-text-black"
                             eyebrowText="Eyebrow"
                             size="is-6"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-6&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -419,9 +383,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
                             addSubtitle="true"
-                            color="bw_has-text-black"
                             size="is-6"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-6 (no subtitle option)&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>
@@ -434,10 +396,8 @@
                             sling:resourceType="kyanite/common/components/title"
                             addEyebrow="true"
                             addSubtitle="true"
-                            color="bw_has-text-black"
                             eyebrowText="Eyebrow"
                             size="is-6"
-                            subtitleColor="bw_has-text-black"
                             text="&lt;p>Title is-6 (no subtitle option)&lt;/p>">
                             <grey jcr:primaryType="nt:unstructured"/>
                             <bw jcr:primaryType="nt:unstructured"/>

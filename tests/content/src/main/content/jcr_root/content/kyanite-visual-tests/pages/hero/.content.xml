@@ -33,7 +33,6 @@
                         color="\0"
                         element="h1"
                         size="is-1"
-                        subtitleColor="bw_has-text-black"
                         text="&lt;p>The real-time Digital Experience Platform&lt;/p>"
                         type="title">
                         <grey jcr:primaryType="nt:unstructured"/>
@@ -86,7 +85,6 @@
                         color="\0"
                         element="h1"
                         size="is-1"
-                        subtitleColor="bw_has-text-black"
                         text="&lt;p>The real-time Digital Experience Platform&lt;/p>"
                         type="title">
                         <grey jcr:primaryType="nt:unstructured"/>
@@ -139,7 +137,6 @@
                         color="\0"
                         element="h1"
                         size="is-1"
-                        subtitleColor="bw_has-text-black"
                         text="&lt;p>The real-time Digital Experience Platform&lt;/p>"
                         type="title">
                         <grey jcr:primaryType="nt:unstructured"/>
@@ -192,7 +189,6 @@
                         color="\0"
                         element="h1"
                         size="is-1"
-                        subtitleColor="bw_has-text-black"
                         text="&lt;p>The real-time Digital Experience Platform&lt;/p>"
                         type="title">
                         <grey jcr:primaryType="nt:unstructured"/>

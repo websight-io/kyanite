@@ -90,7 +90,6 @@
                                 color="rest_has-text-grey"
                                 element="h5"
                                 size="is-6"
-                                subtitleColor="bw_has-text-black"
                                 text="&lt;p>The evolution of WWW and its impact on content management systems&lt;/p>">
                                 <grey jcr:primaryType="nt:unstructured"/>
                                 <bw jcr:primaryType="nt:unstructured"/>
@@ -117,7 +116,6 @@
                                 color="rest_has-text-grey"
                                 element="h6"
                                 size="is-6"
-                                subtitleColor="bw_has-text-black"
                                 text="&lt;p>DXP - a revolution or “just” next step?&lt;/p>">
                                 <grey jcr:primaryType="nt:unstructured"/>
                                 <bw jcr:primaryType="nt:unstructured"/>
@@ -144,7 +142,6 @@
                                 color="rest_has-text-grey"
                                 element="h6"
                                 size="is-6"
-                                subtitleColor="bw_has-text-black"
                                 text="&lt;p>DXP - should you care?&lt;/p>">
                                 <grey jcr:primaryType="nt:unstructured"/>
                                 <bw jcr:primaryType="nt:unstructured"/>

@@ -28,7 +28,6 @@
                         sling:resourceType="kyanite/common/components/title"
                         color="rest_has-text-grey"
                         size="is-6"
-                        subtitleColor="bw_has-text-black"
                         text="&lt;p>Material Design default/es/s/m/l&lt;/p>">
                         <grey jcr:primaryType="nt:unstructured"/>
                         <bw jcr:primaryType="nt:unstructured"/>
@@ -85,7 +84,6 @@
                         sling:resourceType="kyanite/common/components/title"
                         color="rest_has-text-grey"
                         size="is-6"
-                        subtitleColor="bw_has-text-black"
                         text="&lt;p>Material Design default/es/s/m/l + color primary&lt;/p>">
                         <grey jcr:primaryType="nt:unstructured"/>
                         <bw jcr:primaryType="nt:unstructured"/>
@@ -148,7 +146,6 @@
                         anchorId="\0"
                         color="rest_has-text-grey"
                         size="is-6"
-                        subtitleColor="bw_has-text-black"
                         text="&lt;p>Font Awesome default/s/m/l&lt;/p>">
                         <grey jcr:primaryType="nt:unstructured"/>
                         <bw jcr:primaryType="nt:unstructured"/>
@@ -198,7 +195,6 @@
                         anchorId="\0"
                         color="rest_has-text-grey"
                         size="is-6"
-                        subtitleColor="bw_has-text-black"
                         text="&lt;p>Font Awesome default/s/m/l + primary color&lt;/p>">
                         <grey jcr:primaryType="nt:unstructured"/>
                         <bw jcr:primaryType="nt:unstructured"/>
@@ -252,7 +248,6 @@
                         anchorId="\0"
                         color="rest_has-text-grey"
                         size="is-6"
-                        subtitleColor="bw_has-text-black"
                         text="&lt;p>HTML Symbol icons default/es/s/m/l&lt;/p>&lt;p>&lt;/p>">
                         <grey jcr:primaryType="nt:unstructured"/>
                         <bw jcr:primaryType="nt:unstructured"/>
@@ -310,7 +305,6 @@
                         anchorId="\0"
                         color="rest_has-text-grey"
                         size="is-6"
-                        subtitleColor="bw_has-text-black"
                         text="&lt;p>HTML Symbol icons default/es/s/m/l + color primary&lt;/p>">
                         <grey jcr:primaryType="nt:unstructured"/>
                         <bw jcr:primaryType="nt:unstructured"/>

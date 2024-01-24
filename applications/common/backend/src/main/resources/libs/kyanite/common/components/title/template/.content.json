@@ -4,10 +4,5 @@
   "subtitle": "Subtitle",
   "element": "h2",
   "isSpaced": false,
-  "size": "is-2",
-  "color": "rest_has-text-grey",
-  "subtitleColor": "bw_has-text-black",
-  "rest": {
-    "shade": "900"
-  }
+  "size": "is-2"
 }
