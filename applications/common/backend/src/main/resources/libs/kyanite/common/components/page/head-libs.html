@@ -62,7 +62,14 @@
   href="/libs/kyanite/webroot/main.published.css"
 />
 
-<sly data-sly-use.model="pl.ds.kyanite.common.components.helpers.PageModel"></sly>
+<sly data-sly-use.pagesSpace="pl.ds.kyanite.common.components.models.PagesSpaceComponent"></sly>
+<link
+    rel="stylesheet"
+    type="text/css"
+    data-sly-test="${pagesSpace.getStylesPath}"
+    href="${pagesSpace.getStylesPath}"
+/>
+
 <!-- Google Tag Manager (noscript) -->
 <noscript data-sly-test="${model.hasAnalyticsUrl}"><iframe src="${model.googleAnalyticsUrl}"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

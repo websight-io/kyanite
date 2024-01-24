@@ -1,0 +1,55 @@
+{
+  "darkModeSpace": {
+    "jcr:primaryType": "ws:PagesSpace",
+    "jcr:title": "dark",
+    "pages": {
+      "jcr:primaryType": "ws:Pages",
+      "ws:template": "/content/darkSpaceTemplate",
+      "test": {
+        "jcr:primaryType": "ws:Page"
+      }
+    },
+    "assets": {
+      "jcr:primaryType": "ws:Assets"
+    }
+  },
+  "baseSpace": {
+    "jcr:primaryType": "ws:PagesSpace",
+    "jcr:title": "base",
+    "pages": {
+      "jcr:primaryType": "ws:Pages",
+      "ws:template": "/content/baseSpaceTemplate",
+      "test": {
+        "jcr:primaryType": "ws:Page"
+      }
+    },
+    "assets": {
+      "jcr:primaryType": "ws:Assets"
+    }
+  },
+  "darkSpaceTemplate": {
+    "sling:resourceType": "ws:PagesTemplate",
+    "title": "Kyanite Dark Theme website Pages",
+    "stylesPath": "nicePath",
+    "allowedChildren": [
+      "/libs/kyanite/common/templates/homepage",
+      "/libs/kyanite/common/templates/contactuspage",
+      "/libs/kyanite/common/templates/structurepage",
+      "/libs/kyanite/blogs/templates/articlepage",
+      "/libs/kyanite/blogs/templates/bloglistingpage",
+      "/libs/kyanite/fragments/templates/fragmentspage"
+    ]
+  },
+  "baseSpaceTemplate": {
+    "sling:resourceType": "ws:PagesTemplate",
+    "title": "Kyanite website Pages",
+    "allowedChildren": [
+      "/libs/kyanite/common/templates/homepage",
+      "/libs/kyanite/common/templates/contactuspage",
+      "/libs/kyanite/common/templates/structurepage",
+      "/libs/kyanite/blogs/templates/articlepage",
+      "/libs/kyanite/blogs/templates/bloglistingpage",
+      "/libs/kyanite/fragments/templates/fragmentspage"
+    ]
+  }
+}

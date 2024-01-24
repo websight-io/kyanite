@@ -1,6 +1,6 @@
 /*!
  * <!--
- *     Copyright (C) 2023 Dynamic Solutions
+ *     Copyright (C) 2024 Dynamic Solutions
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
  *     you may not use this file except in compliance with the License.
@@ -16,25 +16,26 @@
  * -->
  */
 
-@use 'src/atomic-design-system/03-organism/o.body-background' as
-  o-body-background;
+$map_t-base-color: (
+  body-background: #1C1C1C,
+  body-text: #FFF
+);
 
-$bulma-navbar-height: 3.25rem;
+$map_t-color-ids: (
+  'primary'
+);
 
-html {
-  // this prevents jumping content when clicking on anchor link in table of contents (KYAN-50)
-  scroll-padding-top: $bulma-navbar-height;
-}
+$map_t-color-by-id: (
+  primary--50: #F3F0FF,
+  primary--100: #EBE4FF,
+  primary--200: #D8CDFF,
+  primary--300: #BDA6FF,
+  primary--400: #9E73FF,
+  primary--500: #823BFF,
+  primary--600: #7714FF,
+  primary--700: #6200EE,
+  primary--800: #5901D6,
+  primary--900: #4A03AF,
+  primary--950: #2C0077,
 
-body {
-  background-color: var(--base-color-body-background);
-  color: var(--base-color-body-text, #686868);
-}
-
-body.lines {
-  @include o-body-background.o-body-background--lines;
-}
-
-body.squares {
-  @include o-body-background.o-body-background--squares;
-}
+);

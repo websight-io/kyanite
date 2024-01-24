@@ -24,8 +24,6 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -33,6 +31,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.osgi.service.component.annotations.Component;
+import pl.ds.kyanite.common.components.utils.PagesSpaceUtil;
 import pl.ds.websight.pages.core.api.Page;
 
 
@@ -116,7 +115,7 @@ public class BlogArticleService {
   }
 
   private Stream<Page> streamRootPages(String resourcePath, ResourceResolver resourceResolver) {
-    Resource space = getSpace(resourcePath, resourceResolver);
+    Resource space = PagesSpaceUtil.getSpace(resourcePath, resourceResolver);
     if (space == null) {
       return Stream.empty();
     }
@@ -124,28 +123,6 @@ public class BlogArticleService {
     return StreamSupport.stream(space.getChildren().spliterator(), false)
         .map(pageResource -> pageResource.adaptTo(Page.class))
         .filter(Objects::nonNull);
-  }
-
-  private Resource getSpace(String resourcePath, ResourceResolver resourceResolver) {
-    String spacePath = getCurrentSpace(resourcePath);
-    if (spacePath == null) {
-      return null;
-    }
-
-    return resourceResolver.getResource(spacePath);
-  }
-
-  private String getCurrentSpace(String resourcePath) {
-    String regex = "^((/content|/published)/[^/]*/pages/).*";
-    if (StringUtils.isNotBlank(resourcePath)) {
-      final Pattern pattern = Pattern.compile(regex);
-      final Matcher matcher = pattern.matcher(resourcePath);
-
-      if (matcher.find()) {
-        return matcher.group(1);
-      }
-    }
-    return null;
   }
 
 }
