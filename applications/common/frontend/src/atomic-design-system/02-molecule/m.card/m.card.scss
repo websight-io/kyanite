@@ -1,6 +1,6 @@
 /*!
  * <!--
- *     Copyright (C) 2023 Dynamic Solutions
+ *     Copyright (C) 2024 Dynamic Solutions
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
  *     you may not use this file except in compliance with the License.
@@ -16,14 +16,12 @@
  * -->
  */
 
-@use 'src/atomic-design-system/02-molecule/m.card' as card;
-@use 'src/atomic-design-system/02-molecule/m.card-full-height' as
-  card-full-height;
+@mixin m-card {
 
-.card {
-  @include card.m-card;
+  background-color: var(--base-color-secondary-background, var(--base-color-white));
 
-  &--full-height {
-    @include card-full-height.m-card-full-height;
+  a:hover {
+    color: var(--color-grey--900);
   }
+
 }
