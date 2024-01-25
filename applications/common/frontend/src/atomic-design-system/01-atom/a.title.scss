@@ -24,10 +24,12 @@
 
 .a-title {
   font-weight: var(--font-weight-700);
+  color: var(--base-color-body-text, var(--color-grey--900));
 }
 
 .a-subtitle {
   font-weight: var(--font-weight-600);
+  color: var(--base-color-body-text, var(--color-grey--700));
 }
 
 .a-title,

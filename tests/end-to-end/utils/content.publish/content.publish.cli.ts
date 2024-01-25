@@ -26,7 +26,8 @@ const main = async () => {
         await Promise
             .all([
                 publishAllContent(CONTENT_SPACE.E2E_TESTS),
-                publishAllContent(CONTENT_SPACE.VISUAL_TESTS)
+                publishAllContent(CONTENT_SPACE.VISUAL_TESTS),
+                publishAllContent(CONTENT_SPACE.VISUAL_TESTS_DARK_MODE)
             ]);
 
         console.log('OK');

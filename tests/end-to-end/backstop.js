@@ -39,59 +39,65 @@ const viewports = [
 ];
 
 const getPublishedPageUrl = ({ space, page }) => {
+  //FIXME: WS-3121
+  if (space === 'kyanite-visual-tests-dark-mode') {
+    return `${baseUrlsPublish[space]}/content/${space}/pages/${page}.html`;
+  }
   return `${baseUrlsPublish[space]}/published/${space}/pages/${page}.html`;
 };
 
-const scenarios = [
-  { space: 'kyanite-visual-tests', page: 'icons' },
-  { space: 'kyanite-visual-tests', page: 'heading-typography', selectors: [selectors.container] },
-  { space: 'kyanite-visual-tests', page: 'colors', selectors: [selectors.all] },
-  { space: 'kyanite-visual-tests', page: 'eyebrow', selectors: [selectors.container] },
-  { space: 'kyanite-visual-tests', page: 'content-typography', selectors: [selectors.container] },
-  { space: 'kyanite-visual-tests', page: 'level-item--feature-small', selectors: [selectors.container] },
-  { space: 'kyanite-visual-tests', page: 'level-item--feature', selectors: [selectors.content] },
-  { space: 'kyanite-visual-tests', page: 'button', selectors: [selectors.all] },
-  { space: 'kyanite-visual-tests', page: 'footer', selectors: [selectors.footer] },
-  { space: 'kyanite-visual-tests', page: 'level' },
-  { space: 'kyanite-visual-tests', page: 'link', selectors: [selectors.container] },
-  { space: 'kyanite-visual-tests', page: 'tabs', selectors: ['.tabs-container'] },
-  { space: 'kyanite-visual-tests', page: 'navbar', selectors: [selectors.header] },
-  { space: 'kyanite-visual-tests', page: 'navbar', selectors: [selectors.body],
+const spaces = ['kyanite-visual-tests', 'kyanite-visual-tests-dark-mode'];
+
+const scenarios = spaces.flatMap(space => [
+  { space: space, page: 'icons' },
+  { space: space, page: 'heading-typography', selectors: [selectors.container] },
+  { space: space, page: 'colors', selectors: [selectors.all] },
+  { space: space, page: 'eyebrow', selectors: [selectors.container] },
+  { space: space, page: 'content-typography', selectors: [selectors.container] },
+  { space: space, page: 'level-item--feature-small', selectors: [selectors.container] },
+  { space: space, page: 'level-item--feature', selectors: [selectors.content] },
+  { space: space, page: 'button', selectors: [selectors.all] },
+  { space: space, page: 'footer', selectors: [selectors.footer] },
+  { space: space, page: 'level' },
+  { space: space, page: 'link', selectors: [selectors.container] },
+  { space: space, page: 'tabs', selectors: ['.tabs-container'] },
+  { space: space, page: 'navbar', selectors: [selectors.header] },
+  { space: space, page: 'navbar', selectors: [selectors.body],
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label))
   },
-  { space: 'kyanite-visual-tests', page: 'navbar-megadropdown', selectors: [selectors.body],
+  { space: space, page: 'navbar-megadropdown', selectors: [selectors.body],
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label))
   },
-  { space: 'kyanite-visual-tests', page: 'navbar-megadropdown', selectors: [selectors.body],
+  { space: space, page: 'navbar-megadropdown', selectors: [selectors.body],
     clickSelectors: ['.navbar-burger', '.navbar-item.has-dropdown'],
     viewports: viewports.filter((viewport) => ['md-mini', 'md'].includes(viewport.label)),
     postInteractionWait: 1000,
   },
-  { space: 'kyanite-visual-tests', page: 'navbar-megadropdown-columns', selectors: [selectors.body],
+  { space: space, page: 'navbar-megadropdown-columns', selectors: [selectors.body],
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label))
   },
-  { space: 'kyanite-visual-tests', page: 'blog-article-header/blog-article-page', selectors: [selectors.container] },
-  { space: 'kyanite-visual-tests', page: 'blog-listing', selectors: [selectors.container] },
-  { space: 'kyanite-visual-tests', page: 'blog-article-author-bio', selectors: [selectors.content] },
-  { space: 'kyanite-visual-tests', page: 'code-snippet', selectors: ['.code-snippet'] },
-  { space: 'kyanite-visual-tests', page: 'hero', selectors: ['.hero'] },
-  { space: 'kyanite-visual-tests', page: 'message', selectors: [selectors.container] },
-  { space: 'kyanite-visual-tests', page: 'table-of-content/table-of-content' },
-  { space: 'kyanite-visual-tests', page: 'card-full-height-variant', selectors: [selectors.body] },
-  { space: 'kyanite-visual-tests', page: 'navbar-external-links', selectors: [selectors.body],
-    label: 'external-link-meganav',
+  { space: space, page: 'blog-article-header/blog-article-page', selectors: [selectors.container] },
+  { space: space, page: 'blog-listing', selectors: [selectors.container] },
+  { space: space, page: 'blog-article-author-bio', selectors: [selectors.content] },
+  { space: space, page: 'code-snippet', selectors: ['.code-snippet'] },
+  { space: space, page: 'hero', selectors: ['.hero'] },
+  { space: space, page: 'message', selectors: [selectors.container] },
+  { space: space, page: 'table-of-content/table-of-content' },
+  { space: space, page: 'card-full-height-variant', selectors: [selectors.body] },
+  { space: space, page: 'navbar-external-links', selectors: [selectors.body],
+    label: `${space}_external-link-meganav`,
     clickSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
   },
-  { space: 'kyanite-visual-tests', page: 'navbar-external-links', selectors: [selectors.body],
-    label: 'external-link-dropdown-menu',
+  { space: space, page: 'navbar-external-links', selectors: [selectors.body],
+    label: `${space}_external-link-dropdown-menu`,
     clickSelector: '.navbar-item.has-dropdown.is-hoverable:nth-of-type(2)',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
   },
-]
+])
   .map((scenario) => {
     const removeSelectors = [
       'script',
@@ -101,7 +107,7 @@ const scenarios = [
 
     const deafultScenarioConfig = {
       removeSelectors,
-      label: scenario.page,
+      label: `${scenario.space}_${scenario.page}`,
       cookiePath: 'backstop_data/engine_scripts/cookies.json',
       url: getPublishedPageUrl(scenario),
       delay: 500,
@@ -122,7 +128,7 @@ const scenarios = [
   });
 
 const config = {
-  id: 'websight.io',
+  id: 'kyanite',
   viewports: viewports,
   onBeforeScript: 'puppet/onBefore.js',
   onReadyScript: 'puppet/onReady.js',
