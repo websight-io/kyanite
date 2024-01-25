@@ -16,24 +16,8 @@
  * -->
  */
 
-@use 'src/atomic-design-system/01-atom/a.button';
+@use 'src/atomic-design-system/02-molecule/m.panel' as panel;
 
-.button {
-  @extend .a-button;
-
-  &.is-primary {
-    @extend .a-button-primary;
-  }
-
-  &.is-secondary {
-    @extend .a-button-secondary;
-  }
-
-  &.is-ghost {
-    @extend .a-button-ghost;
-  }
-
-  &.is-text {
-    @extend .a-button-text;
-  }
+.panel {
+  @include panel.m-panel;
 }

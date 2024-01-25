@@ -1,6 +1,6 @@
 /*!
  * <!--
- *     Copyright (C) 2023 Dynamic Solutions
+ *     Copyright (C) 2024 Dynamic Solutions
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
  *     you may not use this file except in compliance with the License.
@@ -16,24 +16,19 @@
  * -->
  */
 
-@use 'src/atomic-design-system/01-atom/a.button';
+@mixin m-progressbar {
 
-.button {
-  @extend .a-button;
-
-  &.is-primary {
-    @extend .a-button-primary;
+  &.is-primary::-webkit-progress-value {
+    background-color: var(--color-primary--600)
   }
-
-  &.is-secondary {
-    @extend .a-button-secondary;
+  &.is-primary::-moz-progress-bar {
+    background-color: var(--color-primary--600)
   }
-
-  &.is-ghost {
-    @extend .a-button-ghost;
+  &.is-primary::-ms-fill {
+    background-color: var(--color-primary--600)
   }
-
-  &.is-text {
-    @extend .a-button-text;
+  &.is-primary:indeterminate {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(30%, var(--color-primary--600)), color-stop(30%, #ededed));
+    background-image: linear-gradient(90deg, var(--color-primary--600) 30%, #ededed 0)
   }
 }

@@ -36,6 +36,30 @@ $color-navbar-link: var(--color-grey--900);
 
   padding-top: var(--spacing-4);
 
+  &.is-primary {
+    background-color: var(--color-primary--600);
+  }
+
+  &.is-transparent {
+    background-color: transparent;
+  }
+
+  &:not(.is-primary, .is-link, .is-info, .is-warning, .is-danger, .is-success, .is-white, .is-light, .is-dark, .is-black) {
+    background-color: var(--base-color-body-background);
+
+    a.navbar-item:not(.navbar-dropdown a.navbar-item) {
+      color: var(--base-color-body-text, $color-navbar-link);
+    }
+
+    a.navbar-link {
+      color: var(--base-color-body-text, $color-navbar-link);
+
+      &:not(.is-arrowless):after {
+        border-color: var(--base-color-body-text, $color-navbar-link);
+      }
+    }
+  }
+
   @include breakpoint.media-breakpoint-large {
     padding-top: var(--spacing-5);
     padding-bottom: var(--spacing-4);
