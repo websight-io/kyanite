@@ -64,11 +64,8 @@ public class ContactFormComponent {
 
   @PostConstruct
   private void init() {
-    Resource space = PagesSpaceUtil.getWsPagesSpace(resource.getPath(),
+    spaceName = PagesSpaceUtil.getWsPagesSpaceName(resource.getPath(),
         resource.getResourceResolver());
-    if (space != null) {
-      spaceName = space.getName();
-    }
   }
 
   public String getCaptchaPublicKey() {

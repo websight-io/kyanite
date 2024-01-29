@@ -34,13 +34,13 @@ public class PagesSpaceUtil {
     return resourceResolver.getResource(spacePath);
   }
 
-  public static Resource getWsPagesSpace(String resourcePath, ResourceResolver resourceResolver) {
+  public static String getWsPagesSpaceName(String resourcePath, ResourceResolver resourceResolver) {
     Resource pagesSpace = getSpace(resourcePath, resourceResolver);
     if (pagesSpace == null) {
-      return null;
+      return StringUtils.EMPTY;
     }
 
-    return pagesSpace.getParent();
+    return pagesSpace.getParent().getName();
   }
 
   private static String getCurrentSpace(String resourcePath) {

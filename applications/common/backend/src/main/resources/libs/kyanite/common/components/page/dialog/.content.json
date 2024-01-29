@@ -20,6 +20,11 @@
           "label": "Squares",
           "value": "squares"
         }
+      },
+      "captcha": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "label": "Add reCAPTCHA",
+        "name": "addCaptcha"
       }
     },
     "metadata": {
