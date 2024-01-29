@@ -42,6 +42,13 @@ $color-navbar-link: var(--color-grey--900);
 
   &.is-transparent {
     background-color: transparent;
+
+    .navbar-dropdown {
+      a.navbar-item:focus,
+      a.navbar-item:hover {
+        background-color: #f5f5f5 !important;
+      }
+    }
   }
 
   &:not(.is-primary, .is-link, .is-info, .is-warning, .is-danger, .is-success, .is-white, .is-light, .is-dark, .is-black) {
@@ -58,7 +65,20 @@ $color-navbar-link: var(--color-grey--900);
         border-color: var(--base-color-body-text, $color-navbar-link);
       }
     }
+
+    .navbar-burger {
+      color: var(--base-color-body-text, var(--color-grey--700));
+    }
   }
+
+  &.is-white {
+    @include breakpoint.media-breakpoint-large {
+      .navbar-top > .navbar-item {
+        color: #2a2a2a;
+      }
+    }
+  }
+
 
   @include breakpoint.media-breakpoint-large {
     padding-top: var(--spacing-5);
@@ -81,6 +101,12 @@ $color-navbar-link: var(--color-grey--900);
   }
 
   .navbar-menu {
+    background-color: var(--base-color-secondary-background, var(--base-color-white));
+
+    @include breakpoint.media-breakpoint-large {
+      background-color: inherit;
+    }
+
     &.has-navbar-top {
       .navbar-end,
       .navbar-start{
@@ -135,6 +161,12 @@ $color-navbar-link: var(--color-grey--900);
   a.navbar-item {
     color: $color-navbar-link;
     font-weight: var(--font-weight-500);
+  }
+
+  a.navbar-item {
+    &:hover {
+      color: var(--base-color-secondary-background, $color-navbar-link);
+    }
   }
 
   .navbar-menu {
@@ -207,6 +239,7 @@ $color-navbar-link: var(--color-grey--900);
         @include breakpoint.media-breakpoint-large {
           .navbar-dropdown {
             display: block;
+            background-color: var(--base-color-secondary-background, var(--base-color-white));
           }
         }
       }
@@ -279,7 +312,7 @@ $color-navbar-link: var(--color-grey--900);
 
   @include breakpoint.media-breakpoint-large {
     .navbar-mega-dropdown {
-      background-color: var(--color-grey--100);
+      background-color: var(--base-color-secondary-background, var(--color-grey--100));
       border-radius: var(--border-radius-0);
       border: 0;
       box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
