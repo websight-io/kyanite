@@ -61,7 +61,7 @@ $color-navbar-link: var(--color-grey--900);
     a.navbar-link {
       color: var(--base-color-body-text, $color-navbar-link);
 
-      &:not(.is-arrowless):after {
+      &:not(.is-arrowless)::after {
         border-color: var(--base-color-body-text, $color-navbar-link);
       }
     }
@@ -200,10 +200,6 @@ $color-navbar-link: var(--color-grey--900);
         font-size: var(--font-size-14);
         font-weight: var(--font-weight-500);
         line-height: var(--line-height-155);
-      }
-
-      a.navbar-item:not(.navbar-dropdown a.navbar-item) {
-        height: 24px;
       }
 
       @include breakpoint.media-breakpoint-large {
