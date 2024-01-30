@@ -19,9 +19,9 @@
 <sly data-sly-use.extra="pl.ds.kyanite.common.components.models.PageComponent">
   <sly data-sly-set.templateMarker="template-${extra.templateName}"></sly>
   <sly data-sly-set.pageMarker="page-${extra.pageName}"></sly>
-  <script data-sly-test="${!wcmmode.isEdit && extra.addCaptcha}" src="https://www.google.com/recaptcha/api.js?render=${extra.captchaPublicKey}"></script>
 
   <body class="${properties.defaultTemplateCSS} ${templateMarker} ${pageMarker} ${properties.background}">
   <sly data-sly-include="body-content.html"></sly>
+  <script data-sly-test="${!wcmmode.isEdit && extra.addCaptcha}" src="https://www.google.com/recaptcha/api.js?render=${extra.captchaPublicKey}"></script>
   </body>
 </sly>
