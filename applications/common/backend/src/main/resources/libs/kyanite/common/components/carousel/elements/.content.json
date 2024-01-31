@@ -20,5 +20,15 @@
     "sling:resourceType": "wcm/dialogs/components/radio/option",
     "label": "4",
     "value": "4"
+  },
+  "six": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "6",
+    "value": "6"
+  },
+  "twelve": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "12",
+    "value": "12"
   }
 }
