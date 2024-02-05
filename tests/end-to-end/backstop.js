@@ -97,6 +97,10 @@ const scenarios = spaces.flatMap(space => [
     clickSelector: '.navbar-item.has-dropdown.is-hoverable:nth-of-type(2)',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
   },
+  { space: space, page: 'carousel/carousel-itemsshown-06-noscroll', selectors: [selectors.all] },
+  { space: space, page: 'carousel/carousel-itemsshown-06-scroll',   selectors: [selectors.all] },
+  { space: space, page: 'carousel/carousel-itemsshown-12-noscroll', selectors: [selectors.all] },
+  { space: space, page: 'carousel/carousel-itemsshown-12-scroll',   selectors: [selectors.all] },
 ])
   .map((scenario) => {
     const removeSelectors = [
