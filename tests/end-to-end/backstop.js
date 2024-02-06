@@ -97,6 +97,7 @@ const scenarios = spaces.flatMap(space => [
     clickSelector: '.navbar-item.has-dropdown.is-hoverable:nth-of-type(2)',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
   },
+  { space: space, page: 'container/container-alignment', selectors: [ selectors.container, 'body > .level'] },
 ])
   .map((scenario) => {
     const removeSelectors = [
