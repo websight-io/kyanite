@@ -16,11 +16,18 @@
 
 package pl.ds.kyanite.common.components.models;
 
+import javax.annotation.PostConstruct;
+import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import pl.ds.kyanite.common.components.services.RecaptchaConfigStore;
+import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
 import pl.ds.kyanite.common.components.utils.PageUtil;
+import pl.ds.kyanite.common.components.utils.PagesSpaceUtil;
 
 @Model(adaptables = Resource.class,
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
@@ -28,6 +35,29 @@ public class PageComponent {
 
   @SlingObject
   private Resource resource;
+
+  @OSGiService
+  private RecaptchaConfigStore recaptchaConfigStore;
+
+  @Getter
+  @ValueMapValue
+  private boolean addCaptcha;
+
+  private String spaceName;
+
+  @PostConstruct
+  private void init() {
+    spaceName = PagesSpaceUtil.getWsPagesSpaceName(resource.getPath(),
+        resource.getResourceResolver());
+  }
+
+  public String getCaptchaPublicKey() {
+    RecaptchaConfiguration config = recaptchaConfigStore.get(spaceName);
+    if (config != null) {
+      return config.getCaptchaPublicKey();
+    }
+    return null;
+  }
 
   public String getPageName() {
     return PageUtil.getPageProperty(resource, "jcr:title")
