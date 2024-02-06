@@ -78,6 +78,8 @@ public class ContainerComponent {
       cssClasses.add("is-flex");
       cssClasses.add("is-flex-direction-column");
       cssClasses.add(flexAlignmentClass);
+      //  text alignment using Bulma 'has-text-X' class
+      cssClasses.add(alignmentHorizontal.replace("is-", "has-text-"));
     }
     return cssClasses;
   }
