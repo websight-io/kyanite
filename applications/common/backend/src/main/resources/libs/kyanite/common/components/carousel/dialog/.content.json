@@ -25,7 +25,10 @@
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
               "sling:resourceSuperType": "kyanite/common/components/carousel/elements",
-              "name": "tablet/elementsInRow"
+              "name": "tablet/elementsInRow",
+              "twelve": {
+                "sling:hideResource": "true"
+              }
             }
           }
         },
@@ -36,7 +39,10 @@
             "sling:resourceType": "wcm/dialogs/components/include",
             "include": {
               "sling:resourceSuperType": "kyanite/common/components/carousel/elements",
-              "name": "mobile/elementsInRow"
+              "name": "mobile/elementsInRow",
+              "twelve": {
+                "sling:hideResource": "true"
+              }
             }
           }
         }
