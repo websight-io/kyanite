@@ -39,6 +39,14 @@
           "label": "Fluid",
           "value": "is-fluid"
         }
+      },
+      "alignmentHorizontal": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "kyanite/common/components/common/alignment",
+          "label": "Horizontal alignment",
+          "name": "alignmentHorizontal"
+        }
       }
     }
   }

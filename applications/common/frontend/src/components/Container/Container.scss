@@ -28,6 +28,21 @@
     padding-left: var(--spacing-0);
     padding-right: var(--spacing-0);
   }
+
+  &.is-flex {
+    &.is-align-items-flex-start > * {
+      margin-left:  0;
+      margin-right: auto;
+    }
+    &.is-align-items-flex-end > * {
+      margin-left:  auto;
+      margin-right: 0;
+    }
+    &.is-align-items-center > * {
+      margin-left:  auto;
+      margin-right: auto;
+    }
+  }
 }
 
 .section > .container {

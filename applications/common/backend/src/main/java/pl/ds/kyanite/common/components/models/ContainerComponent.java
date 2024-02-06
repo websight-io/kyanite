@@ -16,6 +16,9 @@
 
 package pl.ds.kyanite.common.components.models;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
@@ -31,4 +34,51 @@ public class ContainerComponent {
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String containerStyle;
+
+  @Inject
+  @Getter
+  @Default(values = StringUtils.EMPTY)
+  private String alignmentHorizontal;
+
+  @Inject
+  @Getter
+  private String[] containerClasses;
+
+  @PostConstruct
+  private void init() {
+    List<String> classes = new ArrayList<>();
+
+    if (StringUtils.isNotEmpty(containerStyle)) {
+      classes.add(containerStyle);
+    }
+
+    List<String> classesV1 = getHorizontalAlignmentClasses();
+    if (!classesV1.isEmpty()) {
+      classes.addAll(classesV1);
+    }
+
+    containerClasses = classes.toArray(new String[]{});
+  }
+
+  /**
+   * Returns a list of Bulma classes for a container to align items in it horizontally.
+   * The current solution is:
+   *  - items are kept one per line by 'flex-direction: column' css property
+   *  - horizontal axis then becomes Y axis for flexbox and therefore is handled by 'align-items'
+   */
+  public List<String> getHorizontalAlignmentClasses() {
+    List<String> cssClasses = new ArrayList<>();
+    String flexAlignmentClass = switch (alignmentHorizontal) {
+      case "is-left"      -> "is-align-items-flex-start";
+      case "is-right"     -> "is-align-items-flex-end";
+      case "is-centered"  -> "is-align-items-center";
+      default -> "";
+    };
+    if (StringUtils.isNotEmpty(flexAlignmentClass)) {
+      cssClasses.add("is-flex");
+      cssClasses.add("is-flex-direction-column");
+      cssClasses.add(flexAlignmentClass);
+    }
+    return cssClasses;
+  }
 }

@@ -17,7 +17,7 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.ContainerComponent">
-  <sly data-sly-set.classes="container ${model.containerStyle}"></sly>
+  <sly data-sly-set.classes="container ${model.containerClasses @ join=' '}"></sly>
   <sly data-sly-test="${resource.hasChildren}">
     <div class="${classes}">
       <sly
