@@ -28,15 +28,14 @@ const initForm = () => {
                 const emailValidateErrorEl = form.getElementsByClassName('email-validate-error')[0];
                 const emailInputEl = form.getElementsByClassName('email-input')[0];
                 const contactForm = form.dataset.configHttpEndPoint;
-                let formPostData = {};
 
-                const sendForm = (api) => {
-                    fetch(api, {
+                const sendForm = (submitForm, formData) => {
+                    fetch(submitForm, {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(formPostData)
+                        body: formData
+                        //  if you set 'content-type' header to 'multipart/form', it will be missing
+                        //  'boundary' parameter in it, and backend will decline the exchange.
+                        //  Instead, omit this header, and browser will do the work for you
                     })
                     .then((response) => response.json())
                     .then(() => {
@@ -59,17 +58,18 @@ const initForm = () => {
                     submitBtn.removeAttribute('disabled');
                 };
 
-                const getEntityName = () => {
+                const startSubmit = (formData) => {
                     if (contactForm) {
                         submitBtn.setAttribute('disabled', 'disabled');
-                        sendForm(contactForm);
+                        sendForm(contactForm, formData);
                     } else {
-                        console.error('Invalid configuration');
+                        console.error('Invalid configuration: contactForm not found');
                     }
                 };
 
-                const emailIsValid = (emailValue) => {
-                    return /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi.test(emailValue);
+                const isValidEmail = (emailValue) => {
+                    return typeof emailValue === 'string'
+                        && /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi.test(emailValue);
                 };
 
                 const showEmailError = () => {
@@ -88,30 +88,20 @@ const initForm = () => {
                     !formFailureEl.classList.contains('is-hidden') && formFailureEl.classList.add('is-hidden');
                 };
 
-                const prepareFormData = () => {
+                const submitForm = () => {
                     const formData = new FormData(form);
-                    let validateEmail = false;
-                    formPostData = {};
+                    let email = false;
                     for (let data of formData.entries()) {
-                        if (data[0] === 'type') {
-                            formPostData[data[0]] = JSON.parse(data[1]);
-                        } else {
-                            formPostData[data[0]] = data[1];
-                            if (data[0] === 'email') {
-                                validateEmail = data[1];
-                            }
+                        if (data[0] === 'email') {
+                            email = data[1];
                         }
                     }
-                    if (validateEmail) {
-                        emailIsValid(validateEmail) ? getEntityName() : showEmailError();
-                    } else {
-                        getEntityName();
-                    }
+                    isValidEmail(email) ? startSubmit(formData) : showEmailError();
                 };
 
                 hideEmailError();
                 hideNotifications();
-                prepareFormData();
+                submitForm();
             });
         });
     });
