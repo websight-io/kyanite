@@ -38,8 +38,14 @@ const initForm = () => {
                         //  Instead, omit this header, and browser will do the work for you
                     })
                     .then((response) => response.json())
-                    .then(() => {
-                        successStatus();
+                    .then((json) => {
+                        if (typeof json === 'object'
+                                && json.hasOwnProperty("responseCodeEnum")
+                                && json["responseCodeEnum"] !== '0') {
+                            errorStatus(json["responseCode"]);
+                        } else {
+                            successStatus();
+                        }
                     })
                     .catch(err => {
                         errorStatus(err);
