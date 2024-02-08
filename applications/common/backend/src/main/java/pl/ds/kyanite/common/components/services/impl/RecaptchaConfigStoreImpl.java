@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,41 +22,34 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
-import pl.ds.kyanite.common.components.services.LibraryIconConfig;
-import pl.ds.kyanite.common.components.services.LibraryIconConfigStore;
+import pl.ds.kyanite.common.components.services.RecaptchaConfigStore;
+import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
 
 
-@Component(service = LibraryIconConfigStore.class, immediate = true)
-public class LibraryIconConfigStoreImpl implements LibraryIconConfigStore {
+@Component(service = RecaptchaConfigStore.class, immediate = true)
+public class RecaptchaConfigStoreImpl implements RecaptchaConfigStore {
 
-  private List<LibraryIconConfig> configsList;
+  private List<RecaptchaConfiguration> configsList = new ArrayList<>();
 
-  @Reference(service = LibraryIconConfig.class,
+  @Reference(service = RecaptchaConfiguration.class,
       cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC,
       bind = "bind", unbind = "unbind")
-  public synchronized void bind(final LibraryIconConfig config) {
+  public synchronized void bind(final RecaptchaConfiguration config) {
     if (configsList == null) {
       configsList = new ArrayList<>();
     }
     configsList.add(config);
   }
 
-  public synchronized void unbind(final LibraryIconConfig config) {
+  public synchronized void unbind(final RecaptchaConfiguration config) {
     configsList.remove(config);
   }
 
-  @Override
-  public List<LibraryIconConfig> getAllConfigs() {
-    if (configsList == null) {
-      configsList = new ArrayList<>();
-    }
-    return configsList;
-  }
 
   @Override
-  public LibraryIconConfig get(String id) {
-    for (LibraryIconConfig confFact : configsList) {
-      if (id.equals(confFact.getId())) {
+  public RecaptchaConfiguration get(String spaceName) {
+    for (RecaptchaConfiguration confFact : configsList) {
+      if (spaceName.equals(confFact.getSpaceName())) {
         return confFact;
       }
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +14,11 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.common.components.configurations;
+package pl.ds.kyanite.common.components.services;
 
-import org.osgi.service.metatype.annotations.AttributeDefinition;
-import org.osgi.service.metatype.annotations.ObjectClassDefinition;
+public interface RecaptchaConfiguration {
+  String getSpaceName();
 
-@ObjectClassDefinition(name = "Recaptcha Configuration",
-    description = "Reads the data for recaptcha config")
-public @interface RecaptchaConfiguration {
+  String getCaptchaPublicKey();
 
-  @AttributeDefinition(name = "Recaptcha public key",
-      description = "Enter the recaptcha public key to be used for the google recaptcha service")
-  String captchaPublicKey();
 }

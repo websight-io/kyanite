@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.json.Json;
 import lombok.Getter;
@@ -28,17 +29,23 @@ import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import pl.ds.kyanite.common.components.services.ContactFormConfigurationService;
-import pl.ds.kyanite.common.components.services.RecaptchaConfigurationService;
+import pl.ds.kyanite.common.components.services.RecaptchaConfigStore;
+import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
+import pl.ds.kyanite.common.components.utils.PagesSpaceUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContactFormComponent {
 
+  @SlingObject
+  private Resource resource;
+
   @OSGiService
   private ContactFormConfigurationService contactFormConfigurationService;
   @OSGiService
-  private RecaptchaConfigurationService recaptchaConfigurationService;
+  private RecaptchaConfigStore recaptchaConfigStore;
 
   @Inject
   private List<TypeOfInquiry> types = new ArrayList<>();
@@ -53,8 +60,20 @@ public class ContactFormComponent {
   @Default(values = "<p>Contact Us</p>")
   private String consentText;
 
+  private String spaceName;
+
+  @PostConstruct
+  private void init() {
+    spaceName = PagesSpaceUtil.getWsPagesSpaceName(resource.getPath(),
+        resource.getResourceResolver());
+  }
+
   public String getCaptchaPublicKey() {
-    return recaptchaConfigurationService.getCaptchaPublicKey();
+    RecaptchaConfiguration config = recaptchaConfigStore.get(spaceName);
+    if (config != null) {
+      return config.getCaptchaPublicKey();
+    }
+    return null;
   }
 
   public Map<String, String> getTypeOfInquiryValue() {
