@@ -16,5 +16,12 @@
  * -->
  */
 
-@use './dark-mode/global-variables';
-@use "./dark-mode/overwrite-components-props";
+@use '../../00-token/t.color' as colors;
+
+
+@mixin m-article-thumbnail {
+  .mdi {
+    color: var(--base-color-white);
+  }
+
+}
