@@ -14,19 +14,8 @@
  * limitations under the License.
  */
 
-@use './atomic-design-system/02-molecule/m.article-thumbnail' as
-  article-thumbnail;
 @use './atomic-design-system/03-organism/o.blog-article-header' as
   blog-article-header;
-
-.article-thumbnail {
-  @include article-thumbnail.m-article-thumbnail;
-}
-
-.article-featured {
-  @include article-thumbnail.m-article-thumbnail;
-}
-
 
 
 .blog-article-header {
