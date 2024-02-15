@@ -16,5 +16,18 @@
  * -->
  */
 
-@use './dark-mode/global-variables';
-@use "./dark-mode/overwrite-components-props";
+@use 'src/atomic-design-system/01-atom/a.tag' as tag;
+
+@use '../../00-token/t.color' as colors;
+
+@mixin o-blog-article-header {
+
+  .tags {
+
+    .tag {
+      @include tag.a-tag;
+      background-color: var(--color-grey--300) !important;
+      color: inherit;
+    }
+  }
+}

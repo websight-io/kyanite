@@ -30,6 +30,10 @@
     word-break: break-word;
   }
 
+  h1,h2,h3,h4,h5,h6 {
+    color: var(--base-color-body-text, var(--color-grey--800));
+  }
+
   strong {
     color: unset;
   }
