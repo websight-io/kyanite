@@ -188,3 +188,17 @@
   }
 }
 
+/*  inputs text colors */
+
+.input, .select select, .textarea, .label  {
+  color: var(--base-color-body-text, var(--color-grey--700));
+  background-color: var(--base-color-secondary-background, var(--base-color-white));
+}
+
+.input::placeholder {
+  color: var(--base-color-secondary-text, var(--color-grey--700));
+}
+
+.checkbox:hover, .radio:hover {
+  color: var(--base-color-secondary-text, #363636)
+}
