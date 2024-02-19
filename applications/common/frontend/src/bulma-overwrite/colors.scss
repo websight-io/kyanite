@@ -202,3 +202,41 @@
 .checkbox:hover, .radio:hover {
   color: var(--base-color-secondary-text, #363636)
 }
+
+/*  table   */
+
+$table-selectors: '.table', '.table.is-striped';
+
+@each $ts in $table-selectors {
+  table#{$ts} {
+
+    @each $rt in thead, tbody {
+      #{$rt} tr {
+        background-color: var(--base-color-body-background, var(--base-color-white));
+      }
+    }
+
+    thead {
+      tr {
+        th {
+          font-weight: bold;
+          color: var(--base-color-body-text, var(--base-color-black));
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        &:not(.is-selected) {
+          &:nth-child(2n) {
+            background-color: var(--base-color-secondary-background, #fafafa);
+          }
+        }
+
+        td {
+          color: var(--base-color-body-text, var(--base-color-black));
+        }
+      }
+    }
+  }
+}
