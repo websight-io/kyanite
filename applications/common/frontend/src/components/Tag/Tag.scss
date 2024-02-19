@@ -16,8 +16,8 @@
  * -->
  */
 
-@use 'src/atomic-design-system/02-molecule/m.tag' as tag;
+@use 'src/atomic-design-system/01-atom/a.tag' as tag;
 
 .tag {
-  @include tag.m-tag;
+  @include tag.a-tag-default;
 }
