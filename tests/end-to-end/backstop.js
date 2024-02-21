@@ -104,6 +104,7 @@ const scenarios = spaces.flatMap(space => [
   { space: space, page: 'carousel/carousel-itemsshown-12-noscroll', selectors: [selectors.all] },
   { space: space, page: 'carousel/carousel-itemsshown-12-scroll',   selectors: [selectors.all] },
   { space: space, page: 'table',   selectors: [selectors.all] },
+  { space: space, page: 'tag',   selectors: [selectors.container] },
 ])
   .map((scenario) => {
     const removeSelectors = [
