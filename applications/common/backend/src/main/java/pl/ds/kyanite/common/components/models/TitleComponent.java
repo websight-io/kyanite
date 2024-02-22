@@ -104,7 +104,7 @@ public class TitleComponent {
 
   @Inject
   @Getter
-  private String typedColor;
+  private String endingsColor;
 
   @Inject
   @Getter
@@ -145,7 +145,7 @@ public class TitleComponent {
     titleClassList.add(colorService.getShadeClass(resource, color, "shade"));
     subtitleClassList.add(colorService.getShadeClass(resource, subtitleColor,
         "subtitleShade"));
-    endingsClassList.add(colorService.getShadeClass(resource, typedColor,
+    endingsClassList.add(colorService.getShadeClass(resource, endingsColor,
         "typedShade"));
 
     titleClasses = titleClassList.toArray(new String[]{});

@@ -213,11 +213,11 @@
 						"label": "Ending text"
 					}
 				},
-				"typedColor": {
+				"endingsColor": {
 					"sling:resourceType": "wcm/dialogs/components/include",
 					"include": {
 						"sling:resourceSuperType": "kyanite/common/components/common/text/color",
-						"name": "typedColor",
+						"name": "endingsColor",
 						"label": "Typed text color"
 					}
 				},
