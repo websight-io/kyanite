@@ -28,7 +28,7 @@ public class AnimatedEndings {
 
   @ValueMapValue
   @Getter
-  @Default(values = "Example")
+  @Default(values = "example ending")
   private String value;
 
 }

@@ -5,7 +5,7 @@
 	"element": "h2",
 	"isSpaced": false,
 	"size": "is-2",
-	"addTypedeffect": false,
+	"addAnimatedEndings": false,
 	"showCursor": false,
 	"speed": 50
 }

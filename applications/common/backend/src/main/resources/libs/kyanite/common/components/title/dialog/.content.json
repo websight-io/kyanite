@@ -196,12 +196,12 @@
 		"Animated endings": {
 			"sling:resourceType": "wcm/dialogs/components/tab",
 			"label": "Animated endings",
-			"addTypedEffect": {
+			"addAnimatedEndings": {
 				"sling:resourceType": "wcm/dialogs/components/toggle",
-				"name": "addTypedEffect",
-				"label": "Add typed text"
+				"name": "addAnimatedEndings",
+				"label": "Add animated endings"
 			},
-			"typedEffectContainer": {
+			"animatedEndingsContainer": {
 				"sling:resourceType": "wcm/dialogs/components/container",
 				"endings": {
 					"sling:resourceType": "wcm/dialogs/components/multifield",
@@ -235,7 +235,7 @@
 				},
 				"ws:display": {
 					"condition": {
-						"sourceName": "addTypedEffect",
+						"sourceName": "addAnimatedEndings",
 						"values": "true"
 					}
 				}

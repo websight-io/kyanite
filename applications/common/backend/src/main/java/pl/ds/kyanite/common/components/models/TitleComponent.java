@@ -72,7 +72,7 @@ public class TitleComponent {
 
   @Inject
   @Getter
-  private String[] typedClasses;
+  private String[] endingsClasses;
 
   @Inject
   private String color;
@@ -96,7 +96,7 @@ public class TitleComponent {
 
   @Inject
   @Getter
-  private String addTypedEffect;
+  private String addAnimatedEndings;
 
   @Inject
   @Getter
@@ -125,10 +125,10 @@ public class TitleComponent {
   private void init() {
     List<String> titleClassList = new ArrayList<>();
     List<String> subtitleClassList = new ArrayList<>();
-    List<String> typedClassList = new ArrayList<>();
+    List<String> endingsClassList = new ArrayList<>();
     titleClassList.add("title");
     subtitleClassList.add("subtitle");
-    typedClassList.add("typed");
+    endingsClassList.add("typed");
 
     if (StringUtils.isNotBlank(size)) {
       titleClassList.add(size);
@@ -145,12 +145,12 @@ public class TitleComponent {
     titleClassList.add(colorService.getShadeClass(resource, color, "shade"));
     subtitleClassList.add(colorService.getShadeClass(resource, subtitleColor,
         "subtitleShade"));
-    typedClassList.add(colorService.getShadeClass(resource, typedColor,
+    endingsClassList.add(colorService.getShadeClass(resource, typedColor,
         "typedShade"));
 
     titleClasses = titleClassList.toArray(new String[]{});
     subtitleClasses = subtitleClassList.toArray(new String[]{});
-    typedClasses = typedClassList.toArray(new String[] {});
+    endingsClasses = endingsClassList.toArray(new String[] {});
     titleAlign = this.searchTitleAlign();
   }
 
