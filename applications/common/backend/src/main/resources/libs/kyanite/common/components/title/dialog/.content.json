@@ -218,13 +218,13 @@
 					"include": {
 						"sling:resourceSuperType": "kyanite/common/components/common/text/color",
 						"name": "typedColor",
-						"label": "Typed color"
+						"label": "Typed text color"
 					}
 				},
 				"speed": {
 					"sling:resourceType": "wcm/dialogs/components/numberfield",
 					"name": "speed",
-					"label": "Speed in ms",
+					"label": "Speed of typing in ms",
 					"default": 50
 				},
 				"showCursor": {
