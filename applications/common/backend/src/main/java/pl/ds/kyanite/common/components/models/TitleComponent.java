@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.stream.Stream;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.json.Json;
+import javax.json.JsonArrayBuilder;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
@@ -71,6 +73,10 @@ public class TitleComponent {
   private String[] subtitleClasses;
 
   @Inject
+  @Getter
+  private String[] typedClasses;
+
+  @Inject
   private String color;
 
   @Inject
@@ -90,6 +96,28 @@ public class TitleComponent {
   @Inject
   private String eyebrowText;
 
+  @Inject
+  @Getter
+  private String addTypedEffect;
+
+  @Inject
+  @Getter
+  private List<AnimatedEndings> endings = new ArrayList<>();
+
+  @Getter
+  private String endingJson;
+
+  @Inject
+  @Getter
+  private String typedColor;
+
+  @Inject
+  @Getter
+  private String showCursor;
+
+  @Inject
+  @Getter
+  private String speed;
 
   @OSGiService
   @Required
@@ -102,8 +130,10 @@ public class TitleComponent {
   private void init() {
     List<String> titleClassList = new ArrayList<>();
     List<String> subtitleClassList = new ArrayList<>();
+    List<String> typedClassList = new ArrayList<>();
     titleClassList.add("title");
     subtitleClassList.add("subtitle");
+    typedClassList.add("typed");
 
     if (StringUtils.isNotBlank(size)) {
       titleClassList.add(size);
@@ -120,10 +150,14 @@ public class TitleComponent {
     titleClassList.add(colorService.getShadeClass(resource, color, "shade"));
     subtitleClassList.add(colorService.getShadeClass(resource, subtitleColor,
         "subtitleShade"));
+    typedClassList.add(colorService.getShadeClass(resource, typedColor,
+        "typedShade"));
 
     titleClasses = titleClassList.toArray(new String[]{});
     subtitleClasses = subtitleClassList.toArray(new String[]{});
+    typedClasses = typedClassList.toArray(new String[] {});
     titleAlign = this.searchTitleAlign();
+    initEndings();
   }
 
   private String searchTitleAlign() {
@@ -175,5 +209,14 @@ public class TitleComponent {
 
   public String getEyebrowText() {
     return addEyebrow ? eyebrowText : StringUtils.EMPTY;
+  }
+
+  public void initEndings() {
+    JsonArrayBuilder jsonArrayBuilder = Json.createArrayBuilder();
+    for (AnimatedEndings ending : endings) {
+      jsonArrayBuilder.add(ending.getValue());
+    }
+
+    endingJson = jsonArrayBuilder.build().toString();
   }
 }

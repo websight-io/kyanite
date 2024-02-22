@@ -1,8 +1,11 @@
 {
-  "jcr:primaryType": "nt:unstructured",
-  "text": "Title",
-  "subtitle": "Subtitle",
-  "element": "h2",
-  "isSpaced": false,
-  "size": "is-2"
+	"jcr:primaryType": "nt:unstructured",
+	"text": "Title",
+	"subtitle": "Subtitle",
+	"element": "h2",
+	"isSpaced": false,
+	"size": "is-2",
+	"addTypedeffect": false,
+	"showCursor": false,
+	"speed": 50
 }

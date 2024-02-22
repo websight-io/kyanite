@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-import { TitleComponent } from './title.class';
-import { AnimatedEndings } from './animatedEndings.class';
+package pl.ds.kyanite.common.components.models;
 
-const initTitleComponents = () => {
-  document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
-    Array.from(document.querySelectorAll(TitleComponent.SELECTOR)).forEach(
-      (component) => {
-        new TitleComponent(component);
-        const typedEnding = component.querySelector(AnimatedEndings.SELECTOR)
-        if (typedEnding) {
-          new AnimatedEndings(typedEnding)
-        }
-      }
-    );
-  });
-};
+import lombok.Getter;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Default;
+import org.apache.sling.models.annotations.DefaultInjectionStrategy;
+import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-initTitleComponents();
+@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+public class AnimatedEndings {
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "Example")
+  private String value;
+
+}

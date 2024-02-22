@@ -75,6 +75,7 @@
   "dependencies": {
     "@glidejs/glide": "^3.6.0",
     "highlight.js": "^11.8.0",
+    "typed.js": "^2.1.0",
     "vanilla-cookieconsent": "^2.9.1"
   }
 }
