@@ -18,20 +18,29 @@ import Typed from "typed.js";
 
   
   export class AnimatedEndings {
-    static readonly SELECTOR = '#typed';
+    static readonly SELECTOR = '.typed-animation';
+    static readonly STRINGS_SELECTOR = '.typed-strings-animation';
     public readonly element: HTMLElement;
+    public readonly titleElement: HTMLElement;
     public readonly showCursor: boolean;
     public readonly speed: number;
   
-    constructor(element) {
+    constructor(element, title) {
       this.element = element;
+      this.titleElement = title;
       this.showCursor = JSON.parse(element.dataset.showCursor);
       this.speed = Number(element.dataset.speed);
       this.init()
     }
 
     init() {
-      const typed = new Typed(this.element, { stringsElement: '#typed-strings', loop: true, typeSpeed: this.speed, showCursor: this.showCursor, smartBackspace: false })
+      new Typed(this.element, { 
+        stringsElement: this.titleElement.querySelector(AnimatedEndings.STRINGS_SELECTOR), 
+        loop: true, 
+        typeSpeed: this.speed, 
+        showCursor: this.showCursor, 
+        smartBackspace: false 
+      })
     }
   }
   

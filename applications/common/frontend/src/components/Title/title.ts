@@ -22,10 +22,9 @@ const initTitleComponents = () => {
     Array.from(document.querySelectorAll(TitleComponent.SELECTOR)).forEach(
       (component) => {
         new TitleComponent(component);
-        const typedEnding = component.querySelector(AnimatedEndings.SELECTOR)
-        if (typedEnding) {
-          new AnimatedEndings(typedEnding)
-        }
+        Array.from(component.querySelectorAll(AnimatedEndings.SELECTOR)).forEach(element => {
+          new AnimatedEndings(element, component)
+        })
       }
     );
   });

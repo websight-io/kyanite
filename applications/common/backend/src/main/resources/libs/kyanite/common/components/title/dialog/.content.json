@@ -225,7 +225,7 @@
 					"sling:resourceType": "wcm/dialogs/components/numberfield",
 					"name": "speed",
 					"label": "Speed of typing in ms",
-					"default": 50
+					"default": "50"
 				},
 				"showCursor": {
 					"sling:resourceType": "wcm/dialogs/components/toggle",

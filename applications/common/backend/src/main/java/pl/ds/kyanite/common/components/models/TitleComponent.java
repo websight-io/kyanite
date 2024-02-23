@@ -125,10 +125,8 @@ public class TitleComponent {
   private void init() {
     List<String> titleClassList = new ArrayList<>();
     List<String> subtitleClassList = new ArrayList<>();
-    List<String> endingsClassList = new ArrayList<>();
     titleClassList.add("title");
     subtitleClassList.add("subtitle");
-    endingsClassList.add("typed");
 
     if (StringUtils.isNotBlank(size)) {
       titleClassList.add(size);
@@ -145,6 +143,8 @@ public class TitleComponent {
     titleClassList.add(colorService.getShadeClass(resource, color, "shade"));
     subtitleClassList.add(colorService.getShadeClass(resource, subtitleColor,
         "subtitleShade"));
+
+    List<String> endingsClassList = new ArrayList<>();
     endingsClassList.add(colorService.getShadeClass(resource, endingsColor,
         "typedShade"));
 

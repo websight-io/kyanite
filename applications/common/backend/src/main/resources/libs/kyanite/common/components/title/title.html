@@ -25,15 +25,15 @@
   <h1 id="${model.anchorId}" style="text-align: ${model.titleAlign @ context='styleToken'};" data-sly-element="${model.element}" class="${model.titleClasses @ join=' '}">
     ${model.textAsOneLine @ context='html'}
     <sly data-sly-test="${model.addAnimatedEndings}">
-      <span id="typed-strings" class="${model.endingsClasses @ join=' '}">
+      <span class="${model.endingsClasses @ join=' '} typed-strings-animation">
         <sly data-sly-list.item="${model.endings}">
-          <p>
+          <span>
             ${item.value}
-          </p>
+          </span>
         </sly>
       </span>
       <sly data-sly-test="${!wcmmode.isEdit && model.endings}">
-        <span id="typed" class="${model.endingsClasses @ join=' '}" data-show-cursor="${model.showCursor}" data-speed="${model.speed}"></span>
+        <span class="${model.endingsClasses @ join=' '} typed-animation" data-show-cursor="${model.showCursor}" data-speed="${model.speed}"></span>
       </sly>
     </sly>
   </h1>
