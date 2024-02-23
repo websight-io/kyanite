@@ -19,7 +19,7 @@ import Typed from "typed.js";
   
   export class AnimatedEndings {
     static readonly SELECTOR = '.typed-animation';
-    static readonly STRINGS_SELECTOR = '.typed-strings-animation';
+    public readonly STRINGS_SELECTOR = '.typed-strings-animation';
     public readonly element: HTMLElement;
     public readonly titleElement: HTMLElement;
     public readonly showCursor: boolean;
@@ -35,7 +35,7 @@ import Typed from "typed.js";
 
     init() {
       new Typed(this.element, { 
-        stringsElement: this.titleElement.querySelector(AnimatedEndings.STRINGS_SELECTOR), 
+        stringsElement: this.titleElement.querySelector(this.STRINGS_SELECTOR), 
         loop: true, 
         typeSpeed: this.speed, 
         showCursor: this.showCursor, 
@@ -43,4 +43,5 @@ import Typed from "typed.js";
       })
     }
   }
+  
   
