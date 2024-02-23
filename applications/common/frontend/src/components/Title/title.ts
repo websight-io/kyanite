@@ -15,12 +15,16 @@
  */
 
 import { TitleComponent } from './title.class';
+import { AnimatedEndings } from './animatedEndings.class';
 
 const initTitleComponents = () => {
   document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
     Array.from(document.querySelectorAll(TitleComponent.SELECTOR)).forEach(
       (component) => {
         new TitleComponent(component);
+        Array.from(component.querySelectorAll(AnimatedEndings.SELECTOR)).forEach(element => {
+          new AnimatedEndings(element, component)
+        })
       }
     );
   });

@@ -71,6 +71,10 @@ public class TitleComponent {
   private String[] subtitleClasses;
 
   @Inject
+  @Getter
+  private String[] endingsClasses;
+
+  @Inject
   private String color;
 
   @Inject
@@ -90,6 +94,25 @@ public class TitleComponent {
   @Inject
   private String eyebrowText;
 
+  @Inject
+  @Getter
+  private String addAnimatedEndings;
+
+  @Inject
+  @Getter
+  private List<AnimatedEndings> endings = new ArrayList<>();
+
+  @Inject
+  @Getter
+  private String endingsColor;
+
+  @Inject
+  @Getter
+  private String showCursor;
+
+  @Inject
+  @Getter
+  private String speed;
 
   @OSGiService
   @Required
@@ -121,8 +144,13 @@ public class TitleComponent {
     subtitleClassList.add(colorService.getShadeClass(resource, subtitleColor,
         "subtitleShade"));
 
+    List<String> endingsClassList = new ArrayList<>();
+    endingsClassList.add(colorService.getShadeClass(resource, endingsColor,
+        "typedShade"));
+
     titleClasses = titleClassList.toArray(new String[]{});
     subtitleClasses = subtitleClassList.toArray(new String[]{});
+    endingsClasses = endingsClassList.toArray(new String[] {});
     titleAlign = this.searchTitleAlign();
   }
 
