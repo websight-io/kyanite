@@ -24,4 +24,14 @@
     color: var(--color-grey--900);
   }
 
+  .card-footer {
+    border-top-color: var(--base-color-contrast-background, #ededed);
+
+    .card-footer-item {
+
+      &:not(:last-child) {
+        border-right-color: var(--base-color-contrast-background, #ededed);
+      }
+    }
+  }
 }
