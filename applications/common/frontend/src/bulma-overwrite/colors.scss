@@ -193,7 +193,7 @@
 a {
   color: var(--color-primary--600);
   &:hover {
-    color: var(--base-color-secondary-text);
+    color: var(--base-color-secondary-text, inherit);
   }
 }
 
