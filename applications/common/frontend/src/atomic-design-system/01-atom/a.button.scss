@@ -72,6 +72,17 @@
     &.is-inverted {
       color: var(--color-primary--600);
     }
+
+    &.is-outlined {
+      background-color: transparent;
+      color:            var(--color-primary--600);
+      border-color:     var(--color-primary--600);
+
+      &:hover {
+        background-color: var(--color-primary--600);
+        border-color:     var(--color-primary--600);
+      }
+    }
   }
 
   &-secondary {
