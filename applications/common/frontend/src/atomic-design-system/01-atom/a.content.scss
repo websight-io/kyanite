@@ -35,7 +35,7 @@
   }
 
   strong {
-    color: unset;
+    color: var(--base-color-content-strong, unset);
   }
 
   &-xs {
