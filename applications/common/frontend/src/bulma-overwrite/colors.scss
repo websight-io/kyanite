@@ -188,15 +188,44 @@
   }
 }
 
+/* anchor */
+
+a {
+  color: var(--color-primary--600);
+  &:hover {
+    color: var(--base-color-secondary-text);
+  }
+}
+
 /*  inputs text colors */
 
 .input, .select select, .textarea, .label  {
   color: var(--base-color-body-text, var(--color-grey--700));
-  background-color: var(--base-color-secondary-background, var(--base-color-white));
+  background-color: var(--base-color-body-background, var(--base-color-white));
+  &:focus, &:active, &.is-active, &.is-focused {
+    border-color: var(--color-primary--600);
+    box-shadow: none;
+  }
 }
 
-.input::placeholder {
+.select:not(.is-multiple):not(.is-loading):after {
+  border-color: var(--color-primary--600);
+}
+
+.input::placeholder, .textarea::placeholder {
   color: var(--base-color-secondary-text, var(--color-grey--700));
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--base-color-body-background) inset;
+    -webkit-text-fill-color: var(--base-color-body-text);
+}
+
+input[type=checkbox] {
+  accent-color: var(--color-primary--600);
 }
 
 .checkbox:hover, .radio:hover {
