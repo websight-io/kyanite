@@ -176,6 +176,7 @@ export const publishAllPages = async (space: CONTENT_SPACE, pages: PageTreeItem[
         pagesGroup.forEach(({ pageName }) => formData.append('items', pageName));
 
         const log = `(items count: ${pagesGroup.length})`;
+        formData.append("forceAction", "true");
 
         try {
             const response = http.post<void>(buildUrl(space, publishAction), formData);
