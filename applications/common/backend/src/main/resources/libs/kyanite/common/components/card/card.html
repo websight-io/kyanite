@@ -46,12 +46,14 @@
       </div>
     </sly>
 
-    <footer class="card-footer">
-      <sly data-sly-list.url="${model.urls}">
-        <sly data-sly-test="${url.label}">
-          <a href="${url.address}" class="card-footer-item">${url.label}</a>
+    <sly data-sly-test="${model.urls}">
+      <footer class="card-footer">
+        <sly data-sly-list.url="${model.urls}">
+          <sly data-sly-test="${url.label}">
+            <a href="${url.address}" class="card-footer-item">${url.label}</a>
+          </sly>
         </sly>
-      </sly>
-    </footer>
+      </footer>
+    </sly>
   </div>
 </sly>

@@ -72,6 +72,17 @@
     &.is-inverted {
       color: var(--color-primary--600);
     }
+
+    &.is-outlined {
+      background-color: transparent;
+      color:            var(--color-primary--600);
+      border-color:     var(--color-primary--600);
+
+      &:hover {
+        background-color: var(--color-primary--600);
+        border-color:     var(--color-primary--600);
+      }
+    }
   }
 
   &-secondary {
@@ -81,8 +92,8 @@
     color: var(--base-color-body-text, var(--color-grey--900));
 
     &:hover {
-      border-color: var(--color-secondary--600, var(--color-primary--600));
-      color: var(--color-secondary--900, var(--color-primary--900));
+      background-color: var(--color-secondary--600, var(--color-primary--600));
+      border-color:     var(--color-secondary--600, var(--color-primary--600));
     }
 
     &:focus:not(:active) {
