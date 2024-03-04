@@ -22,6 +22,7 @@
     <div class="${classes}">
       <sly
           data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+          ${model.assetReference}
     </div>
   </sly>
   <sly data-sly-test="${!resource.hasChildren}">

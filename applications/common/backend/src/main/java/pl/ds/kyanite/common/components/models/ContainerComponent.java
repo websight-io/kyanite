@@ -21,26 +21,14 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
-import pl.ds.kyanite.common.components.utils.LinkUtil;
-
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContainerComponent {
-
-  @Inject
-  private String assetReference;
-
-  @Getter
-  private String assetLink;
-
-  @SlingObject
-  private Resource resource;
 
   @Inject
   @Getter
@@ -70,10 +58,6 @@ public class ContainerComponent {
     }
 
     containerClasses = classes.toArray(new String[]{});
-  }
-
-  public String getAssetReference() {
-    return LinkUtil.handleLink(assetReference, resource.getResourceResolver());
   }
 
   /**
