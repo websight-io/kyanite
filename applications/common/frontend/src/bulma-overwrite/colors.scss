@@ -23,6 +23,10 @@
     color: var(--color-primary--600) !important;
   }
 
+  &-secondary {
+    color: var(--color-secondary--600) !important; /* not from bulma */
+  }
+
   &-link {
     &-light {
       color: var(--color-primary--500) !important; /* !important used as in Bulma */
@@ -105,6 +109,10 @@
 .has-background {
   &-primary {
     background-color: var(--color-primary--600) !important; /* !important used as in Bulma */
+  }
+
+  &-secondary {
+    background-color: var(--color-secondary--600) !important; /* not from bulma */
   }
 
   &-link {
