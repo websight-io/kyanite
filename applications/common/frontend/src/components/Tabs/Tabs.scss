@@ -19,15 +19,87 @@
 @use 'sass:map';
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/atomic-design-system/02-molecule/m.tabs' as tabs;
+@use 'src/atomic-design-system/00-token/t.color' as color;
+@use 'src/atomic-design-system/00-token/t.border';
+@use 'src/bulma-overwrite/bulma-spacing';
 
-.tabs {
-  @include tabs.m-tabs;
-
-  &-content {
-    .columns {
-      @include breakpoint.media-breakpoint-medium {
-        align-items: center;
+// editMode styles
+.tabs-container-edit {
+  padding-top: 10px; 
+  padding-bottom: 10px;
+  &.is-vertical {
+    ul {
+      flex-direction: column;
+    }
+    & > div {
+      display: flex;
+      .tabs {
+         & + div {
+          flex: 1;
+         }
+         ul {
+          @extend .mr-5;
+          gap: var(--spacing-6);
+          border-bottom: none;
+          li {
+            @extend .pb-3;
+            @extend .pt-3;
+            @extend .pr-3;
+              opacity: 0.5;
+              width: 100%;
+              border-bottom: none;
+              border-right: var(--border-weight-2) solid;
+              &.is-active {
+                border-color: var(--color-primary--600) !important;
+                opacity: 1;
+              }
+           }
+         }
+         
       }
+    }
+    .tabs-content {
+      width: 100%;
+    }
+  }
+}
+
+.tabs-container {
+  .tabs {
+    @include tabs.m-tabs;
+  
+    &-content {
+      .columns {
+        @include breakpoint.media-breakpoint-medium {
+          align-items: center;
+        }
+      }
+    }
+  }
+  &.is-vertical {
+    display: flex;
+    flex: 1;
+    .tabs {
+      flex-shrink: 0;
+      ul {
+        @extend .mr-5;
+        gap: var(--spacing-6);
+        flex-direction: column;
+        li {
+          @extend .pb-3;
+          @extend .pt-3;
+          @extend .pr-3;
+          width: 100%;
+          border-bottom: none;
+          border-right: var(--border-weight-2) solid;
+          &.is-active {
+            border-color: var(--color-primary--600) !important;
+          }
+        }
+      }
+    }
+    .tabs-content {
+      width: 100%;
     }
   }
 }

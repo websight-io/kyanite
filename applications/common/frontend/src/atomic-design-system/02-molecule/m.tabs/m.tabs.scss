@@ -43,25 +43,25 @@
     border: none;
   }
 
-  li a {
+  li {
     color: var(--color-grey--700) !important;
-    font-weight: var(--font-weight-700);
     border-bottom: var(--border-weight-2) solid;
+    cursor: pointer;
     @extend .pt-0;
     @extend .pr-0;
     @extend .pl-0;
     @extend .pb-2;
 
-    border-bottom-color: transparent;
+    border-color: transparent;
 
     &:hover {
       color: var(--color-grey--900) !important;
 
-      border-bottom-color: transparent;
+      border-color: transparent;
     }
   }
 
-  li.is-active a {
+  li.is-active {
     color: var(--color-grey--900) !important;
     border-color: var(--color-primary--600) !important;
 

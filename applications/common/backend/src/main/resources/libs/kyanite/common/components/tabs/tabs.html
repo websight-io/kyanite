@@ -23,7 +23,7 @@
     <sly data-sly-test="${resource.hasChildren}">
         <!--        edit mode layout-->
         <sly data-sly-test="${wcmmode.isEdit}">
-            <div style="padding-top: 10px; padding-bottom: 10px;">
+            <div class="tabs-container-edit ${model.vertical ? 'is-vertical' : ''}">
                 <sly data-sly-list="${resource.children}">
                     <sly data-sly-test="${item.resourceType == 'kyanite/common/components/tabs/tab'}">
                         <sly data-sly-resource="${item}"></sly>
@@ -34,7 +34,7 @@
         <!--        end of edit mode layout-->
         <!--        preview mode layout-->
         <sly data-sly-test="${!wcmmode.isEdit}">
-            <div class="tabs-container" data-auto-switch="${model.autoSwitch}" data-switching-time="${model.switchingTime}">
+            <div class="tabs-container ${model.vertical ? 'is-vertical' : ''}" data-auto-switch="${model.autoSwitch}" data-switching-time="${model.switchingTime}">
                 <div class="tabs ${model.tabClasses @ join=' '}">
                     <div style="padding-top: 20px; padding-bottom: 20px;" data-sly-unwrap="${!wcmmode.isEdit}">
                         <ul>

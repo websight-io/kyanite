@@ -27,12 +27,12 @@
                                 <sly data-sly-test.isCurrent="${model.label == item.label}"></sly>
                                 <li class="${isCurrent ? 'is-active' : ''}"
                                     data-target="${item.label}">
-                                    <a>
                                         <sly data-sly-test="${item.addIcon && item.icon && isCurrent}">
                                             <sly data-sly-resource="${resource @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
                                         </sly>
-                                        <span>${item.label}</span>
-                                    </a>
+                                        <div class="content ${model.size} ${model.textWeight} ${model.textColorVariant}">
+                                            ${item.label @ context='unsafe'}
+                                        </div>
                                 </li>
                             </sly>
                         </sly>
@@ -57,12 +57,12 @@
     <!--        preview mode layout-->
     <sly data-sly-test="${!wcmmode.isEdit}">
         <li data-target="${resource.path}">
-            <a>
                 <sly data-sly-test="${model.addIcon && model.icon}">
                     <sly data-sly-resource="${resource @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
                 </sly>
-                <span>${model.label}</span>
-            </a>
+                <div class="content ${model.size} ${model.textWeight} ${model.textColorVariant}">
+                    ${model.label @ context='unsafe'}
+                </div>
         </li>
     </sly>
     <!--        end of preview mode layout-->
