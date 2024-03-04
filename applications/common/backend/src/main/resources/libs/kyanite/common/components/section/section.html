@@ -16,7 +16,7 @@
   ~
 */-->
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.SectionComponent">
-    <section class="section ${model.size}" id="${model.id}">
+    <section class="section ${model.size}" id="${model.id}" style="${model.assetReference ? 'background-image: url(${model.assetReference})' : ''}">
         <sly data-sly-repeat.paragraph="${resource.children}"
              data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType}"></sly>
     </section>

@@ -48,23 +48,6 @@
 					"name": "alignmentHorizontal"
 				}
 			}
-		},
-		"backgroundImage": {
-			"sling:resourceType": "wcm/dialogs/components/tab",
-			"label": "Background image",
-			"imageSource": {
-				"sling:resourceType": "wcm/dialogs/components/include",
-				"include": {
-					"sling:resourceSuperType": "kyanite/common/components/common/imagesource",
-					"assetReference": {
-						"mimeTypes": ["image/*"],
-						"name": "image/assetReference"
-					},
-					"src": {
-						"name": "image/assetReference"
-					}
-				}
-			}
 		}
   }
 }
