@@ -23,7 +23,7 @@
 @use 'src/atomic-design-system/00-token/t.border';
 @use 'src/bulma-overwrite/bulma-spacing';
 
-// editMode styles
+/* editMode styles start */
 .tabs-container-edit {
   padding-top: 10px; 
   padding-bottom: 10px;
@@ -62,7 +62,21 @@
       width: 100%;
     }
   }
+  .tabs {
+    ul {
+      gap: var(--spacing-6);
+      li {
+        border-bottom: var(--border-weight-2) solid;
+        opacity: 0.5;
+        &.is-active {
+          border-color: var(--color-primary--600) !important;
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
+/* editMode styles end */
 
 .tabs-container {
   .tabs {
