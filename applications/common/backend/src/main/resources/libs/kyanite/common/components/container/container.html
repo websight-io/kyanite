@@ -19,10 +19,9 @@
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.ContainerComponent">
   <sly data-sly-set.classes="container ${model.containerClasses @ join=' '}"></sly>
   <sly data-sly-test="${resource.hasChildren}">
-    <div class="${classes}">
+    <div class="${classes}" data-sly-test.style="background-image: url(${model.assetReference})">
       <sly
           data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-          ${model.assetReference}
     </div>
   </sly>
   <sly data-sly-test="${!resource.hasChildren}">
