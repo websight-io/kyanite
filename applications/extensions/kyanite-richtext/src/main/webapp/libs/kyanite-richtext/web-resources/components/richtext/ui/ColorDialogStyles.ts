@@ -27,7 +27,7 @@ export const createGlobalCSS = (colors) => {
     for (const color of colors) {
        styles += `
          .${color.colorClassName} {
-            color: ${color.value};
+            color: ${extractFirstColor(color.value)};
          }
        `;
     }
@@ -60,6 +60,17 @@ export const createCSS = (colors) => {
 
 const isColor = (value) => {
   return value.startsWith('#') || value.startsWith('rgb');
+}
+
+function extractFirstColor(text) {
+  const colorRegex = /#(?:[0-9a-fA-F]{3}){1,2}|rgba?\([^)]+\)|hsla?\([^)]+\)|\b(?:rgb|hsl)\s*\([^)]+\)/g;
+  const colors = text.match(colorRegex);
+
+  if (colors && colors.length > 0) {
+    return colors[0];
+  } else {
+    return '#CACACA'; //default fallback
+  }
 }
 
 export const PopupContainer = styled.div`
