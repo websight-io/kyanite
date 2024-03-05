@@ -51,7 +51,7 @@ $color-navbar-link: var(--color-grey--900);
     }
   }
 
-  &:not(.is-primary, .is-link, .is-info, .is-warning, .is-danger, .is-success, .is-white, .is-light, .is-dark, .is-black) {
+  &:not(.is-primary, .is-link, .is-info, .is-warning, .is-danger, .is-success, .is-white, .is-light, .is-dark, .is-black, .is-transparent) {
     background-color: var(--base-color-body-background);
 
     a.navbar-item:not(.navbar-dropdown a.navbar-item) {
