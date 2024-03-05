@@ -7,15 +7,15 @@
         "label": "General",
         "background": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "puresight/components/separator/background"
+          "path": "kyanite/common/components/separator/background"
         },
         "thickness": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "puresight/components/separator/thickness"
+          "path": "kyanite/common/components/separator/thickness"
         },
         "padding": {
           "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "puresight/components/separator/padding"
+          "path": "kyanite/common/components/separator/padding"
         }
       }
     }
