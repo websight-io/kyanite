@@ -16,6 +16,17 @@
 
 import { breakpoints } from "src/helpers/breakpoints";
 
+document.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    const isTransparent = navbar.classList.contains('is-transparent');
+    if (isTransparent) {
+        if (window.scrollY > 10) {
+            navbar.classList.add('is-scrolled');
+        } else {
+            navbar.classList.remove('is-scrolled');
+        }
+    }
+})
 document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
 
     handleFixedNavbarPosition();
