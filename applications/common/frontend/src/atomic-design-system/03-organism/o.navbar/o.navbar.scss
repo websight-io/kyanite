@@ -35,6 +35,7 @@ $color-navbar-link: var(--color-grey--900);
   transform: translateX(0);
 
   padding-top: var(--spacing-4);
+  transition: .3s ease-in-out background-color;
 
   &.is-primary {
     background-color: var(--color-primary--600);
@@ -414,5 +415,8 @@ $color-navbar-link: var(--color-grey--900);
       }
 
     }
+  }
+  &.is-scrolled.is-transparent {
+    background-color: var(--base-color-body-background, var(--base-color-white));
   }
 }
