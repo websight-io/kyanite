@@ -1,7 +1,12 @@
 {
   "sling:resourceType": "wcm/dialogs/components/radio",
   "name": "type",
-  "label": "Type",
+  "label": "Style type",
+  "none": {
+    "sling:resourceType": "wcm/dialogs/components/radio/option",
+    "label": "None",
+    "value": "none"
+  },
   "fixed": {
     "sling:resourceType": "wcm/dialogs/components/radio/option",
     "label": "Fixed size",

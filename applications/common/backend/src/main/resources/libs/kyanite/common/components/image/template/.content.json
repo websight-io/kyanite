@@ -4,6 +4,5 @@
   "width": "1280",
   "height": "720",
   "isRounded": "false",
-  "style": "is-square",
-  "type": "fixed"
+  "type": "none"
 }
