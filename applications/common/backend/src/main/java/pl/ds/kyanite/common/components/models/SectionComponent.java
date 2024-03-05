@@ -16,6 +16,9 @@
 
 package pl.ds.kyanite.common.components.models;
 
+import java.util.List;
+import java.util.stream.StreamSupport;
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
@@ -28,6 +31,9 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class SectionComponent {
 
+  @SlingObject
+  private Resource resource;
+
   @Inject
   @Getter
   @Default(values = StringUtils.EMPTY)
@@ -36,4 +42,23 @@ public class SectionComponent {
   @Inject
   @Getter
   private String id;
+
+  @Inject
+  @Getter
+  private ImageComponent image;
+
+  @Getter
+  List<Resource> children;
+
+  @PostConstruct
+  void init() {
+    children = findValidItems();
+  }
+
+  private List<Resource> findValidItems() {
+    return StreamSupport.stream(resource.getChildren().spliterator(), false)
+        //Image is defined on dialog level and should not be displayed in as separate component
+        .filter(res -> !StringUtils.equals("nt:unstructured", res.getResourceType()))
+        .toList();
+  }
 }
