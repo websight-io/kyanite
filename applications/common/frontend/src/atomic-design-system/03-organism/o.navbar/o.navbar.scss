@@ -49,6 +49,10 @@ $color-navbar-link: var(--color-grey--900);
         background-color: #f5f5f5 !important;
       }
     }
+
+    .navbar-burger {
+      color: var(--base-color-body-text, var(--color-grey--700));
+    }
   }
 
   &:not(.is-primary, .is-link, .is-info, .is-warning, .is-danger, .is-success, .is-white, .is-light, .is-dark, .is-black, .is-transparent) {
