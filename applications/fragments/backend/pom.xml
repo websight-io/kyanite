@@ -20,12 +20,12 @@
   <parent>
     <groupId>pl.ds.kyanite</groupId>
     <artifactId>kyanite-fragments</artifactId>
-    <version>0.4.4</version>
+    <version>0.4.5-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>kyanite-fragments-backend</artifactId>
-  <version>0.4.4</version>
+  <version>0.4.5-SNAPSHOT</version>
   <name>Kyanite Components Project - Fragments backend</name>
   <description>Contains application backend.</description>
 
