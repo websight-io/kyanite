@@ -82,6 +82,7 @@
 /* editMode styles end */
 
 .tabs-container {
+  @extend .mb-6;
   .tabs {
     @include tabs.m-tabs;
   
@@ -100,13 +101,13 @@
     .tabs {
       flex-shrink: 0;
       ul {
-        @extend .mr-5;
         gap: var(--spacing-6);
         flex-direction: column;
+        max-width: 100%;
         li {
           @extend .pb-3;
           @extend .pt-3;
-          @extend .pr-3;
+          white-space: normal;
           border-color: transparent;
           &.is-active {
             border-color: var(--color-primary--600) !important;
@@ -121,7 +122,9 @@
       flex-direction: row;
       .tabs {
         ul {
+          margin-right: var(--spacing-6) !important;
           li {
+            padding-right: var(--spacing-4) !important;
             border-bottom: none;
             border-right: var(--border-weight-2) solid;
             border-color: transparent;
