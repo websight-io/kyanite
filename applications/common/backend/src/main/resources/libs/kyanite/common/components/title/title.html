@@ -34,6 +34,7 @@
       </span>
       <sly data-sly-test="${!wcmmode.isEdit && model.endings}">
         <span class="${model.endingsClasses @ join=' '} typed-animation" data-show-cursor="${model.showCursor}" data-speed="${model.speed}"></span>
+        <sly data-sly-test="${!model.showCursor}"><span class="typed-cursor" style="visibility: hidden" aria-hidden="true">|</span></sly>
       </sly>
     </sly>
   </h1>
