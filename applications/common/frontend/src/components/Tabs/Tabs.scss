@@ -117,6 +117,7 @@
     }
     .tabs-content {
       width: 100%;
+      text-align: center;
     }
     @include breakpoint.media-breakpoint-maximum {
       flex-direction: row;
