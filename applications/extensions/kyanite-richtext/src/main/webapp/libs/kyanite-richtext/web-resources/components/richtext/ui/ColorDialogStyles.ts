@@ -39,24 +39,28 @@ export const createCSS = (colors) => {
     let styles = '';
 
     for (const color of colors) {
-       styles += `
-         .${color.colorClassName} {
-            & + svg rect:first-of-type {
-                stroke: ${color.value};
-            }
-            & + svg g {
-                color: ${color.value};
-            }
-            & + svg {
-                background-color: ${color.value};
-                fill: ${isDarkColor(color.value) ? WHITE : BLACK} !important;
-            }
-         }
-       `;
+      styles += `
+       .${color.colorClassName} {
+          & + svg rect:first-of-type {
+              stroke: none;
+          }
+          & + svg g {
+              color: transparent;
+          }
+          & + svg {
+              background: ${color.value};
+              fill: ${isColor(color.value) && isDarkColor(color.value) ? WHITE : BLACK} !important;
+          }
+       }
+     `;
     }
   
     return css`${styles}`;
 };
+
+const isColor = (value) => {
+  return value.startsWith('#') || value.startsWith('rgb');
+}
 
 export const PopupContainer = styled.div`
     position: relative;
