@@ -41,6 +41,8 @@ import pl.ds.kyanite.common.components.utils.LinkUtil;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ImageComponent {
 
+  private static final String NONE_STYLES_TYPE = "none";
+
   @Inject
   private String assetReference;
 
@@ -49,7 +51,6 @@ public class ImageComponent {
   private String type;
 
   @Inject
-  @Getter
   private String style;
 
   @Inject
@@ -153,6 +154,13 @@ public class ImageComponent {
 
   public String getAssetReference() {
     return LinkUtil.handleLink(assetReference, resource.getResourceResolver());
+  }
+
+  public String getStyle() {
+    if (NONE_STYLES_TYPE.equals(type)) {
+      return "";
+    }
+    return style;
   }
 
   private boolean isVideo(String link) {
