@@ -41,6 +41,10 @@ public class PageComponent {
 
   @Getter
   @ValueMapValue
+  private boolean noNavbarPadding;
+
+  @Getter
+  @ValueMapValue
   private boolean addCaptcha;
 
   private String spaceName;
