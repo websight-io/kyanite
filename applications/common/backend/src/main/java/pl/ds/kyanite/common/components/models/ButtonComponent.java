@@ -85,6 +85,9 @@ public class ButtonComponent {
   private boolean isFullWidth;
 
   @Inject
+  private boolean isFullWidthOnMobile;
+
+  @Inject
   @Getter
   private boolean isDisabled;
 
@@ -148,6 +151,9 @@ public class ButtonComponent {
     }
     if (isFullWidth) {
       classes.add("is-fullwidth");
+    }
+    if (!isFullWidth && isFullWidthOnMobile) {
+      classes.add("is-fullwidth-on-mobile");
     }
     buttonClasses = classes.toArray(new String[]{});
 

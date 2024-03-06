@@ -102,6 +102,12 @@
         "name": "isFullWidth",
         "label": "Full width"
       },
+      "isFullWidthOnMobile": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isFullWidthOnMobile",
+        "label": "Full width on mobile",
+        "description": "On mobile devices button will be full width"
+      },
       "isDisabled": {
         "sling:resourceType": "wcm/dialogs/components/toggle",
         "name": "isDisabled",
