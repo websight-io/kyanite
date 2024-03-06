@@ -16,7 +16,8 @@
   ~
 */-->
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.SectionComponent">
-    <section class="section ${model.size} ${model.image.assetReference ? 'with-background-image' : ''}" id="${model.id}" style="background-image:url('${model.image.assetReference @ context='styleString'}');">
+    <section class="section ${model.size} ${model.hasBackgroundImage ? 'with-background-image' : ''}" id="${model.id}"
+             style="--desktop-background-image:${model.desktopBackgroundImage @ context='text'};--tablet-background-image:${model.tabletBackgroundImage @ context='text'};--mobile-background-image:${model.mobileBackgroundImage @ context='text'};">
         <sly data-sly-repeat.paragraph="${model.children}"
              data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType}"></sly>
     </section>
