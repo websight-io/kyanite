@@ -95,7 +95,7 @@ document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
  */
 function handleFixedNavbarPosition() {
     const navbar = document.querySelector('.navbar');
-    const isOverlapping = navbar.hasAttribute('data-is-overlapping');
+    const isOverlapping = navbar?.hasAttribute('data-is-overlapping') || false;
     if (navbar && !isOverlapping) {
         const navbarHeight = navbar.getBoundingClientRect().height;
         if (navbar.classList.contains('is-fixed-top')) {
