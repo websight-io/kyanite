@@ -82,7 +82,7 @@
 /* editMode styles end */
 
 .tabs-container {
-  @extend .mb-6;
+  @extend .mb-4;
   .tabs {
     @include tabs.m-tabs;
   
@@ -100,6 +100,7 @@
     flex-direction: column;
     .tabs {
       flex-shrink: 0;
+      width: 100%;
       ul {
         gap: var(--spacing-6);
         flex-direction: column;
@@ -118,14 +119,19 @@
     .tabs-content {
       width: 100%;
       text-align: center;
+      @include breakpoint.media-breakpoint-xlarge {
+        margin-left: var(--spacing-4);
+      }
     }
-    @include breakpoint.media-breakpoint-maximum {
+    @include breakpoint.media-breakpoint-xlarge {
       flex-direction: row;
       .tabs {
+        width: 33%;
         ul {
-          margin-right: var(--spacing-6) !important;
+          margin-right: 0 !important;
+          align-items: stretch;
           li {
-            padding-right: var(--spacing-4) !important;
+            padding-right: var(--spacing-6) !important;
             border-bottom: none;
             border-right: var(--border-weight-2) solid;
             border-color: transparent;
