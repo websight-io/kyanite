@@ -17,6 +17,8 @@
 package pl.ds.kyanite.common.components.models;
 
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -44,8 +46,15 @@ public class SectionComponent {
   private String id;
 
   @Inject
+  private ImageComponent desktopBackgroundImage;
+
+  @Inject
   @Getter
-  private ImageComponent image;
+  private ImageComponent tabletBackgroundImage;
+
+  @Inject
+  @Getter
+  private ImageComponent mobileBackgroundImage;
 
   @Getter
   List<Resource> children;
@@ -60,5 +69,32 @@ public class SectionComponent {
         //Image is defined on dialog level and should not be displayed in as separate component
         .filter(res -> !StringUtils.equals("nt:unstructured", res.getResourceType()))
         .toList();
+  }
+
+  public String getDesktopBackgroundImage() {
+    return getBackgroundImage(desktopBackgroundImage);
+  }
+
+  public String getTabletBackgroundImage() {
+    return getBackgroundImage(tabletBackgroundImage);
+  }
+
+  public String getMobileBackgroundImage() {
+    return getBackgroundImage(mobileBackgroundImage);
+  }
+
+  public boolean getHasBackgroundImage() {
+    return Stream.of(desktopBackgroundImage, tabletBackgroundImage, mobileBackgroundImage)
+        .filter(Objects::nonNull)
+        .map(ImageComponent::getAssetReference)
+        .anyMatch(Objects::nonNull);
+  }
+
+  private String getBackgroundImage(ImageComponent image) {
+    if (image == null || image.getAssetReference() == null) {
+      return "none";
+    }
+
+    return String.format("url('%s')", image.getAssetReference());
   }
 }
