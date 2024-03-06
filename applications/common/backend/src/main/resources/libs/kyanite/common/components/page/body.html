@@ -19,8 +19,9 @@
 <sly data-sly-use.extra="pl.ds.kyanite.common.components.models.PageComponent">
   <sly data-sly-set.templateMarker="template-${extra.templateName}"></sly>
   <sly data-sly-set.pageMarker="page-${extra.pageName}"></sly>
+  <sly data-sly-set.noNavbarPadding="${extra.noNavbarPadding ? 'no-navbar-padding' : ''}"></sly>
 
-  <body class="${properties.defaultTemplateCSS} ${templateMarker} ${pageMarker} ${properties.background}">
+  <body class="${properties.defaultTemplateCSS} ${templateMarker} ${pageMarker} ${properties.background} ${noNavbarPadding}">
   <sly data-sly-include="body-content.html"></sly>
   <script data-sly-test="${!wcmmode.isEdit && extra.addCaptcha}" src="https://www.google.com/recaptcha/api.js?render=${extra.captchaPublicKey}"></script>
   </body>

@@ -21,6 +21,12 @@
           "value": "squares"
         }
       },
+      "noNavbarPadding": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "label": "Remove navbar space",
+        "description": "It causes the first section to shift beneath the navbar",
+        "name": "noNavbarPadding"
+      },
       "captcha": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "label": "Add reCAPTCHA",
