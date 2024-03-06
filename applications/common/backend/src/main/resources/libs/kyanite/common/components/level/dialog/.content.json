@@ -12,6 +12,12 @@
         "label": "The level is vertical on mobile",
         "description": "If you want the level to be horizontal on mobile as well uncheck that box."
       },
+      "addDividers": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "addDividers",
+        "label": "Add dividers between items",
+        "description": "If should add a vertical dividers between the items"
+      },
       "spacing": {
         "sling:resourceType": "wcm/dialogs/components/radio",
         "name": "spacing",
