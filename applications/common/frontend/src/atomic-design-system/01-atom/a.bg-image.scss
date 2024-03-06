@@ -15,9 +15,17 @@
  *     limitations under the License.
  * -->
  */
+@use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 
  .a-bg-image {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-image: var(--mobile-background-image);
+  @include breakpoint.media-breakpoint-medium {
+    background-image: var(--tablet-background-image);
+  }
+  @include breakpoint.media-breakpoint-large {
+    background-image: var(--desktop-background-image);
+  }
  }
