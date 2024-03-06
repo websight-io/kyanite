@@ -18,7 +18,7 @@
 <template data-sly-template.navbar="${ @ model}">
   <sly data-sly-set.classes="navbar ${model.navbarStyle}"></sly>
   <sly data-sly-test="${resource.hasChildren}">
-    <nav class="${classes}" role="navigation" aria-label="main navigation">
+    <nav class="${classes}" role="navigation" aria-label="main navigation" data-is-overlapping="${model.isOverlapping}">
       <div class="container ${model.containerStyle}">
         <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
       </div>

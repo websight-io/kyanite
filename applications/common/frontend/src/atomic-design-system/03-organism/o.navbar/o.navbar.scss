@@ -106,7 +106,7 @@ $color-navbar-link: var(--color-grey--900);
   }
 
   .navbar-menu {
-    background-color: var(--base-color-secondary-background, var(--base-color-white));
+    background-color: var(--base-color-body-background, var(--base-color-white));
 
     @include breakpoint.media-breakpoint-large {
       background-color: inherit;

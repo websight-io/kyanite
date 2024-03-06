@@ -95,7 +95,8 @@ document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
  */
 function handleFixedNavbarPosition() {
     const navbar = document.querySelector('.navbar');
-    if (navbar) {
+    const isOverlapping = navbar.hasAttribute('data-is-overlapping');
+    if (navbar && !isOverlapping) {
         const navbarHeight = navbar.getBoundingClientRect().height;
         if (navbar.classList.contains('is-fixed-top')) {
             document.body.style.paddingTop = `${navbarHeight}px`;

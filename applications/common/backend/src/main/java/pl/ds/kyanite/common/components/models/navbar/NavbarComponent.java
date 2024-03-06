@@ -38,6 +38,10 @@ public class NavbarComponent {
 
   @Inject
   @Getter
+  private boolean isOverlapping;
+
+  @Inject
+  @Getter
   private String navbarStyle;
 
   @Inject
