@@ -170,7 +170,8 @@ $color-navbar-link: var(--color-grey--900);
 
   a.navbar-item {
     &:hover {
-      color: var(--base-color-secondary-background, $color-navbar-link);
+      color: var(--base-color-hover-navbar-link, $color-navbar-link);
+      background-color: inherit;
     }
   }
 
