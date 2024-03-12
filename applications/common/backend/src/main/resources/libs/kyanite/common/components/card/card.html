@@ -24,7 +24,7 @@
       </header>
     </sly>
 
-    <sly data-sly-test="${model.image.assetReference}">
+    <sly data-sly-test="${model.image.assetReference && model.imagePosition == 'top'}">
       <div class="card-image">
         <figure class="image ${model.image.style}">
           <img src="${model.image.assetReference}" alt="${model.image.alt}" />
@@ -43,6 +43,14 @@
             </sly>
           </sly>
         </sly>
+      </div>
+    </sly>
+
+    <sly data-sly-test="${model.image.assetReference && model.imagePosition == 'bottom'}">
+      <div class="card-image">
+        <figure class="image ${model.image.style}">
+          <img src="${model.image.assetReference}" alt="${model.image.alt}" />
+        </figure>
       </div>
     </sly>
 

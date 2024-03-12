@@ -5,17 +5,43 @@
     "name": "image/alt",
     "label": "Alt text"
   },
-  "style": {
+  "size": {
     "sling:resourceType": "wcm/dialogs/components/include",
     "include": {
-      "sling:resourceSuperType": "kyanite/common/components/image/attributes/ratio",
-      "name": "image/style",
-      "label": "Image ratio",
-      "is-4by3": {"selected": true},
-      "is-3by5": {"sling:hideResource": true},
-      "is-9by16": {"sling:hideResource": true},
-      "is-1by2": {"sling:hideResource": true},
-      "is-1by3": {"sling:hideResource": true}
+      "sling:resourceSuperType": "kyanite/common/components/image/attributes/size",
+      "type": {
+        "name": "image/type"
+      },
+      "fixed": {
+        "style": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "kyanite/common/components/image/attributes/fixed",
+            "name": "image/style"
+          }
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "image/type",
+            "values": "fixed"
+          }
+        }
+      },
+      "ratio": {
+        "style": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "kyanite/common/components/image/attributes/ratio",
+            "name": "image/style"
+          }
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "image/type",
+            "values": "ratio"
+          }
+        }
+      }
     }
   }
 }

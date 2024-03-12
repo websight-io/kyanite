@@ -27,6 +27,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class CardComponent {
@@ -41,6 +42,11 @@ public class CardComponent {
   @Inject
   @Getter
   private ImageComponent image;
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "top")
+  private String imagePosition;
 
   @Inject
   @Getter

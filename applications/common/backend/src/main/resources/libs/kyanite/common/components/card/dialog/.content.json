@@ -48,6 +48,21 @@
         "include": {
           "sling:resourceSuperType": "kyanite/common/components/card/common/image"
         }
+      },
+      "imagePosition": {
+        "sling:resourceType": "wcm/dialogs/components/radio",
+        "name": "imagePosition",
+        "label": "Position",
+        "none": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Top",
+          "value": "top"
+        },
+        "fixed": {
+          "sling:resourceType": "wcm/dialogs/components/radio/option",
+          "label": "Bottom",
+          "value": "bottom"
+        }
       }
     },
     "footer": {
