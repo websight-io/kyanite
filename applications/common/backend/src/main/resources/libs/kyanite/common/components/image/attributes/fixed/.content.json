@@ -1,7 +1,7 @@
 {
   "sling:resourceType": "wcm/dialogs/components/select",
   "name": "style",
-  "label": "Size of fixed image -useful for avatars",
+  "label": "Image size",
   "is-16x16": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "16x16px",

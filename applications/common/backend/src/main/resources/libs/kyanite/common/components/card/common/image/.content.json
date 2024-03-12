@@ -8,7 +8,7 @@
   "style": {
     "sling:resourceType": "wcm/dialogs/components/include",
     "include": {
-      "sling:resourceSuperType": "/libs/kyanite/common/components/image/attributes/ratio",
+      "sling:resourceSuperType": "kyanite/common/components/image/attributes/ratio",
       "name": "image/style",
       "label": "Image ratio",
       "is-4by3": {"selected": true},

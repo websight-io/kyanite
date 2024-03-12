@@ -77,31 +77,9 @@
     "styleTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Style of image",
-      "type": {
+      "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/common/components/image/attributes/type"
-      },
-      "ratio": {
-        "sling:resourceType": "wcm/dialogs/components/container",
-        "style": {
-          "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/libs/kyanite/common/components/image/attributes/ratio"
-        },
-        "ws:display": {"condition": {
-          "sourceName": "type",
-          "values": "ratio"
-        }}
-      },
-      "fixed": {
-        "sling:resourceType": "wcm/dialogs/components/container",
-        "style": {
-          "sling:resourceType": "wcm/dialogs/components/include",
-          "path": "/libs/kyanite/common/components/image/attributes/fixed"
-        },
-        "ws:display": {"condition": {
-          "sourceName": "type",
-          "values": "fixed"
-        }}
+        "path": "kyanite/common/components/image/attributes/size"
       },
       "isRounded": {
         "sling:resourceType": "wcm/dialogs/components/toggle",
@@ -113,6 +91,77 @@
         "sling:resourceType": "wcm/dialogs/components/toggle",
         "name": "hasShadow",
         "label": "Has shadow"
+      }
+    },
+    "mediaTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Media",
+      "viewports": {
+        "sling:resourceType": "wcm/dialogs/components/tabs",
+        "mobile": {
+          "sling:resourceType": "wcm/dialogs/components/tab",
+          "label": "Mobile",
+          "imageSource": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
+              "imageSrcType": {
+                "name": "mobileImageSrcType"
+              },
+              "assetReference": {
+                "name": "mobileAssetReference",
+                "mimeTypes": ["image/*", "video/*"],
+                "ws:display": {
+                  "condition": {
+                    "sourceName": "mobileImageSrcType",
+                    "values": "asset"
+                  }
+                }
+              },
+              "src": {
+                "name": "mobileAssetReference",
+                "ws:display": {
+                  "condition": {
+                    "sourceName": "mobileImageSrcType",
+                    "values": "link"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "tablet": {
+          "sling:resourceType": "wcm/dialogs/components/tab",
+          "label": "Tablet",
+          "imageSource": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
+              "imageSrcType": {
+                "name": "tabletImageSrcType"
+              },
+              "assetReference": {
+                "name": "tabletAssetReference",
+                "mimeTypes": ["image/*", "video/*"],
+                "ws:display": {
+                  "condition": {
+                    "sourceName": "tabletImageSrcType",
+                    "values": "asset"
+                  }
+                }
+              },
+              "src": {
+                "name": "tabletAssetReference",
+                "ws:display": {
+                  "condition": {
+                    "sourceName": "tabletImageSrcType",
+                    "values": "link"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

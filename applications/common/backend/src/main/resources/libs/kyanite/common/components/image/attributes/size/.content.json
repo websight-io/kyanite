@@ -1,0 +1,49 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/container",
+  "type": {
+    "sling:resourceType": "wcm/dialogs/components/radio",
+    "name": "type",
+    "label": "Style type",
+    "none": {
+      "sling:resourceType": "wcm/dialogs/components/radio/option",
+      "label": "None",
+      "value": "none"
+    },
+    "fixed": {
+      "sling:resourceType": "wcm/dialogs/components/radio/option",
+      "label": "Fixed size",
+      "value": "fixed"
+    },
+    "ratio": {
+      "sling:resourceType": "wcm/dialogs/components/radio/option",
+      "label": "Ratio size",
+      "value": "ratio"
+    }
+  },
+  "fixed": {
+    "sling:resourceType": "wcm/dialogs/components/container",
+    "style": {
+      "sling:resourceType": "wcm/dialogs/components/include",
+      "path": "kyanite/common/components/image/attributes/fixed"
+    },
+    "ws:display": {
+      "condition": {
+        "sourceName": "type",
+        "values": "fixed"
+      }
+    }
+  },
+  "ratio": {
+    "sling:resourceType": "wcm/dialogs/components/container",
+    "style": {
+      "sling:resourceType": "wcm/dialogs/components/include",
+      "path": "kyanite/common/components/image/attributes/ratio"
+    },
+    "ws:display": {
+      "condition": {
+        "sourceName": "type",
+        "values": "ratio"
+      }
+    }
+  }
+}
