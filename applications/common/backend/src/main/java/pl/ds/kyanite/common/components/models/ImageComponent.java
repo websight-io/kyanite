@@ -151,6 +151,10 @@ public class ImageComponent {
   }
 
   public String getAssetReference() {
+    return LinkUtil.handleLink(assetReference, resourceResolver);
+  }
+
+  public String getSvgDocument() {
     if (isSvg && !isAnyMediaAsset()) {
       if (isInternal) {
         return svgImageService.getSvgFromResource(assetReference, resourceResolver);
@@ -158,8 +162,7 @@ public class ImageComponent {
         return svgImageService.getSvgFromExternalUrl(assetReference);
       }
     }
-
-    return LinkUtil.handleLink(assetReference, resourceResolver);
+    return null;
   }
 
   public String getStyle() {

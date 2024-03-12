@@ -18,7 +18,7 @@
   <sly data-sly-set.shadowClass="${model.hasShadow ? 'has-shadow' : ''}"></sly>
 
   <sly data-sly-test.isSvg="${model.isSvg && !model.isAnyMediaAsset}">
-    <span class="image ${model.style} ${shadowClass}">${model.assetReference @ context='unsafe'}</span>
+    <span class="image ${model.style} ${shadowClass}">${model.svgDocument @ context='unsafe'}</span>
   </sly>
 
   <sly data-sly-test="${!isSvg}">
