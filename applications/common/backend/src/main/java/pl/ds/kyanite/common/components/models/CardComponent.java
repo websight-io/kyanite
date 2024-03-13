@@ -22,15 +22,19 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
+import lombok.experimental.Delegate;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import pl.ds.kyanite.common.components.models.background.ComponentWithBackground;
+import pl.ds.kyanite.common.components.models.background.DefaultComponentWithBackground;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
-public class CardComponent {
+public class CardComponent implements ComponentWithBackground {
 
   public static final String CARD_CONTENT_TYPE = "kyanite/common/components/card/cardcontent";
 
@@ -63,6 +67,10 @@ public class CardComponent {
 
   @SlingObject
   private Resource resource;
+
+  @Self
+  @Delegate
+  private DefaultComponentWithBackground componentWithBackground;
 
   @PostConstruct
   void init() {

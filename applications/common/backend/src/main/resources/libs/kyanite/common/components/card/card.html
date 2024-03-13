@@ -15,9 +15,17 @@
   ~     limitations under the License.
   ~
 */-->
-
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.CardComponent">
-  <div class="card ${model.heightVariant}">
+
+  <sly data-sly-test.hasBackground="${model.hasBackgroundImage}">
+    <sly data-sly-set.backgroundStyle="--desktop-background-image:${model.desktopBackgroundImage @ context='text'};--tablet-background-image:${model.tabletBackgroundImage @ context='text'};--mobile-background-image:${model.mobileBackgroundImage @ context='text'};"></sly>
+  </sly>
+  <sly data-sly-test="${!hasBackground}">
+    <sly data-sly-set.backgroundStyle=""></sly>
+  </sly>
+
+  <div class="card ${model.heightVariant} ${model.hasBackgroundImage ? 'with-background-image' : ''}"
+       style="${backgroundStyle @ context='html'}">
     <sly data-sly-test="${model.header}">
       <header class="card-header">
         <p class="card-header-title">${model.header}</p>
