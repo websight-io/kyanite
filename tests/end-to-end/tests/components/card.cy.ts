@@ -55,7 +55,9 @@ describe('Card component', function () {
       .findByTestId("Input_Chooseimage")
       .clear().type('/content/kyanite-e2e-tests/assets/images/personal/PortfolioForum.png');
     cy.getByTestId('ModalDialog_Card')
-      .find('div[class^="Input_Imageratio__control"]').click();
+      .findByTestId("RadioElement_ratio").click();
+    cy.getByTestId('ModalDialog_Card')
+      .find('div[class^="Input_Ratioofimage__input-container"]').click();
     cy.contains('16 by 9').click({ force: true });
 
     cy.getByTestId('ModalDialog_Card')
@@ -85,6 +87,7 @@ describe('Card component', function () {
       'image': {
         alt: 'Alt text',
         assetReference: '/content/kyanite-e2e-tests/assets/images/personal/PortfolioForum.png',
+        type: 'ratio',
         style: 'is-16by9',
         'jcr:primaryType': 'nt:unstructured',
       },
