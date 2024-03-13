@@ -17,21 +17,23 @@
 package pl.ds.kyanite.common.components.models;
 
 import java.util.List;
-import java.util.Objects;
-import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
+import lombok.experimental.Delegate;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.kyanite.common.components.models.background.ComponentWithBackground;
+import pl.ds.kyanite.common.components.models.background.DefaultComponentWithBackground;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class SectionComponent {
+public class SectionComponent implements ComponentWithBackground {
 
   @SlingObject
   private Resource resource;
@@ -45,19 +47,12 @@ public class SectionComponent {
   @Getter
   private String id;
 
-  @Inject
-  private ImageComponent desktopBackgroundImage;
-
-  @Inject
-  @Getter
-  private ImageComponent tabletBackgroundImage;
-
-  @Inject
-  @Getter
-  private ImageComponent mobileBackgroundImage;
-
   @Getter
   List<Resource> children;
+
+  @Self
+  @Delegate
+  private DefaultComponentWithBackground componentWithBackground;
 
   @PostConstruct
   void init() {
@@ -69,32 +64,5 @@ public class SectionComponent {
         //Image is defined on dialog level and should not be displayed in as separate component
         .filter(res -> !StringUtils.equals("nt:unstructured", res.getResourceType()))
         .toList();
-  }
-
-  public String getDesktopBackgroundImage() {
-    return getBackgroundImage(desktopBackgroundImage);
-  }
-
-  public String getTabletBackgroundImage() {
-    return getBackgroundImage(tabletBackgroundImage);
-  }
-
-  public String getMobileBackgroundImage() {
-    return getBackgroundImage(mobileBackgroundImage);
-  }
-
-  public boolean getHasBackgroundImage() {
-    return Stream.of(desktopBackgroundImage, tabletBackgroundImage, mobileBackgroundImage)
-        .filter(Objects::nonNull)
-        .map(ImageComponent::getAssetReference)
-        .anyMatch(Objects::nonNull);
-  }
-
-  private String getBackgroundImage(ImageComponent image) {
-    if (image == null || image.getAssetReference() == null) {
-      return "none";
-    }
-
-    return String.format("url('%s')", image.getAssetReference());
   }
 }

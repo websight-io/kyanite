@@ -65,6 +65,10 @@
         }
       }
     },
+    "backgroundImage": {
+      "sling:resourceType": "wcm/dialogs/components/include",
+      "path": "/libs/kyanite/common/components/common/backgroundimage"
+    },
     "footer": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Footer",
