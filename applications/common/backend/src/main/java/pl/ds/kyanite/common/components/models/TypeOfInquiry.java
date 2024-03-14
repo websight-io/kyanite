@@ -33,8 +33,24 @@ public class TypeOfInquiry {
   private String label;
 
   @ValueMapValue
-  @Getter
   @Default(values = StringUtils.EMPTY)
   private String email;
+
+  public String[] getMailParts() {
+    int atIndex = email.indexOf("@");
+    int dotIndex = email.lastIndexOf(".");
+
+    if (atIndex == -1 || dotIndex == -1) {
+      return new String[]{
+          "", "", ""
+      };
+    }
+
+    return new String[]{
+        email.substring(0, atIndex),
+        email.substring(atIndex + 1, dotIndex),
+        email.substring(dotIndex + 1)
+    };
+  }
 
 }

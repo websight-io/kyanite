@@ -29,8 +29,12 @@
                   tabindex="1"
                   name="type">
             <option disabled selected value>Select an option</option>
-            <sly data-sly-list.item="${model.typeOfInquiryValue}">
-              <option value="${model.typeOfInquiryValue[item]}">${item}</option>
+            <sly data-sly-list.item="${model.types}">
+              <option
+                  data-value-part1="${item.mailParts[0]}"
+                  data-value-part2="${item.mailParts[1]}"
+                  data-value-part3="${item.mailParts[2]}"
+                  value="${item.label}">${item.label}</option>
             </sly>
           </select>
         </div>
