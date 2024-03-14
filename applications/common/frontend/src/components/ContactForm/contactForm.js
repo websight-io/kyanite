@@ -28,6 +28,7 @@ const initForm = () => {
                 const emailValidateErrorEl = form.getElementsByClassName('email-validate-error')[0];
                 const emailInputEl = form.getElementsByClassName('email-input')[0];
                 const contactForm = form.dataset.configHttpEndPoint;
+                const captchaPublicKey = form.dataset.configCaptchaPublicKey;
 
                 const sendForm = (submitForm, formData) => {
                     fetch(submitForm, {
@@ -94,15 +95,47 @@ const initForm = () => {
                     !formFailureEl.classList.contains('is-hidden') && formFailureEl.classList.add('is-hidden');
                 };
 
-                const submitForm = () => {
-                    const formData = new FormData(form);
-                    let email = false;
-                    for (let data of formData.entries()) {
-                        if (data[0] === 'email') {
-                            email = data[1];
-                        }
+                const parseMailAddress = (messageType) =>  {
+                    const selectedOption = messageType.selectedOptions[0];
+                    if (selectedOption == null) {
+                        return null;
                     }
-                    isValidEmail(email) ? startSubmit(formData) : showEmailError();
+                    const data = selectedOption.dataset;
+                    if (data.valuePart1 == null || data.valuePart2 == null || data.valuePart3 == null) {
+                        return null;
+                    }
+
+                    return data.valuePart1.trim() + "@" + data.valuePart2.trim() + "." + data.valuePart3.trim()
+                }
+
+                const parseFormData = (form) => {
+                    return new Promise(async resolve => {
+                        const data = new FormData();
+
+                        data.set('email', form.email.value);
+                        data.set('type', form.type.value);
+                        data.set('sendTo', parseMailAddress(form.type));
+                        data.set('name', form.name.value);
+                        data.set('message', form.message.value);
+
+                        await new Promise((resolve) => grecaptcha.ready(() => resolve()));
+                        const token = await grecaptcha.execute(captchaPublicKey, { action: 'submit' });
+                        data.set('g-recaptcha-response', token);
+
+                        resolve(data);
+                    });
+                }
+
+                const submitForm = () => {
+                    parseFormData(form).then(formData => {
+                        let email = false;
+                        for (let data of formData.entries()) {
+                            if (data[0] === 'email') {
+                                email = data[1];
+                            }
+                        }
+                        isValidEmail(email) ? startSubmit(formData) : showEmailError();
+                    })
                 };
 
                 hideEmailError();

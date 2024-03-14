@@ -48,6 +48,7 @@ public class ContactFormComponent {
   private RecaptchaConfigStore recaptchaConfigStore;
 
   @Inject
+  @Getter
   private List<TypeOfInquiry> types = new ArrayList<>();
 
   @ValueMapValue
@@ -74,15 +75,6 @@ public class ContactFormComponent {
       return config.getCaptchaPublicKey();
     }
     return null;
-  }
-
-  public Map<String, String> getTypeOfInquiryValue() {
-    return types.stream().collect(Collectors.toMap(
-        TypeOfInquiry::getLabel,
-        elem -> Json.createObjectBuilder().add("subject", elem.getLabel())
-            .add("email", elem.getEmail())
-            .build()
-            .toString()));
   }
 
   public String getConfigEndpoint() {
