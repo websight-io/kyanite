@@ -47,7 +47,8 @@ $color-navbar-link: var(--color-grey--900);
     .navbar-dropdown {
       a.navbar-item:focus,
       a.navbar-item:hover {
-        background-color: #f5f5f5 !important;
+        background-color: var(--base-color-secondary-background, #f5f5f5) !important;
+        color: var(--base-color-body-text, #0a0a0a);
       }
     }
 
