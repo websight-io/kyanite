@@ -58,7 +58,7 @@
 
   .content,
   .content.has-text-grey-darker {
-    color: var(--color-grey--100) !important;
+    color: var(--base-color-body-text, var(--color-grey--100)) !important;
 
     &.is-small {
       @extend .mt-5_1;
@@ -75,7 +75,7 @@
   }
 
   .icon {
-    color: var(--color-grey--100) !important;
+    color: var(--base-color-body-text, var(--color-grey--100)) !important;
 
     &:not(:last-of-type) {
       margin-right: var(--spacing-5);
@@ -102,7 +102,7 @@
     .menu-label {
       margin: 0;
       text-transform: unset;
-      color: var(--color-grey--400) !important;
+      color: var(--base-color-menu-label, var(--color-grey--400)) !important;
       font-size: var(--font-size-16);
     }
 
@@ -115,7 +115,7 @@
       display: inline-block;
       @include link.a-animated-underline-link;
       @extend .p-0;
-      color: var(--color-grey--100) !important;
+      color: var(--base-color-body-text, var(--color-grey--100)) !important;
 
       &:hover {
         background-color: unset;
