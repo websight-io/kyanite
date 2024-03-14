@@ -28,8 +28,9 @@ document.addEventListener('scroll', () => {
     }
 })
 document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
-
-    handleFixedNavbarPosition();
+    setTimeout(() => { // setTimeout is a workaround for Safari bug https://teamds.atlassian.net/browse/KYAN-159
+        handleFixedNavbarPosition();
+    }, 0)
 
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
