@@ -40,22 +40,22 @@ export class AnimatedEndings {
       showCursor: this.showCursor,
       smartBackspace: false,
     });
-    this.setHeightOfTitle();
+    setTimeout(() => {
+      this.setHeightOfTitle();
+    }, 0);
     window.onresize = () => {
       this.setHeightOfTitle();
     };
   }
 
   setHeightOfTitle() {
-    setTimeout(() => {
-      const heights = Array.from(
-        this.titleElement.querySelectorAll('.container-with-endings > span')
-      ).map((ending) => {
-        return ending.clientHeight;
-      });
-      const titleContainer: HTMLElement =
-        this.titleElement.querySelector('.title-container');
-      titleContainer.style.height = Math.max(...heights) + 'px';
-    }, 0);
+    const heights = Array.from(
+      this.titleElement.querySelectorAll('.container-with-endings > span')
+    ).map((ending) => {
+      return ending.clientHeight;
+    });
+    const titleContainer: HTMLElement =
+      this.titleElement.querySelector('.title-container');
+    titleContainer.style.height = Math.max(...heights) + 'px';
   }
 }
