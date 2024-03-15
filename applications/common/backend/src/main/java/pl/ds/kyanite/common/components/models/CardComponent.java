@@ -16,6 +16,7 @@
 
 package pl.ds.kyanite.common.components.models;
 
+import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
 import java.util.List;
@@ -25,6 +26,7 @@ import lombok.Getter;
 import lombok.experimental.Delegate;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.Self;
@@ -32,6 +34,7 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import pl.ds.kyanite.common.components.models.background.ComponentWithBackground;
 import pl.ds.kyanite.common.components.models.background.DefaultComponentWithBackground;
+import pl.ds.kyanite.common.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class CardComponent implements ComponentWithBackground {
@@ -52,6 +55,14 @@ public class CardComponent implements ComponentWithBackground {
   @Default(values = "top")
   private String imagePosition;
 
+  @ValueMapValue
+  @Getter
+  private String mobileAssetReference;
+
+  @ValueMapValue
+  @Getter
+  private String tabletAssetReference;
+
   @Inject
   @Getter
   private List<UrlComponent> urls;
@@ -68,6 +79,9 @@ public class CardComponent implements ComponentWithBackground {
   @SlingObject
   private Resource resource;
 
+  @SlingObject
+  private ResourceResolver resourceResolver;
+
   @Self
   @Delegate
   private DefaultComponentWithBackground componentWithBackground;
@@ -81,5 +95,17 @@ public class CardComponent implements ComponentWithBackground {
         break;
       }
     }
+  }
+
+  public boolean isAnyMediaAsset() {
+    return isNotEmpty(mobileAssetReference) || isNotEmpty(tabletAssetReference);
+  }
+
+  public String getTabletAssetReference() {
+    return LinkUtil.handleLink(tabletAssetReference, resourceResolver);
+  }
+
+  public String getMobileAssetReference() {
+    return LinkUtil.handleLink(mobileAssetReference, resourceResolver);
   }
 }

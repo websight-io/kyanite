@@ -36,11 +36,11 @@
 
 <template data-sly-template.picture="${ @ model }">
   <picture>
-    <sly data-sly-test.mobileAssetReference="${model.mobileAssetReference}">
-      <source media="(max-width:767px)" srcset="${mobileAssetReference}"/>
+    <sly data-sly-test="${model.mobileAssetReference}">
+      <source media="(max-width:767px)" srcset="${model.mobileAssetReference @ context='uri'}"/>
     </sly>
-    <sly data-sly-test.tabletAssetReference="${model.tabletAssetReference}">
-      <source media="(max-width:1023px)" srcset="${tabletAssetReference}"/>
+    <sly data-sly-test="${model.tabletAssetReference}">
+      <source media="(max-width:1023px)" srcset="${model.tabletAssetReference @ context='uri'}"/>
     </sly>
 
     <img class="${model.isRounded ? 'is-rounded' : ''}" src="${model.assetReference}" alt="${model.alt}">
@@ -53,11 +53,11 @@
          height="${model.height}"
          data-sly-attribute="${model.attributes}"
          controlslist="nodownload" preload="none">
-    <sly data-sly-test.mobileAssetReference="${model.mobileAssetReference}">
-      <source media="(max-width:767px)" src="${mobileAssetReference}"/>
+    <sly data-sly-test="${model.mobileAssetReference}">
+      <source media="(max-width:767px)" src="${model.mobileAssetReference}"/>
     </sly>
-    <sly data-sly-test.tabletAssetReference="${model.tabletAssetReference}">
-      <source media="(max-width:1023px)" src="${tabletAssetReference}"/>
+    <sly data-sly-test="${model.tabletAssetReference}">
+      <source media="(max-width:1023px)" src="${model.tabletAssetReference}"/>
     </sly>
     <source src="${model.assetReference}">
   </video>
