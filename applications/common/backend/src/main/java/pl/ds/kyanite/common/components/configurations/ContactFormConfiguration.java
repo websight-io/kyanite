@@ -23,8 +23,14 @@ import org.osgi.service.metatype.annotations.ObjectClassDefinition;
     description = "Reads the endpoint where the contact form data is submitted")
 public @interface ContactFormConfiguration {
 
-  @AttributeDefinition(name = "Endpoint",
-      description = "Enter the endpoint where the contact form data is submitted")
-  String endpoint();
+  @AttributeDefinition(name = "Host",
+      description = "Contact form service host")
+  String host();
+
+  @AttributeDefinition(name = "Path",
+      description = "Contact form service URL path")
+  String path();
+
+
 
 }
