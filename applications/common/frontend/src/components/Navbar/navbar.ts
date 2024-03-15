@@ -28,11 +28,6 @@ document.addEventListener('scroll', () => {
   }
 });
 
-// window.addEventListener('resize', () => {
-//   const desktopMQ = window.matchMedia(`(min-width: ${breakpoints.lg}px)`);
-//   handleMegamenuHover(desktopMQ.matches);
-// });
-
 document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
   handleFixedNavbarPosition();
 
@@ -67,6 +62,7 @@ document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
 
   const actionForNavbarMega = (desktopMQ) => {
     handleMegamenuHover(desktopMQ.matches);
+
     // On desktop the dropdowns are hoverable
     if (desktopMQ.matches) {
       $navbarMega.forEach((el) => {
@@ -148,7 +144,11 @@ function handleMegamenuHover(isDesktop) {
 
   const handleHover = (event) => {
     closeMegamenu();
-    openMegamenu(event.target);
+
+    const item = event.target;
+    if (item.classList.contains('is-hoverable')) {
+      openMegamenu(item);
+    }
   };
 
   if (isDesktop) {
