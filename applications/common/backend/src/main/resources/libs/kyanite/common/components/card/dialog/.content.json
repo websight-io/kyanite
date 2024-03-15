@@ -30,38 +30,114 @@
     "imageTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Image",
-      "imageSource": {
-        "sling:resourceType": "wcm/dialogs/components/include",
-        "include": {
-          "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
-          "assetReference": {
-            "mimeTypes": ["image/*"],
-            "name": "image/assetReference"
+      "tabs": {
+        "sling:resourceType": "wcm/dialogs/components/tabs",
+        "defaultTab": {
+          "sling:resourceType": "wcm/dialogs/components/tab",
+          "label": "Default",
+          "imageSource": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
+              "assetReference": {
+                "mimeTypes": ["image/*"],
+                "name": "image/assetReference"
+              },
+              "src": {
+                "name": "image/assetReference"
+              }
+            }
           },
-          "src": {
-            "name": "image/assetReference"
+          "image": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/common/components/card/common/image"
+            }
+          },
+          "imagePosition": {
+            "sling:resourceType": "wcm/dialogs/components/radio",
+            "name": "imagePosition",
+            "label": "Position",
+            "none": {
+              "sling:resourceType": "wcm/dialogs/components/radio/option",
+              "label": "Top",
+              "value": "top"
+            },
+            "fixed": {
+              "sling:resourceType": "wcm/dialogs/components/radio/option",
+              "label": "Bottom",
+              "value": "bottom"
+            }
           }
-        }
-      },
-      "image": {
-        "sling:resourceType": "wcm/dialogs/components/include",
-        "include": {
-          "sling:resourceSuperType": "kyanite/common/components/card/common/image"
-        }
-      },
-      "imagePosition": {
-        "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "imagePosition",
-        "label": "Position",
-        "none": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Top",
-          "value": "top"
         },
-        "fixed": {
-          "sling:resourceType": "wcm/dialogs/components/radio/option",
-          "label": "Bottom",
-          "value": "bottom"
+        "mediaTab": {
+          "sling:resourceType": "wcm/dialogs/components/tab",
+          "label": "Media",
+          "mobileImageSource": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
+              "imageSrcType": {
+                "name": "mobileImageSrcType",
+                "label": "Mobile image source type"
+              },
+              "assetReference": {
+                "name": "mobileAssetReference",
+                "label": "Choose mobile image",
+                "mimeTypes": [
+                  "image/*",
+                  "video/*"
+                ],
+                "ws:display": {
+                  "condition": {
+                    "sourceName": "mobileImageSrcType",
+                    "values": "asset"
+                  }
+                }
+              },
+              "src": {
+                "name": "mobileAssetReference",
+                "label": "Choose mobile image",
+                "ws:display": {
+                  "condition": {
+                    "sourceName": "mobileImageSrcType",
+                    "values": "link"
+                  }
+                }
+              }
+            }
+          },
+          "tabletImageSource": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
+              "imageSrcType": {
+                "name": "tabletImageSrcType",
+                "label": "Tablet image source type"
+              },
+              "assetReference": {
+                "name": "tabletAssetReference",
+                "label": "Choose tablet image",
+                "mimeTypes": ["image/*", "video/*"],
+                "ws:display": {
+                  "condition": {
+                    "sourceName": "tabletImageSrcType",
+                    "values": "asset"
+                  }
+                }
+              },
+              "src": {
+                "name": "tabletAssetReference",
+                "label": "Choose tablet image",
+                "ws:display": {
+                  "condition": {
+                    "sourceName": "tabletImageSrcType",
+                    "values": "link"
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },

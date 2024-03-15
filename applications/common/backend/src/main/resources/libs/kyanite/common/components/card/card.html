@@ -15,7 +15,8 @@
   ~     limitations under the License.
   ~
 */-->
-<sly data-sly-use.model="pl.ds.kyanite.common.components.models.CardComponent">
+<sly data-sly-use.model="pl.ds.kyanite.common.components.models.CardComponent"
+     data-sly-use.template="./template.html">
 
   <sly data-sly-test.hasBackground="${model.hasBackgroundImage}">
     <sly data-sly-set.backgroundStyle="--desktop-background-image:${model.desktopBackgroundImage @ context='text'};--tablet-background-image:${model.tabletBackgroundImage @ context='text'};--mobile-background-image:${model.mobileBackgroundImage @ context='text'};"></sly>
@@ -34,9 +35,7 @@
 
     <sly data-sly-test="${model.image.assetReference && model.imagePosition == 'top'}">
       <div class="card-image">
-        <figure class="image ${model.image.style}">
-          <img src="${model.image.assetReference}" alt="${model.image.alt}" />
-        </figure>
+        <sly data-sly-call="${template.image @ model=model}"></sly>
       </div>
     </sly>
 
@@ -56,9 +55,7 @@
 
     <sly data-sly-test="${model.image.assetReference && model.imagePosition == 'bottom'}">
       <div class="card-image">
-        <figure class="image ${model.image.style}">
-          <img src="${model.image.assetReference}" alt="${model.image.alt}" />
-        </figure>
+        <sly data-sly-call="${template.image @ model=model}"></sly>
       </div>
     </sly>
 

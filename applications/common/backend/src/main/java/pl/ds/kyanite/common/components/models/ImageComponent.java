@@ -96,11 +96,9 @@ public class ImageComponent {
   private String height;
 
   @ValueMapValue
-  @Getter
   private String mobileAssetReference;
 
   @ValueMapValue
-  @Getter
   private String tabletAssetReference;
 
   @SlingObject
@@ -152,6 +150,14 @@ public class ImageComponent {
 
   public String getAssetReference() {
     return LinkUtil.handleLink(assetReference, resourceResolver);
+  }
+
+  public String getTabletAssetReference() {
+    return LinkUtil.handleLink(tabletAssetReference, resourceResolver);
+  }
+
+  public String getMobileAssetReference() {
+    return LinkUtil.handleLink(mobileAssetReference, resourceResolver);
   }
 
   public String getSvgDocument() {
