@@ -14,34 +14,48 @@
  * limitations under the License.
  */
 
-import Typed from "typed.js";
+import Typed from 'typed.js';
 
-  
-  export class AnimatedEndings {
-    static readonly SELECTOR = '.typed-animation';
-    public readonly STRINGS_SELECTOR = '.typed-strings-animation';
-    public readonly element: HTMLElement;
-    public readonly titleElement: HTMLElement;
-    public readonly showCursor: boolean;
-    public readonly speed: number;
-  
-    constructor(element, title) {
-      this.element = element;
-      this.titleElement = title;
-      this.showCursor = JSON.parse(element.dataset.showCursor);
-      this.speed = Number(element.dataset.speed);
-      this.init()
-    }
+export class AnimatedEndings {
+  static readonly SELECTOR = '.typed-animation';
+  public readonly STRINGS_SELECTOR = '.typed-strings-animation';
+  public readonly element: HTMLElement;
+  public readonly titleElement: HTMLElement;
+  public readonly showCursor: boolean;
+  public readonly speed: number;
 
-    init() {
-      new Typed(this.element, { 
-        stringsElement: this.titleElement.querySelector(this.STRINGS_SELECTOR), 
-        loop: true, 
-        typeSpeed: this.speed, 
-        showCursor: this.showCursor, 
-        smartBackspace: false 
-      })
-    }
+  constructor(element, title) {
+    this.element = element;
+    this.titleElement = title;
+    this.showCursor = JSON.parse(element.dataset.showCursor);
+    this.speed = Number(element.dataset.speed);
+    this.init();
   }
-  
-  
+
+  init() {
+    new Typed(this.element, {
+      stringsElement: this.titleElement.querySelector(this.STRINGS_SELECTOR),
+      loop: true,
+      typeSpeed: this.speed,
+      showCursor: this.showCursor,
+      smartBackspace: false,
+    });
+    setTimeout(() => {
+      this.setHeightOfTitle();
+    }, 0);
+    window.onresize = () => {
+      this.setHeightOfTitle();
+    };
+  }
+
+  setHeightOfTitle() {
+    const heights = Array.from(
+      this.titleElement.querySelectorAll('.container-with-endings > span')
+    ).map((ending) => {
+      return ending.clientHeight;
+    });
+    const titleContainer: HTMLElement =
+      this.titleElement.querySelector('.title-container');
+    titleContainer.style.height = Math.max(...heights) + 'px';
+  }
+}

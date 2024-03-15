@@ -67,3 +67,19 @@
     @include font.t-font-size-fluid(22, 32);
   }
 }
+
+.container-with-endings {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  > span {
+    left: 0;
+    position: absolute;
+    visibility: hidden;
+    color: transparent !important;
+  }
+}
+
+.typed-strings-animation {
+  color: transparent !important;
+}
