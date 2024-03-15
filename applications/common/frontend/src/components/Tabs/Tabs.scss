@@ -119,8 +119,10 @@
     .tabs-content {
       width: 100%;
       text-align: center;
+      margin-top: var(--spacing-6);
       @include breakpoint.media-breakpoint-xlarge {
-        margin-left: var(--spacing-4);
+        margin-left: var(--spacing-6);
+        margin-top: 0;
       }
     }
     @include breakpoint.media-breakpoint-xlarge {
