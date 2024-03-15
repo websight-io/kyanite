@@ -121,11 +121,19 @@ function handleMegamenuHover(isDesktop) {
   const allNavbarItems = Array.from(
     document.querySelectorAll('.navbar-end > .navbar-item')
   ); // only first level
+
+  if (!allNavbarItems.length) {
+    return;
+  }
   const itemsWithMegamenuDropdown = allNavbarItems.filter((item) =>
     item
       .querySelector('.navbar-dropdown')
       ?.classList.contains('navbar-mega-dropdown')
   );
+
+  if (!itemsWithMegamenuDropdown.length) {
+    return;
+  }
 
   const hasMegaDropdown = (item: HTMLElement) =>
     item
