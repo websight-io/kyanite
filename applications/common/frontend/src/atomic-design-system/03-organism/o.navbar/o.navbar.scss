@@ -241,8 +241,10 @@ $color-navbar-link: var(--color-grey--900);
 
         @include breakpoint.media-breakpoint-large {
           .navbar-dropdown {
-            display: block;
-            background-color: var(--base-color-secondary-background, var(--base-color-white));
+            &:not(.navbar-mega-dropdown) {
+              display: block;
+              background-color: var(--base-color-secondary-background, var(--base-color-white));
+            }
           }
         }
       }
@@ -287,6 +289,12 @@ $color-navbar-link: var(--color-grey--900);
         @include breakpoint.media-breakpoint-large {
           padding-left: 0;
           padding-right: 0 !important; // overwrite above @extend .pr-3
+        }
+      }
+      &.is-hovered {
+        .navbar-mega-dropdown {
+          display: block;
+          background-color: var(--base-color-secondary-background, var(--base-color-white));
         }
       }
     }
