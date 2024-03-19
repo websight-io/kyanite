@@ -158,7 +158,7 @@ public class TitleComponent {
     subtitleClasses = subtitleClassList.toArray(new String[]{});
     endingsClasses = endingsClassList.toArray(new String[] {});
     titleAlign = this.searchTitleAlign();
-    endingJson = getEndingJson();
+    endingJson = this.getEndingJson();
   }
 
   private String searchTitleAlign() {
@@ -212,7 +212,7 @@ public class TitleComponent {
     return addEyebrow ? eyebrowText : StringUtils.EMPTY;
   }
 
-  public String getEnidingsJson(String value) {
+  public String getEndingJson() {
     JsonArrayBuilder jsonArrayBuilder = Json.createArrayBuilder();
     for (AnimatedEndings ending : endings) {
       jsonArrayBuilder.add(ending.getValue());
