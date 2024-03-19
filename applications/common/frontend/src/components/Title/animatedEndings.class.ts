@@ -18,7 +18,6 @@ import Typed from 'typed.js';
 
 export class AnimatedEndings {
   static readonly SELECTOR = '.typed-animation';
-  public readonly STRINGS_SELECTOR = '.typed-strings-animation';
   public readonly element: HTMLElement;
   public readonly titleElement: HTMLElement;
   public readonly showCursor: boolean;
@@ -41,23 +40,22 @@ export class AnimatedEndings {
       typeSpeed: this.speed,
       showCursor: this.showCursor,
       smartBackspace: false,
+      backDelay: 1300,
     });
-    setTimeout(() => {
-      this.setHeightOfTitle();
-    }, 0);
+    AnimatedEndings.setHeightOfTitle(this.titleElement); // will be overwritten in onload event (to avoid jumping)
     window.onresize = () => {
-      this.setHeightOfTitle();
+      AnimatedEndings.setHeightOfTitle(this.titleElement);
     };
   }
 
-  setHeightOfTitle() {
+  static setHeightOfTitle(titleEl: HTMLElement) {
     const heights = Array.from(
-      this.titleElement.querySelectorAll('.container-with-endings > span')
+      titleEl.querySelectorAll('.container-with-endings > span')
     ).map((ending) => {
       return ending.clientHeight;
     });
     const titleContainer: HTMLElement =
-      this.titleElement.querySelector('.title-container');
+      titleEl.querySelector('.title-container');
     titleContainer.style.height = Math.max(...heights) + 'px';
   }
 }

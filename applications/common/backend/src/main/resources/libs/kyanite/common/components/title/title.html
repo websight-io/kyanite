@@ -26,8 +26,17 @@
     ${model.textAsOneLine @ context='html'}
     
     <sly data-sly-test="${model.addAnimatedEndings}">
+      <!--/* list for SEO purposes */-->
+      <div class="typed-strings-animation ${model.endingsClasses @ join=' '}" data-sly-test="${wcmmode.isEdit}">
+        <sly data-sly-list.item="${model.endings}">
+          <span>
+            ${item.value}
+          </span>
+        </sly>
+      </div>
+      <!--/* end */-->
       <div class="title-container" data-sly-test="${!wcmmode.isEdit && model.endings}">
-          <!--/* list for SEO and to get the heighest element */-->
+          <!--/* for SEO purposes and to get the heighest element */-->
           <sly data-sly-test="${model.addAnimatedEndings}">
           <div class="container-with-endings ${model.endingsClasses @ join=' '}">
             <sly data-sly-list.item="${model.endings}">
