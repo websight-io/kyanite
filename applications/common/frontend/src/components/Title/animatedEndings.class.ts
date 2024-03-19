@@ -23,18 +23,20 @@ export class AnimatedEndings {
   public readonly titleElement: HTMLElement;
   public readonly showCursor: boolean;
   public readonly speed: number;
+  public readonly strings: string[];
 
   constructor(element, title) {
     this.element = element;
     this.titleElement = title;
     this.showCursor = JSON.parse(element.dataset.showCursor);
     this.speed = Number(element.dataset.speed);
+    this.strings = JSON.parse(element.dataset.endings);
     this.init();
   }
 
   init() {
     new Typed(this.element, {
-      stringsElement: this.titleElement.querySelector(this.STRINGS_SELECTOR),
+      strings: this.strings,
       loop: true,
       typeSpeed: this.speed,
       showCursor: this.showCursor,

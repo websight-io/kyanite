@@ -26,17 +26,8 @@
     ${model.textAsOneLine @ context='html'}
     
     <sly data-sly-test="${model.addAnimatedEndings}">
-      <!--/* list for SEO purposes */-->
-      <span class="${model.endingsClasses @ join=' '} typed-strings-animation">
-        <sly data-sly-list.item="${model.endings}">
-          <span>
-            ${item.value}
-          </span>
-        </sly>
-      </span>
-      <!--/* end */-->
       <div class="title-container" data-sly-test="${!wcmmode.isEdit && model.endings}">
-          <!--/* list to get the heighest element */-->
+          <!--/* list for SEO and to get the heighest element */-->
           <sly data-sly-test="${model.addAnimatedEndings}">
           <div class="container-with-endings ${model.endingsClasses @ join=' '}">
             <sly data-sly-list.item="${model.endings}">
@@ -47,7 +38,7 @@
           </div>
         </sly>
         <!--/* end */-->
-        <span class="${model.endingsClasses @ join=' '} typed-animation" data-show-cursor="${model.showCursor}" data-endings="${model.endings.values}" data-speed="${model.speed}"></span>
+        <span class="${model.endingsClasses @ join=' '} typed-animation" data-show-cursor="${model.showCursor}" data-endings="${model.endingJson}" data-speed="${model.speed}"></span>
         <sly data-sly-test="${!model.showCursor}"><span class="typed-cursor" style="visibility: hidden" aria-hidden="true">|</span></sly>
       </div>
     </sly>
