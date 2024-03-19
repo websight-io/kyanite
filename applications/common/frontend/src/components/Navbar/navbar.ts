@@ -28,6 +28,11 @@ document.addEventListener('scroll', () => {
   }
 });
 
+// fix for Safari bug KYAN-159
+window.addEventListener(window.KYANITE_ON_LOAD, () => {
+  handleFixedNavbarPosition();
+});
+
 document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
   handleFixedNavbarPosition();
 

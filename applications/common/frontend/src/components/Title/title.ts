@@ -30,4 +30,20 @@ const initTitleComponents = () => {
   });
 };
 
+// fix for Safari bug KYAN-159
+const setAnimatedEndingsHeight = () => {
+  window.addEventListener(window.KYANITE_ON_LOAD, () => {
+    Array.from(document.querySelectorAll(TitleComponent.SELECTOR)).forEach(
+      (component: HTMLElement) => {
+        Array.from(
+          component.querySelectorAll(AnimatedEndings.SELECTOR)
+        ).forEach(() => {
+          AnimatedEndings.setHeightOfTitle(component);
+        });
+      }
+    );
+  });
+};
+
 initTitleComponents();
+setAnimatedEndingsHeight();

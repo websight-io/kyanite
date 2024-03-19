@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.stream.Stream;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.json.Json;
+import javax.json.JsonArrayBuilder;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
@@ -104,6 +106,10 @@ public class TitleComponent {
 
   @Inject
   @Getter
+  private String endingJson;
+
+  @Inject
+  @Getter
   private String endingsColor;
 
   @Inject
@@ -152,6 +158,7 @@ public class TitleComponent {
     subtitleClasses = subtitleClassList.toArray(new String[]{});
     endingsClasses = endingsClassList.toArray(new String[] {});
     titleAlign = this.searchTitleAlign();
+    endingJson = this.getEndingJson();
   }
 
   private String searchTitleAlign() {
@@ -203,5 +210,14 @@ public class TitleComponent {
 
   public String getEyebrowText() {
     return addEyebrow ? eyebrowText : StringUtils.EMPTY;
+  }
+
+  public String getEndingJson() {
+    JsonArrayBuilder jsonArrayBuilder = Json.createArrayBuilder();
+    for (AnimatedEndings ending : endings) {
+      jsonArrayBuilder.add(ending.getValue());
+    }
+
+    return jsonArrayBuilder.build().toString();
   }
 }
