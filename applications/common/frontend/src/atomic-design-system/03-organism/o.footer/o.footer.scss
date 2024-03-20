@@ -24,7 +24,7 @@
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
 
 @mixin o-footer {
-  background-color: var(--base-color-body-background, var(--color-grey--1000)) !important;
+  background-color: var(--base-color-footer-background, var(--color-grey--1000)) !important;
 
   @extend .py-6_4;
 
