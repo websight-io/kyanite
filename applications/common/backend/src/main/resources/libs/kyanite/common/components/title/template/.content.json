@@ -7,5 +7,6 @@
 	"size": "is-2",
 	"addAnimatedEndings": false,
 	"showCursor": false,
-	"speed": 50
+	"speed": 50,
+	"delay": 1200
 }

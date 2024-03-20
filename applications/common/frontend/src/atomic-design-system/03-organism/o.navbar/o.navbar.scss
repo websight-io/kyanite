@@ -416,7 +416,7 @@ $color-navbar-link: var(--color-grey--900);
           margin-top: var(--spacing-4);
         }
 
-        .navbar-item {
+        .navbar-item, .highlight-label {
           font-size: var(--font-size-32);
           font-weight: var(--font-weight-500);
           line-height: var(--line-height-150);

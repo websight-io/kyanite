@@ -118,7 +118,11 @@ public class TitleComponent {
 
   @Inject
   @Getter
-  private String speed;
+  private Integer speed;
+
+  @Inject
+  @Getter
+  private Integer delay;
 
   @OSGiService
   @Required

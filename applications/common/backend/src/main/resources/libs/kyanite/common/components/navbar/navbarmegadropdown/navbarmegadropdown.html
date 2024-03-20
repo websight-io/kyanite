@@ -49,7 +49,7 @@
             <sly data-sly-test="${!column.hideColumn && column.type == 'highlights'}">
               <div class="column highlights-column ${column.colSizeClass}">
                 <sly data-sly-list.highlight="${column.highlights}">
-                  <a class="navbar-item" href="${highlight.url}" target="${highlight.isExternalUrl ? '_blank' : ''}">
+                  <a data-sly-test="${highlight.url}" class="navbar-item" href="${highlight.url}" target="${highlight.isExternalUrl ? '_blank' : ''}">
                     ${highlight.label}
                     <sly data-sly-test="${item.isExternalUrl}">
                       <span class="icon">
@@ -57,6 +57,9 @@
                       </span>
                     </sly>
                   </a>
+                  <span data-sly-test="${!highlight.url}" class="highlight-label">
+                    ${highlight.label}
+                  </span>
                 </sly>
               </div>
             </sly>
