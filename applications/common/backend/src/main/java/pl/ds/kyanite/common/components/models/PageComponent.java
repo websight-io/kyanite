@@ -17,27 +17,38 @@
 package pl.ds.kyanite.common.components.models;
 
 import javax.annotation.PostConstruct;
+import javax.json.Json;
+import javax.json.JsonObjectBuilder;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import pl.ds.kyanite.common.components.services.CookieModalConfigStore;
+import pl.ds.kyanite.common.components.services.CookieModalConfiguration;
 import pl.ds.kyanite.common.components.services.RecaptchaConfigStore;
 import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
 import pl.ds.kyanite.common.components.utils.PageUtil;
 import pl.ds.kyanite.common.components.utils.PagesSpaceUtil;
 
+
 @Model(adaptables = Resource.class,
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class PageComponent {
 
+  public static final String PRIVACY_POLICY_PATH = "/privacy-policy.html";
+  public static final String CONTACT_US_PATH = "/about/contact-us.html";
   @SlingObject
   private Resource resource;
 
   @OSGiService
   private RecaptchaConfigStore recaptchaConfigStore;
+
+  @OSGiService
+  private CookieModalConfigStore cookieModalConfigStore;
 
   @Getter
   @ValueMapValue
@@ -49,10 +60,30 @@ public class PageComponent {
 
   private String spaceName;
 
+  @Getter
+  private String cookieData;
+
   @PostConstruct
   private void init() {
     spaceName = PagesSpaceUtil.getWsPagesSpaceName(resource.getPath(),
         resource.getResourceResolver());
+    initCookieData();
+  }
+
+  private void initCookieData() {
+    JsonObjectBuilder jsonObjectBuilder = Json.createObjectBuilder();
+    CookieModalConfiguration cookieModalConfiguration = cookieModalConfigStore.get(spaceName);
+    String privacyPolicyPath = PRIVACY_POLICY_PATH;
+    String contactUsPath = CONTACT_US_PATH;
+    if (cookieModalConfiguration != null) {
+      privacyPolicyPath = StringUtils.isNotBlank(cookieModalConfiguration.getPrivacyPolicyPath())
+          ? cookieModalConfiguration.getPrivacyPolicyPath() : privacyPolicyPath;
+      contactUsPath = StringUtils.isNotBlank(cookieModalConfiguration.getContactUsPath())
+          ? cookieModalConfiguration.getContactUsPath() : contactUsPath;
+    }
+    jsonObjectBuilder.add("privacyPolicyPath", privacyPolicyPath);
+    jsonObjectBuilder.add("contactUsPath", contactUsPath);
+    cookieData = jsonObjectBuilder.build().toString();
   }
 
   public String getCaptchaPublicKey() {
