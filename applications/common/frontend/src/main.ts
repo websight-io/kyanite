@@ -21,3 +21,4 @@ import './main.scss';
 import './helpers/load-events';
 import './components';
 import './emailDecryption';
+import './cookies/cookieConsents';
