@@ -22,6 +22,7 @@ export class AnimatedEndings {
   public readonly titleElement: HTMLElement;
   public readonly showCursor: boolean;
   public readonly speed: number;
+  public readonly delay: number;
   public readonly strings: string[];
 
   constructor(element, title) {
@@ -29,6 +30,7 @@ export class AnimatedEndings {
     this.titleElement = title;
     this.showCursor = JSON.parse(element.dataset.showCursor);
     this.speed = Number(element.dataset.speed);
+    this.delay = Number(element.dataset.delay);
     this.strings = JSON.parse(element.dataset.endings);
     this.init();
   }
@@ -40,7 +42,7 @@ export class AnimatedEndings {
       typeSpeed: this.speed,
       showCursor: this.showCursor,
       smartBackspace: false,
-      backDelay: 1300,
+      backDelay: this.delay,
     });
     AnimatedEndings.setHeightOfTitle(this.titleElement); // will be overwritten in onload event (to avoid jumping)
     window.onresize = () => {

@@ -120,6 +120,10 @@ public class TitleComponent {
   @Getter
   private String speed;
 
+  @Inject
+  @Getter
+  private String delay;
+
   @OSGiService
   @Required
   private ColorService colorService;

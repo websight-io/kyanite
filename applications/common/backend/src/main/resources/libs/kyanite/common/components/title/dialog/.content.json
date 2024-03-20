@@ -227,6 +227,12 @@
 					"label": "Speed of typing in ms",
 					"default": "50"
 				},
+				"delay": {
+					"sling:resourceType": "wcm/dialogs/components/numberfield",
+					"name": "delay",
+					"label": "Delay time before backspacing in ms",
+					"default": "1200"
+				},
 				"showCursor": {
 					"sling:resourceType": "wcm/dialogs/components/toggle",
 					"name": "showCursor",
