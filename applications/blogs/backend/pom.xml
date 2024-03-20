@@ -21,12 +21,12 @@
   <parent>
     <groupId>pl.ds.kyanite</groupId>
     <artifactId>kyanite-blogs</artifactId>
-    <version>0.4.13-SNAPSHOT</version>
+    <version>0.4.13</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>kyanite-blogs-backend</artifactId>
-  <version>0.4.13-SNAPSHOT</version>
+  <version>0.4.13</version>
   <name>Kyanite Components Project - Blogs backend</name>
   <description>Contains blogs backend.</description>
 
@@ -140,7 +140,7 @@
     <dependency>
       <groupId>pl.ds.kyanite</groupId>
       <artifactId>kyanite-common-backend</artifactId>
-      <version>0.4.13-SNAPSHOT</version>
+      <version>0.4.13</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
