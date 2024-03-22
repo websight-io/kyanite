@@ -34,6 +34,12 @@
         "name": "hasVideoOptions",
         "label": "Video options"
       },
+      "isCodeSvg": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isCodeSvg",
+        "label": "SVG as a code",
+        "description": "SVG image will be inserted as a code instead of link reference"
+      },
       "videoOptions": {
         "sling:resourceType": "wcm/dialogs/components/container",
         "customThumbnail": {

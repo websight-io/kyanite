@@ -17,7 +17,7 @@
 <template data-sly-template.image="${ @ model }">
   <sly data-sly-set.shadowClass="${model.hasShadow ? 'has-shadow' : ''}"></sly>
 
-  <sly data-sly-test.isSvg="${model.isSvg && !model.isAnyMediaAsset}">
+  <sly data-sly-test.isSvg="${model.isSvg && !model.isAnyMediaAsset && model.isCodeSvg}">
     <span class="image ${model.style} ${shadowClass}">${model.svgDocument @ context='unsafe'}</span>
   </sly>
 
@@ -43,7 +43,7 @@
       <source media="(max-width:1023px)" srcset="${model.tabletAssetReference @ context='uri'}"/>
     </sly>
 
-    <img class="${model.isRounded ? 'is-rounded' : ''}" src="${model.assetReference}" alt="${model.alt}">
+    <img class="${model.isRounded ? 'is-rounded' : ''}" width="${model.width}" height="${model.height}"  src="${model.assetReference}" alt="${model.alt}">
   </picture>
 </template>
 

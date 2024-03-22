@@ -116,6 +116,10 @@ public class ImageComponent {
   private boolean isSvg;
 
   @Getter
+  @ValueMapValue
+  private boolean isCodeSvg;
+
+  @Getter
   private boolean isVideo;
 
   private boolean isInternal;
@@ -146,15 +150,6 @@ public class ImageComponent {
 
   public String getThumbnail() {
     return LinkUtil.handleLink(thumbnail, resourceResolver);
-  }
-
-  public String getImageWidth() {
-    //TODO implement read from file...
-    return "100";
-  }
-
-  public String getImageHeight() {
-    return "100";
   }
 
   public String getAssetReference() {
