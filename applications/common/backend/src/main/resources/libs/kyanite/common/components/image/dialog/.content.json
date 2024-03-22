@@ -22,12 +22,12 @@
       "width": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "width",
-        "label": "Player width"
+        "label": "Width"
       },
       "height": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "height",
-        "label": "Player height"
+        "label": "Height"
       },
       "hasVideoOptions": {
         "sling:resourceType": "wcm/dialogs/components/toggle",
