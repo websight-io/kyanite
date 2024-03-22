@@ -5,6 +5,11 @@
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
+      "title": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "title",
+        "label": "Title"
+      },
       "fileName": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "fileName",
@@ -44,6 +49,11 @@
           "sling:resourceType": "wcm/dialogs/components/select/selectitem",
           "label": "yaml",
           "value": "language-yaml"
+        },
+        "bash": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "bash",
+          "value": "language-bash"
         }
       },
       "code": {

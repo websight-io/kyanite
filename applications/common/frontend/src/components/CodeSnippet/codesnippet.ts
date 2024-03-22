@@ -21,6 +21,7 @@ import xml from 'highlight.js/lib/languages/xml';
 import json from 'highlight.js/lib/languages/json';
 import java from 'highlight.js/lib/languages/java';
 import yaml from 'highlight.js/lib/languages/yaml';
+import bash from 'highlight.js/lib/languages/bash';
 import typescript from 'highlight.js/lib/languages/typescript';
 
 import { onDOMContentLoaded } from '../../helpers.dom';
@@ -30,6 +31,7 @@ hljs.registerLanguage('html', xml);
 hljs.registerLanguage('json', json);
 hljs.registerLanguage('java', java);
 hljs.registerLanguage('yaml', yaml);
+hljs.registerLanguage('bash', bash);
 hljs.registerLanguage('typescript', typescript);
 
 // on page load

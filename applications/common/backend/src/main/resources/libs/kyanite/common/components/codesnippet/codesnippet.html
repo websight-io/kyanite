@@ -21,8 +21,11 @@
     Be wary of adding new lines here as code formatting can add extra lines in rendered code
   */-->
   <div class="code-snippet">
-    <sly data-sly-test="${model.fileName}">
-      <p class="code-snippet__file-name">${model.fileName}</p>
+    <sly data-sly-test="${model.title || model.fileName}">
+      <div class="code-snippet__title-banner">
+        <span class="code-snippet__title-banner__title">${model.title}</span>
+        <span class="code-snippet__title-banner__file-name">${model.fileName}</span>
+      </div>
     </sly>
     <span data-sly-test="${model.code}" class="code-snippet__icon icon is-medium">
       <i class="mdi mdi-24px mdi-content-copy"></i>
