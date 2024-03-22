@@ -27,7 +27,70 @@
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
 @use 'src/atomic-design-system/00-token/t.font' as font;
 
+$color-navbar-link: var(--color-grey--900);
+
 @mixin o-navbar {
+  // causes the element to establish a containing block for all descendants (used for fixed-position descendants)
+  // https://www.w3.org/TR/css-transforms-1/#containing-block-for-all-descendants
+  transform: translateX(0);
+
+  padding-top: var(--spacing-4);
+  transition: .3s ease-in-out background-color;
+
+  &.is-primary {
+    background-color: var(--color-primary--600);
+  }
+
+  &.is-transparent {
+    background-color: transparent;
+
+    .navbar-dropdown {
+      a.navbar-item:focus,
+      a.navbar-item:hover {
+        background-color: var(--base-color-secondary-background, #f5f5f5) !important;
+        color: var(--base-color-body-text, #0a0a0a);
+      }
+    }
+
+    .navbar-burger {
+      color: var(--base-color-body-text, var(--color-grey--700));
+    }
+  }
+
+  &:not(.is-primary, .is-link, .is-info, .is-warning, .is-danger, .is-success, .is-white, .is-light, .is-dark, .is-black, .is-transparent) {
+    background-color: var(--base-color-body-background);
+
+    a.navbar-item:not(.navbar-dropdown a.navbar-item) {
+      color: var(--base-color-body-text, $color-navbar-link);
+    }
+
+    a.navbar-link {
+      color: var(--base-color-body-text, $color-navbar-link);
+
+      &:not(.is-arrowless)::after {
+        border-color: var(--base-color-body-text, $color-navbar-link);
+      }
+    }
+
+    .navbar-burger {
+      color: var(--base-color-body-text, var(--color-grey--700));
+    }
+  }
+
+  &.is-white {
+    @include breakpoint.media-breakpoint-large {
+      .navbar-top > .navbar-item {
+        color: #2a2a2a;
+      }
+    }
+  }
+
+
+  @include breakpoint.media-breakpoint-large {
+    padding-top: var(--spacing-5);
+    padding-bottom: var(--spacing-4);
+  }
+
   .container {
     align-items: center;
   }
@@ -35,26 +98,48 @@
   .navbar,
   .navbar-end,
   .navbar-menu,
-  .navbar-start {
+  .navbar-start,
+  .navbar-top {
     @include breakpoint.media-breakpoint-large {
       align-items: center;
+      height: 100%;
+    }
+  }
+
+  .navbar-menu {
+    background-color: var(--base-color-secondary-background, var(--base-color-white));
+
+    @include breakpoint.media-breakpoint-large {
+      background-color: inherit;
+    }
+
+    &.has-navbar-top {
+      .navbar-end,
+      .navbar-start{
+        @include breakpoint.media-breakpoint-large {
+          height: 50%;
+        }
+      }
+
+      .navbar-top {
+        @include breakpoint.media-breakpoint-large {
+          height: calc(50% - var(--spacing-2));
+        }
+      }
     }
   }
 
   .navbar-item:not(.navbar-dropdown a.navbar-item):last-of-type {
     @include breakpoint.media-breakpoint-large {
-      padding: map.get(spacing.$spacing-values, '1')
-        map.get(spacing.$spacing-values, '0')
-        map.get(spacing.$spacing-values, '1')
-        map.get(spacing.$spacing-values, '0');
+      padding: var(--spacing-1) 0 var(--spacing-1) 0;
     }
   }
 
   .navbar-brand {
-    padding-left: map.get(spacing.$spacing-values, '4');
+    padding-left: var(--spacing-4);
     align-items: center;
     @include breakpoint.media-breakpoint-large {
-      padding-left: map.get(spacing.$spacing-values, '0');
+      padding-left: 0;
     }
 
     img {
@@ -64,12 +149,12 @@
     .navbar-item {
       @extend .px-0;
 
-      padding-top: map.get(spacing.$spacing-values, '0');
-      padding-bottom: map.get(spacing.$spacing-values, '0');
+      padding-top: 0;
+      padding-bottom: 0;
 
       @include breakpoint.media-breakpoint-large {
-        padding-top: map.get(spacing.$spacing-values, '1');
-        padding-bottom: map.get(spacing.$spacing-values, '1');
+        padding-top: var(--spacing-1);
+        padding-bottom: var(--spacing-1);
       }
 
       &:hover {
@@ -80,29 +165,55 @@
 
   a.navbar-link,
   a.navbar-item {
-    @extend .t-color__grey--900;
-    @extend .t-font-weight--500;
+    color: $color-navbar-link;
+    font-weight: var(--font-weight-500);
+  }
+
+  a.navbar-item {
+    &:hover {
+      color: var(--color-primary--600, $color-navbar-link);
+      background-color: inherit;
+    }
   }
 
   .navbar-menu {
-    padding-left: map.get(spacing.$spacing-values, '4');
-    padding-right: map.get(spacing.$spacing-values, '4');
-    padding-bottom: map.get(spacing.$spacing-values, '4');
+    padding-left: var(--spacing-4);
+    padding-right: var(--spacing-4);
+    padding-bottom: var(--spacing-4);
+
+    flex-shrink: 1;
 
     @include breakpoint.media-breakpoint-large {
-      padding-bottom: map.get(spacing.$spacing-values, '0');
+      flex-wrap: wrap;
+      padding-bottom: 0;
     }
 
     .navbar-end,
-    .navbar-start {
+    .navbar-start,
+    .navbar-top {
       display: flex;
       flex-direction: column;
-      gap: map.get(spacing.$spacing-values, '0');
+      gap: 0;
 
       @include breakpoint.media-breakpoint-large {
         flex-direction: row;
-        align-items: baseline;
-        gap: map.get(spacing.$spacing-values, '6');
+        align-items: center;
+        gap: var(--spacing-6);
+      }
+    }
+
+    .navbar-top {
+      .navbar-item {
+        font-size: var(--font-size-14);
+        font-weight: var(--font-weight-500);
+        line-height: var(--line-height-155);
+      }
+
+      @include breakpoint.media-breakpoint-large {
+        flex-basis: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: var(--spacing-2);
       }
     }
 
@@ -111,7 +222,8 @@
       @include breakpoint.media-breakpoint-large {
         @include link.a-animated-underline-link;
 
-        padding: map.get(spacing.$spacing-values, '0');
+        height: 24px;
+        padding: 0;
 
         &:hover {
           background-color: unset !important; // override Bulma complex selector
@@ -120,18 +232,26 @@
     }
 
     .navbar-item.has-dropdown {
+      height: 100%;
+
       &:hover {
         .navbar-link {
           background-color: unset !important; // override Bulma complex selector
         }
 
-        .navbar-dropdown {
-          display: block;
+        @include breakpoint.media-breakpoint-large {
+          .navbar-dropdown {
+            &:not(.navbar-mega-dropdown) {
+              display: block;
+              background-color: var(--base-color-secondary-background, var(--base-color-white));
+            }
+          }
         }
       }
 
       &.is-active {
-        .navbar-dropdown {
+        .navbar-dropdown,
+        .navbar-dropdown.navbar-mega-dropdown {
           display: block;
         }
       }
@@ -141,13 +261,15 @@
       }
 
       .navbar-dropdown {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        display: block;
 
         @include breakpoint.media-breakpoint-large {
           display: none;
         }
+      }
+
+      .navbar-mega-dropdown {
+        display: none;
       }
 
       .navbar-link {
@@ -163,28 +285,148 @@
           @extend .ml-3;
           @extend .mr-1;
         }
+
         @include breakpoint.media-breakpoint-large {
-          padding-left: map.get(spacing.$spacing-values, '0');
-          padding-right: map.get(
-            spacing.$spacing-values,
-            '0'
-          ) !important; // overwrite above @extend .pr-3
+          padding-left: 0;
+          padding-right: 0 !important; // overwrite above @extend .pr-3
+        }
+      }
+      &.is-hovered {
+        .navbar-mega-dropdown {
+          display: block;
+          background-color: var(--base-color-secondary-background, var(--base-color-white));
         }
       }
     }
 
     .button {
-      height: map.get(spacing.$spacing-values, '5_2');
+      height: var(--spacing-5_2);
       @extend .mt-2;
-      @extend .t-font-size--14;
-      @extend .t-font-weight--600;
+      font-size: var(--font-size-14);
+      font-weight: var(--font-weight-600);
 
       @include breakpoint.media-breakpoint-large {
-        margin-top: map.get(
-          spacing.$spacing-values,
-          '0'
-        ) !important; // overwrite above @extend .mt-2
+        margin-top: 0 !important; // overwrite above @extend .mt-2
       }
     }
+  }
+
+  .navbar-mega-dropdown .columns {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+
+    @include breakpoint.media-breakpoint-large {
+      margin-left: -0.75rem;
+      margin-right: -0.75rem;
+    }
+  }
+
+  @include breakpoint.media-breakpoint-large {
+    .navbar-mega-dropdown {
+      background-color: var(--base-color-secondary-background, var(--color-grey--100));
+      border-radius: var(--border-radius-0);
+      border: 0;
+      box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
+      padding: var(--spacing-5_2) 0;
+
+      position: fixed;
+      width: 100%;
+      left: 0;
+      top: calc(100% - var(--spacing-4));
+
+      // make sure columns layout will be 5 columns of equal width
+      .column {
+        flex: 0 0 20%;
+        width: 20%;
+        overflow: hidden;
+      }
+
+      .column-2 {
+        min-width: 40%;
+        width: 40%;
+      }
+
+      .column-3 {
+        min-width: 60%;
+        width: 60%;
+      }
+
+      .column-4 {
+        min-width: 80%;
+        width: 80%;
+      }
+
+      .column-5 {
+        min-width: 100%;
+        width: 100%;
+      }
+
+      // reset navbar-item style
+      .navbar-item {
+        padding: 0;
+        white-space: normal;
+      }
+
+      // links hover effect
+      .navbar-item {
+        display: inline-block;
+        @include link.a-animated-underline-link;
+
+        &:hover {
+          background-color: unset;
+        }
+      }
+
+      .text-column {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .navbar-section {
+          font-size: var(--font-size-16);
+          font-weight: var(--font-weight-600);
+          line-height: var(--line-height-150);
+          color: var(--color-grey--500);
+        }
+
+        // distance between elements:
+        .navbar-section + .navbar-section,
+        .navbar-item + .navbar-item {
+          margin-top: var(--spacing-4);
+        }
+
+        .navbar-section + .navbar-item {
+          margin-top: var(--spacing-5);
+        }
+
+        .navbar-item + .navbar-section {
+          margin-top: var(--spacing-6);
+        }
+
+      }
+
+      .highlights-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        // distance between elements:
+        .navbar-item + .navbar-item {
+          margin-top: var(--spacing-4);
+        }
+
+        .navbar-item, .highlight-label {
+          font-size: var(--font-size-32);
+          font-weight: var(--font-weight-500);
+          line-height: var(--line-height-150);
+          color: $color-navbar-link;
+        }
+      }
+
+    }
+  }
+  &.is-scrolled.is-transparent {
+    background-color: var(--base-color-body-background, var(--base-color-white));
   }
 }

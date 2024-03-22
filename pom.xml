@@ -5,7 +5,7 @@
 
   <groupId>pl.ds.kyanite</groupId>
   <artifactId>kyanite</artifactId>
-  <version>0.0.12-SNAPSHOT</version>
+  <version>0.4.16-SNAPSHOT</version>
 
   <name>Kyanite Components Project</name>
   <packaging>pom</packaging>
@@ -65,7 +65,7 @@
     <websight.admin.omitAdminPw>true</websight.admin.omitAdminPw>
 
     <!-- WebSight CMS Version -->
-    <websight.cms.version>1.15.0</websight.cms.version>
+    <websight.cms.version>1.24.0</websight.cms.version>
     <!-- WebSight Dependencies Versions -->
     <websight.rest.version>1.0.10</websight.rest.version>
     <websight.pages.version>3.0.0</websight.pages.version>
@@ -138,7 +138,9 @@
                 <exclude>**/*.md</exclude>
                 <exclude>**/*.json</exclude>
                 <exclude>**/*.txt</exclude>
+                <exclude>**/*.svg</exclude>
                 <exclude>**/.content.xml</exclude>
+                <exclude>**/sitemap.xml/**/*</exclude>
               </excludes>
             </configuration>
           </execution>

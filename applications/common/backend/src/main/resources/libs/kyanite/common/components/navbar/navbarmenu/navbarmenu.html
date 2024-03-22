@@ -16,13 +16,29 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.kyanite.common.components.models.navbar.NavbarBrandComponent">
-  <sly data-sly-test="${resource.hasChildren}">
-    <div class="navbar-menu" id="navMenu">
-      <sly data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+<sly data-sly-use.model="pl.ds.kyanite.common.components.models.navbar.NavbarMenuComponent">
+  <sly data-sly-test="${model.hasChildren}">
+    <div class="navbar-menu ${model.metaNavigation ? 'has-navbar-top': ''}" id="navMenu">
+      <div data-sly-test="${model.metaNavigation}" class="navbar-top">
+        <sly data-sly-list.item="${model.metaNavigation}">
+          <a class="navbar-item" href="${item.url}" target="${item.isExternalUrl ? '_blank': ''}">
+            ${item.label}
+            <sly data-sly-test="${item.isExternalUrl}">
+              <span class="icon">
+                <i class="mdi mdi-open-in-new"></i>
+              </span>
+            </sly>
+          </a>
+        </sly>
+      </div>
+      <sly data-sly-list.item="${model.items}">
+        <sly
+            data-sly-resource="${item.path @ resourceType=item.resourceType}"
+        ></sly>
+      </sly>
     </div>
   </sly>
-  <sly data-sly-test="${!resource.hasChildren}">
+  <sly data-sly-test="${!model.hasChildren}">
     <sly data-sly-use.lib="/libs/wcm/foundation/components/commons/templates.html"
          data-sly-call="${lib.placeholder @ classes='navbar-menu'}"></sly>
   </sly>

@@ -17,7 +17,7 @@
 import {selectors, testIds} from "../../support/consts";
 
 const paths = {
-  message: 'ComponentOverlay_/content/kyanite-tests/pages/message/jcr:content/pagecontainer/message'
+  message: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/message/jcr:content/pagecontainer/message'
 };
 
 describe('Message component', function () {
@@ -33,7 +33,7 @@ describe('Message component', function () {
     ).as('saveProperties');
 
     cy.visit(
-        '/apps/websight/index.html/content/kyanite-tests/pages/message::editor'
+        '/apps/websight/index.html/content/kyanite-e2e-tests/pages/message::editor'
     );
 
     cy.getByTestId(paths.message)
@@ -61,6 +61,9 @@ describe('Message component', function () {
     .click();
 
     cy.getByTestId('ModalDialog_Message')
+    .findByTestId('Input_Createheader').click();
+
+    cy.getByTestId('ModalDialog_Message')
     .findByTestId('Input_Headercontent')
     .clear()
     .type('Header content');
@@ -73,7 +76,7 @@ describe('Message component', function () {
     cy.wait('@saveProperties');
 
     cy.request(
-        '/content/kyanite-tests/pages/message/jcr:content/pagecontainer/message.json'
+        '/content/kyanite-e2e-tests/pages/message/jcr:content/pagecontainer/message.json'
     )
     .its('body')
     .should('deep.eq',

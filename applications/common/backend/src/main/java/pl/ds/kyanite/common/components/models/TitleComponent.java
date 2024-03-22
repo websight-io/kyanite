@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.stream.Stream;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.json.Json;
+import javax.json.JsonArrayBuilder;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
@@ -71,6 +73,10 @@ public class TitleComponent {
   private String[] subtitleClasses;
 
   @Inject
+  @Getter
+  private String[] endingsClasses;
+
+  @Inject
   private String color;
 
   @Inject
@@ -90,6 +96,33 @@ public class TitleComponent {
   @Inject
   private String eyebrowText;
 
+  @Inject
+  @Getter
+  private String addAnimatedEndings;
+
+  @Inject
+  @Getter
+  private List<AnimatedEndings> endings = new ArrayList<>();
+
+  @Inject
+  @Getter
+  private String endingJson;
+
+  @Inject
+  @Getter
+  private String endingsColor;
+
+  @Inject
+  @Getter
+  private String showCursor;
+
+  @Inject
+  @Getter
+  private Integer speed;
+
+  @Inject
+  @Getter
+  private Integer delay;
 
   @OSGiService
   @Required
@@ -121,9 +154,15 @@ public class TitleComponent {
     subtitleClassList.add(colorService.getShadeClass(resource, subtitleColor,
         "subtitleShade"));
 
+    List<String> endingsClassList = new ArrayList<>();
+    endingsClassList.add(colorService.getShadeClass(resource, endingsColor,
+        "typedShade"));
+
     titleClasses = titleClassList.toArray(new String[]{});
     subtitleClasses = subtitleClassList.toArray(new String[]{});
+    endingsClasses = endingsClassList.toArray(new String[] {});
     titleAlign = this.searchTitleAlign();
+    endingJson = this.getEndingJson();
   }
 
   private String searchTitleAlign() {
@@ -175,5 +214,14 @@ public class TitleComponent {
 
   public String getEyebrowText() {
     return addEyebrow ? eyebrowText : StringUtils.EMPTY;
+  }
+
+  public String getEndingJson() {
+    JsonArrayBuilder jsonArrayBuilder = Json.createArrayBuilder();
+    for (AnimatedEndings ending : endings) {
+      jsonArrayBuilder.add(ending.getValue());
+    }
+
+    return jsonArrayBuilder.build().toString();
   }
 }

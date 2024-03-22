@@ -1,0 +1,52 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "elementsInRow": {
+        "sling:resourceType": "wcm/dialogs/components/tabs",
+        "desktop": {
+          "sling:resourceType": "wcm/dialogs/components/tab",
+          "label": "Desktop",
+          "elementsInDesktopRow": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/common/components/carousel/elements",
+              "name": "desktop/elementsInRow"
+            }
+          }
+        },
+        "tablet": {
+          "sling:resourceType": "wcm/dialogs/components/tab",
+          "label": "Tablet",
+          "elementsInTabletpRow": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/common/components/carousel/elements",
+              "name": "tablet/elementsInRow",
+              "twelve": {
+                "sling:hideResource": "true"
+              }
+            }
+          }
+        },
+        "mobile": {
+          "sling:resourceType": "wcm/dialogs/components/tab",
+          "label": "Mobile",
+          "elementsInMobileRow": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/common/components/carousel/elements",
+              "name": "mobile/elementsInRow",
+              "twelve": {
+                "sling:hideResource": "true"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

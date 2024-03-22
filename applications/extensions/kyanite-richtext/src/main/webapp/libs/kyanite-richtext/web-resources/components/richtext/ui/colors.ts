@@ -24,7 +24,8 @@ export let COLORS: Array<Color> = [];
 
 export const createColorsList = (colors: string) => {
     COLORS = [];
-    for (const colorItem of colors.split(',')) {
+    const separator = colors.indexOf(';') != -1 ? ';': ','; // for backward compatibility, should use ';'
+    for (const colorItem of colors.split(separator)) {
         const pair = colorItem.trim().split('=');
         COLORS.push({
             colorClassName: pair[0], value: pair[1]

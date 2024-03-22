@@ -47,4 +47,8 @@ public class LevelComponent {
   @Default(values = "level-with-gaps")
   private String spacing;
 
+  @ValueMapValue
+  @Getter
+  private boolean addDividers;
+
 }

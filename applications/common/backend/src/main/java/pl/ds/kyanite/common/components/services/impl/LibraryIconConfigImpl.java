@@ -1,0 +1,63 @@
+/*
+ * Copyright (C) 2023 Dynamic Solutions
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package pl.ds.kyanite.common.components.services.impl;
+
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Modified;
+import org.osgi.service.metatype.annotations.Designate;
+import pl.ds.kyanite.common.components.configurations.LibraryIconConfigOcd;
+import pl.ds.kyanite.common.components.services.LibraryIconConfig;
+
+@Component(service = LibraryIconConfig.class)
+@Designate(ocd = LibraryIconConfigOcd.class, factory = true)
+public class LibraryIconConfigImpl implements LibraryIconConfig {
+
+  private String label;
+  private String id;
+  private String libraryUrl;
+  private String[] attributes;
+
+  @Override
+  public String getLabel() {
+    return label;
+  }
+
+  @Override
+  public String getId() {
+    return id;
+  }
+
+  @Override
+  public String getLibraryUrl() {
+    return libraryUrl;
+  }
+
+  @Override
+  public String[] getAttributes() {
+    return attributes;
+  }
+
+  @Activate
+  @Modified
+  protected void activate(final LibraryIconConfigOcd config) {
+    this.label = config.label();
+    this.id = config.id();
+    this.libraryUrl = config.libraryUrl();
+    this.attributes = config.attributes();
+  }
+}

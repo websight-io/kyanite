@@ -7,5 +7,6 @@
   "selectOrType": "select",
   "icon": "mdi-home-outline",
   "iconLibType": "mdi",
-  "iconSize": "mdi-36px"
+  "iconSize": "mdi-36px",
+  "imageSrcType": "asset"
 }

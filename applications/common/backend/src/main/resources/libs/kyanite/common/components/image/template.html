@@ -1,0 +1,64 @@
+<!--/*
+    Copyright (C) 2024 Dynamic Solutions
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+*/-->
+
+<template data-sly-template.image="${ @ model }">
+  <sly data-sly-set.shadowClass="${model.hasShadow ? 'has-shadow' : ''}"></sly>
+
+  <sly data-sly-test.isSvg="${model.isSvg && !model.isAnyMediaAsset}">
+    <span class="image ${model.style} ${shadowClass}">${model.svgDocument @ context='unsafe'}</span>
+  </sly>
+
+  <sly data-sly-test="${!isSvg}">
+    <figure class="image ${model.style} ${shadowClass}">
+      <sly data-sly-test.isVideo="${model.isVideo}">
+        <sly data-sly-call="${video @ model=model}"></sly>
+      </sly>
+
+      <sly data-sly-test="${!isVideo}">
+        <sly data-sly-call="${picture @ model=model}"></sly>
+      </sly>
+    </figure>
+  </sly>
+</template>
+
+<template data-sly-template.picture="${ @ model }">
+  <picture>
+    <sly data-sly-test="${model.mobileAssetReference}">
+      <source media="(max-width:767px)" srcset="${model.mobileAssetReference @ context='uri'}"/>
+    </sly>
+    <sly data-sly-test="${model.tabletAssetReference}">
+      <source media="(max-width:1023px)" srcset="${model.tabletAssetReference @ context='uri'}"/>
+    </sly>
+
+    <img class="${model.isRounded ? 'is-rounded' : ''}" src="${model.assetReference}" alt="${model.alt}">
+  </picture>
+</template>
+
+<template data-sly-template.video="${ @ model }">
+  <video class="video__video"
+         width="${model.width}"
+         height="${model.height}"
+         data-sly-attribute="${model.attributes}"
+         controlslist="nodownload" preload="none">
+    <sly data-sly-test="${model.mobileAssetReference}">
+      <source media="(max-width:767px)" src="${model.mobileAssetReference}"/>
+    </sly>
+    <sly data-sly-test="${model.tabletAssetReference}">
+      <source media="(max-width:1023px)" src="${model.tabletAssetReference}"/>
+    </sly>
+    <source src="${model.assetReference}">
+  </video>
+</template>

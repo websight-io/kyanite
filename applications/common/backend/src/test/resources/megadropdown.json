@@ -1,0 +1,262 @@
+{
+  "hidden": {
+    "jcr:primaryType": "nt:unstructured",
+    "hasArrow": "true",
+    "sling:resourceType": "kyanite/common/components/navbar/navbarmegadropdown",
+    "dropdownLabel": "Product",
+    "dropdownColumns": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "hideColumn": false,
+        "type": "highlights",
+        "sections": {
+          "jcr:primaryType": "nt:unstructured"
+        },
+        "highlights": {
+          "jcr:primaryType": "nt:unstructured",
+          "0": {
+            "jcr:primaryType": "nt:unstructured",
+            "url": "https://wykop.pl",
+            "label": "Service Mesh"
+          },
+          "1": {
+            "jcr:primaryType": "nt:unstructured",
+            "url": "/content/kyanite-visual-tests/pages/blog-listing",
+            "label": "Streaming Framework"
+          }
+        }
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "hideColumn": true,
+        "type": "text",
+        "sections": {
+          "jcr:primaryType": "nt:unstructured",
+          "0": {
+            "jcr:primaryType": "nt:unstructured",
+            "label": "Overview",
+            "sectionItems": {
+              "jcr:primaryType": "nt:unstructured",
+              "0": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "https://www.websight.io/use-cases.html",
+                "label": "Real-time composability"
+              },
+              "1": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "https://www.websight.io/use-cases.html",
+                "label": "EDS: build or buy"
+              },
+              "2": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "https://www.websight.io/use-cases.html",
+                "label": "Use cases"
+              },
+              "3": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "/content/kyanite-visual-tests/pages/card-full-height-variant",
+                "label": "FAQ"
+              }
+            }
+          }
+        }
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "hideColumn": false,
+        "type": "text",
+        "sections": {
+          "jcr:primaryType": "nt:unstructured",
+          "0": {
+            "jcr:primaryType": "nt:unstructured",
+            "label": "Connectors",
+            "sectionItems": {
+              "jcr:primaryType": "nt:unstructured",
+              "0": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "/content/kyanite-visual-tests/pages/heading-typography",
+                "label": "Edge Delivery Services"
+              },
+              "1": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "https://commercetools.com/",
+                "label": "CommerceTools"
+              },
+              "2": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "/content/kyanite-visual-tests/pages/level-item--feature-small",
+                "label": "Adobe Experience Manager"
+              },
+              "3": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "https://commercetools.com/",
+                "label": "Adobe Commerce"
+              },
+              "4": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "https://commercetools.com",
+                "label": "Connectors Roadmap"
+              }
+            }
+          }
+        }
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "hideColumn": true,
+        "type": "text",
+        "sections": {
+          "jcr:primaryType": "nt:unstructured",
+          "0": {
+            "jcr:primaryType": "nt:unstructured",
+            "label": "Native CMS",
+            "sectionItems": {
+              "jcr:primaryType": "nt:unstructured",
+              "0": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "https://www.websight.io",
+                "label": "Websight"
+              }
+            }
+          }
+        }
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "hideColumn": true,
+        "type": "text"
+      }
+    }
+  },
+  "not-hidden": {
+    "jcr:primaryType": "nt:unstructured",
+    "hasArrow": "true",
+    "sling:resourceType": "kyanite/common/components/navbar/navbarmegadropdown",
+    "dropdownLabel": "Product",
+    "dropdownColumns": {
+      "jcr:primaryType": "nt:unstructured",
+      "1": {
+        "jcr:primaryType": "nt:unstructured",
+        "hideColumn": false,
+        "type": "highlights",
+        "sections": {
+          "jcr:primaryType": "nt:unstructured"
+        },
+        "highlights": {
+          "jcr:primaryType": "nt:unstructured",
+          "0": {
+            "jcr:primaryType": "nt:unstructured",
+            "url": "https://wykop.pl",
+            "label": "Service Mesh"
+          },
+          "1": {
+            "jcr:primaryType": "nt:unstructured",
+            "url": "/content/kyanite-visual-tests/pages/blog-listing",
+            "label": "Streaming Framework"
+          }
+        }
+      },
+      "2": {
+        "jcr:primaryType": "nt:unstructured",
+        "hideColumn": false,
+        "type": "text",
+        "sections": {
+          "jcr:primaryType": "nt:unstructured",
+          "0": {
+            "jcr:primaryType": "nt:unstructured",
+            "label": "Overview",
+            "sectionItems": {
+              "jcr:primaryType": "nt:unstructured",
+              "0": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "https://www.websight.io/use-cases.html",
+                "label": "Real-time composability"
+              },
+              "1": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "https://www.websight.io/use-cases.html",
+                "label": "EDS: build or buy"
+              },
+              "2": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "https://www.websight.io/use-cases.html",
+                "label": "Use cases"
+              },
+              "3": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "/content/kyanite-visual-tests/pages/card-full-height-variant",
+                "label": "FAQ"
+              }
+            }
+          }
+        }
+      },
+      "3": {
+        "jcr:primaryType": "nt:unstructured",
+        "hideColumn": false,
+        "type": "text",
+        "sections": {
+          "jcr:primaryType": "nt:unstructured",
+          "0": {
+            "jcr:primaryType": "nt:unstructured",
+            "label": "Connectors",
+            "sectionItems": {
+              "jcr:primaryType": "nt:unstructured",
+              "0": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "/content/kyanite-visual-tests/pages/heading-typography",
+                "label": "Edge Delivery Services"
+              },
+              "1": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "https://commercetools.com/",
+                "label": "CommerceTools"
+              },
+              "2": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "/content/kyanite-visual-tests/pages/level-item--feature-small",
+                "label": "Adobe Experience Manager"
+              },
+              "3": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "https://commercetools.com/",
+                "label": "Adobe Commerce"
+              },
+              "4": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "https://commercetools.com",
+                "label": "Connectors Roadmap"
+              }
+            }
+          }
+        }
+      },
+      "4": {
+        "jcr:primaryType": "nt:unstructured",
+        "hideColumn": false,
+        "type": "text",
+        "sections": {
+          "jcr:primaryType": "nt:unstructured",
+          "0": {
+            "jcr:primaryType": "nt:unstructured",
+            "label": "Native CMS",
+            "sectionItems": {
+              "jcr:primaryType": "nt:unstructured",
+              "0": {
+                "jcr:primaryType": "nt:unstructured",
+                "url": "https://www.websight.io",
+                "label": "Websight"
+              }
+            }
+          }
+        }
+      },
+      "5": {
+        "jcr:primaryType": "nt:unstructured",
+        "hideColumn": false,
+        "type": "text"
+      }
+    }
+  }
+}

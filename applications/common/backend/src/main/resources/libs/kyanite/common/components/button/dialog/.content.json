@@ -102,6 +102,12 @@
         "name": "isFullWidth",
         "label": "Full width"
       },
+      "isFullWidthOnMobile": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isFullWidthOnMobile",
+        "label": "Full width on mobile",
+        "description": "On mobile devices button will be full width"
+      },
       "isDisabled": {
         "sling:resourceType": "wcm/dialogs/components/toggle",
         "name": "isDisabled",
@@ -226,6 +232,37 @@
             }
           }
         },
+        "iconSymbolsLeft": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "selectableIcon": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/common/components/common/icon/icons/symbols",
+              "name": "leftIcon/icon",
+              "label": "Left icon"
+            },
+            "ws:display": {
+              "condition": {
+                "sourceName": "leftIcon/selectOrType",
+                "values": "select"
+              }
+            }
+          },
+          "iconSize": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/common/components/common/icon/iconsize/symbols",
+              "name": "leftIcon/iconSize",
+              "label": "Left icon size"
+            }
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "leftIcon/iconLibType",
+              "values": "symbols"
+            }
+          }
+        },
         "ws:display": {
           "condition": {
             "sourceName": "showIconLeft",
@@ -339,6 +376,37 @@
             "condition": {
               "sourceName": "rightIcon/iconLibType",
               "values": "mdi"
+            }
+          }
+        },
+        "iconSymbolsRight": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "selectableIcon": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/common/components/common/icon/icons/symbols",
+              "name": "rightIcon/icon",
+              "label": "Right icon"
+            },
+            "ws:display": {
+              "condition": {
+                "sourceName": "selectOrType",
+                "values": "select"
+              }
+            }
+          },
+          "iconSize": {
+            "sling:resourceType": "wcm/dialogs/components/include",
+            "include": {
+              "sling:resourceSuperType": "kyanite/common/components/common/icon/iconsize/symbols",
+              "name": "rightIcon/iconSize",
+              "label": "Left icon size"
+            }
+          },
+          "ws:display": {
+            "condition": {
+              "sourceName": "rightIcon/iconLibTyp",
+              "values": "symbols"
             }
           }
         },

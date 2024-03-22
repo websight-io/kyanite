@@ -1,0 +1,7 @@
+{
+  "group": ".hidden",
+  "isContainer": false,
+  "sling:resourceType": "ws:Component",
+  "sling:resourceSuperType": "kyanite/common/components/container",
+  "title": "Fixed Container"
+}

@@ -12,7 +12,7 @@
   "scripts": {
     "prod": "webpack --config ./webpack.prod.js",
     "watch": "webpack --config ./webpack.prod.js --watch",
-    "watch:sync": "websight-localsync --container-name websight-cms-kyanite target-folder=src/main/resources/libs/kyanite/webroot provider-root-suffix=kyanite/webroot",
+    "watch:sync": "websight-localsync --container-name local-cms-1 --dist dist/main --target-dir kyanite/webroot",
     "prettier": "prettier --check src",
     "prettier:fix": "prettier --write src",
     "eslint": "eslint src --ext .ts --max-warnings 0",
@@ -66,14 +66,16 @@
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.6.0",
     "webpack-merge": "^5.9.0",
-    "websight-localsync": "^1.2.0"
+    "websight-localsync": "^2.0.0"
   },
   "browserslist": [
     "last 2 version",
     "> 1%"
   ],
   "dependencies": {
+    "@glidejs/glide": "^3.6.0",
     "highlight.js": "^11.8.0",
+    "typed.js": "^2.1.0",
     "vanilla-cookieconsent": "^2.9.1"
   }
 }

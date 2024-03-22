@@ -3,8 +3,7 @@
   "jcr:content": {
     "jcr:primaryType": "ws:PageContent",
     "sling:resourceType": "kyanite/common/components/page",
-    "navbarFixed": "true",
-    "navbarFixedPosition": "has-navbar-fixed-top",
+    "background": "",
     "pagecontainer": {
       "sling:resourceType": "kyanite/common/components/pagecontainer",
       "navbarreference": {

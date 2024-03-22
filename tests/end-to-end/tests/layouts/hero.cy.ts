@@ -17,7 +17,7 @@
 import { selectors, testIds } from '../../support/consts';
 
 const paths = {
-  hero: 'ComponentOverlay_/content/kyanite-tests/pages/hero/jcr:content/pagecontainer/hero'
+  hero: 'ComponentOverlay_/content/kyanite-e2e-tests/pages/hero/jcr:content/pagecontainer/hero'
 };
 
 describe('Hero component', function () {
@@ -26,8 +26,7 @@ describe('Hero component', function () {
   });
 
   it('renders correctly in preview mode', function () {
-    cy.visit('/content/kyanite-tests/pages/hero.html');
-    cy.percySnapshotPreview('Hero preview');
+    cy.visit('/content/kyanite-e2e-tests/pages/hero.html');
   });
 
   it('renders correctly in edit mode', function () {
@@ -37,15 +36,13 @@ describe('Hero component', function () {
     ).as('saveProperties');
 
     cy.visit(
-      '/apps/websight/index.html/content/kyanite-tests/pages/hero::editor'
+      '/apps/websight/index.html/content/kyanite-e2e-tests/pages/hero::editor'
     );
 
     cy.getByTestId(paths.hero)
       .click()
       .find(selectors.overlayName)
       .should('contain.text', 'Hero');
-
-    cy.percySnapshotPageEditor('Hero editor');
 
     cy.getByTestId(testIds.editIcon).click({ force: true });
 
@@ -57,22 +54,19 @@ describe('Hero component', function () {
       .find('div[id^="variant-uid"]').click();
     cy.contains('Link').click({ force: true });
 
-    cy.percySnapshotDialog('Hero dialog');
-
     cy.getByTestId(testIds.dialogSubmitButton).click();
 
     cy.wait('@saveProperties');
 
     cy.request(
-      '/content/kyanite-tests/pages/hero/jcr:content/pagecontainer/hero.json'
+      '/content/kyanite-e2e-tests/pages/hero/jcr:content/pagecontainer/hero.json'
     )
       .its('body')
       .should('deep.eq', {
         size: 'is-large',
         'sling:resourceType': 'kyanite/common/components/hero',
         'jcr:primaryType': 'nt:unstructured',
-        variant: 'is-link',
-        background: ''
+        variant: 'is-link'
       });
   });
 });

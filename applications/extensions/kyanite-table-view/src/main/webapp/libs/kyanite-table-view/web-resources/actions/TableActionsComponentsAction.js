@@ -28,6 +28,10 @@ export default class TableActionsComponentsAction {
     return this.config?.metadata;
   }
 
+  get name(){
+    return this.config?.name;
+  }
+
   get conditions() {
     return [{
       isMatching: component => this.config?.allowedComponents.includes(

@@ -31,11 +31,35 @@ public class ContactFormConfigurationService {
   private ContactFormConfiguration config;
 
   public String getConfigEndpoint() {
-    return config.endpoint();
+    return host() + path();
   }
 
   @Activate
   protected void activate(ContactFormConfiguration config) {
     this.config = config;
+  }
+
+  private String host() {
+    if (config.host() == null) {
+      return "";
+    }
+
+    if (config.host().endsWith("/")) {
+      return config.host().substring(0, config.host().length() - 1);
+    }
+
+    return config.host();
+  }
+
+  private String path() {
+    if (config.path() == null) {
+      return "";
+    }
+
+    if (!config.path().startsWith("/")) {
+      return "/" + config.path();
+    }
+
+    return config.path();
   }
 }

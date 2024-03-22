@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
   // Functions to open and close a modal
   function openModal($el) {
     $el.classList.add('is-active');

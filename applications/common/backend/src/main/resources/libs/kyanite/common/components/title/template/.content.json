@@ -1,13 +1,12 @@
 {
-  "jcr:primaryType": "nt:unstructured",
-  "text": "Title",
-  "subtitle": "Subtitle",
-  "element": "h2",
-  "isSpaced": false,
-  "size": "is-2",
-  "color": "rest_has-text-grey",
-  "subtitleColor": "bw_has-text-black",
-  "rest": {
-    "shade": "900"
-  }
+	"jcr:primaryType": "nt:unstructured",
+	"text": "Title",
+	"subtitle": "Subtitle",
+	"element": "h2",
+	"isSpaced": false,
+	"size": "is-2",
+	"addAnimatedEndings": false,
+	"showCursor": false,
+	"speed": 50,
+	"delay": 1200
 }

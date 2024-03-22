@@ -17,7 +17,8 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.ContactFormComponent">
-  <form data-config-captcha-public-key='${model.captchaPublicKey}'
+  <form class="contact-form"
+        data-config-captcha-public-key='${model.captchaPublicKey}'
         data-config-http-end-point='${model.configEndpoint}'>
 
     <div class="field">
@@ -28,8 +29,12 @@
                   tabindex="1"
                   name="type">
             <option disabled selected value>Select an option</option>
-            <sly data-sly-list.item="${model.typeOfInquiryValue}">
-              <option value="${model.typeOfInquiryValue[item]}">${item}</option>
+            <sly data-sly-list.item="${model.types}">
+              <option
+                  data-value-part1="${item.mailParts[0]}"
+                  data-value-part2="${item.mailParts[1]}"
+                  data-value-part3="${item.mailParts[2]}"
+                  value="${item.label}">${item.label}</option>
             </sly>
           </select>
         </div>
@@ -52,7 +57,7 @@
           <div class="control has-icons-left">
             <input class="input email-input" type="email" name="email" placeholder="Email" required>
             <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
+            <i class="mdi mdi-email"></i>
         </span>
           </div>
           <p class="help is-danger is-hidden email-validate-error">This email is invalid</p>
@@ -80,8 +85,8 @@
 
     <div class="field">
       <div class="control">
-        <input id="submit-btn" class="button is-link is-medium" type="submit"
-               placeholder="${model.submitLabel}" data-form-id="${resource.name}">
+        <input id="submit-btn" class="button is-primary is-medium" type="submit"
+               value="${model.submitLabel}" data-form-id="${resource.name}">
       </div>
     </div>
     <div class="block">

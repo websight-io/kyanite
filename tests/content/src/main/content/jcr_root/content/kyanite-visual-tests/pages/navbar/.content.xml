@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    jcr:primaryType="ws:Page">
+    <jcr:content
+        jcr:lastModified="{Date}2023-05-08T10:49:01.046Z"
+        jcr:lastModifiedBy="sling-package-install"
+        jcr:primaryType="ws:PageContent"
+        jcr:title="Navbar"
+        sling:resourceType="kyanite/common/components/page"
+        ws:lastModifiedBy="wsadmin"
+        ws:lastPublishAction="Publish"
+        ws:lastPublished="{Date}2023-05-24T13:16:15.706Z"
+        ws:lastPublishedBy="wsadmin"
+        ws:template="/libs/kyanite/common/templates/articlepage"
+        navbarFixed="true"
+        navbarFixedPosition="has-navbar-fixed-top">
+        <pagecontainer
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="kyanite/common/components/pagecontainer">
+            <navbar
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="kyanite/common/components/navbar"
+                fixedOption="is-fixed-top"
+                isTransparent="false"
+                variant="is-white">
+                <brand
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/navbar/navbarbrand"
+                    createBurger="true">
+                    <item
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
+                        label="Brand"
+                        type="image">
+                        <image
+                            jcr:primaryType="nt:unstructured"
+                            alt="\0"
+                            assetReference="/content/kyanite-visual-tests/assets/WebSight logo - working.png"
+                            src="/content/kyanite-visual-tests/assets/WebSight logo - working.png"/>
+                    </item>
+                </brand>
+                <menu
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/navbar/navbarmenu">
+                    <end
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/navbar/navbarend">
+                        <navbaritem
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
+                            label="Platform"/>
+                        <navbaritem_1
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
+                            label="Resources"/>
+                        <navbaritem_2
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
+                            label="Architecture"/>
+                        <navbaritem_3
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
+                            label="Pricing"/>
+                        <navbardropdown
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbardropdown"
+                            hasArrow="true"
+                            isBoxed="false"
+                            isDropup="false"
+                            label="Dropdown">
+                            <items jcr:primaryType="nt:unstructured">
+                                <_x0030_
+                                    jcr:primaryType="nt:unstructured"
+                                    hasDivider="false"
+                                    label="Item 1"/>
+                                <_x0031_
+                                    jcr:primaryType="nt:unstructured"
+                                    hasDivider="true"
+                                    label="Item 2"/>
+                                <_x0032_
+                                    jcr:primaryType="nt:unstructured"
+                                    hasDivider="false"
+                                    label="Item 3"/>
+                            </items>
+                        </navbardropdown>
+                        <item
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                            imageSrcType="asset"
+                            label="Item"
+                            type="container">
+                            <button
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/button"
+                                label="Book a demo!"/>
+                        </item>
+                    </end>
+                    <metaNavigation jcr:primaryType="nt:unstructured">
+                        <_x0030_
+                            jcr:primaryType="nt:unstructured"
+                            label="About"
+                            url="https://www.websight.io/about/company.html"/>
+                        <_x0031_
+                            jcr:primaryType="nt:unstructured"
+                            label="Partners"
+                            url="https://www.websight.io/about/contact-us.html"/>
+                        <_x0032_
+                            jcr:primaryType="nt:unstructured"
+                            label="Contact"
+                            url="https://www.websight.io/about/company.html"/>
+                    </metaNavigation>
+                </menu>
+            </navbar>
+        </pagecontainer>
+    </jcr:content>
+</jcr:root>

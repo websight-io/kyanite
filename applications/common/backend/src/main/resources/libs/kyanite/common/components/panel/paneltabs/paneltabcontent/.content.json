@@ -2,6 +2,7 @@
   "isContainer": true,
   "group": ".hidden",
   "allowedComponents": [
+    "/apps/kyanite/common/components/panel/panelblock",
     "/libs/kyanite/common/components/panel/panelblock"
   ],
   "sling:resourceType": "ws:Component",

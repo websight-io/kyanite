@@ -2,6 +2,9 @@
   "group": "Kyanite sub-components",
   "sling:resourceType": "ws:Component",
   "isContainer": true,
-  "allowedComponents": ["/libs/kyanite/common/components/panel/paneltabs/paneltab"],
+  "allowedComponents": [
+    "/apps/kyanite/common/components/panel/paneltabs/paneltab",
+    "/libs/kyanite/common/components/panel/paneltabs/paneltab"
+  ],
   "title": "Panel Tabs"
 }

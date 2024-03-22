@@ -1,0 +1,70 @@
+/*!
+ * <!--
+ *     Copyright (C) 2024 Dynamic Solutions
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ * -->
+ */
+
+$map_t-base-color: (
+  body-background: #0A0A0B,
+  body-text: #ECF5FF,
+  secondary-background: #232323,
+  secondary-text: #A3A4B4,
+  contrast-background: #555,
+  contrast-text: #CCC,
+  menu-label: #9E73FF
+);
+
+$map_t-color-ids: (
+  'primary',
+  'secondary',
+  'gray'
+);
+
+$map_t-color-by-id: (
+  primary--50: #F3F0FF,
+  primary--100: #EBE4FF,
+  primary--200: #D8CDFF,
+  primary--300: #BDA6FF,
+  primary--400: #9E73FF,
+  primary--500: #823BFF,
+  primary--600: #7714FF,
+  primary--700: #6200EE,
+  primary--800: #5901D6,
+  primary--900: #4A03AF,
+  primary--950: #2C0077,
+  //
+  secondary--50: #EFFEFB,
+  secondary--100: #C7FFF5,
+  secondary--200: #8FFFEC,
+  secondary--300: #4FF9E1,
+  secondary--400: #1BE6CF,
+  secondary--500: #03DAC6,
+  secondary--600: #00A297,
+  secondary--700: #048179,
+  secondary--800: #096662,
+  secondary--900: #0D5450,
+  secondary--950: #003433,
+  //
+  grey--100: #181818,
+  grey--200: #2a2a2a,
+  grey--300: #494949,
+  grey--400: #686868,
+  grey--500: #7f7f7f,
+  grey--600: #959595,
+  grey--700: #bbbbbb,
+  grey--800: #e1e1e1,
+  grey--900: #f2f3f5,
+  grey--1000: #f9f9fa,
+);

@@ -32,4 +32,8 @@
   &.is-ghost {
     @extend .a-button-ghost;
   }
+
+  &.is-text {
+    @extend .a-button-text;
+  }
 }

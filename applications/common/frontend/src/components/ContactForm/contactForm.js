@@ -15,101 +15,133 @@
  */
 
 const initForm = () => {
-    document.addEventListener('DOMContentLoaded', () => {
-        document.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const form = e.target;
-            const submitBtn = form.getElementsByClassName('button')[0];
-            const formSuccessEl = form.getElementsByClassName('form-success')[0];
-            const formFailureEl = form.getElementsByClassName('form-failure')[0];
-            const emailValidateErrorEl = form.getElementsByClassName('email-validate-error')[0];
-            const emailInputEl = form.getElementsByClassName('email-input')[0];
-            const contactForm = form.dataset.configHttpEndPoint;
-            let formPostData = {};
-            
-            const sendForm = (api) => {
-                    fetch(api, {
+    document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
+        Array.from(document.getElementsByClassName("contact-form"))
+        .forEach(function(contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const form = e.target;
+                const submitBtn = form.getElementsByClassName('button')[0];
+                const formSuccessEl = form.getElementsByClassName('form-success')[0];
+                const formFailureEl = form.getElementsByClassName('form-failure')[0];
+                const emailValidateErrorEl = form.getElementsByClassName('email-validate-error')[0];
+                const emailInputEl = form.getElementsByClassName('email-input')[0];
+                const contactForm = form.dataset.configHttpEndPoint;
+                const captchaPublicKey = form.dataset.configCaptchaPublicKey;
+
+                const sendForm = (submitForm, formData) => {
+                    fetch(submitForm, {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(formPostData)
+                        body: formData
+                        //  if you set 'content-type' header to 'multipart/form', it will be missing
+                        //  'boundary' parameter in it, and backend will decline the exchange.
+                        //  Instead, omit this header, and browser will do the work for you
                     })
                     .then((response) => response.json())
-                    .then(() => {
-                        successStatus();
+                    .then((json) => {
+                        if (typeof json === 'object'
+                                && json.hasOwnProperty("responseCodeEnum")
+                                && json["responseCodeEnum"] !== '0') {
+                            errorStatus(json["responseCode"]);
+                        } else {
+                            successStatus();
+                        }
                     })
                     .catch(err => {
                         errorStatus(err);
                     });
-            };
+                };
 
-            const successStatus = () => {
-                formSuccessEl.classList.remove('is-hidden');
-                submitBtn.removeAttribute('disabled');
-                form.reset();
-            };
+                const successStatus = () => {
+                    formSuccessEl.classList.remove('is-hidden');
+                    submitBtn.removeAttribute('disabled');
+                    form.reset();
+                };
 
-            const errorStatus = (err) => {
-                console.error(err);
-                formFailureEl.classList.remove('is-hidden');
-                submitBtn.removeAttribute('disabled');
-            };
-            
-            const getEntityName = () => {
-                if (contactForm) {
-                    submitBtn.setAttribute('disabled', 'disabled');
-                    sendForm(contactForm);
-                } else {
-                    console.error('Invalid configuration');
-                }
-            };
-            
-            const emailIsValid = (emailValue) => {
-                return /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi.test(emailValue); 
-            };
-            
-            const showEmailError = () => {
-                emailValidateErrorEl.classList.remove('is-hidden');
-                !emailInputEl.classList.contains('is-danger') && emailInputEl.classList.add('is-danger');
-            };
-            
-            const hideEmailError = () => {
-                !emailValidateErrorEl.classList.contains('is-hidden') 
-                && emailValidateErrorEl.classList.add('is-hidden');
-                emailInputEl.classList.remove('is-danger');
-            };
-            
-            const hideNotifications = () => {
-                !formSuccessEl.classList.contains('is-hidden') && formSuccessEl.classList.add('is-hidden');
-                !formFailureEl.classList.contains('is-hidden') && formFailureEl.classList.add('is-hidden');
-            };
+                const errorStatus = (err) => {
+                    console.error(err);
+                    formFailureEl.classList.remove('is-hidden');
+                    submitBtn.removeAttribute('disabled');
+                };
 
-            const prepareFormData = () => {
-                const formData = new FormData(form);
-                let validateEmail = false;
-                formPostData = {};
-                for (let data of formData.entries()) {
-                    if (data[0] === 'type') {
-                        formPostData[data[0]] = JSON.parse(data[1]);
+                const startSubmit = (formData) => {
+                    if (contactForm) {
+                        submitBtn.setAttribute('disabled', 'disabled');
+                        sendForm(contactForm, formData);
                     } else {
-                        formPostData[data[0]] = data[1];
-                        if (data[0] === 'email') {
-                            validateEmail = data[1];
-                        }
+                        console.error('Invalid configuration: contactForm not found');
                     }
-                }
-                if (validateEmail) {
-                    emailIsValid(validateEmail) ? getEntityName() : showEmailError();
-                } else {
-                    getEntityName();
-                }
-            };
+                };
 
-            hideEmailError();
-            hideNotifications();
-            prepareFormData();
+                const isValidEmail = (emailValue) => {
+                    return typeof emailValue === 'string'
+                        && /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi.test(emailValue);
+                };
+
+                const showEmailError = () => {
+                    emailValidateErrorEl.classList.remove('is-hidden');
+                    !emailInputEl.classList.contains('is-danger') && emailInputEl.classList.add('is-danger');
+                };
+
+                const hideEmailError = () => {
+                    !emailValidateErrorEl.classList.contains('is-hidden')
+                    && emailValidateErrorEl.classList.add('is-hidden');
+                    emailInputEl.classList.remove('is-danger');
+                };
+
+                const hideNotifications = () => {
+                    !formSuccessEl.classList.contains('is-hidden') && formSuccessEl.classList.add('is-hidden');
+                    !formFailureEl.classList.contains('is-hidden') && formFailureEl.classList.add('is-hidden');
+                };
+
+                const parseMailAddress = (messageType) =>  {
+                    const selectedOption = messageType.selectedOptions[0];
+                    if (selectedOption == null) {
+                        return null;
+                    }
+                    const data = selectedOption.dataset;
+                    if (data.valuePart1 == null || data.valuePart2 == null || data.valuePart3 == null) {
+                        return null;
+                    }
+
+                    return data.valuePart1.trim() + "@" + data.valuePart2.trim() + "." + data.valuePart3.trim()
+                }
+
+                const parseFormData = (form) => {
+                    return new Promise(async resolve => {
+                        const data = new FormData();
+
+                        data.set('email', form.email.value);
+                        data.set('type', form.type.value);
+                        data.set('sendTo', parseMailAddress(form.type));
+                        data.set('name', form.name.value);
+                        data.set('message', form.message.value);
+
+                        await new Promise((resolve) => grecaptcha.ready(() => resolve()));
+                        const token = await grecaptcha.execute(captchaPublicKey, { action: 'submit' });
+                        data.set('g-recaptcha-response', token);
+
+                        resolve(data);
+                    });
+                }
+
+                const submitForm = () => {
+                    parseFormData(form).then(formData => {
+                        let email = false;
+                        for (let data of formData.entries()) {
+                            if (data[0] === 'email') {
+                                email = data[1];
+                            }
+                        }
+                        isValidEmail(email) ? startSubmit(formData) : showEmailError();
+                    })
+                };
+
+                hideEmailError();
+                hideNotifications();
+                submitForm();
+            });
         });
     });
 };

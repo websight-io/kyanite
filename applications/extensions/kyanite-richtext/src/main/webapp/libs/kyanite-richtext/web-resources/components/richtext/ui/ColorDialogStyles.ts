@@ -27,7 +27,7 @@ export const createGlobalCSS = (colors) => {
     for (const color of colors) {
        styles += `
          .${color.colorClassName} {
-            color: ${color.value};
+            color: ${extractFirstColor(color.value)};
          }
        `;
     }
@@ -39,24 +39,39 @@ export const createCSS = (colors) => {
     let styles = '';
 
     for (const color of colors) {
-       styles += `
-         .${color.colorClassName} {
-            & + svg rect:first-of-type {
-                stroke: ${color.value};
-            }
-            & + svg g {
-                color: ${color.value};
-            }
-            & + svg {
-                background-color: ${color.value};
-                fill: ${isDarkColor(color.value) ? WHITE : BLACK} !important;
-            }
-         }
-       `;
+      styles += `
+       .${color.colorClassName} {
+          & + svg rect:first-of-type {
+              stroke: none;
+          }
+          & + svg g {
+              color: transparent;
+          }
+          & + svg {
+              background: ${color.value};
+              fill: ${isColor(color.value) && isDarkColor(color.value) ? WHITE : BLACK} !important;
+          }
+       }
+     `;
     }
   
     return css`${styles}`;
 };
+
+const isColor = (value) => {
+  return value.startsWith('#') || value.startsWith('rgb');
+}
+
+function extractFirstColor(text) {
+  const colorRegex = /#(?:[0-9a-fA-F]{3}){1,2}|rgba?\([^)]+\)|hsla?\([^)]+\)|\b(?:rgb|hsl)\s*\([^)]+\)/g;
+  const colors = text.match(colorRegex);
+
+  if (colors && colors.length > 0) {
+    return colors[0];
+  } else {
+    return '#CACACA'; //default fallback
+  }
+}
 
 export const PopupContainer = styled.div`
     position: relative;

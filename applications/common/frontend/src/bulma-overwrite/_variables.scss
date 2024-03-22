@@ -26,7 +26,7 @@
 // Bulma initial variables https://github.com/jgthms/bulma/blob/master/sass/utilities/initial-variables.sass
 
 /* Navbar */
-$navbar-z: zindex.$z-index-navbar;
+$navbar-z: map.get(zindex.$map_t-z-index, 'navbar');
 $navbar-fixed-z: $navbar-z;
 
 /* Colors */
@@ -47,8 +47,8 @@ $danger: $red;
 $info: map.get(color.$map_t-color-by-id, 'info--600');
 $light: map.get(color.$map_t-color-by-id, 'grey--400');
 $dark: map.get(color.$map_t-color-by-id, 'grey--800');
-$black: color.$black;
-$white: color.$white;
+$black: map.get(color.$map_t-base-color, 'black');
+$white: map.get(color.$map_t-base-color, 'white');
 $custom-colors: (
   'grey-900': (
     map.get(color.$map_t-color-by-id, 'grey--900'),
@@ -57,12 +57,12 @@ $custom-colors: (
 ); // these colors are merged with bulma $colors variable, which defines e.g. hero variants, in this case "is-grey-900" is added
 
 /* Code colors */
-$pre-background: color.$code-background;
+$pre-background: map.get(color.$map_t-base-color, 'code-background');
 
 // FYI - below are fallback defaults, code is styled using hljs (highlight.js)
-$code-background: color.$code-background;
-$code: color.$code-text;
-$pre: color.$code-text;
+$code-background: map.get(color.$map_t-base-color, 'code-background');
+$code: map.get(color.$map_t-base-color, 'code-text');
+$pre: map.get(color.$map_t-base-color, 'code-text');
 
 /* Font */
 $family-sans-serif: map.get(
@@ -126,11 +126,12 @@ $spacing-values: (
   'auto': auto,
 );
 
-/* section */
-$section-padding: map.get($spacing-values, '6_3') map.get($spacing-values, '0');
+// we need to use the same values for horizontal padding as for hero component
+// to have a consistent design
+$section-padding: map.get($spacing-values, '6_3') map.get($spacing-values, '5');
 $section-padding-desktop: map.get($spacing-values, '6_5')
-  map.get($spacing-values, '0');
+  map.get($spacing-values, '6');
 $section-padding-medium: map.get($spacing-values, '6_3')
-  map.get($spacing-values, '0');
+  map.get($spacing-values, '5');
 $section-padding-large: map.get($spacing-values, '6_5')
-  map.get($spacing-values, '0');
+  map.get($spacing-values, '6');

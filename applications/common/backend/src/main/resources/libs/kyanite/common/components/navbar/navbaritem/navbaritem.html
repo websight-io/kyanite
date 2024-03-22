@@ -18,19 +18,24 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.navbar.NavbarItemComponent">
   <sly data-sly-test="${model.type == 'link'}">
-    <a class="navbar-item" href="${model.url}">
+    <a class="navbar-item" href="${model.url}" target="${model.isExternalUrl ? '_blank' : ''}">
         <sly data-sly-test="${model.addIcon && model.icon}">
           <sly data-sly-resource="${resource @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
         </sly>
       <span>${model.label}</span>
+      <sly data-sly-test="${item.isExternalUrl}">
+        <span class="icon">
+          <i class="mdi mdi-open-in-new"></i>
+        </span>
+      </sly>
     </a>
   </sly>
   <sly data-sly-test="${model.type == 'image'}">
     <a data-sly-test="${!model.isLink}" class="navbar-item">
-      <img src="${model.image.src}" width="${model.imageWidth}" height="${model.imageHeight}"
+      <img src="${model.image.assetReference}" width="${model.imageWidth}" height="${model.imageHeight}"
            alt="${model.image.alt}"></a>
     <a data-sly-test="${model.isLink}" class="navbar-item" href="${model.imageUrl}" target="${model.openInNewTab && model.imageUrl != '' ? '_blank' : ''}">
-      <img src="${model.image.src}" width="${model.imageWidth}" height="${model.imageHeight}"
+      <img src="${model.image.assetReference}" width="${model.imageWidth}" height="${model.imageHeight}"
            alt="${model.image.alt}">
     </a>
   </sly>

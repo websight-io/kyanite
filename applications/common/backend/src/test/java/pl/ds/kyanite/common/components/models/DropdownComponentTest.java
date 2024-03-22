@@ -60,15 +60,14 @@ class DropdownComponentTest {
         "is-right");
     assertThat(model.getItems().stream()
         .filter(i -> i.getLabel().equals("Item 1"))
-        .filter(i -> i.getUrl().equals("http://url1"))
+        .filter(i -> i.getUrl().equals("url1"))
         .filter(i -> i.isHasDivider())
         .count()).isEqualTo(1);
     assertThat(model.getItems().stream()
         .filter(i -> i.getLabel().equals("Item 2"))
-        .filter(i -> i.getUrl().equals("http://url2"))
+        .filter(i -> i.getUrl().equals("url2"))
         .filter(i -> !i.isHasDivider())
         .count()).isEqualTo(1);
-
   }
 
 }

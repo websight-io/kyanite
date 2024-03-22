@@ -1,190 +1,251 @@
 {
   "sling:resourceType": "wcm/dialogs/dialog",
   "tabs": {
-    "sling:resourceType": "wcm/dialogs/components/tabs",
-    "generalTab": {
-      "sling:resourceType": "wcm/dialogs/components/tab",
-      "label": "General",
-      "text": {
-        "sling:resourceType": "wcm/dialogs/components/richtext",
-        "name": "text",
-        "label": "Text",
-        "configuration": {
-          "sling:resourceSuperType": "kyanite/common/components/common/rte/configurations/default",
-          "color": {
-            "sling:resourceType": "extensions/dialogs/components/richtext/ui/color",
-            "title": "Color",
-            "icon": "format_color_text",
-            "colors": {
-              "sling:resourceType": "wcm/dialogs/components/include",
-              "path": "kyanite/common/components/common/rte/ui/colors"
-            },
-            "plugin": {
-              "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color"
-            },
-            "sling:orderBefore": "bulletlist"
-          },
-          "sling:hideChildren": [
-            "italic", "bold", "underline", "strikethrough", "bulletlist", "orderedlist", "link", "unsetlink", "textstyle"]
-        }
-      },
-      "size": {
-        "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/common/components/common/issize"
-      },
-      "element": {
-        "sling:resourceType": "wcm/dialogs/components/include",
-        "include": {
-          "sling:resourceSuperType": "/libs/kyanite/common/components/common/headinglevel",
-          "name": "element"
-        }
-      },
-      "anchorId": {
-        "sling:resourceType": "wcm/dialogs/components/textfield",
-        "name": "anchorId",
-        "label": "AnchorId text"
-      },
-      "addEyebrow": {
-        "sling:resourceType": "wcm/dialogs/components/toggle",
-        "name": "addEyebrow",
-        "label": "Add eyebrow text"
-      },
-      "eyebrowContainer": {
-        "sling:resourceType": "wcm/dialogs/components/container",
-        "eyebrowText": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "eyebrowText",
-          "label": "Eyebrow text"
-        },
-        "ws:display": {
-          "condition": {
-            "sourceName": "addEyebrow",
-            "values": "true"
-          }
-        }
-      },
-      "subtitleOptionsContainer": {
-        "sling:resourceType": "wcm/dialogs/components/container",
-        "addSubtitle": {
-          "sling:resourceType": "wcm/dialogs/components/toggle",
-          "name": "addSubtitle",
-          "label": "Add a subtitle"
-        },
-        "subtitleContainer": {
-          "sling:resourceType": "wcm/dialogs/components/container",
-          "subtitle": {
-            "sling:resourceType": "wcm/dialogs/components/textfield",
-            "name": "subtitle",
-            "label": "Subtitle text",
-            "description": "A subtitle can be defined if the size of the title is 4 or bigger"
-          },
-          "subtitleColor": {
-            "sling:resourceType": "wcm/dialogs/components/include",
-            "include": {
-              "sling:resourceSuperType": "kyanite/common/components/common/text/color",
-              "name": "subtitleColor",
-              "label": "Subtitle color"
-            },
-            "value": "bw_has-text-black"
-          },
-          "subtitleShadeContainerBw": {
-            "sling:resourceType": "wcm/dialogs/components/container",
-            "subtitleShadeBw": {
-              "sling:resourceType": "wcm/dialogs/components/include",
-              "include": {
-                "sling:resourceSuperType": "kyanite/common/components/common/text/shade/bw",
-                "label": "Subtitle shade",
-                "name": "bw/subtitleShade"
-              },
-              "ws:display": {
-                "condition": {
-                  "sourceName": "subtitleColor",
-                  "values": [
-                    "bw_has-text-black",
-                    "bw_has-text-white"
-                  ]
-                }
-              }
-            },
-            "subtitleShadeContainerGrey": {
-              "sling:resourceType": "wcm/dialogs/components/container",
-              "subtitleShadeGrey": {
-                "sling:resourceType": "wcm/dialogs/components/include",
-                "include": {
-                  "sling:resourceSuperType": "kyanite/common/components/common/text/shade/grey",
-                  "label": "Subtitle shade",
-                  "name": "grey/subtitleShade"
-                }
-              },
-              "ws:display": {
-                "condition": {
-                  "sourceName": "subtitleColor",
-                  "values": [
-                    "grey_has-text-grey"
-                  ]
-                }
-              }
-            },
-            "subtitleShadeContainerRest": {
-              "sling:resourceType": "wcm/dialogs/components/container",
-              "subtitleShadeRest": {
-                "sling:resourceType": "wcm/dialogs/components/include",
-                "include": {
-                  "sling:resourceSuperType": "kyanite/common/components/common/text/shade/rest",
-                  "label": "Subtitle shade",
-                  "name": "rest/subtitleShade"
-                }
-              },
-              "ws:display": {
-                "condition": {
-                  "sourceName": "subtitleColor",
-                  "values": [
-                    "rest_has-text-primary",
-                    "rest_has-text-link",
-                    "rest_has-text-info",
-                    "rest_has-text-success",
-                    "rest_has-text-warning",
-                    "rest_has-text-danger"
-                  ]
-                }
-              }
-            },
-            "ws:display": {
-              "condition": {
-                "sourceName": "subtitleColor",
-                "values": [
-                  "bw_has-text-black",
-                  "bw_has-text-white",
-                  "grey_has-text-grey",
-                  "rest_has-text-primary",
-                  "rest_has-text-link",
-                  "rest_has-text-info",
-                  "rest_has-text-success",
-                  "rest_has-text-warning",
-                  "rest_has-text-danger"
-                ]
-              }
-            }
-          },
-          "isSpaced": {
-            "sling:resourceType": "wcm/dialogs/components/checkbox",
-            "name": "isSpaced",
-            "label": "Additional space between the title and subtitle"
-          },
-          "ws:display": {
-            "condition": {
-              "sourceName": "addSubtitle",
-              "values": "true"
-            }
-          }
-        },
-        "ws:display": {
-          "condition": {
-            "sourceName": "size",
-            "values": ["is-1", "is-2", "is-3", "is-4"]
-          }
-        }
-      }
-    }
+		"sling:resourceType": "wcm/dialogs/components/tabs",
+		"generalTab": {
+			"sling:resourceType": "wcm/dialogs/components/tab",
+			"label": "General",
+			"text": {
+				"sling:resourceType": "wcm/dialogs/components/richtext",
+				"name": "text",
+				"label": "Text",
+				"configuration": {
+					"sling:resourceSuperType": "kyanite/common/components/common/rte/configurations/default",
+					"color": {
+						"sling:resourceType": "extensions/dialogs/components/richtext/ui/color",
+						"title": "Color",
+						"icon": "format_color_text",
+						"colors": {
+							"sling:resourceType": "wcm/dialogs/components/include",
+							"path": "kyanite/common/components/common/rte/ui/colors"
+						},
+						"plugin": {
+							"sling:resourceType": "extensions/dialogs/components/richtext/plugin/color"
+						},
+						"sling:orderBefore": "bulletlist"
+					},
+					"sling:hideChildren": [
+						"italic",
+						"bold",
+						"underline",
+						"strikethrough",
+						"bulletlist",
+						"orderedlist",
+						"link",
+						"unsetlink",
+						"textstyle"
+					]
+				}
+			},
+			"size": {
+				"sling:resourceType": "wcm/dialogs/components/include",
+				"path": "/libs/kyanite/common/components/common/issize"
+			},
+			"element": {
+				"sling:resourceType": "wcm/dialogs/components/include",
+				"include": {
+					"sling:resourceSuperType": "/libs/kyanite/common/components/common/headinglevel",
+					"name": "element"
+				}
+			},
+			"anchorId": {
+				"sling:resourceType": "wcm/dialogs/components/textfield",
+				"name": "anchorId",
+				"label": "AnchorId text"
+			},
+			"addEyebrow": {
+				"sling:resourceType": "wcm/dialogs/components/toggle",
+				"name": "addEyebrow",
+				"label": "Add eyebrow text"
+			},
+			"eyebrowContainer": {
+				"sling:resourceType": "wcm/dialogs/components/container",
+				"eyebrowText": {
+					"sling:resourceType": "wcm/dialogs/components/textfield",
+					"name": "eyebrowText",
+					"label": "Eyebrow text"
+				},
+				"ws:display": {
+					"condition": {
+						"sourceName": "addEyebrow",
+						"values": "true"
+					}
+				}
+			},
+			"subtitleOptionsContainer": {
+				"sling:resourceType": "wcm/dialogs/components/container",
+				"addSubtitle": {
+					"sling:resourceType": "wcm/dialogs/components/toggle",
+					"name": "addSubtitle",
+					"label": "Add a subtitle"
+				},
+				"subtitleContainer": {
+					"sling:resourceType": "wcm/dialogs/components/container",
+					"subtitle": {
+						"sling:resourceType": "wcm/dialogs/components/textfield",
+						"name": "subtitle",
+						"label": "Subtitle text",
+						"description": "A subtitle can be defined if the size of the title is 4 or bigger"
+					},
+					"subtitleColor": {
+						"sling:resourceType": "wcm/dialogs/components/include",
+						"include": {
+							"sling:resourceSuperType": "kyanite/common/components/common/text/color",
+							"name": "subtitleColor",
+							"label": "Subtitle color"
+						},
+						"value": "bw_has-text-black"
+					},
+					"subtitleShadeContainerBw": {
+						"sling:resourceType": "wcm/dialogs/components/container",
+						"subtitleShadeBw": {
+							"sling:resourceType": "wcm/dialogs/components/include",
+							"include": {
+								"sling:resourceSuperType": "kyanite/common/components/common/text/shade/bw",
+								"label": "Subtitle shade",
+								"name": "bw/subtitleShade"
+							},
+							"ws:display": {
+								"condition": {
+									"sourceName": "subtitleColor",
+									"values": [
+										"bw_has-text-black",
+										"bw_has-text-white"
+									]
+								}
+							}
+						},
+						"subtitleShadeContainerGrey": {
+							"sling:resourceType": "wcm/dialogs/components/container",
+							"subtitleShadeGrey": {
+								"sling:resourceType": "wcm/dialogs/components/include",
+								"include": {
+									"sling:resourceSuperType": "kyanite/common/components/common/text/shade/grey",
+									"label": "Subtitle shade",
+									"name": "grey/subtitleShade"
+								}
+							},
+							"ws:display": {
+								"condition": {
+									"sourceName": "subtitleColor",
+									"values": ["grey_has-text-grey"]
+								}
+							}
+						},
+						"subtitleShadeContainerRest": {
+							"sling:resourceType": "wcm/dialogs/components/container",
+							"subtitleShadeRest": {
+								"sling:resourceType": "wcm/dialogs/components/include",
+								"include": {
+									"sling:resourceSuperType": "kyanite/common/components/common/text/shade/rest",
+									"label": "Subtitle shade",
+									"name": "rest/subtitleShade"
+								}
+							},
+							"ws:display": {
+								"condition": {
+									"sourceName": "subtitleColor",
+									"values": [
+										"rest_has-text-primary",
+										"rest_has-text-link",
+										"rest_has-text-info",
+										"rest_has-text-success",
+										"rest_has-text-warning",
+										"rest_has-text-danger"
+									]
+								}
+							}
+						},
+						"ws:display": {
+							"condition": {
+								"sourceName": "subtitleColor",
+								"values": [
+									"bw_has-text-black",
+									"bw_has-text-white",
+									"grey_has-text-grey",
+									"rest_has-text-primary",
+									"rest_has-text-link",
+									"rest_has-text-info",
+									"rest_has-text-success",
+									"rest_has-text-warning",
+									"rest_has-text-danger"
+								]
+							}
+						}
+					},
+					"isSpaced": {
+						"sling:resourceType": "wcm/dialogs/components/checkbox",
+						"name": "isSpaced",
+						"label": "Additional space between the title and subtitle"
+					},
+					"ws:display": {
+						"condition": {
+							"sourceName": "addSubtitle",
+							"values": "true"
+						}
+					}
+				},
+				"ws:display": {
+					"condition": {
+						"sourceName": "size",
+						"values": ["is-1", "is-2", "is-3", "is-4"]
+					}
+				}
+			}
+		},
+		"Animated endings": {
+			"sling:resourceType": "wcm/dialogs/components/tab",
+			"label": "Animated endings",
+			"addAnimatedEndings": {
+				"sling:resourceType": "wcm/dialogs/components/toggle",
+				"name": "addAnimatedEndings",
+				"label": "Add animated endings"
+			},
+			"animatedEndingsContainer": {
+				"sling:resourceType": "wcm/dialogs/components/container",
+				"endings": {
+					"sling:resourceType": "wcm/dialogs/components/multifield",
+					"name": "endings",
+					"label": "Typed endings",
+					"ending": {
+						"sling:resourceType": "wcm/dialogs/components/textfield",
+						"name": "value",
+						"label": "Ending text"
+					}
+				},
+				"endingsColor": {
+					"sling:resourceType": "wcm/dialogs/components/include",
+					"include": {
+						"sling:resourceSuperType": "kyanite/common/components/common/text/color",
+						"name": "endingsColor",
+						"label": "Typed text color"
+					}
+				},
+				"speed": {
+					"sling:resourceType": "wcm/dialogs/components/numberfield",
+					"name": "speed",
+					"label": "Speed of typing in ms",
+					"default": "50"
+				},
+				"delay": {
+					"sling:resourceType": "wcm/dialogs/components/numberfield",
+					"name": "delay",
+					"label": "Delay time before backspacing in ms",
+					"default": "1200"
+				},
+				"showCursor": {
+					"sling:resourceType": "wcm/dialogs/components/toggle",
+					"name": "showCursor",
+					"label": "Show typed text cursor?",
+					"default": "false"
+				},
+				"ws:display": {
+					"condition": {
+						"sourceName": "addAnimatedEndings",
+						"values": "true"
+					}
+				}
+			}
+		}
   }
 }

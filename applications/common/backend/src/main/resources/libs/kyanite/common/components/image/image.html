@@ -17,34 +17,8 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.ImageComponent">
-  <sly data-sly-test="${!model.assetReference}">
-    <div style="padding-top: 40px;" data-sly-unwrap="${!wcmmode.isEdit}">
-      <sly data-sly-repeat.paragraph="${resource.children}"
-           data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType}"></sly>
-    </div>
-  </sly>
-  <sly data-sly-test.shadowClass="${model.hasShadow ? 'has-shadow' : ''}"></sly>
-  <sly data-sly-test="${!model.isSvg}">
-    <figure class="image ${model.style} ${shadowClass}">
-      <sly data-sly-test="${model.isVideo}">
-        <video class="video__video"
-               width="${model.width}"
-               height="${model.height}"
-               src="${model.assetReference}"
-               data-sly-attribute="${model.attributes}"
-               controlslist="nodownload" preload="none">
-        </video>
-    </sly>
-    <sly data-sly-test="${!model.isVideo}">
-      <img class="${model.isRounded ? 'is-rounded' : ''}"
-           width="${model.width}"
-           height="${model.height}"
-           src="${model.assetReference}"
-           alt="${model.alt}">
-    </sly>
-    </figure>
-  </sly>
-  <sly data-sly-test="${model.isSvg}">
-    <span class="image ${model.style} ${shadowClass}">${model.assetLink @ context='unsafe'}</span>
+  <sly data-sly-test="${model.assetReference}"
+       data-sly-use.template="./template.html"
+       data-sly-call="${template.image @ model = model}">
   </sly>
 </sly>

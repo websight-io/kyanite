@@ -1,20 +1,24 @@
 {
   "sling:resourceType": "wcm/dialogs/dialog",
   "tabs": {
-    "sling:resourceType": "wcm/dialogs/components/tabs",
-    "generalTab": {
-      "sling:resourceType": "wcm/dialogs/components/tab",
-      "label": "General",
-      "id": {
-        "sling:resourceType": "wcm/dialogs/components/textfield",
-        "name": "id",
-        "label": "Section id",
-        "required": true
-      },
-      "size": {
-        "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/common/components/hero/attributes/size"
-      }
-    }
+		"sling:resourceType": "wcm/dialogs/components/tabs",
+		"generalTab": {
+			"sling:resourceType": "wcm/dialogs/components/tab",
+			"label": "General",
+			"id": {
+				"sling:resourceType": "wcm/dialogs/components/textfield",
+				"name": "id",
+				"label": "Section id",
+				"required": true
+			},
+			"size": {
+				"sling:resourceType": "wcm/dialogs/components/include",
+				"path": "/libs/kyanite/common/components/hero/attributes/size"
+			}
+		},
+		"backgroundImage": {
+			"sling:resourceType": "wcm/dialogs/components/include",
+			"path": "/libs/kyanite/common/components/common/backgroundimage"
+		}
   }
 }

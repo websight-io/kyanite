@@ -1,0 +1,21 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "header": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "header",
+        "label": "Modal Card header"
+      },
+      "id": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "id",
+        "label": "Modal card ID",
+        "description": "To open this modal, use its identifier as the action identifier within the settings of another component. For example, a button."
+      }
+    }
+  }
+}

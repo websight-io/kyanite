@@ -1,7 +1,9 @@
 {
   "isContainer": true,
   "allowedComponents": [
+    "/apps/kyanite/common/components/navbar/navbarstart",
     "/libs/kyanite/common/components/navbar/navbarstart",
+    "/apps/kyanite/common/components/navbar/navbarend",
     "/libs/kyanite/common/components/navbar/navbarend"
   ],
   "group": "Kyanite sub-components",

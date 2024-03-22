@@ -131,6 +131,29 @@
               }
             }
           },
+          "iconSymbols": {
+            "sling:resourceType": "wcm/dialogs/components/container",
+            "selectableIcon": {
+              "sling:resourceType": "wcm/dialogs/components/include",
+              "path": "kyanite/common/components/common/icon/icons/symbols",
+              "ws:display": {
+                "condition": {
+                  "sourceName": "selectOrType",
+                  "values": "select"
+                }
+              }
+            },
+            "iconSize": {
+              "sling:resourceType": "wcm/dialogs/components/include",
+              "path": "kyanite/common/components/common/icon/iconsize/symbols"
+            },
+            "ws:display": {
+              "condition": {
+                "sourceName": "iconLibType",
+                "values": "symbols"
+              }
+            }
+          },
           "ws:display": {
             "condition": {
               "sourceName": "addIcon",
@@ -145,17 +168,18 @@
       },
       "imageContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
-        "assetReference": {
-          "sling:resourceType": "wcm/dialogs/components/assetreference",
-          "mimeTypes": ["image/*"],
-          "name": "image/assetReference",
-          "description": "Default image source",
-          "label": "Choose image"
-        },
-        "src": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "name": "image/src",
-          "label": "Secondary image src"
+        "imageSource": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
+            "assetReference": {
+              "mimeTypes": ["image/*"],
+              "name": "image/assetReference"
+            },
+            "src": {
+              "name": "image/assetReference"
+            }
+          }
         },
         "alt": {
           "sling:resourceType": "wcm/dialogs/components/textfield",

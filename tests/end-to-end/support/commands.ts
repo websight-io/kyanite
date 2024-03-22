@@ -15,6 +15,7 @@
  */
 
 import '@4tw/cypress-drag-drop';
+import 'cypress-wait-until';
 import { SelectionMode } from './types';
 
 
@@ -59,37 +60,5 @@ Cypress.Commands.add('login', () => {
         _charset_: 'UTF-8'
       }
     });
-  });
-});
-
-Cypress.Commands.add('percySnapshotWithAuth', (name: string, options) => {
-  cy.getCookie('websight.auth').then((authCookie) => {
-    cy.percySnapshot(name, {
-      discovery: {
-        requestHeaders: {
-          cookie: `${authCookie.name}=${authCookie.value}`
-        }
-      },
-      ...options
-    });
-  });
-});
-
-Cypress.Commands.add('percySnapshotPreview', (name: string, options) => {
-  cy.percySnapshotWithAuth(name, {
-    ...options
-  });
-});
-
-Cypress.Commands.add('percySnapshotPageEditor', (name: string, options) => {
-  cy.percySnapshotWithAuth(name, {
-    ...options
-  });
-});
-
-Cypress.Commands.add('percySnapshotDialog', (name: string, options) => {
-  cy.percySnapshotWithAuth(name, {
-    scope: '[data-testid^="ModalDialog_"][role="dialog"]',
-    ...options
   });
 });

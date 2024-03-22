@@ -16,7 +16,8 @@
 
 package pl.ds.kyanite.common.components.models;
 
-import java.io.IOException;
+import static org.apache.commons.lang3.StringUtils.isNotEmpty;
+
 import java.net.URLConnection;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +25,6 @@ import java.util.Map.Entry;
 import java.util.Objects;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
-import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
@@ -41,25 +41,25 @@ import pl.ds.kyanite.common.components.utils.LinkUtil;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ImageComponent {
 
-  @Inject
-  private String src;
+  private static final String NONE_STYLES_TYPE = "none";
+  private static final String SVG_MIME_TYPE = "image/svg+xml";
 
-  @Inject
+  @ValueMapValue
   private String assetReference;
 
-  @Inject
+  @ValueMapValue
   @Getter
   private String type;
 
-  @Inject
-  @Getter
+  @ValueMapValue
+  @Default(values = NONE_STYLES_TYPE)
   private String style;
 
-  @Inject
+  @ValueMapValue
   @Getter
   private String isRounded;
 
-  @Inject
+  @ValueMapValue
   @Getter
   private String alt;
 
@@ -95,37 +95,35 @@ public class ImageComponent {
   @Getter
   private String height;
 
-  private final Map<String, Boolean> parameters = new HashMap<>();
+  @ValueMapValue
+  private String mobileAssetReference;
+
+  @ValueMapValue
+  private String tabletAssetReference;
 
   @SlingObject
-  private Resource resource;
+  private ResourceResolver resourceResolver;
+
+  @OSGiService
+  private SvgImageService svgImageService;
+
+  private final Map<String, Boolean> parameters = new HashMap<>();
+
+  @Getter
+  private Map<String, String> attributes;
 
   @Getter
   private boolean isSvg;
 
   @Getter
-  private String assetLink;
-
-  private static final String SVG_MIME_TYPE = "image/svg+xml";
-
-  @OSGiService
-  private SvgImageService svgImageService;
-
-  @Getter
   private boolean isVideo;
 
-  @Getter
-  private Map<String, String> attributes;
+  private boolean isInternal;
 
   @PostConstruct
-  private void init() throws IOException {
-    final ResourceResolver resourceResolver = resource.getResourceResolver();
+  private void init() {
     if (Objects.nonNull(assetReference)) {
       this.processLink(assetReference, resourceResolver);
-    }
-    if (Objects.isNull(assetReference) && Objects.nonNull(src)) {
-      this.processLink(src, resourceResolver);
-      assetReference = src;
     }
     this.parameters.put("controls", hasControls);
     this.parameters.put("autoplay", autoplay);
@@ -140,26 +138,14 @@ public class ImageComponent {
     }
   }
 
-  private void processLink(String link, ResourceResolver resourceResolver) throws IOException {
-    boolean isInternal = LinkUtil.isInternal(link, resourceResolver);
-    this.isSvg = SVG_MIME_TYPE.equals(
-        svgImageService.getMimeType(link, resourceResolver, isInternal));
-    if (this.isSvg) {
-      if (isInternal) {
-        this.assetLink = svgImageService.getSvgFromResource(link, resourceResolver);
-      } else {
-        this.assetLink = svgImageService.getSvgFromExternalUrl(link);
-      }
-    }
-    this.isVideo = this.isVideo(link);
+  private void processLink(String link, ResourceResolver resourceResolver) {
+    isInternal = LinkUtil.isInternal(link, resourceResolver);
+    isSvg = SVG_MIME_TYPE.equals(svgImageService.getMimeType(link, resourceResolver, isInternal));
+    isVideo = this.isVideo(link);
   }
 
   public String getThumbnail() {
-    return LinkUtil.handleLink(thumbnail, resource.getResourceResolver());
-  }
-
-  public String getSrc() {
-    return LinkUtil.handleLink(src, resource.getResourceResolver());
+    return LinkUtil.handleLink(thumbnail, resourceResolver);
   }
 
   public String getImageWidth() {
@@ -172,7 +158,37 @@ public class ImageComponent {
   }
 
   public String getAssetReference() {
-    return LinkUtil.handleLink(assetReference, resource.getResourceResolver());
+    return LinkUtil.handleLink(assetReference, resourceResolver);
+  }
+
+  public String getTabletAssetReference() {
+    return LinkUtil.handleLink(tabletAssetReference, resourceResolver);
+  }
+
+  public String getMobileAssetReference() {
+    return LinkUtil.handleLink(mobileAssetReference, resourceResolver);
+  }
+
+  public String getSvgDocument() {
+    if (isSvg && !isAnyMediaAsset()) {
+      if (isInternal) {
+        return svgImageService.getSvgFromResource(assetReference, resourceResolver);
+      } else {
+        return svgImageService.getSvgFromExternalUrl(assetReference);
+      }
+    }
+    return null;
+  }
+
+  public String getStyle() {
+    if (NONE_STYLES_TYPE.equals(type)) {
+      return "";
+    }
+    return style;
+  }
+
+  public boolean isAnyMediaAsset() {
+    return isNotEmpty(mobileAssetReference) || isNotEmpty(tabletAssetReference);
   }
 
   private boolean isVideo(String link) {

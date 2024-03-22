@@ -1,0 +1,58 @@
+# Copyright (C) 2023 Dynamic Solutions
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+name: Update CMS version
+
+on:
+  workflow_dispatch:
+
+env:
+  MAVEN_CACHE_VERSION: v7.0.0 # bump cache version number to invalidate cache i.e. v3 > v4
+  MAVEN_CACHE_PATH: ~/.m2/repository
+
+jobs:
+  update-cms-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+          cache: 'maven'
+
+      - name: update CMS version
+        run: |
+          export NEW_CMS_VERSION=./mvnw versions:update-properties -D allowSnapshots=false | grep 'Updated ${websight.cms.version} from' | sed -nE 's/.* from ([0-9.]*) to ([0-9.]*).*/\2/p'
+          
+          if [ -n "${NEW_CMS_VERSION}" ]; then
+            git config --global user.email "github.actions@ds.pl"
+            git config --global user.name "GitHub Actions"
+            mkdir -p ~/.ssh
+            printf '%s\n' "${{ secrets.SSH_SECRET_KEY }}" > ~/.ssh/id_rsa
+            chmod 0600 ~/.ssh/id_rsa
+            ls -al ~/.ssh
+            
+            git checkout -b feature/update-cms-version-to-${NEW_CMS_VERSION}
+            git add ./pom.xml && git commit -m "Update CMS version to ${NEW_CMS_VERSION}" && git push
+            
+            gh pr create -B main -H feature/update-cms-version-to-${NEW_CMS_VERSION} --title 'Update CMS version to ${NEW_CMS_VERSION}' --body 'Created by Github action'
+          else
+            echo "CMS version left unchanged"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

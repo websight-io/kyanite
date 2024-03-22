@@ -19,10 +19,23 @@
 <head>
   <sly data-sly-include="head-start.html"></sly>
   <meta charset="UTF-8">
-  <title>${properties.title}</title>
+  <title>${properties.title ? properties.title : properties.jcr:title}</title>
   <meta data-sly-test.keywords="${properties.title}" name="keywords" content="${keywords}">
   <meta data-sly-test.description="${properties.description}" name="description"
         content="${description}">
+
+  <meta data-sly-test.ogImage="${properties.ogImage}" name="image" property="og:image"  content="${ogImage}"/>
+  <meta data-sly-test.ogType="${properties.ogType}" property="og:type" content="${ogType}"/>
+  <meta data-sly-test.ogUrl="${properties.ogUrl}" property="og:url" content="${ogUrl}"/>
+  <meta data-sly-test.ogDescription="${properties.ogDescription}" property="og:description" content="${ogDescription}"/>
+  <meta data-sly-test.ogTitle="${properties.ogTitle}" property="og:title" content="${ogTitle}">
+  <meta data-sly-test.twitterCard="${properties.twitterCard}" name="twitter:card" content="${twitterCard}"/>
+  <meta data-sly-test.twitterTitle="${properties.twitterTitle}" name="twitter:title" content="${twitterTitle}">
+  <meta data-sly-test.twitterImageAlt="${properties.twitterImageAlt}" name="twitter:image:alt" content="${twitterImageAlt}"/>
+  <meta data-sly-test.twitterSite="${properties.twitterSite}" name="twitter:site" content="${twitterSite}"/>
+  <meta data-sly-test.twitterDescription="${properties.twitterDescription}" name="twitter:description" content="${twitterDescription}"/>
+  <meta data-sly-test.twitterImage="${properties.twitterImage}" name="twitter:image" content="${twitterImage}"/>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <sly data-sly-include="head-schema.html"></sly>
   <sly data-sly-include="head-libs.html"></sly>

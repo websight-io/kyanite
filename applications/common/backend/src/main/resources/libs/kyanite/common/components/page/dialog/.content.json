@@ -1,9 +1,9 @@
 {
   "tabs": {
     "generalTab": {
-      "pageBackground": {
+      "background": {
         "sling:resourceType": "wcm/dialogs/components/radio",
-        "name": "pageBackground",
+        "name": "background",
         "label": "Background",
         "nobackground": {
           "sling:resourceType": "wcm/dialogs/components/radio/option",
@@ -21,39 +21,16 @@
           "value": "squares"
         }
       },
-      "navbarFixed": {
+      "noNavbarPadding": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
-        "name": "navbarFixed",
-        "label": "Fixed navbar",
-        "description": "Check if the page contains a fixed navbar."
+        "label": "Remove space for navbar",
+        "description": "It causes the first section to shift beneath the navbar",
+        "name": "noNavbarPadding"
       },
-      "position": {
-        "sling:resourceType": "wcm/dialogs/components/container",
-        "navbarFixedPosition": {
-          "sling:resourceType": "wcm/dialogs/components/radio",
-          "name": "navbarFixedPosition",
-          "label": "Navbar fixed position",
-          "required": true,
-          "navbarFixedTop": {
-            "sling:resourceType": "wcm/dialogs/components/radio/option",
-            "label": "Navbar fixed on the top",
-            "description": "Check if the page contains a navbar fixed on the top of the page.",
-            "value": "has-navbar-fixed-top",
-            "selected": true
-          },
-          "navbarFixedBottom": {
-            "sling:resourceType": "wcm/dialogs/components/radio/option",
-            "label": "Navbar fixed on the bottom",
-            "description": "Check if the page contains a navbar fixed on the bottom of the page.",
-            "value": "has-navbar-fixed-bottom"
-          }
-        },
-        "ws:display": {
-          "condition": {
-            "sourceName": "navbarFixed",
-            "values": true
-          }
-        }
+      "captcha": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "label": "Add reCAPTCHA",
+        "name": "addCaptcha"
       }
     },
     "metadata": {
@@ -68,6 +45,85 @@
         "sling:resourceType": "wcm/dialogs/components/textarea",
         "name": "description",
         "label": "Description"
+      }
+    },
+    "metadataTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Social media metadata",
+      "ogImage": {
+        "sling:resourceType": "wcm/dialogs/components/pathpicker",
+        "label": "og:image",
+        "name": "ogImage"
+      },
+      "ogType": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "label": "og:type",
+        "name": "ogType",
+        "article": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "article",
+          "value": "article"
+        },
+        "website": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "website",
+          "value": "website"
+        }
+      },
+      "ogUrl": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "og:url",
+        "name": "ogUrl"
+      },
+      "ogDescription": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "og:description",
+        "name": "ogDescription"
+      },
+      "ogTitle": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "og:title",
+        "name": "ogTitle"
+      },
+      "twitterCard": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "label": "twitter:card",
+        "name": "twitterCard",
+        "summary": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "summary",
+          "value": "summary"
+        },
+        "summaryLargeImage": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "summary_large_image",
+          "value": "summary_large_image"
+        }
+      },
+      "twitterTitle": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "twitter:title",
+        "name": "twitterTitle"
+      },
+      "twitterImage": {
+        "sling:resourceType": "wcm/dialogs/components/pathpicker",
+        "label": "twitter:image",
+        "name": "twitterImage"
+      },
+      "twitterImageAlt": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "twitter:image:alt",
+        "name": "twitterImageAlt"
+      },
+      "twitterSite": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "twitter:site",
+        "name": "twitterSite"
+      },
+      "twitterDescription": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "label": "twitter:description",
+        "name": "twitterDescription"
       }
     }
   }

@@ -24,6 +24,33 @@
   </sly>
   <h1 id="${model.anchorId}" style="text-align: ${model.titleAlign @ context='styleToken'};" data-sly-element="${model.element}" class="${model.titleClasses @ join=' '}">
     ${model.textAsOneLine @ context='html'}
+    
+    <sly data-sly-test="${model.addAnimatedEndings}">
+      <!--/* list for SEO purposes */-->
+      <div class="typed-strings-animation ${model.endingsClasses @ join=' '}" data-sly-test="${wcmmode.isEdit}">
+        <sly data-sly-list.item="${model.endings}">
+          <span>
+            ${item.value}
+          </span>
+        </sly>
+      </div>
+      <!--/* end */-->
+      <div class="title-container" data-sly-test="${!wcmmode.isEdit && model.endings}">
+          <!--/* for SEO purposes and to get the heighest element */-->
+          <sly data-sly-test="${model.addAnimatedEndings}">
+          <div class="container-with-endings ${model.endingsClasses @ join=' '}">
+            <sly data-sly-list.item="${model.endings}">
+              <span>
+                ${item.value}
+              </span>
+            </sly>
+          </div>
+        </sly>
+        <!--/* end */-->
+        <span class="${model.endingsClasses @ join=' '} typed-animation" data-show-cursor="${model.showCursor}" data-endings="${model.endingJson}" data-speed="${model.speed}" data-delay="${model.delay}"></span>
+        <sly data-sly-test="${!model.showCursor}"><span class="typed-cursor" style="visibility: hidden" aria-hidden="true">|</span></sly>
+      </div>
+    </sly>
   </h1>
   <sly data-sly-test="${model.addSubtitle}">
     <h1 data-sly-element="${model.element}" class="${model.subtitleClasses @ join=' '}">

@@ -1,7 +1,5 @@
 {
-  "isContainer": false,
   "group": "Kyanite sub-components",
-  "allowedComponents": ["/libs/kyanite/common/components/tabs/tabcontent"],
   "sling:resourceType": "ws:Component",
   "title": "Tab"
 }

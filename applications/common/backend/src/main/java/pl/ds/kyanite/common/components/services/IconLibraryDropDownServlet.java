@@ -45,10 +45,10 @@ public class IconLibraryDropDownServlet extends SlingSafeMethodsServlet {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(IconLibraryDropDownServlet.class);
 
-  private final transient LibraryIconFactoryConfig config;
+  private final transient LibraryIconConfigStore config;
 
   @Activate
-  public IconLibraryDropDownServlet(@Reference LibraryIconFactoryConfig config) {
+  public IconLibraryDropDownServlet(@Reference LibraryIconConfigStore config) {
     this.config = config;
   }
 
@@ -56,7 +56,7 @@ public class IconLibraryDropDownServlet extends SlingSafeMethodsServlet {
   protected void doGet(@NotNull SlingHttpServletRequest request,
       @NotNull SlingHttpServletResponse response) {
     try {
-      List<LibraryIconFactoryConfig> allConfigs = config.getAllConfigs();
+      List<LibraryIconConfig> allConfigs = config.getAllConfigs();
       ResourceResolver resourceResolver = request.getResourceResolver();
       List<KeyValue> dropDownList = new ArrayList<>();
       allConfigs.forEach(elem -> dropDownList.add(new KeyValue(elem.getLabel(), elem.getId())));

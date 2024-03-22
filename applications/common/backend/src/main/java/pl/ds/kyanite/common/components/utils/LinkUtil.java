@@ -40,8 +40,6 @@ public class LinkUtil {
         return handleInternalLink(link, resourceResolver);
       } else if (isAnchorLink(link)) {
         return link;
-      } else {
-        return handleExternalLink(link);
       }
     }
 
@@ -63,12 +61,8 @@ public class LinkUtil {
     return addHtmlExtensionSuffixToLink(link);
   }
 
-  private static boolean isAnchorLink(String link) {
-    return link.startsWith(ANCHOR_LINK_PREFIX);
-  }
-
-  private static String handleExternalLink(String link) {
-    return addProtocolPrefixToLink(link);
+  public static boolean isAnchorLink(String link) {
+    return StringUtils.startsWith(link, ANCHOR_LINK_PREFIX);
   }
 
   public static boolean isInternal(String link, ResourceResolver resourceResolver) {
@@ -78,10 +72,6 @@ public class LinkUtil {
   private static boolean isAsset(String link, ResourceResolver resourceResolver) {
     Resource resource = getResource(link, resourceResolver);
     return AssetsConstants.NT_ASSET.equals(getPrimaryType(resource));
-  }
-
-  private static String addProtocolPrefixToLink(String link) {
-    return link.startsWith("http") ? link : "http://" + link;
   }
 
   private static String addHtmlExtensionSuffixToLink(String link) {
@@ -99,14 +89,14 @@ public class LinkUtil {
   }
 
   public static Resource getResource(String link, ResourceResolver resourceResolver) {
-    if (link.startsWith(PUBLISHED)) {
+    if (StringUtils.startsWith(link, PUBLISHED)) {
       return resourceResolver.getResource(link.replaceFirst(PUBLISHED, CONTENT));
     }
     return resourceResolver.getResource(link);
   }
 
   public static boolean isPublished(String link) {
-    return link.startsWith(PUBLISHED);
+    return StringUtils.startsWith(link, PUBLISHED);
   }
 
   private static String getPrimaryType(Resource resource) {

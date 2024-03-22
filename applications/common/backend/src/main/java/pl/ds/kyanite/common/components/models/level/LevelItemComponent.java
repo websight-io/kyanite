@@ -46,22 +46,18 @@ public class LevelItemComponent {
   private String classes;
 
   public String getAlignment() {
-    if (alignment.equals("is-left")) {
-      return "is-justify-content-flex-start has-text-left";
-    }
-    if (alignment.equals("is-right")) {
-      return "is-justify-content-flex-end has-text-right";
-    }
-    return "has-text-centered";
+    return switch (alignment) {
+      case "is-left"  -> "has-text-left";
+      case "is-right" -> "has-text-right";
+      default         -> "has-text-centered";
+    };
   }
 
   public String getAlignmentVertical() {
-    if (alignmentVertical.equals("is-top")) {
-      return "is-align-items-flex-start";
-    }
-    if (alignmentVertical.equals("is-bottom")) {
-      return "is-align-items-flex-end";
-    }
-    return "is-align-items-center";
+    return switch (alignmentVertical) {
+      case "is-top"     -> "is-align-items-flex-start";
+      case "is-bottom"  -> "is-align-items-flex-end";
+      default           -> "is-align-items-center";
+    };
   }
 }

@@ -19,19 +19,26 @@ package pl.ds.kyanite.common.components.models;
 import static java.util.Objects.requireNonNull;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
 import org.apache.sling.testing.mock.sling.junit5.SlingContext;
 import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import pl.ds.kyanite.common.components.models.ContactFormComponent;
+import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
+import pl.ds.kyanite.common.components.services.impl.RecaptchaConfigStoreImpl;
+import pl.ds.kyanite.common.components.services.impl.RecaptchaConfigurationImpl;
 
 @ExtendWith(SlingContextExtension.class)
 public class ContactFormComponentTest {
 
-  private static final String PATH = "/content/contactform";
-  private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
+  private static final String PATH = "/content";
+  public static final String TEST_KEY = "test_key";
+  private final SlingContext context = new SlingContext(ResourceResolverType.JCR_MOCK);
 
 
   @BeforeEach
@@ -60,6 +67,47 @@ public class ContactFormComponentTest {
     assertThat(model).isNotNull();
     assertThat(model.getSubmitLabel()).isEqualTo("Send Message");
     assertThat(model.getConsentText()).isEqualTo("I consent");
+  }
+
+  @Test
+  void shouldHaveCorrectCaptchaKey() throws IOException {
+    //given
+    RecaptchaConfiguration recaptchaConfiguration = createRecaptchaConfiguration("darkModeSpace", TEST_KEY);
+    RecaptchaConfiguration secondRecaptcha = createRecaptchaConfiguration("base", "baseKey");
+    RecaptchaConfigStoreImpl recaptchaConfigStore = new RecaptchaConfigStoreImpl();
+    recaptchaConfigStore.bind(recaptchaConfiguration);
+    recaptchaConfigStore.bind(secondRecaptcha);
+    context.registerInjectActivateService(recaptchaConfigStore);
+
+    ContactFormComponent model = context.resourceResolver().getResource(PATH + "/darkModeSpace/pages/test/jcr:content/pagecontainer/contactform")
+        .adaptTo(ContactFormComponent.class);
+
+    assertThat(model).isNotNull();
+    assertThat(model.getSubmitLabel()).isEqualTo("Send Message");
+    assertThat(model.getConsentText()).isEqualTo("I consent");
+    assertThat(model.getCaptchaPublicKey()).isEqualTo(TEST_KEY);
+  }
+
+  @Test
+  void shouldNotHaveRecaptcha() {
+
+    context.registerInjectActivateService(new RecaptchaConfigStoreImpl());
+    ContactFormComponent model = context.resourceResolver().getResource(PATH + "/darkModeSpace/pages/test/jcr:content/pagecontainer/contactform")
+        .adaptTo(ContactFormComponent.class);
+
+    assertThat(model).isNotNull();
+    assertThat(model.getSubmitLabel()).isEqualTo("Send Message");
+    assertThat(model.getConsentText()).isEqualTo("I consent");
+    assertThat(model.getCaptchaPublicKey()).isNull();
+  }
+  @NotNull
+  private RecaptchaConfiguration createRecaptchaConfiguration(String spaceName, String key) {
+    Map<String, Object> props = new HashMap<>();
+    props.put("spaceName", spaceName);
+    props.put("captchaPublicKey", key);
+    RecaptchaConfiguration recaptchaConfiguration = new RecaptchaConfigurationImpl();
+    context.registerInjectActivateService(recaptchaConfiguration,props);
+    return recaptchaConfiguration;
   }
 
 }

@@ -23,6 +23,7 @@
                     <item
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/navbar/navbaritem"
+                        imageSrcType="asset"
                         label="Brand"
                         type="container"/>
                 </brand>
@@ -39,6 +40,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
                             icon="fas fa-info"
+                            imageSrcType="asset"
                             label="About"
                             type="link"
                             url="#about">
@@ -50,6 +52,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
                             icon="fas fa-bars"
+                            imageSrcType="asset"
                             label="Services"
                             type="link"
                             url="#services"/>
@@ -57,6 +60,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
                             icon="fas fa-file-alt"
+                            imageSrcType="asset"
                             label="Resume"
                             type="link"
                             url="#resume"/>
@@ -64,6 +68,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
                             icon="fas fa-th-list"
+                            imageSrcType="asset"
                             label="Portfolio"
                             type="link"
                             url="#portfolio"/>
@@ -71,6 +76,7 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/navbar/navbaritem"
                             icon="fas fa-envelope"
+                            imageSrcType="asset"
                             label="Contact"
                             type="link"
                             url="#contact"/>
@@ -226,6 +232,8 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/image"
                                 alt="\0"
+                                assetReference="/content/kyanite/assets/images/personal/AboutMe.png"
+                                imageSrcType="asset"
                                 isRounded="false"
                                 src="/content/kyanite/assets/images/personal/AboutMe.png"
                                 type="fixed"/>
@@ -460,13 +468,15 @@
                                         <card
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="kyanite/common/components/card"
-                                            header="Admin (Light)">
+                                            header="Admin (Light)"
+                                            imageSrcType="link">
                                             <thumbnail
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"/>
                                             <image
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"
+                                                assetReference="\0"
                                                 src="\0"/>
                                             <urls jcr:primaryType="nt:unstructured">
                                                 <_x0030_
@@ -483,6 +493,8 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="kyanite/common/components/image"
                                                     alt="\0"
+                                                    assetReference="/content/kyanite/assets/images/personal/PortfolioAdmin.png"
+                                                    imageSrcType="asset"
                                                     isRounded="false"
                                                     src="/content/kyanite/assets/images/personal/PortfolioAdmin.png"
                                                     type="fixed"/>
@@ -521,13 +533,15 @@
                                         <card
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="kyanite/common/components/card"
-                                            header="Cards">
+                                            header="Cards"
+                                            imageSrcType="asset">
                                             <thumbnail
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"/>
                                             <image
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"
+                                                assetReference="\0"
                                                 src="\0"/>
                                             <urls jcr:primaryType="nt:unstructured">
                                                 <_x0030_
@@ -544,6 +558,8 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="kyanite/common/components/image"
                                                     alt="\0"
+                                                    assetReference="/content/kyanite/assets/images/personal/PortfolioCards.png"
+                                                    imageSrcType="asset"
                                                     isRounded="false"
                                                     src="/content/kyanite/assets/images/personal/PortfolioCards.png"
                                                     type="fixed"/>
@@ -582,13 +598,15 @@
                                         <card
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="kyanite/common/components/card"
-                                            header="Forum">
+                                            header="Forum"
+                                            imageSrcType="asset">
                                             <thumbnail
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"/>
                                             <image
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"
+                                                assetReference="\0"
                                                 src="\0"/>
                                             <urls jcr:primaryType="nt:unstructured">
                                                 <_x0030_
@@ -605,6 +623,8 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="kyanite/common/components/image"
                                                     alt="\0"
+                                                    assetReference="/content/kyanite/assets/images/personal/PortfolioForum.png"
+                                                    imageSrcType="asset"
                                                     isRounded="false"
                                                     src="/content/kyanite/assets/images/personal/PortfolioForum.png"
                                                     type="fixed"/>
@@ -656,13 +676,15 @@
                                         <card
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="kyanite/common/components/card"
-                                            header="Band">
+                                            header="Band"
+                                            imageSrcType="asset">
                                             <thumbnail
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"/>
                                             <image
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"
+                                                assetReference="\0"
                                                 src="\0"/>
                                             <urls jcr:primaryType="nt:unstructured">
                                                 <_x0030_
@@ -679,6 +701,8 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="kyanite/common/components/image"
                                                     alt="\0"
+                                                    assetReference="/content/kyanite/assets/images/personal/PortfolioBand.png"
+                                                    imageSrcType="asset"
                                                     isRounded="false"
                                                     src="/content/kyanite/assets/images/personal/PortfolioBand.png"
                                                     type="fixed"/>
@@ -717,13 +741,15 @@
                                         <card
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="kyanite/common/components/card"
-                                            header="Cheatsheet">
+                                            header="Cheatsheet"
+                                            imageSrcType="asset">
                                             <thumbnail
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"/>
                                             <image
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"
+                                                assetReference="\0"
                                                 src="\0"/>
                                             <urls jcr:primaryType="nt:unstructured">
                                                 <_x0030_
@@ -740,6 +766,8 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="kyanite/common/components/image"
                                                     alt="\0"
+                                                    assetReference="/content/kyanite/assets/images/personal/PortfolioCheatsheet.png"
+                                                    imageSrcType="asset"
                                                     isRounded="false"
                                                     src="/content/kyanite/assets/images/personal/PortfolioCheatsheet.png"
                                                     type="fixed"/>
@@ -778,13 +806,15 @@
                                         <card
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="kyanite/common/components/card"
-                                            header="Hero">
+                                            header="Hero"
+                                            imageSrcType="asset">
                                             <thumbnail
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"/>
                                             <image
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"
+                                                assetReference="\0"
                                                 src="\0"/>
                                             <urls jcr:primaryType="nt:unstructured">
                                                 <_x0030_
@@ -801,6 +831,8 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="kyanite/common/components/image"
                                                     alt="\0"
+                                                    assetReference="/content/kyanite/assets/images/personal/PortfolioHero.png"
+                                                    imageSrcType="asset"
                                                     isRounded="false"
                                                     src="/content/kyanite/assets/images/personal/PortfolioHero.png"
                                                     type="fixed"/>
@@ -852,13 +884,15 @@
                                         <card
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="kyanite/common/components/card"
-                                            header="Blog">
+                                            header="Blog"
+                                            imageSrcType="asset">
                                             <thumbnail
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"/>
                                             <image
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"
+                                                assetReference="\0"
                                                 src="\0"/>
                                             <urls jcr:primaryType="nt:unstructured">
                                                 <_x0030_
@@ -875,6 +909,8 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="kyanite/common/components/image"
                                                     alt="\0"
+                                                    assetReference="/content/kyanite/assets/images/personal/PortfolioBlog.png"
+                                                    imageSrcType="asset"
                                                     isRounded="false"
                                                     src="/content/kyanite/assets/images/personal/PortfolioBlog.png"
                                                     type="fixed"/>
@@ -913,13 +949,15 @@
                                         <card
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="kyanite/common/components/card"
-                                            header="Cover">
+                                            header="Cover"
+                                            imageSrcType="asset">
                                             <thumbnail
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"/>
                                             <image
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"
+                                                assetReference="\0"
                                                 src="\0"/>
                                             <urls jcr:primaryType="nt:unstructured">
                                                 <_x0030_
@@ -936,6 +974,8 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="kyanite/common/components/image"
                                                     alt="\0"
+                                                    assetReference="/content/kyanite/assets/images/personal/PortfolioCover.png"
+                                                    imageSrcType="asset"
                                                     isRounded="false"
                                                     src="/content/kyanite/assets/images/personal/PortfolioCover.png"
                                                     type="fixed"/>
@@ -974,13 +1014,15 @@
                                         <card
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="kyanite/common/components/card"
-                                            header="Inbox">
+                                            header="Inbox"
+                                            imageSrcType="asset">
                                             <thumbnail
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"/>
                                             <image
                                                 jcr:primaryType="nt:unstructured"
                                                 alt="\0"
+                                                assetReference="\0"
                                                 src="\0"/>
                                             <urls jcr:primaryType="nt:unstructured">
                                                 <_x0030_
@@ -997,6 +1039,8 @@
                                                     jcr:primaryType="nt:unstructured"
                                                     sling:resourceType="kyanite/common/components/image"
                                                     alt="\0"
+                                                    assetReference="/content/kyanite/assets/images/personal/PortfolioInbox.png"
+                                                    imageSrcType="asset"
                                                     isRounded="false"
                                                     src="/content/kyanite/assets/images/personal/PortfolioInbox.png"
                                                     type="fixed"/>

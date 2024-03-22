@@ -23,44 +23,59 @@
 @use 'src/atomic-design-system/00-token/t.color' as color;
 
 .a-title {
-  @extend .t-font-weight--700;
+  font-weight: var(--font-weight-700);
+  color: var(--base-color-body-text, var(--color-grey--900));
 }
 
 .a-subtitle {
-  @extend .t-font-weight--600;
+  font-weight: var(--font-weight-600);
+  color: var(--base-color-body-text, var(--color-grey--700));
 }
 
 .a-title,
 .a-subtitle {
-  @extend .t-letter-spacing--default;
+  letter-spacing: default;
 
   &-1 {
-    @extend .t-line-height--100;
+    line-height: var(--line-height-100);
     @include font.t-font-size-fluid(56, 128);
   }
 
   &-2 {
-    @extend .t-line-height--150;
+    line-height: var(--line-height-150);
     @include font.t-font-size-fluid(40, 80);
   }
 
   &-3 {
-    @extend .t-line-height--150;
+    line-height: var(--line-height-150);
     @include font.t-font-size-fluid(32, 64);
   }
 
   &-4 {
-    @extend .t-line-height--150;
+    line-height: var(--line-height-150);
     @include font.t-font-size-fluid(28, 48);
+
   }
 
   &-5 {
-    @extend .t-line-height--150;
+    line-height: var(--line-height-150);
     @include font.t-font-size-fluid(24, 40);
   }
 
   &-6 {
-    @extend .t-line-height--150;
+    line-height: var(--line-height-150);
     @include font.t-font-size-fluid(22, 32);
+  }
+}
+
+.container-with-endings {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  > span {
+    left: 0;
+    position: absolute;
+    visibility: hidden;
+    color: transparent !important;
   }
 }

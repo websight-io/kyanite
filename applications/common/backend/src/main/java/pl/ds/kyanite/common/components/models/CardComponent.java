@@ -16,20 +16,28 @@
 
 package pl.ds.kyanite.common.components.models;
 
+import static org.apache.commons.lang3.StringUtils.isNotEmpty;
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
+import lombok.experimental.Delegate;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import pl.ds.kyanite.common.components.models.background.ComponentWithBackground;
+import pl.ds.kyanite.common.components.models.background.DefaultComponentWithBackground;
+import pl.ds.kyanite.common.components.utils.LinkUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
-public class CardComponent {
+public class CardComponent implements ComponentWithBackground {
 
   public static final String CARD_CONTENT_TYPE = "kyanite/common/components/card/cardcontent";
 
@@ -41,6 +49,19 @@ public class CardComponent {
   @Inject
   @Getter
   private ImageComponent image;
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "top")
+  private String imagePosition;
+
+  @ValueMapValue
+  @Getter
+  private String mobileAssetReference;
+
+  @ValueMapValue
+  @Getter
+  private String tabletAssetReference;
 
   @Inject
   @Getter
@@ -58,6 +79,13 @@ public class CardComponent {
   @SlingObject
   private Resource resource;
 
+  @SlingObject
+  private ResourceResolver resourceResolver;
+
+  @Self
+  @Delegate
+  private DefaultComponentWithBackground componentWithBackground;
+
   @PostConstruct
   void init() {
     for (Resource child : resource.getChildren()) {
@@ -67,5 +95,17 @@ public class CardComponent {
         break;
       }
     }
+  }
+
+  public boolean isAnyMediaAsset() {
+    return isNotEmpty(mobileAssetReference) || isNotEmpty(tabletAssetReference);
+  }
+
+  public String getTabletAssetReference() {
+    return LinkUtil.handleLink(tabletAssetReference, resourceResolver);
+  }
+
+  public String getMobileAssetReference() {
+    return LinkUtil.handleLink(mobileAssetReference, resourceResolver);
   }
 }

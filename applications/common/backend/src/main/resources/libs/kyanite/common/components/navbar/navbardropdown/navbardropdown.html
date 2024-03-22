@@ -27,11 +27,16 @@
 
     <div class="navbar-dropdown ${model.isBoxed ? 'is-boxed' : ''}">
       <sly data-sly-list.item="${model.items}">
-        <a class="navbar-item" href="${item.url}">
+        <a class="navbar-item" href="${item.url}" target="${item.isExternalUrl ? '_blank' : ''}">
           <sly data-sly-test="${model.addIcon && model.icon}">
             <sly data-sly-resource="${resource @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
           </sly>
           ${item.label}
+          <sly data-sly-test="${item.isExternalUrl}">
+            <span class="icon">
+              <i class="mdi mdi-open-in-new"></i>
+            </span>
+          </sly>
         </a>
         <sly data-sly-test="${item.hasDivider}">
           <hr class="navbar-divider">

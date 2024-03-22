@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-window.addEventListener('load', () => {
+window.addEventListener(window.KYANITE_ON_LOAD, (e) => {
   const links = document.querySelectorAll(
     '[data-part1][data-part2][data-part3]'
   );

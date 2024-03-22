@@ -44,6 +44,10 @@ public class TabsComponent {
 
   @Inject
   @Getter
+  private boolean vertical;
+
+  @Inject
+  @Getter
   private boolean boxed;
 
   @Inject

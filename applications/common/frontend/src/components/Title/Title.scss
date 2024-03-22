@@ -20,7 +20,7 @@
 
 .title {
   @extend .a-title;
-  @extend .t-font-weight--700;
+  font-weight: var(--font-weight-700);
 
   &.is-1 {
     @extend .a-title-1;
@@ -49,7 +49,7 @@
 
 .subtitle {
   @extend .a-subtitle;
-  @extend .t-font-weight--600;
+  font-weight: var(--font-weight-600);
 
   &.is-1 {
     @extend .a-subtitle-1;
@@ -74,4 +74,8 @@
   &.is-6 {
     @extend .a-subtitle-6;
   }
+}
+
+.typed-strings-animation > span {
+  display: block;
 }

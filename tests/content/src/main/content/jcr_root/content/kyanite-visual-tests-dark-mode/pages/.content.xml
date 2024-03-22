@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:ws="http://ds.pl/websight"
+    jcr:primaryType="ws:Pages"
+    ws:template="/libs/kyanite/common/templates/darkpagesspace">
+    <tabs/>
+    <navbar/>
+    <footer/>
+    <table-of-content/>
+    <level-item--feature-small/>
+    <blog-article-header/>
+    <card-full-height-variant/>
+    <heading-typography/>
+    <blog-listing/>
+    <content-typography/>
+    <level-item--feature/>
+    <message/>
+    <navbar-megadropdown-columns/>
+    <code-snippet/>
+    <button/>
+    <link/>
+    <colors/>
+    <icons/>
+    <eyebrow/>
+    <level/>
+    <hero/>
+    <navbar-megadropdown/>
+    <blog-article-author-bio/>
+</jcr:root>

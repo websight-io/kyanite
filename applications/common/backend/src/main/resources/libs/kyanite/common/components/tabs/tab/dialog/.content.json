@@ -3,110 +3,233 @@
   "tabs": {
     "sling:resourceType": "wcm/dialogs/components/tabs",
     "generalTab": {
-      "sling:resourceType": "wcm/dialogs/components/tab",
-      "label": "General",
-      "labelText": {
-        "sling:resourceType": "wcm/dialogs/components/textfield",
-        "name": "label",
-        "label": "Label"
-      },
-      "addIcon": {
-        "sling:resourceType": "wcm/dialogs/components/toggle",
-        "name": "addIcon",
-        "label": "Add icon?"
-      },
-      "iconContainer": {
-        "sling:resourceType": "wcm/dialogs/components/container",
-        "iconLibType": {
-          "sling:resourceType": "wcm/dialogs/components/select",
-          "name": "iconLibType",
-          "label": "Icon Library",
-          "required": true,
-          "datasource": {
-            "sling:resourceType": "/apps/iconLibraryDatasource"
-          }
-        },
-        "selectOrType": {
-          "sling:resourceType": "wcm/dialogs/components/radio",
-          "name": "selectOrType",
-          "label": "Select icon or type it",
-          "required": true,
-          "select": {
-            "sling:resourceType": "wcm/dialogs/components/radio/option",
-            "label": "Select it",
-            "value": "select",
-            "selected": true
-          },
-          "type": {
-            "sling:resourceType": "wcm/dialogs/components/radio/option",
-            "label": "Type it",
-            "value": "type"
-          }
-        },
-        "typedIcon": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "icon",
-          "label": "Name of the icon",
-          "ws:display": {
-            "condition": {
-              "sourceName": "selectOrType",
-              "values": "type"
-            }
-          }
-        },
-        "iconFA": {
-          "sling:resourceType": "wcm/dialogs/components/container",
-          "selectableIcon": {
-            "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/common/components/common/icon/icons/fontawesome",
-            "ws:display": {
-              "condition": {
-                "sourceName": "selectOrType",
-                "values": "select"
-              }
-            }
-          },
-          "iconSize": {
-            "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/common/components/common/icon/iconsize/fontawesome"
-          },
-          "ws:display": {
-            "condition": {
-              "sourceName": "iconLibType",
-              "values": "fas"
-            }
-          }
-        },
-        "iconMD": {
-          "sling:resourceType": "wcm/dialogs/components/container",
-          "selectableIcon": {
-            "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/common/components/common/icon/icons/materialdesign",
-            "ws:display": {
-              "condition": {
-                "sourceName": "selectOrType",
-                "values": "select"
-              }
-            }
-          },
-          "iconSize": {
-            "sling:resourceType": "wcm/dialogs/components/include",
-            "path": "kyanite/common/components/common/icon/iconsize/materialdesign"
-          },
-          "ws:display": {
-            "condition": {
-              "sourceName": "iconLibType",
-              "values": "mdi"
-            }
-          }
-        },
-        "ws:display": {
-          "condition": {
-            "sourceName": "addIcon",
-            "values": "true"
-          }
-        }
-      }
-    }
+		"sling:resourceType": "wcm/dialogs/components/tab",
+		"label": "General",
+		"labelText": {
+			"sling:resourceType": "wcm/dialogs/components/richtext",
+			"name": "label",
+			"label": "Label",
+			"ws:disallowedContext": ["edit:panel"],
+			"configuration": "kyanite/common/components/common/rte/configurations/default"
+		},
+		"size": {
+			"sling:resourceType": "wcm/dialogs/components/include",
+			"path": "kyanite/common/components/common/size"
+		},
+		"textweight": {
+			"sling:resourceType": "wcm/dialogs/components/include",
+			"path": "kyanite/common/components/common/textweight"
+		},
+		"color": {
+			"sling:resourceType": "wcm/dialogs/components/include",
+			"path": "kyanite/common/components/common/text/color"
+		},
+		"shadeContainer": {
+			"sling:resourceType": "wcm/dialogs/components/container",
+			"blackAndWhiteShade": {
+				"sling:resourceType": "wcm/dialogs/components/container",
+				"shade": {
+					"sling:resourceType": "wcm/dialogs/components/include",
+					"path": "kyanite/common/components/common/text/shade/bw",
+					"namespace": "bw"
+				},
+				"ws:display": {
+					"condition": {
+						"sourceName": "color",
+						"values": ["bw_has-text-white", "bw_has-text-black"]
+					}
+				}
+			},
+			"greyShade": {
+				"sling:resourceType": "wcm/dialogs/components/container",
+				"shade": {
+					"sling:resourceType": "wcm/dialogs/components/include",
+					"path": "kyanite/common/components/common/text/shade/grey",
+					"include": {
+						"sling:resourceSuperType": "kyanite/common/components/common/text/shade/grey",
+						"name": "grey/shade",
+						"light": {
+							"selected": true
+						},
+						"dark": {
+							"selected": false
+						}
+					}
+				},
+				"ws:display": {
+					"condition": {
+						"sourceName": "color",
+						"values": ["grey_has-text-link"]
+					}
+				}
+			},
+			"restShade": {
+				"sling:resourceType": "wcm/dialogs/components/container",
+				"shade": {
+					"sling:resourceType": "wcm/dialogs/components/include",
+					"path": "kyanite/common/components/common/text/shade/rest",
+					"include": {
+						"sling:resourceSuperType": "kyanite/common/components/common/text/shade/rest",
+						"name": "rest/shade",
+						"dark": {
+							"selected": true
+						},
+						"900": {
+							"selected": false
+						}
+					}
+				},
+				"ws:display": {
+					"condition": {
+						"sourceName": "color",
+						"values": [
+							"rest_has-text-primary",
+							"rest_has-text-grey",
+							"rest_has-text-info",
+							"rest_has-text-success",
+							"rest_has-text-warning",
+							"rest_has-text-danger"
+						]
+					}
+				}
+			},
+			"ws:display": {
+				"condition": {
+					"sourceName": "color",
+					"values": [
+						"bw_has-text-white",
+						"bw_has-text-black",
+						"grey_has-text-link",
+						"rest_has-text-primary",
+						"rest_has-text-grey",
+						"rest_has-text-info",
+						"rest_has-text-success",
+						"rest_has-text-warning",
+						"rest_has-text-danger"
+					]
+				}
+			}
+		},
+		"addIcon": {
+			"sling:resourceType": "wcm/dialogs/components/toggle",
+			"name": "addIcon",
+			"label": "Add icon?"
+		},
+		"iconContainer": {
+			"sling:resourceType": "wcm/dialogs/components/container",
+			"iconLibType": {
+				"sling:resourceType": "wcm/dialogs/components/select",
+				"name": "iconLibType",
+				"label": "Icon Library",
+				"required": true,
+				"datasource": {
+					"sling:resourceType": "/apps/iconLibraryDatasource"
+				}
+			},
+			"selectOrType": {
+				"sling:resourceType": "wcm/dialogs/components/radio",
+				"name": "selectOrType",
+				"label": "Select icon or type it",
+				"required": true,
+				"select": {
+					"sling:resourceType": "wcm/dialogs/components/radio/option",
+					"label": "Select it",
+					"value": "select",
+					"selected": true
+				},
+				"type": {
+					"sling:resourceType": "wcm/dialogs/components/radio/option",
+					"label": "Type it",
+					"value": "type"
+				}
+			},
+			"typedIcon": {
+				"sling:resourceType": "wcm/dialogs/components/textfield",
+				"name": "icon",
+				"label": "Name of the icon",
+				"ws:display": {
+					"condition": {
+						"sourceName": "selectOrType",
+						"values": "type"
+					}
+				}
+			},
+			"iconFA": {
+				"sling:resourceType": "wcm/dialogs/components/container",
+				"selectableIcon": {
+					"sling:resourceType": "wcm/dialogs/components/include",
+					"path": "kyanite/common/components/common/icon/icons/fontawesome",
+					"ws:display": {
+						"condition": {
+							"sourceName": "selectOrType",
+							"values": "select"
+						}
+					}
+				},
+				"iconSize": {
+					"sling:resourceType": "wcm/dialogs/components/include",
+					"path": "kyanite/common/components/common/icon/iconsize/fontawesome"
+				},
+				"ws:display": {
+					"condition": {
+						"sourceName": "iconLibType",
+						"values": "fas"
+					}
+				}
+			},
+			"iconMD": {
+				"sling:resourceType": "wcm/dialogs/components/container",
+				"selectableIcon": {
+					"sling:resourceType": "wcm/dialogs/components/include",
+					"path": "kyanite/common/components/common/icon/icons/materialdesign",
+					"ws:display": {
+						"condition": {
+							"sourceName": "selectOrType",
+							"values": "select"
+						}
+					}
+				},
+				"iconSize": {
+					"sling:resourceType": "wcm/dialogs/components/include",
+					"path": "kyanite/common/components/common/icon/iconsize/materialdesign"
+				},
+				"ws:display": {
+					"condition": {
+						"sourceName": "iconLibType",
+						"values": "mdi"
+					}
+				}
+			},
+			"iconSymbols": {
+				"sling:resourceType": "wcm/dialogs/components/container",
+				"selectableIcon": {
+					"sling:resourceType": "wcm/dialogs/components/include",
+					"path": "kyanite/common/components/common/icon/icons/symbols",
+					"ws:display": {
+						"condition": {
+							"sourceName": "selectOrType",
+							"values": "select"
+						}
+					}
+				},
+				"iconSize": {
+					"sling:resourceType": "wcm/dialogs/components/include",
+					"path": "kyanite/common/components/common/icon/iconsize/symbols"
+				},
+				"ws:display": {
+					"condition": {
+						"sourceName": "iconLibType",
+						"values": "symbols"
+					}
+				}
+			},
+			"ws:display": {
+				"condition": {
+					"sourceName": "addIcon",
+					"values": "true"
+				}
+			}
+		}
+	}
   }
 }

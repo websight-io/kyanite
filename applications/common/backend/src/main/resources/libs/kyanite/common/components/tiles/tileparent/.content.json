@@ -2,7 +2,9 @@
   "isContainer": true,
   "group": "Kyanite sub-components",
   "allowedComponents": [
+    "/apps/kyanite/common/components/tiles/tileparent",
     "/libs/kyanite/common/components/tiles/tileparent",
+    "/apps/kyanite/common/components/tiles/tilechild",
     "/libs/kyanite/common/components/tiles/tilechild"],
   "sling:resourceType": "ws:Component",
   "title": "Parent tile"

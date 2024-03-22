@@ -1,3 +1,3 @@
-Bundle-Name: Kyanite Table Service
-Sling-Bundle-Resources: /libs/kyanite-table-service/docs
-WebSight-Swagger-Index: /libs/kyanite-table-service/docs/api.html
+Bundle-Name: Kyanite Components Project: Extensions Table Service
+Sling-Bundle-Resources: /apps/kyanite-table-service/docs
+WebSight-Swagger-Index: /apps/kyanite-table-service/docs/api.html

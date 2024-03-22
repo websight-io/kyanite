@@ -19,14 +19,127 @@
 @use 'sass:map';
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/atomic-design-system/02-molecule/m.tabs' as tabs;
+@use 'src/atomic-design-system/00-token/t.color' as color;
+@use 'src/atomic-design-system/00-token/t.border';
+@use 'src/bulma-overwrite/bulma-spacing';
 
-.tabs {
-  @include tabs.m-tabs;
+/* editMode styles start */
+.tabs-container-edit {
+  padding-top: 10px; 
+  padding-bottom: 10px;
+  &.is-vertical {
+    ul {
+      flex-direction: column;
+    }
+    & > div {
+      display: flex;
+      .tabs {
+         & + div {
+          flex: 1;
+         }
+         ul {
+          @extend .mr-5;
+          gap: var(--spacing-6);
+          border-bottom: none;
+          li {
+            @extend .pb-3;
+            @extend .pt-3;
+            @extend .pr-3;
+              opacity: 0.5;
+              width: 100%;
+              border-bottom: none;
+              border-right: var(--border-weight-2) solid;
+              border-color: transparent;
+              &.is-active {
+                border-color: var(--color-primary--600) !important;
+                opacity: 1;
+              }
+           }
+         }
+         
+      }
+    }
+    .tabs-content {
+      width: 100%;
+    }
+  }
+  .tabs {
+    ul {
+      gap: var(--spacing-6);
+      border-bottom: none;
+      li {
+        border-bottom: var(--border-weight-2) solid;
+        opacity: 0.5;
+        border-color: transparent;
+        &.is-active {
+          border-color: var(--color-primary--600) !important;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+/* editMode styles end */
 
-  &-content {
-    .columns {
-      @include breakpoint.media-breakpoint-medium {
-        align-items: center;
+.tabs-container {
+  @extend .mb-4;
+  .tabs {
+    @include tabs.m-tabs;
+  
+    &-content {
+      .columns {
+        @include breakpoint.media-breakpoint-medium {
+          align-items: center;
+        }
+      }
+    }
+  }
+  &.is-vertical {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    .tabs {
+      flex-shrink: 0;
+      width: 100%;
+      ul {
+        gap: var(--spacing-6);
+        flex-direction: column;
+        max-width: 100%;
+        li {
+          @extend .pb-3;
+          @extend .pt-3;
+          white-space: normal;
+          border-color: transparent;
+          &.is-active {
+            border-color: var(--color-primary--600) !important;
+          }
+        }
+      }
+    }
+    .tabs-content {
+      width: 100%;
+      text-align: center;
+      margin-top: var(--spacing-6);
+      @include breakpoint.media-breakpoint-xlarge {
+        margin-left: var(--spacing-6);
+        margin-top: 0;
+      }
+    }
+    @include breakpoint.media-breakpoint-xlarge {
+      flex-direction: row;
+      .tabs {
+        width: 33%;
+        ul {
+          margin-right: 0 !important;
+          align-items: stretch;
+          li {
+            padding-right: var(--spacing-6) !important;
+            border-bottom: none;
+            border-right: var(--border-weight-2) solid;
+            border-color: transparent;
+            width: 100%;
+          }
+        }
       }
     }
   }

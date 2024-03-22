@@ -27,7 +27,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import pl.ds.kyanite.common.components.models.ImageComponent;
 import pl.ds.kyanite.common.components.services.SvgImageService;
 
 @ExtendWith({SlingContextExtension.class, MockitoExtension.class})
@@ -53,8 +52,7 @@ class ImageComponentTest {
         context.resourceResolver().getResource(PATH + "/fixed")).adaptTo(ImageComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getAssetReference()).isEqualTo("http:///content/space/assets/imageLg.jpg");
-    assertThat(model.getSrc()).isNull();
+    assertThat(model.getAssetReference()).isEqualTo("/content/space/assets/imageLg.jpg");
     assertThat(model.getType()).isEqualTo("fixed");
     assertThat(model.getStyle()).isEqualTo("is-16x16px");
     assertThat(model.getIsRounded()).isEqualTo("true");
@@ -67,25 +65,9 @@ class ImageComponentTest {
         context.resourceResolver().getResource(PATH + "/ratio")).adaptTo(ImageComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getAssetReference()).isEqualTo("http:///content/space/assets/imageLg.jpg");
-    assertThat(model.getSrc()).isEqualTo("http:///content/space/assets/imageSrc.jpg");
+    assertThat(model.getAssetReference()).isEqualTo("/content/space/assets/imageLg.jpg");
     assertThat(model.getType()).isEqualTo("ratio");
     assertThat(model.getStyle()).isEqualTo("is-4by3");
-    assertThat(model.getIsRounded()).isNull();
-    assertThat(model.getAlt()).isNull();
-  }
-
-  @Test
-  void overWriteAssetReferenceWhenMissing() {
-    ImageComponent model = requireNonNull(
-        context.resourceResolver().getResource(PATH + "/srcOverwrite")).adaptTo(
-        ImageComponent.class);
-
-    assertThat(model).isNotNull();
-    assertThat(model.getAssetReference()).isEqualTo("http:///content/space/assets/otherAsset.jpg");
-    assertThat(model.getSrc()).isEqualTo("http:///content/space/assets/otherAsset.jpg");
-    assertThat(model.getType()).isEqualTo("fixed");
-    assertThat(model.getStyle()).isEqualTo("is-16x16px");
     assertThat(model.getIsRounded()).isNull();
     assertThat(model.getAlt()).isNull();
   }

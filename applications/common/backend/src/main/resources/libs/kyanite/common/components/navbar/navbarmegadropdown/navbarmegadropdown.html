@@ -1,0 +1,71 @@
+<!--/*
+  ~
+  ~     Copyright (C) 2023 Dynamic Solutions
+  ~
+  ~     Licensed under the Apache License, Version 2.0 (the "License");
+  ~     you may not use this file except in compliance with the License.
+  ~     You may obtain a copy of the License at
+  ~
+  ~         http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~     Unless required by applicable law or agreed to in writing, software
+  ~     distributed under the License is distributed on an "AS IS" BASIS,
+  ~     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~     See the License for the specific language governing permissions and
+  ~     limitations under the License.
+  ~
+*/-->
+
+<sly data-sly-use.model="pl.ds.kyanite.common.components.models.navbar.NavbarMegaDropdownComponent">
+  <div class="navbar-item has-dropdown is-hoverable ${model.isDropup ? 'has-dropdown-up' : ''}"
+       tabindex="0">
+    <a class="navbar-link ${model.hasArrow ? '' : 'is-arrowless'}">
+      ${model.dropdownLabel}
+    </a>
+
+    <div class="navbar-mega-dropdown navbar-dropdown ${model.isBoxed ? 'is-boxed' : ''}">
+      <div class="container">
+        <div class="columns is-desktop">
+          <sly data-sly-list.column="${model.dropdownColumns}">
+            <sly data-sly-test="${!column.hideColumn && column.type == 'text'}">
+              <div class="column text-column ${column.colSizeClass}">
+                <sly data-sly-list.section="${column.sections}">
+                  <span class="navbar-section">
+                    ${section.label}
+                  </span>
+                  <sly data-sly-list.item="${section.sectionItems}">
+                    <a class="navbar-item" href="${item.url}" target="${item.isExternalUrl ? '_blank' : ''}">
+                      ${item.label}
+                      <sly data-sly-test="${item.isExternalUrl}">
+                        <span class="icon">
+                          <i class="mdi mdi-open-in-new"></i>
+                        </span>
+                      </sly>
+                    </a>
+                  </sly>
+                </sly>
+              </div>
+            </sly>
+            <sly data-sly-test="${!column.hideColumn && column.type == 'highlights'}">
+              <div class="column highlights-column ${column.colSizeClass}">
+                <sly data-sly-list.highlight="${column.highlights}">
+                  <a data-sly-test="${highlight.url}" class="navbar-item" href="${highlight.url}" target="${highlight.isExternalUrl ? '_blank' : ''}">
+                    ${highlight.label}
+                    <sly data-sly-test="${item.isExternalUrl}">
+                      <span class="icon">
+                        <i class="mdi mdi-open-in-new"></i>
+                      </span>
+                    </sly>
+                  </a>
+                  <span data-sly-test="${!highlight.url}" class="highlight-label">
+                    ${highlight.label}
+                  </span>
+                </sly>
+              </div>
+            </sly>
+          </sly>
+        </div>
+      </div>
+    </div>
+  </div>
+</sly>

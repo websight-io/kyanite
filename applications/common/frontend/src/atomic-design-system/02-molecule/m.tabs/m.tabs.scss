@@ -43,30 +43,30 @@
     border: none;
   }
 
-  li a {
-    @extend .t-color__grey--700;
-    @extend .t-font-weight--700;
-    @extend .t-border-weight-bottom--2;
+  li {
+    color: var(--color-grey--700) !important;
+    border-bottom: var(--border-weight-2) solid;
+    cursor: pointer;
     @extend .pt-0;
     @extend .pr-0;
     @extend .pl-0;
     @extend .pb-2;
 
-    border-bottom-color: transparent;
+    border-color: transparent;
 
     &:hover {
-      @extend .t-color__grey--900;
+      color: var(--color-grey--900) !important;
 
-      border-bottom-color: transparent;
+      border-color: transparent;
     }
   }
 
-  li.is-active a {
-    @extend .t-color__grey--900;
-    @extend .t-border-color__primary--600;
+  li.is-active {
+    color: var(--color-grey--900) !important;
+    border-color: var(--color-primary--600) !important;
 
     &:hover {
-      @extend .t-border-color__primary--600;
+      border-color: var(--color-primary--600) !important;
     }
   }
 }

@@ -22,55 +22,36 @@
 
 @mixin o-body-background--lines {
   .navbar {
-    z-index: zindex.$z-index-navbar;
+    z-index: var(--z-index-navbar);
   }
 
   @at-root {
     &::before {
-      display: block;
+      // Don't display lines on mobile because it's not possible to correctly position them
+      // using available breakpoints.
+
       content: '';
-
-      @include position.center-absolute;
-
-      z-index: zindex.$z-index-background-of-body;
-
-      width: auto;
-      max-width: 414px;
-      height: 506px;
-
-      background-image: url('./images/o.bg-pulsar--mobile.svg');
+      display: block;
+      position: absolute;
+      left: 0;
+      width: 100%;
       background-repeat: no-repeat;
-
-      background-position-x: 50%;
-      background-position-y: 50%;
-
-      pointer-events: none;
+      background-position-x: right;
+      background-size: auto 100%;
 
       @include breakpoint.media-breakpoint-medium {
-        max-width: 768px;
-        height: 1069px;
-
         background-image: url('./images/o.bg-pulsar--tablet.svg');
+        height: 538px;
       }
 
       @include breakpoint.media-breakpoint-large {
-        max-width: 3910px;
-        height: 3910px;
-
         background-image: url('./images/o.bg-pulsar--desktop.svg');
-
-        background-position-x: calc(-1984px + 50vw);
-        background-position-y: -1268px;
-      }
-
-      @include breakpoint.media-breakpoint-xlarge {
-        background-position-x: calc(-1884px + 50vw);
-        background-position-y: -1268px;
+        height: 620px;
       }
 
       @include breakpoint.media-breakpoint-maximum {
-        background-position-x: calc(-1784px + 50vw);
-        background-position-y: -1268px;
+        background-image: url('./images/o.bg-pulsar--desktop.svg');
+        height: 750px;
       }
     }
   }
