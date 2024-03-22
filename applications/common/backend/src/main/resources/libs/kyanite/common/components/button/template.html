@@ -17,7 +17,7 @@
     <sly data-sly-test="${model.showIconLeft && model.hasLeftIcon}">
         <sly data-sly-resource="${'leftIcon' @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
     </sly>
-    <span data-sly-unwrap="${model.label == ''}">${model.label}</span>
+    <span data-sly-test="${!model.hideLabel}" data-sly-unwrap="${model.label == ''}">${model.label}</span>
     <sly data-sly-test="${model.showIconRight && model.hasRightIcon}">
         <sly data-sly-resource="${'rightIcon' @ resourceType = 'kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"></sly>
     </sly>

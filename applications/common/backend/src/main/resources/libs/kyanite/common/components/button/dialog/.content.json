@@ -10,6 +10,12 @@
         "name": "label",
         "label": "Label"
       },
+      "hideLabel": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "hideLabel",
+        "label": "Hide label",
+        "description": "Use to describe link without showing the label. Can be useful e.g. to describe link with an icon"
+      },
       "type": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "path": "/libs/kyanite/common/components/button/attributes/type"
