@@ -50,6 +50,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    &__file-name {
+      word-wrap: anywhere;
+    }
   }
 
   // code

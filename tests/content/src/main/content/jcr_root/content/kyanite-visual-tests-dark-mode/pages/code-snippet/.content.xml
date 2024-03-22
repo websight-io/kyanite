@@ -77,6 +77,11 @@
               sling:resourceType="kyanite/common/components/codesnippet"
               fileName="filename.json"
               title="File title"/>
+            <codesnippet_8
+              jcr:primaryType="nt:unstructured"
+              sling:resourceType="kyanite/common/components/codesnippet"
+              fileName="long-content/application/backend/src/main/resources/apps/rte/extended/configuration/.content.json.../application/backend/src/main/resources/apps/rte/extended/configuration/.content.json.json"
+              title="Extremely long title describing content of the code snippet with the long file path, added for the testing purposes"/>
         </pagecontainer>
     </jcr:content>
 </jcr:root>
