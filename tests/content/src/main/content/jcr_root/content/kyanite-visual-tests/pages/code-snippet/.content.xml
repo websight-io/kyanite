@@ -72,6 +72,11 @@
                 code="version: &quot;3.9&quot;&#xa;&#xa;services:&#xa;  cms:&#xa;    image: public.ecr.aws/ds/websight-cms-starter:1.14.0&#xa;    ports:&#xa;      - &quot;8080:8080&quot;&#xa;    environment:&#xa;      WS_ADMIN_USERNAME: &quot;wsadmin&quot;&#xa;      MONGODB_HOST: &quot;mongo&quot;&#xa;      MONGODB_PORT: 27017&#xa;      LEASE_CHECK_MODE: &quot;LENIENT&quot;&#xa;    volumes:&#xa;      - cms_logs:/websight/logs&#xa;      - site_repository:/websight/docroot&#xa;    depends_on:&#xa;      - mongo&#xa;  nginx:&#xa;    image: public.ecr.aws/ds/websight-nginx-starter:1.14.0&#xa;    ports:&#xa;      - &quot;80:80&quot;&#xa;    volumes:&#xa;      - site_repository:/usr/share/nginx/html:ro&#xa;  mongo:&#xa;    image: mongo:4.4.6&#xa;    environment:&#xa;      - MONGO_INITDB_ROOT_USERNAME=mongoadmin&#xa;      - MONGO_INITDB_ROOT_PASSWORD=mongoadmin&#xa;    volumes:&#xa;      - mongo_repository:/data/db&#xa;&#xa;volumes:&#xa;  cms_logs:&#xa;  mongo_repository:&#xa;  site_repository:&#xa;"
                 fileName="yaml.yaml"
                 fileType="language-yaml"/>
+            <codesnippet_7
+              jcr:primaryType="nt:unstructured"
+              sling:resourceType="kyanite/common/components/codesnippet"
+              fileName="filename.json"
+              title="File title"/>
         </pagecontainer>
     </jcr:content>
 </jcr:root>

@@ -37,7 +37,7 @@
   position: relative;
   z-index: $z-index-code-snippet;
 
-  &__file-name {
+  &__title-banner {
     @extend .p-2;
 
     font-size: var(--font-size-14);
@@ -46,6 +46,10 @@
 
     background-color: var(--base-color-background);
     word-wrap: break-word;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   // code
