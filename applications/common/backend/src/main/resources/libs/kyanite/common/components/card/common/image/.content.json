@@ -43,5 +43,15 @@
         }
       }
     }
+  },
+  "width": {
+    "sling:resourceType": "wcm/dialogs/components/textfield",
+    "name": "image/width",
+    "label": "Image width"
+  },
+  "height": {
+    "sling:resourceType": "wcm/dialogs/components/textfield",
+    "name": "image/height",
+    "label": "Image height"
   }
 }
