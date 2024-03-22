@@ -41,6 +41,10 @@ public class ButtonComponent {
   @Default(values = "Label")
   private String label;
 
+  @ValueMapValue
+  @Getter
+  private boolean hideLabel;
+
   @Inject
   @Getter
   private boolean showIconLeft;

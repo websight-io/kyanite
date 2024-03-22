@@ -18,7 +18,8 @@
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.ButtonComponent">
     <sly data-sly-test="${model.type == 'button'}">
         <sly data-sly-test.disabled="${model.isDisabled}">
-            <button class="button ${model.buttonClasses @ join=' '}" disabled>
+            <button class="button ${model.buttonClasses @ join=' '}" disabled
+                    aria-label="${model.hideLabel ? model.label : ''}">
                 <sly data-sly-use.template="./template.html"
                      data-sly-call="${template.buttonContent @ model = model}"></sly>
             </button>
@@ -26,14 +27,16 @@
         <sly data-sly-test="${!disabled}">
             <sly data-sly-test="${model.actionType == 'open-modal'}">
                 <button class="button js-modal-trigger ${model.buttonClasses @ join=' '}"
-                        data-target="${model.modalId}">
+                        data-target="${model.modalId}"
+                        aria-label="${model.hideLabel ? model.label : ''}">
                     <sly data-sly-use.template="./template.html"
                          data-sly-call="${template.buttonContent @ model = model}"></sly>
                 </button>
             </sly>
 
             <sly data-sly-test="${model.actionType != 'open-modal'}">
-                <button class="button ${model.buttonClasses @ join=' '}">
+                <button class="button ${model.buttonClasses @ join=' '}"
+                        aria-label="${model.hideLabel ? model.label : ''}">
                     <sly data-sly-use.template="./template.html"
                          data-sly-call="${template.buttonContent @ model = model}"></sly>
                 </button>
@@ -42,7 +45,8 @@
     </sly>
     <sly data-sly-test="${model.type == 'a'}">
         <a href="${model.url}" data-part1="${model.mailPart1}" data-part2="${model.mailPart2}" data-part3="${model.mailPart3}"  class="button ${model.buttonClasses @ join=' '}"
-           target="${model.openInNewTab && model.url != '' ? '_blank' : ''}">
+           target="${model.openInNewTab && model.url != '' ? '_blank' : ''}"
+           aria-label="${model.hideLabel ? model.label : ''}">
             <sly data-sly-use.template="./template.html"
                  data-sly-call="${template.buttonContent @ model = model}"></sly>
         </a>
