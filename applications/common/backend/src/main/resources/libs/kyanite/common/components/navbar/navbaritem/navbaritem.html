@@ -32,10 +32,10 @@
   </sly>
   <sly data-sly-test="${model.type == 'image'}">
     <a data-sly-test="${!model.isLink}" class="navbar-item">
-      <img src="${model.image.assetReference}" width="${model.imageWidth}" height="${model.imageHeight}"
+      <img src="${model.image.assetReference}" width="${model.image.width}" height="${model.image.height}"
            alt="${model.image.alt}"></a>
     <a data-sly-test="${model.isLink}" class="navbar-item" href="${model.imageUrl}" target="${model.openInNewTab && model.imageUrl != '' ? '_blank' : ''}">
-      <img src="${model.image.assetReference}" width="${model.imageWidth}" height="${model.imageHeight}"
+      <img src="${model.image.assetReference}" width="${model.image.width}" height="${model.image.height}"
            alt="${model.image.alt}">
     </a>
   </sly>

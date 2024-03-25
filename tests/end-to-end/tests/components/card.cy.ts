@@ -59,6 +59,12 @@ describe('Card component', function () {
     cy.getByTestId('ModalDialog_Card')
       .find('div[class^="Input_Ratioofimage__input-container"]').click();
     cy.contains('16 by 9').click({ force: true });
+    cy.getByTestId('ModalDialog_Card')
+    .findByTestId("Input_Imagewidth")
+    .clear().type('1200');
+    cy.getByTestId('ModalDialog_Card')
+    .findByTestId("Input_Imageheight")
+    .clear().type('800');
 
     cy.getByTestId('ModalDialog_Card')
       .findByTestId('dialogTab_Footer').click();
@@ -87,9 +93,11 @@ describe('Card component', function () {
       'image': {
         alt: 'Alt text',
         assetReference: '/content/kyanite-e2e-tests/assets/images/personal/PortfolioForum.png',
+        height: '800',
         type: 'ratio',
         style: 'is-16by9',
         'jcr:primaryType': 'nt:unstructured',
+        width: '1200',
       },
       'urls': {
         'jcr:primaryType' : 'nt:unstructured',

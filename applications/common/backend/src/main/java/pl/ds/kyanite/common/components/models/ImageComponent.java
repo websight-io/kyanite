@@ -116,6 +116,10 @@ public class ImageComponent {
   private boolean isSvg;
 
   @Getter
+  @ValueMapValue
+  private boolean isCodeSvg;
+
+  @Getter
   private boolean isVideo;
 
   private boolean isInternal;

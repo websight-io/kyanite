@@ -213,13 +213,13 @@
         },
         "width": {
           "sling:resourceType": "wcm/dialogs/components/numberfield",
-          "name": "imageWidth",
-          "label": "Image width (px)"
+          "name": "image/width",
+          "label": "Image width"
         },
         "height": {
           "sling:resourceType": "wcm/dialogs/components/numberfield",
-          "name": "imageHeight",
-          "label": "Image height (px)"
+          "name": "image/height",
+          "label": "Image height"
         },
         "ws:display": {"condition": {
           "sourceName": "type",

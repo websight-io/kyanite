@@ -19,23 +19,29 @@
         "name": "alt",
         "label": "Alt text"
       },
+      "width": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "width",
+        "label": "Width"
+      },
+      "height": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "height",
+        "label": "Height"
+      },
       "hasVideoOptions": {
         "sling:resourceType": "wcm/dialogs/components/toggle",
         "name": "hasVideoOptions",
         "label": "Video options"
       },
+      "isCodeSvg": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isCodeSvg",
+        "label": "SVG as a code",
+        "description": "SVG image will be inserted as a code instead of link reference"
+      },
       "videoOptions": {
         "sling:resourceType": "wcm/dialogs/components/container",
-        "width": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "width",
-          "label": "Player width"
-        },
-        "height": {
-          "sling:resourceType": "wcm/dialogs/components/textfield",
-          "name": "height",
-          "label": "Player height"
-        },
         "customThumbnail": {
           "sling:resourceType": "wcm/dialogs/components/assetreference",
           "rootPath": "/content",
