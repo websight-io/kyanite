@@ -18,9 +18,10 @@
 
 @use 'sass:map';
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
-@use 'src/atomic-design-system/02-molecule/m.tabs' as tabs;
 @use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/atomic-design-system/00-token/t.border';
+@use 'src/atomic-design-system/01-atom/a.link' as links;
+@use 'src/atomic-design-system/02-molecule/m.tabs' as tabs;
 @use 'src/bulma-overwrite/bulma-spacing';
 
 /* editMode styles start */
@@ -207,3 +208,29 @@ $transparent-tabs-containers: tabs-container, tabs-container-edit;
     }
   }
 }
+
+/* Bulma override start */
+.tabs-container, .tabs-container-edit {
+  .tabs {
+    ul {
+      li, li.is-active {
+        .content {
+          a {
+            @include links.a-link-reset;
+          }
+        }
+      }
+    }
+  }
+}
+
+    ul.tabs-mobile-container {
+      li.tab-mobile, li.tab-mobile.is-active {
+        .content {
+          a {
+            @include links.a-link-reset;
+          }
+        }
+      }
+    }
+/* Bulma override end */
