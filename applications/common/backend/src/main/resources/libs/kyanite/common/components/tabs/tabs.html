@@ -64,6 +64,33 @@
                     </sly>
                 </div>
             </div>
+            <ul class="tabs-mobile-container" data-sly-test="${!model.vertical}">
+                <sly data-sly-list="${resource.children}">
+                <li class="tab-mobile">
+                    <sly data-sly-test="${item.resourceType == 'kyanite/common/components/tabs/tab'}">
+                    <div role="button" aria-expanded="false" class="tab-mobile-title" >
+                        <div class="content ${model.size} ${model.textWeight} ${model.textColorVariant}">
+                            ${item.label @ context='unsafe'}
+                        </div>
+                        <i class="mdi fa-lg mdi-chevron-down" aria-hidden="false"></i>
+                    </div>
+                    <div role="region" class="tab-mobile-content">
+                        <sly data-sly-test="${item.hasChildren}">
+                            <sly data-sly-set.tabid="${item.path}">
+                                <sly data-sly-list="${item.children}">
+                                    <sly data-sly-test="${item.resourceType == 'kyanite/common/components/tabs/tabcontent'}">
+                                        <div id="${tabid}">
+                                            <sly data-sly-resource="${item}"></sly>
+                                        </div>
+                                    </sly>
+                                </sly>
+                            </sly>
+                        </sly>
+                    </div>
+                    </sly>
+                </li>
+                </sly>
+            </ul>
         </sly>
         <!--        end of preview mode layout-->
     </sly>

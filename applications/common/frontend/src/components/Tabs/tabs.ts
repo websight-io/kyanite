@@ -18,6 +18,7 @@ import { onDOMContentLoaded } from '../../helpers.dom';
 import { Tabs } from './tabs.class';
 import { AutoSwitchingTabs } from './autoSwitchingTabs.class';
 import './switchTab';
+import './tabsMobile'
 
 onDOMContentLoaded(() => {
   document
