@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,14 +14,8 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.common.components.services.impl;
+package pl.ds.kyanite.common.components.services;
 
-public interface GoogleAnalyticsConfigurationService {
-
-  String getGoogleAnalyticsTrackingId();
-
-  String getGoogleAnalyticsUrl();
-
-  String getGoogleAnalyticsScriptUrl();
-
+public interface GoogleAnalyticsConfigStore {
+  GoogleAnalyticsConfiguration get(String id);
 }

@@ -18,22 +18,27 @@ package pl.ds.kyanite.common.components.configurations;
 
 import org.apache.commons.lang3.StringUtils;
 import org.osgi.service.metatype.annotations.AttributeDefinition;
+import org.osgi.service.metatype.annotations.AttributeType;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
 
-@ObjectClassDefinition(name = "Google Analytics Configuration",
-    description = "Google Analytics Google")
-public @interface GoogleAnalyticsConfiguration {
+@ObjectClassDefinition(name = "Contact Form Configuration",
+    description = "Reads the endpoint where the contact form data is submitted")
+public @interface ContactFormConfigurationOcd {
 
-  @AttributeDefinition(name = "Google Analytics ID",
-      description = "Enter a unique tracking ID provided by Google Analytics")
-  String gaTrackingId() default StringUtils.EMPTY;
+  @AttributeDefinition(
+      name = "Space name",
+      description = "Space name for contact form service",
+      type = AttributeType.STRING)
+  String spaceName() default StringUtils.EMPTY;
 
-  @AttributeDefinition(name = "Google Analytics url",
-      description = "Enter url provided by Google Analytics")
-  String url() default StringUtils.EMPTY;
+  @AttributeDefinition(name = "Host",
+      description = "Contact form service host")
+  String host();
 
-  @AttributeDefinition(name = "Google Analytics script url",
-      description = "Enter script url provided by Google Analytics")
-  String scriptUrl() default StringUtils.EMPTY;
+  @AttributeDefinition(name = "Path",
+      description = "Contact form service URL path")
+  String path();
+
+
 
 }
