@@ -311,6 +311,13 @@ $color-navbar-link: var(--color-grey--900);
     }
   }
 
+  .label-megadropdown {
+    color: var(--color-grey--900);
+    &:hover {
+      color: var(--color-grey--900);
+    }
+  }
+
   .navbar-mega-dropdown .columns {
     margin-left: -0.5rem;
     margin-right: -0.5rem;

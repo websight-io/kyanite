@@ -19,9 +19,9 @@
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.navbar.NavbarMegaDropdownComponent">
   <div class="navbar-item has-dropdown is-hoverable ${model.isDropup ? 'has-dropdown-up' : ''}"
        tabindex="0">
-    <a class="navbar-link ${model.hasArrow ? '' : 'is-arrowless'}">
+    <span class="navbar-link label-megadropdown ${model.hasArrow ? '' : 'is-arrowless'}">
       ${model.dropdownLabel}
-    </a>
+    </span>
 
     <div class="navbar-mega-dropdown navbar-dropdown ${model.isBoxed ? 'is-boxed' : ''}">
       <div class="container">
