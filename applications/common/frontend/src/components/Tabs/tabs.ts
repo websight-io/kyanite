@@ -16,14 +16,20 @@
 
 import { onDOMContentLoaded } from '../../helpers.dom';
 import { Tabs } from './tabs.class';
+import { TabsMobile } from "./tabsMobile.class";
 import { AutoSwitchingTabs } from './autoSwitchingTabs.class';
 import './switchTab';
-import './tabsMobile'
+import './tabsMobile.class'
 
 onDOMContentLoaded(() => {
   document
     .querySelectorAll<HTMLDivElement>(Tabs.componentSelector)
     .forEach((element) => {
       new AutoSwitchingTabs(element);
+    });
+  document
+    .querySelectorAll<HTMLElement>(TabsMobile.componentSelector)
+    .forEach((element) => {
+      new TabsMobile(element);
     });
 });
