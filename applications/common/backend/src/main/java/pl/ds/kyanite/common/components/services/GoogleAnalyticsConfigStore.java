@@ -17,5 +17,5 @@
 package pl.ds.kyanite.common.components.services;
 
 public interface GoogleAnalyticsConfigStore {
-  GoogleAnalyticsConfiguration get(String id);
+  GoogleAnalyticsConfiguration get(String spaceName);
 }

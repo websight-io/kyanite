@@ -17,5 +17,5 @@
 package pl.ds.kyanite.common.components.services;
 
 public interface RecaptchaConfigStore {
-  RecaptchaConfiguration get(String id);
+  RecaptchaConfiguration get(String spaceName);
 }

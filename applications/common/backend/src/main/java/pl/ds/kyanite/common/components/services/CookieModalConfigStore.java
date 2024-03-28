@@ -17,5 +17,5 @@
 package pl.ds.kyanite.common.components.services;
 
 public interface CookieModalConfigStore {
-  CookieModalConfiguration get(String id);
+  CookieModalConfiguration get(String spaceName);
 }
