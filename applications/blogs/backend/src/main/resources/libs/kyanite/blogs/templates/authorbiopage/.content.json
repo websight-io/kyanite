@@ -1,0 +1,5 @@
+{
+  "sling:resourceType": "ws:PageTemplate",
+  "title": "Author bio page",
+  "description": "Author bio page"
+}

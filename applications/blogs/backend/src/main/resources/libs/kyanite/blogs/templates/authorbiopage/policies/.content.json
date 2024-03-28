@@ -1,0 +1,28 @@
+{
+  "jcr:primaryType": "ws:Page",
+  "jcr:content": {
+    "jcr:primaryType": "ws:PageContent",
+    "sling:resourceType": "kyanite/blogs/components/authorbiopage",
+    "kyanite": {
+      "jcr:primaryType": "nt:unstructured",
+      "common": {
+        "jcr:primaryType": "nt:unstructured",
+        "components": {
+          "jcr:primaryType": "nt:unstructured",
+          "container": {
+            "jcr:primaryType": "nt:unstructured",
+            "policy": "kyanite/blogs/policies/authorPage/container"
+          },
+          "pagecontainer": {
+            "jcr:primaryType": "nt:unstructured",
+            "policy": "kyanite/blogs/policies/authorPage/container"
+          },
+          "section": {
+            "jcr:primaryType": "nt:unstructured",
+            "policy": "kyanite/blogs/policies/authorPage/container"
+          }
+        }
+      }
+    }
+  }
+}

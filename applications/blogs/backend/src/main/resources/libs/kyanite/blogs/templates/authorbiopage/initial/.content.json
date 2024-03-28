@@ -1,0 +1,24 @@
+{
+  "jcr:primaryType": "ws:Page",
+  "jcr:content": {
+    "jcr:primaryType": "ws:PageContent",
+    "sling:resourceType": "kyanite/blogs/components/authorbiopage",
+    "navbarFixed": "true",
+    "navbarFixedPosition": "has-navbar-fixed-top",
+    "pagecontainer": {
+      "sling:resourceType": "kyanite/common/components/pagecontainer",
+      "navbarreference": {
+        "sling:resourceType": "kyanite/common/components/navbarreference"
+      },
+      "section": {
+        "sling:resourceType": "kyanite/common/components/section",
+        "container": {
+          "sling:resourceType": "kyanite/common/components/container"
+        }
+      },
+      "footerreference": {
+        "sling:resourceType": "kyanite/common/components/footerreference"
+      }
+    }
+  }
+}

@@ -12,5 +12,13 @@
         "Kyanite Blog Article Components"
       ]
     }
+  },
+  "authorPage": {
+    "jcr:primaryType": "nt:unstructured",
+    "container": {
+      "jcr:primaryType": "nt:unstructured",
+      "allowedComponents": [
+      ]
+    }
   }
 }
