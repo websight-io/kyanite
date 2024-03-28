@@ -15,7 +15,7 @@
  */
 
 /*
-    Mobile layout for Tabs. Applies only to vertical mode Tabs for narrow breakpoints.
+    Mobile layout for Tabs. Applies only to horizontal mode Tabs for narrow breakpoints.
     Switching between normal and mobile layouts is handled by CSS bound to breakpoints
  */
 
