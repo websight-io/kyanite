@@ -78,9 +78,7 @@
 }
 /* editMode styles end */
 
-/*  multimode styles start */
-$transparent-tabs-containers: tabs-container, tabs-container-edit;
-
+/* all modes styles start */
 .tabs-container, .tabs-container-edit {
   .tabs {
     ul {
@@ -93,7 +91,7 @@ $transparent-tabs-containers: tabs-container, tabs-container-edit;
     }
   }
 }
-/* multimode styles end */
+/* all modes styles end */
 
 .tabs-container {
   @extend .mb-4;
@@ -159,7 +157,7 @@ $transparent-tabs-containers: tabs-container, tabs-container-edit;
   }
 }
 
-/*  mobile layout visibility start */
+/* switch to mobile layout start */
 .tabs-container {
   &:not(.is-vertical) {
     display: none;
@@ -175,7 +173,7 @@ $transparent-tabs-containers: tabs-container, tabs-container-edit;
     display: none;
   }
 }
-/* mobile layout visibility end */
+/* switch to mobile layout end */
 
 .tabs-mobile-container {
   .tab-mobile {
