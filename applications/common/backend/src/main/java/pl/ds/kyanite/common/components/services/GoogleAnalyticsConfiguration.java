@@ -14,23 +14,16 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.common.components.configurations;
+package pl.ds.kyanite.common.components.services;
 
-import org.osgi.service.metatype.annotations.AttributeDefinition;
-import org.osgi.service.metatype.annotations.ObjectClassDefinition;
+public interface GoogleAnalyticsConfiguration {
 
-@ObjectClassDefinition(name = "Contact Form Configuration",
-    description = "Reads the endpoint where the contact form data is submitted")
-public @interface ContactFormConfiguration {
+  String getSpaceName();
 
-  @AttributeDefinition(name = "Host",
-      description = "Contact form service host")
-  String host();
+  String getGoogleAnalyticsTrackingId();
 
-  @AttributeDefinition(name = "Path",
-      description = "Contact form service URL path")
-  String path();
+  String getGoogleAnalyticsUrl();
 
-
+  String getGoogleAnalyticsScriptUrl();
 
 }

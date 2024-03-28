@@ -16,6 +16,6 @@
 
 package pl.ds.kyanite.common.components.services;
 
-public interface RecaptchaConfigStore {
-  RecaptchaConfiguration get(String spaceName);
+public interface GoogleAnalyticsConfigStore {
+  GoogleAnalyticsConfiguration get(String spaceName);
 }

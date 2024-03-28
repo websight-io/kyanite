@@ -18,11 +18,8 @@ package pl.ds.kyanite.common.components.models;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
-import javax.json.Json;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
@@ -31,7 +28,8 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-import pl.ds.kyanite.common.components.services.ContactFormConfigurationService;
+import pl.ds.kyanite.common.components.services.ContactFormConfigStore;
+import pl.ds.kyanite.common.components.services.ContactFormConfiguration;
 import pl.ds.kyanite.common.components.services.RecaptchaConfigStore;
 import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
 import pl.ds.kyanite.common.components.utils.PagesSpaceUtil;
@@ -43,7 +41,7 @@ public class ContactFormComponent {
   private Resource resource;
 
   @OSGiService
-  private ContactFormConfigurationService contactFormConfigurationService;
+  private ContactFormConfigStore contactFormConfigStore;
   @OSGiService
   private RecaptchaConfigStore recaptchaConfigStore;
 
@@ -78,7 +76,11 @@ public class ContactFormComponent {
   }
 
   public String getConfigEndpoint() {
-    return contactFormConfigurationService.getConfigEndpoint();
+    ContactFormConfiguration config = contactFormConfigStore.get(spaceName);
+    if (config != null) {
+      return config.getConfigEndpoint();
+    }
+    return null;
   }
 
 }

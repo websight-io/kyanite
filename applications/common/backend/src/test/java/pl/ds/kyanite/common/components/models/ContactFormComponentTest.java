@@ -29,7 +29,11 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import pl.ds.kyanite.common.components.services.ContactFormConfigStore;
+import pl.ds.kyanite.common.components.services.ContactFormConfiguration;
 import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
+import pl.ds.kyanite.common.components.services.impl.ContactFormConfigStoreImpl;
+import pl.ds.kyanite.common.components.services.impl.ContactFormConfigurationImpl;
 import pl.ds.kyanite.common.components.services.impl.RecaptchaConfigStoreImpl;
 import pl.ds.kyanite.common.components.services.impl.RecaptchaConfigurationImpl;
 
@@ -100,6 +104,27 @@ public class ContactFormComponentTest {
     assertThat(model.getConsentText()).isEqualTo("I consent");
     assertThat(model.getCaptchaPublicKey()).isNull();
   }
+
+  @Test
+  void shouldHaveFormConfiguration() {
+    setupContactFormConfigStore("darkModeSpace", "host1", "path1");
+    ContactFormComponent model = context.resourceResolver().getResource(PATH + "/darkModeSpace/pages/test/jcr:content/pagecontainer/contactform")
+        .adaptTo(ContactFormComponent.class);
+
+    assertThat(model).isNotNull();
+    assertThat(model.getConfigEndpoint()).isEqualTo("host1/path1");
+  }
+
+  @Test
+  void shouldNotHaveFormConfiguration() {
+    setupContactFormConfigStore("lightModeSpace", "host2", "path2");
+    ContactFormComponent model = context.resourceResolver().getResource(PATH + "/otherSpace/pages/test/jcr:content/pagecontainer/contactform")
+        .adaptTo(ContactFormComponent.class);
+
+    assertThat(model).isNotNull();
+    assertThat(model.getConfigEndpoint()).isNull();
+  }
+
   @NotNull
   private RecaptchaConfiguration createRecaptchaConfiguration(String spaceName, String key) {
     Map<String, Object> props = new HashMap<>();
@@ -108,6 +133,24 @@ public class ContactFormComponentTest {
     RecaptchaConfiguration recaptchaConfiguration = new RecaptchaConfigurationImpl();
     context.registerInjectActivateService(recaptchaConfiguration,props);
     return recaptchaConfiguration;
+  }
+
+  @NotNull
+  private ContactFormConfiguration createContactFormConfiguration(String spaceName, String host, String path) {
+    Map<String, Object> properties = new HashMap<>();
+    properties.put("spaceName", spaceName);
+    properties.put("host", host);
+    properties.put("path", path);
+    ContactFormConfiguration contactFormConfiguration = new ContactFormConfigurationImpl();
+    context.registerInjectActivateService(contactFormConfiguration, properties);
+    return contactFormConfiguration;
+  }
+
+  private void setupContactFormConfigStore(String space, String host, String path) {
+    ContactFormConfiguration contactFormConfig = createContactFormConfiguration(space, host, path);
+    ContactFormConfigStoreImpl contactFormConfigStore = new ContactFormConfigStoreImpl();
+    contactFormConfigStore.bind(contactFormConfig);
+    context.registerInjectActivateService(contactFormConfigStore);
   }
 
 }

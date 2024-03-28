@@ -28,27 +28,36 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
+import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.kyanite.common.components.services.GoogleAnalyticsConfigStore;
+import pl.ds.kyanite.common.components.services.GoogleAnalyticsConfiguration;
 import pl.ds.kyanite.common.components.services.LibraryIconConfig;
 import pl.ds.kyanite.common.components.services.LibraryIconConfigStore;
-import pl.ds.kyanite.common.components.services.impl.GoogleAnalyticsConfigurationService;
+import pl.ds.kyanite.common.components.utils.PagesSpaceUtil;
 
 @Model(adaptables = SlingHttpServletRequest.class)
 public class PageModel {
 
+  @SlingObject
+  private Resource resource;
+
   private final LibraryIconConfigStore libraryIconConfigStore;
 
-  private final GoogleAnalyticsConfigurationService googleAnalyticsConfigurationService;
+  private final GoogleAnalyticsConfigStore googleAnalyticsConfigStore;
+
+  private GoogleAnalyticsConfiguration googleAnalyticsConfig;
 
   @Getter
   private List<IconLibraryConfig> iconLibraryConfigs = new ArrayList<>();
 
   @Inject
   public PageModel(@OSGiService LibraryIconConfigStore libraryIconConfigStore,
-      @OSGiService GoogleAnalyticsConfigurationService googleAnalyticsConfigurationService) {
+      @OSGiService GoogleAnalyticsConfigStore googleAnalyticsConfigStore) {
     this.libraryIconConfigStore = libraryIconConfigStore;
-    this.googleAnalyticsConfigurationService = googleAnalyticsConfigurationService;
+    this.googleAnalyticsConfigStore = googleAnalyticsConfigStore;
   }
 
   @PostConstruct
@@ -66,25 +75,40 @@ public class PageModel {
               .build();
         })
         .toList();
+    String spaceName = PagesSpaceUtil.getWsPagesSpaceName(resource.getPath(),
+        resource.getResourceResolver());
+    googleAnalyticsConfig = googleAnalyticsConfigStore.get(spaceName);
   }
 
   public String getGoogleAnalyticsUrl() {
-    return this.googleAnalyticsConfigurationService.getGoogleAnalyticsUrl();
+    if (googleAnalyticsConfig != null) {
+      return googleAnalyticsConfig.getGoogleAnalyticsUrl();
+    }
+    return null;
   }
 
   public String getGoogleAnalyticsScriptUrl() {
-    return this.googleAnalyticsConfigurationService.getGoogleAnalyticsScriptUrl();
+    if (googleAnalyticsConfig != null) {
+      return googleAnalyticsConfig.getGoogleAnalyticsScriptUrl();
+    }
+    return null;
   }
 
   public String getGoogleAnalyticsTrackingId() {
-    return this.googleAnalyticsConfigurationService.getGoogleAnalyticsTrackingId();
+    if (googleAnalyticsConfig != null) {
+      return googleAnalyticsConfig.getGoogleAnalyticsTrackingId();
+    }
+    return null;
   }
 
   public boolean hasAnalyticsUrl() {
-    return StringUtils.isNotBlank(
-        this.googleAnalyticsConfigurationService.getGoogleAnalyticsTrackingId())
-        && StringUtils.isNotBlank(
-            this.googleAnalyticsConfigurationService.getGoogleAnalyticsScriptUrl());
+    if (googleAnalyticsConfig != null) {
+      return StringUtils.isNotBlank(
+          googleAnalyticsConfig.getGoogleAnalyticsTrackingId())
+          && StringUtils.isNotBlank(
+          googleAnalyticsConfig.getGoogleAnalyticsScriptUrl());
+    }
+    return false;
   }
 
   @AllArgsConstructor
