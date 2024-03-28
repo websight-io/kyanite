@@ -21,8 +21,10 @@ import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIO
 import java.util.Objects;
 import java.util.stream.Stream;
 import javax.inject.Inject;
+import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import pl.ds.kyanite.common.components.models.ImageComponent;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
@@ -37,6 +39,22 @@ public class DefaultComponentWithBackground {
   @Inject
   private ImageComponent mobileBackgroundImage;
 
+  @Inject
+  @Getter
+  private boolean asImg;
+
+  @Inject
+  @Getter
+  private String alt;
+
+  @ValueMapValue
+  @Getter
+  private String width;
+
+  @ValueMapValue
+  @Getter
+  private String height;
+
   public String getDesktopBackgroundImage() {
     return getBackgroundImage(desktopBackgroundImage);
   }
@@ -47,6 +65,18 @@ public class DefaultComponentWithBackground {
 
   public String getMobileBackgroundImage() {
     return getBackgroundImage(mobileBackgroundImage);
+  }
+
+  public String getDesktopImage() {
+    return getImage(desktopBackgroundImage);
+  }
+
+  public String getTabletImage() {
+    return getImage(tabletBackgroundImage);
+  }
+
+  public String getMobileImage() {
+    return getImage(mobileBackgroundImage);
   }
 
   public boolean getHasBackgroundImage() {
@@ -62,6 +92,14 @@ public class DefaultComponentWithBackground {
     }
 
     return String.format("url('%s')", image.getAssetReference());
+  }
+
+  private String getImage(ImageComponent image) {
+    if (image == null || image.getAssetReference() == null) {
+      return "none";
+    }
+
+    return image.getAssetReference();
   }
 
 }

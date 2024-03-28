@@ -1,4 +1,6 @@
 {
-  "jcr:primaryType": "nt:unstructured",
-  "size": "is-normal"
+	"jcr:primaryType": "nt:unstructured",
+	"size": "is-normal",
+	"width": "1280",
+	"height": "720"
 }
