@@ -18,9 +18,10 @@
 
 @use 'sass:map';
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
-@use 'src/atomic-design-system/02-molecule/m.tabs' as tabs;
 @use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/atomic-design-system/00-token/t.border';
+@use 'src/atomic-design-system/01-atom/a.link' as links;
+@use 'src/atomic-design-system/02-molecule/m.tabs' as tabs;
 @use 'src/bulma-overwrite/bulma-spacing';
 
 /* editMode styles start */
@@ -45,14 +46,12 @@
             @extend .pb-3;
             @extend .pt-3;
             @extend .pr-3;
-              opacity: 0.5;
               width: 100%;
               border-bottom: none;
               border-right: var(--border-weight-2) solid;
               border-color: transparent;
               &.is-active {
                 border-color: var(--color-primary--600) !important;
-                opacity: 1;
               }
            }
          }
@@ -69,17 +68,30 @@
       border-bottom: none;
       li {
         border-bottom: var(--border-weight-2) solid;
-        opacity: 0.5;
         border-color: transparent;
         &.is-active {
           border-color: var(--color-primary--600) !important;
-          opacity: 1;
         }
       }
     }
   }
 }
 /* editMode styles end */
+
+/* all modes styles start */
+.tabs-container, .tabs-container-edit {
+  .tabs {
+    ul {
+      li {
+        opacity: 0.5;
+        &.is-active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+/* all modes styles end */
 
 .tabs-container {
   @extend .mb-4;
@@ -144,3 +156,79 @@
     }
   }
 }
+
+/* switch to mobile layout start */
+.tabs-container {
+  &:not(.is-vertical) {
+    display: none;
+    @include breakpoint.media-breakpoint-xlarge {
+      display: block;
+    }
+  }
+}
+
+.tabs-mobile-container {
+  display: block;
+  @include breakpoint.media-breakpoint-xlarge {
+    display: none;
+  }
+}
+/* switch to mobile layout end */
+
+.tabs-mobile-container {
+  .tab-mobile {
+    &.opened {
+      i {
+        transform: rotate(180deg);
+      }
+      .tab-mobile-content {
+        height: auto;
+        padding: 2rem 0;
+      }
+    }
+    &-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .content {
+        margin: 0;
+        padding: 1rem;
+        padding-left: 0;
+      }
+      i {
+        font-size: 40px;
+      }
+    }
+    &-content {
+      height: 0;
+      overflow: hidden;
+      transition: height 0.35s ease-in-out;
+    }
+  }
+}
+
+/* Bulma override start */
+.tabs-container, .tabs-container-edit {
+  .tabs {
+    ul {
+      li, li.is-active {
+        .content {
+          a {
+            @include links.a-link-reset;
+          }
+        }
+      }
+    }
+  }
+}
+
+    ul.tabs-mobile-container {
+      li.tab-mobile, li.tab-mobile.is-active {
+        .content {
+          a {
+            @include links.a-link-reset;
+          }
+        }
+      }
+    }
+/* Bulma override end */

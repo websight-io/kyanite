@@ -24,7 +24,7 @@
                     <ul>
                         <sly data-sly-list="${parent.children}">
                             <sly data-sly-test="${item.resourceType == 'kyanite/common/components/tabs/tab'}">
-                                <sly data-sly-test.isCurrent="${model.label == item.label}"></sly>
+                                <sly data-sly-test.isCurrent="${resource.path == item.path}"></sly>
                                 <li class="${isCurrent ? 'is-active' : ''}"
                                     data-target="${item.label}">
                                         <sly data-sly-test="${item.addIcon && item.icon && isCurrent}">

@@ -60,7 +60,6 @@ const scenarios = spaces.flatMap(space => [
   { space: space, page: 'footer', selectors: [selectors.footer] },
   { space: space, page: 'level' },
   { space: space, page: 'link', selectors: [selectors.container] },
-  { space: space, page: 'tabs', selectors: ['.tabs-container'] },
   { space: space, page: 'navbar', selectors: [selectors.header] },
   { space: space, page: 'navbar', selectors: [selectors.body],
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
@@ -105,6 +104,24 @@ const scenarios = spaces.flatMap(space => [
   { space: space, page: 'carousel/carousel-itemsshown-12-scroll',   selectors: [selectors.all] },
   { space: space, page: 'table',   selectors: [selectors.all] },
   { space: space, page: 'tag',   selectors: [selectors.container] },
+
+  { space: space, page: 'tabs', selectors: ['.tabs-container'],
+    label: `${space}_tabs-container-horizontal-desktop`,
+    viewports: viewports.filter((viewport) => ['xl', 'mx'].includes(viewport.label)),
+  },
+  { space: space, page: 'tabs', selectors: ['.tabs-mobile-container'],
+    label: `${space}_tabs-container-horizontal-mobile`,
+    viewports: viewports.filter((viewport) => ['md-mini', 'md', 'lg'].includes(viewport.label)),
+  },
+  { space: space, page: 'tabs/tabs-layouts-and-styles', selectors: ['.tabs-container.is-vertical'],
+    label: `${space}_tabs-container-vertical`,
+  },
+  { space: space, page: 'tabs/tabs-layouts-and-styles', selectors: ['.tabs-container:not(.is-vertical)'],
+    label: `${space}_tabs-container-horizontal-desktop`,
+    viewports: viewports.filter((viewport) => ['xl', 'mx'].includes(viewport.label)), },
+  { space: space, page: 'tabs/tabs-layouts-and-styles', selectors: ['.tabs-mobile-container'],
+    label: `${space}_tabs-container-horizontal-mobile`,
+    viewports: viewports.filter((viewport) => ['md-mini', 'md', 'lg'].includes(viewport.label)), },
 ])
   .map((scenario) => {
     const removeSelectors = [
