@@ -1,0 +1,8 @@
+{
+  "inlineEditing": {
+    "config": {
+      "property": "text",
+      "editor": "rich-text"
+    }
+  }
+}
