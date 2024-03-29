@@ -1,0 +1,31 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/container",
+  "authorName": {
+    "sling:resourceType": "wcm/dialogs/components/textfield",
+    "name": "authorName",
+    "label": "Author name"
+  },
+  "authorPhoto": {
+    "sling:resourceType": "wcm/dialogs/components/pathpicker",
+    "rootPath": "/content",
+    "name": "authorPhoto",
+    "description": "Author photo",
+    "label": "Author photo"
+  },
+  "authorPhotoAlt": {
+    "sling:resourceType": "wcm/dialogs/components/textfield",
+    "name": "authorPhotoAlt",
+    "description": "Author photo alt",
+    "label": "Author photo alt"
+  },
+  "authorRole": {
+    "sling:resourceType": "wcm/dialogs/components/textfield",
+    "name": "authorRole",
+    "label": "Author role"
+  },
+  "authorDescription": {
+    "sling:resourceType": "wcm/dialogs/components/textfield",
+    "name": "authorDescription",
+    "label": "Author description"
+  }
+}

@@ -17,13 +17,13 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.blogs.components.models.BlogArticleAuthorBioComponent"
-     data-sly-test.blog=${model.blogArticleHeaderModel}>
+     data-sly-test.author="${model.authorInfoModel}">
   <div class="container blog-article-author-bio">
     <article class="id media">
       <figure class="photo media-left">
         <p class="image is-96x96">
-          <img data-sly-test.authorPhoto="${blog.authorPhoto}"
-               src="${authorPhoto}" alt="${blog.authorPhotoAlt}"
+          <img data-sly-test.authorPhoto="${author.authorPhoto}"
+               src="${authorPhoto}" alt="${author.authorPhotoAlt}"
                class="is-rounded"
           />
         </p>
@@ -31,11 +31,11 @@
 
       <div class="media-content">
         <div class="content">
-          <p data-sly-test.authorName="${blog.authorName}"
+          <p data-sly-test.authorName="${author.authorName}"
              class="name">
             ${authorName}
           </p>
-          <p data-sly-test.authorRole="${blog.authorRole}"
+          <p data-sly-test.authorRole="${author.authorRole}"
              class="role">
             ${authorRole}
           </p>
@@ -44,7 +44,7 @@
     </article>
 
     <div class="description content">
-      <p data-sly-test.authorDescription="${blog.authorDescription}">
+      <p data-sly-test.authorDescription="${author.authorDescription}">
         ${authorDescription}
       </p>
     </div>
@@ -53,7 +53,7 @@
           TODO https://teamds.atlassian.net/browse/WSIO-176
     */-->
     <!--/*
-    <a data-sly-test.authorName="${blog.authorName}"
+    <a data-sly-test.authorName="${author.authorName}"
        class="link is-medium is-dark">
       ${authorName}'s other articles <span class="mdi mdi-arrow-top-right"></span>
     </a>

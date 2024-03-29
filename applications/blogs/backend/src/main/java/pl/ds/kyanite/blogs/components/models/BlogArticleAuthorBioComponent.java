@@ -46,7 +46,7 @@ public class BlogArticleAuthorBioComponent {
   private final ModelFactory modelFactory;
 
   @Getter
-  private BlogArticleHeaderModel blogArticleHeaderModel;
+  private AuthorInfoModel authorInfoModel;
 
   @Inject
   @Default(values = CONTENT)
@@ -65,16 +65,20 @@ public class BlogArticleAuthorBioComponent {
 
   @PostConstruct
   private void init() {
-    final String pagePath =
-        StringUtils.substringBefore(resource.getPath(), JCR_CONTENT) + JCR_CONTENT;
+    final String pagePath = (
+        StringUtils.isNotBlank(link)
+          ? link
+          : StringUtils.substringBefore(resource.getPath(), JCR_CONTENT)
+    ) + JCR_CONTENT;
     final Resource currentPage = resourceResolver.getResource(pagePath);
     if (Objects.nonNull(currentPage)) {
-      blogArticleHeaderModel = modelFactory.createModel(currentPage, BlogArticleHeaderModel.class);
+      authorInfoModel = modelFactory.createModel(currentPage, AuthorInfoModel.class);
     }
   }
 
   public String getLink() {
     return LinkUtil.handleLink(this.link, resourceResolver);
   }
+
 }
 

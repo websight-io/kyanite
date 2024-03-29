@@ -19,6 +19,7 @@ package pl.ds.kyanite.blogs.components.models;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
@@ -53,29 +54,6 @@ public class BlogArticleHeaderModel {
 
   @ValueMapValue
   @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String authorName;
-
-  @ValueMapValue
-  @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String authorDescription;
-
-  @ValueMapValue
-  @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String authorRole;
-
-  @ValueMapValue
-  private String authorPhoto;
-
-  @ValueMapValue
-  @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String authorPhotoAlt;
-
-  @ValueMapValue
-  @Getter
   private String publicationDate;
 
   @ValueMapValue
@@ -91,22 +69,30 @@ public class BlogArticleHeaderModel {
   @Default(values = StringUtils.EMPTY)
   private String heroImageAlt;
 
+  @Getter
+  private AuthorInfoModel authorInfoModel;
+
   @ChildResource
   private List<Resource> tags;
+
+  private final Resource resource;
 
   private final ResourceResolver resourceResolver;
 
   private final ModelFactory modelFactory;
 
   @Inject
-  public BlogArticleHeaderModel(@SlingObject ResourceResolver resourceResolver,
+  public BlogArticleHeaderModel(@SlingObject Resource resource,
+      @SlingObject ResourceResolver resourceResolver,
       @OSGiService ModelFactory modelFactory) {
+    this.resource = resource;
     this.resourceResolver = resourceResolver;
     this.modelFactory = modelFactory;
   }
 
-  public String getAuthorPhoto() {
-    return LinkUtil.handleLink(authorPhoto, resourceResolver);
+  @PostConstruct
+  private void init() {
+    authorInfoModel = modelFactory.createModel(this.resource, AuthorInfoModel.class);
   }
 
   public String getHeroImage() {
@@ -125,4 +111,3 @@ public class BlogArticleHeaderModel {
         .toList();
   }
 }
-

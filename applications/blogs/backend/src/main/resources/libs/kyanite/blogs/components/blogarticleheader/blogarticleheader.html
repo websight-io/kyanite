@@ -18,6 +18,7 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.blogs.components.models.BlogArticleHeaderComponent"
      data-sly-test.blog=${model.blogArticleHeaderModel}>
+  <sly data-sly-set.author="${blog.authorInfoModel}"></sly>
   <div class="container blog-article-header">
     <div class="tags are-normal">
       <sly data-sly-list.item="${blog.tags}">
@@ -30,14 +31,14 @@
     <article class="media">
       <figure class="media-left">
         <p class="image is-48x48">
-          <img width="48" height="48"  data-sly-test.authorPhoto="${blog.authorPhoto}" class="is-rounded"
-               src="${authorPhoto}" alt="${blog.authorPhotoAlt}">
+          <img width="48" height="48"  data-sly-test.authorPhoto="${author.authorPhoto}" class="is-rounded"
+               src="${authorPhoto}" alt="${author.authorPhotoAlt}">
         </p>
       </figure>
       <div class="media-content">
         <div class="content has-text-weight-normal">
           <p>
-            <strong data-sly-test.authorName="${blog.authorName}">${authorName}</strong>
+            <strong data-sly-test.authorName="${author.authorName}">${authorName}</strong>
             <br>
             <small
                 data-sly-test.publicationDate="${blog.formattedPublicationDate}">${publicationDate}</small>
