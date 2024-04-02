@@ -1,46 +1,76 @@
 {
-  "sling:resourceType": "wcm/dialogs/components/tab",
-  "label": "Background image",
-  "desktopBackgroundImage": {
-    "sling:resourceType": "wcm/dialogs/components/include",
-    "include": {
-      "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
-      "name": "Desktop background image",
-      "assetReference": {
-        "mimeTypes": ["image/*"],
-        "name": "desktopBackgroundImage/assetReference"
-      },
-      "src": {
-        "name": "desktopBackgroundImage/assetReference"
-      }
-    }
-  },
-  "tabletBackgroundImage": {
-    "sling:resourceType": "wcm/dialogs/components/include",
-    "include": {
-      "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
-      "name": "Tablet background image",
-      "assetReference": {
-        "mimeTypes": ["image/*"],
-        "name": "tabletBackgroundImage/assetReference"
-      },
-      "src": {
-        "name": "tabletBackgroundImage/assetReference"
-      }
-    }
-  },
-  "mobileBackgroundImage": {
-    "sling:resourceType": "wcm/dialogs/components/include",
-    "include": {
-      "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
-      "name": "Mobile background image",
-      "assetReference": {
-        "mimeTypes": ["image/*"],
-        "name": "mobileBackgroundImage/assetReference"
-      },
-      "src": {
-        "name": "mobileBackgroundImage/assetReference"
-      }
-    }
-  }
+	"sling:resourceType": "wcm/dialogs/components/tab",
+	"label": "Background image",
+	"asImg": {
+		"sling:resourceType": "wcm/dialogs/components/toggle",
+		"name": "asImg",
+		"label": "Render as image",
+		"description": "Useful for hero images, img loads faster. Also image preserve the original width and height"
+	},
+	"container": {
+		"sling:resourceType": "wcm/dialogs/components/container",
+		"alt": {
+			"sling:resourceType": "wcm/dialogs/components/textfield",
+			"name": "alt",
+			"label": "Alt text"
+		},
+		"width": {
+			"sling:resourceType": "wcm/dialogs/components/textfield",
+			"name": "width",
+			"label": "Width"
+		},
+		"height": {
+			"sling:resourceType": "wcm/dialogs/components/textfield",
+			"name": "height",
+			"label": "Height"
+		},
+		"ws:display": {
+			"condition": {
+				"sourceName": "asImg",
+				"values": "true"
+			}
+		}
+	},
+	"desktopBackgroundImage": {
+		"sling:resourceType": "wcm/dialogs/components/include",
+		"include": {
+			"sling:resourceSuperType": "kyanite/common/components/common/imagesource",
+			"name": "Desktop background image",
+			"assetReference": {
+				"mimeTypes": ["image/*"],
+				"name": "desktopBackgroundImage/assetReference"
+			},
+			"src": {
+				"name": "desktopBackgroundImage/assetReference"
+			}
+		}
+	},
+	"tabletBackgroundImage": {
+		"sling:resourceType": "wcm/dialogs/components/include",
+		"include": {
+			"sling:resourceSuperType": "kyanite/common/components/common/imagesource",
+			"name": "Tablet background image",
+			"assetReference": {
+				"mimeTypes": ["image/*"],
+				"name": "tabletBackgroundImage/assetReference"
+			},
+			"src": {
+				"name": "tabletBackgroundImage/assetReference"
+			}
+		}
+	},
+	"mobileBackgroundImage": {
+		"sling:resourceType": "wcm/dialogs/components/include",
+		"include": {
+			"sling:resourceSuperType": "kyanite/common/components/common/imagesource",
+			"name": "Mobile background image",
+			"assetReference": {
+				"mimeTypes": ["image/*"],
+				"name": "mobileBackgroundImage/assetReference"
+			},
+			"src": {
+				"name": "mobileBackgroundImage/assetReference"
+			}
+		}
+	}
 }
