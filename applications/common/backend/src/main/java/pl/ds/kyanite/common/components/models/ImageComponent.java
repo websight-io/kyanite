@@ -130,6 +130,10 @@ public class ImageComponent {
   @ValueMapValue
   private boolean openInNewTab;
 
+  @ValueMapValue
+  @Default(booleanValues = false)
+  private boolean showLightbox;
+
   private boolean isInternal;
 
   @PostConstruct
@@ -192,6 +196,10 @@ public class ImageComponent {
 
   public boolean isAnyMediaAsset() {
     return isNotEmpty(mobileAssetReference) || isNotEmpty(tabletAssetReference);
+  }
+
+  public boolean getShowLightbox() {
+    return (url == null || url.isEmpty()) && showLightbox;
   }
 
   private boolean isVideo(String link) {

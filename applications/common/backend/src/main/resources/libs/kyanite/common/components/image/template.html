@@ -45,7 +45,7 @@
       <source media="(max-width:1023px)" srcset="${model.tabletAssetReference @ context='uri'}"/>
     </sly>
 
-    <img class="${model.isRounded ? 'is-rounded' : ''}" width="${model.width}" height="${model.height}"  src="${model.assetReference}" alt="${model.alt}">
+    <img class="${model.isRounded ? 'is-rounded' : ''}${model.showLightbox ? ' image--lightbox' : ''}" width="${model.width}" height="${model.height}"  src="${model.assetReference}" alt="${model.alt}">
   </picture>
 </template>
 

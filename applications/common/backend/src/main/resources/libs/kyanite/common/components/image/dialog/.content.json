@@ -40,6 +40,12 @@
         "label": "SVG as a code",
         "description": "SVG image will be inserted as a code instead of link reference"
       },
+      "showLightbox": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "showLightbox",
+        "label": "Display in lightbox",
+        "description": "User will be able to open image in preview mode to be able to study it thoroughly."
+      },
       "videoOptions": {
         "sling:resourceType": "wcm/dialogs/components/container",
         "customThumbnail": {
