@@ -36,21 +36,19 @@ export class AnimatedEndings {
   }
 
   init() {
-    setTimeout(() => {
-      new Typed(this.element, {
-        strings: this.strings,
-        loop: true,
-        typeSpeed: this.speed,
-        showCursor: this.showCursor,
-        smartBackspace: false,
-        backDelay: this.delay,
-        onBegin: () => {
-          this.titleElement
-            .getElementsByClassName('typed-first')[0]
-            ?.classList.add('is-hidden');
-        },
-      });
-    }, 1000);
+    new Typed(this.element, {
+      strings: this.strings,
+      loop: true,
+      typeSpeed: this.speed,
+      showCursor: this.showCursor,
+      smartBackspace: false,
+      backDelay: this.delay,
+      onBegin: () => {
+        this.titleElement
+          .getElementsByClassName('typed-first')[0]
+          ?.classList.add('is-hidden');
+      },
+    });
 
     AnimatedEndings.setHeightOfTitle(this.titleElement); // will be overwritten in onload event (to avoid jumping, onload needed for Safari bug)
     window.onresize = () => {
