@@ -22,4 +22,11 @@
   &.with-background-image {
     @extend .a-bg-image
   }
+  position: relative;
+  img.img-as-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
 }

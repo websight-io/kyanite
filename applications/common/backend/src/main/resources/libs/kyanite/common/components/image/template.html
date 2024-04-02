@@ -15,23 +15,25 @@
 */-->
 
 <template data-sly-template.image="${ @ model }">
-  <sly data-sly-set.shadowClass="${model.hasShadow ? 'has-shadow' : ''}"></sly>
+  <a href="${model.url}" target="${model.openInNewTab ? '_blank' : ''}" data-sly-unwrap="${!model.url || model.url == ''}">
+    <sly data-sly-set.shadowClass="${model.hasShadow ? 'has-shadow' : ''}"></sly>
 
-  <sly data-sly-test.isSvg="${model.isSvg && !model.isAnyMediaAsset && model.isCodeSvg}">
-    <span class="image ${model.style} ${shadowClass}">${model.svgDocument @ context='unsafe'}</span>
-  </sly>
+    <sly data-sly-test.isSvg="${model.isSvg && !model.isAnyMediaAsset && model.isCodeSvg}">
+      <span class="image ${model.style} ${shadowClass}">${model.svgDocument @ context='unsafe'}</span>
+    </sly>
 
-  <sly data-sly-test="${!isSvg}">
-    <figure class="image ${model.style} ${shadowClass}">
-      <sly data-sly-test.isVideo="${model.isVideo}">
-        <sly data-sly-call="${video @ model=model}"></sly>
-      </sly>
+    <sly data-sly-test="${!isSvg}">
+      <figure class="image ${model.style} ${shadowClass}">
+        <sly data-sly-test.isVideo="${model.isVideo}">
+          <sly data-sly-call="${video @ model=model}"></sly>
+        </sly>
 
-      <sly data-sly-test="${!isVideo}">
-        <sly data-sly-call="${picture @ model=model}"></sly>
-      </sly>
-    </figure>
-  </sly>
+        <sly data-sly-test="${!isVideo}">
+          <sly data-sly-call="${picture @ model=model}"></sly>
+        </sly>
+      </figure>
+    </sly>
+  </a>
 </template>
 
 <template data-sly-template.picture="${ @ model }">
@@ -43,7 +45,7 @@
       <source media="(max-width:1023px)" srcset="${model.tabletAssetReference @ context='uri'}"/>
     </sly>
 
-    <img class="${model.isRounded ? 'is-rounded' : ''}" width="${model.width}" height="${model.height}"  src="${model.assetReference}" alt="${model.alt}">
+    <img class="${model.isRounded ? 'is-rounded' : ''}" width="${model.width}" height="${model.height}"  src="${model.assetReference}" alt="${model.alt}" loading="lazy">
   </picture>
 </template>
 

@@ -122,6 +122,14 @@ public class ImageComponent {
   @Getter
   private boolean isVideo;
 
+  @Getter
+  @ValueMapValue
+  private String url;
+
+  @Getter
+  @ValueMapValue
+  private boolean openInNewTab;
+
   private boolean isInternal;
 
   @PostConstruct

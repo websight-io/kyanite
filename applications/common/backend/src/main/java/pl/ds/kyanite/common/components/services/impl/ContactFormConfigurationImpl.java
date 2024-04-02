@@ -14,32 +14,40 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.common.components.services;
+package pl.ds.kyanite.common.components.services.impl;
 
-
-import javax.inject.Inject;
+import java.util.Objects;
+import org.apache.commons.lang3.StringUtils;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.metatype.annotations.Designate;
-import pl.ds.kyanite.common.components.configurations.ContactFormConfiguration;
+import pl.ds.kyanite.common.components.configurations.ContactFormConfigurationOcd;
+import pl.ds.kyanite.common.components.services.ContactFormConfiguration;
 
-@Component(service = ContactFormConfigurationService.class)
-@Designate(ocd = ContactFormConfiguration.class)
-public class ContactFormConfigurationService {
+@Component(service = ContactFormConfiguration.class)
+@Designate(ocd = ContactFormConfigurationOcd.class, factory = true)
+public class ContactFormConfigurationImpl implements ContactFormConfiguration {
 
-  @Inject
-  private ContactFormConfiguration config;
-
-  public String getConfigEndpoint() {
-    return host() + path();
-  }
+  private ContactFormConfigurationOcd config;
 
   @Activate
-  protected void activate(ContactFormConfiguration config) {
+  @Modified
+  protected void activate(final ContactFormConfigurationOcd config) {
     this.config = config;
   }
 
-  private String host() {
+  @Override
+  public String getSpaceName() {
+    return Objects.nonNull(config.spaceName()) ? config.spaceName() : StringUtils.EMPTY;
+  }
+
+  @Override
+  public String getConfigEndpoint() {
+    return getHost() + getPath();
+  }
+
+  private String getHost() {
     if (config.host() == null) {
       return "";
     }
@@ -51,7 +59,7 @@ public class ContactFormConfigurationService {
     return config.host();
   }
 
-  private String path() {
+  private String getPath() {
     if (config.path() == null) {
       return "";
     }
@@ -62,4 +70,5 @@ public class ContactFormConfigurationService {
 
     return config.path();
   }
+
 }

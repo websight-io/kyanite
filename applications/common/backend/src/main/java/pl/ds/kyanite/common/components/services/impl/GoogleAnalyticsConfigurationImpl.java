@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.common.components.services;
+package pl.ds.kyanite.common.components.services.impl;
 
 import java.util.Objects;
 import org.apache.commons.lang3.StringUtils;
@@ -22,20 +22,25 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.metatype.annotations.Designate;
-import pl.ds.kyanite.common.components.configurations.GoogleAnalyticsConfiguration;
-import pl.ds.kyanite.common.components.services.impl.GoogleAnalyticsConfigurationService;
+import pl.ds.kyanite.common.components.configurations.GoogleAnalyticsConfigurationOcd;
+import pl.ds.kyanite.common.components.services.GoogleAnalyticsConfiguration;
 
-@Component(service = GoogleAnalyticsConfigurationService.class)
-@Designate(ocd = GoogleAnalyticsConfiguration.class)
-public class GoogleAnalyticsConfigurationServiceImpl implements
-    GoogleAnalyticsConfigurationService {
+@Component(service = GoogleAnalyticsConfiguration.class)
+@Designate(ocd = GoogleAnalyticsConfigurationOcd.class, factory = true)
+public class GoogleAnalyticsConfigurationImpl implements
+    GoogleAnalyticsConfiguration {
 
-  private GoogleAnalyticsConfiguration config;
+  private GoogleAnalyticsConfigurationOcd config;
 
   @Activate
   @Modified
-  protected void activate(final GoogleAnalyticsConfiguration config) {
+  protected void activate(final GoogleAnalyticsConfigurationOcd config) {
     this.config = config;
+  }
+
+  @Override
+  public String getSpaceName() {
+    return Objects.nonNull(config.spaceName()) ? config.spaceName() : StringUtils.EMPTY;
   }
 
   @Override

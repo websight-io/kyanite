@@ -169,6 +169,24 @@
           }
         }
       }
+    },
+    "actionTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Action",
+      "container": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "url": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "url",
+          "label": "URL"
+        },
+        "openInNewTab": {
+          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "name": "openInNewTab",
+          "label": "Open link in a new tab"
+        }
+      }
     }
   }
 }
