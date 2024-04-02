@@ -5,11 +5,9 @@
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
-      "link": {
-        "sling:resourceType": "wcm/dialogs/components/pathpicker",
-        "rootPath": "/content",
-        "name": "link",
-        "label": "Link to the author content page"
+      "authorInfo": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/blogs/components/common/dialog/authorinfo"
       }
     }
   }

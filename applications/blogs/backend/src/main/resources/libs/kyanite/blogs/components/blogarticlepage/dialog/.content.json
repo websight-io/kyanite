@@ -3,9 +3,16 @@
     "metadata": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "Metadata",
-      "author": {
+      "authorInfo": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "/libs/kyanite/blogs/components/common/dialog/authorinfo"
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/blogs/components/common/dialog/authorinfo",
+          "authorInfoSource": {
+            "parentPage": {
+              "sling:hideResource": true
+            }
+          }
+        }
       },
       "publicationDate": {
         "sling:resourceType": "wcm/dialogs/components/datepicker",

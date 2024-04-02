@@ -1,31 +1,73 @@
 {
   "sling:resourceType": "wcm/dialogs/components/container",
-  "authorName": {
-    "sling:resourceType": "wcm/dialogs/components/textfield",
-    "name": "authorName",
-    "label": "Author name"
+  "authorInfoSource": {
+    "sling:resourceType": "wcm/dialogs/components/radio",
+    "name": "authorInfoSource",
+    "label": "Source of author info",
+    "parentPage": {
+      "sling:resourceType": "wcm/dialogs/components/radio/option",
+      "label": "Parent page",
+      "value": "parentPage"
+    },
+    "authorPage": {
+      "sling:resourceType": "wcm/dialogs/components/radio/option",
+      "label": "Author bio page",
+      "value": "authorPage"
+    },
+    "ownProperties": {
+      "sling:resourceType": "wcm/dialogs/components/radio/option",
+      "label": "Own properties",
+      "value": "ownProperties",
+      "selected": true
+    }
   },
-  "authorPhoto": {
+  "authorPageLink": {
     "sling:resourceType": "wcm/dialogs/components/pathpicker",
     "rootPath": "/content",
-    "name": "authorPhoto",
-    "description": "Author photo",
-    "label": "Author photo"
+    "name": "link",
+    "label": "Link to the author content page",
+    "ws:display": {
+      "condition": {
+        "sourceName": "authorInfoSource",
+        "values": "authorPage"
+      }
+    }
   },
-  "authorPhotoAlt": {
-    "sling:resourceType": "wcm/dialogs/components/textfield",
-    "name": "authorPhotoAlt",
-    "description": "Author photo alt",
-    "label": "Author photo alt"
-  },
-  "authorRole": {
-    "sling:resourceType": "wcm/dialogs/components/textfield",
-    "name": "authorRole",
-    "label": "Author role"
-  },
-  "authorDescription": {
-    "sling:resourceType": "wcm/dialogs/components/textfield",
-    "name": "authorDescription",
-    "label": "Author description"
+  "authorInfoContainer": {
+    "sling:resourceType": "wcm/dialogs/components/container",
+    "authorName": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "name": "authorName",
+      "label": "Author name"
+    },
+    "authorPhoto": {
+      "sling:resourceType": "wcm/dialogs/components/pathpicker",
+      "rootPath": "/content",
+      "name": "authorPhoto",
+      "description": "Author photo",
+      "label": "Author photo"
+    },
+    "authorPhotoAlt": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "name": "authorPhotoAlt",
+      "description": "Author photo alt",
+      "label": "Author photo alt"
+    },
+    "authorRole": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "name": "authorRole",
+      "label": "Author role"
+    },
+    "authorDescription": {
+      "sling:resourceType": "wcm/dialogs/components/textfield",
+      "name": "authorDescription",
+      "label": "Author description"
+    },
+    "ws:display": {
+      "condition": {
+        "sourceName": "authorInfoSource",
+        "values": "ownProperties"
+      }
+    }
   }
 }
