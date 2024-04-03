@@ -64,6 +64,11 @@
                     </sly>
                 </div>
             </div>
+            <!-- mobile layout start (applies only to horizontal mode tabs) -->
+            <sly data-sly-test="${!model.vertical}"
+                 data-sly-use.mobile="./template-tabs-mobile.html"
+                 data-sly-call="${mobile.accordion @ model }"></sly>
+            <!-- mobile layout end -->
         </sly>
         <!--        end of preview mode layout-->
     </sly>

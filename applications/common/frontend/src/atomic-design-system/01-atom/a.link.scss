@@ -71,3 +71,10 @@
     font-size: var(--font-size-20);
   }
 }
+
+@mixin a-link-reset {
+  display: inline;
+  border: none;
+  color: var(--color-link--700);
+  border-bottom-color: var(--color-link--700);
+}
