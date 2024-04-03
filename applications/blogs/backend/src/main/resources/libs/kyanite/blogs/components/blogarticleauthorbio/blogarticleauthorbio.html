@@ -16,47 +16,16 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.kyanite.blogs.components.models.BlogArticleAuthorBioComponent"
-     data-sly-test.author="${model.authorInfoModel}">
-  <div class="container blog-article-author-bio">
-    <article class="id media">
-      <figure class="photo media-left">
-        <p class="image is-96x96">
-          <img data-sly-test.authorPhoto="${author.authorPhoto}"
-               src="${authorPhoto}" alt="${author.authorPhotoAlt}"
-               class="is-rounded"
-          />
-        </p>
-      </figure>
-
-      <div class="media-content">
-        <div class="content">
-          <p data-sly-test.authorName="${author.authorName}"
-             class="name">
-            ${authorName}
-          </p>
-          <p data-sly-test.authorRole="${author.authorRole}"
-             class="role">
-            ${authorRole}
-          </p>
-        </div>
-      </div>
-    </article>
-
-    <div class="description content">
-      <p data-sly-test.authorDescription="${author.authorDescription}">
-        ${authorDescription}
-      </p>
-    </div>
-
-    <!--/*
-          TODO https://teamds.atlassian.net/browse/WSIO-176
-    */-->
-    <!--/*
-    <a data-sly-test.authorName="${author.authorName}"
-       class="link is-medium is-dark">
-      ${authorName}'s other articles <span class="mdi mdi-arrow-top-right"></span>
-    </a>
-    */-->
-  </div>
+<sly data-sly-use.model="pl.ds.kyanite.blogs.components.models.BlogArticleAuthorBioComponent">
+  <sly data-sly-test.author="${model.authorInfoModel}">
+    <sly data-sly-use.template="./template-default.html"
+         data-sly-call="${template.default @ author=author}">
+    </sly>
+  </sly>
+  <sly data-sly-test="${wcmmode.isEdit}">
+    <sly data-sly-test.errMessage="${model.authorInfoErrMessage}">
+      <div>Failed to retrieve author info</div>
+      <div>${errMessage}</div>
+    </sly>
+  </sly>
 </sly>

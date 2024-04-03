@@ -18,39 +18,46 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.blogs.components.models.BlogArticleHeaderComponent"
      data-sly-test.blog=${model.blogArticleHeaderModel}>
-  <sly data-sly-set.author="${blog.authorInfoModel}"></sly>
-  <div class="container blog-article-header">
-    <div class="tags are-normal">
-      <sly data-sly-list.item="${blog.tags}">
-            <span class="tag is-dark is-normal">
-               ${item.text}
-            </span>
-      </sly>
-    </div>
-    <h1 class="title is-4" data-sly-test.title="${blog.title}">${title}</h1>
-    <article class="media">
-      <figure class="media-left">
-        <p class="image is-48x48">
-          <img width="48" height="48"  data-sly-test.authorPhoto="${author.authorPhoto}" class="is-rounded"
-               src="${authorPhoto}" alt="${author.authorPhotoAlt}">
-        </p>
-      </figure>
-      <div class="media-content">
-        <div class="content has-text-weight-normal">
-          <p>
-            <strong data-sly-test.authorName="${author.authorName}">${authorName}</strong>
-            <br>
-            <small
-                data-sly-test.publicationDate="${blog.formattedPublicationDate}">${publicationDate}</small>
-            <small data-sly-test.readTime="${blog.readTime}">${'{0} min read' @ format=[readTime],
-              i18n}</small>
-          </p>
-        </div>
+  <sly data-sly-test.author="${model.authorInfoModel}">
+    <div class="container blog-article-header">
+      <div class="tags are-normal">
+        <sly data-sly-list.item="${blog.tags}">
+              <span class="tag is-dark is-normal">
+                 ${item.text}
+              </span>
+        </sly>
       </div>
-    </article>
-    <figure class="image">
-      <img width="1200" height="800" data-sly-test.heroImage="${blog.heroImage}" src="${heroImage}"
-           alt="${blog.heroImageAlt}">
-    </figure>
-  </div>
+      <h1 class="title is-4" data-sly-test.title="${blog.title}">${title}</h1>
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-48x48">
+            <img width="48" height="48"  data-sly-test.authorPhoto="${author.authorPhoto}" class="is-rounded"
+                 src="${authorPhoto}" alt="${author.authorPhotoAlt}">
+          </p>
+        </figure>
+        <div class="media-content">
+          <div class="content has-text-weight-normal">
+            <p>
+              <strong data-sly-test.authorName="${author.authorName}">${authorName}</strong>
+              <br>
+              <small
+                  data-sly-test.publicationDate="${blog.formattedPublicationDate}">${publicationDate}</small>
+              <small data-sly-test.readTime="${blog.readTime}">${'{0} min read' @ format=[readTime],
+                i18n}</small>
+            </p>
+          </div>
+        </div>
+      </article>
+      <figure class="image">
+        <img width="1200" height="800" data-sly-test.heroImage="${blog.heroImage}" src="${heroImage}"
+             alt="${blog.heroImageAlt}">
+      </figure>
+    </div>
+  </sly>
+  <sly data-sly-test="${wcmmode.isEdit}">
+    <sly data-sly-test.errMessage="${model.authorInfoErrMessage}">
+      <div>Failed to retrieve author info</div>
+      <div>${errMessage}</div>
+    </sly>
+  </sly>
 </sly>

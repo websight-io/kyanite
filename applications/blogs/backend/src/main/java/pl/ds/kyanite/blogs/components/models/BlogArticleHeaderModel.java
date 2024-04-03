@@ -19,7 +19,6 @@ package pl.ds.kyanite.blogs.components.models;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.commons.lang3.StringUtils;
@@ -69,30 +68,19 @@ public class BlogArticleHeaderModel {
   @Default(values = StringUtils.EMPTY)
   private String heroImageAlt;
 
-  @Getter
-  private AuthorInfoModel authorInfoModel;
-
   @ChildResource
   private List<Resource> tags;
-
-  private final Resource resource;
 
   private final ResourceResolver resourceResolver;
 
   private final ModelFactory modelFactory;
 
   @Inject
-  public BlogArticleHeaderModel(@SlingObject Resource resource,
+  public BlogArticleHeaderModel(
       @SlingObject ResourceResolver resourceResolver,
       @OSGiService ModelFactory modelFactory) {
-    this.resource = resource;
     this.resourceResolver = resourceResolver;
     this.modelFactory = modelFactory;
-  }
-
-  @PostConstruct
-  private void init() {
-    authorInfoModel = modelFactory.createModel(this.resource, AuthorInfoModel.class);
   }
 
   public String getHeroImage() {
