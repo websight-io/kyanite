@@ -67,12 +67,14 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
     switch (sourceType) {
       case "authorPage" -> {
         String authorPageLink = content.getValueMap().get("link", String.class);
-        Resource authorPageResource = resolveAuthorInfoReference(authorPageLink, resourceResolver);
+        Resource authorPageResource = resolveAuthorInfoReference(
+            authorPageLink, resourceResolver, contentPath);
         return retrieveAuthorInfo(authorPageResource, resourceResolver, paths);
       }
       case "parentPage" -> {
         String parentPagePath = ResourceUtil.getParentPagePath(resource);
-        Resource parentPage = resolveAuthorInfoReference(parentPagePath, resourceResolver);
+        Resource parentPage = resolveAuthorInfoReference(
+            parentPagePath, resourceResolver, contentPath);
         return retrieveAuthorInfo(parentPage, resourceResolver, paths);
       }
       case "ownProperties" -> {
@@ -92,11 +94,13 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
 
   private Resource resolveAuthorInfoReference(
       String authorInfoSourcePath,
-      ResourceResolver resourceResolver
+      ResourceResolver resourceResolver,
+      String consumerPath
   ) {
 
     if (StringUtils.isBlank(authorInfoSourcePath)) {
-      throw new AuthorInfoConfigurationException("Author info reference path is not set");
+      throw new AuthorInfoConfigurationException(
+          String.format("Author info reference path is not set in %s", consumerPath));
     }
 
     Resource authorInfoResource;
@@ -104,12 +108,13 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
       authorInfoResource = resourceResolver.getResource(authorInfoSourcePath);
     } catch (Exception e) {
       throw new AuthorInfoConfigurationException(
-          String.format("Unable to retrieve author info source %s: %s", authorInfoSourcePath,
-              e.getMessage()));
+          String.format("Unable to retrieve author info source %s for consumer %s: %s",
+              authorInfoSourcePath, consumerPath, e.getMessage()));
     }
     if (authorInfoResource == null) {
       throw new AuthorInfoConfigurationException(
-          String.format("%s doesn't resolve to a resource", authorInfoSourcePath));
+          String.format("Unable to resolve author info source %s to resource for consumer %s",
+              authorInfoSourcePath, consumerPath));
     }
 
     return authorInfoResource;
