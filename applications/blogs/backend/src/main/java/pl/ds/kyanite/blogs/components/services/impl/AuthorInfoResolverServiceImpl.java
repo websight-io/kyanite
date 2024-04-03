@@ -43,53 +43,55 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
   }
 
   private AuthorInfoModel retrieveAuthorInfo(
-      Resource resource, ResourceResolver resourceResolver, Set<String> paths) {
+      Resource authorNode, ResourceResolver resourceResolver, Set<String> paths) {
 
-    Resource content = ResourceUtil.getContentNode(resource);
-    String componentPath = ResourceUtil.removeContentSuffix(resource.getPath());
-    String contentPath = content.getPath();
+    String authorNodePath = ResourceUtil.removeContentSuffix(authorNode.getPath());
 
     //  check for circular reference
-    if (paths.contains(componentPath)) {
+    if (paths.contains(authorNodePath)) {
       throw new AuthorInfoCircularReferenceException(
           "Circular reference detected in author info reference chain");
     }
-    paths.add(componentPath);
+    paths.add(authorNodePath);
 
     //  detect the source type
-    String sourceType = content.getValueMap().get("authorInfoSource", String.class);
+    String sourceType = authorNode.getValueMap().get("authorInfoSource", String.class);
     if (StringUtils.isBlank(sourceType)) {
       throw new AuthorInfoConfigurationException(
-          String.format("Author info source is not set in %s", contentPath));
+          String.format("Author info source is not set in %s", authorNodePath));
     }
 
     //  retrieve author info or proceed along the reference chain
     switch (sourceType) {
       case "authorPage" -> {
-        String authorPageLink = content.getValueMap().get("link", String.class);
+        String authorPageLink = authorNode.getValueMap().get("authorPageLink", String.class);
         Resource authorPageResource = resolveAuthorInfoReference(
-            authorPageLink, resourceResolver, contentPath);
+            authorPageLink, resourceResolver, authorNodePath);
         return retrieveAuthorInfo(authorPageResource, resourceResolver, paths);
       }
       case "parentPage" -> {
-        String parentPagePath = ResourceUtil.getParentPagePath(resource);
+        String parentPagePath = ResourceUtil.getParentPagePath(authorNode);
         Resource parentPage = resolveAuthorInfoReference(
-            parentPagePath, resourceResolver, contentPath);
+            parentPagePath, resourceResolver, authorNodePath);
         return retrieveAuthorInfo(parentPage, resourceResolver, paths);
       }
       case "ownProperties" -> {
-        AuthorInfoModel model;
-        try {
-          model = modelFactory.createModel(content, AuthorInfoModel.class);
-        } catch (Exception e) {
-          throw new AuthorInfoResolvingException(
-              String.format("Resource %s doesn't resolves to AuthorInfo", componentPath));
-        }
-        return model;
+        return resolveToModel(authorNode);
       }
       default -> throw new AuthorInfoConfigurationException(
-          String.format("Unknown author info source type in %s", componentPath));
+          String.format("Unknown author info source type in %s", authorNodePath));
     }
+  }
+
+  private AuthorInfoModel resolveToModel(Resource authorNode) {
+    AuthorInfoModel model;
+    try {
+      model = modelFactory.createModel(authorNode, AuthorInfoModel.class);
+    } catch (Exception e) {
+      throw new AuthorInfoResolvingException(
+          String.format("Resource %s doesn't resolve to AuthorInfo", authorNode.getPath()));
+    }
+    return model;
   }
 
   private Resource resolveAuthorInfoReference(
@@ -117,6 +119,13 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
               authorInfoSourcePath, consumerPath));
     }
 
-    return authorInfoResource;
+    Resource authorNode = ResourceUtil.getContentNode(authorInfoResource).getChild("author");
+    if (authorNode == null) {
+      throw new AuthorInfoConfigurationException(
+          String.format("Author info reference %s doesn't have 'author' node for consumer %s",
+              authorInfoSourcePath, consumerPath));
+    }
+
+    return authorNode;
   }
 }

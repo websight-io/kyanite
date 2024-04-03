@@ -1,4 +1,7 @@
 {
   "jcr:primaryType": "nt:unstructured",
-  "authorInfoSource": "parentPage"
+  "author": {
+    "jcr:primaryType": "nt:unstructured",
+    "authorInfoSource": "parentPage"
+  }
 }

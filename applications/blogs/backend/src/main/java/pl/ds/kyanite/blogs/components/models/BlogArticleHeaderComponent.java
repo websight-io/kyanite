@@ -24,6 +24,7 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.factory.ModelFactory;
@@ -39,6 +40,9 @@ public class BlogArticleHeaderComponent {
 
   private final Resource resource;
 
+  @ChildResource
+  private Resource author;
+
   private final ResourceResolver resourceResolver;
 
   private final ModelFactory modelFactory;
@@ -53,8 +57,6 @@ public class BlogArticleHeaderComponent {
   private String authorInfoErrMessage;
 
   private final AuthorInfoResolverService authorInfoResolver;
-
-  public static final String JCR_CONTENT = "/jcr:content";
 
   @Inject
   public BlogArticleHeaderComponent(
@@ -85,7 +87,7 @@ public class BlogArticleHeaderComponent {
 
   private void resolveAuthorInfo() {
     try {
-      authorInfoModel = authorInfoResolver.retrieveAuthorInfo(resource, resourceResolver);
+      authorInfoModel = authorInfoResolver.retrieveAuthorInfo(author, resourceResolver);
     } catch (AuthorInfoResolvingException e) {
       authorInfoErrMessage = e.getMessage();
     }

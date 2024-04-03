@@ -2,7 +2,7 @@
   "sling:resourceType": "wcm/dialogs/components/container",
   "authorInfoSource": {
     "sling:resourceType": "wcm/dialogs/components/radio",
-    "name": "authorInfoSource",
+    "name": "author/authorInfoSource",
     "label": "Source of author info",
     "parentPage": {
       "sling:resourceType": "wcm/dialogs/components/radio/option",
@@ -24,11 +24,11 @@
   "authorPageLink": {
     "sling:resourceType": "wcm/dialogs/components/pathpicker",
     "rootPath": "/content",
-    "name": "link",
+    "name": "author/authorPageLink",
     "label": "Link to the author content page",
     "ws:display": {
       "condition": {
-        "sourceName": "authorInfoSource",
+        "sourceName": "author/authorInfoSource",
         "values": "authorPage"
       }
     }
@@ -37,35 +37,35 @@
     "sling:resourceType": "wcm/dialogs/components/container",
     "authorName": {
       "sling:resourceType": "wcm/dialogs/components/textfield",
-      "name": "authorName",
+      "name": "author/authorName",
       "label": "Author name"
     },
     "authorPhoto": {
       "sling:resourceType": "wcm/dialogs/components/pathpicker",
       "rootPath": "/content",
-      "name": "authorPhoto",
+      "name": "author/authorPhoto",
       "description": "Author photo",
       "label": "Author photo"
     },
     "authorPhotoAlt": {
       "sling:resourceType": "wcm/dialogs/components/textfield",
-      "name": "authorPhotoAlt",
+      "name": "author/authorPhotoAlt",
       "description": "Author photo alt",
       "label": "Author photo alt"
     },
     "authorRole": {
       "sling:resourceType": "wcm/dialogs/components/textfield",
-      "name": "authorRole",
+      "name": "author/authorRole",
       "label": "Author role"
     },
     "authorDescription": {
       "sling:resourceType": "wcm/dialogs/components/textfield",
-      "name": "authorDescription",
+      "name": "author/authorDescription",
       "label": "Author description"
     },
     "ws:display": {
       "condition": {
-        "sourceName": "authorInfoSource",
+        "sourceName": "author/authorInfoSource",
         "values": "ownProperties"
       }
     }

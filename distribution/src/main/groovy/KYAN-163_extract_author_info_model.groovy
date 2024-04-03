@@ -23,7 +23,8 @@
 
 dryRun = true
 rootPaths = ['/content']
-changeCounter = 0
+componentsChangeCounter = 0
+propertiesChangeCounter = 0
 
 RT_BLOG_ARTICLE_PAGE = 'kyanite/blogs/components/blogarticlepage'
 
@@ -39,26 +40,105 @@ def findAuthorInfoComponents(String rootPath) {
         , "JCR-SQL2")
 }
 
-def addPropertyIfNotExist(resource, propName, propValue) {
-    if(resource != null) {
-        def modifiableValueMap = resource.adaptTo(org.apache.sling.api.resource.ModifiableValueMap)
-        if (modifiableValueMap) {
-            def curVal = modifiableValueMap.get(propName)
-            if (curVal == null) {
-                modifiableValueMap.put(propName, propValue)
-                println("VALUE SET: " + propName + "=" + propValue + "  in " + resource.path)
-            } else {
-                println("VALUE EXISTS: " + propName + "=" + curVal + "  in " + resource.path)
-            }
-        }
+def getOrCreateNode(resource, nodeName) {
+    def childNode = resource.getChild(nodeName)
+    if (!childNode) {
+        def properties = ['jcr:primaryType': 'nt:unstructured']
+        res = resourceResolver.create(resource, nodeName, properties)
+        println("Created 'author' node under " + resource.path)
+        propertiesChangeCounter++
+        return res
+    } else {
+        return childNode
     }
 }
 
+def getValueMap(res) {
+    return res.adaptTo(org.apache.sling.api.resource.ModifiableValueMap)
+}
+
+def removeProperty(node, propName) {
+    def values = getValueMap(node)
+    values.remove(propName);
+}
+
+/* properties migration functions start */
+/*
+ * MOVE means:
+ * 1)   try to move the property in case it doesn't exist in the destination,
+ * 2)   REMOVE THE SOURCE PROPERTY (if there was one) in ANY case
+ */
+
+def moveOrSetPropertyUnderNewName(srcNode, srcPropName, destNode, destPropName, replace, defaultValue) {
+
+    println("${replace ? 'replace' : 'move'} $srcNode.path[$srcPropName] to $destNode.path[$destPropName] ${defaultValue ? " or set as $defaultValue" : ''}")
+
+    //  get target property
+    def values = getValueMap(srcNode)
+    def srcValue = values.get(srcPropName)
+    def targetValue = srcValue ? srcValue : defaultValue
+    def destValues = getValueMap(destNode)
+    def destValue = destValues.get(destPropName)
+
+    def msgSrc  = "SRC:  $srcNode.path[$srcPropName]=$srcValue, default=$defaultValue".toString()
+    def msgDest = "DEST: $destNode.path[$destPropName]=$destValue".toString()
+    def action = "none"
+
+    //  set or replace property
+    if (targetValue) {
+        if (!destValue || replace) {
+            action = !destValue ? "set value" : "replace value"
+            destValues.put(destPropName, targetValue)
+            propertiesChangeCounter++
+        }
+    }
+
+    //  remove source property
+    if (srcValue) {
+        removeProperty(srcNode, srcPropName)
+        propertiesChangeCounter++
+    }
+
+    println(msgSrc)
+    println(msgDest)
+    println("ACTION: $action")
+
+}
+
+def moveOrSetPropertyUnderNewName(srcNode, srcPropName, destNode, destPropName, replace) {
+    moveOrSetPropertyUnderNewName(srcNode, srcPropName, destNode, destPropName, replace,null)
+}
+
+def moveOrSetPropertyUnderNewName(srcNode, srcPropName, destNode, destPropName) {
+    moveOrSetPropertyUnderNewName(srcNode, srcPropName, destNode, destPropName, false)
+}
+
+def moveOrSetProperty(srcNode, destNode, propName, replace, defaultValue) {
+    moveOrSetPropertyUnderNewName(srcNode, propName, destNode, propName, replace, defaultValue)
+}
+
+def moveOrSetProperty(srcNode, destNode, propName, replace) {
+    moveOrSetProperty(srcNode, destNode, propName, replace, null)
+}
+
+def movePropertyIfExists(srcNode, destNode, srcPropName) {
+    moveOrSetProperty(srcNode, destNode, srcPropName, false)
+}
+
+/* properties migration functions end */
+
 def migrateAuthorInfoComponent(component) {
-    addPropertyIfNotExist(
-            component,
-            'authorInfoSource',
-            component.resourceType == RT_BLOG_ARTICLE_PAGE ? 'ownProperties' : 'parentPage')
+    def authorNode = getOrCreateNode(component, 'author')
+    def infoSourceDefault = component.resourceType == RT_BLOG_ARTICLE_PAGE \
+            ? 'ownProperties' \
+            : 'parentPage'
+    moveOrSetProperty(component, authorNode, 'authorInfoSource', false, infoSourceDefault)
+    moveOrSetPropertyUnderNewName(component, 'link', authorNode, 'authorPageLink')
+    movePropertyIfExists(component, authorNode, 'authorName')
+    movePropertyIfExists(component, authorNode, 'authorPhoto')
+    movePropertyIfExists(component, authorNode, 'authorPhotoAlt')
+    movePropertyIfExists(component, authorNode, 'authorRole')
+    movePropertyIfExists(component, authorNode, 'authorDescription')
 }
 
 rootPaths.each {
@@ -67,7 +147,7 @@ rootPaths.each {
             res ->
                 try {
                     migrateAuthorInfoComponent(res)
-                    changeCounter++
+                    componentsChangeCounter++
                 } catch (Exception e) {
                     println("Error processing resource: " + res.path + " with error: " + e.getMessage())
                 }
@@ -75,8 +155,12 @@ rootPaths.each {
 }
 
 if (dryRun) {
-    println("Script in dryRun mode. $changeCounter node changes in the repository.")
+    println("Script in dryRun mode. " +
+            "$propertiesChangeCounter node changes, " +
+            "$componentsChangeCounter node changed in the repository.")
 } else {
-    println("APPLIED $changeCounter node changes in the repository.")
+    println("APPLIED " +
+            "$propertiesChangeCounter node changes, " +
+            "$componentsChangeCounter node have been changed in the repository.")
     resourceResolver.commit()
 }

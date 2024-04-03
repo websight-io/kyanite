@@ -3,7 +3,10 @@
   "jcr:content": {
     "jcr:primaryType": "ws:PageContent",
     "sling:resourceType": "kyanite/blogs/components/authorbiopage",
-    "authorInfoSource": "ownProperties",
+    "author": {
+      "jcr:primaryType": "nt:unstructured",
+      "authorInfoSource": "ownProperties"
+    },
     "navbarFixed": "true",
     "navbarFixedPosition": "has-navbar-fixed-top",
     "pagecontainer": {
