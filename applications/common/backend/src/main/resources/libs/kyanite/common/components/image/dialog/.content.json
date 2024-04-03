@@ -44,7 +44,22 @@
         "sling:resourceType": "wcm/dialogs/components/toggle",
         "name": "showLightbox",
         "label": "Display in lightbox",
-        "description": "User will be able to open image in preview mode to be able to study it thoroughly."
+        "description": "User will be able to open the asset in preview mode to be able to study it thoroughly."
+      },
+      "container": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "highResolutionImageSrc": {
+          "sling:resourceType": "wcm/dialogs/components/assetreference",
+          "mimeTypes": ["image/*", "video/*"],
+          "name": "highResolutionAssetSrc",
+          "label": "High resolution asset for lightbox preview"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "showLightbox",
+            "values": "true"
+          }
+        }
       },
       "videoOptions": {
         "sling:resourceType": "wcm/dialogs/components/container",

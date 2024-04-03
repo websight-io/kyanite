@@ -25,6 +25,7 @@ imagesWithLightbox.forEach((image) => {
     toolbar: false,
     zoomable: false,
     movable: false,
-    title: false
+    title: false,
+    url: 'data-lightbox-asset'
   });
 });

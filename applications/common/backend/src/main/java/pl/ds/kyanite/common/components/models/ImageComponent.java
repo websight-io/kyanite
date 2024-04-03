@@ -134,6 +134,9 @@ public class ImageComponent {
   @Default(booleanValues = false)
   private boolean showLightbox;
 
+  @ValueMapValue
+  private String highResolutionAssetSrc;
+
   private boolean isInternal;
 
   @PostConstruct
@@ -200,6 +203,12 @@ public class ImageComponent {
 
   public boolean getShowLightbox() {
     return (url == null || url.isEmpty()) && showLightbox;
+  }
+
+  public String getHighResolutionAssetSrc() {
+    return highResolutionAssetSrc != null
+        ? LinkUtil.handleLink(highResolutionAssetSrc, resourceResolver)
+        : LinkUtil.handleLink(assetReference, resourceResolver);
   }
 
   private boolean isVideo(String link) {
