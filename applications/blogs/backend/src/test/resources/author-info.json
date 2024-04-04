@@ -1,0 +1,80 @@
+{
+  "authorBioPage": {
+    "jcr:content": {
+      "author": {
+        "authorInfoSource": "ownProperties",
+        "authorName":         "authorBioPage authorName",
+        "authorPhoto":        "authorBioPage authorPhoto",
+        "authorPhotoAlt":     "authorBioPage authorPhotoAlt",
+        "authorRole":         "authorBioPage authorRole",
+        "authorDescription":  "authorBioPage authorDescription"
+      }
+    }
+  },
+  "pageWithOwnProperties": {
+    "jcr:content": {
+      "author": {
+        "authorInfoSource": "ownProperties",
+        "authorName":         "pageWithOwnProperties authorName",
+        "authorPhoto":        "pageWithOwnProperties authorPhoto",
+        "authorPhotoAlt":     "pageWithOwnProperties authorPhotoAlt",
+        "authorRole":         "pageWithOwnProperties authorRole",
+        "authorDescription":  "pageWithOwnProperties authorDescription"
+      },
+      "componentWithOwnProperties": {
+        "author": {
+          "authorInfoSource": "ownProperties",
+          "authorName":         "componentWithOwnProperties authorName",
+          "authorPhoto":        "componentWithOwnProperties authorPhoto",
+          "authorPhotoAlt":     "componentWithOwnProperties authorPhotoAlt",
+          "authorRole":         "componentWithOwnProperties authorRole",
+          "authorDescription":  "componentWithOwnProperties authorDescription"
+        }
+      },
+      "componentWithParentPageReference": {
+        "author": {
+          "authorInfoSource": "parentPage",
+          "authorName":         "componentWithParentPageReference authorName",
+          "authorPhoto":        "componentWithParentPageReference",
+          "authorPhotoAlt":     "componentWithParentPageReference authorPhotoAlt",
+          "authorRole":         "componentWithParentPageReference authorRole",
+          "authorDescription":  "componentWithParentPageReference authorDescription"
+        }
+      },
+      "componentWithAuthorPageReference": {
+        "author": {
+          "authorInfoSource": "authorPage",
+          "authorPageLink": "/content/author-info/authorBioPage/",
+          "authorName":         "componentWithAuthorPageReference authorName",
+          "authorPhoto":        "componentWithParentPageReference",
+          "authorPhotoAlt":     "componentWithParentPageReference authorPhotoAlt",
+          "authorRole":         "componentWithParentPageReference authorRole",
+          "authorDescription":  "componentWithParentPageReference authorDescription"
+        }
+      }
+    }
+  },
+  "pageWithDoubleReference": {
+    "jcr:content": {
+      "author": {
+        "authorInfoSource": "authorPage",
+        "authorPageLink": "/content/author-info/authorBioPage/",
+        "authorName":         "pageWithDoubleReference authorName",
+        "authorPhoto":        "pageWithDoubleReference authorPhoto",
+        "authorPhotoAlt":     "pageWithDoubleReference authorPhotoAlt",
+        "authorRole":         "pageWithDoubleReference authorRole",
+        "authorDescription":  "pageWithDoubleReference authorDescription"
+      },
+      "componentWithReferenceToAuthorPageViaParentPage": {
+        "author": {
+          "authorInfoSource": "parentPage",
+          "authorName":         "componentWithReferenceToAuthorPageViaParentPage authorName",
+          "authorPhoto":        "componentWithReferenceToAuthorPageViaParentPage authorPhoto",
+          "authorPhotoAlt":     "componentWithReferenceToAuthorPageViaParentPage authorPhotoAlt",
+          "authorRole":         "componentWithReferenceToAuthorPageViaParentPage authorRole",
+          "authorDescription":  "componentWithReferenceToAuthorPageViaParentPage authorDescription"
+        }
+      }
+    }
+  }
+}

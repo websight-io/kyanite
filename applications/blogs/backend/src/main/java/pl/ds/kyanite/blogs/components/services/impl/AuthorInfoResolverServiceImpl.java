@@ -18,11 +18,14 @@ package pl.ds.kyanite.blogs.components.services.impl;
 
 import java.util.HashSet;
 import java.util.Set;
+import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.factory.ModelFactory;
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
 import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoCircularReferenceException;
 import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoConfigurationException;
@@ -35,7 +38,14 @@ import pl.ds.kyanite.blogs.components.utils.ResourceUtil;
 public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService {
 
   @Reference
+  @Setter
   private ModelFactory modelFactory;
+
+  @Activate
+  public void activate(){}
+
+  @Deactivate
+  public void deactivate(){}
 
   @Override
   public AuthorInfoModel retrieveAuthorInfo(Resource resource, ResourceResolver resourceResolver) {
@@ -44,6 +54,10 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
 
   private AuthorInfoModel retrieveAuthorInfo(
       Resource authorNode, ResourceResolver resourceResolver, Set<String> paths) {
+
+    if (authorNode == null) {
+      throw new AuthorInfoConfigurationException("Author node is null");
+    }
 
     String authorNodePath = ResourceUtil.removeContentSuffix(authorNode.getPath());
 
