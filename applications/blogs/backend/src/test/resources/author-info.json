@@ -76,5 +76,66 @@
         }
       }
     }
+  },
+  "circularReference": {
+    "a": {
+      "jcr:content": {
+        "author": {
+          "authorInfoSource": "authorPage",
+          "authorPageLink": "/content/author-info/circularReference/b/"
+        }
+      }
+    },
+    "b": {
+      "jcr:content": {
+        "author": {
+          "authorInfoSource": "authorPage",
+          "authorPageLink": "/content/author-info/circularReference/c/"
+        }
+      }
+    },
+    "c": {
+      "jcr:content": {
+        "author": {
+          "authorInfoSource": "authorPage",
+          "authorPageLink": "/content/author-info/circularReference/a/"
+        }
+      }
+    }
+  },
+  "pageWithAuthorNodeMissing": {
+    "jcr:content": {
+      "componentWithAuthorNodeMissing": {},
+      "componentWithSourceTypeMissing": {
+        "author": {}
+      },
+      "componentWithUnknownSourceType": {
+        "author": {
+          "authorInfoSource": "unknown source type"
+        }
+      },
+      "componentWithAuthorPageLinkMissing": {
+        "author": {
+          "authorInfoSource": "authorPage"
+        }
+      },
+      "componentReferencingParentPageWithMissingAuthorNode": {
+        "author": {
+          "authorInfoSource": "parentPage"
+        }
+      },
+      "componentReferencingAuthorPageWithMissingAuthorNode": {
+        "author": {
+          "authorInfoSource": "authorPage",
+          "authorPageLink": "/content/author-info/pageWithAuthorNodeMissing/"
+        }
+      },
+      "componentReferencingMissingPage": {
+        "author": {
+          "authorInfoSource": "authorPage",
+          "authorPageLink": "/content/author-info/missingPage/"
+        }
+      }
+    }
   }
 }

@@ -16,6 +16,16 @@
 
 package pl.ds.kyanite.blogs.components.services.impl;
 
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_INFO_NOT_RESOLVING;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_INFO_SOURCE_IS_NULL;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_INFO_SOURCE_NOT_SET;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_INFO_SOURCE_PATH_NOT_SET;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_INFO_SOURCE_RESOLVING_EXCEPTION;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_INFO_SOURCE_TYPE_UNKNOWN;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_NODE_MISSING_IN_CONSUMER;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_NODE_MISSING_IN_REFERENCE;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.CIRCULAR_REFERENCE;
+
 import java.util.HashSet;
 import java.util.Set;
 import lombok.Setter;
@@ -56,15 +66,14 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
       Resource authorNode, ResourceResolver resourceResolver, Set<String> paths) {
 
     if (authorNode == null) {
-      throw new AuthorInfoConfigurationException("Author node is null");
+      throw new AuthorInfoConfigurationException(AUTHOR_NODE_MISSING_IN_CONSUMER);
     }
 
     String authorNodePath = ResourceUtil.removeContentSuffix(authorNode.getPath());
 
     //  check for circular reference
     if (paths.contains(authorNodePath)) {
-      throw new AuthorInfoCircularReferenceException(
-          "Circular reference detected in author info reference chain");
+      throw new AuthorInfoCircularReferenceException(CIRCULAR_REFERENCE);
     }
     paths.add(authorNodePath);
 
@@ -72,7 +81,7 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
     String sourceType = authorNode.getValueMap().get("authorInfoSource", String.class);
     if (StringUtils.isBlank(sourceType)) {
       throw new AuthorInfoConfigurationException(
-          String.format("Author info source is not set in %s", authorNodePath));
+          String.format(AUTHOR_INFO_SOURCE_NOT_SET, authorNodePath));
     }
 
     //  retrieve author info or proceed along the reference chain
@@ -93,7 +102,7 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
         return resolveToModel(authorNode);
       }
       default -> throw new AuthorInfoConfigurationException(
-          String.format("Unknown author info source type in %s", authorNodePath));
+          String.format(AUTHOR_INFO_SOURCE_TYPE_UNKNOWN, authorNodePath, sourceType));
     }
   }
 
@@ -103,7 +112,7 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
       model = modelFactory.createModel(authorNode, AuthorInfoModel.class);
     } catch (Exception e) {
       throw new AuthorInfoResolvingException(
-          String.format("Resource %s doesn't resolve to AuthorInfo", authorNode.getPath()));
+          String.format(AUTHOR_INFO_NOT_RESOLVING, authorNode.getPath()));
     }
     return model;
   }
@@ -116,7 +125,7 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
 
     if (StringUtils.isBlank(authorInfoSourcePath)) {
       throw new AuthorInfoConfigurationException(
-          String.format("Author info reference path is not set in %s", consumerPath));
+          String.format(AUTHOR_INFO_SOURCE_PATH_NOT_SET, consumerPath));
     }
 
     Resource authorInfoResource;
@@ -124,20 +133,18 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
       authorInfoResource = resourceResolver.getResource(authorInfoSourcePath);
     } catch (Exception e) {
       throw new AuthorInfoConfigurationException(
-          String.format("Unable to retrieve author info source %s for consumer %s: %s",
+          String.format(AUTHOR_INFO_SOURCE_RESOLVING_EXCEPTION,
               authorInfoSourcePath, consumerPath, e.getMessage()));
     }
     if (authorInfoResource == null) {
       throw new AuthorInfoConfigurationException(
-          String.format("Unable to resolve author info source %s to resource for consumer %s",
-              authorInfoSourcePath, consumerPath));
+          String.format(AUTHOR_INFO_SOURCE_IS_NULL, authorInfoSourcePath, consumerPath));
     }
 
     Resource authorNode = ResourceUtil.getContentNode(authorInfoResource).getChild("author");
     if (authorNode == null) {
       throw new AuthorInfoConfigurationException(
-          String.format("Author info reference %s doesn't have 'author' node for consumer %s",
-              authorInfoSourcePath, consumerPath));
+          String.format(AUTHOR_NODE_MISSING_IN_REFERENCE, authorInfoSourcePath, consumerPath));
     }
 
     return authorNode;

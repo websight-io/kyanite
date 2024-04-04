@@ -18,8 +18,19 @@ package pl.ds.kyanite.blogs.components.services;
 
 import static java.util.Objects.requireNonNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertLinesMatch;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_INFO_SOURCE_IS_NULL;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_INFO_SOURCE_NOT_SET;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_INFO_SOURCE_PATH_NOT_SET;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_INFO_SOURCE_TYPE_UNKNOWN;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_NODE_MISSING_IN_CONSUMER;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_NODE_MISSING_IN_REFERENCE;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.CIRCULAR_REFERENCE;
+
+import java.util.List;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.factory.ModelFactory;
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
@@ -28,6 +39,9 @@ import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoCircularReferenceException;
+import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoConfigurationException;
+import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingException;
 import pl.ds.kyanite.blogs.components.models.AuthorInfoModel;
 import pl.ds.kyanite.blogs.components.services.impl.AuthorInfoResolverServiceImpl;
 
@@ -121,4 +135,96 @@ public class AuthorInfoResolverServiceTest {
   }
 
   /*  Check routing END   */
+
+
+  /*  Check misconfigurations START   */
+
+  private  <T extends Throwable> void validateException(
+      String resourceRelativePath, String expectedExceptionTemplate, Class<T> expectedExceptionType) {
+    Resource authorNode = getResource( resourceRelativePath);
+    T e = assertThrows(
+        expectedExceptionType,
+        () -> authorInfoResolver.retrieveAuthorInfo(authorNode, context.resourceResolver())
+    );
+    System.out.println(e.getClass());
+    String expectedRegex = expectedExceptionTemplate.replace("%s", ".+");
+    assertLinesMatch(List.of(expectedRegex), List.of(e.getMessage()));
+  }
+
+  @Test
+  public void authorNodeMissingInConsumerTest() {
+    validateException(
+        "/pageWithAuthorNodeMissing/jcr:content/author",
+        AUTHOR_NODE_MISSING_IN_CONSUMER,
+        AuthorInfoConfigurationException.class
+    );
+  }
+
+  @Test
+  public void authorNodeMissingInReferenceTest() {
+    List.of(
+        "componentReferencingAuthorPageWithMissingAuthorNode",
+        "componentReferencingParentPageWithMissingAuthorNode"
+    ).forEach(
+        component -> {
+          validateException(
+              String.format("/pageWithAuthorNodeMissing/jcr:content/%s/author", component),
+              AUTHOR_NODE_MISSING_IN_REFERENCE,
+              AuthorInfoConfigurationException.class
+          );
+        }
+    );
+  }
+
+  @Test
+  public void sourceTypeNotSetTest() {
+    validateException(
+        "/pageWithAuthorNodeMissing/jcr:content/componentWithSourceTypeMissing/author",
+        AUTHOR_INFO_SOURCE_NOT_SET,
+        AuthorInfoConfigurationException.class
+    );
+  }
+
+  @Test
+  public void sourceTypeUnknownTest() {
+    validateException(
+        "/pageWithAuthorNodeMissing/jcr:content/componentWithUnknownSourceType/author",
+        AUTHOR_INFO_SOURCE_TYPE_UNKNOWN,
+        AuthorInfoConfigurationException.class
+    );
+  }
+
+  @Test
+  public void sourcePathNotSetTest() {
+    validateException(
+        "/pageWithAuthorNodeMissing/jcr:content/componentWithAuthorPageLinkMissing/author",
+        AUTHOR_INFO_SOURCE_PATH_NOT_SET,
+        AuthorInfoConfigurationException.class
+    );
+  }
+
+  @Test
+  public void circularReferenceDetectionTest() {
+    List.of("a", "b", "c").forEach(
+        page -> {
+          validateException(
+              String.format("/circularReference/%s/jcr:content/author", page),
+              CIRCULAR_REFERENCE,
+              AuthorInfoCircularReferenceException.class
+          );
+        }
+    );
+  }
+
+  @Test
+  public void sourceNotExists() {
+    validateException(
+        "/pageWithAuthorNodeMissing/jcr:content/componentReferencingMissingPage/author",
+        AUTHOR_INFO_SOURCE_IS_NULL,
+        AuthorInfoConfigurationException.class
+    );
+  }
+
+  /*  Check misconfigurations END   */
+
 }
