@@ -70,7 +70,10 @@
                 "isNormalColumn": "true"
               },
               "blogarticleheader": {
-                "sling:resourceType": "kyanite/blogs/components/blogarticleheader"
+                "sling:resourceType": "kyanite/blogs/components/blogarticleheader",
+                "author": {
+                  "authorInfoSource": "parentPage"
+                }
               }
             },
             "column3": {

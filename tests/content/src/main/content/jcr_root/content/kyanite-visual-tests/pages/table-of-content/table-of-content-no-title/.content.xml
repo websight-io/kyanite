@@ -10,10 +10,6 @@
         ws:lastModified="{Date}2023-06-09T09:56:29.182Z"
         ws:lastModifiedBy="wsadmin"
         ws:template="/libs/kyanite/blogs/templates/blogarticlepage"
-        authorDescription="\0"
-        authorName="\0"
-        authorPhotoAlt="\0"
-        authorRole="\0"
         description="\0"
         fancyBackground="false"
         heroImage="/content/kyanite-visual-tests/assets/blog-image-example.jpeg/"
@@ -22,6 +18,13 @@
         navbarFixedPosition="has-navbar-fixed-top"
         readTime="12"
         title="No content article post">
+        <author
+            jcr:primaryType="nt:unstructured"
+            authorInfoSource="ownProperties"
+            authorDescription="\0"
+            authorName="\0"
+            authorPhotoAlt="\0"
+            authorRole="\0"/>
         <pagecontainer
             jcr:primaryType="nt:unstructured"
             sling:resourceType="kyanite/common/components/pagecontainer">
@@ -83,8 +86,12 @@
                                 offsetType="evenNumber"
                                 sizeType="evenNumber"/>
                             <blogarticleheader
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="kyanite/blogs/components/blogarticleheader"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="kyanite/blogs/components/blogarticleheader">
+                                <author
+                                        jcr:primaryType="nt:unstructured"
+                                        authorInfoSource="parentPage"/>
+                            </blogarticleheader>
                         </column2>
                         <column3
                             jcr:primaryType="nt:unstructured"

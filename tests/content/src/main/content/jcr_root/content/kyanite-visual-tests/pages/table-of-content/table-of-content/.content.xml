@@ -10,11 +10,6 @@
         ws:lastModified="{Date}2023-06-15T06:47:35.803Z"
         ws:lastModifiedBy="wsadmin"
         ws:template="/libs/kyanite/blogs/templates/blogarticlepage"
-        authorDescription="\0"
-        authorName="John Doe"
-        authorPhoto="/content/kyanite-visual-tests/assets/basura.svg"
-        authorPhotoAlt="\0"
-        authorRole="\0"
         description="There are multiple articles on the internet that touch the definitions of CMS and DXP and attempt to draw a line between them. And of course the line can vary from one definition to another."
         fancyBackground="false"
         heroImage="/content/kyanite-visual-tests/assets/blog-image-example.jpeg"
@@ -24,6 +19,14 @@
         publicationDate="2023-05-29"
         readTime="11"
         title="How has CMS evolved into DXP? What is the difference? Should you care?">
+        <author
+            jcr:primaryType="nt:unstructured"
+            authorInfoSource="ownProperties"
+            authorDescription="\0"
+            authorName="John Doe"
+            authorPhoto="/content/kyanite-visual-tests/assets/basura.svg"
+            authorPhotoAlt="\0"
+            authorRole="\0"/>
         <pagecontainer
             jcr:primaryType="nt:unstructured"
             sling:resourceType="kyanite/common/components/pagecontainer">
@@ -59,8 +62,12 @@
                                 jcr:primaryType="nt:unstructured"
                                 size="eight"/>
                             <blogarticleheader
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="kyanite/blogs/components/blogarticleheader"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="kyanite/blogs/components/blogarticleheader">
+                                <author
+                                        jcr:primaryType="nt:unstructured"
+                                        authorInfoSource="parentPage"/>
+                            </blogarticleheader>
                         </column2>
                         <column3
                             jcr:primaryType="nt:unstructured"
