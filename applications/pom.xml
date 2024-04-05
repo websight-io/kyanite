@@ -21,7 +21,7 @@
   <parent>
     <groupId>pl.ds.kyanite</groupId>
     <artifactId>kyanite</artifactId>
-    <version>0.4.18-SNAPSHOT</version>
+    <version>0.4.18</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
