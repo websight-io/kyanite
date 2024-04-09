@@ -17,8 +17,8 @@
  */
 @use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
 @use '../node_modules/viewerjs/dist/viewer.min.css';
-@use 'src/global-variables';
 @use 'src/bulma-overwrite';
+@use 'src/global-variables';
 @use 'src/components';
 @use 'src/atomic-design-system/04-template' as template;
 @use 'src/atomic-design-system/05-page' as page;

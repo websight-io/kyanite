@@ -15,8 +15,52 @@
  *     limitations under the License.
  * -->
  */
+@use 'sass:map';
+@use 'src/atomic-design-system/00-token/t.font' as font;
+@use 'src/atomic-design-system/00-token/t.color' as color;
 
-@import 'src/bulma-overwrite/variables';
+$grey-dark: map.get(color.$map_t-color-by-id, 'grey--700');
+$grey: map.get(color.$map_t-color-by-id, 'grey--600');
+$yellow: map.get(color.$map_t-color-by-id, 'warning--600');
+$green: map.get(color.$map_t-color-by-id, 'success--600');
+$blue: map.get(
+  color.$map_t-color-by-id,
+  'primary--600'
+); // value used also in cookie-consent.scss
+
+$red: map.get(color.$map_t-color-by-id, 'danger--600');
+$primary: $blue;
+$link: $blue;
+$success: $green;
+$warning: $yellow;
+$danger: $red;
+$info: map.get(color.$map_t-color-by-id, 'info--600');
+$light: map.get(color.$map_t-color-by-id, 'grey--400');
+$dark: map.get(color.$map_t-color-by-id, 'grey--800');
+$black: map.get(color.$map_t-base-color, 'black');
+$white: map.get(color.$map_t-base-color, 'white');
+$custom-colors: (
+  'grey-900': (
+    map.get(color.$map_t-color-by-id, 'grey--900'),
+    map.get(color.$map_t-color-by-id, 'grey--100'),
+  ),
+); // these colors are merged with bulma $colors variable, which defines e.g. hero variants, in this case "is-grey-900" is added
+
+@use "src/../node_modules/bulma/sass" with (
+  $cssvars-prefix: "kyanite-",
+
+  // Colors
+
+  $primary: #0053ff,
+  $link: #0053ff,
+  $success: #52c41a,
+  $warning: #fadb14,
+  $danger: #f5222d,
+  $light: #bbbbbb,
+  $dark: #494949,
+
+);
+// @use 'src/bulma-overwrite/variables';
 
 // Bulma will take our variables since their variables has default! flag
-@import 'src/../node_modules/bulma/bulma.sass';
+// @import 'src/../node_modules/bulma/sass';
