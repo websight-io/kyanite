@@ -46,20 +46,20 @@ $custom-colors: (
   ),
 ); // these colors are merged with bulma $colors variable, which defines e.g. hero variants, in this case "is-grey-900" is added
 
-@use "src/../node_modules/bulma/sass" with (
-  $cssvars-prefix: "kyanite-",
+// @use "src/../node_modules/bulma/sass" with (
+//   $cssvars-prefix: "kyanite-",
 
-  // Colors
+//   // Colors
 
-  $primary: #0053ff,
-  $link: #0053ff,
-  $success: #52c41a,
-  $warning: #fadb14,
-  $danger: #f5222d,
-  $light: #bbbbbb,
-  $dark: #494949,
+//   $primary: #0053ff,
+//   $link: #0053ff,
+//   $success: #52c41a,
+//   $warning: #fadb14,
+//   $danger: #f5222d,
+//   $light: #bbbbbb,
+//   $dark: #494949,
 
-);
+// );
 // @use 'src/bulma-overwrite/variables';
 
 // Bulma will take our variables since their variables has default! flag

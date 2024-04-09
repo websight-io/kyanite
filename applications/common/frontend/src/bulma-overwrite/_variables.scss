@@ -18,16 +18,11 @@
 
 @use 'sass:map';
 
-@use 'src/atomic-design-system/00-token/t.zindex' as zindex;
 @use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/atomic-design-system/00-token/t.font' as font;
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 
 // Bulma initial variables https://github.com/jgthms/bulma/blob/master/sass/utilities/initial-variables.sass
-
-/* Navbar */
-$navbar-z: map.get(zindex.$map_t-z-index, 'navbar');
-$navbar-fixed-z: $navbar-z;
 
 /* Colors */
 $grey-dark: map.get(color.$map_t-color-by-id, 'grey--700');

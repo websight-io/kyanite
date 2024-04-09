@@ -1,6 +1,6 @@
 /*!
  * <!--
- *     Copyright (C) 2023 Dynamic Solutions
+ *     Copyright (C) 2024 Dynamic Solutions
  *
  *     Licensed under the Apache License, Version 2.0 (the "License");
  *     you may not use this file except in compliance with the License.
@@ -15,12 +15,15 @@
  *     limitations under the License.
  * -->
  */
+@use 'sass:map';
+@use 'src/atomic-design-system/00-token/t.color' as color;
+@use 'src/atomic-design-system/00-token/t.font/t.font-family' as font;
 
-// @forward 'bulma-overwrite';
-@forward 'colors';
-@forward 'arrow';
+
 @use "src/../node_modules/bulma/sass" with (
   $cssvars-prefix: "kyanite-",
+
+  $family-primary: map.get(font.$map_t-fonts, 'BeVietnamPro'),
 
   // Colors
 
@@ -32,4 +35,9 @@
   $light: #bbbbbb,
   $dark: #494949,
 
+  $code: map.get(color.$map_t-base-color, code-text),
+  $code-background: map.get(color.$map_t-base-color, code-background),
+
+  // $custom-colors: 
+  $custom-shades: color.$map_t-color-by-id,
 );

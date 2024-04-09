@@ -19,7 +19,6 @@
 @use 'src/atomic-design-system/00-token/t.color' as colors;
 @use 'src/atomic-design-system/00-token/t.font' as fonts;
 @use 'src/atomic-design-system/00-token/t.position' as positions;
-@use 'src/atomic-design-system/00-token/t.zindex' as zindex;
 @use 'src/bulma-overwrite/bulma-spacing' as variables;
 
 @mixin add-css-variables($map, $short-name) {  
@@ -47,9 +46,6 @@
      @include add-css-variables(fonts.$map_t-font-weights, font-weight);
      @include add-css-variables(fonts.$map_t-letter-spacings, letter-spacing);
      @include add-css-variables(fonts.$map_t-line-heights, line-height);
-
-     // z-indexes from: src/atomic-design-system/00-token/t.zindex
-     @include add-css-variables(zindex.$map_t-z-index, z-index);
 
     // Bulma overwited variables from: src/bulma-overwrite/variables
     @include add-css-variables(variables.$spacing-values, spacing);

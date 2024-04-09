@@ -21,3 +21,6 @@ import './main.scss';
 import './helpers/load-events';
 import './components';
 import './emailDecryption';
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelector('html').classList.add('theme-light');
+});

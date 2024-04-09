@@ -18,12 +18,8 @@
 
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/atomic-design-system/00-token/t.position' as position;
-@use 'src/atomic-design-system/00-token/t.zindex' as zindex;
 
 @mixin o-body-background--lines {
-  .navbar {
-    z-index: var(--z-index-navbar);
-  }
 
   @at-root {
     &::before {
