@@ -22,6 +22,7 @@
  */
 
 dryRun = true
+final PN_HERO_SWITCH = "renderAsHero"
 rootPaths = ['/content']
 updatedSectionsCount = 0
 convertedHeroesCount = 0
@@ -36,6 +37,10 @@ def findHeroComponents(String rootPath) {
             "[sling:resourceType]='kyanite/common/components/hero'", "JCR-SQL2")
 }
 
+def hasProperty(Resource res, String propertyName) {
+    res.getValueMap().containsKey(propertyName)
+}
+
 def setProperty(Resource res, String propertyName, String propertyValue) {
     def vm = res.getValueMap()
     def modifiableValueMap = res.adaptTo(org.apache.sling.api.resource.ModifiableValueMap)
@@ -47,8 +52,12 @@ rootPaths.each {
         findSectionComponents(rootPath).each {
             res ->
                 try {
-                    setProperty(res, "renderAsHero", "false")
-                    updatedSectionsCount++
+                    // only update 'Section' components if they don't have the new property,
+                    // because subsequent executions of this script would also reconfigure 'Section' components which were a 'Hero' before
+                    if (!hasProperty(res, PN_HERO_SWITCH)) {
+                        setProperty(res, PN_HERO_SWITCH, "false")
+                        updatedSectionsCount++
+                    }
                 } catch (Exception e) {
                     println("Error processing resource: " + res.path + " with error: " + e.getMessage())
                 }
@@ -58,7 +67,7 @@ rootPaths.each {
             res ->
                 try {
                     setProperty(res, "sling:resourceType", "kyanite/common/components/section")
-                    setProperty(res, "renderAsHero", "true")
+                    setProperty(res, PN_HERO_SWITCH, "true")
                     convertedHeroesCount++
                 } catch (Exception e) {
                     println("Error processing resource: " + res.path + " with error: " + e.getMessage())
