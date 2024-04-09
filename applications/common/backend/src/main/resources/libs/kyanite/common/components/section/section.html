@@ -1,6 +1,6 @@
 <!--/*
   ~
-  ~     Copyright (C) 2023 Dynamic Solutions
+  ~     Copyright (C) 2024 Dynamic Solutions
   ~
   ~     Licensed under the Apache License, Version 2.0 (the "License");
   ~     you may not use this file except in compliance with the License.
@@ -15,21 +15,32 @@
   ~     limitations under the License.
   ~
 */-->
-<sly data-sly-use.model="pl.ds.kyanite.common.components.models.SectionComponent">
-    <section class="section ${model.size} ${model.hasBackgroundImage && !model.asImg ? 'with-background-image' : ''}" id="${model.id}"
-             style="--desktop-background-image:${model.desktopBackgroundImage @ context='text'};--tablet-background-image:${model.tabletBackgroundImage @ context='text'};--mobile-background-image:${model.mobileBackgroundImage @ context='text'};">
-          
-             <picture data-sly-test="${model.asImg}">
-               <sly data-sly-test="${model.mobileBackgroundImage}">
-                 <source media="(max-width:767px)" srcset="${model.mobileImage @ context='text'}"/>
-               </sly>
-               <sly data-sly-test="${model.tabletBackgroundImage}">
-                 <source media="(max-width:1023px)" srcset="${model.tabletImage @ context='text'}"/>
-               </sly>
-           
-               <img width="${model.width}" height="${model.height}" class="img-as-bg" src="${model.desktopImage}" alt="${model.alt}">
-             </picture>
-        <sly data-sly-repeat.paragraph="${model.children}"
-             data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType}"></sly>
-    </section>
+<sly data-sly-use.model="pl.ds.kyanite.common.components.models.SectionComponent"></sly>
+
+<!--/* If it's not configured to be a 'Hero' component, render the current resource as 'Section' component. */-->
+<sly data-sly-test="${!model.renderAsHero}">
+  <section
+      class="section ${model.size} ${model.hasBackgroundImage && !model.asImg ? 'with-background-image' : ''}"
+      id="${model.id}"
+      style="--desktop-background-image:${model.desktopBackgroundImage @ context='text'};--tablet-background-image:${model.tabletBackgroundImage @ context='text'};--mobile-background-image:${model.mobileBackgroundImage @ context='text'};">
+
+    <picture data-sly-test="${model.asImg}">
+      <sly data-sly-test="${model.mobileBackgroundImage}">
+        <source media="(max-width:767px)" srcset="${model.mobileImage @ context='text'}"/>
+      </sly>
+      <sly data-sly-test="${model.tabletBackgroundImage}">
+        <source media="(max-width:1023px)" srcset="${model.tabletImage @ context='text'}"/>
+      </sly>
+
+      <img width="${model.width}" height="${model.height}" class="img-as-bg" src="${model.desktopImage}"
+           alt="${model.alt}">
+    </picture>
+    <sly data-sly-repeat.paragraph="${model.children}"
+         data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType}"></sly>
+  </section>
+</sly>
+
+<!--/* Render the current resource as 'Hero' if it's configured to be so. */-->
+<sly data-sly-test="${model.renderAsHero}">
+  <sly data-sly-resource="${currentResource.path @ resourceType='kyanite/common/components/hero'}"></sly>
 </sly>

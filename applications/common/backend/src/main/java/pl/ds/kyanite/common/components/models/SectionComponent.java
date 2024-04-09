@@ -17,7 +17,6 @@
 package pl.ds.kyanite.common.components.models;
 
 import java.util.List;
-import java.util.stream.StreamSupport;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
@@ -31,6 +30,7 @@ import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import pl.ds.kyanite.common.components.models.background.ComponentWithBackground;
 import pl.ds.kyanite.common.components.models.background.DefaultComponentWithBackground;
+import pl.ds.kyanite.common.components.utils.ContainerComponentUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class SectionComponent implements ComponentWithBackground {
@@ -48,21 +48,19 @@ public class SectionComponent implements ComponentWithBackground {
   private String id;
 
   @Getter
-  List<Resource> children;
+  private List<Resource> children;
 
   @Self
   @Delegate
   private DefaultComponentWithBackground componentWithBackground;
 
+  @Inject
+  @Getter
+  private boolean renderAsHero;
+
   @PostConstruct
   void init() {
-    children = findValidItems();
+    children = ContainerComponentUtil.listVisibleChildren(resource);
   }
 
-  private List<Resource> findValidItems() {
-    return StreamSupport.stream(resource.getChildren().spliterator(), false)
-        //Image is defined on dialog level and should not be displayed in as separate component
-        .filter(res -> !StringUtils.equals("nt:unstructured", res.getResourceType()))
-        .toList();
-  }
 }

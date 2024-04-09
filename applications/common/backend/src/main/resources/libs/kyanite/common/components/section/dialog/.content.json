@@ -1,6 +1,6 @@
 {
-  "sling:resourceType": "wcm/dialogs/dialog",
-  "tabs": {
+	"sling:resourceType": "wcm/dialogs/dialog",
+	"tabs": {
 		"sling:resourceType": "wcm/dialogs/components/tabs",
 		"generalTab": {
 			"sling:resourceType": "wcm/dialogs/components/tab",
@@ -14,11 +14,65 @@
 			"size": {
 				"sling:resourceType": "wcm/dialogs/components/include",
 				"path": "/libs/kyanite/common/components/hero/attributes/size"
+			},
+			"ws:display": {
+				"condition": {
+					"sourceName": "renderAsHero",
+					"values": "false"
+				}
 			}
 		},
 		"backgroundImage": {
 			"sling:resourceType": "wcm/dialogs/components/include",
-			"path": "/libs/kyanite/common/components/common/backgroundimage"
+			"path": "/libs/kyanite/common/components/common/backgroundimage",
+			"ws:display": {
+				"condition": {
+					"sourceName": "renderAsHero",
+					"values": "false"
+				}
+			}
+		},
+		"heroTab": {
+			"sling:resourceType": "wcm/dialogs/components/tab",
+			"label": "Hero General",
+			"size": {
+				"sling:resourceType": "wcm/dialogs/components/include",
+				"path": "/libs/kyanite/common/components/hero/attributes/size"
+			},
+			"variant": {
+				"sling:resourceType": "wcm/dialogs/components/include",
+				"path": "kyanite/common/components/hero/attributes/variant"
+			},
+			"background": {
+				"sling:resourceType": "wcm/dialogs/components/radio",
+				"name": "background",
+				"label": "Background",
+				"nobackground": {
+					"sling:resourceType": "wcm/dialogs/components/radio/option",
+					"label": "No background",
+					"value": ""
+				},
+				"circles": {
+					"sling:resourceType": "wcm/dialogs/components/radio/option",
+					"label": "Circles",
+					"value": "hero--bg-circles"
+				}
+			},
+			"ws:display": {
+				"condition": {
+					"sourceName": "renderAsHero",
+					"values": "true"
+				}
+			}
+		},
+		"variantSwitch": {
+			"sling:resourceType": "wcm/dialogs/components/tab",
+			"label": "Hero switch",
+			"switch": {
+				"sling:resourceType": "wcm/dialogs/components/toggle",
+				"name": "renderAsHero",
+				"label": "Is a hero banner?"
+			}
 		}
-  }
+	}
 }
