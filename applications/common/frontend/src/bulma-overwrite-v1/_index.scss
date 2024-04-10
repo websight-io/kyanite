@@ -99,6 +99,9 @@ $spacing-values: (
     --kyanite-code: #36464e;
     --kyanite-code-background: #f5f5f5;
     --kyanite-navbar-height: 3.25rem;
+    --kyanite-link: var(--color-primary--600);
+    --kyanite-duration: 150ms;
+    --kyanite-easing: ease-in-out;
 
     // Default values:
     // --kyanite-body-size: 1em;

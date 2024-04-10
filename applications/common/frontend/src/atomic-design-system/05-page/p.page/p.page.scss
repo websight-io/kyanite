@@ -26,11 +26,10 @@ html {
   // overflow: initial;
 }
 
-// TODO streamX body color
-// body { 
-//   background-color: var(--base-color-body-background);
-//   color: var(--base-color-body-text, #686868);
-// }
+body { 
+  background-color: var(--base-color-body-background);
+  color: var(--base-color-body-text, #686868);
+}
 
 body.lines {
   @include o-body-background.o-body-background--lines;
