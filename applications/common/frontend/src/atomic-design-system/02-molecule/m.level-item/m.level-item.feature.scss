@@ -17,9 +17,7 @@
  */
 
 @use 'sass:map';
-
-@use 'src/bulma-overwrite/variables' as spacing;
-@use 'src/bulma-overwrite/bulma-spacing';
+@use 'src/variables-helpers';
 @use 'src/atomic-design-system/00-token/t.spacing';
 
 @mixin m-level-item-feature {

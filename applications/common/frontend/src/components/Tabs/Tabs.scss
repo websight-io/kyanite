@@ -22,7 +22,6 @@
 @use 'src/atomic-design-system/00-token/t.border';
 @use 'src/atomic-design-system/01-atom/a.link' as links;
 @use 'src/atomic-design-system/02-molecule/m.tabs' as tabs;
-@use 'src/bulma-overwrite/bulma-spacing';
 
 /* editMode styles start */
 .tabs-container-edit {

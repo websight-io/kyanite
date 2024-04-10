@@ -15,9 +15,7 @@
  *     limitations under the License.
  * -->
  */
-
-@use 'src/bulma-overwrite/bulma-spacing';
-
+@use 'src/variables-helpers';
 // applies to all level-item instances
 @mixin m-level-item {
   flex: 1;

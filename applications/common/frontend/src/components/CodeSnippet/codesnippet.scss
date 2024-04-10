@@ -20,8 +20,7 @@
 
 @use 'node_modules/highlight.js/styles/github.css';
 
-@use 'src/bulma-overwrite/variables' as variables;
-@use 'src/bulma-overwrite/bulma-spacing' as spacing;
+@use 'src/variables-helpers' as variables;
 
 @use 'src/atomic-design-system/00-token/t.font' as font;
 @use 'src/atomic-design-system/00-token/t.color' as color;

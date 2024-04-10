@@ -1,20 +1,19 @@
-/*!
- * <!--
- *     Copyright (C) 2024 Dynamic Solutions
+/*
+ * Copyright (C) 2024 Dynamic Solutions
  *
- *     Licensed under the Apache License, Version 2.0 (the "License");
- *     you may not use this file except in compliance with the License.
- *     You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- *         http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
- *     Unless required by applicable law or agreed to in writing, software
- *     distributed under the License is distributed on an "AS IS" BASIS,
- *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *     See the License for the specific language governing permissions and
- *     limitations under the License.
- * -->
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+ 
 @use 'sass:map';
 @use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/atomic-design-system/00-token/t.font/t.font-family' as font;
@@ -49,7 +48,51 @@
     'grey-800': #494949,
     'grey-900': #2a2a2a,
     'grey-1000': #181818,
-  )
+  ),
+
+  /* Spacing */
+$spacing-shortcuts: (
+  'margin': 'm',
+  'padding': 'p',
+),
+$spacing-directions: (
+  'top': 't',
+  'right': 'r',
+  'bottom': 'b',
+  'left': 'l',
+),
+$spacing-horizontal: 'x',
+$spacing-vertical: 'y',
+$spacing-values: (
+  '0': 0,
+  '0_1': 0.063rem,
+  '0_2': 0.188rem,
+  '1': 0.25rem,
+  '1_1': 0.313rem,
+  '1_2': 0.375rem,
+  '2': 0.5rem,
+  '3': 0.75rem,
+  '4': 1rem,
+  '4_1': 1.063rem,
+  '4_2': 1.125rem,
+  '4_3': 1.25rem,
+  '4_4': 1.375rem,
+  '5': 1.5rem,
+  '5_1': 1.75rem,
+  '5_2': 2rem,
+  '5_3': 2.25rem,
+  '5_4': 2.5rem,
+  '5_5': 2.75rem,
+  '6': 3rem,
+  '6_1': 3.5rem,
+  '6_2': 4rem,
+  '6_3': 5rem,
+  '6_4': 6rem,
+  '6_5': 8rem,
+  '6_6': 10rem,
+  '6_7': 16rem,
+  'auto': auto,
+)
 );
 
 :root {

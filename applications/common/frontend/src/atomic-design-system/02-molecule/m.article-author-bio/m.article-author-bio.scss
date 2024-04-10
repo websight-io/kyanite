@@ -16,7 +16,7 @@
  * -->
  */
 
-@use 'src/bulma-overwrite/bulma-spacing';
+@use 'src/variables-helpers';
 
 @use 'src/atomic-design-system/00-token/t.spacing' as spacing;
 @use 'src/atomic-design-system/00-token/t.color' as color;

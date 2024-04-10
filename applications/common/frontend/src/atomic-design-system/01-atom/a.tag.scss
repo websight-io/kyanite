@@ -19,8 +19,7 @@
 @use 'src/atomic-design-system/00-token/t.border' as border;
 @use 'src/atomic-design-system/00-token/t.font' as font;
 @use 'src/atomic-design-system/00-token/t.color' as color;
-@use 'src/bulma-overwrite/bulma-spacing';
-
+@use 'src/variables-helpers';
 
 @mixin a-tag-default-color {
   background-color: var(--base-color-contrast-background, var(--color-grey--900));
