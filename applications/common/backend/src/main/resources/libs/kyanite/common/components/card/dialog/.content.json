@@ -25,6 +25,41 @@
           "label": "Full height",
           "value": "card--full-height"
         }
+      },
+      "type": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "type",
+        "label": "Type",
+        "card": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Card",
+          "value": "card"
+        },
+        "anchor": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Anchor",
+          "value": "anchor"
+        }
+      },
+      "container": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "anchorUrl": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "anchorUrl",
+          "label": "Anchor URL"
+        },
+        "openInNewTab": {
+          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "name": "openInNewTab",
+          "label": "Open link in a new tab"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "type",
+            "values": "anchor"
+          }
+        }
       }
     },
     "imageTab": {

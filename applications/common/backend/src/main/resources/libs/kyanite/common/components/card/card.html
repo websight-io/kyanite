@@ -68,5 +68,9 @@
         </sly>
       </footer>
     </sly>
+
+    <sly data-sly-test="${model.type == 'anchor' && model.anchorUrl}">
+      <a class="card-redirect-anchor" href="${model.anchorUrl}" target="${model.openInNewTab ? '_blank' : ''}"></a>
+    </sly>
   </div>
 </sly>
