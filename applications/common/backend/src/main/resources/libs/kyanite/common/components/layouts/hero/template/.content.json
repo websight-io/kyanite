@@ -1,0 +1,80 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "size": "is-medium",
+  "renderAsHero": "false",
+  "container": {
+    "jcr:primaryType": "nt:unstructured",
+    "alignmentHorizontal": "is-centered",
+    "sling:resourceType": "kyanite/common/components/container",
+    "title": {
+      "jcr:primaryType": "nt:unstructured",
+      "element": "h1",
+      "anchorId": "",
+      "eyebrowText": "",
+      "size": "is-2",
+      "text": "<p>Welcome to Your Next Adventure</p>",
+      "type": "title",
+      "addEyebrow": "false",
+      "sling:resourceType": "kyanite/common/components/title"
+    },
+    "columns": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/common/components/columns",
+      "column1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "kyanite/common/components/columns/column",
+        "desktopColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "three",
+          "offsetType": "evenNumber",
+          "size": "six",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "tabletColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "empty",
+          "offsetType": "evenNumber",
+          "size": "empty",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "mobileColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "empty",
+          "offsetType": "evenNumber",
+          "size": "empty",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "content": {
+          "jcr:primaryType": "nt:unstructured",
+          "size": "is-large",
+          "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Sed nisi nulla, sollicitudin non bibendum vitae, vestibulum auctor dolor. Nulla facilisi.</p>",
+          "color": "has-text-light",
+          "sling:resourceType": "kyanite/common/components/content",
+          "textWeight": "has-text-weight-normal"
+        }
+      }
+    },
+    "buttons": {
+      "jcr:primaryType": "nt:unstructured",
+      "hasAddons": "false",
+      "sling:resourceType": "kyanite/common/components/buttons",
+      "alignment": "is-centered",
+      "button": {
+        "jcr:primaryType": "nt:unstructured",
+        "isOutlined": "false",
+        "isMailto": "false",
+        "type": "a",
+        "label": "Learn More",
+        "variant": "is-primary",
+        "sling:resourceType": "kyanite/common/components/button",
+        "actionType": ""
+      }
+    }
+  }
+}
