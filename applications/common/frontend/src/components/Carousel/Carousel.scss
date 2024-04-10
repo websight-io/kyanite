@@ -34,4 +34,20 @@
   .glide__slides {
     white-space: normal;
   }
+
+  .buttons.hidden-from-all {
+    display: none;
+  }
+
+  .buttons.hidden-from-tablet {
+    @include breakpoint.media-breakpoint-medium {
+      display: none;
+    }
+  }
+
+  .buttons.hidden-from-desktop {
+    @include breakpoint.media-breakpoint-large {
+      display: none;
+    }
+  }
 }
