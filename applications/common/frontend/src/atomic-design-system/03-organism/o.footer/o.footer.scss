@@ -116,6 +116,8 @@
       @include link.a-animated-underline-link;
       @extend .p-0;
       color: var(--base-color-body-text, var(--color-grey--100)) !important;
+      background-color: inherit;
+      width: auto;
 
       &:hover {
         background-color: unset;

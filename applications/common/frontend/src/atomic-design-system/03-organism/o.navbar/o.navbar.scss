@@ -33,8 +33,6 @@ $color-navbar-link: var(--color-grey--900);
   // causes the element to establish a containing block for all descendants (used for fixed-position descendants)
   // https://www.w3.org/TR/css-transforms-1/#containing-block-for-all-descendants
   transform: translateX(0);
-
-  padding-top: var(--spacing-4);
   transition: .3s ease-in-out background-color;
 
   &.is-primary {
@@ -83,12 +81,6 @@ $color-navbar-link: var(--color-grey--900);
         color: #2a2a2a;
       }
     }
-  }
-
-
-  @include breakpoint.media-breakpoint-large {
-    padding-top: var(--spacing-5);
-    padding-bottom: var(--spacing-4);
   }
 
   .container {

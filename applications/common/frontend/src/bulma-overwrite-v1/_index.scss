@@ -23,7 +23,11 @@
 @use "src/../node_modules/bulma/sass" with (
   $cssvars-prefix: "kyanite-",
 
-  $family-primary: map.get(font.$map_t-fonts, 'BeVietnamPro'),
+  // Base
+
+  $family-primary: map.get(font.$map_t-fonts, 'BeVietnamPro'), // generates: --kyanite-family-primary
+  $background: map.get(color.$map_t-base-color, 'white'), // generates: --kyanite-background
+  $text: #494949,
 
   // Colors
 
@@ -34,10 +38,47 @@
   $danger: #f5222d,
   $light: #bbbbbb,
   $dark: #494949,
-
-  $code: map.get(color.$map_t-base-color, code-text),
-  $code-background: map.get(color.$map_t-base-color, code-background),
-
-  // $custom-colors: 
-  $custom-shades: color.$map_t-color-by-id,
+  $custom-colors: (
+    'grey-100': #f9f9fa,
+    'grey-200': #f2f3f5,
+    'grey-300': #e1e1e1,
+    'grey-400': #bbbbbb,
+    'grey-500': #959595,
+    'grey-600': #7f7f7f,
+    'grey-700': #686868,
+    'grey-800': #494949,
+    'grey-900': #2a2a2a,
+    'grey-1000': #181818,
+  )
 );
+
+:root {
+    --kyanite-code: #36464e;
+    --kyanite-code-background: #f5f5f5;
+    --kyanite-navbar-height: 3.25rem;
+
+    // Default values:
+    // --kyanite-body-size: 1em;
+    // --kyanite-body-min-width: 300px;
+    // --kyanite-body-rendering: optimizeLegibility;
+    // --kyanite-body-family: var(--kyanite-family-primary);
+    // --kyanite-body-overflow-x: hidden;
+    // --kyanite-body-overflow-y: scroll;
+    // --kyanite-body-color: var(--kyanite-text);
+    // --kyanite-body-font-size: 1em;
+    // --kyanite-body-weight: var(--kyanite-weight-normal);
+    // --kyanite-body-line-height: 1.5;
+    // --kyanite-code-family: var(--kyanite-family-code);
+    // --kyanite-code-padding: 0.25em 0.5em 0.25em;
+    // --kyanite-code-weight: normal;
+    // --kyanite-code-size: 0.875em;
+    // --kyanite-small-font-size: 0.875em;
+    // --kyanite-hr-background-color: var(--kyanite-background);
+    // --kyanite-hr-height: 2px;
+    // --kyanite-hr-margin: 1.5rem 0;
+    // --kyanite-strong-color: var(--kyanite-text-strong);
+    // --kyanite-strong-weight: var(--kyanite-weight-semibold);
+    // --kyanite-pre-font-size: 0.875em;
+    // --kyanite-pre-padding: 1.25rem 1.5rem;
+    // --kyanite-pre-code-font-size: 1em;
+}

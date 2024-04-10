@@ -19,16 +19,15 @@
 @use 'src/atomic-design-system/03-organism/o.body-background' as
   o-body-background;
 
-$bulma-navbar-height: 3.25rem;
-
 html {
   // this prevents jumping content when clicking on anchor link in table of contents (KYAN-50)
-  scroll-padding-top: $bulma-navbar-height;
+  scroll-padding-top: var(--kyanite-navbar-height);
   // this prevents jumping content when opening image previews (KYAN-173)
-  overflow: initial;
+  // overflow: initial;
 }
 
-// body {
+// TODO streamX body color
+// body { 
 //   background-color: var(--base-color-body-background);
 //   color: var(--base-color-body-text, #686868);
 // }
