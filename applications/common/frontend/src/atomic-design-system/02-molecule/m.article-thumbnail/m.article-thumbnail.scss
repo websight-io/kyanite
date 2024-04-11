@@ -49,7 +49,7 @@
     @include font.t-font-size-fluid(22, 32);
 
 
-    color: var(--base-color-body-text, var(--base-color-black));
+    color: var(--kyanite-custom-article-thumbnail-mdi-color);
     transform: rotate(45deg);
   }
 

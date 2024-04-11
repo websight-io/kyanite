@@ -213,8 +213,8 @@ a {
 /*  inputs text colors */
 
 .input, .select select, .textarea, .label  {
-  color: var(--base-color-body-text, var(--color-grey--700));
-  background-color: var(--base-color-body-background, var(--base-color-white));
+  color: var(--kyanite-body-color);
+  background-color: var(--kyanite-body-background-color);
   &:focus, &:active, &.is-active, &.is-focused {
     border-color: var(--color-primary--600);
     box-shadow: none;
@@ -226,15 +226,15 @@ a {
 }
 
 .input::placeholder, .textarea::placeholder {
-  color: var(--base-color-secondary-text, var(--color-grey--700));
+  color: var(--kyanite-custom-input-placeholder-color);
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px var(--base-color-body-background) inset;
-    -webkit-text-fill-color: var(--base-color-body-text);
+    -webkit-box-shadow: 0 0 0 30px var(--kyanite-body-background-color) inset;
+    -webkit-text-fill-color: var(--kyanite-body-color);
 }
 
 input[type=checkbox] {
@@ -242,7 +242,7 @@ input[type=checkbox] {
 }
 
 .checkbox:hover, .radio:hover {
-  color: var(--base-color-secondary-text, #363636)
+  color: var(--kyanite-custom-checkbox-radio-hover);
 }
 
 /*  table   */
@@ -254,7 +254,7 @@ $table-selectors: '.table', '.table.is-striped';
 
     @each $rt in thead, tbody {
       #{$rt} tr {
-        background-color: var(--base-color-body-background, var(--base-color-white));
+        background-color: var(--kyanite-body-background-color);
       }
     }
 
@@ -262,7 +262,7 @@ $table-selectors: '.table', '.table.is-striped';
       tr {
         th {
           font-weight: bold;
-          color: var(--base-color-body-text, var(--base-color-black));
+          color: var(--kyanite-body-color);
         }
       }
     }
@@ -271,12 +271,12 @@ $table-selectors: '.table', '.table.is-striped';
       tr {
         &:not(.is-selected) {
           &:nth-child(2n) {
-            background-color: var(--base-color-secondary-background, #fafafa);
+            background-color: var(--kyanite-custom-table-striped-row-even-background-color);
           }
         }
 
         td {
-          color: var(--base-color-body-text, var(--base-color-black));
+          color: var(--kyanite-body-color);
         }
       }
     }

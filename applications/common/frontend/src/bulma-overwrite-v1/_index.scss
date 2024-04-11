@@ -25,7 +25,7 @@
   // Base
 
   $family-primary: map.get(font.$map_t-fonts, 'BeVietnamPro'), // generates: --kyanite-family-primary
-  $background: map.get(color.$map_t-base-color, 'white'), // generates: --kyanite-background
+  $background: #FFF, // generates: --kyanite-background
   $text: #494949,
 
   // Colors
@@ -102,29 +102,32 @@ $spacing-values: (
     --kyanite-link: var(--color-primary--600);
     --kyanite-duration: 150ms;
     --kyanite-easing: ease-in-out;
+    --kyanite-background: #fff;
 
-    // Default values:
-    // --kyanite-body-size: 1em;
-    // --kyanite-body-min-width: 300px;
-    // --kyanite-body-rendering: optimizeLegibility;
-    // --kyanite-body-family: var(--kyanite-family-primary);
-    // --kyanite-body-overflow-x: hidden;
-    // --kyanite-body-overflow-y: scroll;
-    // --kyanite-body-color: var(--kyanite-text);
-    // --kyanite-body-font-size: 1em;
-    // --kyanite-body-weight: var(--kyanite-weight-normal);
-    // --kyanite-body-line-height: 1.5;
-    // --kyanite-code-family: var(--kyanite-family-code);
-    // --kyanite-code-padding: 0.25em 0.5em 0.25em;
-    // --kyanite-code-weight: normal;
-    // --kyanite-code-size: 0.875em;
-    // --kyanite-small-font-size: 0.875em;
-    // --kyanite-hr-background-color: var(--kyanite-background);
-    // --kyanite-hr-height: 2px;
-    // --kyanite-hr-margin: 1.5rem 0;
-    // --kyanite-strong-color: var(--kyanite-text-strong);
-    // --kyanite-strong-weight: var(--kyanite-weight-semibold);
-    // --kyanite-pre-font-size: 0.875em;
-    // --kyanite-pre-padding: 1.25rem 1.5rem;
-    // --kyanite-pre-code-font-size: 1em;
+    --kyanite-custom-input-placeholder-color: var(--color-grey--700);
+    --kyanite-custom-checkbox-radio-hover: #363636;
+
+    --kyanite-custom-table-striped-row-even-background-color: #fafafa;
+
+    --kyanite-custom-tag-background: #2a2a2a;
+    --kyanite-custom-tag-text: #FFF;
+
+    --kyanite-custom-title: var(--color-grey--900);
+    --kyanite-custom-subtitle: var(--color-grey--700);
+
+    --kyanite-custom-article-thumbnail-mdi-color: #000;
+
+    --kyanite-custom-card-background: #FFF;
+    --kyanite-custom-card-footer-border: #ededed;
+
+    --kyanite-custom-footer-background: var(--color-grey--1000);
+    --kyanite-custom-footer-text: var(--color-grey--100);
+    --kyanite-custom-footer-menu-label: var(--color-grey--400);
+
+    --kyanite-custom-navbar-menu-background: #FFF;
+    --kyanite-custom-navbar-megamenu-background: var(--color-grey--100);
+    --kyanite-custom-navbar-item-color-hover: var(--color-grey--900);
+    --kyanite-custom-navbar-dropdown-item-background-hover: #f5f5f5;
+    --kyanite-custom-navbar-dropdown-item-text-hover: #0a0a0a;
+    --kyanite-custom-navbar-burger-color: var(--color-grey--700);
 }

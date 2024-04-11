@@ -43,7 +43,6 @@
     font-weight: var(--font-weight-700);
     color: var(--color-grey--900) !important;
 
-    background-color: var(--base-color-background);
     word-wrap: break-word;
 
     display: flex;
@@ -61,11 +60,12 @@
 
     border-top: var(--border-weight-1) solid;
     border-color: var(--color-grey--300) !important;
+    background-color: var(--color-grey--100);
 
     > code {
       @extend .px-5;
 
-      background-color: var(--base-color-background) !important; // overwrite hljs (highlight.js)
+      background-color: var(--color-grey--100) !important; // overwrite hljs (highlight.js)
     }
   }
 

@@ -16,15 +16,28 @@
  * -->
  */
 
-$map_t-base-color: (
-  black: #000000,
-  white: #ffffff,
-  code-text: #36464e,
-  code-background: #f5f5f5, 
-);
+// $map_t-base-color: (
+//   black: #000000,
+//   white: #ffffff,
+//   code-text: #36464e,
+//   code-background: #f5f5f5, 
+// );
+
+// dark mode to be removed later:
+// $map_t-base-color: (
+//   body-background: #0A0A0B,
+//   body-text: #ECF5FF,
+//   secondary-background: #232323,
+//   secondary-text: #A3A4B4,
+//   contrast-background: #555,
+//   contrast-text: #CCC,
+//   menu-label: #9E73FF
+// );
+
 
 $map_t-color-ids: (
   'primary',
+  'secondary',
   'link',
   'grey',
   'danger',
@@ -44,6 +57,18 @@ $map_t-color-by-id: (
   primary--800: #003299,
   primary--900: #002166,
   primary--1000: #001133,
+  //
+  secondary--50: #EFFEFB,
+  secondary--100: #C7FFF5,
+  secondary--200: #8FFFEC,
+  secondary--300: #4FF9E1,
+  secondary--400: #1BE6CF,
+  secondary--500: #03DAC6,
+  secondary--600: #00A297,
+  secondary--700: #048179,
+  secondary--800: #096662,
+  secondary--900: #0D5450,
+  secondary--1000: #003433,
   //
   link--100: #e6eeff,
   link--200: #ccddff,
