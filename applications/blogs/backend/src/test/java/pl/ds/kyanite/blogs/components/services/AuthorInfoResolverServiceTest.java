@@ -29,6 +29,7 @@ import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExcep
 import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_NODE_MISSING_IN_CONSUMER;
 import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_NODE_MISSING_IN_REFERENCE;
 import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.CIRCULAR_REFERENCE;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.COUNSUMER_IS_NULL;
 
 import java.util.List;
 import org.apache.sling.api.resource.Resource;
@@ -41,7 +42,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoCircularReferenceException;
 import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoConfigurationException;
-import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingException;
 import pl.ds.kyanite.blogs.components.models.AuthorInfoModel;
 import pl.ds.kyanite.blogs.components.services.impl.AuthorInfoResolverServiceImpl;
 
@@ -52,6 +52,10 @@ public class AuthorInfoResolverServiceTest {
   private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
 
   private AuthorInfoResolverService authorInfoResolver;
+  
+  //  nodes allowed to be passed into authorInfoResolver
+  private final List<String> componentAllowedNodes = List.of("", "/author");
+  private final List<String> pageAllowedNodes = List.of("", "/jcr:content", "/jcr:content/author");
 
   @BeforeEach
   public void reset() {
@@ -98,40 +102,43 @@ public class AuthorInfoResolverServiceTest {
       String authorNodeRelativePath,
       String expectedPropertyValuePrefix
   ) {
-    Resource authorNode = getResource(authorNodeRelativePath);
-    AuthorInfoModel model = authorInfoResolver.retrieveAuthorInfo(authorNode, context.resourceResolver());
+    Resource resource = getResource(authorNodeRelativePath);
+    AuthorInfoModel model = authorInfoResolver.retrieveAuthorInfo(resource, context.resourceResolver());
     validateModel(model, expectedPropertyValuePrefix);
   }
 
   @Test
   public void routingToOwnPropertiesTest() {
-    retrieveAndValidateModel(
-        "/pageWithOwnProperties/jcr:content/componentWithOwnProperties/author",
-        "componentWithOwnProperties");
-    retrieveAndValidateModel(
-        "/pageWithOwnProperties/jcr:content/author",
-        "pageWithOwnProperties");
+    componentAllowedNodes.forEach(subPath -> retrieveAndValidateModel(
+        "/pageWithOwnProperties/jcr:content/componentWithOwnProperties" + subPath,
+        "componentWithOwnProperties"));
+    pageAllowedNodes.forEach(subPath -> retrieveAndValidateModel(
+        "/pageWithOwnProperties" + subPath,
+        "pageWithOwnProperties"));
   }
 
   @Test
   public void routingToParentPageTest() {
-    retrieveAndValidateModel(
-        "/pageWithOwnProperties/jcr:content/componentWithParentPageReference/author",
-        "pageWithOwnProperties");
+    componentAllowedNodes.forEach(subPath -> retrieveAndValidateModel(
+        "/pageWithOwnProperties/jcr:content/componentWithParentPageReference" + subPath,
+        "pageWithOwnProperties"));
   }
 
   @Test
   public void routingToAuthorPageTest() {
-    retrieveAndValidateModel(
-        "/pageWithOwnProperties/jcr:content/componentWithAuthorPageReference/author",
-        "authorBioPage");
+    componentAllowedNodes.forEach(subPath -> retrieveAndValidateModel(
+        "/pageWithOwnProperties/jcr:content/componentWithAuthorPageReference" + subPath,
+        "authorBioPage"));
+    pageAllowedNodes.forEach(subPath -> retrieveAndValidateModel(
+        "/pageWithDoubleReference" + subPath,
+        "authorBioPage"));
   }
 
   @Test
   public void doubleReferenceTest() {
-    retrieveAndValidateModel(
-        "/pageWithDoubleReference/jcr:content/componentWithReferenceToAuthorPageViaParentPage/author",
-        "authorBioPage");
+    componentAllowedNodes.forEach(subPath -> retrieveAndValidateModel(
+        "/pageWithDoubleReference/jcr:content/componentWithReferenceToAuthorPageViaParentPage" + subPath,
+        "authorBioPage"));
   }
 
   /*  Check routing END   */
@@ -141,10 +148,10 @@ public class AuthorInfoResolverServiceTest {
 
   private  <T extends Throwable> void validateException(
       String resourceRelativePath, String expectedExceptionTemplate, Class<T> expectedExceptionType) {
-    Resource authorNode = getResource( resourceRelativePath);
+    Resource resource = getResource(resourceRelativePath);
     T e = assertThrows(
         expectedExceptionType,
-        () -> authorInfoResolver.retrieveAuthorInfo(authorNode, context.resourceResolver())
+        () -> authorInfoResolver.retrieveAuthorInfo(resource, context.resourceResolver())
     );
     System.out.println(e.getClass());
     String expectedRegex = expectedExceptionTemplate.replace("%s", ".+");
@@ -153,11 +160,11 @@ public class AuthorInfoResolverServiceTest {
 
   @Test
   public void authorNodeMissingInConsumerTest() {
-    validateException(
-        "/pageWithAuthorNodeMissing/jcr:content/author",
-        AUTHOR_NODE_MISSING_IN_CONSUMER,
+    pageAllowedNodes.forEach(subPath -> validateException(
+        "/pageWithAuthorNodeMissing" + subPath,
+        "/jcr:content/author".equals(subPath) ? COUNSUMER_IS_NULL : AUTHOR_NODE_MISSING_IN_CONSUMER,
         AuthorInfoConfigurationException.class
-    );
+    ));
   }
 
   @Test
@@ -167,62 +174,62 @@ public class AuthorInfoResolverServiceTest {
         "componentReferencingParentPageWithMissingAuthorNode"
     ).forEach(
         component -> {
-          validateException(
-              String.format("/pageWithAuthorNodeMissing/jcr:content/%s/author", component),
+          componentAllowedNodes.forEach(subPath -> validateException(
+              String.format("/pageWithAuthorNodeMissing/jcr:content/%s%s", component, subPath),
               AUTHOR_NODE_MISSING_IN_REFERENCE,
               AuthorInfoConfigurationException.class
-          );
+          ));
         }
     );
   }
 
   @Test
   public void sourceTypeNotSetTest() {
-    validateException(
-        "/pageWithAuthorNodeMissing/jcr:content/componentWithSourceTypeMissing/author",
+    componentAllowedNodes.forEach(subPath -> validateException(
+        "/pageWithAuthorNodeMissing/jcr:content/componentWithSourceTypeMissing" + subPath,
         AUTHOR_INFO_SOURCE_NOT_SET,
         AuthorInfoConfigurationException.class
-    );
+    ));
   }
 
   @Test
   public void sourceTypeUnknownTest() {
-    validateException(
-        "/pageWithAuthorNodeMissing/jcr:content/componentWithUnknownSourceType/author",
+    componentAllowedNodes.forEach(subPath -> validateException(
+        "/pageWithAuthorNodeMissing/jcr:content/componentWithUnknownSourceType" + subPath,
         AUTHOR_INFO_SOURCE_TYPE_UNKNOWN,
         AuthorInfoConfigurationException.class
-    );
+    ));
   }
 
   @Test
   public void sourcePathNotSetTest() {
-    validateException(
-        "/pageWithAuthorNodeMissing/jcr:content/componentWithAuthorPageLinkMissing/author",
+    componentAllowedNodes.forEach(subPath -> validateException(
+        "/pageWithAuthorNodeMissing/jcr:content/componentWithAuthorPageLinkMissing" + subPath,
         AUTHOR_INFO_SOURCE_PATH_NOT_SET,
         AuthorInfoConfigurationException.class
-    );
+    ));
   }
 
   @Test
   public void circularReferenceDetectionTest() {
     List.of("a", "b", "c").forEach(
         page -> {
-          validateException(
-              String.format("/circularReference/%s/jcr:content/author", page),
+          pageAllowedNodes.forEach(subPath -> validateException(
+              String.format("/circularReference/%s%s", page, subPath),
               CIRCULAR_REFERENCE,
               AuthorInfoCircularReferenceException.class
-          );
+          ));
         }
     );
   }
 
   @Test
   public void sourceNotExists() {
-    validateException(
-        "/pageWithAuthorNodeMissing/jcr:content/componentReferencingMissingPage/author",
+    componentAllowedNodes.forEach(subPath -> validateException(
+        "/pageWithAuthorNodeMissing/jcr:content/componentReferencingMissingPage" + subPath,
         AUTHOR_INFO_SOURCE_IS_NULL,
         AuthorInfoConfigurationException.class
-    );
+    ));
   }
 
   /*  Check misconfigurations END   */
