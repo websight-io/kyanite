@@ -23,7 +23,6 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingException;
@@ -35,8 +34,7 @@ import pl.ds.kyanite.blogs.components.services.AuthorInfoResolverService;
 )
 public class BlogArticleAuthorBioComponent {
 
-  @ChildResource
-  private Resource author;
+  private final Resource resource;
 
   private final ResourceResolver resourceResolver;
 
@@ -50,17 +48,19 @@ public class BlogArticleAuthorBioComponent {
 
   @Inject
   public BlogArticleAuthorBioComponent(
+      @SlingObject Resource resource,
       @SlingObject ResourceResolver resourceResolver,
       @OSGiService AuthorInfoResolverService authorInfoResolver
   ) {
-    this.resourceResolver = resourceResolver;
+    this.resource           = resource;
+    this.resourceResolver   = resourceResolver;
     this.authorInfoResolver = authorInfoResolver;
   }
 
   @PostConstruct
   private void init() {
     try {
-      authorInfoModel = authorInfoResolver.retrieveAuthorInfo(author, resourceResolver);
+      authorInfoModel = authorInfoResolver.retrieveAuthorInfo(resource, resourceResolver);
     } catch (AuthorInfoResolvingException e) {
       authorInfoErrMessage = e.getMessage();
     }

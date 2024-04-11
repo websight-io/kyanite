@@ -25,6 +25,7 @@ import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExcep
 import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_NODE_MISSING_IN_CONSUMER;
 import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.AUTHOR_NODE_MISSING_IN_REFERENCE;
 import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.CIRCULAR_REFERENCE;
+import static pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingExceptionTemplates.COUNSUMER_IS_NULL;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -33,6 +34,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.factory.ModelFactory;
+import org.jetbrains.annotations.Nullable;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
@@ -40,12 +42,18 @@ import org.osgi.service.component.annotations.Reference;
 import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoCircularReferenceException;
 import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoConfigurationException;
 import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingException;
+import pl.ds.kyanite.blogs.components.models.AuthorInfo;
+import pl.ds.kyanite.blogs.components.models.AuthorInfo.Fields;
+import pl.ds.kyanite.blogs.components.models.AuthorInfo.SourceType;
 import pl.ds.kyanite.blogs.components.models.AuthorInfoModel;
 import pl.ds.kyanite.blogs.components.services.AuthorInfoResolverService;
 import pl.ds.kyanite.blogs.components.utils.ResourceUtil;
 
+
 @Component(service = {AuthorInfoResolverService.class})
 public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService {
+
+  private static final String JCR_CONTENT = "jcr:content";
 
   @Reference
   @Setter
@@ -58,17 +66,22 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
   public void deactivate(){}
 
   @Override
-  public AuthorInfoModel retrieveAuthorInfo(Resource resource, ResourceResolver resourceResolver) {
+  public AuthorInfoModel retrieveAuthorInfo(
+      Resource resource, ResourceResolver resourceResolver) throws AuthorInfoResolvingException {
     return retrieveAuthorInfo(resource, resourceResolver, new HashSet<>());
   }
 
   private AuthorInfoModel retrieveAuthorInfo(
-      Resource authorNode, ResourceResolver resourceResolver, Set<String> paths) {
+      Resource resource, ResourceResolver resourceResolver, Set<String> paths) {
 
+    if (resource == null) {
+      throw new AuthorInfoConfigurationException(COUNSUMER_IS_NULL);
+    }
+
+    Resource authorNode = resolveToAuthorNode(resource);
     if (authorNode == null) {
       throw new AuthorInfoConfigurationException(AUTHOR_NODE_MISSING_IN_CONSUMER);
     }
-
     String authorNodePath = ResourceUtil.removeContentSuffix(authorNode.getPath());
 
     //  check for circular reference
@@ -78,7 +91,7 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
     paths.add(authorNodePath);
 
     //  detect the source type
-    String sourceType = authorNode.getValueMap().get("authorInfoSource", String.class);
+    String sourceType = authorNode.getValueMap().get(Fields.AUTHOR_SOURCE_TYPE, String.class);
     if (StringUtils.isBlank(sourceType)) {
       throw new AuthorInfoConfigurationException(
           String.format(AUTHOR_INFO_SOURCE_NOT_SET, authorNodePath));
@@ -86,24 +99,47 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
 
     //  retrieve author info or proceed along the reference chain
     switch (sourceType) {
-      case "authorPage" -> {
-        String authorPageLink = authorNode.getValueMap().get("authorPageLink", String.class);
+      case SourceType.AUTHOR_PAGE -> {
+        String authorPageLink = authorNode.getValueMap().get(Fields.AUTHOR_PAGE_LINK, String.class);
         Resource authorPageResource = resolveAuthorInfoReference(
             authorPageLink, resourceResolver, authorNodePath);
         return retrieveAuthorInfo(authorPageResource, resourceResolver, paths);
       }
-      case "parentPage" -> {
+      case SourceType.PARENT_PAGE -> {
         String parentPagePath = ResourceUtil.getParentPagePath(authorNode);
         Resource parentPage = resolveAuthorInfoReference(
             parentPagePath, resourceResolver, authorNodePath);
         return retrieveAuthorInfo(parentPage, resourceResolver, paths);
       }
-      case "ownProperties" -> {
+      case SourceType.OWN_PROPERTIES -> {
         return resolveToModel(authorNode);
       }
       default -> throw new AuthorInfoConfigurationException(
           String.format(AUTHOR_INFO_SOURCE_TYPE_UNKNOWN, authorNodePath, sourceType));
     }
+  }
+
+  @Nullable
+  private Resource resolveToAuthorNode(Resource resource) {
+
+    //  assume it's an author node itself
+    if (AuthorInfo.AUTHOR_NODE_NAME.equals(resource.getName())) {
+      return resource;
+    }
+
+    //  assume resource is a component and has an author child
+    Resource authorNode = resource.getChild(AuthorInfo.AUTHOR_NODE_NAME);
+    if (authorNode != null) {
+      return authorNode;
+    }
+
+    //  assume resource is a page and has an author child
+    Resource contentNode = resource.getChild(JCR_CONTENT);
+    if (contentNode != null) {
+      return resolveToAuthorNode(contentNode);
+    }
+
+    return null;
   }
 
   private AuthorInfoModel resolveToModel(Resource authorNode) {
@@ -141,7 +177,8 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
           String.format(AUTHOR_INFO_SOURCE_IS_NULL, authorInfoSourcePath, consumerPath));
     }
 
-    Resource authorNode = ResourceUtil.getContentNode(authorInfoResource).getChild("author");
+    Resource authorNode = ResourceUtil.getContentNode(authorInfoResource)
+                                      .getChild(AuthorInfo.AUTHOR_NODE_NAME);
     if (authorNode == null) {
       throw new AuthorInfoConfigurationException(
           String.format(AUTHOR_NODE_MISSING_IN_REFERENCE, authorInfoSourcePath, consumerPath));

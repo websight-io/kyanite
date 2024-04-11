@@ -14,14 +14,25 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.blogs.components.services;
+package pl.ds.kyanite.blogs.components.models;
 
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
-import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingException;
-import pl.ds.kyanite.blogs.components.models.AuthorInfoModel;
+public class AuthorInfo {
 
-public interface AuthorInfoResolverService {
-  AuthorInfoModel retrieveAuthorInfo(Resource resource, ResourceResolver resourceResolver)
-      throws AuthorInfoResolvingException;
+  public static class SourceType {
+    public static final String AUTHOR_PAGE = "authorPage";
+    public static final String PARENT_PAGE = "parentPage";
+    public static final String OWN_PROPERTIES = "ownProperties";
+  }
+
+  public static class Fields {
+    public static final String AUTHOR_SOURCE_TYPE = "authorInfoSource";
+    public static final String AUTHOR_PAGE_LINK = "authorPageLink";
+  }
+
+  private AuthorInfo() {
+    //  no instance
+  }
+
+  public static final String AUTHOR_NODE_NAME = "author";
+
 }
