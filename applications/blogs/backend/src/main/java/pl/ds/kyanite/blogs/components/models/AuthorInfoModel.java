@@ -17,6 +17,7 @@
 package pl.ds.kyanite.blogs.components.models;
 
 import lombok.Getter;
+import lombok.Setter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
@@ -55,6 +56,10 @@ public class AuthorInfoModel {
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String authorPhotoAlt;
+
+  @Getter
+  @Setter
+  private String authorPagePath;
 
   @SlingObject
   private ResourceResolver resourceResolver;

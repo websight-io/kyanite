@@ -150,6 +150,11 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
       throw new AuthorInfoResolvingException(
           String.format(AUTHOR_INFO_NOT_RESOLVING, authorNode.getPath()));
     }
+    String authorOwnerPath = authorNode.getParent().getPath();
+    if (authorOwnerPath.endsWith(JCR_CONTENT)) {
+      authorOwnerPath = authorOwnerPath.replace(JCR_CONTENT + "$", "");
+    }
+    model.setAuthorPagePath(authorOwnerPath);
     return model;
   }
 
