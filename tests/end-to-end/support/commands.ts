@@ -62,3 +62,12 @@ Cypress.Commands.add('login', () => {
     });
   });
 });
+
+//  ignore ResizeObserver error triggering infinite loop
+const resizeObserverLoopErrRe = /(ResizeObserver loop completed with undelivered notifications)/
+Cypress.on('uncaught:exception', (err) => {
+  /* returning false here prevents Cypress from failing the test */
+  if (resizeObserverLoopErrRe.test(err.message)) {
+    return false
+  }
+})
