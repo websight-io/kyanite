@@ -41,7 +41,7 @@ describe('Menu component', function () {
     .find(selectors.overlayName)
     .should('contain.text', 'Menu');
 
-    cy.getByTestId(testIds.editIcon).click({ force: true });
+    cy.getByTestId(testIds.componentEditIcon).click({ force: true });
 
     cy.getByTestId('ModalDialog_Menu')
       .findByTestId('Button_Multifield_Add').click();

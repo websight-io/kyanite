@@ -41,7 +41,7 @@ describe('Message component', function () {
     .find(selectors.overlayName)
     .should('contain.text', 'Message');
 
-    cy.getByTestId(testIds.editIcon).click({force: true});
+    cy.getByTestId(testIds.componentEditIcon).click({force: true});
 
     cy.getByTestId('ModalDialog_Message')
     .findByTestId('Input_Content')
