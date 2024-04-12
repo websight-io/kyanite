@@ -1,0 +1,122 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "type": "anchor",
+  "sling:resourceType": "kyanite/common/components/card",
+  "openInNewTab": "true",
+  "cardcontent": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/card/cardcontent",
+    "columns": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/common/components/columns",
+      "column1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "kyanite/common/components/columns/column",
+        "desktopColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "empty",
+          "offsetType": "evenNumber",
+          "size": "two",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "tabletColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "empty",
+          "offsetType": "evenNumber",
+          "size": "three",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "mobileColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "empty",
+          "offsetType": "evenNumber",
+          "size": "empty",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "image": {
+          "jcr:primaryType": "nt:unstructured",
+          "height": "720",
+          "hasVideoOptions": false,
+          "type": "none",
+          "width": "1280",
+          "isRounded": "false",
+          "sling:resourceType": "kyanite/common/components/image"
+        }
+      },
+      "column2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "kyanite/common/components/columns/column",
+        "desktopColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "empty",
+          "offsetType": "evenNumber",
+          "size": "empty",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "tabletColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "empty",
+          "offsetType": "evenNumber",
+          "size": "empty",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "mobileColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "empty",
+          "offsetType": "evenNumber",
+          "size": "empty",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "icon": {
+          "jcr:primaryType": "nt:unstructured",
+          "hidden": true,
+          "addText": "true",
+          "iconSize": "mdi-24px",
+          "textVariant": "has-text-grey",
+          "iconLibType": "mdi",
+          "icon": "mdi-creation-outline",
+          "label": "Icon text",
+          "elementType": "div",
+          "colorOnText": "true",
+          "sling:resourceType": "kyanite/common/components/icon",
+          "selectOrType": "select"
+        },
+        "title": {
+          "jcr:primaryType": "nt:unstructured",
+          "element": "h4",
+          "isSpaced": false,
+          "size": "is-6",
+          "text": "<p>In-text EAD section</p>",
+          "delay": 1200,
+          "speed": 50,
+          "showCursor": false,
+          "addAnimatedEndings": false,
+          "sling:resourceType": "kyanite/common/components/title"
+        },
+        "content": {
+          "jcr:primaryType": "nt:unstructured",
+          "size": "is-medium",
+          "text": "<p><span class=\"has-text-primary\">Read More</span></p>",
+          "color": "rest_has-text-primary",
+          "sling:resourceType": "kyanite/common/components/content",
+          "rest": {
+            "jcr:primaryType": "nt:unstructured",
+            "shade": "700"
+          }
+        }
+      }
+    }
+  }
+}
