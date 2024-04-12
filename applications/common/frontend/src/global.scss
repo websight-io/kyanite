@@ -247,36 +247,32 @@ input[type=checkbox] {
 
 /*  table   */
 
-$table-selectors: '.table', '.table.is-striped';
-
-@each $ts in $table-selectors {
-  table#{$ts} {
-
-    @each $rt in thead, tbody {
-      #{$rt} tr {
-        background-color: var(--kyanite-body-background-color);
+table {
+  thead {
+    tr {
+      background-color: var(--kyanite-body-background-color);
+      th {
+        font-weight: bold;
+        color: var(--kyanite-body-color);
       }
     }
+  }
 
-    thead {
-      tr {
-        th {
-          font-weight: bold;
-          color: var(--kyanite-body-color);
-        }
+  tbody {
+    tr {
+      background-color: var(--kyanite-body-background-color);
+      td {
+        color: var(--kyanite-body-color);
       }
     }
-
+  }
+  &.is-striped {
     tbody {
       tr {
         &:not(.is-selected) {
           &:nth-child(2n) {
             background-color: var(--kyanite-custom-table-striped-row-even-background-color);
           }
-        }
-
-        td {
-          color: var(--kyanite-body-color);
         }
       }
     }
