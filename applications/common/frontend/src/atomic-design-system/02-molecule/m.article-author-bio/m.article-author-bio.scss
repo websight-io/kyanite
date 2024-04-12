@@ -48,7 +48,7 @@
       @extend .m-0;
 
       font-size: var(--font-size-24);
-      font-weight: var(--font-weight-600);
+      font-weight: var(--kyanite-weight-semibold);
       color: var(--color-grey--900) !important;
     }
 
@@ -56,7 +56,7 @@
       @extend .m-0;
       @extend .mt-1_2;
 
-      font-weight: var(--font-weight-600);
+      font-weight: var(--kyanite-weight-semibold);
       color: var(--color-primary--600) !important;
     }
   }
@@ -73,6 +73,6 @@
     @extend .a-link;
 
     @extend .mt-5_3;
-    font-weight: var(--font-weight-500);
+    font-weight: var(--kyanite-weight-medium);
   }
 }

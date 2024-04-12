@@ -25,7 +25,7 @@
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 
 @mixin a-eyebrow {
-  font-weight: var(--font-weight-600);
+  font-weight: var(--kyanite-weight-semibold);
   color: var(--color-primary--600) !important;
   line-height: var(--line-height-150);
 

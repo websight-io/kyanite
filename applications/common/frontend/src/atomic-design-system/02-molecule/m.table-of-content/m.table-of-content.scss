@@ -25,7 +25,7 @@
 @mixin m-table-of-content {
   .table-label {
     color: var(--color-grey--700) !important;
-    font-weight: var(--font-weight-500);
+    font-weight: var(--kyanite-weight-medium);
     @extend .mb-5;
     display: block;
   }
@@ -38,7 +38,7 @@
     align-items: flex-start;
 
     li.button {
-      font-weight: var(--font-weight-500);
+      font-weight: var(--kyanite-weight-medium);
       @extend .mb-3;
       @extend .p-0;
       height: unset;

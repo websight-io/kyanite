@@ -20,7 +20,7 @@
 
 .title {
   --kyanite-title-color: var(--color-grey--900);
-  --kyanite-title-weight: var(--font-weight-700);
+  --kyanite-title-weight: var(--kyanite-weight-bold);
   @extend .a-title;
 
   &.is-1 {
@@ -50,7 +50,7 @@
 
 .subtitle {
   --kyanite-subtitle-color: var(--color-grey--700);
-  --kyanite-subtitle-weight: var(--font-weight-600);
+  --kyanite-subtitle-weight: var(--kyanite-weight-semibold);
   @extend .a-subtitle;
 
   &.is-1 {

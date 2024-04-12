@@ -51,7 +51,7 @@
   @include a-tag-default-color;
 
   border-radius: var(--border-radius-1);
-  font-weight: var(--font-weight-600);
+  font-weight: var(--kyanite-weight-semibold);
   @extend .px-4;
 
   &.is-normal {

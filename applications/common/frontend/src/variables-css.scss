@@ -42,7 +42,6 @@
    // Fonts from: src/atomic-design-system/00-token/t.color
    @include add-css-variables(fonts.$map_t-fonts, font);
    @include add-css-variables(fonts.$map_t-font-sizes, font-size);
-   @include add-css-variables(fonts.$map_t-font-weights, font-weight);
    @include add-css-variables(fonts.$map_t-letter-spacings, letter-spacing);
    @include add-css-variables(fonts.$map_t-line-heights, line-height);
 

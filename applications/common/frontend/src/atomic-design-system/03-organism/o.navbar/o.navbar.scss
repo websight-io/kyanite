@@ -162,7 +162,7 @@ $color-navbar-link: var(--color-grey--900);
   a.navbar-link,
   a.navbar-item {
     color: $color-navbar-link;
-    font-weight: var(--font-weight-500);
+    font-weight: var(--kyanite-weight-medium);
   }
 
   a.navbar-item {
@@ -201,7 +201,7 @@ $color-navbar-link: var(--color-grey--900);
     .navbar-top {
       .navbar-item {
         font-size: var(--font-size-14);
-        font-weight: var(--font-weight-500);
+        font-weight: var(--kyanite-weight-medium);
         line-height: var(--line-height-155);
       }
 
@@ -299,7 +299,7 @@ $color-navbar-link: var(--color-grey--900);
       height: var(--spacing-5_2);
       @extend .mt-2;
       font-size: var(--font-size-14);
-      font-weight: var(--font-weight-600);
+      font-weight: var(--kyanite-weight-semibold);
 
       @include breakpoint.media-breakpoint-large {
         margin-top: 0 !important; // overwrite above @extend .mt-2
@@ -387,7 +387,7 @@ $color-navbar-link: var(--color-grey--900);
 
         .navbar-section {
           font-size: var(--font-size-16);
-          font-weight: var(--font-weight-600);
+          font-weight: var(--kyanite-weight-semibold);
           line-height: var(--line-height-150);
           color: var(--color-grey--500);
         }
@@ -421,7 +421,7 @@ $color-navbar-link: var(--color-grey--900);
 
         .navbar-item, .highlight-label {
           font-size: var(--font-size-32);
-          font-weight: var(--font-weight-500);
+          font-weight: var(--kyanite-weight-medium);
           line-height: var(--line-height-150);
           color: $color-navbar-link;
         }
