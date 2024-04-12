@@ -23,8 +23,6 @@
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
 
 @mixin o-footer {
-  background-color: var(--kyanite-custom-footer-background);
-
   @extend .py-6_4;
 
   text-align: center;
@@ -57,7 +55,7 @@
 
   .content,
   .content.has-text-grey-darker {
-    color: var(--kyanite-custom-footer-text) !important;
+    color: var(--kyanite-footer-color) !important;
 
     &.is-small {
       @extend .mt-5_1;
@@ -74,7 +72,7 @@
   }
 
   .icon {
-    color: var(--kyanite-custom-footer-text) !important;
+    color: var(--kyanite-footer-color);
 
     &:not(:last-of-type) {
       margin-right: var(--spacing-5);
@@ -114,7 +112,7 @@
       display: inline-block;
       @include link.a-animated-underline-link;
       @extend .p-0;
-      color: var(--kyanite-custom-footer-text) !important;
+      color: var(--kyanite-footer-color) !important;
       background-color: inherit;
       width: auto;
 

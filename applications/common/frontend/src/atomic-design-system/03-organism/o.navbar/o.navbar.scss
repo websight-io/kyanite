@@ -31,6 +31,14 @@ $color-navbar-link: var(--color-grey--900);
   transform: translateX(0);
   transition: .3s ease-in-out background-color;
 
+  .navbar-dropdown {
+    a.navbar-item:focus,
+    a.navbar-item:hover {
+      background-color: var(--kyanite-custom-navbar-dropdown-item-background-hover);
+      color: var(--kyanite-custom-navbar-dropdown-item-text-hover);
+    }
+  }
+
   &.is-primary {
     background-color: var(--color-primary--600);
   }
@@ -41,13 +49,13 @@ $color-navbar-link: var(--color-grey--900);
     .navbar-dropdown {
       a.navbar-item:focus,
       a.navbar-item:hover {
-        background-color: var(--kyanite-custom-navbar-dropdown-item-background-hover) !important;
+        background-color: var(--kyanite-custom-navbar-dropdown-item-background-hover);
         color: var(--kyanite-custom-navbar-dropdown-item-text-hover);
       }
     }
 
     .navbar-burger {
-      color: var(--kyanite-custom-navbar-burger-color);
+      color: var(--kyanite-navbar-burger-color);
     }
   }
 
@@ -67,7 +75,7 @@ $color-navbar-link: var(--color-grey--900);
     }
 
     .navbar-burger {
-      color: var(--kyanite-custom-navbar-burger-color);
+      color: var(--kyanite-navbar-burger-color);
     }
   }
 
@@ -95,7 +103,7 @@ $color-navbar-link: var(--color-grey--900);
   }
 
   .navbar-menu {
-    background-color: var(--kyanite-custom-navbar-menu-background);
+    background-color: var(--kyanite-navbar-background-color);
 
     @include breakpoint.media-breakpoint-large {
       background-color: inherit;
@@ -231,7 +239,7 @@ $color-navbar-link: var(--color-grey--900);
           .navbar-dropdown {
             &:not(.navbar-mega-dropdown) {
               display: block;
-              background-color: var(--kyanite-custom-navbar-menu-background);
+              background-color: var(--kyanite-navbar-background-color);
             }
           }
         }
@@ -282,7 +290,7 @@ $color-navbar-link: var(--color-grey--900);
       &.is-hovered {
         .navbar-mega-dropdown {
           display: block;
-          background-color: var(--kyanite-custom-navbar-menu-background);
+          background-color: var(--kyanite-navbar-background-color);
         }
       }
     }
@@ -422,6 +430,6 @@ $color-navbar-link: var(--color-grey--900);
     }
   }
   &.is-scrolled.is-transparent {
-    background-color: var(--kyanite-custom-navbar-menu-background);
+    background-color: var(--kyanite-navbar-background-color);
   }
 }

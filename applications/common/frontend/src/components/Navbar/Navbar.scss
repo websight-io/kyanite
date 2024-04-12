@@ -19,5 +19,13 @@
 @use 'src/atomic-design-system/03-organism/o.navbar' as navbar;
 
 .navbar {
+  --kyanite-navbar-background-color: #FFF;
+  --kyanite-navbar-burger-color: var(--color-grey--700);
+  
+  --kyanite-custom-navbar-megamenu-background: var(--color-grey--100);
+  --kyanite-custom-navbar-item-color-hover: var(--color-grey--900);
+  --kyanite-custom-navbar-dropdown-item-background-hover: #f5f5f5;
+  --kyanite-custom-navbar-dropdown-item-text-hover: #0a0a0a;
+
   @include navbar.o-navbar;
 }

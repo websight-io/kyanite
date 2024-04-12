@@ -22,6 +22,8 @@
   card-full-height;
 
 .card {
+  --kyanite-card-background-color: #FFF;
+  --kyanite-card-footer-border-top: #ededed;
   @include card.m-card;
 
   &--full-height {

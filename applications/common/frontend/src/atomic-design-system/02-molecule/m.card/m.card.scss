@@ -17,21 +17,7 @@
  */
 
 @mixin m-card {
-
-  background-color: var(--kyanite-custom-card-background);
-
   a:hover {
     color: var(--color-grey--900);
-  }
-
-  .card-footer {
-    border-top-color: var(--kyanite-custom-card-footer-border);
-
-    .card-footer-item {
-
-      &:not(:last-child) {
-        border-right-color: var(--kyanite-custom-card-footer-border);
-      }
-    }
   }
 }

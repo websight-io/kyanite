@@ -18,7 +18,7 @@ import {
   getCoveringElement,
   getAnchorTargetElement,
   getWindowTopScrollPositionWithVisibleTarget,
-} from '../../helpers.dom';
+} from '../../helpers/dom';
 
 /**
  * Functions that are restricted to invoking just once.

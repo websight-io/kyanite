@@ -22,16 +22,6 @@
 @use 'src/atomic-design-system/00-token/t.font' as font;
 @use 'src/atomic-design-system/00-token/t.color' as color;
 
-.a-title {
-  font-weight: var(--font-weight-700);
-  color: var(--kyanite-custom-title);
-}
-
-.a-subtitle {
-  font-weight: var(--font-weight-600);
-  color: var(--kyanite-custom-subtitle);
-}
-
 .a-title,
 .a-subtitle {
   letter-spacing: default;

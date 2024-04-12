@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-window.addEventListener(window.KYANITE_ON_LOAD, (e) => {
-  const links = document.querySelectorAll(
+window.addEventListener(window.KYANITE_ON_LOAD, () => {
+  const links = document.querySelectorAll<HTMLElement>(
     '[data-part1][data-part2][data-part3]'
   );
-  for (const link of links) {
+  for (const link of Array.from(links)) {
     const attrs = link.dataset;
     const result = `${attrs.part1}@${attrs.part2}.${attrs.part3}`;
     const label = link.innerHTML || result;

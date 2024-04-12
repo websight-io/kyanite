@@ -17,19 +17,12 @@
 @use 'sass:map';
 @use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/atomic-design-system/00-token/t.font/t.font-family' as font;
-
+@use 'src/variables-helpers' as variables;
 
 @use "src/../node_modules/bulma/sass" with (
   $cssvars-prefix: "kyanite-",
 
-  // Base
-
-  $family-primary: map.get(font.$map_t-fonts, 'BeVietnamPro'), // generates: --kyanite-family-primary
-  $background: #FFF, // generates: --kyanite-background
-  $text: #494949,
-
   // Colors
-
   $primary: #0053ff,
   $link: #0053ff,
   $success: #52c41a,
@@ -37,65 +30,18 @@
   $danger: #f5222d,
   $light: #bbbbbb,
   $dark: #494949,
-  $custom-colors: (
-    'grey-100': #f9f9fa,
-    'grey-200': #f2f3f5,
-    'grey-300': #e1e1e1,
-    'grey-400': #bbbbbb,
-    'grey-500': #959595,
-    'grey-600': #7f7f7f,
-    'grey-700': #686868,
-    'grey-800': #494949,
-    'grey-900': #2a2a2a,
-    'grey-1000': #181818,
-  ),
 
-  /* Spacing */
-$spacing-shortcuts: (
-  'margin': 'm',
-  'padding': 'p',
-),
-$spacing-directions: (
-  'top': 't',
-  'right': 'r',
-  'bottom': 'b',
-  'left': 'l',
-),
-$spacing-horizontal: 'x',
-$spacing-vertical: 'y',
-$spacing-values: (
-  '0': 0,
-  '0_1': 0.063rem,
-  '0_2': 0.188rem,
-  '1': 0.25rem,
-  '1_1': 0.313rem,
-  '1_2': 0.375rem,
-  '2': 0.5rem,
-  '3': 0.75rem,
-  '4': 1rem,
-  '4_1': 1.063rem,
-  '4_2': 1.125rem,
-  '4_3': 1.25rem,
-  '4_4': 1.375rem,
-  '5': 1.5rem,
-  '5_1': 1.75rem,
-  '5_2': 2rem,
-  '5_3': 2.25rem,
-  '5_4': 2.5rem,
-  '5_5': 2.75rem,
-  '6': 3rem,
-  '6_1': 3.5rem,
-  '6_2': 4rem,
-  '6_3': 5rem,
-  '6_4': 6rem,
-  '6_5': 8rem,
-  '6_6': 10rem,
-  '6_7': 16rem,
-  'auto': auto,
-)
+  // Spacing
+  $spacing-shortcuts: variables.$spacing-shortcuts,
+  $spacing-directions: variables.$spacing-directions,
+  $spacing-horizontal: variables.$spacing-horizontal,
+  $spacing-vertical: variables.$spacing-vertical,
+  $spacing-values: variables.$spacing-values
 );
 
 :root {
+    --kyanite-family-primary: #{map.get(font.$map_t-fonts, 'BeVietnamPro')};
+    --kyanite-text: #494949;
     --kyanite-code: #36464e;
     --kyanite-code-background: #f5f5f5;
     --kyanite-navbar-height: 3.25rem;
@@ -107,27 +53,6 @@ $spacing-values: (
     --kyanite-custom-input-placeholder-color: var(--color-grey--700);
     --kyanite-custom-checkbox-radio-hover: #363636;
 
-    --kyanite-custom-table-striped-row-even-background-color: #fafafa;
-
-    --kyanite-custom-tag-background: #2a2a2a;
-    --kyanite-custom-tag-text: #FFF;
-
-    --kyanite-custom-title: var(--color-grey--900);
-    --kyanite-custom-subtitle: var(--color-grey--700);
-
     --kyanite-custom-article-thumbnail-mdi-color: #000;
 
-    --kyanite-custom-card-background: #FFF;
-    --kyanite-custom-card-footer-border: #ededed;
-
-    --kyanite-custom-footer-background: var(--color-grey--1000);
-    --kyanite-custom-footer-text: var(--color-grey--100);
-    --kyanite-custom-footer-menu-label: var(--color-grey--400);
-
-    --kyanite-custom-navbar-menu-background: #FFF;
-    --kyanite-custom-navbar-megamenu-background: var(--color-grey--100);
-    --kyanite-custom-navbar-item-color-hover: var(--color-grey--900);
-    --kyanite-custom-navbar-dropdown-item-background-hover: #f5f5f5;
-    --kyanite-custom-navbar-dropdown-item-text-hover: #0a0a0a;
-    --kyanite-custom-navbar-burger-color: var(--color-grey--700);
 }

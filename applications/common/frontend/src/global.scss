@@ -208,6 +208,9 @@
 
 a {
   color: var(--color-primary--600);
+  &:hover {
+    color: var(--kyanite-custom-anchor-hover-color);
+  }
 }
 
 /*  inputs text colors */
@@ -245,36 +248,8 @@ input[type=checkbox] {
   color: var(--kyanite-custom-checkbox-radio-hover);
 }
 
-/*  table   */
-
-table {
-  thead {
-    tr {
-      background-color: var(--kyanite-body-background-color);
-      th {
-        font-weight: bold;
-        color: var(--kyanite-body-color);
-      }
-    }
-  }
-
-  tbody {
-    tr {
-      background-color: var(--kyanite-body-background-color);
-      td {
-        color: var(--kyanite-body-color);
-      }
-    }
-  }
-  &.is-striped {
-    tbody {
-      tr {
-        &:not(.is-selected) {
-          &:nth-child(2n) {
-            background-color: var(--kyanite-custom-table-striped-row-even-background-color);
-          }
-        }
-      }
-    }
-  }
+.table {
+  --kyanite-table-striped-row-even-background-color: #fafafa;
+  --kyanite-table-background-color: var(--kyanite-body-background-color);
 }
+
