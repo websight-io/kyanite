@@ -1,0 +1,49 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "anchorUrl": "",
+  "type": "anchor",
+  "sling:resourceType": "kyanite/common/components/card",
+  "openInNewTab": "true",
+  "cardcontent": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/card/cardcontent",
+    "icon": {
+      "jcr:primaryType": "nt:unstructured",
+      "hidden": true,
+      "addText": "true",
+      "iconSize": "mdi-24px",
+      "textVariant": "has-text-grey",
+      "iconLibType": "mdi",
+      "icon": "mdi-creation-outline",
+      "label": "Icon text",
+      "elementType": "div",
+      "colorOnText": "true",
+      "sling:resourceType": "kyanite/common/components/icon",
+      "selectOrType": "select"
+    },
+    "title": {
+      "jcr:primaryType": "nt:unstructured",
+      "element": "h4",
+      "isSpaced": false,
+      "size": "is-6",
+      "text": "<p>Mid-text CTA in-text section</p>",
+      "delay": 1200,
+      "speed": 50,
+      "showCursor": false,
+      "addEyebrow": "false",
+      "addAnimatedEndings": "false",
+      "sling:resourceType": "kyanite/common/components/title"
+    },
+    "content": {
+      "jcr:primaryType": "nt:unstructured",
+      "size": "is-medium",
+      "text": "<p><span class=\"has-text-primary\">Read More</span></p>",
+      "color": "rest_has-text-primary",
+      "sling:resourceType": "kyanite/common/components/content",
+      "rest": {
+        "jcr:primaryType": "nt:unstructured",
+        "shade": "700"
+      }
+    }
+  }
+}
