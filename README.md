@@ -63,7 +63,8 @@ Kyanite components is `open-source` project with `Apache License 2.0` license.
 
 ## Creating a New Theme for Kyanite
 
-Kyanite supports two themes: the default theme and a dark mode. If you wish to create your own custom theme, follow these steps:
+Kyanite supports creating custom themes, based on light or dark color palette.
+If you wish to create your own custom theme, follow these steps:
 
 ### 1. Create a New Page Space Template
 
@@ -107,17 +108,6 @@ Create a CSS file containing your custom styles. Kyanite utilizes CSS Variables,
     --color-secondary--800: #096662;
     --color-secondary--900: #0D5450;
     --color-secondary--1000: #003433;
-
-    --color-grey--100: #181818;
-    --color-grey--200: #2a2a2a;
-    --color-grey--300: #494949;
-    --color-grey--400: #686868;
-    --color-grey--500: #7f7f7f;
-    --color-grey--600: #959595;
-    --color-grey--700: #bbbbbb;
-    --color-grey--800: #e1e1e1;
-    --color-grey--900: #f2f3f5;
-    --color-grey--1000: #f9f9fa;
     
     --kyanite-link: var(--color-primary--500);
     --kyanite-code-background: #000;
@@ -126,33 +116,14 @@ Create a CSS file containing your custom styles. Kyanite utilizes CSS Variables,
     --kyanite-body-background-color: #0A0A0B;
     --kyanite-text: #ECF5FF;
     --kyanite-body-color: #ECF5FF;
+```
 
-    --kyanite-custom-input-placeholder-color: #A3A4B4;
-    --kyanite-custom-checkbox-radio-hover: #A3A4B4;
-
-    --kyanite-custom-table-striped-row-even-background-color: #181818;
-
-    --kyanite-custom-tag-background: #555;
-    --kyanite-custom-tag-text: #CCC;
-
-    --kyanite-custom-title: #ECF5FF;
-    --kyanite-custom-subtitle: #ECF5FF;
-
-    --kyanite-custom-article-thumbnail-mdi-color: #ECF5FF;
-
-    --kyanite-custom-card-background: #232323;
-    --kyanite-custom-card-footer-border: #555;
-
-    --kyanite-custom-footer-background: #0A0A0B;
-    --kyanite-custom-footer-text: #ECF5FF;
-    --kyanite-custom-footer-menu-label: #9E73FF;
-
-    --kyanite-custom-navbar-menu-background: #232323;
-    --kyanite-custom-navbar-megamenu-background: #232323;
-    --kyanite-custom-navbar-item-color-hover: #7714FF;
-    --kyanite-custom-navbar-dropdown-item-background-hover: #232323;
-    --kyanite-custom-navbar-dropdown-item-text-hover: #ECF5FF;
-    --kyanite-custom-navbar-burger-color: #ECF5FF;
+If you wish to customize components, use css variables inside top level component's name class:
+``` 
+  .card {
+    --kyanite-card-background-color: #ffffff;
+    --kyanite-card-footer-border-top: #ededed;
+  }
 ```
 
 ### 3. Add the Style File to the Bundle

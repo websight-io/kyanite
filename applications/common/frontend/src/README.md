@@ -1,6 +1,10 @@
-# Bulma variables
+# Kyanite FE approach
 
-Bulma allows to override variables and provides an instruction on [how to do it](https://bulma.io/documentation/customize/with-webpack/).
+Kyanite is based on the bulma library, so the approach used is partially imposed from the top. Bulma allows us to override it's variables in many ways, however our approach is to override it with CSS variables. This way, when creating new project with custom colors, it is easy to run project without compiling sass first.
+
+# Development
+
+In the case of Bulma components, before adding a new variable, check (by inspecting code in the browser) whether Bulma does not already have a given variable for the component or in the `:root`, e.g. `—-kyanite-card-background-color`. If the variable is missing, create it according to the scheme: '-kyanite-custom' + component_name + description, e.g. `--kyanite-custom-input-placeholder-color`. Use given or created variable in styling component.
 
 ## Design
 
@@ -14,4 +18,3 @@ Design is **partially** based on Bulma variables, therefore some of them can be 
 
 [Bulma Concepts](https://bulma.io/documentation/customize/concepts/)
 
-[Bulma Utilities](https://bulma.io/documentation/utilities/)
