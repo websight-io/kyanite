@@ -9,8 +9,13 @@
             jcr:title="Nobody's category-1 article"
             sling:resourceType="kyanite/blogs/components/blogarticlepage"
             ws:template="/libs/kyanite/blogs/templates/blogarticlepage"
+            description="Nobody's category-1 article"
+            heroImage="/content/kyanite-visual-tests/assets/Windows XP.png/"
+            heroImageAlt="hero-image-alt"
             navbarFixed="true"
             navbarFixedPosition="has-navbar-fixed-top"
+            publicationDate="2000-01-09"
+            readTime="5"
             title="Nobody's category-1 article">
         <author
                 jcr:primaryType="nt:unstructured"

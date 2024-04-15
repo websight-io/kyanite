@@ -9,8 +9,13 @@
             jcr:title="author-1 category-2 article"
             sling:resourceType="kyanite/blogs/components/blogarticlepage"
             ws:template="/libs/kyanite/blogs/templates/blogarticlepage"
+            description="author-1 category-2 article"
+            heroImage="/content/kyanite-visual-tests/assets/Windows XP.png/"
+            heroImageAlt="hero-image-alt"
             navbarFixed="true"
             navbarFixedPosition="has-navbar-fixed-top"
+            publicationDate="2000-01-02"
+            readTime="5"
             title="author-1 category-2 article">
         <author
                 jcr:primaryType="nt:unstructured"

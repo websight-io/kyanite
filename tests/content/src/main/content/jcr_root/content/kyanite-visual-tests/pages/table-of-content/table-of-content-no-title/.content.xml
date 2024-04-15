@@ -16,6 +16,7 @@
         heroImageAlt="\0"
         navbarFixed="true"
         navbarFixedPosition="has-navbar-fixed-top"
+        publicationDate="2001-01-01"
         readTime="12"
         title="No content article post">
         <author

@@ -10,8 +10,6 @@
         ws:lastModified="{Date}2023-05-30T09:04:42.420Z"
         ws:lastModifiedBy="wsadmin"
         ws:template="/libs/kyanite/blogs/templates/blogarticlepage"
-        authorName="John Doe"
-        authorPhotoAlt="\0"
         description="\0"
         heroImage="/content/kyanite-visual-tests/assets/blog-image-example.jpeg/"
         heroImageAlt="\0"
@@ -20,6 +18,11 @@
         publicationDate="2022-11-23"
         readTime="4"
         title="Revolutionize Customer Engagement with a DXP">
+        <author
+                jcr:primaryType="nt:unstructured"
+                authorInfoSource="ownProperties"
+                authorName="John Doe"
+                authorPhotoAlt="\0"/>
         <pagecontainer
             jcr:primaryType="nt:unstructured"
             sling:resourceType="kyanite/common/components/pagecontainer">

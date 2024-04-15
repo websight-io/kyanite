@@ -9,8 +9,13 @@
             jcr:title="author-1 category-1 article"
             sling:resourceType="kyanite/blogs/components/blogarticlepage"
             ws:template="/libs/kyanite/blogs/templates/blogarticlepage"
+            description="author-1 category-1 article"
+            heroImage="/content/kyanite-visual-tests/assets/Windows XP.png/"
+            heroImageAlt="hero-image-alt"
             navbarFixed="true"
             navbarFixedPosition="has-navbar-fixed-top"
+            publicationDate="2000-01-01"
+            readTime="5"
             title="author-1 category-1 article">
         <author
                 jcr:primaryType="nt:unstructured"
@@ -151,5 +156,13 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/footerreference"/>
         </pagecontainer>
+        <tags jcr:primaryType="nt:unstructured">
+            <_x0030_
+                    jcr:primaryType="nt:unstructured"
+                    text="tag1"/>
+            <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    text="tag2"/>
+        </tags>
     </jcr:content>
 </jcr:root>
