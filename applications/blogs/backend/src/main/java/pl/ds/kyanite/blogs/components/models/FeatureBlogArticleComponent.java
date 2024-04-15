@@ -31,6 +31,8 @@ import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.factory.ModelFactory;
+import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingException;
+import pl.ds.kyanite.blogs.components.services.AuthorInfoResolverService;
 import pl.ds.kyanite.blogs.components.services.BlogArticleService;
 import pl.ds.kyanite.common.components.utils.LinkUtil;
 import pl.ds.websight.pages.core.api.Page;
@@ -63,17 +65,27 @@ public class FeatureBlogArticleComponent {
   @Getter
   private String blogArticleHeaderLink;
 
+  @Getter
+  private AuthorInfoModel authorInfo;
+
+  private final AuthorInfoResolverService authorInfoResolver;
+
   private final ModelFactory modelFactory;
   private final Resource resource;
   private final PageManager pageManager;
 
   @Inject
-  public FeatureBlogArticleComponent(@SlingObject ResourceResolver resourceResolver,
+  public FeatureBlogArticleComponent(
+      @SlingObject ResourceResolver resourceResolver,
       @SlingObject Resource resource,
-      @OSGiService BlogArticleService blogArticleService, @OSGiService ModelFactory modelFactory) {
+      @OSGiService BlogArticleService blogArticleService,
+      @OSGiService ModelFactory modelFactory,
+      @OSGiService AuthorInfoResolverService authorInfoResolver
+  ) {
     this.resourceResolver = resourceResolver;
     this.blogArticleService = blogArticleService;
     this.modelFactory = modelFactory;
+    this.authorInfoResolver = authorInfoResolver;
     this.pageManager = resourceResolver.adaptTo(PageManager.class);
     this.resource = resource;
   }
@@ -85,9 +97,17 @@ public class FeatureBlogArticleComponent {
       this.blogArticleHeader = modelFactory.createModel(blogPage, BlogArticleHeaderModel.class);
       this.blogArticleHeaderLink = LinkUtil.handleLink(
           StringUtils.substringBefore(blogPage.getPath(), JCR_CONTENT), resourceResolver);
+      this.resolveAuthorInfo(blogPage);
     }
   }
 
+  private void resolveAuthorInfo(Resource blogPage) {
+    try {
+      this.authorInfo = this.authorInfoResolver.retrieveAuthorInfo(blogPage, resourceResolver);
+    } catch (AuthorInfoResolvingException e) {
+      //  ignore error
+    }
+  }
 
   private Resource getArticlePage() {
     final Page page = pageManager.getPage(link);
