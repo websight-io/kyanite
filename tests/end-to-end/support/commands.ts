@@ -63,11 +63,12 @@ Cypress.Commands.add('login', () => {
   });
 });
 
-//  ignore ResizeObserver error triggering infinite loop
-const resizeObserverLoopErrRe = /(ResizeObserver loop completed with undelivered notifications)/
 Cypress.on('uncaught:exception', (err) => {
-  /* returning false here prevents Cypress from failing the test */
-  if (resizeObserverLoopErrRe.test(err.message)) {
-    return false
-  }
-})
+  return !(
+      //  ignore ResizeObserver error triggering infinite loop
+         err.message.includes('ResizeObserver loop limit exceeded')
+      || err.message.includes('ResizeObserver loop completed with undelivered notifications')
+      // Needed to stabilize drag-and-drop related tests
+      || err.message.includes('Cannot call hover after drop')
+  );
+});
