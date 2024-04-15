@@ -35,6 +35,7 @@ def findAuthorInfoComponents(String rootPath) {
             " WHERE ISDESCENDANTNODE([$rootPath]) " +
             "   AND (   [sling:resourceType]='kyanite/blogs/components/blogarticleheader'       " +
             "        OR [sling:resourceType]='kyanite/blogs/components/blogarticleauthorbio'    " +
+            "        OR [sling:resourceType]='kyanite/blogs/components/bloglist'                " +
             "        OR [sling:resourceType]='${RT_BLOG_ARTICLE_PAGE}'    " +
             "       ) "
         , "JCR-SQL2")
