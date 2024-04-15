@@ -5,7 +5,8 @@
     "Kyanite Columns",
     "Kyanite Components",
     "Kyanite Elements",
-    "Kyanite Layouts"
+    "Kyanite Layouts",
+    "Kyanite In-Text Sections"
   ],
   "sling:resourceType": "ws:Component",
   "title": "Tab Content"

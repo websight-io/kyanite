@@ -2,7 +2,7 @@
   "sling:resourceType": "ws:Component",
   "isContainer": true,
   "isLayout": true,
-  "group": "Kyanite Sections",
+  "group": "Kyanite In-Text Sections",
   "instanceResourceType": "kyanite/common/components/card",
   "title": "Social Proof - Item"
 }
