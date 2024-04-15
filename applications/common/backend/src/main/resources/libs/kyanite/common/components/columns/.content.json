@@ -1,6 +1,5 @@
 {
   "isContainer": true,
-  "isLayout": true,
   "group": "Kyanite Columns",
   "allowedComponents": [
     "/apps/kyanite/common/components/columns/column",
