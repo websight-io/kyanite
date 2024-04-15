@@ -14,7 +14,7 @@
       "navbarreference": {
         "sling:resourceType": "kyanite/common/components/navbarreference"
       },
-      "section": {
+      "authorBioSection": {
         "sling:resourceType": "kyanite/common/components/section",
         "container": {
           "sling:resourceType": "kyanite/common/components/container",
@@ -24,10 +24,13 @@
               "jcr:primaryType": "nt:unstructured",
               "authorInfoSource": "parentPage"
             }
-          },
-          "container": {
-            "sling:resourceType": "kyanite/common/components/container"
-          },
+          }
+        }
+      },
+      "blogListSection": {
+        "sling:resourceType": "kyanite/common/components/section",
+        "container": {
+          "sling:resourceType": "kyanite/common/components/container",
           "bloglist": {
             "sling:resourceType": "kyanite/blogs/components/bloglist",
             "author": {
