@@ -130,6 +130,7 @@ public class BlogListComponent {
                 .link(LinkUtil.handleLink(
                     StringUtils.substringBefore(res.getPath(), JCR_CONTENT), resourceResolver))
                 .blogArticleHeader(modelFactory.createModel(res, BlogArticleHeaderModel.class))
+                .authorInfo(retrieveAuthorInfo(res))
                 .build()
         )
         .toList();

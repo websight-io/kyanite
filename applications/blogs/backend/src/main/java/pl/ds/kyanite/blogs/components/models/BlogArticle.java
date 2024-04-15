@@ -28,6 +28,7 @@ import lombok.NoArgsConstructor;
 public class BlogArticle {
 
   private BlogArticleHeaderModel blogArticleHeader;
+  private AuthorInfoModel authorInfo;
   private String link;
 
 }
