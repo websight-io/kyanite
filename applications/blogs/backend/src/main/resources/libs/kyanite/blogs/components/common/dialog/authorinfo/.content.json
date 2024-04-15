@@ -45,7 +45,7 @@
       "sling:resourceType": "wcm/dialogs/components/pathpicker",
       "rootPath": "/content",
       "name": "author/authorPhoto",
-      "description": "Author photo",
+      "description": "Author square photo asset",
       "label": "Author photo",
       "ws:disallowedContext": ["edit:panel"]
     },
