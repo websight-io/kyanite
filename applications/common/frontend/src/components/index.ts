@@ -17,6 +17,7 @@
 import './CodeSnippet/codesnippet';
 import './ContactForm/contactForm';
 import './Dropdown/dropdown';
+import './Image/image';
 import './Modal/modal';
 import './Message/message';
 import './Navbar/navbar';

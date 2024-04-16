@@ -130,6 +130,13 @@ public class ImageComponent {
   @ValueMapValue
   private boolean openInNewTab;
 
+  @ValueMapValue
+  @Default(booleanValues = false)
+  private boolean showLightbox;
+
+  @ValueMapValue
+  private String highResolutionAssetSrc;
+
   private boolean isInternal;
 
   @PostConstruct
@@ -192,6 +199,16 @@ public class ImageComponent {
 
   public boolean isAnyMediaAsset() {
     return isNotEmpty(mobileAssetReference) || isNotEmpty(tabletAssetReference);
+  }
+
+  public boolean getShowLightbox() {
+    return (url == null || url.isEmpty()) && showLightbox;
+  }
+
+  public String getHighResolutionAssetSrc() {
+    return highResolutionAssetSrc != null
+        ? LinkUtil.handleLink(highResolutionAssetSrc, resourceResolver)
+        : LinkUtil.handleLink(assetReference, resourceResolver);
   }
 
   private boolean isVideo(String link) {

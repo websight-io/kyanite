@@ -76,6 +76,19 @@ public class CardComponent implements ComponentWithBackground {
   @Default(values = StringUtils.EMPTY)
   private String heightVariant;
 
+  @Inject
+  @Getter
+  @Default(values = "card")
+  private String type;
+
+  @Inject
+  @Default(values = StringUtils.EMPTY)
+  private String anchorUrl;
+
+  @Inject
+  @Getter
+  private boolean openInNewTab;
+
   @SlingObject
   private Resource resource;
 
@@ -107,5 +120,9 @@ public class CardComponent implements ComponentWithBackground {
 
   public String getMobileAssetReference() {
     return LinkUtil.handleLink(mobileAssetReference, resourceResolver);
+  }
+
+  public String getAnchorUrl() {
+    return LinkUtil.handleLink(anchorUrl, resource.getResourceResolver());
   }
 }
