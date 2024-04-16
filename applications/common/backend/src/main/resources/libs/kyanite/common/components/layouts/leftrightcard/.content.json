@@ -1,0 +1,8 @@
+{
+  "sling:resourceType": "ws:Component",
+  "isContainer": true,
+  "isLayout": true,
+  "group": "Kyanite Sections",
+  "instanceResourceType": "kyanite/common/components/section",
+  "title": "Left-right Card"
+}
