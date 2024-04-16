@@ -16,15 +16,9 @@
  * -->
  */
 
-@use 'sass:map';
-
 @use 'node_modules/highlight.js/styles/github.css';
 
 @use 'src/variables-helpers' as variables;
-
-@use 'src/atomic-design-system/00-token/t.font' as font;
-@use 'src/atomic-design-system/00-token/t.color' as color;
-@use 'src/atomic-design-system/00-token/t.border' as border;
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 
 .code-snippet {

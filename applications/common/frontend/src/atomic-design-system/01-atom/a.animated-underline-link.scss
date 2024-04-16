@@ -16,10 +16,6 @@
  * -->
  */
 
-@use 'sass:map';
-
-@use 'src/atomic-design-system/00-token/t.color' as color;
-
 @mixin a-animated-underline-link {
   overflow: hidden;
   border-radius: 0;

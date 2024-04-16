@@ -16,10 +16,6 @@
  * -->
  */
 
-@use 'src/atomic-design-system/00-token/t.color' as color;
-@use 'src/atomic-design-system/00-token/t.border';
-
-
 @mixin m-message {
   // "None" variant, base for the other variants
   border-color: var(--kyanite-light) !important;

@@ -15,186 +15,7 @@
  */
 
 @use 'src/atomic-design-system/00-token/t.border' as border;
-@use 'src/atomic-design-system/00-token/t.color' as color;
 
-.has-text {
-
-  // &-primary {
-  //   color: var(--color-primary--600) !important;
-  // }
-
-  // &-secondary {
-  //   color: var(--color-secondary--600) !important; /* not from bulma */
-  // }
-
-  // &-link {
-  //   &-light {
-  //     color: var(--color-primary--500) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-dark {
-  //     color: var(--color-primary--700) !important; /* !important used as in Bulma */
-  //   }
-  // }
-
-  // &-grey {
-  //   color: var(--color-grey--600) !important; /* !important used as in Bulma */
-
-  //   &-light {
-  //     color: var(--color-grey--500) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-lighter {
-  //     color: var(--color-grey--400) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-dark {
-  //     color: var(--color-grey--700) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-darker {
-  //     color: var(--color-grey--800) !important; /* !important used as in Bulma */
-  //   }
-  // }
-
-  // &-info {
-  //   color: var(--color-info--600) !important;
-
-  //   &-light {
-  //     color: var(--color-info--500) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-dark {
-  //     color: var(--color-info--700) !important; /* !important used as in Bulma */
-  //   }
-  // }
-
-  // &-success {
-  //   color: var(--color-success--600) !important;
-
-  //   &-light {
-  //     color: var(--color-success--500) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-dark {
-  //     color: var(--color-success--700) !important; /* !important used as in Bulma */
-  //   }
-  // }
-
-  // &-warning {
-  //   color: var(--color-warning--600) !important;
-
-  //   &-light {
-  //     color: var(--color-warning--500) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-dark {
-  //     color: var(--color-warning--700) !important; /* !important used as in Bulma */
-  //   }
-  // }
-
-  // &-danger {
-  //   color: var(--color-danger--600) !important;
-
-  //   &-light {
-  //     color: var(--color-danger--500) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-dark {
-  //     color: var(--color-danger--700) !important; /* !important used as in Bulma */
-  //   }
-  // }
-}
-
-.has-background {
-  // &-primary {
-  //   background-color: var(--color-primary--600) !important; /* !important used as in Bulma */
-  // }
-
-  // &-secondary {
-  //   background-color: var(--color-secondary--600) !important; /* not from bulma */
-  // }
-
-  // &-link {
-  //   background-color: var(--color-link--600) !important; /* !important used as in Bulma */
-
-  //   &-light {
-  //     background-color: var(--color-link--500) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-dark {
-  //     background-color: var(--color-link--700) !important; /* !important used as in Bulma */
-  //   }
-  // }
-
-  // &-grey {
-  //   background-color: var(--color-grey--600) !important; /* !important used as in Bulma */
-
-  //   &-light {
-  //     background-color: var(--color-grey--500) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-lighter {
-  //     background-color: var(--color-grey--400) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-dark {
-  //     background-color: var(--color-grey--700) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-darker {
-  //     background-color: var(--color-grey--800) !important; /* !important used as in Bulma */
-  //   }
-  // }
-
-  // &-info {
-  //   background-color: var(--color-info--600) !important; /* !important used as in Bulma */
-
-  //   &-light {
-  //     background-color: var(--color-info--500) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-dark {
-  //     background-color: var(--color-info--700) !important; /* !important used as in Bulma */
-  //   }
-  // }
-
-  // &-success {
-  //   background-color: var(--color-success--600) !important; /* !important used as in Bulma */
-
-  //   &-light {
-  //     background-color: var(--color-success--500) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-dark {
-  //     background-color: var(--color-success--700) !important; /* !important used as in Bulma */
-  //   }
-  // }
-
-  // &-warning {
-  //   background-color: var(--color-warning--600) !important; /* !important used as in Bulma */
-
-  //   &-light {
-  //     background-color: var(--color-warning--500) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-dark {
-  //     background-color: var(--color-warning--700) !important; /* !important used as in Bulma */
-  //   }
-  // }
-
-  // &-danger {
-  //   background-color: var(--color-danger--600) !important; /* !important used as in Bulma */
-
-  //   &-light {
-  //     background-color: var(--color-danger--500) !important; /* !important used as in Bulma */
-  //   }
-
-  //   &-dark {
-  //     background-color: var(--color-danger--700) !important; /* !important used as in Bulma */
-  //   }
-  // }
-}
 
 .navbar-link:not(.is-arrowless)::after,
 .select:not(.is-multiple, .is-loading)::after {
@@ -207,12 +28,12 @@
 
 /* anchor */
 
-// a:not(.button) {
-//   color: var(--kyanite-primary);
-//   &:hover {
-//     color: var(--kyanite-custom-anchor-hover-color);
-//   }
-// }
+a:not(.button) {
+  color: var(--kyanite-primary);
+  &:hover {
+    color: var(--kyanite-custom-anchor-hover-color);
+  }
+}
 
 /*  inputs text colors */
 

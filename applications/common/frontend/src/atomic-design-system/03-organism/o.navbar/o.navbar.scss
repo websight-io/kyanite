@@ -16,12 +16,9 @@
  * -->
  */
 
-@use 'sass:map';
 @use 'src/atomic-design-system/00-token/t.spacing';
-@use 'src/atomic-design-system/00-token/t.color' as colors;
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
-@use 'src/atomic-design-system/00-token/t.font' as font;
 
 $color-navbar-link: var(--kyanite-gray-15);
 
