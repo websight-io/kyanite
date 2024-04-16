@@ -10,11 +10,6 @@
         ws:lastModified="{Date}2023-06-02T09:13:21.799Z"
         ws:lastModifiedBy="wsadmin"
         ws:template="/libs/kyanite/blogs/templates/blogarticlepage"
-        authorDescription="Goal oriented and not afraid to step out of his comfort zone. He specializes in AEM based websites development and maintenance, including AEM components."
-        authorName="John Doe"
-        authorPhoto="/content/kyanite-visual-tests/assets/blog-article-author-bio.png"
-        authorPhotoAlt="author-photo-alt"
-        authorRole="DXP multiverse ruler"
         description="article-desc"
         fancyBackground="false"
         heroImage="/content/kyanite-visual-tests/assets/Event-driven.png/"
@@ -24,6 +19,14 @@
         publicationDate="2023-06-01"
         readTime="55"
         title="article-title">
+        <author
+                jcr:primaryType="nt:unstructured"
+                authorInfoSource="ownProperties"
+                authorDescription="Goal oriented and not afraid to step out of his comfort zone. He specializes in AEM based websites development and maintenance, including AEM components."
+                authorName="John Doe"
+                authorPhoto="/content/kyanite-visual-tests/assets/blog-article-author-bio.png"
+                authorPhotoAlt="author-photo-alt"
+                authorRole="DXP multiverse ruler"/>
         <pagecontainer
             jcr:primaryType="nt:unstructured"
             sling:resourceType="kyanite/common/components/pagecontainer">
@@ -32,7 +35,7 @@
                 sling:resourceType="kyanite/common/components/navbarreference"/>
             <section
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="kyanite/common/components/section">
+                sling:resourceType="kyanite/common/components/section" renderAsHero="false">
                 <container
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/container">
@@ -67,9 +70,13 @@
                                 <rest jcr:primaryType="nt:unstructured"/>
                             </content>
                             <blogarticleauthorbio
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="kyanite/blogs/components/blogarticleauthorbio"
-                                link="/content/kyanite-visual-tests/pages/wsio-114-blog-article-author-bio"/>
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="kyanite/blogs/components/blogarticleauthorbio"
+                                    link="/content/kyanite-visual-tests/pages/wsio-114-blog-article-author-bio">
+                                <author
+                                        jcr:primaryType="nt:unstructured"
+                                        authorInfoSource="parentPage"/>
+                            </blogarticleauthorbio>
                         </column2>
                         <column3
                             jcr:primaryType="nt:unstructured"

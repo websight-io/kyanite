@@ -17,6 +17,8 @@
 package pl.ds.kyanite.blogs.components.exceptions;
 
 public class AuthorInfoResolvingExceptionTemplates {
+  public static final String COUNSUMER_IS_NULL =
+      "Author info consumer is null";
   public static final String AUTHOR_NODE_MISSING_IN_CONSUMER =
       "Author node is null";
   public static final String AUTHOR_NODE_MISSING_IN_REFERENCE =

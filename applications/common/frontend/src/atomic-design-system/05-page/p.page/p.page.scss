@@ -24,6 +24,8 @@ $bulma-navbar-height: 3.25rem;
 html {
   // this prevents jumping content when clicking on anchor link in table of contents (KYAN-50)
   scroll-padding-top: $bulma-navbar-height;
+  // this prevents jumping content when opening image previews (KYAN-173)
+  overflow: initial;
 }
 
 body {

@@ -14,10 +14,30 @@
       "navbarreference": {
         "sling:resourceType": "kyanite/common/components/navbarreference"
       },
-      "section": {
+      "authorBioSection": {
         "sling:resourceType": "kyanite/common/components/section",
         "container": {
-          "sling:resourceType": "kyanite/common/components/container"
+          "sling:resourceType": "kyanite/common/components/container",
+          "blogarticleauthorbio": {
+            "sling:resourceType": "kyanite/blogs/components/blogarticleauthorbio",
+            "author": {
+              "jcr:primaryType": "nt:unstructured",
+              "authorInfoSource": "parentPage"
+            }
+          }
+        }
+      },
+      "blogListSection": {
+        "sling:resourceType": "kyanite/common/components/section",
+        "container": {
+          "sling:resourceType": "kyanite/common/components/container",
+          "bloglist": {
+            "sling:resourceType": "kyanite/blogs/components/bloglist",
+            "author": {
+              "jcr:primaryType": "nt:unstructured",
+              "authorInfoSource": "parentPage"
+            }
+          }
         }
       },
       "footerreference": {

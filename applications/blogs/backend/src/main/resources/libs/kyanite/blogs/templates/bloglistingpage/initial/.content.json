@@ -13,13 +13,18 @@
       },
       "section": {
         "sling:resourceType": "kyanite/common/components/section",
+        "renderAsHero": "false",
         "container": {
           "sling:resourceType": "kyanite/common/components/container",
           "featuredblogarticle": {
             "sling:resourceType": "kyanite/blogs/components/featuredblogarticle"
           },
           "bloglist": {
-            "sling:resourceType": "kyanite/blogs/components/bloglist"
+            "sling:resourceType": "kyanite/blogs/components/bloglist",
+            "author": {
+              "jcr:primaryType": "nt:unstructured",
+              "authorInfoSource": "parentPage"
+            }
           }
         }
       },

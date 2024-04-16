@@ -29,8 +29,10 @@
             <h6 class="title is-6" data-sly-test.title="${item.blogArticleHeader.title}">${title}</h6>
             <div class="content-info-details">
               <p>
-                <span class="author-content"
-                    data-sly-test.authorName="${item.blogArticleHeader.authorName}">${authorName}</span>
+                <sly data-sly-test.author="${item.authorInfo}">
+                  <span class="author-content"
+                      data-sly-test.authorName="${author.authorName}">${authorName}</span>
+                </sly>
                 <span  class="date-content"
                     data-sly-test.publicationDate="${item.blogArticleHeader.formattedPublicationDate}">${publicationDate}</span>
                 <span class="time-content" data-sly-test.readTime="${item.blogArticleHeader.readTime}">${'{0} min

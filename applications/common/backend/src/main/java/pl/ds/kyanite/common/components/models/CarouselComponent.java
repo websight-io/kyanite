@@ -104,4 +104,15 @@ public class CarouselComponent {
     }
     return defaultValue;
   }
+
+  public String isControlHidden() {
+    if (items.size() <= mobileElementsInRow) {
+      return "hidden-from-all";
+    } else if (items.size() <= tabletElementsInRow) {
+      return "hidden-from-tablet";
+    } else if (items.size() <= desktopElementsInRow) {
+      return "hidden-from-desktop";
+    }
+    return "";
+  }
 }

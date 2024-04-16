@@ -1,5 +1,5 @@
 {
-  "group": "Kyanite Components",
   "sling:resourceType": "ws:Component",
-  "title": "Blog list"
+  "title": "Blog list",
+  "group": "Kyanite Blog Article Components"
 }

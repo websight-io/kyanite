@@ -1,24 +1,76 @@
 {
   "sling:resourceType": "wcm/dialogs/dialog",
   "tabs": {
-		"sling:resourceType": "wcm/dialogs/components/tabs",
-		"generalTab": {
-			"sling:resourceType": "wcm/dialogs/components/tab",
-			"label": "General",
-			"id": {
-				"sling:resourceType": "wcm/dialogs/components/textfield",
-				"name": "id",
-				"label": "Section id",
-				"required": true
-			},
-			"size": {
-				"sling:resourceType": "wcm/dialogs/components/include",
-				"path": "/libs/kyanite/common/components/hero/attributes/size"
-			}
-		},
-		"backgroundImage": {
-			"sling:resourceType": "wcm/dialogs/components/include",
-			"path": "/libs/kyanite/common/components/common/backgroundimage"
-		}
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "variantSwitch": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "renderAsHero",
+        "label": "Is a hero banner?"
+      },
+      "sectionGeneralOptions": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "id": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "id",
+          "label": "Section id",
+          "required": true
+        },
+        "size": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/libs/kyanite/common/components/hero/attributes/size"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "renderAsHero",
+            "values": "false"
+          }
+        }
+      },
+      "heroGeneralOptions": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "size": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "/libs/kyanite/common/components/hero/attributes/size"
+        },
+        "variant": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "path": "kyanite/common/components/hero/attributes/variant"
+        },
+        "background": {
+          "sling:resourceType": "wcm/dialogs/components/radio",
+          "name": "background",
+          "label": "Background",
+          "nobackground": {
+            "sling:resourceType": "wcm/dialogs/components/radio/option",
+            "label": "No background",
+            "value": ""
+          },
+          "circles": {
+            "sling:resourceType": "wcm/dialogs/components/radio/option",
+            "label": "Circles",
+            "value": "hero--bg-circles"
+          }
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "renderAsHero",
+            "values": "true"
+          }
+        }
+      }
+    },
+    "backgroundImage": {
+      "sling:resourceType": "wcm/dialogs/components/include",
+      "path": "/libs/kyanite/common/components/common/backgroundimage",
+      "ws:display": {
+        "condition": {
+          "sourceName": "renderAsHero",
+          "values": "false"
+        }
+      }
+    }
   }
 }

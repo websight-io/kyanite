@@ -60,6 +60,7 @@ describe('Section layout', function () {
     .should('deep.eq', {
       id: 'section1',
       size: 'is-halfheight',
+      renderAsHero: 'false',
       'sling:resourceType': 'kyanite/common/components/section',
       'jcr:primaryType': 'nt:unstructured'
     });

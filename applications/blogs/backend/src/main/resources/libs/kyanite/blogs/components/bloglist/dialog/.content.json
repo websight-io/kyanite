@@ -10,6 +10,17 @@
         "rootPath": "/content",
         "name": "link",
         "label": "Path to the blog article pages"
+      },
+      "authorInfo": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/blogs/components/common/dialog/authorinfo",
+          "authorInfoSource": {
+            "ownProperties": {
+              "sling:hideResource": true
+            }
+          }
+        }
       }
     }
   }

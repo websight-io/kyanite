@@ -18,12 +18,10 @@ package pl.ds.kyanite.blogs.components.services;
 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
-import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoCircularReferenceException;
-import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoConfigurationException;
+import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingException;
 import pl.ds.kyanite.blogs.components.models.AuthorInfoModel;
 
 public interface AuthorInfoResolverService {
   AuthorInfoModel retrieveAuthorInfo(Resource resource, ResourceResolver resourceResolver)
-      throws AuthorInfoConfigurationException,
-              AuthorInfoCircularReferenceException;
+      throws AuthorInfoResolvingException;
 }

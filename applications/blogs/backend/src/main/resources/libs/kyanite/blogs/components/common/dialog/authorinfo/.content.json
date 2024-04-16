@@ -31,7 +31,8 @@
         "sourceName": "author/authorInfoSource",
         "values": "authorPage"
       }
-    }
+    },
+    "ws:disallowedContext": ["edit:panel"]
   },
   "authorInfoContainer": {
     "sling:resourceType": "wcm/dialogs/components/container",
@@ -44,8 +45,9 @@
       "sling:resourceType": "wcm/dialogs/components/pathpicker",
       "rootPath": "/content",
       "name": "author/authorPhoto",
-      "description": "Author photo",
-      "label": "Author photo"
+      "description": "Author square photo asset",
+      "label": "Author photo",
+      "ws:disallowedContext": ["edit:panel"]
     },
     "authorPhotoAlt": {
       "sling:resourceType": "wcm/dialogs/components/textfield",

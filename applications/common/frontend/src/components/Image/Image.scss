@@ -36,4 +36,16 @@ $color-shadow-end: rgba(var(--color-shadow--1), 0.07);
   > svg {
     width: 100%; // or inline attribute width gets applied
   }
+
+  &--lightbox {
+    cursor: zoom-in;
+  }
+}
+
+.viewer-backdrop {
+  background-color: rgba(0,0,0,.9);
+}
+
+.viewer-open > .navbar {
+  padding-right: 15px;
 }

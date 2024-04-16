@@ -24,7 +24,6 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.factory.ModelFactory;
@@ -39,9 +38,6 @@ import pl.ds.kyanite.blogs.components.utils.ResourceUtil;
 public class BlogArticleHeaderComponent {
 
   private final Resource resource;
-
-  @ChildResource
-  private Resource author;
 
   private final ResourceResolver resourceResolver;
 
@@ -87,7 +83,7 @@ public class BlogArticleHeaderComponent {
 
   private void resolveAuthorInfo() {
     try {
-      authorInfoModel = authorInfoResolver.retrieveAuthorInfo(author, resourceResolver);
+      authorInfoModel = authorInfoResolver.retrieveAuthorInfo(resource, resourceResolver);
     } catch (AuthorInfoResolvingException e) {
       authorInfoErrMessage = e.getMessage();
     }

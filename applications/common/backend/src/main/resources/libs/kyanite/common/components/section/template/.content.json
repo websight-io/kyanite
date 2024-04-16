@@ -2,5 +2,8 @@
 	"jcr:primaryType": "nt:unstructured",
 	"size": "is-normal",
 	"width": "1280",
-	"height": "720"
+	"height": "720",
+	"renderAsHero": "false",
+	"variant": "is-primary",
+	"background": ""
 }

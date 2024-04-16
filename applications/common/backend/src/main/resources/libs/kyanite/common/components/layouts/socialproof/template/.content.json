@@ -1,0 +1,180 @@
+{
+  "sling:resourceType": "kyanite/common/components/section",
+  "jcr:primaryType": "nt:unstructured",
+  "container": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/container",
+    "carousel": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/common/components/carousel",
+      "desktop": {
+        "jcr:primaryType": "nt:unstructured",
+        "elementsInRow": "3"
+      },
+      "tablet": {
+        "jcr:primaryType": "nt:unstructured",
+        "elementsInRow": "2"
+      },
+      "mobile": {
+        "jcr:primaryType": "nt:unstructured",
+        "elementsInRow": "1"
+      },
+      "carouselitem1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "kyanite/common/components/carousel/carouselitem",
+        "card": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "kyanite/common/components/card",
+          "heightVariant": "card--full-height",
+          "cardcontent": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "kyanite/common/components/card/cardcontent",
+            "mediaobject": {
+              "jcr:primaryType": "nt:unstructured",
+              "sling:resourceType": "kyanite/common/components/mediaobject",
+              "mediaLeft": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "kyanite/common/components/mediaobject/medialeft",
+                "image": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "height": "720",
+                  "type": "fixed",
+                  "style": "is-64x64",
+                  "width": "1280",
+                  "isRounded": "true",
+                  "sling:resourceType": "kyanite/common/components/image"
+                }
+              },
+              "mediaContent": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "kyanite/common/components/mediaobject/mediacontent",
+                "content": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "size": "is-small",
+                  "text": "<p></p><p><span class=\"has-text-primary\">Alex Johnson</span><br><span class=\"has-text-light\">Founder & CEO</span></p>",
+                  "color": "has-text-secondary",
+                  "sling:resourceType": "kyanite/common/components/content"
+                }
+              },
+              "mediaRight": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "kyanite/common/components/mediaobject/mediaright"
+              }
+            },
+            "content": {
+              "jcr:primaryType": "nt:unstructured",
+              "size": "is-medium",
+              "text": "<p><em>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus nec sapien lacinia elementum sed vitae dui. Proin scelerisque, dolor sed hendrerit fermentum, libero arcu placerat nisi, in condimentum enim eros ac diam. Mauris quis eros ligula. Fusce mollis, mauris eu vestibulum elementum, nulla dolor aliquam nisi, non vehicula ante dolor eget magna. Praesent nec nisi a velit aliquam vehicula.\"</em></p>",
+              "color": "rest_has-text-grey",
+              "sling:resourceType": "kyanite/common/components/content"
+            }
+          }
+        }
+      },
+      "carouselitem2": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "kyanite/common/components/carousel/carouselitem",
+        "card": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "kyanite/common/components/card",
+          "heightVariant": "card--full-height",
+          "cardcontent": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "kyanite/common/components/card/cardcontent",
+            "mediaobject": {
+              "jcr:primaryType": "nt:unstructured",
+              "sling:resourceType": "kyanite/common/components/mediaobject",
+              "mediaLeft": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "kyanite/common/components/mediaobject/medialeft",
+                "image": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "height": "720",
+                  "type": "fixed",
+                  "style": "is-64x64",
+                  "width": "1280",
+                  "isRounded": "true",
+                  "sling:resourceType": "kyanite/common/components/image"
+                }
+              },
+              "mediaContent": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "kyanite/common/components/mediaobject/mediacontent",
+                "content": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "size": "is-small",
+                  "text": "<p></p><p><span class=\"has-text-primary\">Li Wei Zhang</span><br><span class=\"has-text-light\">Software Architect</span></p>",
+                  "color": "has-text-secondary",
+                  "sling:resourceType": "kyanite/common/components/content"
+                }
+              },
+              "mediaRight": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "kyanite/common/components/mediaobject/mediaright"
+              }
+            },
+            "content": {
+              "jcr:primaryType": "nt:unstructured",
+              "size": "is-medium",
+              "text": "<p><em>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus nec sapien lacinia elementum sed vitae dui. Proin scelerisque, dolor sed hendrerit fermentum, libero arcu placerat nisi, in condimentum enim eros ac diam. Mauris quis eros ligula. Fusce mollis, mauris eu vestibulum elementum, nulla dolor aliquam nisi, non vehicula ante dolor eget magna. Praesent nec nisi a velit aliquam vehicula.\"</em></p>",
+              "color": "rest_has-text-grey",
+              "sling:resourceType": "kyanite/common/components/content"
+            }
+          }
+        }
+      },
+      "carouselitem3": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "kyanite/common/components/carousel/carouselitem",
+        "card": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "kyanite/common/components/card",
+          "heightVariant": "card--full-height",
+          "cardcontent": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "kyanite/common/components/card/cardcontent",
+            "mediaobject": {
+              "jcr:primaryType": "nt:unstructured",
+              "sling:resourceType": "kyanite/common/components/mediaobject",
+              "mediaLeft": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "kyanite/common/components/mediaobject/medialeft",
+                "image": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "height": "720",
+                  "type": "fixed",
+                  "style": "is-64x64",
+                  "width": "1280",
+                  "isRounded": "true",
+                  "sling:resourceType": "kyanite/common/components/image"
+                }
+              },
+              "mediaContent": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "kyanite/common/components/mediaobject/mediacontent",
+                "content": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "size": "is-small",
+                  "text": "<p></p><p><span class=\"has-text-primary\">Sofia Rodriguez</span><br><span class=\"has-text-light\">Co-Founder & Chief Technology Officer</span></p>",
+                  "color": "has-text-secondary",
+                  "sling:resourceType": "kyanite/common/components/content"
+                }
+              },
+              "mediaRight": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "kyanite/common/components/mediaobject/mediaright"
+              }
+            },
+            "content": {
+              "jcr:primaryType": "nt:unstructured",
+              "size": "is-medium",
+              "text": "<p><em>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum in lacus nec sapien lacinia elementum sed vitae dui. Proin scelerisque, dolor sed hendrerit fermentum, libero arcu placerat nisi, in condimentum enim eros ac diam. Mauris quis eros ligula. Fusce mollis, mauris eu vestibulum elementum, nulla dolor aliquam nisi, non vehicula ante dolor eget magna. Praesent nec nisi a velit aliquam vehicula.\"</em></p>",
+              "color": "rest_has-text-grey",
+              "sling:resourceType": "kyanite/common/components/content"
+            }
+          }
+        }
+      }
+    }
+  }
+}

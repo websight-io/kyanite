@@ -40,6 +40,27 @@
         "label": "SVG as a code",
         "description": "SVG image will be inserted as a code instead of link reference"
       },
+      "showLightbox": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "showLightbox",
+        "label": "Display in lightbox",
+        "description": "User will be able to open the asset in preview mode to be able to study it thoroughly."
+      },
+      "container": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "highResolutionImageSrc": {
+          "sling:resourceType": "wcm/dialogs/components/assetreference",
+          "mimeTypes": ["image/*", "video/*"],
+          "name": "highResolutionAssetSrc",
+          "label": "High resolution asset for lightbox preview"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "showLightbox",
+            "values": "true"
+          }
+        }
+      },
       "videoOptions": {
         "sling:resourceType": "wcm/dialogs/components/container",
         "customThumbnail": {

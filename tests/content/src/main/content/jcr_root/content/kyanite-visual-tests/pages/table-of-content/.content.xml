@@ -18,7 +18,7 @@
                 sling:resourceType="kyanite/common/components/navbarreference"/>
             <section
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="kyanite/common/components/section">
+                sling:resourceType="kyanite/common/components/section" renderAsHero="false">
                 <container
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/container">
@@ -26,8 +26,12 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/blogs/components/featuredblogarticle"/>
                     <bloglist
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="kyanite/blogs/components/bloglist"/>
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/blogs/components/bloglist">
+                        <author
+                                jcr:primaryType="nt:unstructured"
+                                authorInfoSource="parentPage"/>
+                    </bloglist>
                 </container>
             </section>
             <footerreference
