@@ -1,6 +1,5 @@
 {
   "isContainer": true,
-  "isLayout": true,
   "group": "Kyanite Layouts",
   "allowedComponents": [
     "/apps/kyanite/common/components/mediaobject/medialeft",
