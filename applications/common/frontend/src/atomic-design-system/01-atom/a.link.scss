@@ -22,21 +22,21 @@
 .a-link {
   display: inline-block;
   @include link.a-animated-underline-link;
-  color: var(--kyanite-gray-15) !important;
+  color: var(--kyanite-custom-link-color);
+  &:hover {
+    color: var(--kyanite-custom-link-color-hover);
+  }
 
   &:focus-visible {
     outline: var(--border-weight-3) solid;
     border-radius: var(--border-radius-1);
     outline-color: var(--kyanite-primary-80) !important;
-
     outline-offset: 0;
   }
 
   &:active {
     &::after {
       background-color: var(--kyanite-primary-40) !important;
-
-
       transform: translate3d(0, 0, 0);
     }
   }
@@ -46,7 +46,6 @@
 
     &::after {
       background-color: var(--kyanite-primary-60) !important;
-
     }
 
     &:active {

@@ -40,7 +40,6 @@
   }
 
   li {
-    color: var(--kyanite-gray-40) !important;
     border-bottom: var(--border-weight-2) solid;
     cursor: pointer;
     @extend .pt-0;
@@ -51,14 +50,11 @@
     border-color: transparent;
 
     &:hover {
-      color: var(--kyanite-gray-15) !important;
-
       border-color: transparent;
     }
   }
 
   li.is-active {
-    color: var(--kyanite-gray-15) !important;
     border-color: var(--kyanite-primary);
 
     &:hover {

@@ -40,7 +40,7 @@
   "grey": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Grey",
-    "value": "rest_has-text-grey",
+    "value": "rest_has-text-gray",
     "selected": true
   },
   "link": {

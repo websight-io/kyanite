@@ -28,8 +28,8 @@
 
 /* anchor */
 
-a:not(.button) {
-  color: var(--kyanite-primary);
+a:not(.button, .link) {
+  // color: var(--kyanite-primary);
   &:hover {
     color: var(--kyanite-custom-anchor-hover-color);
   }
@@ -41,7 +41,7 @@ a:not(.button) {
   color: var(--kyanite-body-color);
   background-color: var(--kyanite-body-background-color);
   &:focus, &:active, &.is-active, &.is-focused {
-    border-color: var(--kyanite-primary);
+    border-color: var(--kyanite-primary) !important;
     box-shadow: none;
   }
 }

@@ -20,7 +20,7 @@
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
 
-$color-navbar-link: var(--kyanite-gray-15);
+// $color-navbar-link: var(--kyanite-gray-15);
 
 @mixin o-navbar {
   // causes the element to establish a containing block for all descendants (used for fixed-position descendants)
@@ -55,28 +55,8 @@ $color-navbar-link: var(--kyanite-gray-15);
   &:not(.is-primary, .is-link, .is-info, .is-warning, .is-danger, .is-success, .is-white, .is-light, .is-dark, .is-black, .is-transparent) {
     background-color: var(--kyanite-body-background-color);
 
-    a.navbar-item:not(.navbar-dropdown a.navbar-item) {
-      color: $color-navbar-link;
-    }
-
-    a.navbar-link {
-      color: $color-navbar-link;
-
-      &:not(.is-arrowless)::after {
-        border-color: $color-navbar-link;
-      }
-    }
-
     .navbar-burger {
       color: var(--kyanite-navbar-burger-color);
-    }
-  }
-
-  &.is-white {
-    @include breakpoint.media-breakpoint-large {
-      .navbar-top > .navbar-item {
-        color: #2a2a2a;
-      }
     }
   }
 
@@ -154,7 +134,6 @@ $color-navbar-link: var(--kyanite-gray-15);
 
   a.navbar-link,
   a.navbar-item {
-    color: $color-navbar-link;
     font-weight: var(--kyanite-weight-medium);
   }
 
@@ -267,6 +246,8 @@ $color-navbar-link: var(--kyanite-gray-15);
         display: flex;
         justify-content: space-between;
         align-items: center;
+        transition-duration: var(--kyanite-duration);
+        transition-property: color;
 
         &::after {
           position: static;
@@ -416,7 +397,6 @@ $color-navbar-link: var(--kyanite-gray-15);
           font-size: var(--font-size-32);
           font-weight: var(--kyanite-weight-medium);
           line-height: var(--line-height-150);
-          color: $color-navbar-link;
         }
       }
 

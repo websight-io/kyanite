@@ -1518,7 +1518,7 @@
                             addText="true"
                             colorOnText="true"
                             label="Grey"
-                            textVariant="has-text-grey"/>
+                            textVariant="has-text-gray"/>
                         <icon_6
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/icon"

@@ -84,7 +84,7 @@
     cursor: pointer;
 
     @include breakpoint.media-breakpoint-large {
-      color: var(a90);
+      color: var(--kyanite-gray-90);
     }
   }
 
@@ -126,7 +126,7 @@
     );
 
     /* Colors */
-    background-color: var(---kyanite-primary);
+    background-color: var(--kyanite-primary);
     color: var(--kyanite-primary-100);
 
     /* Text */

@@ -21,18 +21,11 @@
 @use 'src/atomic-design-system/00-token/t.border' as border;
 
 .a-button {
-  border-radius: var(--border-radius-1);
 
   &-ghost {
-    border: none;
-    color: var(--kyanite-gray-15);
-
     &:hover {
-      color: var(--kyanite-primary);
-
       text-decoration: none;
     }
-
     &:focus:not(:active) {
       box-shadow: none;
     }
@@ -45,7 +38,7 @@
     }
 
     &:active {
-      color: var(--kyanite-primary-40);
+      color: var(--kyanite-primary-80);
     }
   }
 
@@ -60,7 +53,7 @@
     &.is-hovered,
     &:focus,
     &:hover {
-      background-color: var(---kyanite-text-95);
+      background-color: var(--kyanite-text-95);
       color: var(--kyanite-gray-30)
     }
 

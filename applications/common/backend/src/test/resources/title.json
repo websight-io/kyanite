@@ -41,7 +41,7 @@
     "subtitle": "Nice subtitle",
     "addSubtitle": true,
     "color": "new_has-text-black",
-    "subtitleColor": "new_has-text-grey",
+    "subtitleColor": "new_has-text-gray",
     "bw": {
       "shade": "ter"
     },
