@@ -51,7 +51,8 @@
 			"overrideAnchorId": {
 				"sling:resourceType": "wcm/dialogs/components/toggle",
 				"name": "overrideAnchorId",
-				"label": "Override anchorId"
+				"label": "Override anchorId",
+				"description": "The default anchor is created based on the title. However, authors can override it."
 			},
 			"anchorContainer": {
 				"sling:resourceType": "wcm/dialogs/components/container",
