@@ -1,7 +1,6 @@
 {
   "sling:resourceType": "ws:PagesTemplate",
   "title": "Kyanite Dark Theme website Pages",
-  "stylesPath": "/libs/kyanite/webroot/dark-mode.css",
   "theme": "theme-dark",
   "allowedChildren": [
     "/libs/kyanite/common/templates/homepage",
