@@ -7,5 +7,5 @@
     "/apps/kyanite/common/components/tiles/tilechild",
     "/libs/kyanite/common/components/tiles/tilechild"],
   "sling:resourceType": "ws:Component",
-  "title": "Parent tile"
+  "title": "Parent tile (Deprecated)"
 }

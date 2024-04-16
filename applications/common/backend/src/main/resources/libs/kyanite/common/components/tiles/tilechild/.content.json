@@ -8,5 +8,5 @@
     "Kyanite Layouts"
   ],
   "sling:resourceType": "ws:Component",
-  "title": "Child tile"
+  "title": "Child tile (Deprecated)"
 }
