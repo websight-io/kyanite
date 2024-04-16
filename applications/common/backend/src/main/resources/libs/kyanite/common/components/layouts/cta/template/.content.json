@@ -1,0 +1,59 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "renderAsHero": "false",
+  "sling:resourceType": "kyanite/common/components/section",
+  "container": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/container",
+    "title": {
+      "jcr:primaryType": "nt:unstructured",
+      "element": "h2",
+      "isSpaced": false,
+      "size": "is-2",
+      "text": "<p style=\"text-align: center\">Click Here to Learn More</p>",
+      "delay": 1200,
+      "speed": 50,
+      "showCursor": false,
+      "addAnimatedEndings": false,
+      "sling:resourceType": "kyanite/common/components/title"
+    },
+    "buttons": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/common/components/buttons",
+      "alignment": "is-centered",
+      "button1": {
+        "jcr:primaryType": "nt:unstructured",
+        "showIconRight": false,
+        "showIconLeft": false,
+        "isOutlined": "false",
+        "isDisabled": "false",
+        "isFullWidth": "false",
+        "isMailto": "false",
+        "isInverted": "false",
+        "size": "is-normal",
+        "type": "button",
+        "label": "CTA",
+        "variant": "is-primary",
+        "isRounded": "false",
+        "sling:resourceType": "kyanite/common/components/button",
+        "openModal": "open-modal",
+        "actionType": "",
+        "isLight": "false",
+        "leftIcon": {
+          "jcr:primaryType": "nt:unstructured",
+          "iconSize": "fa-lg",
+          "iconLibType": "mdi",
+          "icon": "mdi-home-outline",
+          "selectOrType": "select"
+        },
+        "rightIcon": {
+          "jcr:primaryType": "nt:unstructured",
+          "iconSize": "fa-lg",
+          "iconLibType": "mdi",
+          "icon": "mdi-home-outline",
+          "selectOrType": "select"
+        }
+      }
+    }
+  }
+}
