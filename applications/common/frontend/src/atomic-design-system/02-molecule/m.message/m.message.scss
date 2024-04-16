@@ -22,7 +22,7 @@
 
 @mixin m-message {
   // "None" variant, base for the other variants
-  border-color: var(--kyanite-light);
+  border-color: var(--kyanite-light) !important;
   border-left: var(--border-weight-3) solid;
   border-radius: var(--border-radius-2);
 
@@ -30,62 +30,70 @@
 
   .message-header {
     color: var(--kyanite-gray-15) !important;
-    background-color: var(--kyanite-text-95);
+    background-color: var(--kyanite-text-95) !important;
     border-top-left-radius: var(--border-weight-0);
   }
 
   .message-body {
-    color: var(--kyanite-gray-15);
+    color: var(--kyanite-gray-15) !important;
 
     border: none;
-    background-color: #FFF;
+    background-color: (--kyanite-white) !important;
   }
 
   &.is-primary {
-    border-color: var(--kyanite-primary-50);
+    border-color: var(--kyanite-primary-50) !important;
 
     .message-header {
-      background-color: var(--kyanite-primary-100);
+      background-color: var(--kyanite-primary-100) !important;
+    }
+  }
+
+  &.is-secondary {
+    border-color: var(--kyanite-secondary-50) !important;
+
+    .message-header {
+      background-color: var(--kyanite-secondary-100) !important;
     }
   }
 
   &.is-link {
-    border-color: var(--kyanite-link-50);
+    border-color: var(--kyanite-link-50) !important;
 
     .message-header {
-      background-color: var(--kyanite-link-100);
+      background-color: var(--kyanite-link-100) !important;
     }
   }
 
   &.is-info {
-    border-color: var(--kyanite-info-50);
+    border-color: var(--kyanite-info-50) !important;
 
     .message-header {
-      background-color: var(--kyanite-info-100);
+      background-color: var(--kyanite-info-100) !important;
     }
   }
 
   &.is-success {
-    border-color: var(--kyanite-success-50);
+    border-color: var(--kyanite-success-50) !important;
 
     .message-header {
-      background-color: var(--kyanite-success-100);
+      background-color: var(--kyanite-success-100) !important;
     }
   }
 
   &.is-warning {
-    border-color: var(--kyanite-warning-50);
+    border-color: var(--kyanite-warning-50) !important;
 
     .message-header {
-      background-color: var(--kyanite-warning-100);
+      background-color: var(--kyanite-warning-100) !important;
     }
   }
 
   &.is-danger {
-    border-color: var(--kyanite-danger-50);
+    border-color: var(--kyanite-danger-50) !important;
 
     .message-header {
-      background-color: var(--kyanite-danger-100);
+      background-color: var(--kyanite-danger-100) !important;
     }
   }
 }

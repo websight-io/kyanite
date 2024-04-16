@@ -14,9 +14,9 @@
 			"label": "Dark",
 			"value": "is-dark"
 		},
-		"grey-15": {
+		"gray-15": {
 			"sling:resourceType": "wcm/dialogs/components/select/selectitem",
-			"label": "Grey darker",
+			"label": "Gray-15",
 			"value": "is-background-gray-15"
 		}
   }
