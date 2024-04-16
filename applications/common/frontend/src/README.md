@@ -1,6 +1,6 @@
 # Kyanite FE approach
 
-Kyanite is based on the bulma library, so the approach used is partially imposed from the top. Bulma allows us to override it's variables in many ways, however our approach is to override it with [CSS variables](https://bulma.io/documentation/features/css-variables/). This way, when creating new project with custom colors, it is easy to run project without compiling sass first.
+Kyanite is based on the bulma library, so the approach used is partially imposed from the top. Bulma allows us to override it's variables in several ways, however our approach is to override it with [CSS variables](https://bulma.io/documentation/features/css-variables/). 
 
 # Development
 
@@ -53,4 +53,41 @@ Base theme vars:
 
 // easing animation type
 --kyanite-easing 
+```
+
+Base grey scale (has all the classes:
+is-{name}, has-text-{name}, is-background-{name}, has-background-{name}, eg. `has-background-grey`):
+
+```
+--kyanite-black-bis: #14161a;
+--kyanite-black-ter: #1f2229;
+--kyanite-grey-darker: #2e333d;
+--kyanite-grey-dark: #404654;
+--kyanite-grey: #69748c;
+--kyanite-grey-light: #abb1bf;
+--kyanite-grey-lighter: #d6d9e0;
+--kyanite-white-ter: #f3f4f6;
+--kyanite-white-bis: #f9fafb;
+```
+
+Grey shades:
+```
+--kyanite-grey-00 // black
+--kyanite-grey-10
+--kyanite-grey-20
+--kyanite-grey-30
+--kyanite-grey-40
+--kyanite-grey-50 // base grey color, 50% lightness (same as --kyanite-grey)
+--kyanite-grey-60
+--kyanite-grey-70
+--kyanite-grey-80
+--kyanite-grey-90
+--kyanite-grey-100
+```
+
+Grey shades are generated from grey, grey color is created as any other color: with `h`, `s` and `l`:
+```
+--kyanite-grey-h: {value}
+--kyanite-grey-s: {value}
+--kyanite-grey-l: {value}
 ```

@@ -19,5 +19,5 @@
 @use 'src/atomic-design-system/02-molecule/m.notification' as notification;
 
 .notification {
-  @include notification.m-notification;
+  // @include notification.m-notification;
 }

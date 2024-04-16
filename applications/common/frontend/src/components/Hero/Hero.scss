@@ -24,8 +24,4 @@
   &.is-medium {
     @include organism-hero.o-hero-medium;
   }
-
-  &.is-primary {
-    @include organism-hero.o-hero-primary;
-  }
 }

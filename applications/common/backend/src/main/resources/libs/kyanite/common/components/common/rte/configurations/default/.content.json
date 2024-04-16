@@ -5,7 +5,7 @@
     "sling:resourceType": "extensions/dialogs/components/richtext/ui/color",
     "title": "Color",
     "icon": "format_color_text",
-    "colors": "has-text-primary=#0053ff, has-text-dark=#494949, has-text-light=#bbbbbb, has-text-black=#000000, has-text-white=#ffffff, has-text-info=#0094ff, has-text-success=#6ccd3c, has-text-warning=#fbe037, has-text-danger=#f5222d, has-text-grey-900=#2a2a2a",
+    "colors": "has-text-primary=#0053ff, has-text-dark=#494949, has-text-light=#bbbbbb, has-text-black=#000000, has-text-white=#ffffff, has-text-info=#0094ff, has-text-success=#6ccd3c, has-text-warning=#fbe037, has-text-danger=#f5222d, has-text-grey-darker=#2a2a2a",
     "plugin": {
       "sling:resourceType": "extensions/dialogs/components/richtext/plugin/color"
     },
@@ -19,7 +19,7 @@
       "has-text-success": "#6ccd3c",
       "has-text-warning": "#fbe037",
       "has-text-danger": "#f5222d",
-      "has-text-grey-900": "#2a2a2a"
+      "has-text-grey-darker": "#2a2a2a"
     },
     "sling:orderBefore": "bulletlist"
   },

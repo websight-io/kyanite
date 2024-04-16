@@ -43,7 +43,7 @@
     }
 
     > .button.is-ghost {
-      color: var(--color-grey--1000) !important;
+      color: var(--kyanite-grey-10) !important;
       @extend .px-0;
       @include link.a-animated-underline-link;
 

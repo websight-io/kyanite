@@ -28,16 +28,17 @@ $map_t-color-ids: (
 );
 
 $map_t-color-by-id: (
-  primary--100: #e6eeff,
-  primary--200: #ccddff,
-  primary--300: #99baff,
-  primary--400: #6698ff,
-  primary--500: #3375ff,
-  primary--600: #0053ff,
-  primary--700: #0042cc,
-  primary--800: #003299,
-  primary--900: #002166,
-  primary--1000: #001133,
+  primary--100: #e6eeff, // primary-100
+  primary--200: #ccddff, // primary-90
+  primary--300: #99baff, // primary-80
+  primary--400: #6698ff, // primary-70
+  primary--500: #3375ff, // primary-60
+  primary--600: #0053ff, // primary-50
+  primary--700: #0042cc, // primary-40
+  primary--800: #003299, // primary-30
+  primary--900: #002166, // primary-20
+  primary--1000: #001133,// primary-10 
+                          // primary-00 - black
   //
   secondary--50: #EFFEFB,
   secondary--100: #C7FFF5,
@@ -45,11 +46,11 @@ $map_t-color-by-id: (
   secondary--300: #4FF9E1,
   secondary--400: #1BE6CF,
   secondary--500: #03DAC6,
-  secondary--600: #00A297,
+  secondary--600: #00A297, // 
   secondary--700: #048179,
   secondary--800: #096662,
-  secondary--900: #0D5450,
-  secondary--1000: #003433,
+  secondary--900: #0D5450, 
+  secondary--1000: #003433, // 10
   //
   link--100: #e6eeff,
   link--200: #ccddff,
@@ -62,17 +63,29 @@ $map_t-color-by-id: (
   link--900: #002166,
   link--1000: #001133,
   //
-  grey--100: #f9f9fa,
-  grey--200: #f2f3f5,
-  grey--300: #e1e1e1,
-  grey--400: #bbbbbb,
-  grey--500: #959595,
-  grey--600: #7f7f7f,
-  grey--700: #686868,
-  grey--800: #494949,
-  grey--900: #2a2a2a,
-  grey--1000: #181818,
+  grey--100: #f9f9fa, // 240, 9%, 98% --kyanite-white-bis
+  grey--200: #f2f3f5, // 220, 13%, 95% --kyanite-text-95 / grey-95
+
+  
+  grey--300: #e1e1e1, // 0, 0%, 88%  --kyanite-grey-90
+  grey--400: #bbbbbb, // 0,0,73%  - light / grey-70
+  grey--500: #959595, // 0,0,58% grey-60
+  grey--600: #7f7f7f, // 0deg,0%,50% grey-50
+  grey--700: #686868, // 0,0,41% --kyanite-grey-40
+  grey--800: #494949, // 0deg, 0%, 29% - dark / --kyanite-grey-30
+  grey--900: #2a2a2a, // 0deg, 0%, 16% --kyanite-grey-darker
+  grey--1000: #181818, // 0deg, 0%, 9% --kyanite-grey-10
   //
+
+// --kyanite-black-bis: #14161a;
+// --kyanite-black-ter: #1f2229;
+// --kyanite-grey-darker: #2e333d;
+// --kyanite-grey-dark: #404654;
+// --kyanite-grey: #69748c;
+// --kyanite-grey-light: #abb1bf;
+// --kyanite-grey-lighter: #d6d9e0;
+// --kyanite-white-ter: #f3f4f6;
+// --kyanite-white-bis: #f9fafb;
   danger--100: #fee9ea,
   danger--200: #fcbdc0,
   danger--300: #fa9196,
@@ -116,8 +129,4 @@ $map_t-color-by-id: (
   info--800: #0068b3,
   info--900: #004a80,
   info--1000: #002c4d,
-);
-
-$map_t-color-shadows: (
-  shadow--1: #605e78,
 );

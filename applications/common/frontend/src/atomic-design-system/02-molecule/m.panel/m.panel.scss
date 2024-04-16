@@ -20,18 +20,18 @@
 
   .panel-tabs {
     a.is-active {
-      color: var(--color-grey--900);
+      color: var(--kyanite-grey-darker);
     }
   }
 
   &.is-primary {
     .panel-heading {
-      background-color: var(--color-primary--600);
+      background-color: var(--kyanite-primary);
     }
 
     .panel-tabs {
       a.is-active {
-        border-bottom-color: var(--color-primary--600);
+        border-bottom-color: var(--kyanite-primary);
       }
     }
   }

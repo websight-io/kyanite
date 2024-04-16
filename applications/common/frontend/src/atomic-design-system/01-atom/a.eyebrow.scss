@@ -26,7 +26,7 @@
 
 @mixin a-eyebrow {
   font-weight: var(--kyanite-weight-semibold);
-  color: var(--color-primary--600) !important;
+  color: var(--kyanite-primary);
   line-height: var(--line-height-150);
 
   &.is-1 {

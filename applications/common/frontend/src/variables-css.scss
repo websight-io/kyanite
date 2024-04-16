@@ -16,7 +16,6 @@
 
 @use 'src/atomic-design-system/00-token/t.border' as borders;
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoints;
-@use 'src/atomic-design-system/00-token/t.color' as colors;
 @use 'src/atomic-design-system/00-token/t.font' as fonts;
 @use 'src/atomic-design-system/00-token/t.position' as positions;
 @use 'src/variables-helpers' as variables;
@@ -35,11 +34,7 @@
   // Breakpoints from: src/atomic-design-system/00-token/t.breakpoint - no bulma css variables
   @include add-css-variables(breakpoints.$map_t-breakpoints-px, breakpoint);
 
-  // Colors from: src/atomic-design-system/00-token/t.color
-  @include add-css-variables(colors.$map_t-color-by-id, color);
-  @include add-css-variables(colors.$map_t-color-shadows, color);
-
-   // Fonts from: src/atomic-design-system/00-token/t.color
+   // Fonts from: src/atomic-design-system/00-token/t.font
    @include add-css-variables(fonts.$map_t-fonts, font);
    @include add-css-variables(fonts.$map_t-font-sizes, font-size);
    @include add-css-variables(fonts.$map_t-letter-spacings, letter-spacing);
@@ -47,4 +42,5 @@
 
   // Bulma overwited variables from: src/bulma-overwrite/variables
   @include add-css-variables(variables.$spacing-values, spacing);
+
 }

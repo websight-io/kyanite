@@ -21,7 +21,7 @@
 
 @mixin a-blog-back-button {
   @include link.a-animated-underline-link;
-  color: var(--color-grey--900) !important;
+  color: var(--kyanite-grey-darker) !important;
   display: inline-block;
   overflow: hidden;
 }

@@ -35,11 +35,11 @@
 
     &.is-primary {
 
-      background-color: var(--color-primary--600);
+      background-color: var(--kyanite-primary);
 
       &.is-light {
-        background-color: var(--color-primary--100);
-        color: var(--color-primary--600);
+        background-color: var(--kyanite-primary-100);
+        color: var(--kyanite-primary);
       }
     }
   }
