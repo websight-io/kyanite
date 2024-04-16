@@ -31,16 +31,16 @@ import pl.ds.kyanite.common.components.services.CookieModalConfigStore;
 import pl.ds.kyanite.common.components.services.CookieModalConfiguration;
 import pl.ds.kyanite.common.components.services.RecaptchaConfigStore;
 import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
+import pl.ds.kyanite.common.components.utils.PageSpace;
 import pl.ds.kyanite.common.components.utils.PageUtil;
-import pl.ds.kyanite.common.components.utils.PagesSpaceUtil;
 
 
 @Model(adaptables = Resource.class,
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class PageComponent {
+public class PageBodyComponent {
 
-  public static final String PRIVACY_POLICY_PATH = "/privacy-policy.html";
-  public static final String CONTACT_US_PATH = "/about/contact-us.html";
+  public static final String DEFAULT_PRIVACY_POLICY_PATH = "/privacy-policy.html";
+  public static final String DEFAULT_CONTACT_US_PATH = "/about/contact-us.html";
   @SlingObject
   private Resource resource;
 
@@ -65,16 +65,18 @@ public class PageComponent {
 
   @PostConstruct
   private void init() {
-    spaceName = PagesSpaceUtil.getWsPagesSpaceName(resource.getPath(),
-        resource.getResourceResolver());
+    PageSpace pageSpace = PageSpace.forResource(resource);
+    if (pageSpace != null) {
+      spaceName = pageSpace.getWsPagesSpaceName();
+    }
     initCookieData();
   }
 
   private void initCookieData() {
     JsonObjectBuilder jsonObjectBuilder = Json.createObjectBuilder();
     CookieModalConfiguration cookieModalConfiguration = cookieModalConfigStore.get(spaceName);
-    String privacyPolicyPath = PRIVACY_POLICY_PATH;
-    String contactUsPath = CONTACT_US_PATH;
+    String privacyPolicyPath = DEFAULT_PRIVACY_POLICY_PATH;
+    String contactUsPath = DEFAULT_CONTACT_US_PATH;
     if (cookieModalConfiguration != null) {
       privacyPolicyPath = StringUtils.isNotBlank(cookieModalConfiguration.getPrivacyPolicyPath())
           ? cookieModalConfiguration.getPrivacyPolicyPath() : privacyPolicyPath;
