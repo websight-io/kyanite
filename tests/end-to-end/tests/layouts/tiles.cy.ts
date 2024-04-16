@@ -51,7 +51,7 @@ describe('Tiles layout', function () {
     .find('div[id^="size-uid"]').click();
     cy.contains('Is 7').click({ force: true });
 
-    cy.getByTestId('ModalDialog_Parenttile')
+    cy.getByTestId('ModalDialog_Parenttile(Deprecated)')
     .findByTestId('Input_Vertical').click();
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
