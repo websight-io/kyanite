@@ -25,7 +25,7 @@
 .a-link {
   display: inline-block;
   @include link.a-animated-underline-link;
-  color: var(--kyanite-grey-darker) !important;
+  color: var(--kyanite-gray-15) !important;
 
   &:focus-visible {
     outline: var(--border-weight-3) solid;

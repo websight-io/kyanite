@@ -22,7 +22,7 @@
 @use "src/../node_modules/bulma/sass" with (
   $cssvars-prefix: "kyanite-",
 
-  $custom-colors: ("secondary": #00A297, "grey": #7f7f7f),
+  $custom-colors: ("secondary": #00A297, "gray": #7f7f7f),
 
   // Spacing
   $spacing-shortcuts: variables.$spacing-shortcuts,
@@ -43,12 +43,13 @@
     --kyanite-easing: ease-in-out;
     --kyanite-background: #fff;
 
-    --kyanite-custom-input-placeholder-color: var(--kyanite-grey-40);
+    --kyanite-custom-input-placeholder-color: var(--kyanite-gray-40);
     --kyanite-custom-checkbox-radio-hover: #363636;
 
     --kyanite-custom-article-thumbnail-mdi-color: #000;
 
     /* Colors */
+    --kyanite-white-bis: #f9f9fa;
 
     --kyanite-primary-h: 220deg;
     --kyanite-primary-s: 100%;
@@ -106,12 +107,12 @@
     --kyanite-info-l: 50%;
     --kyanite-info-100-l: 97%;
   
-    --kyanite-grey-100-l: 98%;
-    --kyanite-grey-90-l: 88%;
-    --kyanite-grey-70-l: 73%;
-    --kyanite-grey-60-l: 58%;
-    --kyanite-grey-40-l: 41%;
-    --kyanite-grey-30-l: 29%;
-    --kyanite-grey-15-l: 16%;
-    --kyanite-grey-10-l: 9%;
+    --kyanite-gray-100-l: 98%;
+    --kyanite-gray-90-l: 88%;
+    --kyanite-gray-70-l: 73%;
+    --kyanite-gray-60-l: 58%;
+    --kyanite-gray-40-l: 41%;
+    --kyanite-gray-30-l: 29%;
+    --kyanite-gray-15-l: 16%;
+    --kyanite-gray-10-l: 9%;
 }

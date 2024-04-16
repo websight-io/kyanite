@@ -18,7 +18,7 @@
 @use 'src/atomic-design-system/00-token/t.color' as color;
 
 .has-text {
-  
+
   // &-primary {
   //   color: var(--color-primary--600) !important;
   // }
@@ -201,7 +201,7 @@
   border-bottom: var(--border-weight-2) solid;
   border-left: var(--border-weight-2) solid;
 
-  border-color: var(--kyanite-grey-darker);
+  border-color: var(--kyanite-gray-15);
   border-radius: 1px;
 }
 

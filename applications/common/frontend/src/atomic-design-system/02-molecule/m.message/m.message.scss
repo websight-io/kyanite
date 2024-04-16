@@ -29,13 +29,13 @@
   box-shadow: 0 0.2rem 0.5rem rgb(0 0 0 / 5%), 0 0 0.05rem rgb(0 0 0 / 10%);
 
   .message-header {
-    color: var(--kyanite-grey-darker) !important;
+    color: var(--kyanite-gray-15) !important;
     background-color: var(--kyanite-text-95);
     border-top-left-radius: var(--border-weight-0);
   }
 
   .message-body {
-    color: var(--kyanite-grey-darker);
+    color: var(--kyanite-gray-15);
 
     border: none;
     background-color: #FFF;

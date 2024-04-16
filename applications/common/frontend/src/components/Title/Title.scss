@@ -19,7 +19,7 @@
 @use 'src/atomic-design-system/01-atom/a.title';
 
 .title {
-  --kyanite-title-color: var(--kyanite-grey-darker);
+  --kyanite-title-color: var(--kyanite-gray-15);
   --kyanite-title-weight: var(--kyanite-weight-bold);
   @extend .a-title;
 
@@ -49,7 +49,7 @@
 }
 
 .subtitle {
-  --kyanite-subtitle-color: var(--kyanite-grey-40);
+  --kyanite-subtitle-color: var(--kyanite-gray-40);
   --kyanite-subtitle-weight: var(--kyanite-weight-semibold);
   @extend .a-subtitle;
 

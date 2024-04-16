@@ -70,24 +70,37 @@ is-{name}, has-text-{name}, is-background-{name}, has-background-{name}, eg. `ha
 --kyanite-white-bis: #f9fafb;
 ```
 
-Grey shades:
+Custom gray (**notice the different spelling than the above**) scale (has all the classes:
+`is-{name}`, `has-text-{name}`, `is-background-{name}`, `has-background-{name}`, eg. `has-background-gray-15`):
+
+
+**Gray hue value: 0**
+
+
+Gray shades:
 ```
---kyanite-grey-00 // black
---kyanite-grey-10
---kyanite-grey-20
---kyanite-grey-30
---kyanite-grey-40
---kyanite-grey-50 // base grey color, 50% lightness (same as --kyanite-grey)
---kyanite-grey-60
---kyanite-grey-70
---kyanite-grey-80
---kyanite-grey-90
+--kyanite-gray-00 // black
+--kyanite-gray-10
+--kyanite-gray-15
+--kyanite-gray-20
+--kyanite-gray-25
+--kyanite-gray-30
+--kyanite-gray-35
+--kyanite-gray-40
+--kyanite-gray-45
+--kyanite-gray-50 // base gray color, 50% lightness (same as --kyanite-gray)
+--kyanite-gray-55
+...
 --kyanite-grey-100
 ```
 
-Grey shades are generated from grey, grey color is created as any other color: with `h`, `s` and `l`:
+Grey shades are generated from gray, gray color is created as any other color: with `h`, `s` and `l`:
 ```
---kyanite-grey-h: {value}
---kyanite-grey-s: {value}
---kyanite-grey-l: {value}
+--kyanite-gray-h: {value}
+--kyanite-gray-s: {value}
+--kyanite-gray-l: {value}
 ```
+
+There is also another gray scale, dedicated for texts `--kyanite-text`
+
+**Text hue value: 220**

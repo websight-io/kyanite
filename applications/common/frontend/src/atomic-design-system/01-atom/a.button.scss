@@ -27,7 +27,7 @@
 
   &-ghost {
     border: none;
-    color: var(--kyanite-grey-darker);
+    color: var(--kyanite-gray-15);
 
     &:hover {
       color: var(--kyanite-primary);
@@ -52,7 +52,7 @@
   }
 
   &-text {
-    color: var(--kyanite-grey-40);
+    color: var(--kyanite-gray-40);
 
     &.is-light {
       background-color: transparent;
@@ -63,13 +63,13 @@
     &:focus,
     &:hover {
       background-color: var(---kyanite-text-95);
-      color: var(--kyanite-grey-30)
+      color: var(--kyanite-gray-30)
     }
 
     &.is-active,
     &:active {
-      background-color: var(--kyanite-grey-90);
-      color: var(--kyanite-grey-30)
+      background-color: var(--kyanite-gray-90);
+      color: var(--kyanite-gray-30)
     }
   }
 }

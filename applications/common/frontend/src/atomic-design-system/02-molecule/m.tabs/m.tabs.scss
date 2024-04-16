@@ -43,7 +43,7 @@
   }
 
   li {
-    color: var(--kyanite-grey-40) !important;
+    color: var(--kyanite-gray-40) !important;
     border-bottom: var(--border-weight-2) solid;
     cursor: pointer;
     @extend .pt-0;
@@ -54,14 +54,14 @@
     border-color: transparent;
 
     &:hover {
-      color: var(--kyanite-grey-darker) !important;
+      color: var(--kyanite-gray-15) !important;
 
       border-color: transparent;
     }
   }
 
   li.is-active {
-    color: var(--kyanite-grey-darker) !important;
+    color: var(--kyanite-gray-15) !important;
     border-color: var(--kyanite-primary);
 
     &:hover {

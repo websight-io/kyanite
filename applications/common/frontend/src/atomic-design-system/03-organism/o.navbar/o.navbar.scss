@@ -23,7 +23,7 @@
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
 @use 'src/atomic-design-system/00-token/t.font' as font;
 
-$color-navbar-link: var(--kyanite-grey-darker);
+$color-navbar-link: var(--kyanite-gray-15);
 
 @mixin o-navbar {
   // causes the element to establish a containing block for all descendants (used for fixed-position descendants)
@@ -304,9 +304,9 @@ $color-navbar-link: var(--kyanite-grey-darker);
   }
 
   .label-megadropdown {
-    color: var(--kyanite-grey-darker);
+    color: var(--kyanite-gray-15);
     &:hover {
-      color: var(--kyanite-grey-darker);
+      color: var(--kyanite-gray-15);
     }
   }
 
@@ -385,7 +385,7 @@ $color-navbar-link: var(--kyanite-grey-darker);
           font-size: var(--font-size-16);
           font-weight: var(--kyanite-weight-semibold);
           line-height: var(--line-height-150);
-          color: var(--kyanite-grey-60);
+          color: var(--kyanite-gray-60);
         }
 
         // distance between elements:

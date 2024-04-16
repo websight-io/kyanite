@@ -42,5 +42,4 @@
 
   // Bulma overwited variables from: src/bulma-overwrite/variables
   @include add-css-variables(variables.$spacing-values, spacing);
-
 }

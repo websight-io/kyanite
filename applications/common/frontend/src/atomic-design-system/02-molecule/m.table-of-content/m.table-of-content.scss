@@ -24,7 +24,7 @@
 
 @mixin m-table-of-content {
   .table-label {
-    color: var(--kyanite-grey-40) !important;
+    color: var(--kyanite-gray-40) !important;
     font-weight: var(--kyanite-weight-medium);
     @extend .mb-5;
     display: block;
@@ -47,7 +47,7 @@
 
       a {
         @include link.a-animated-underline-link;
-        color: var(--kyanite-grey-darker) !important;
+        color: var(--kyanite-gray-15) !important;
         line-height: var(--line-height-150);
       }
     }
@@ -55,7 +55,7 @@
 
   .table-content-button {
     @include link.a-animated-underline-link;
-    color: var(--kyanite-grey-darker) !important;
+    color: var(--kyanite-gray-15) !important;
     display: inline-block;
   }
 }

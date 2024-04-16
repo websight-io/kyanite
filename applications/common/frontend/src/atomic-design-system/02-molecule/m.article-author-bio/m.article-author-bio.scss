@@ -49,7 +49,7 @@
 
       font-size: var(--font-size-24);
       font-weight: var(--kyanite-weight-semibold);
-      color: var(--kyanite-grey-darker) !important;
+      color: var(--kyanite-gray-15) !important;
     }
 
     .role {
@@ -65,7 +65,7 @@
     @extend .mt-5_3;
     @extend .mb-0;
 
-    color: var(--kyanite-grey-30) !important;
+    color: var(--kyanite-gray-30) !important;
   }
 
   // will be enabled with TODO https://teamds.atlassian.net/browse/WSIO-176
