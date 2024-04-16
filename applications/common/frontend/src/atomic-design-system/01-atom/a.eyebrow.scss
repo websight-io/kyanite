@@ -16,17 +16,14 @@
  * -->
  */
 
-@use 'sass:map';
-
 @use 'src/variables-helpers';
 
 @use 'src/atomic-design-system/00-token/t.font' as font;
-@use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 
 @mixin a-eyebrow {
   font-weight: var(--kyanite-weight-semibold);
-  color: var(--color-primary--600) !important;
+  color: var(--kyanite-primary);
   line-height: var(--line-height-150);
 
   &.is-1 {

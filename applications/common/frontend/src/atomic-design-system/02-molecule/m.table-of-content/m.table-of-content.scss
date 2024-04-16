@@ -18,13 +18,11 @@
 
 @use 'src/variables-helpers';
 
-@use 'src/atomic-design-system/00-token/t.color' as color;
-@use 'src/atomic-design-system/00-token/t.font' as font;
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
 
 @mixin m-table-of-content {
   .table-label {
-    color: var(--color-grey--700) !important;
+    color: var(--kyanite-gray-40) !important;
     font-weight: var(--kyanite-weight-medium);
     @extend .mb-5;
     display: block;
@@ -47,7 +45,7 @@
 
       a {
         @include link.a-animated-underline-link;
-        color: var(--color-grey--900) !important;
+        color: var(--kyanite-gray-15) !important;
         line-height: var(--line-height-150);
       }
     }
@@ -55,7 +53,7 @@
 
   .table-content-button {
     @include link.a-animated-underline-link;
-    color: var(--color-grey--900) !important;
+    color: var(--kyanite-gray-15) !important;
     display: inline-block;
   }
 }

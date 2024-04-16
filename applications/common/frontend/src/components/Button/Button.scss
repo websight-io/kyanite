@@ -21,14 +21,6 @@
 .button {
   @extend .a-button;
 
-  &.is-primary {
-    @extend .a-button-primary;
-  }
-
-  &.is-secondary {
-    @extend .a-button-secondary;
-  }
-
   &.is-ghost {
     @extend .a-button-ghost;
   }

@@ -16,32 +16,20 @@
  * -->
  */
 
-@use 'src/atomic-design-system/00-token/t.border' as border;
-@use 'src/atomic-design-system/00-token/t.font' as font;
-@use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/variables-helpers';
 
 @mixin a-tag-default-color {
-  background-color: var(--kyanite-custom-tag-background);
-  color: var(--kyanite-custom-tag-text);
+  &:not(.is-primary, .is-secondary, .is-success, .is-danger, .is-warning, .is-info, .is-link, .is-dark, .is-light, .is-info, .is-white) {
+    background-color: var(--kyanite-custom-tag-background);
+    color: var(--kyanite-custom-tag-text);
+  }
 }
 
 /* default tag style */
 @mixin a-tag-default {
 
   &:not(body) {
-
     @include a-tag-default-color;
-
-    &.is-primary {
-
-      background-color: var(--color-primary--600);
-
-      &.is-light {
-        background-color: var(--color-primary--100);
-        color: var(--color-primary--600);
-      }
-    }
   }
 }
 

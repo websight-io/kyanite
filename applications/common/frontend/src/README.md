@@ -1,6 +1,6 @@
 # Kyanite FE approach
 
-Kyanite is based on the bulma library, so the approach used is partially imposed from the top. Bulma allows us to override it's variables in many ways, however our approach is to override it with [CSS variables](https://bulma.io/documentation/features/css-variables/). This way, when creating new project with custom colors, it is easy to run project without compiling sass first.
+Kyanite is based on the bulma library, so the approach used is partially imposed from the top. Bulma allows us to override it's variables in several ways, however our approach is to override it with [CSS variables](https://bulma.io/documentation/features/css-variables/). 
 
 # Development
 
@@ -54,3 +54,53 @@ Base theme vars:
 // easing animation type
 --kyanite-easing 
 ```
+
+Base grey scale (has all the classes:
+is-{name}, has-text-{name}, is-background-{name}, has-background-{name}, eg. `has-background-grey`):
+
+```
+--kyanite-black-bis: #14161a;
+--kyanite-black-ter: #1f2229;
+--kyanite-grey-darker: #2e333d;
+--kyanite-grey-dark: #404654;
+--kyanite-grey: #69748c;
+--kyanite-grey-light: #abb1bf;
+--kyanite-grey-lighter: #d6d9e0;
+--kyanite-white-ter: #f3f4f6;
+--kyanite-white-bis: #f9fafb;
+```
+
+Custom gray (**notice the different spelling than the above**) scale (has all the classes:
+`is-{name}`, `has-text-{name}`, `is-background-{name}`, `has-background-{name}`, eg. `has-background-gray-15`):
+
+
+**Gray hue value: 0**
+
+
+Gray shades:
+```
+--kyanite-gray-00 // black
+--kyanite-gray-10
+--kyanite-gray-15
+--kyanite-gray-20
+--kyanite-gray-25
+--kyanite-gray-30
+--kyanite-gray-35
+--kyanite-gray-40
+--kyanite-gray-45
+--kyanite-gray-50 // base gray color, 50% lightness (same as --kyanite-gray)
+--kyanite-gray-55
+...
+--kyanite-grey-100
+```
+
+Grey shades are generated from gray, gray color is created as any other color: with `h`, `s` and `l`:
+```
+--kyanite-gray-h: {value}
+--kyanite-gray-s: {value}
+--kyanite-gray-l: {value}
+```
+
+There is also another gray scale, dedicated for texts `--kyanite-text`
+
+**Text hue value: 220**

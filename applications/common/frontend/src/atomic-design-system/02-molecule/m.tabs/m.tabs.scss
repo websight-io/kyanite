@@ -16,12 +16,9 @@
  * -->
  */
 
-@use 'sass:map';
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/atomic-design-system/00-token/t.spacing' as gap;
-@use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/atomic-design-system/00-token/t.font' as font;
-@use 'src/atomic-design-system/00-token/t.border';
 
 @mixin m-tabs {
   &.is-fullwidth {
@@ -43,7 +40,7 @@
   }
 
   li {
-    color: var(--color-grey--700) !important;
+    color: var(--kyanite-gray-40) !important;
     border-bottom: var(--border-weight-2) solid;
     cursor: pointer;
     @extend .pt-0;
@@ -54,18 +51,18 @@
     border-color: transparent;
 
     &:hover {
-      color: var(--color-grey--900) !important;
+      color: var(--kyanite-gray-15) !important;
 
       border-color: transparent;
     }
   }
 
   li.is-active {
-    color: var(--color-grey--900) !important;
-    border-color: var(--color-primary--600) !important;
+    color: var(--kyanite-gray-15) !important;
+    border-color: var(--kyanite-primary);
 
     &:hover {
-      border-color: var(--color-primary--600) !important;
+      border-color: var(--kyanite-primary);
     }
   }
 }

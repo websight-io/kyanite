@@ -16,15 +16,9 @@
  * -->
  */
 
-@use 'sass:map';
-
 @use 'node_modules/highlight.js/styles/github.css';
 
 @use 'src/variables-helpers' as variables;
-
-@use 'src/atomic-design-system/00-token/t.font' as font;
-@use 'src/atomic-design-system/00-token/t.color' as color;
-@use 'src/atomic-design-system/00-token/t.border' as border;
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 
 .code-snippet {
@@ -41,7 +35,7 @@
 
     font-size: var(--font-size-14);
     font-weight: var(--kyanite-weight-bold);
-    color: var(--color-grey--900) !important;
+    color: var(--kyanite-gray-15) !important;
 
     word-wrap: break-word;
 
@@ -59,13 +53,13 @@
     @extend .p-0, .pr-6_1;
 
     border-top: var(--border-weight-1) solid;
-    border-color: var(--color-grey--300) !important;
-    background-color: var(--color-grey--100);
+    border-color: var(--kyanite-gray-90) !important;
+    background-color: var(--kyanite-white-bis);
 
     > code {
       @extend .px-5;
 
-      background-color: var(--color-grey--100) !important; // overwrite hljs (highlight.js)
+      background-color: var(--kyanite-white-bis) !important; // overwrite hljs (highlight.js)
     }
   }
 
@@ -84,23 +78,23 @@
     margin-top: var(--spacing-4);
 
     /* Color */
-    color: var(--color-grey--900);
+    color: var(--kyanite-gray-15);
 
     /* Others */
     cursor: pointer;
 
     @include breakpoint.media-breakpoint-large {
-      color: var(--color-grey--300);
+      color: var(a90);
     }
   }
 
   @include breakpoint.media-breakpoint-large {
     // icon - on container hover
     &:hover > .code-snippet__icon {
-      color: var(--color-grey--900);
+      color: var(--kyanite-gray-15);
 
       &:hover {
-        color: var(--color-primary--600);
+        color: var(--kyanite-primary);
       }
     }
   }
@@ -132,8 +126,8 @@
     );
 
     /* Colors */
-    background-color: var(--color-primary--600);
-    color: var(--color-primary--100);
+    background-color: var(---kyanite-primary);
+    color: var(--kyanite-primary-100);
 
     /* Text */
     text-align: center;
@@ -166,7 +160,7 @@
         rotate(45deg);
 
       /* Colors */
-      background-color: var(--color-primary--600);
+      background-color: var(--kyanite-primary);
 
       /* Others */
       content: ' ';

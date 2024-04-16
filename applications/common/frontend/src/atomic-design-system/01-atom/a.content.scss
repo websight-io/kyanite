@@ -16,11 +16,8 @@
  * -->
  */
 
-@use 'sass:map';
-
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/atomic-design-system/00-token/t.font' as font;
-@use 'src/atomic-design-system/00-token/t.color' as color;
 
 .a-content {
   line-height: var(--line-height-150);

@@ -16,14 +16,11 @@
  * -->
  */
 
-@use 'sass:map';
 @use 'src/atomic-design-system/00-token/t.spacing';
-@use 'src/atomic-design-system/00-token/t.color' as colors;
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
-@use 'src/atomic-design-system/00-token/t.font' as font;
 
-$color-navbar-link: var(--color-grey--900);
+$color-navbar-link: var(--kyanite-gray-15);
 
 @mixin o-navbar {
   // causes the element to establish a containing block for all descendants (used for fixed-position descendants)
@@ -37,10 +34,6 @@ $color-navbar-link: var(--color-grey--900);
       background-color: var(--kyanite-custom-navbar-dropdown-item-background-hover);
       color: var(--kyanite-custom-navbar-dropdown-item-text-hover);
     }
-  }
-
-  &.is-primary {
-    background-color: var(--color-primary--600);
   }
 
   &.is-transparent {
@@ -308,9 +301,9 @@ $color-navbar-link: var(--color-grey--900);
   }
 
   .label-megadropdown {
-    color: var(--color-grey--900);
+    color: var(--kyanite-gray-15);
     &:hover {
-      color: var(--color-grey--900);
+      color: var(--kyanite-gray-15);
     }
   }
 
@@ -389,7 +382,7 @@ $color-navbar-link: var(--color-grey--900);
           font-size: var(--font-size-16);
           font-weight: var(--kyanite-weight-semibold);
           line-height: var(--line-height-150);
-          color: var(--color-grey--500);
+          color: var(--kyanite-gray-60);
         }
 
         // distance between elements:

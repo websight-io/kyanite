@@ -19,8 +19,6 @@
 @use 'src/variables-helpers';
 
 @use 'src/atomic-design-system/00-token/t.spacing' as spacing;
-@use 'src/atomic-design-system/00-token/t.color' as color;
-@use 'src/atomic-design-system/00-token/t.font' as font;
 @use 'src/atomic-design-system/00-token/t.border' as border;
 @use 'src/atomic-design-system/01-atom/a.link' as link;
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as
@@ -32,7 +30,7 @@
   @extend .py-5_3;
 
   border-top: var(--border-weight-1) solid;
-  border-color: var(--color-primary--600) !important;
+  border-color: var(--kyanite-primary);
 
   > .id {
     @extend .t-gap-5;
@@ -49,7 +47,7 @@
 
       font-size: var(--font-size-24);
       font-weight: var(--kyanite-weight-semibold);
-      color: var(--color-grey--900) !important;
+      color: var(--kyanite-gray-15) !important;
     }
 
     .role {
@@ -57,7 +55,7 @@
       @extend .mt-1_2;
 
       font-weight: var(--kyanite-weight-semibold);
-      color: var(--color-primary--600) !important;
+      color: var(--kyanite-primary);
     }
   }
 
@@ -65,7 +63,7 @@
     @extend .mt-5_3;
     @extend .mb-0;
 
-    color: var(--color-grey--800) !important;
+    color: var(--kyanite-gray-30) !important;
   }
 
   // will be enabled with TODO https://teamds.atlassian.net/browse/WSIO-176

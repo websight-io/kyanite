@@ -15,21 +15,13 @@
  */
  
 @use 'sass:map';
-@use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/atomic-design-system/00-token/t.font/t.font-family' as font;
 @use 'src/variables-helpers' as variables;
 
 @use "src/../node_modules/bulma/sass" with (
   $cssvars-prefix: "kyanite-",
 
-  // Colors
-  $primary: #0053ff,
-  $link: #0053ff,
-  $success: #52c41a,
-  $warning: #fadb14,
-  $danger: #f5222d,
-  $light: #bbbbbb,
-  $dark: #494949,
+  $custom-colors: ("secondary": #00A297, "gray": #7f7f7f),
 
   // Spacing
   $spacing-shortcuts: variables.$spacing-shortcuts,
@@ -45,14 +37,81 @@
     --kyanite-code: #36464e;
     --kyanite-code-background: #f5f5f5;
     --kyanite-navbar-height: 3.25rem;
-    --kyanite-link: var(--color-primary--600);
+    --kyanite-link: var(--kyanite-primary);
     --kyanite-duration: 150ms;
     --kyanite-easing: ease-in-out;
     --kyanite-background: #fff;
 
-    --kyanite-custom-input-placeholder-color: var(--color-grey--700);
+    --kyanite-custom-input-placeholder-color: var(--kyanite-gray-40);
     --kyanite-custom-checkbox-radio-hover: #363636;
 
     --kyanite-custom-article-thumbnail-mdi-color: #000;
 
+    /* Colors */
+    --kyanite-white-bis: #f9f9fa;
+
+    --kyanite-primary-h: 220deg;
+    --kyanite-primary-s: 100%;
+    --kyanite-primary-l: 50%;
+    --kyanite-primary-100-l: 97%;
+    --kyanite-primary-invert: #fff;
+    --kyanite-primary-invert-l: 99%;
+  // results in:
+  // --kyanite-primary-100 
+  // --kyanite-primary-90
+  // --kyanite-primary-80
+  // --kyanite-primary-70
+  // --kyanite-primary-60
+  // --kyanite-primary-50
+  // --kyanite-primary-40
+  // --kyanite-primary-30
+  // --kyanite-primary-20
+  // --kyanite-primary-10 
+  // --kyanite-primary-00 - black
+  
+    --kyanite-link-h: 220deg;
+    --kyanite-link-s: 100%;
+    --kyanite-link-l: 50%;
+    --kyanite-link-100-l: 97%;
+  
+    --kyanite-text-h: 221deg;
+    --kyanite-text-s: 14%;
+    --kyanite-text-l: 29%;
+  
+    --kyanite-dark-h: 0deg;
+    --kyanite-dark-s: 0%;
+    --kyanite-dark-l: 29%;
+  
+    --kyanite-light-h: 0deg;
+    --kyanite-light-s: 0%;
+    --kyanite-light-l: 73%;
+  
+    --kyanite-danger-h: 357deg;
+    --kyanite-danger-s: 92%;
+    --kyanite-danger-l: 55%;
+    --kyanite-danger-100-l: 97%;
+  
+    --kyanite-warning-h: 52deg;
+    --kyanite-warning-s: 96%;
+    --kyanite-warning-l: 53%;
+    --kyanite-warning-100-l: 97%;
+  
+    --kyanite-success-h: 100deg;
+    --kyanite-success-s: 77%;
+    --kyanite-success-l: 44%;
+    --kyanite-success-100-l: 97%;
+  
+    --kyanite-info-h: 200deg;
+    --kyanite-info-s: 100%;
+    --kyanite-info-l: 50%;
+    --kyanite-info-100-l: 97%;
+  
+    --kyanite-gray-100-l: 98%;
+    --kyanite-gray-90-l: 88%;
+    --kyanite-gray-70-l: 73%;
+    --kyanite-gray-60-l: 58%;
+    --kyanite-gray-40-l: 41%;
+    --kyanite-gray-30-l: 29%;
+    --kyanite-gray-15-l: 16%;
+    --kyanite-gray-10-l: 9%;
 }

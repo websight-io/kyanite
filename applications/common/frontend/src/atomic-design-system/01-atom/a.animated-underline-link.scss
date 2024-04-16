@@ -16,17 +16,13 @@
  * -->
  */
 
-@use 'sass:map';
-
-@use 'src/atomic-design-system/00-token/t.color' as color;
-
 @mixin a-animated-underline-link {
   overflow: hidden;
   border-radius: 0;
   border: none;
 
   &::after {
-    background-color: var(--color-primary--600);
+    background-color: var(--kyanite-primary);
     content: '';
     display: block;
     margin-top: 3px;

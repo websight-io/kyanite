@@ -16,12 +16,11 @@
  * -->
  */
 
-@use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
 
 @mixin a-blog-back-button {
   @include link.a-animated-underline-link;
-  color: var(--color-grey--900) !important;
+  color: var(--kyanite-gray-15) !important;
   display: inline-block;
   overflow: hidden;
 }
