@@ -47,11 +47,11 @@ describe('Tiles layout', function () {
 
     cy.getByTestId(testIds.editIcon).click({ force: true });
 
-    cy.getByTestId('ModalDialog_Parenttile')
+    cy.getByTestId('ModalDialog_Parenttile(Deprecated)')
     .find('div[id^="size-uid"]').click();
     cy.contains('Is 7').click({ force: true });
 
-    cy.getByTestId('ModalDialog_Parenttile')
+    cy.getByTestId('ModalDialog_Parenttile(Deprecated)')
     .findByTestId('Input_Vertical').click();
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
@@ -83,11 +83,11 @@ describe('Tiles layout', function () {
 
     cy.getByTestId(testIds.editIcon).click({ force: true });
 
-    cy.getByTestId('ModalDialog_Childtile')
+    cy.getByTestId('ModalDialog_Childtile(Deprecated)')
     .find('div[id^="type-uid"]').click();
     cy.contains('Notification').click({ force: true });
 
-    cy.getByTestId('ModalDialog_Childtile')
+    cy.getByTestId('ModalDialog_Childtile(Deprecated)')
     .find('div[id^="variant-uid"]').click();
     cy.contains('Warning').click({ force: true });
 
