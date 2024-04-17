@@ -24,10 +24,16 @@
         <article class="id media">
           <figure class="photo media-left">
             <p class="image is-96x96">
-              <img data-sly-test.authorPhoto="${author.authorPhoto}"
-                   src="${authorPhoto}" alt="${author.authorPhotoAlt}"
-                   class="is-rounded"
-              />
+              <sly data-sly-set.leadsToAuthorPage="
+              ${ (    (author.authorOwnerPath != null)
+                  &&  (author.authorOwnerPath != currentPage.path) ) }"></sly>
+              <a data-sly-unwrap="${!leadsToAuthorPage}"
+                 href="${author.authorOwnerUrl}" target="">
+                <img data-sly-test.authorPhoto="${author.authorPhoto}"
+                     src="${authorPhoto}" alt="${author.authorPhotoAlt}"
+                     class="is-rounded"
+                />
+              </a>
             </p>
           </figure>
 

@@ -72,4 +72,8 @@ public class AuthorInfoModel {
   public String getAuthorPhoto() {
     return LinkUtil.handleLink(authorPhoto, resourceResolver);
   }
+
+  public String getAuthorOwnerUrl() {
+    return LinkUtil.handleLink(authorOwnerPath, resourceResolver);
+  }
 }
