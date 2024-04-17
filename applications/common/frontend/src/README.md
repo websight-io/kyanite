@@ -2,10 +2,6 @@
 
 Kyanite is based on the bulma library, so the approach used is partially imposed from the top. Bulma allows us to override it's variables in several ways, however our approach is to override it with [CSS variables](https://bulma.io/documentation/features/css-variables/). 
 
-# Development
-
-In the case of Bulma components, before adding a new variable, check (by inspecting code in the browser) whether Bulma does not already have a given variable for the component or in the `:root`, e.g. `—-kyanite-card-background-color`. If the variable is missing, create it according to the scheme: '-kyanite-custom' + component_name + description, e.g. `--kyanite-custom-input-placeholder-color`. Use given or created variable in styling component.
-
 ## Design
 
 [Design in Figma](https://www.figma.com/file/O02Ems00S1WqaOO2ICPhGx/WebSight.io---design-system%2Fcomponents-library?node-id=11-5036&t=7aZwEBfp2yk6ZtIG-0)
@@ -17,6 +13,23 @@ Design is **partially** based on Bulma variables, therefore some of them can be 
 ## Further reading
 
 [Bulma Concepts](https://bulma.io/documentation/customize/concepts/)
+
+
+# Development
+
+In the case of Bulma components, before adding a new variable, check (by inspecting code in the browser) whether Bulma does not already have a given variable for the component or in the `:root`, e.g. `—-kyanite-card-background-color`. If the variable is missing, create it according to the scheme: '--kyanite-custom' + component_name + description, e.g. `--kyanite-custom-input-placeholder-color`. Use given or created variable in styling component.
+
+## Creating new components
+
+When creating new component (not from Bulma), follow lighthouse rules (add aria-labels when needed, width and height attributes to img etc.). Also, when adding styles, create css variables for easy customization, especially for colors. You can take any Bulma component as an example. Add 'custom' in variable name (as written above). To create dark theme version, write your styles under `.theme-dark` css class. Light theme is the default theme. 
+
+When creating new component from Bulma the only difference is it has dark version, but some changes in kyanite can break it. Make sure that customization is made seemlessly for other themes.
+
+## Current components
+As dark theme was introduced after creating components, the significant amount of them is not customizable or does not looks good in dark theme template. It is desired to fill these style gaps when changing the component.
+
+## Light and dark mode
+Kyanite does not support light and dark system mode, it forces one of each with class from space template on `html` tag: `theme-dark` and `theme-light`. It can be used as a base color system for any new theme.
 
 
 ### Additional info
@@ -79,7 +92,7 @@ Custom gray (**notice the different spelling than the above**) scale (has all th
 
 Gray shades:
 ```css
---kyanite-gray-00 // black
+--kyanite-gray-00
 --kyanite-gray-10
 --kyanite-gray-15
 --kyanite-gray-20
@@ -97,9 +110,9 @@ Gray shades:
 
 Grey shades are generated from gray, gray color is created as any other color: with `h`, `s` and `l`:
 ```css
---kyanite-gray-h: {value}
---kyanite-gray-s: {value}
---kyanite-gray-l: {value}
+--kyanite-gray-h: {value} // eg. 240deg
+--kyanite-gray-s: {value} // eg. 70%
+--kyanite-gray-l: {value} // eg. 50%
 ```
 
 There is also another gray scale, dedicated for texts `--kyanite-text`

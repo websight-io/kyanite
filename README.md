@@ -61,6 +61,9 @@ Please check the community support section in [WebSight Starter](https://github.
 ## License
 Kyanite components is `open-source` project with `Apache License 2.0` license.
 
+## Light and dark mode
+Kyanite does not support light and dark system mode, it forces one of each with class from space template on `html` tag: `theme-dark` and `theme-light`. It can be used as a base color system for any new theme. 
+
 ## Creating a New Theme for Kyanite
 
 Kyanite supports creating custom themes, based on light or dark color palette.
