@@ -82,40 +82,61 @@ Begin by creating a new Page Space template. Add a `stylePath` property with the
 ```
 
 ### 2. Prepare Your Styles
-Create a CSS file containing your custom styles. Kyanite utilizes CSS Variables, enabling easy customization. Below are example variables you can overwrite:
+Create a CSS file containing your custom styles. Kyanite utilizes CSS Variables, enabling easy customization. All build-in colors (like `primary`, `secondary`, `gray`, `success`, `warning`, `danger`, `info`, `link`, `text`) are generated from **hsl** value:
+```css
+  --kyanite-primary-h: 220deg;
+  --kyanite-primary-s: 100%;
+  --kyanite-primary-l: 50%;
+```
+
+And then shades are generated (number indicates the lightness in hsl value):
+```css
+  --kyanite-primary-00
+  --kyanite-primary-10
+  --kyanite-primary-15
+  --kyanite-primary-20
+  --kyanite-primary-25
+  --kyanite-primary-30
+  --kyanite-primary-35
+  --kyanite-primary-40
+  --kyanite-primary-45
+  --kyanite-primary-50 // base primary color, same as --kyanite-primary
+  --kyanite-primary-55
+  ...
+  --kyanite-primary-95
+  --kyanite-primary-100
+```
+
+If some of the shade doesn't match the preferred color value, you can assign your own lightness (lightness it the only value you can manipulate), eg.
+```css
+--kyanite-primary-30-l: 32%
+```
+So the `--kyanite-primary-30` variable will have value: `hsl(220 100% 32%)` instead of `hsl(220 100% 30%)`
+
+
+These are the colors that can be overwritten in hex value (be aware of grey, which is different than gray):
+```css
+  --kyanite-black-bis: #14161a;
+  --kyanite-black-ter: #1f2229;
+  --kyanite-grey-darker: #2e333d;
+  --kyanite-grey-dark: #404654;
+  --kyanite-grey: #69748c;
+  --kyanite-grey-light: #abb1bf;
+  --kyanite-grey-lighter: #d6d9e0;
+  --kyanite-white-ter: #f3f4f6;
+  --kyanite-white-bis: #f9fafb;
+```
+
+Other global variables (for others, check `:root`):
 
 ```css
-    --color-primary--50: #F3F0FF;
-    --color-primary--100: #EBE4FF;
-    --color-primary--200: #D8CDFF;
-    --color-primary--300: #BDA6FF;
-    --color-primary--400: #9E73FF;
-    --color-primary--500: #823BFF;
-    --color-primary--600: #7714FF;
-    --color-primary--700: #6200EE;
-    --color-primary--800: #5901D6;
-    --color-primary--900: #4A03AF;
-    --color-primary--1000: #2C0077;
-
-    --color-secondary--50: #EFFEFB;
-    --color-secondary--100: #C7FFF5;
-    --color-secondary--200: #8FFFEC;
-    --color-secondary--300: #4FF9E1;
-    --color-secondary--400: #1BE6CF;
-    --color-secondary--500: #03DAC6;
-    --color-secondary--600: #00A297;
-    --color-secondary--700: #048179;
-    --color-secondary--800: #096662;
-    --color-secondary--900: #0D5450;
-    --color-secondary--1000: #003433;
-    
-    --kyanite-link: var(--color-primary--500);
-    --kyanite-code-background: #000;
-    --kyanite-code: #eaeaea;
-    --kyanite-background: #0A0A0B;
-    --kyanite-body-background-color: #0A0A0B;
-    --kyanite-text: #ECF5FF;
-    --kyanite-body-color: #ECF5FF;
+  --kyanite-link: var(--color-primary--500);
+  --kyanite-code-background: #000;
+  --kyanite-code: #eaeaea;
+  --kyanite-background: #0A0A0B;
+  --kyanite-body-background-color: #0A0A0B;
+  --kyanite-text: #ECF5FF;
+  --kyanite-body-color: #ECF5FF;
 ```
 
 If you wish to customize components, use css variables inside top level component's name class:

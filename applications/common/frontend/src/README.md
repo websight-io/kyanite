@@ -24,7 +24,7 @@ Design is **partially** based on Bulma variables, therefore some of them can be 
 Where you can, please use build-in [Bulma variables](https://bulma.io/documentation/features/css-variables/)
 
 Font weights:
-```
+```css
 --kyanite-weight-light: 300;
 --kyanite-weight-normal: 400;
 --kyanite-weight-medium: 500;
@@ -33,7 +33,7 @@ Font weights:
 --kyanite-weight-extrabold: 800;
 ```
 Base theme vars:
-```
+```css
 --kyanite-family-primary
 --kyanite-family-secondary
 --kyanite-navbar-height
@@ -56,9 +56,9 @@ Base theme vars:
 ```
 
 Base grey scale (has all the classes:
-is-{name}, has-text-{name}, is-background-{name}, has-background-{name}, eg. `has-background-grey`):
+`is-{name}`, `has-text-{name}`, `is-background-{name}`, `has-background-{name}`, eg. `has-background-grey`):
 
-```
+```css
 --kyanite-black-bis: #14161a;
 --kyanite-black-ter: #1f2229;
 --kyanite-grey-darker: #2e333d;
@@ -78,7 +78,7 @@ Custom gray (**notice the different spelling than the above**) scale (has all th
 
 
 Gray shades:
-```
+```css
 --kyanite-gray-00 // black
 --kyanite-gray-10
 --kyanite-gray-15
@@ -91,11 +91,12 @@ Gray shades:
 --kyanite-gray-50 // base gray color, 50% lightness (same as --kyanite-gray)
 --kyanite-gray-55
 ...
---kyanite-grey-100
+--kyanite-gray-95
+--kyanite-gray-100
 ```
 
 Grey shades are generated from gray, gray color is created as any other color: with `h`, `s` and `l`:
-```
+```css
 --kyanite-gray-h: {value}
 --kyanite-gray-s: {value}
 --kyanite-gray-l: {value}

@@ -22,7 +22,7 @@
   border: none;
 
   &::after {
-    background-color: var(--kyanite-primary);
+    background-color: var(--kyanite-custom-animated-link-underline-color);
     content: '';
     display: block;
     margin-top: 3px;
