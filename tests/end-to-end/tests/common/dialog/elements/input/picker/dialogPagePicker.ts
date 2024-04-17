@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,7 @@
  * limitations under the License.
  */
 
-export const selectors = {
-  overlayName: 'span.name',
-  autosuggestionsBox: '.autosuggestion-options'
-};
+import {DialogPathPicker} from "./dialogPathPicker";
 
-export const testIds = {
-  componentEditIcon:  'ToolbarItem_Properties',
-  pageEditIcon:       'Action_Properties',
-  dialogSubmitButton: 'Action_Submit'
-};
+export class DialogPagePicker extends DialogPathPicker {
+}

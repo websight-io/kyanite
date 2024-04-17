@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-export const selectors = {
-  overlayName: 'span.name',
-  autosuggestionsBox: '.autosuggestion-options'
-};
-
-export const testIds = {
-  componentEditIcon:  'ToolbarItem_Properties',
-  pageEditIcon:       'Action_Properties',
-  dialogSubmitButton: 'Action_Submit'
-};
+/**
+ *  Root class for dialog actions performed while testing
+ *  Common rules are:
+ *    - dialog must be opened before the action
+ *    - dialog must stay opened after the action
+ */
+export abstract class DialogAction {
+  abstract execute();
+}

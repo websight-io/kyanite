@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,11 @@
  * limitations under the License.
  */
 
-export const selectors = {
-  overlayName: 'span.name',
-  autosuggestionsBox: '.autosuggestion-options'
-};
+import {DialogInputField} from "../dialogInputField";
 
-export const testIds = {
-  componentEditIcon:  'ToolbarItem_Properties',
-  pageEditIcon:       'Action_Properties',
-  dialogSubmitButton: 'Action_Submit'
-};
+/**
+ *  While pathpicker as basically an input, separate class is introduced to apply
+ *  pathpicker-specific logic, e.g. validating the value or providing a default asset/page link
+ */
+export class DialogPathPicker extends DialogInputField {
+}

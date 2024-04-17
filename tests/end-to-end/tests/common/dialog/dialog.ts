@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,11 @@
  * limitations under the License.
  */
 
-export const selectors = {
-  overlayName: 'span.name',
-  autosuggestionsBox: '.autosuggestion-options'
-};
+export abstract class Dialog {
 
-export const testIds = {
-  componentEditIcon:  'ToolbarItem_Properties',
-  pageEditIcon:       'Action_Properties',
-  dialogSubmitButton: 'Action_Submit'
-};
+  static readonly defaults = {
+    assetLink: '/content/kyanite-e2e-tests/assets/images/image-thumbnail.svg',
+    pageLink: '/content/kyanite-e2e-tests/pages/'
+  }
+
+}

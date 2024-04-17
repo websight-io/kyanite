@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,28 @@
  * limitations under the License.
  */
 
-export const selectors = {
-  overlayName: 'span.name',
-  autosuggestionsBox: '.autosuggestion-options'
-};
+import {DialogClickableElement} from "./dialogClickableElement";
 
-export const testIds = {
-  componentEditIcon:  'ToolbarItem_Properties',
-  pageEditIcon:       'Action_Properties',
-  dialogSubmitButton: 'Action_Submit'
-};
+
+export class DialogRadioGroup extends DialogClickableElement {
+
+  private _selectedValue: string;
+
+  constructor(label: string, selectedValue: string) {
+    super(label);
+    this._selectedValue = selectedValue;
+  }
+
+  public set selectedValue(value: string) {
+    this._selectedValue = value;
+  }
+
+  protected getTestIdPrefix(): string {
+    return 'RadioElement';
+  }
+
+  protected getTestIdSuffix(): string {
+    return this._selectedValue;
+  }
+
+}

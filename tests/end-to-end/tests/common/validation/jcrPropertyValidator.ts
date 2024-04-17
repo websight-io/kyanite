@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,24 @@
  * limitations under the License.
  */
 
-export const selectors = {
-  overlayName: 'span.name',
-  autosuggestionsBox: '.autosuggestion-options'
-};
+/**
+ * Is capable of comparing component properties from JCR with expected result
+ */
+export abstract class JcrPropertyValidator {
 
-export const testIds = {
-  componentEditIcon:  'ToolbarItem_Properties',
-  pageEditIcon:       'Action_Properties',
-  dialogSubmitButton: 'Action_Submit'
-};
+  protected componentPath: string;
+
+  constructor(componentPath: string) {
+    this.componentPath = componentPath;
+  }
+
+  /**
+   * Get actual data from jCR repository
+   */
+  abstract refreshData();
+
+  /**
+   * compare jcr property value with expectation
+   */
+  abstract validate(propName: string, propValue: string);
+}

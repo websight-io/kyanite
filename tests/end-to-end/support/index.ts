@@ -15,15 +15,15 @@
  */
 
 import './commands';
-import { ExecutableOperation, WebSightAction } from './ws-action';
+import { SelectionMode } from "./types";
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace Cypress {
     interface Chainable {
       getPageIframe(): Chainable<any>;
-      getByTestId(testId: string): Chainable<JQuery<HTMLElement>>;
-      findByTestId(testId: string): Chainable<JQuery<HTMLElement>>;
+      getByTestId( testId: string, selectionMode?: SelectionMode): Chainable<JQuery<HTMLElement>>;
+      findByTestId(testId: string, selectionMode?: SelectionMode): Chainable<JQuery<HTMLElement>>;
       dragByTestId(targetTestId: string): void;
       listByTestIdPrefix(testIdPrefix: string): Chainable<JQuery<HTMLElement>>;
       saveDataAttrAsNumber(attrName: string, alias: string): void;

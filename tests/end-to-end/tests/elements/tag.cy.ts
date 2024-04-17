@@ -41,7 +41,7 @@ describe('Tag component', function () {
     .find(selectors.overlayName)
     .should('contain.text', 'Tag');
 
-    cy.getByTestId(testIds.editIcon).click({force: true});
+    cy.getByTestId(testIds.componentEditIcon).click({force: true});
 
     cy.getByTestId('ModalDialog_Tag')
     .findByTestId('Input_Label')

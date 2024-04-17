@@ -41,7 +41,7 @@ describe('Button component', function () {
     .find(selectors.overlayName)
     .should('contain.text', 'Buttons');
 
-    cy.getByTestId(testIds.editIcon).click({force: true});
+    cy.getByTestId(testIds.componentEditIcon).click({force: true});
 
     cy.getByTestId('ModalDialog_Buttons')
     .findByTestId('RadioElement_is-centered').click();

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,13 +14,28 @@
  * limitations under the License.
  */
 
-export const selectors = {
-  overlayName: 'span.name',
-  autosuggestionsBox: '.autosuggestion-options'
-};
+import {DialogAction} from "./dialogAction";
 
-export const testIds = {
-  componentEditIcon:  'ToolbarItem_Properties',
-  pageEditIcon:       'Action_Properties',
-  dialogSubmitButton: 'Action_Submit'
-};
+/**
+ *  Represents a queue of actions on a component/page dialog.
+ *  Can be used for combining a set of actions together
+ *  Basically is just a wrapper around List.
+ */
+export class DialogActionsQueue {
+
+  private queue: DialogAction[] = [];
+
+  public add(action: DialogAction){
+    this.queue.push(action);
+  }
+
+  public clear() {
+    this.queue.length = 0;
+  }
+
+  public execute() {
+    for (const action of this.queue) {
+      action.execute();
+    }
+  }
+}
