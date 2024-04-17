@@ -19,20 +19,114 @@
                 authorName="author-2 name"
                 authorPhoto="/content/kyanite-visual-tests/assets/blog-article-author-bio.png"
                 authorPhotoAlt="author-2 alt"
-                authorRole="author-2 role"/>
+                authorRole="author-2 role">
+            <socialMedia
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/blogs/components/blogarticleauthorbio/socialmedia">
+                <button
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/button"
+                        actionType="\0"
+                        isDisabled="false"
+                        isFullWidth="false"
+                        isInverted="false"
+                        isLight="false"
+                        isMailto="false"
+                        isOutlined="false"
+                        isRounded="false"
+                        label="\0"
+                        openInNewTab="true"
+                        openModal="open-modal"
+                        showIconLeft="true"
+                        showIconRight="false"
+                        size="is-normal"
+                        type="a"
+                        url="https://www.linkedin.com/company/websight-io"
+                        variant="is-ghost">
+                    <leftIcon
+                            jcr:primaryType="nt:unstructured"
+                            icon="mdi-linkedin"
+                            iconLibType="mdi"
+                            iconSize="mdi-36px"
+                            selectOrType="type"/>
+                    <rightIcon
+                            jcr:primaryType="nt:unstructured"
+                            icon="mdi-home-outline"
+                            iconLibType="mdi"
+                            iconSize="fa-lg"
+                            selectOrType="select"/>
+                </button>
+                <button_1
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/button"
+                        actionType="\0"
+                        isDisabled="false"
+                        isFullWidth="false"
+                        isInverted="false"
+                        isLight="false"
+                        isMailto="false"
+                        isOutlined="false"
+                        isRounded="false"
+                        label="\0"
+                        openInNewTab="true"
+                        openModal="open-modal"
+                        showIconLeft="true"
+                        showIconRight="false"
+                        size="is-normal"
+                        type="a"
+                        url="https://twitter.com/websight_io"
+                        variant="is-ghost">
+                    <leftIcon
+                            jcr:primaryType="nt:unstructured"
+                            icon="&amp;#120143;"
+                            iconLibType="symbols"
+                            iconSize="is-size-3"
+                            selectOrType="select"/>
+                    <rightIcon
+                            jcr:primaryType="nt:unstructured"
+                            icon="mdi-home-outline"
+                            iconLibType="mdi"
+                            iconSize="fa-lg"
+                            selectOrType="select"/>
+                </button_1>
+            </socialMedia>
+        </author>
         <pagecontainer
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/pagecontainer">
             <navbarreference
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/navbarreference"/>
-            <section
+            <authorBioSection
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/section">
                 <container
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="kyanite/common/components/container"/>
-            </section>
+                        sling:resourceType="kyanite/common/components/container">
+                    <blogarticleauthorbio
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/blogs/components/blogarticleauthorbio">
+                        <author
+                                jcr:primaryType="nt:unstructured"
+                                authorInfoSource="parentPage"/>
+                    </blogarticleauthorbio>
+                </container>
+            </authorBioSection>
+            <blogListSection
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/section">
+                <container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/container">
+                    <bloglist
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/blogs/components/bloglist">
+                        <author
+                                jcr:primaryType="nt:unstructured"
+                                authorInfoSource="parentPage"/>
+                    </bloglist>
+                </container>
+            </blogListSection>
             <footerreference
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/footerreference"/>
