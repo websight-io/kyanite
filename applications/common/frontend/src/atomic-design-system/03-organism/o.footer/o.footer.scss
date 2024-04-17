@@ -51,9 +51,8 @@
     }
   }
 
-  .content,
-  .content.has-text-gray-15 {
-    color: var(--kyanite-footer-color) !important;
+  .content {
+    color: var(--kyanite-footer-color);
 
     &.is-small {
       @extend .mt-5_1;
@@ -110,7 +109,7 @@
       display: inline-block;
       @include link.a-animated-underline-link;
       @extend .p-0;
-      color: var(--kyanite-footer-color) !important;
+      color: var(--kyanite-footer-color);
       background-color: inherit;
       width: auto;
 

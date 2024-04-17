@@ -126,6 +126,9 @@
     --kyanite-subtitle-color: var(--kyanite-gray-40);
     --kyanite-subtitle-weight: var(--kyanite-weight-semibold);
   }
+  .content {
+    --kyanite-custom-content-color: var(--kyanite-gray-40);
+  }
   .tabs {
     --kyanite-tabs-link-active-color: var(--kyanite-gray-15);
   }
