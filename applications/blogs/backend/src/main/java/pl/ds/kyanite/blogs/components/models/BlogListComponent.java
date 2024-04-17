@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import javax.annotation.PostConstruct;
@@ -38,6 +39,8 @@ import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.factory.ModelFactory;
+import org.jetbrains.annotations.Nullable;
+import pl.ds.kyanite.blogs.components.services.AuthorInfoResolverService;
 import pl.ds.kyanite.blogs.components.services.BlogArticleService;
 import pl.ds.kyanite.common.components.utils.LinkUtil;
 import pl.ds.websight.pages.core.api.Page;
@@ -54,12 +57,14 @@ public class BlogListComponent {
   @Getter
   @Default(values = CONTENT)
   private String link;
+
   public static final String JCR_CONTENT = "/jcr:content";
 
   private final ResourceResolver resourceResolver;
   private final BlogArticleService blogArticleService;
   private final ModelFactory modelFactory;
   private final Resource resource;
+  private final AuthorInfoResolverService authorInfoResolver;
 
   @Getter
   private List<BlogArticle> blogArticles;
@@ -71,12 +76,14 @@ public class BlogListComponent {
   public BlogListComponent(@SlingObject ResourceResolver resourceResolver,
                            @SlingObject Resource resource,
                            @OSGiService BlogArticleService blogArticleService,
-                           @OSGiService ModelFactory modelFactory) {
+                           @OSGiService ModelFactory modelFactory,
+                           @OSGiService AuthorInfoResolverService authorInfoResolver) {
     this.resourceResolver = resourceResolver;
     this.blogArticleService = blogArticleService;
     this.modelFactory = modelFactory;
     this.pageManager = resourceResolver.adaptTo(PageManager.class);
     this.resource = resource;
+    this.authorInfoResolver = authorInfoResolver;
   }
 
   @PostConstruct
@@ -106,17 +113,51 @@ public class BlogListComponent {
       filteredBlogPages = filteredBlogPages.skip(1);
     }
 
-    this.blogArticles = filteredBlogPages.filter(
-            res -> !featureBlogPagePaths.contains(
-                StringUtils.substringBefore(res.getPath(), JCR_CONTENT)))
+    //  apply featured blogs filter
+    Predicate<Resource> filterByFeaturedBlogPaths = res -> !(featureBlogPagePaths.contains(
+        StringUtils.substringBefore(res.getPath(), JCR_CONTENT)));
+    filteredBlogPages = filteredBlogPages.filter(filterByFeaturedBlogPaths);
+
+    //  apply author filter
+    final AuthorInfoModel authorInfo = retrieveAuthorInfo(this.resource);
+    if (authorInfo != null) {
+      filteredBlogPages = filteredBlogPages.filter(res -> hasSameAuthor(res, authorInfo));
+    }
+
+    this.blogArticles = filteredBlogPages
         .map(res ->
             BlogArticle.builder()
                 .link(LinkUtil.handleLink(
                     StringUtils.substringBefore(res.getPath(), JCR_CONTENT), resourceResolver))
                 .blogArticleHeader(modelFactory.createModel(res, BlogArticleHeaderModel.class))
+                .authorInfo(retrieveAuthorInfo(res))
                 .build()
         )
         .toList();
+  }
+
+  @Nullable
+  private AuthorInfoModel retrieveAuthorInfo(Resource resource) {
+    AuthorInfoModel authorInfo = null;
+    try {
+      authorInfo = this.authorInfoResolver.retrieveAuthorInfo(resource, this.resourceResolver);
+    } catch (Exception e) {
+      //  ignore error
+    }
+    return authorInfo;
+  }
+
+  /**
+   * Two components have the same author when their reference lead to the same page.
+   *
+   * @param page page Resource
+   * @param currentAuthor author set in BlogList component
+   * @return true, is the page refers to the same author page, false otherwise
+   */
+  private boolean hasSameAuthor(Resource page, AuthorInfoModel currentAuthor) {
+    AuthorInfoModel pageAuthor = retrieveAuthorInfo(page);
+    return pageAuthor != null
+        && currentAuthor.getAuthorPagePath().equals(pageAuthor.getAuthorPagePath());
   }
 
 }

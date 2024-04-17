@@ -1,0 +1,24 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "metadata": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Metadata",
+      "authorInfo": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/blogs/components/common/dialog/authorinfo",
+          "authorInfoSource": {
+            "parentPage": {
+              "sling:hideResource": true
+            },
+            "authorPage": {
+              "sling:hideResource": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

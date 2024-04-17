@@ -3,6 +3,10 @@
   "jcr:content": {
     "jcr:primaryType": "ws:PageContent",
     "sling:resourceType": "kyanite/blogs/components/blogarticlepage",
+    "author": {
+      "jcr:primaryType": "nt:unstructured",
+      "authorInfoSource": "authorPage"
+    },
     "navbarFixed": "true",
     "navbarFixedPosition": "has-navbar-fixed-top",
     "pagecontainer": {
@@ -67,7 +71,10 @@
                 "isNormalColumn": "true"
               },
               "blogarticleheader": {
-                "sling:resourceType": "kyanite/blogs/components/blogarticleheader"
+                "sling:resourceType": "kyanite/blogs/components/blogarticleheader",
+                "author": {
+                  "authorInfoSource": "parentPage"
+                }
               }
             },
             "column3": {

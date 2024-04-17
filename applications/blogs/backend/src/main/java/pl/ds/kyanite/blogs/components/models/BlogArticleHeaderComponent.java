@@ -20,7 +20,6 @@ import java.util.Objects;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -28,6 +27,9 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.factory.ModelFactory;
+import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingException;
+import pl.ds.kyanite.blogs.components.services.AuthorInfoResolverService;
+import pl.ds.kyanite.blogs.components.utils.ResourceUtil;
 
 @Model(
     adaptables = {Resource.class},
@@ -44,23 +46,46 @@ public class BlogArticleHeaderComponent {
   @Getter
   private BlogArticleHeaderModel blogArticleHeaderModel;
 
-  public static final String JCR_CONTENT = "/jcr:content";
+  @Getter
+  private AuthorInfoModel authorInfoModel;
+
+  @Getter
+  private String authorInfoErrMessage;
+
+  private final AuthorInfoResolverService authorInfoResolver;
 
   @Inject
-  public BlogArticleHeaderComponent(@SlingObject Resource resource,
-      @SlingObject ResourceResolver resourceResolver, @OSGiService ModelFactory modelFactory) {
-    this.resource = resource;
-    this.resourceResolver = resourceResolver;
-    this.modelFactory = modelFactory;
+  public BlogArticleHeaderComponent(
+      @SlingObject Resource resource,
+      @SlingObject ResourceResolver resourceResolver,
+      @OSGiService ModelFactory modelFactory,
+      @OSGiService AuthorInfoResolverService authorInfoResolver
+  ) {
+    this.resource           = resource;
+    this.resourceResolver   = resourceResolver;
+    this.modelFactory       = modelFactory;
+    this.authorInfoResolver = authorInfoResolver;
   }
 
   @PostConstruct
   private void init() {
-    final String pagePath =
-        StringUtils.substringBefore(resource.getPath(), JCR_CONTENT) + JCR_CONTENT;
-    final Resource currentPage = resourceResolver.getResource(pagePath);
+    resolveHeaderModel();
+    resolveAuthorInfo();
+  }
+
+  private void resolveHeaderModel() {
+    final Resource currentPage = ResourceUtil.getParentPageResource(resource, resourceResolver);
     if (Objects.nonNull(currentPage)) {
-      blogArticleHeaderModel = modelFactory.createModel(currentPage, BlogArticleHeaderModel.class);
+      final Resource pageContent = ResourceUtil.getContentNode(currentPage);
+      blogArticleHeaderModel = modelFactory.createModel(pageContent, BlogArticleHeaderModel.class);
+    }
+  }
+
+  private void resolveAuthorInfo() {
+    try {
+      authorInfoModel = authorInfoResolver.retrieveAuthorInfo(resource, resourceResolver);
+    } catch (AuthorInfoResolvingException e) {
+      authorInfoErrMessage = e.getMessage();
     }
   }
 

@@ -10,9 +10,6 @@
         ws:lastModified="{Date}2023-05-30T10:58:02.661Z"
         ws:lastModifiedBy="wsadmin"
         ws:template="/libs/kyanite/blogs/templates/blogarticlepage"
-        authorName="John Doe"
-        authorPhoto="/content/kyanite-visual-tests/assets/account-circle.png"
-        authorPhotoAlt="John Doe"
         description="This title is using a h6 sizing without eyebrow&#xa;&#xa;A high availability (HA) Kubernetes control plane is crucial for maintaining the efficient operation and reliability of applications and services. The control plane is the brain of a Kubernetes cluster; without it, your distributed system can degrade or break. Savvy organizations fortify the uptime and performance of their customers with a highly available control plane.&#xa;A control plane failure will prevent you from administering your cluster and could stop existing workloads from reacting to new events, data loss, and cluster failure. First, we’ll briefly cover what HA is for DigitalOcean Kubernetes, then answer your questions on what happens when your control plane fails and why it’s vital for production and business-critical apps."
         heroImage="/content/kyanite-visual-tests/assets/Windows XP.png"
         heroImageAlt="\0"
@@ -21,12 +18,22 @@
         publicationDate="2023-05-03"
         readTime="4"
         title="How a Kubernetes high availability control plane maximizes uptime and forfies realibility (h4 size)">
-        <pagecontainer
-            jcr:primaryType="nt:unstructured"
-            sling:resourceType="kyanite/common/components/pagecontainer">
-            <blogarticleheader
+        <author
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="kyanite/blogs/components/blogarticleheader"/>
+                authorInfoSource="ownProperties"
+                authorName="John Doe"
+                authorPhoto="/content/kyanite-visual-tests/assets/account-circle.png"
+                authorPhotoAlt="John Doe"/>
+        <pagecontainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="kyanite/common/components/pagecontainer">
+            <blogarticleheader
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/blogs/components/blogarticleheader">
+                <author
+                        jcr:primaryType="nt:unstructured"
+                        authorInfoSource="parentPage"/>
+            </blogarticleheader>
         </pagecontainer>
         <tags jcr:primaryType="nt:unstructured">
             <_x0030_

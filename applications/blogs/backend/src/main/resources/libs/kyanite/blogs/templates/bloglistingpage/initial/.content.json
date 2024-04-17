@@ -20,7 +20,11 @@
             "sling:resourceType": "kyanite/blogs/components/featuredblogarticle"
           },
           "bloglist": {
-            "sling:resourceType": "kyanite/blogs/components/bloglist"
+            "sling:resourceType": "kyanite/blogs/components/bloglist",
+            "author": {
+              "jcr:primaryType": "nt:unstructured",
+              "authorInfoSource": "parentPage"
+            }
           }
         }
       },

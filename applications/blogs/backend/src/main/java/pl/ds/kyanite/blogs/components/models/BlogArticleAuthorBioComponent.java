@@ -16,22 +16,17 @@
 
 package pl.ds.kyanite.blogs.components.models;
 
-import static pl.ds.kyanite.common.components.utils.LinkUtil.CONTENT;
-
-import java.util.Objects;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import org.apache.sling.models.factory.ModelFactory;
-import pl.ds.kyanite.common.components.utils.LinkUtil;
+import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingException;
+import pl.ds.kyanite.blogs.components.services.AuthorInfoResolverService;
 
 @Model(
     adaptables = {Resource.class},
@@ -43,38 +38,32 @@ public class BlogArticleAuthorBioComponent {
 
   private final ResourceResolver resourceResolver;
 
-  private final ModelFactory modelFactory;
+  private final AuthorInfoResolverService authorInfoResolver;
 
   @Getter
-  private BlogArticleHeaderModel blogArticleHeaderModel;
+  private AuthorInfoModel authorInfoModel;
+
+  @Getter
+  private String authorInfoErrMessage;
 
   @Inject
-  @Default(values = CONTENT)
-  private String link;
-
-  public static final String JCR_CONTENT = "/jcr:content";
-
-  @Inject
-  public BlogArticleAuthorBioComponent(@SlingObject Resource resource,
-                                       @SlingObject ResourceResolver resourceResolver,
-                                       @OSGiService ModelFactory modelFactory) {
-    this.resource = resource;
-    this.resourceResolver = resourceResolver;
-    this.modelFactory = modelFactory;
+  public BlogArticleAuthorBioComponent(
+      @SlingObject Resource resource,
+      @SlingObject ResourceResolver resourceResolver,
+      @OSGiService AuthorInfoResolverService authorInfoResolver
+  ) {
+    this.resource           = resource;
+    this.resourceResolver   = resourceResolver;
+    this.authorInfoResolver = authorInfoResolver;
   }
 
   @PostConstruct
   private void init() {
-    final String pagePath =
-        StringUtils.substringBefore(resource.getPath(), JCR_CONTENT) + JCR_CONTENT;
-    final Resource currentPage = resourceResolver.getResource(pagePath);
-    if (Objects.nonNull(currentPage)) {
-      blogArticleHeaderModel = modelFactory.createModel(currentPage, BlogArticleHeaderModel.class);
+    try {
+      authorInfoModel = authorInfoResolver.retrieveAuthorInfo(resource, resourceResolver);
+    } catch (AuthorInfoResolvingException e) {
+      authorInfoErrMessage = e.getMessage();
     }
-  }
-
-  public String getLink() {
-    return LinkUtil.handleLink(this.link, resourceResolver);
   }
 }
 
