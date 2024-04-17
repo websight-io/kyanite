@@ -5,7 +5,46 @@
     "sling:resourceType": "kyanite/blogs/components/authorbiopage",
     "author": {
       "jcr:primaryType": "nt:unstructured",
-      "authorInfoSource": "ownProperties"
+      "authorInfoSource": "ownProperties",
+      "socialMedia": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "kyanite/blogs/components/blogarticleauthorbio/socialmedia",
+        "button": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "kyanite/common/components/button",
+          "actionType": "\\0",
+          "isDisabled": "false",
+          "isFullWidth": "false",
+          "isInverted": "false",
+          "isLight": "false",
+          "isMailto": "false",
+          "isOutlined": "false",
+          "isRounded": "false",
+          "label": "\\0",
+          "openInNewTab": "true",
+          "openModal": "open-modal",
+          "showIconLeft": "true",
+          "showIconRight": "false",
+          "size": "is-normal",
+          "type": "a",
+          "url": "https://www.linkedin.com/company/websight-io",
+          "variant": "is-ghost",
+          "leftIcon": {
+            "jcr:primaryType": "nt:unstructured",
+            "icon": "mdi-linkedin",
+            "iconLibType": "mdi",
+            "iconSize": "mdi-36px",
+            "selectOrType": "type"
+          },
+          "rightIcon": {
+            "jcr:primaryType": "nt:unstructured",
+            "icon": "mdi-home-outline",
+            "iconLibType": "mdi",
+            "iconSize": "fa-lg",
+            "selectOrType": "select"
+          }
+        }
+      }
     },
     "navbarFixed": "true",
     "navbarFixedPosition": "has-navbar-fixed-top",

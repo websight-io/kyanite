@@ -65,6 +65,10 @@ public class AuthorInfoModel {
   @SlingObject
   private ResourceResolver resourceResolver;
 
+  @Getter
+  @ChildResource
+  private Resource socialMedia;
+
   public String getAuthorPhoto() {
     return LinkUtil.handleLink(authorPhoto, resourceResolver);
   }
