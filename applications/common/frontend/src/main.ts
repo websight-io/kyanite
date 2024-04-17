@@ -21,8 +21,3 @@ import './main.scss';
 import './helpers/load-events';
 import './components';
 import './emailDecryption';
-
-// TODO to be removed:
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelector('html').classList.add('theme-light');
-});

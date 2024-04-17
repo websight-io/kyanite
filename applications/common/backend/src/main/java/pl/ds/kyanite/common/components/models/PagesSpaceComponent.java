@@ -18,38 +18,34 @@ package pl.ds.kyanite.common.components.models;
 
 import javax.annotation.PostConstruct;
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import pl.ds.kyanite.common.components.utils.PagesSpaceUtil;
+import pl.ds.kyanite.common.components.utils.PageSpace;
 
-@Model(adaptables = Resource.class,
-    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
+@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class PagesSpaceComponent {
+
+  private static final String PN_THEME_CLASS = "theme";
+  private static final String DEFAULT_PAGE_THEME_CLASS = "theme-light";
 
   @SlingObject
   private Resource resource;
 
   @Getter
-  private String stylesPath;
+  private String themeClass;
 
   @PostConstruct
   private void init() {
-    stylesPath = initStylesPath();
+    themeClass = initThemeClass();
   }
 
-  private String initStylesPath() {
-    Resource pageSpace = PagesSpaceUtil.getSpace(resource.getPath(),
-        resource.getResourceResolver());
+  private String initThemeClass() {
+    PageSpace pageSpace = PageSpace.forResource(resource);
     if (pageSpace != null) {
-      String templatePath = pageSpace.getValueMap().get("ws:template", StringUtils.EMPTY);
-      Resource templateResource = resource.getResourceResolver().getResource(templatePath);
-      if (templateResource != null) {
-        return templateResource.getValueMap().get("stylesPath", StringUtils.EMPTY);
-      }
+      return pageSpace.getPageSpaceTemplateProperty(PN_THEME_CLASS, DEFAULT_PAGE_THEME_CLASS);
     }
-    return StringUtils.EMPTY;
+    return DEFAULT_PAGE_THEME_CLASS;
   }
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.common.components.helpers;
+package pl.ds.kyanite.common.components.models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,10 +36,10 @@ import pl.ds.kyanite.common.components.services.GoogleAnalyticsConfigStore;
 import pl.ds.kyanite.common.components.services.GoogleAnalyticsConfiguration;
 import pl.ds.kyanite.common.components.services.LibraryIconConfig;
 import pl.ds.kyanite.common.components.services.LibraryIconConfigStore;
-import pl.ds.kyanite.common.components.utils.PagesSpaceUtil;
+import pl.ds.kyanite.common.components.utils.PageSpace;
 
 @Model(adaptables = SlingHttpServletRequest.class)
-public class PageModel {
+public class PageHeadLibsComponent {
 
   @SlingObject
   private Resource resource;
@@ -53,8 +53,11 @@ public class PageModel {
   @Getter
   private List<IconLibraryConfig> iconLibraryConfigs = new ArrayList<>();
 
+  @Getter
+  private String stylesPath;
+
   @Inject
-  public PageModel(@OSGiService LibraryIconConfigStore libraryIconConfigStore,
+  public PageHeadLibsComponent(@OSGiService LibraryIconConfigStore libraryIconConfigStore,
       @OSGiService GoogleAnalyticsConfigStore googleAnalyticsConfigStore) {
     this.libraryIconConfigStore = libraryIconConfigStore;
     this.googleAnalyticsConfigStore = googleAnalyticsConfigStore;
@@ -62,22 +65,12 @@ public class PageModel {
 
   @PostConstruct
   public void init() {
-    List<LibraryIconConfig> allConfigs = libraryIconConfigStore.getAllConfigs();
-    iconLibraryConfigs = allConfigs
-        .stream().map(config -> {
-          List<String> attrs = List.of(config.getAttributes());
-          Map<String, String> attributes = attrs.stream()
-              .collect(Collectors.toMap(attribute -> attribute.split("=")[0],
-                  attribute -> attribute.split("=")[1]));
-          return IconLibraryConfig.builder()
-              .attributes(attributes)
-              .libraryUrl(config.getLibraryUrl())
-              .build();
-        })
-        .toList();
-    String spaceName = PagesSpaceUtil.getWsPagesSpaceName(resource.getPath(),
-        resource.getResourceResolver());
-    googleAnalyticsConfig = googleAnalyticsConfigStore.get(spaceName);
+    iconLibraryConfigs = initIconLibraryConfigs();
+    PageSpace pageSpace = PageSpace.forResource(resource);
+    if (pageSpace != null) {
+      googleAnalyticsConfig = googleAnalyticsConfigStore.get(pageSpace.getWsPagesSpaceName());
+      stylesPath = initStylesPath(pageSpace);
+    }
   }
 
   public String getGoogleAnalyticsUrl() {
@@ -109,6 +102,26 @@ public class PageModel {
           googleAnalyticsConfig.getGoogleAnalyticsScriptUrl());
     }
     return false;
+  }
+
+  private List<IconLibraryConfig> initIconLibraryConfigs() {
+    List<LibraryIconConfig> allConfigs = libraryIconConfigStore.getAllConfigs();
+    return allConfigs
+        .stream().map(config -> {
+          List<String> attrs = List.of(config.getAttributes());
+          Map<String, String> attributes = attrs.stream()
+              .collect(Collectors.toMap(attribute -> attribute.split("=")[0],
+                  attribute -> attribute.split("=")[1]));
+          return IconLibraryConfig.builder()
+              .attributes(attributes)
+              .libraryUrl(config.getLibraryUrl())
+              .build();
+        })
+        .toList();
+  }
+
+  private String initStylesPath(PageSpace pageSpace) {
+    return pageSpace.getPageSpaceTemplateProperty("stylePath", StringUtils.EMPTY);
   }
 
   @AllArgsConstructor

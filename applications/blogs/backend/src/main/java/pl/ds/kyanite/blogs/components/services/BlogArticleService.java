@@ -31,7 +31,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.osgi.service.component.annotations.Component;
-import pl.ds.kyanite.common.components.utils.PagesSpaceUtil;
+import pl.ds.kyanite.common.components.utils.PageSpace;
 import pl.ds.websight.pages.core.api.Page;
 
 
@@ -115,12 +115,12 @@ public class BlogArticleService {
   }
 
   private Stream<Page> streamRootPages(String resourcePath, ResourceResolver resourceResolver) {
-    Resource space = PagesSpaceUtil.getSpace(resourcePath, resourceResolver);
+    PageSpace space = PageSpace.forResource(resourcePath, resourceResolver);
     if (space == null) {
       return Stream.empty();
     }
 
-    return StreamSupport.stream(space.getChildren().spliterator(), false)
+    return StreamSupport.stream(space.getPageSpaceResource().getChildren().spliterator(), false)
         .map(pageResource -> pageResource.adaptTo(Page.class))
         .filter(Objects::nonNull);
   }
