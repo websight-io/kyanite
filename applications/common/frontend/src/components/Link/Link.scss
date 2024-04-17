@@ -19,7 +19,6 @@
 @use 'src/atomic-design-system/01-atom/a.link';
 
 .link {
-  --kyanite-custom-link-color: var(--kyanite-gray-15);
   @extend .a-link;
 
   &.is-small {

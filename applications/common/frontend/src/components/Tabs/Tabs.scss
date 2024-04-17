@@ -31,7 +31,6 @@
     & > div {
       display: flex;
       .tabs {
-        --kyanite-tabs-link-active-color: var(--kyanite-gray-15);
          & + div {
           flex: 1;
          }

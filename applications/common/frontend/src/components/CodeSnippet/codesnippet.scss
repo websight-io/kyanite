@@ -22,6 +22,17 @@
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 
 .code-snippet {
+  /* Default styles as code snippet is not from Bulma */
+  --kyanite-custom-codesnippet-title-color: var(--kyanite-text);
+  --kyanite-custom-codesnippet-code-background-color: var(--kyanite-background);
+  --kyanite-custom-codesnippet-icon-color: var(--kyanite-dark);
+  --kyanite-custom-codesnippet-icon-mobile-color: var(--kyanite-text);
+  --kyanite-custom-codesnippet-icon-hover-code-color: var(--kyanite-text);
+  --kyanite-custom-codesnippet-icon-hover-color: var(--kyanite-primary);
+  --kyanite-custom-codesnippet-icon-message-color: var(--kyanite-primary-100);
+  --kyanite-custom-codesnippet-icon-message-background-color: var(--kyanite-primary);
+  --kyanite-custom-codesnippet-border-color: var(--kyanite-light);
+
   $z-index-code-snippet: 0;
   $z-index-code-snippet-copy: 1;
 
@@ -35,7 +46,7 @@
 
     font-size: var(--font-size-14);
     font-weight: var(--kyanite-weight-bold);
-    color: var(--kyanite-gray-15) !important;
+    color: var(--kyanite-custom-codesnippet-title-color) !important;
 
     word-wrap: break-word;
 
@@ -53,13 +64,13 @@
     @extend .p-0, .pr-6_1;
 
     border-top: var(--border-weight-1) solid;
-    border-color: var(--kyanite-gray-90) !important;
-    background-color: var(--kyanite-white-bis);
+    border-color: var(--kyanite-custom-codesnippet-border-color) !important;
+    background-color: var(--kyanite-custom-codesnippet-code-background-color);
 
     > code {
       @extend .px-5;
 
-      background-color: var(--kyanite-white-bis) !important; // overwrite hljs (highlight.js)
+      background-color: var(--kyanite-custom-codesnippet-code-background-color) !important; // overwrite hljs (highlight.js)
     }
   }
 
@@ -78,23 +89,23 @@
     margin-top: var(--spacing-4);
 
     /* Color */
-    color: var(--kyanite-gray-15);
+    color: var(--kyanite-custom-codesnippet-icon-mobile-color);
 
     /* Others */
     cursor: pointer;
 
     @include breakpoint.media-breakpoint-large {
-      color: var(--kyanite-gray-90);
+      color: var(--kyanite-custom-codesnippet-icon-color);
     }
   }
 
   @include breakpoint.media-breakpoint-large {
     // icon - on container hover
     &:hover > .code-snippet__icon {
-      color: var(--kyanite-gray-15);
+      color: var(--kyanite-custom-codesnippet-icon-hover-code-color);
 
       &:hover {
-        color: var(--kyanite-primary);
+        color: var(--kyanite-custom-codesnippet-icon-hover-color);
       }
     }
   }
@@ -126,8 +137,8 @@
     );
 
     /* Colors */
-    background-color: var(--kyanite-primary);
-    color: var(--kyanite-primary-100);
+    background-color: var(--kyanite-custom-codesnippet-icon-message-background-color);
+    color: var(--kyanite-custom-codesnippet-icon-message-color);
 
     /* Text */
     text-align: center;
@@ -160,7 +171,7 @@
         rotate(45deg);
 
       /* Colors */
-      background-color: var(--kyanite-primary);
+      background-color: var(--kyanite-custom-codesnippet-icon-message-background-color);
 
       /* Others */
       content: ' ';

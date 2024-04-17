@@ -19,9 +19,5 @@
 @use 'src/atomic-design-system/03-organism/o.footer' as footer;
 
 .footer {
-  --kyanite-footer-background-color: var(--kyanite-gray-10);
-  --kyanite-footer-color: var(--kyanite-white-bis);
-  --kyanite-custom-footer-menu-label: var(--kyanite-gray-70);
-
   @include footer.o-footer;
 }

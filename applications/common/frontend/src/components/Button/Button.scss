@@ -19,12 +19,9 @@
 @use 'src/atomic-design-system/01-atom/a.button';
 
 .button {
-  --kyanite-control-radius: var(--border-radius-1) !important;
   @extend .a-button;
 
   &.is-ghost {
-    --kyanite-button-ghost-color: var(--kyanite-gray-15);
-    --kyanite-button-ghost-hover-color: var(--kyanite-primary);
     @extend .a-button-ghost;
   }
 

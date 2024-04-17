@@ -19,7 +19,5 @@
 @use 'src/atomic-design-system/01-atom/a.tag' as tag;
 
 .tag {
-  --kyanite-custom-tag-background: #2a2a2a;
-  --kyanite-custom-tag-text: #FFF;
   @include tag.a-tag-default;
 }
