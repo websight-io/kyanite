@@ -20,7 +20,7 @@
 
 @mixin a-blog-back-button {
   @include link.a-animated-underline-link;
-  color: var(--kyanite-gray-15) !important;
+  color: var(--kyanite-body-color) !important;
   display: inline-block;
   overflow: hidden;
 }

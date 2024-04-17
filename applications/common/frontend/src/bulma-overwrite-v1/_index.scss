@@ -49,7 +49,10 @@
 
     --kyanite-custom-animated-link-underline-color: var(--kyanite-primary); // footer, navbar and content
 
-    --kyanite-custom-article-thumbnail-mdi-color: #000;
+    --kyanite-custom-article-mdi-color: #000;
+    --kyanite-custom-article-title-color: var(--kyanite-gray-15);
+    --kyanite-custom-article-author-color: var(--kyanite-gray-15);
+    --kyanite-custom-article-info-color: var(--kyanite-gray-40);
 
     /* Colors */
     --kyanite-white-bis: #f9f9fa;

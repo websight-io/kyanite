@@ -20,7 +20,7 @@
 @use 'src/atomic-design-system/00-token/t.font' as font;
 
 @mixin m-article-thumbnail {
-  color: var(--kyanite-gray-15) !important;
+  color: var(--kyanite-custom-article-title-color);
   @extend .mb-5_4;
 
   .content {
@@ -35,7 +35,7 @@
 
     .title {
       @extend .mb-4;
-      color: var(--kyanite-gray-15) !important;
+      color: var(--kyanite-custom-article-title-color);
     }
   }
 
@@ -45,7 +45,7 @@
     @include font.t-font-size-fluid(22, 32);
 
 
-    color: var(--kyanite-custom-article-thumbnail-mdi-color);
+    color: var(--kyanite-custom-article-mdi-color);
     transform: rotate(45deg);
   }
 
@@ -57,17 +57,17 @@
 
   .content-info-details {
     .author-content {
-      color: var(--kyanite-gray-15) !important;
+      color: var(--kyanite-custom-article-author-color);
       @extend .pr-5;
     }
 
     .date-content {
-      color: var(--kyanite-gray-40) !important;
+      color: var(--kyanite-custom-article-info-color);
       @extend .pr-3;
     }
 
     .time-content {
-      color: var(--kyanite-gray-40) !important;
+      color: var(--kyanite-custom-article-info-color);
     }
   }
 }
