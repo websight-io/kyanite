@@ -22,7 +22,7 @@
   border-left: var(--border-weight-3) solid;
   border-radius: var(--border-radius-2);
 
-  box-shadow: 0 0.2rem 0.5rem rgb(0 0 0 / 5%), 0 0 0.05rem rgb(0 0 0 / 10%);
+  box-shadow: var(--kyanite-shadow);
 
   .message-header {
     color: var(--kyanite-gray-15) !important;

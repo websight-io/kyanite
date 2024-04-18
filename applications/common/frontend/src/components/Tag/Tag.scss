@@ -16,8 +16,9 @@
  * -->
  */
 
-@use 'src/atomic-design-system/01-atom/a.tag' as tag;
-
 .tag {
-  @include tag.a-tag-default;
+  --kyanite-tag-h: 0deg;
+  --kyanite-tag-s: 0%;
+  --kyanite-tag-background-l: 16%;
+  --kyanite-tag-color-l: 100%;
 }

@@ -18,26 +18,8 @@
 
 @use 'src/variables-helpers';
 
-@mixin a-tag-default-color {
-  &:not(.is-primary, .is-secondary, .is-success, .is-danger, .is-warning, .is-info, .is-link, .is-dark, .is-light, .is-info, .is-white) {
-    background-color: var(--kyanite-custom-tag-background);
-    color: var(--kyanite-custom-tag-text);
-  }
-}
-
-/* default tag style */
-@mixin a-tag-default {
-
-  &:not(body) {
-    @include a-tag-default-color;
-  }
-}
-
 /* tag style in some context */
 @mixin a-tag-contextual {
-
-  @include a-tag-default-color;
-
   border-radius: var(--border-radius-1);
   font-weight: var(--kyanite-weight-semibold);
   @extend .px-4;
