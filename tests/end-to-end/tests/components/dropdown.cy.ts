@@ -40,7 +40,7 @@ describe('Dropdown component', function () {
     .find(selectors.overlayName)
     .should('contain.text', 'Dropdown');
 
-    cy.getByTestId(testIds.editIcon).click({ force: true });
+    cy.getByTestId(testIds.componentEditIcon).click({ force: true });
 
     cy.getByTestId('ModalDialog_Dropdown')
       .findByTestId('Input_Labelofadropdown').clear().type('Label');

@@ -44,7 +44,7 @@ describe('Hero component', function () {
       .find(selectors.overlayName)
       .should('contain.text', 'Hero');
 
-    cy.getByTestId(testIds.editIcon).click({ force: true });
+    cy.getByTestId(testIds.componentEditIcon).click({ force: true });
 
     cy.getByTestId('ModalDialog_Hero')
       .find('div[id^="size-uid"]').click();

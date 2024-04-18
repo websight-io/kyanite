@@ -1,5 +1,6 @@
 {
   "jcr:primaryType": "nt:unstructured",
+  "renderAsHero": "false",
   "sling:resourceType": "kyanite/common/components/section",
   "container": {
     "jcr:primaryType": "nt:unstructured",

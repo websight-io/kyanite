@@ -35,19 +35,21 @@
     white-space: normal;
   }
 
-  .buttons.hidden-from-all {
-    display: none;
-  }
-
-  .buttons.hidden-from-tablet {
-    @include breakpoint.media-breakpoint-medium {
+  .buttons {
+    &.hidden-from-all {
       display: none;
     }
-  }
 
-  .buttons.hidden-from-desktop {
-    @include breakpoint.media-breakpoint-large {
-      display: none;
+    &.hidden-from-tablet {
+      @include breakpoint.media-breakpoint-medium {
+        display: none;
+      }
+    }
+
+    &.hidden-from-desktop {
+      @include breakpoint.media-breakpoint-large {
+        display: none;
+      }
     }
   }
 }

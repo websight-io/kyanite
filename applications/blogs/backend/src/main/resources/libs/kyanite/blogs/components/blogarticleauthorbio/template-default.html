@@ -40,36 +40,21 @@
           <div class="media-content">
             <div class="content">
               <p data-sly-test.authorName="${author.authorName}"
-                 class="name">
-                ${authorName}
-              </p>
+                 class="name">${authorName}</p>
               <p data-sly-test.authorRole="${author.authorRole}"
-                 class="role">
-                ${authorRole}
-              </p>
+                 class="role">${authorRole}</p>
             </div>
           </div>
         </article>
 
         <div class="description content">
-          <p data-sly-test.authorDescription="${author.authorDescription}">
-            ${authorDescription}
-          </p>
+          <p data-sly-test.authorDescription="${author.authorDescription}">${authorDescription}</p>
         </div>
 
-        <!--/*
-              TODO https://teamds.atlassian.net/browse/WSIO-176
-        */-->
-        <!--/*
-        <a data-sly-test.authorName="${author.authorName}"
-           class="link is-medium is-dark">
-          ${authorName}'s other articles <span class="mdi mdi-arrow-top-right"></span>
-        </a>
-        */-->
       </div>
       <div class="author-bio-block social-media">
         <sly data-sly-set.socialMediaMode=
-           "${ (    (author.authorOwnerPath == currentPage.path)
+                 "${ (    (author.authorOwnerPath == currentPage.path)
                  || (author.authorOwnerPath == resource.path))
                ? wcmmode.editModeAttribute
                : wcmmode.previewModeAttribute}"></sly>

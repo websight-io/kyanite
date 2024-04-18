@@ -62,3 +62,13 @@ Cypress.Commands.add('login', () => {
     });
   });
 });
+
+Cypress.on('uncaught:exception', (err) => {
+  return !(
+      //  ignore ResizeObserver error triggering infinite loop
+         err.message.includes('ResizeObserver loop limit exceeded')
+      || err.message.includes('ResizeObserver loop completed with undelivered notifications')
+      // Needed to stabilize drag-and-drop related tests
+      || err.message.includes('Cannot call hover after drop')
+  );
+});
