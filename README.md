@@ -103,7 +103,7 @@ And then shades are generated (number indicates the lightness in hsl value):
   --kyanite-primary-35
   --kyanite-primary-40
   --kyanite-primary-45
-  --kyanite-primary-50 // base primary color, same as --kyanite-primary
+  --kyanite-primary-50
   --kyanite-primary-55
   ...
   --kyanite-primary-95

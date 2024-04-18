@@ -101,7 +101,7 @@ Gray shades:
 --kyanite-gray-35
 --kyanite-gray-40
 --kyanite-gray-45
---kyanite-gray-50 // base gray color, 50% lightness (same as --kyanite-gray)
+--kyanite-gray-50
 --kyanite-gray-55
 ...
 --kyanite-gray-95
