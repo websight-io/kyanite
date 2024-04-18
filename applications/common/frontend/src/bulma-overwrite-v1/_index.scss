@@ -21,7 +21,7 @@
 @use "src/../node_modules/bulma/sass" with (
   $cssvars-prefix: "kyanite-",
 
-  $custom-colors: ("secondary": #00A297, "gray": #7f7f7f),
+  $custom-colors: ("secondary": #00A297, "gray": #7f7f7f), // #7F7F7F old grey-600
 
   // Spacing
   $spacing-shortcuts: variables.$spacing-shortcuts,
@@ -32,6 +32,8 @@
 );
 
 :root {
+
+  /* Global styles */
     --kyanite-family-primary: #{map.get(font.$map_t-fonts, 'BeVietnamPro')};
     --kyanite-text: #494949;
     --kyanite-code: #36464e;
@@ -44,6 +46,7 @@
 
     --kyanite-radius: 2px;
 
+    /* Components default styles - not from Bulma */
     --kyanite-custom-input-placeholder-color: var(--kyanite-gray-40);
     --kyanite-custom-checkbox-radio-hover: #363636;
 
@@ -53,6 +56,32 @@
     --kyanite-custom-article-title-color: var(--kyanite-gray-15);
     --kyanite-custom-article-author-color: var(--kyanite-gray-15);
     --kyanite-custom-article-info-color: var(--kyanite-gray-40);
+
+    --kyanite-custom-navbar-megamenu-background: var(--kyanite-white-bis);
+    --kyanite-custom-navbar-item-color-hover: var(--kyanite-gray-15);
+    --kyanite-custom-navbar-dropdown-item-background-hover: #f5f5f5;
+    --kyanite-custom-navbar-dropdown-item-text-hover: #0a0a0a;
+
+    --kyanite-custom-content-color: var(--kyanite-gray-40);
+
+    --kyanite-custom-codesnippet-title-color: var(--kyanite-text);
+    --kyanite-custom-codesnippet-code-background-color: var(--kyanite-background);
+    --kyanite-custom-codesnippet-icon-color: var(--kyanite-dark);
+    --kyanite-custom-codesnippet-icon-mobile-color: var(--kyanite-text);
+    --kyanite-custom-codesnippet-icon-hover-code-color: var(--kyanite-text);
+    --kyanite-custom-codesnippet-icon-hover-color: var(--kyanite-primary);
+    --kyanite-custom-codesnippet-icon-message-color: var(--kyanite-primary-100);
+    --kyanite-custom-codesnippet-icon-message-background-color: var(--kyanite-primary);
+    --kyanite-custom-codesnippet-border-color: var(--kyanite-light);
+
+    --kyanite-custom-tag-background: #2a2a2a;
+    --kyanite-custom-tag-text: #FFF;
+
+    --kyanite-custom-link-color: var(--kyanite-gray-15);
+
+    --kyanite-custom-footer-menu-label: var(--kyanite-gray-70);
+    /* End of default styles - not from Bulma */
+
 
     /* Colors */
     --kyanite-white-bis: #f9f9fa;
@@ -101,18 +130,18 @@
     --kyanite-info-l: 50%;
     --kyanite-info-100-l: 97%;
   
-    --kyanite-gray-100-l: 98%;
-    --kyanite-gray-90-l: 88%;
-    --kyanite-gray-70-l: 73%;
-    --kyanite-gray-60-l: 58%;
-    --kyanite-gray-40-l: 41%;
-    --kyanite-gray-30-l: 29%;
-    --kyanite-gray-15-l: 16%;
-    --kyanite-gray-10-l: 9%;
+    --kyanite-gray-100-l: 98%;// #fafafa - old grey-100 was #F9F9FA (different hue)
+    --kyanite-gray-90-l: 88%; // #e1e1e1 old grey-300
+    --kyanite-gray-70-l: 73%; // #BBBBBB old grey-400
+    --kyanite-gray-60-l: 58%; // #959595 old grey-500
+    --kyanite-gray-40-l: 41%; // #686868 old grey-700
+    --kyanite-gray-30-l: 29%; // #494949 old grey-800
+    --kyanite-gray-15-l: 16%; // #2A2A2A old grey-900
+    --kyanite-gray-10-l: 9%;  // #181818 old grey-1000
 }
 
 .theme-light {
-  .navbar {
+  // .navbar {
     --kyanite-navbar-background-color: var(--kyanite-white);
     --kyanite-navbar-burger-color: var(--kyanite-gray-40);
     
@@ -120,22 +149,22 @@
     --kyanite-custom-navbar-item-color-hover: var(--kyanite-gray-15);
     --kyanite-custom-navbar-dropdown-item-background-hover: #f5f5f5;
     --kyanite-custom-navbar-dropdown-item-text-hover: #0a0a0a;
-  }
-  .title {
+  // }
+  // .title {
     --kyanite-title-color: var(--kyanite-gray-15);
     --kyanite-title-weight: var(--kyanite-weight-bold);
-  }
-  .subtitle {
+  // }
+  // .subtitle {
     --kyanite-subtitle-color: var(--kyanite-gray-40);
     --kyanite-subtitle-weight: var(--kyanite-weight-semibold);
-  }
-  .content {
+  // }
+  // .content {
     --kyanite-custom-content-color: var(--kyanite-gray-40);
-  }
-  .tabs {
+  // }
+  // .tabs {
     --kyanite-tabs-link-active-color: var(--kyanite-gray-15);
-  }
-  .code-snippet {
+  // }
+  // .code-snippet {
     --kyanite-custom-codesnippet-title-color: var(--kyanite-gray-15);
     --kyanite-custom-codesnippet-code-background-color: var(--kyanite-white-bis);
     --kyanite-custom-codesnippet-icon-color: var(--kyanite-gray-90);
@@ -145,28 +174,28 @@
     --kyanite-custom-codesnippet-icon-message-color: var(--kyanite-primary-100);
     --kyanite-custom-codesnippet-icon-message-background-color: var(--kyanite-primary);
     --kyanite-custom-codesnippet-border-color: var(--kyanite-gray-90);
-  }
-  .tag {
+  // }
+  // .tag {
     --kyanite-custom-tag-background: #2a2a2a;
     --kyanite-custom-tag-text: #FFF;
-  }
-  .button {
+  // }
+  // .button {
     --kyanite-control-radius: var(--border-radius-1) !important;
-    &.is-ghost {
+    // &.is-ghost {
       --kyanite-button-ghost-color: var(--kyanite-gray-15);
       --kyanite-button-ghost-hover-color: var(--kyanite-primary);
-    }
-  }
-  .card {
+  //   }
+  // }
+  // .card {
     --kyanite-card-background-color: #FFF;
     --kyanite-card-footer-border-top: #ededed;
-  }
-  .link {
+  // }
+  // .link {
     --kyanite-custom-link-color: var(--kyanite-gray-15);
-  }
-  .footer {
+  // }
+  // .footer {
     --kyanite-footer-background-color: var(--kyanite-gray-10);
     --kyanite-footer-color: var(--kyanite-white-bis);
     --kyanite-custom-footer-menu-label: var(--kyanite-gray-70);
-  }
+//   }
 }

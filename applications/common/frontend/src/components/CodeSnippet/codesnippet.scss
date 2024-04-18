@@ -22,17 +22,6 @@
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 
 .code-snippet {
-  /* Default styles as code snippet is not from Bulma */
-  --kyanite-custom-codesnippet-title-color: var(--kyanite-text);
-  --kyanite-custom-codesnippet-code-background-color: var(--kyanite-background);
-  --kyanite-custom-codesnippet-icon-color: var(--kyanite-dark);
-  --kyanite-custom-codesnippet-icon-mobile-color: var(--kyanite-text);
-  --kyanite-custom-codesnippet-icon-hover-code-color: var(--kyanite-text);
-  --kyanite-custom-codesnippet-icon-hover-color: var(--kyanite-primary);
-  --kyanite-custom-codesnippet-icon-message-color: var(--kyanite-primary-100);
-  --kyanite-custom-codesnippet-icon-message-background-color: var(--kyanite-primary);
-  --kyanite-custom-codesnippet-border-color: var(--kyanite-light);
-
   $z-index-code-snippet: 0;
   $z-index-code-snippet-copy: 1;
 

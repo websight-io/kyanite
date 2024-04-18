@@ -20,8 +20,6 @@
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
 
-// $color-navbar-link: var(--kyanite-gray-15);
-
 @mixin o-navbar {
   // causes the element to establish a containing block for all descendants (used for fixed-position descendants)
   // https://www.w3.org/TR/css-transforms-1/#containing-block-for-all-descendants
