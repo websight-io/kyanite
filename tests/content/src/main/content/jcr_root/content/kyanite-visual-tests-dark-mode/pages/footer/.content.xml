@@ -51,14 +51,7 @@
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
-                                color="grey_has-text-grey"
-                                text="&lt;p>Making the world a better place through constructing elegant hierarchies.&lt;/p>">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                text="&lt;p>Making the world a better place through constructing elegant hierarchies.&lt;/p>"/>
                             <icon
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/icon"
@@ -86,16 +79,9 @@
                             <content_1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
-                                color="grey_has-text-grey"
                                 size="is-small"
                                 text="&lt;p>Built with WebSight CMS&lt;/p>"
-                                textWeight="has-text-weight-light">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content_1>
+                                textWeight="has-text-weight-light"/>
                         </column1>
                         <column2
                             jcr:primaryType="nt:unstructured"

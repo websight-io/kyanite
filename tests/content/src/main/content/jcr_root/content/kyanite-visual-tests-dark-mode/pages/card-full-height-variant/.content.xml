@@ -51,13 +51,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/title"
                                 size="is-2"
-                                text="&lt;p>full height - BE missing&lt;/p>">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title>
+                                text="&lt;p>full height - BE missing&lt;/p>"/>
                         </cardcontent>
                         <image
                             jcr:primaryType="nt:unstructured"
@@ -103,13 +97,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/title"
                                 size="is-2"
-                                text="&lt;p>full height - BE missing&lt;/p>">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title>
+                                text="&lt;p>full height - BE missing&lt;/p>"/>
                         </cardcontent>
                         <image
                             jcr:primaryType="nt:unstructured"
@@ -158,13 +146,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/title"
                                 size="is-6"
-                                text="&lt;p>default (no height variant) - BE missing&lt;/p>">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title>
+                                text="&lt;p>default (no height variant) - BE missing&lt;/p>"/>
                         </cardcontent>
                         <image
                             jcr:primaryType="nt:unstructured"
@@ -209,13 +191,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/title"
                                 size="is-6"
-                                text="&lt;p>default (no height variant) - BE missing&lt;/p>">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title>
+                                text="&lt;p>default (no height variant) - BE missing&lt;/p>"/>
                         </cardcontent>
                         <image
                             jcr:primaryType="nt:unstructured"
@@ -265,13 +241,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/title"
                                 size="is-2"
-                                text="&lt;p>full height - BE missing&lt;/p>">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title>
+                                text="&lt;p>full height - BE missing&lt;/p>"/>
                         </cardcontent>
                         <image
                             jcr:primaryType="nt:unstructured"
@@ -316,13 +286,7 @@
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/title"
                                 size="is-6"
-                                text="&lt;p>default (no height variant) - BE missing&lt;/p>">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title>
+                                text="&lt;p>default (no height variant) - BE missing&lt;/p>"/>
                         </cardcontent>
                         <image
                             jcr:primaryType="nt:unstructured"

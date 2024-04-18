@@ -23,24 +23,11 @@
                 <title
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/title"
-                    text="default/default">
-                    <grey jcr:primaryType="nt:unstructured"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest
-                        jcr:primaryType="nt:unstructured"
-                        shade="900"/>
-                </title>
+                    text="default/default"/>
                 <content
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/content"
-                    color="grey_has-text-grey"
-                    text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>">
-                    <grey
-                        jcr:primaryType="nt:unstructured"
-                        shade="darker"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest jcr:primaryType="nt:unstructured"/>
-                </content>
+                    text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>"/>
             </container>
             <container_1
                 jcr:primaryType="nt:unstructured"
@@ -48,25 +35,12 @@
                 <title
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/title"
-                    text="extra small/default">
-                    <grey jcr:primaryType="nt:unstructured"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest
-                        jcr:primaryType="nt:unstructured"
-                        shade="900"/>
-                </title>
+                    text="extra small/default"/>
                 <content
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/content"
-                    color="grey_has-text-grey"
                     size="is-xsmall"
-                    text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>">
-                    <grey
-                        jcr:primaryType="nt:unstructured"
-                        shade="darker"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest jcr:primaryType="nt:unstructured"/>
-                </content>
+                    text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>"/>
             </container_1>
             <container_1_1
                 jcr:primaryType="nt:unstructured"
@@ -74,25 +48,12 @@
                 <title
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/title"
-                    text="small/default">
-                    <grey jcr:primaryType="nt:unstructured"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest
-                        jcr:primaryType="nt:unstructured"
-                        shade="900"/>
-                </title>
+                    text="small/default"/>
                 <content
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/content"
-                    color="grey_has-text-grey"
                     size="is-small"
-                    text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>">
-                    <grey
-                        jcr:primaryType="nt:unstructured"
-                        shade="darker"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest jcr:primaryType="nt:unstructured"/>
-                </content>
+                    text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>"/>
             </container_1_1>
             <container_1_1_1
                 jcr:primaryType="nt:unstructured"
@@ -100,25 +61,12 @@
                 <title
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/title"
-                    text="medium/default">
-                    <grey jcr:primaryType="nt:unstructured"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest
-                        jcr:primaryType="nt:unstructured"
-                        shade="900"/>
-                </title>
+                    text="medium/default"/>
                 <content
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/content"
-                    color="grey_has-text-grey"
                     size="is-medium"
-                    text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>">
-                    <grey
-                        jcr:primaryType="nt:unstructured"
-                        shade="darker"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest jcr:primaryType="nt:unstructured"/>
-                </content>
+                    text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>"/>
             </container_1_1_1>
             <container_1_1_1_1
                 jcr:primaryType="nt:unstructured"
@@ -126,25 +74,12 @@
                 <title
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/title"
-                    text="large/default">
-                    <grey jcr:primaryType="nt:unstructured"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest
-                        jcr:primaryType="nt:unstructured"
-                        shade="900"/>
-                </title>
+                    text="large/default"/>
                 <content
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/content"
-                    color="grey_has-text-grey"
                     size="is-large"
-                    text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>">
-                    <grey
-                        jcr:primaryType="nt:unstructured"
-                        shade="darker"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest jcr:primaryType="nt:unstructured"/>
-                </content>
+                    text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>"/>
             </container_1_1_1_1>
             <container_1_1_1_1_1
                 jcr:primaryType="nt:unstructured"
@@ -152,25 +87,12 @@
                 <title
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/title"
-                    text="extra large/default">
-                    <grey jcr:primaryType="nt:unstructured"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest
-                        jcr:primaryType="nt:unstructured"
-                        shade="900"/>
-                </title>
+                    text="extra large/default"/>
                 <content
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/content"
-                    color="grey_has-text-grey"
                     size="is-xlarge"
-                    text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>">
-                    <grey
-                        jcr:primaryType="nt:unstructured"
-                        shade="darker"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest jcr:primaryType="nt:unstructured"/>
-                </content>
+                    text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>"/>
             </container_1_1_1_1_1>
             <container_1_1_1_1_1_1
                 jcr:primaryType="nt:unstructured"
@@ -178,25 +100,12 @@
                 <title
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/title"
-                    text="default/light">
-                    <grey jcr:primaryType="nt:unstructured"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest
-                        jcr:primaryType="nt:unstructured"
-                        shade="900"/>
-                </title>
+                    text="default/light"/>
                 <content
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/content"
-                    color="grey_has-text-grey"
                     text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>"
-                    textWeight="has-text-weight-light">
-                    <grey
-                        jcr:primaryType="nt:unstructured"
-                        shade="darker"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest jcr:primaryType="nt:unstructured"/>
-                </content>
+                    textWeight="has-text-weight-light"/>
             </container_1_1_1_1_1_1>
             <container_1_1_1_1_1_1_1
                 jcr:primaryType="nt:unstructured"
@@ -204,25 +113,12 @@
                 <title
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/title"
-                    text="default/normal">
-                    <grey jcr:primaryType="nt:unstructured"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest
-                        jcr:primaryType="nt:unstructured"
-                        shade="900"/>
-                </title>
+                    text="default/normal"/>
                 <content
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/content"
-                    color="grey_has-text-grey"
                     text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>"
-                    textWeight="has-text-weight-normal">
-                    <grey
-                        jcr:primaryType="nt:unstructured"
-                        shade="darker"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest jcr:primaryType="nt:unstructured"/>
-                </content>
+                    textWeight="has-text-weight-normal"/>
             </container_1_1_1_1_1_1_1>
             <container_1_1_1_1_1_1_1_1
                 jcr:primaryType="nt:unstructured"
@@ -230,25 +126,12 @@
                 <title
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/title"
-                    text="default/medium">
-                    <grey jcr:primaryType="nt:unstructured"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest
-                        jcr:primaryType="nt:unstructured"
-                        shade="900"/>
-                </title>
+                    text="default/medium"/>
                 <content
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/content"
-                    color="grey_has-text-grey"
                     text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>"
-                    textWeight="has-text-weight-medium">
-                    <grey
-                        jcr:primaryType="nt:unstructured"
-                        shade="darker"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest jcr:primaryType="nt:unstructured"/>
-                </content>
+                    textWeight="has-text-weight-medium"/>
             </container_1_1_1_1_1_1_1_1>
             <container_1_1_1_1_1_1_1_1_1
                 jcr:primaryType="nt:unstructured"
@@ -256,25 +139,12 @@
                 <title
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/title"
-                    text="default/semi-bold">
-                    <grey jcr:primaryType="nt:unstructured"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest
-                        jcr:primaryType="nt:unstructured"
-                        shade="900"/>
-                </title>
+                    text="default/semi-bold"/>
                 <content
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/content"
-                    color="grey_has-text-grey"
                     text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>"
-                    textWeight="has-text-weight-semibold">
-                    <grey
-                        jcr:primaryType="nt:unstructured"
-                        shade="darker"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest jcr:primaryType="nt:unstructured"/>
-                </content>
+                    textWeight="has-text-weight-semibold"/>
             </container_1_1_1_1_1_1_1_1_1>
             <container_1_1_1_1_1_1_1_1_1_1
                 jcr:primaryType="nt:unstructured"
@@ -282,25 +152,12 @@
                 <title
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/title"
-                    text="default/bold">
-                    <grey jcr:primaryType="nt:unstructured"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest
-                        jcr:primaryType="nt:unstructured"
-                        shade="900"/>
-                </title>
+                    text="default/bold"/>
                 <content
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/content"
-                    color="grey_has-text-grey"
                     text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>"
-                    textWeight="has-text-weight-bold">
-                    <grey
-                        jcr:primaryType="nt:unstructured"
-                        shade="darker"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest jcr:primaryType="nt:unstructured"/>
-                </content>
+                    textWeight="has-text-weight-bold"/>
             </container_1_1_1_1_1_1_1_1_1_1>
             <container_1_1_1_1_1_1_1_1_1_1_1
                 jcr:primaryType="nt:unstructured"
@@ -308,26 +165,13 @@
                 <title
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/title"
-                    text="extra-small/light">
-                    <grey jcr:primaryType="nt:unstructured"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest
-                        jcr:primaryType="nt:unstructured"
-                        shade="900"/>
-                </title>
+                    text="extra-small/light"/>
                 <content
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/content"
-                    color="grey_has-text-grey"
                     size="is-xsmall"
                     text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>"
-                    textWeight="has-text-weight-light">
-                    <grey
-                        jcr:primaryType="nt:unstructured"
-                        shade="darker"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest jcr:primaryType="nt:unstructured"/>
-                </content>
+                    textWeight="has-text-weight-light"/>
             </container_1_1_1_1_1_1_1_1_1_1_1>
             <container_1_1_1_1_1_1_1_1_1_1_1_1
                 jcr:primaryType="nt:unstructured"
@@ -335,26 +179,13 @@
                 <title
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/title"
-                    text="extra-large/bold">
-                    <grey jcr:primaryType="nt:unstructured"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest
-                        jcr:primaryType="nt:unstructured"
-                        shade="900"/>
-                </title>
+                    text="extra-large/bold"/>
                 <content
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/content"
-                    color="grey_has-text-grey"
                     size="is-xlarge"
                     text="&lt;p>&lt;/p>&lt;ol>&lt;li>&lt;p>numbered list&lt;/p>&lt;/li>&lt;/ol>&lt;ul>&lt;li>&lt;p>unordered list&lt;/p>&lt;/li>&lt;/ul>&lt;p>&lt;strong>voluptatem&lt;/strong> &lt;u>laudantium&lt;/u> &lt;s>aperiam&lt;/s>, &lt;em>blablat&lt;/em> &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;/&quot;>quasi&lt;/a>&lt;/p>&lt;p>&lt;strong>left&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: center&quot;>&lt;strong>center&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: right&quot;>&lt;strong>right&lt;/strong> align&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;strong>Justify content align&lt;/strong> nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.&lt;/p>&lt;p style=&quot;text-align: justify&quot;>&lt;/p>"
-                    textWeight="has-text-weight-bold">
-                    <grey
-                        jcr:primaryType="nt:unstructured"
-                        shade="darker"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest jcr:primaryType="nt:unstructured"/>
-                </content>
+                    textWeight="has-text-weight-bold"/>
             </container_1_1_1_1_1_1_1_1_1_1_1_1>
         </pagecontainer>
     </jcr:content>

@@ -87,79 +87,37 @@
                                 addEyebrow="false"
                                 addSubtitle="false"
                                 anchorId="title1"
-                                color="rest_has-text-grey"
                                 element="h5"
                                 size="is-6"
-                                text="&lt;p>The evolution of WWW and its impact on content management systems&lt;/p>">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title_1>
+                                text="&lt;p>The evolution of WWW and its impact on content management systems&lt;/p>"/>
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
-                                color="grey_has-text-grey"
-                                text="&lt;p>The first website in history was published on August the 6th, 1991 by Tim Berners Lee. While working at CERN, Berners Lee was frustrated with the fact that there is so much knowledge spread with the thousands of researchers employed at CERN and yet… it is near impossible to access and use it. In his own words:&lt;/p>&lt;p style=&quot;text-align: start&quot;>“I found myself answering the same questions asked frequently of me by different people. It would be so much easier if everyone could just read my database.”&lt;/p>&lt;p style=&quot;text-align: start&quot;>It took some serious work and negotiations from the London-born physicist to convince his boss to allow him to work on the project then called “Information Management” (later changed to WorldWideWeb). The website below is the key milestone of that project:&lt;/p>">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                text="&lt;p>The first website in history was published on August the 6th, 1991 by Tim Berners Lee. While working at CERN, Berners Lee was frustrated with the fact that there is so much knowledge spread with the thousands of researchers employed at CERN and yet… it is near impossible to access and use it. In his own words:&lt;/p>&lt;p style=&quot;text-align: start&quot;>“I found myself answering the same questions asked frequently of me by different people. It would be so much easier if everyone could just read my database.”&lt;/p>&lt;p style=&quot;text-align: start&quot;>It took some serious work and negotiations from the London-born physicist to convince his boss to allow him to work on the project then called “Information Management” (later changed to WorldWideWeb). The website below is the key milestone of that project:&lt;/p>"/>
                             <title
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/title"
                                 addEyebrow="false"
                                 anchorId="title2"
-                                color="rest_has-text-grey"
                                 element="h6"
                                 size="is-6"
-                                text="&lt;p>DXP - a revolution or “just” next step?&lt;/p>">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title>
+                                text="&lt;p>DXP - a revolution or “just” next step?&lt;/p>"/>
                             <content_1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
-                                color="grey_has-text-grey"
-                                text="&lt;p>&lt;strong>So what is a DXP?&lt;/strong> In essence, a DXP is a technological suite, at heart of which could be the CMS. The suite should be powered by an architecture with loosely - coupled elements that allows you to easily plug in tools (personalization engines, marketing automation, CRM etc.) that improve your user and customer experience. Most importantly however, that architecture should be able to serve all your visitors, channels and data volume now, tomorrow and three years from now, when it becomes even more challenging (as indicated by Professor Smil in his book).&lt;/p>&lt;p style=&quot;text-align: start&quot;>&lt;strong>Is DXP a revolution then?&lt;/strong> In my opinion no, it is the next step, just like Web 2.0 CMS was the next step from Web 1.0 CMS. &lt;strong>Does it require a shift in technical design from what it initially was?&lt;/strong> Yes, definitely.&lt;/p>">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content_1>
+                                text="&lt;p>&lt;strong>So what is a DXP?&lt;/strong> In essence, a DXP is a technological suite, at heart of which could be the CMS. The suite should be powered by an architecture with loosely - coupled elements that allows you to easily plug in tools (personalization engines, marketing automation, CRM etc.) that improve your user and customer experience. Most importantly however, that architecture should be able to serve all your visitors, channels and data volume now, tomorrow and three years from now, when it becomes even more challenging (as indicated by Professor Smil in his book).&lt;/p>&lt;p style=&quot;text-align: start&quot;>&lt;strong>Is DXP a revolution then?&lt;/strong> In my opinion no, it is the next step, just like Web 2.0 CMS was the next step from Web 1.0 CMS. &lt;strong>Does it require a shift in technical design from what it initially was?&lt;/strong> Yes, definitely.&lt;/p>"/>
                             <title_2
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/title"
                                 addEyebrow="false"
                                 anchorId="title3"
-                                color="rest_has-text-grey"
                                 element="h6"
                                 size="is-6"
-                                text="&lt;p>DXP - should you care?&lt;/p>">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title_2>
+                                text="&lt;p>DXP - should you care?&lt;/p>"/>
                             <content_1_1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
-                                color="grey_has-text-grey"
-                                text="&lt;p>Yes, you should. Here is why:&lt;/p>&lt;ol>&lt;li>&lt;p>Digital Experience Platform market size will be worth $15.80 Billion by 2025 &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://www.prnewswire.com/news-releases/digital-experience-platform-market-size-worth-15-80-billion-by-2025-grand-view-research-inc-300957088.html&quot;>3&lt;/a>, &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://www.statista.com/statistics/1306566/digital-experience-platform-market-size/&quot;>4&lt;/a>&lt;/p>&lt;/li>&lt;li>&lt;p>65% of North American consumers say they trust a business less when they experience a problem using a website or mobile app &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://www.fullstory.com/blog/digital-experience-consumer-survey/&quot;>5&lt;/a>&lt;/p>&lt;/li>&lt;li>&lt;p>55% of customers prefer digital channels over traditional channels &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://www.fullstory.com/blog/digital-experience-consumer-survey/&quot;>5&lt;/a>&lt;/p>&lt;/li>&lt;li>&lt;p>32% consumers say they will walk away from a brand &lt;strong>they love&lt;/strong> after just one bad experience &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://www.pwc.com/us/en/advisory-services/publications/consumer-intelligence-series/pwc-consumer-intelligence-series-customer-experience.pdf&quot;>6&lt;/a>&lt;/p>&lt;/li>&lt;/ol>&lt;p style=&quot;text-align: start&quot;>If a company has a digital presence and wants to keep up with user’s growing expectations - a DXP should be on their radar.&lt;/p>">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content_1_1>
+                                text="&lt;p>Yes, you should. Here is why:&lt;/p>&lt;ol>&lt;li>&lt;p>Digital Experience Platform market size will be worth $15.80 Billion by 2025 &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://www.prnewswire.com/news-releases/digital-experience-platform-market-size-worth-15-80-billion-by-2025-grand-view-research-inc-300957088.html&quot;>3&lt;/a>, &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://www.statista.com/statistics/1306566/digital-experience-platform-market-size/&quot;>4&lt;/a>&lt;/p>&lt;/li>&lt;li>&lt;p>65% of North American consumers say they trust a business less when they experience a problem using a website or mobile app &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://www.fullstory.com/blog/digital-experience-consumer-survey/&quot;>5&lt;/a>&lt;/p>&lt;/li>&lt;li>&lt;p>55% of customers prefer digital channels over traditional channels &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://www.fullstory.com/blog/digital-experience-consumer-survey/&quot;>5&lt;/a>&lt;/p>&lt;/li>&lt;li>&lt;p>32% consumers say they will walk away from a brand &lt;strong>they love&lt;/strong> after just one bad experience &lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer nofollow&quot; href=&quot;https://www.pwc.com/us/en/advisory-services/publications/consumer-intelligence-series/pwc-consumer-intelligence-series-customer-experience.pdf&quot;>6&lt;/a>&lt;/p>&lt;/li>&lt;/ol>&lt;p style=&quot;text-align: start&quot;>If a company has a digital presence and wants to keep up with user’s growing expectations - a DXP should be on their radar.&lt;/p>"/>
                         </column4>
                     </columns1>
                 </container>

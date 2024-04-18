@@ -18,14 +18,7 @@
             <content_2
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/content"
-                color="grey_has-text-grey"
-                text="&lt;p>Primary (type button)&lt;/p>">
-                <grey
-                    jcr:primaryType="nt:unstructured"
-                    shade="darker"/>
-                <bw jcr:primaryType="nt:unstructured"/>
-                <rest jcr:primaryType="nt:unstructured"/>
-            </content_2>
+                text="&lt;p>Primary (type button)&lt;/p>"/>
             <buttons
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/buttons"
@@ -49,14 +42,7 @@
             <content_1
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/content"
-                color="grey_has-text-grey"
-                text="&lt;p>Secondary (type button)&lt;/p>">
-                <grey
-                    jcr:primaryType="nt:unstructured"
-                    shade="darker"/>
-                <bw jcr:primaryType="nt:unstructured"/>
-                <rest jcr:primaryType="nt:unstructured"/>
-            </content_1>
+                text="&lt;p>Secondary (type button)&lt;/p>"/>
             <buttons_2
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/buttons">
@@ -79,14 +65,7 @@
             <content
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/content"
-                color="grey_has-text-grey"
-                text="&lt;p>Ghost (type button)&lt;/p>">
-                <grey
-                    jcr:primaryType="nt:unstructured"
-                    shade="darker"/>
-                <bw jcr:primaryType="nt:unstructured"/>
-                <rest jcr:primaryType="nt:unstructured"/>
-            </content>
+                text="&lt;p>Ghost (type button)&lt;/p>"/>
             <buttons_1
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/buttons">
@@ -109,14 +88,7 @@
             <content_3
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/content"
-                color="grey_has-text-grey"
-                text="&lt;p>Primary (type anchor)&lt;/p>">
-                <grey
-                    jcr:primaryType="nt:unstructured"
-                    shade="darker"/>
-                <bw jcr:primaryType="nt:unstructured"/>
-                <rest jcr:primaryType="nt:unstructured"/>
-            </content_3>
+                text="&lt;p>Primary (type anchor)&lt;/p>"/>
             <buttons_3
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/buttons">
@@ -145,14 +117,7 @@
             <content_4
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/content"
-                color="grey_has-text-grey"
-                text="&lt;p>Secondary (type anchor)&lt;/p>">
-                <grey
-                    jcr:primaryType="nt:unstructured"
-                    shade="darker"/>
-                <bw jcr:primaryType="nt:unstructured"/>
-                <rest jcr:primaryType="nt:unstructured"/>
-            </content_4>
+                text="&lt;p>Secondary (type anchor)&lt;/p>"/>
             <buttons_2_1
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/buttons">
@@ -181,14 +146,7 @@
             <content_5
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/content"
-                color="grey_has-text-grey"
-                text="&lt;p>Ghost (type anchor)&lt;/p>">
-                <grey
-                    jcr:primaryType="nt:unstructured"
-                    shade="darker"/>
-                <bw jcr:primaryType="nt:unstructured"/>
-                <rest jcr:primaryType="nt:unstructured"/>
-            </content_5>
+                text="&lt;p>Ghost (type anchor)&lt;/p>"/>
             <buttons_2_1_1
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/buttons">

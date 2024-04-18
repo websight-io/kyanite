@@ -23,13 +23,7 @@
                 <title
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/title"
-                    text="WSIO-41 Level item - feature small">
-                    <grey jcr:primaryType="nt:unstructured"/>
-                    <bw jcr:primaryType="nt:unstructured"/>
-                    <rest
-                        jcr:primaryType="nt:unstructured"
-                        shade="900"/>
-                </title>
+                    text="WSIO-41 Level item - feature small"/>
                 <level
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/level"
@@ -56,29 +50,17 @@
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
-                                color="rest_has-text-primary"
+                                color="has-text-primary"
                                 size="is-medium"
                                 text="&lt;p>Eyebrow for feature&lt;/p>"
-                                textWeight="has-text-weight-medium">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                textWeight="has-text-weight-medium"/>
                             <content1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>Feature name goes here&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content1>
+                                textWeight="has-text-weight-bold"/>
                         </container>
                     </featuresmall_3>
                     <featuresmall_3_1
@@ -96,29 +78,17 @@
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
-                                color="rest_has-text-primary"
+                                color="has-text-primary"
                                 size="is-medium"
                                 text="&lt;p>Eyebrow for feature&lt;/p>"
-                                textWeight="has-text-weight-medium">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                textWeight="has-text-weight-medium"/>
                             <content1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>Feature name goes here&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content1>
+                                textWeight="has-text-weight-bold"/>
                         </container>
                     </featuresmall_3_1>
                     <featuresmall_3_1_1
@@ -145,13 +115,7 @@
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>Feature name goes here&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content1>
+                                textWeight="has-text-weight-bold"/>
                         </container>
                     </featuresmall_3_1_1>
                 </level>
@@ -181,29 +145,17 @@
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
-                                color="rest_has-text-primary"
+                                color="has-text-primary"
                                 size="is-medium"
                                 text="&lt;p>Eyebrow for feature&lt;/p>"
-                                textWeight="has-text-weight-medium">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                textWeight="has-text-weight-medium"/>
                             <content1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>Feature name goes here&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content1>
+                                textWeight="has-text-weight-bold"/>
                         </container>
                     </featuresmall_3>
                     <featuresmall_3_1
@@ -221,29 +173,17 @@
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
-                                color="rest_has-text-primary"
+                                color="has-text-primary"
                                 size="is-medium"
                                 text="&lt;p>Eyebrow for feature&lt;/p>"
-                                textWeight="has-text-weight-medium">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                textWeight="has-text-weight-medium"/>
                             <content1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>Feature name goes here&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content1>
+                                textWeight="has-text-weight-bold"/>
                         </container>
                     </featuresmall_3_1>
                     <featuresmall_3_1_1
@@ -270,13 +210,7 @@
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>Feature name goes here&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content1>
+                                textWeight="has-text-weight-bold"/>
                         </container>
                     </featuresmall_3_1_1>
                 </level_1>
