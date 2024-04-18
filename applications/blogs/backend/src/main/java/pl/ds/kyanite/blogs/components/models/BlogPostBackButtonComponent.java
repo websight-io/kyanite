@@ -27,6 +27,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import pl.ds.kyanite.common.components.utils.LinkUtil;
 import pl.ds.websight.pages.core.api.Page;
 import pl.ds.websight.pages.core.api.PageManager;
@@ -45,6 +46,10 @@ public class BlogPostBackButtonComponent {
 
   @Getter
   private String link;
+
+  @ValueMapValue
+  @Getter
+  private boolean isHidden;
 
   @Inject
   public BlogPostBackButtonComponent(@SlingObject ResourceResolver resourceResolver,

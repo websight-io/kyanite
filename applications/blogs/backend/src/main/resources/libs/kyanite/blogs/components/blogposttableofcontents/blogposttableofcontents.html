@@ -17,26 +17,31 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.blogs.components.models.BlogPostTableOfContentsComponent">
-    <div data-sly-test="${model.items}" class="blog-table-of-content">
-        <label class="table-label">${model.title}</label>
-        <ul class="table-content-list">
-            <div data-sly-list.item="${model.items}" data-sly-unwrap>
-                <sly data-sly-test="${item.title}">
-                    <li class="button is-ghost table-content-list__item--${item.headingLevel}">
-                        <a class="" data-sly-attribute.href="#${item.url}">
-                            ${item.title}
-                        </a>
-                    </li>
-                </sly>
-            </div>
-        </ul>
-        <sly data-sly-test="${model.showBackToTopButton}">
-            <a class="table-content-button" data-sly-attribute.href="#">
-                <span class="table-content-button__label">
-                    <span class="mdi mdi-arrow-up"></span>
-                    <span>${model.backToTopButtonLabel}</span>
-                </span>
-            </a>
-        </sly>
-    </div>
+    <sly data-sly-test="${model.isHidden && wcmmode.isEdit}">
+        <div class="blog-back-button-placeholder">This component will be hidden on the page.</div>
+    </sly>
+    <sly data-sly-test="${!model.isHidden}">
+        <div data-sly-test="${model.items}" class="blog-table-of-content">
+            <label class="table-label">${model.title}</label>
+            <ul class="table-content-list">
+                <div data-sly-list.item="${model.items}" data-sly-unwrap>
+                    <sly data-sly-test="${item.title}">
+                        <li class="button is-ghost table-content-list__item--${item.headingLevel}">
+                            <a class="" data-sly-attribute.href="#${item.url}">
+                                ${item.title}
+                            </a>
+                        </li>
+                    </sly>
+                </div>
+            </ul>
+            <sly data-sly-test="${model.showBackToTopButton}">
+                <a class="table-content-button" data-sly-attribute.href="#">
+                    <span class="table-content-button__label">
+                        <span class="mdi mdi-arrow-up"></span>
+                        <span>${model.backToTopButtonLabel}</span>
+                    </span>
+                </a>
+            </sly>
+        </div>
+    </sly>
 </sly>

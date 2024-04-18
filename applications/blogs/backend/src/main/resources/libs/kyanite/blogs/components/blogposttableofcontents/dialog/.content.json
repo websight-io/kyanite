@@ -5,6 +5,11 @@
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
+      "isHidden": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "label": "Hide component?",
+        "name": "isHidden"
+      },
       "title": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "label": "Title",
