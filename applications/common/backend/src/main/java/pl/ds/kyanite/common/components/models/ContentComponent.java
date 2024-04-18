@@ -22,10 +22,7 @@ import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.Required;
-import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import pl.ds.kyanite.common.components.services.ColorService;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContentComponent {
@@ -45,24 +42,17 @@ public class ContentComponent {
   private String textWeight;
 
   @Inject
+  @Getter
   private String color;
 
   @SlingObject
   private Resource resource;
-
-  @Getter
-  private String textColorVariant;
-
-  @OSGiService
-  @Required
-  private ColorService colorService;
 
   @PostConstruct
   private void init() {
     if (text.isEmpty()) {
       text = DEFAULT_TEXT;
     }
-    this.textColorVariant = colorService.getShadeClass(resource, color, "shade");
   }
 
 }

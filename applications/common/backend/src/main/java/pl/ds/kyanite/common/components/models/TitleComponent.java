@@ -28,11 +28,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.Required;
-import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.jetbrains.annotations.NotNull;
-import pl.ds.kyanite.common.components.services.ColorService;
 
 @Model(adaptables = Resource.class,
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
@@ -124,10 +121,6 @@ public class TitleComponent {
   @Getter
   private Integer delay;
 
-  @OSGiService
-  @Required
-  private ColorService colorService;
-
   @SlingObject
   private Resource resource;
 
@@ -150,13 +143,11 @@ public class TitleComponent {
       titleClassList.add("is-spaced");
     }
 
-    titleClassList.add(colorService.getShadeClass(resource, color, "shade"));
-    subtitleClassList.add(colorService.getShadeClass(resource, subtitleColor,
-        "subtitleShade"));
+    titleClassList.add(color);
+    subtitleClassList.add(subtitleColor);
 
     List<String> endingsClassList = new ArrayList<>();
-    endingsClassList.add(colorService.getShadeClass(resource, endingsColor,
-        "typedShade"));
+    endingsClassList.add(endingsColor);
 
     titleClasses = titleClassList.toArray(new String[]{});
     subtitleClasses = subtitleClassList.toArray(new String[]{});

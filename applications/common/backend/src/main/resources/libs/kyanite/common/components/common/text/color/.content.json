@@ -10,27 +10,27 @@
   "white": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "White",
-    "value": "bw_has-text-white"
+    "value": "has-text-white"
   },
   "black": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Black",
-    "value": "bw_has-text-black"
+    "value": "has-text-black"
   },
   "light": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Light",
-    "value": "has-text-light"
+    "value": "has-text-grey-light"
   },
   "dark": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Dark",
-    "value": "has-text-dark"
+    "value": "has-text-grey-dark"
   },
   "primary": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Primary",
-    "value": "rest_has-text-primary"
+    "value": "has-text-primary"
   },
   "secondary": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
@@ -40,32 +40,31 @@
   "grey": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Grey",
-    "value": "rest_has-text-gray",
-    "selected": true
+    "value": "has-text-grey"
   },
   "link": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Link",
-    "value": "grey_has-text-link"
+    "value": "has-text-link"
   },
   "info": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Info",
-    "value": "rest_has-text-info"
+    "value": "has-text-info"
   },
   "success": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Success",
-    "value": "rest_has-text-success"
+    "value": "has-text-success"
   },
   "warning": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Warning",
-    "value": "rest_has-text-warning"
+    "value": "has-text-warning"
   },
   "danger": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Danger",
-    "value": "rest_has-text-danger"
+    "value": "has-text-danger"
   }
 }
