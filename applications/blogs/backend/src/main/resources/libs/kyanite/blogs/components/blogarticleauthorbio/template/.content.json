@@ -9,7 +9,6 @@
       "button": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "kyanite/common/components/button",
-        "actionType": "\\0",
         "isDisabled": "false",
         "isFullWidth": "false",
         "isInverted": "false",
@@ -17,7 +16,7 @@
         "isMailto": "false",
         "isOutlined": "false",
         "isRounded": "false",
-        "label": "\\0",
+        "label": "",
         "openInNewTab": "true",
         "openModal": "open-modal",
         "showIconLeft": "true",
