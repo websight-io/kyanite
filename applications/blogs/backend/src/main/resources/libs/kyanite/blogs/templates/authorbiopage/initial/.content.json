@@ -1,0 +1,48 @@
+{
+  "jcr:primaryType": "ws:Page",
+  "jcr:content": {
+    "jcr:primaryType": "ws:PageContent",
+    "sling:resourceType": "kyanite/blogs/components/authorbiopage",
+    "author": {
+      "jcr:primaryType": "nt:unstructured",
+      "authorInfoSource": "ownProperties"
+    },
+    "navbarFixed": "true",
+    "navbarFixedPosition": "has-navbar-fixed-top",
+    "pagecontainer": {
+      "sling:resourceType": "kyanite/common/components/pagecontainer",
+      "navbarreference": {
+        "sling:resourceType": "kyanite/common/components/navbarreference"
+      },
+      "authorBioSection": {
+        "sling:resourceType": "kyanite/common/components/section",
+        "container": {
+          "sling:resourceType": "kyanite/common/components/container",
+          "blogarticleauthorbio": {
+            "sling:resourceType": "kyanite/blogs/components/blogarticleauthorbio",
+            "author": {
+              "jcr:primaryType": "nt:unstructured",
+              "authorInfoSource": "parentPage"
+            }
+          }
+        }
+      },
+      "blogListSection": {
+        "sling:resourceType": "kyanite/common/components/section",
+        "container": {
+          "sling:resourceType": "kyanite/common/components/container",
+          "bloglist": {
+            "sling:resourceType": "kyanite/blogs/components/bloglist",
+            "author": {
+              "jcr:primaryType": "nt:unstructured",
+              "authorInfoSource": "parentPage"
+            }
+          }
+        }
+      },
+      "footerreference": {
+        "sling:resourceType": "kyanite/common/components/footerreference"
+      }
+    }
+  }
+}

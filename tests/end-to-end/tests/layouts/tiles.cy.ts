@@ -45,7 +45,7 @@ describe('Tiles layout', function () {
     .find(selectors.overlayName)
     .should('contain.text', 'Parent tile');
 
-    cy.getByTestId(testIds.editIcon).click({ force: true });
+    cy.getByTestId(testIds.componentEditIcon).click({ force: true });
 
     cy.getByTestId('ModalDialog_Parenttile(Deprecated)')
     .find('div[id^="size-uid"]').click();
@@ -81,7 +81,7 @@ describe('Tiles layout', function () {
     .find(selectors.overlayName)
     .should('contain.text', 'Child tile');
 
-    cy.getByTestId(testIds.editIcon).click({ force: true });
+    cy.getByTestId(testIds.componentEditIcon).click({ force: true });
 
     cy.getByTestId('ModalDialog_Childtile(Deprecated)')
     .find('div[id^="type-uid"]').click();

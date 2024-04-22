@@ -41,18 +41,20 @@
                 ${description @ context='html'}
               </p>
               <div class="content-info-details">
-                <span class="image is-32x32">
-                  <img class="is-rounded" width="32" height="32" data-sly-test.authorPhoto="${article.authorPhoto}" class="is-rounded"
-                      src="${authorPhoto}" alt="${article.authorPhotoAlt}">
-                </span>
+                <sly data-sly-test.author="${model.authorInfo}">
+                  <span class="image is-32x32">
+                    <img class="is-rounded" width="32" height="32" data-sly-test.authorPhoto="${author.authorPhoto}" class="is-rounded"
+                        src="${author.authorPhoto}" alt="${author.authorPhotoAlt}">
+                  </span>
 
-                <span class="author-content"
-                    data-sly-test.authorName="${article.authorName}">${authorName}</span>
-                <span class="date-content"
-                    data-sly-test.publicationDate="${article.formattedPublicationDate}">${publicationDate}</span>
-                <span class="time-content" data-sly-test.readTime="${article.readTime}">${'{0} min read' @
-                  format=[readTime],
-                  i18n}</span>
+                  <span class="author-content"
+                      data-sly-test.authorName="${author.authorName}">${authorName}</span>
+                  <span class="date-content"
+                      data-sly-test.publicationDate="${article.formattedPublicationDate}">${publicationDate}</span>
+                  <span class="time-content" data-sly-test.readTime="${article.readTime}">${'{0} min read' @
+                    format=[readTime],
+                    i18n}</span>
+                </sly>
               </div>
             </div>
             <span class="mdi mdi-arrow-up"></span>

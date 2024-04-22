@@ -2,5 +2,5 @@
   "sling:resourceType": "ws:PageTemplate",
   "title": "Blog category page",
   "description": "Blog category page",
-  "allowedChildren": ["/libs/kyanite/blogs/templates/blogarticlepage"]
+  "allowedChildren": ["/libs/kyanite/blogs/templates/blogarticlepage", "/libs/kyanite/blogs/templates/authorbiopage"]
 }

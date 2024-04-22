@@ -17,8 +17,13 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.blogs.components.models.BlogPostBackButtonComponent">
-  <a href="${model.link}" class="blog-back-button">
-    <span class="mdi mdi-arrow-left"></span>
-    <span>All blog articles</span>
-  </a>
+  <sly data-sly-test="${model.isHidden && wcmmode.isEdit}">
+    <div class="blog-back-button-placeholder">This component will be hidden on the page.</div>
+  </sly>
+  <sly data-sly-test="${!model.isHidden}">
+    <a href="${model.link}" class="blog-back-button">
+      <span class="mdi mdi-arrow-left"></span>
+      <span>All blog articles</span>
+    </a>
+  </sly>
 </sly>

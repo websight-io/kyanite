@@ -30,4 +30,26 @@
   .glide__track {
     cursor: grab;
   }
+
+  .glide__slides {
+    white-space: normal;
+  }
+
+  .buttons {
+    &.hidden-from-all {
+      display: none;
+    }
+
+    &.hidden-from-tablet {
+      @include breakpoint.media-breakpoint-medium {
+        display: none;
+      }
+    }
+
+    &.hidden-from-desktop {
+      @include breakpoint.media-breakpoint-large {
+        display: none;
+      }
+    }
+  }
 }

@@ -1,6 +1,5 @@
 {
   "isContainer": true,
-  "isLayout": true,
   "group": "Kyanite Layouts",
   "allowedComponents": [
     "Level building blocks",

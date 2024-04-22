@@ -1,6 +1,5 @@
 {
   "isContainer": true,
-  "isLayout": true,
   "group": ".hidden",
   "allowedComponents": [
     "/apps/kyanite/common/components/tiles/tileparent",

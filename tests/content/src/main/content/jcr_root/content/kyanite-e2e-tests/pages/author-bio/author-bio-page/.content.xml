@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root   xmlns:jcr="http://www.jcp.org/jcr/1.0"
+            xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+            xmlns:ws="http://ds.pl/websight"
+            xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+        jcr:primaryType="ws:Page">
+    <jcr:content
+            jcr:primaryType="ws:PageContent"
+            jcr:title="Author Bio Page"
+            sling:resourceType="kyanite/blogs/components/authorbiopage"
+            ws:template="/libs/kyanite/blogs/templates/authorbiopage"
+            navbarFixed="true"
+            navbarFixedPosition="has-navbar-fixed-top"
+            title="Author Bio Page">
+        <author
+                jcr:primaryType="nt:unstructured"
+                authorDescription="Author Bio Page authorDescription"
+                authorInfoSource="ownProperties"
+                authorName="Author Bio Page authorName"
+                authorPhoto="/content/kyanite-e2e-tests/assets/images/image-thumbnail.svg"
+                authorPhotoAlt="Author Bio Page authorPhotoAlt"
+                authorRole="Author Bio Page authorRole"/>
+        <pagecontainer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="kyanite/common/components/pagecontainer">
+            <navbarreference
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/navbarreference"/>
+            <section
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/section">
+                <container
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/container"/>
+            </section>
+            <footerreference
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/footerreference"/>
+        </pagecontainer>
+    </jcr:content>
+</jcr:root>

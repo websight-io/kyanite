@@ -10,9 +10,6 @@
         ws:lastModified="{Date}2023-05-30T14:00:01.166Z"
         ws:lastModifiedBy="wsadmin"
         ws:template="/libs/kyanite/blogs/templates/blogarticlepage"
-        authorName="John Doe"
-        authorPhoto="/content/kyanite-visual-tests/assets/basura.svg"
-        authorPhotoAlt="\0"
         description="Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet"
         heroImage="/content/kyanite-visual-tests/assets/blog-image-example.jpeg/"
         heroImageAlt="\0"
@@ -21,6 +18,11 @@
         publicationDate="2023-05-30"
         readTime="10"
         title="Lorem ipsum dolor sit amet">
+        <author
+                jcr:primaryType="nt:unstructured"
+                authorInfoSource="ownProperties"
+                authorName="John Doe"
+                authorPhoto="/content/kyanite-visual-tests/assets/basura.svg"/>
         <pagecontainer
             jcr:primaryType="nt:unstructured"
             sling:resourceType="kyanite/common/components/pagecontainer">

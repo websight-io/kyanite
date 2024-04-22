@@ -20,6 +20,7 @@ export const selectors = {
 };
 
 export const testIds = {
-  editIcon: 'ToolbarItem_Properties',
+  componentEditIcon:  'ToolbarItem_Properties',
+  pageEditIcon:       'Action_Properties',
   dialogSubmitButton: 'Action_Submit'
 };

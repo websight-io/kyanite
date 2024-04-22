@@ -53,29 +53,6 @@ public class BlogArticleHeaderModel {
 
   @ValueMapValue
   @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String authorName;
-
-  @ValueMapValue
-  @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String authorDescription;
-
-  @ValueMapValue
-  @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String authorRole;
-
-  @ValueMapValue
-  private String authorPhoto;
-
-  @ValueMapValue
-  @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String authorPhotoAlt;
-
-  @ValueMapValue
-  @Getter
   private String publicationDate;
 
   @ValueMapValue
@@ -99,14 +76,11 @@ public class BlogArticleHeaderModel {
   private final ModelFactory modelFactory;
 
   @Inject
-  public BlogArticleHeaderModel(@SlingObject ResourceResolver resourceResolver,
+  public BlogArticleHeaderModel(
+      @SlingObject ResourceResolver resourceResolver,
       @OSGiService ModelFactory modelFactory) {
     this.resourceResolver = resourceResolver;
     this.modelFactory = modelFactory;
-  }
-
-  public String getAuthorPhoto() {
-    return LinkUtil.handleLink(authorPhoto, resourceResolver);
   }
 
   public String getHeroImage() {
@@ -125,4 +99,3 @@ public class BlogArticleHeaderModel {
         .toList();
   }
 }
-

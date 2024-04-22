@@ -42,7 +42,7 @@ describe('Button component', function () {
     .find(selectors.overlayName)
     .should('contain.text', 'Button');
 
-    cy.getByTestId(testIds.editIcon).click({force: true});
+    cy.getByTestId(testIds.componentEditIcon).click({force: true});
 
     cy.getByTestId('ModalDialog_Button')
     .findByTestId('Input_Label')
@@ -159,7 +159,7 @@ describe('Button component', function () {
     .find(selectors.overlayName)
     .should('contain.text', 'Button');
 
-    cy.getByTestId(testIds.editIcon).click({force: true});
+    cy.getByTestId(testIds.componentEditIcon).click({force: true});
 
     cy.getByTestId('ModalDialog_Button')
     .findByTestId('Input_Label')

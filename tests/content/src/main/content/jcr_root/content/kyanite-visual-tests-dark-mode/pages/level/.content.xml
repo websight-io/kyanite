@@ -16,7 +16,7 @@
             sling:resourceType="kyanite/common/components/pagecontainer">
             <section
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="kyanite/common/components/section">
+                sling:resourceType="kyanite/common/components/section" renderAsHero="false">
                 <level_1
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/level">

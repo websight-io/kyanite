@@ -10,9 +10,6 @@
         ws:lastModified="{Date}2023-05-30T09:04:52.261Z"
         ws:lastModifiedBy="wsadmin"
         ws:template="/libs/kyanite/blogs/templates/blogarticlepage"
-        authorName="Juliusz Kowalczyński"
-        authorPhoto="\0"
-        authorPhotoAlt="\0"
         description="Boosting Conversion Rates: Optimizing User Experience with Technology"
         heroImage="/content/kyanite-visual-tests/assets/blog-image-example.jpeg"
         heroImageAlt="\0"
@@ -21,6 +18,12 @@
         publicationDate="2023-01-09"
         readTime="15"
         title="Boosting Conversion Rates: Optimizing User Experience with Technology">
+        <author
+                jcr:primaryType="nt:unstructured"
+                authorInfoSource="ownProperties"
+                authorName="Juliusz Kowalczyński"
+                authorPhoto="\0"
+                authorPhotoAlt="\0"/>
         <pagecontainer
             jcr:primaryType="nt:unstructured"
             sling:resourceType="kyanite/common/components/pagecontainer">

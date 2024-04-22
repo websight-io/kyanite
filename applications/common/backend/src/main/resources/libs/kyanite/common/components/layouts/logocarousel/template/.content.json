@@ -1,0 +1,162 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "renderAsHero": "false",
+  "sling:resourceType": "kyanite/common/components/section",
+  "container": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/container",
+    "title": {
+      "jcr:primaryType": "nt:unstructured",
+      "element": "h2",
+      "isSpaced": false,
+      "size": "is-2",
+      "text": "<p style=\"text-align: center\">Logo Carousel Section</p>",
+      "delay": 1200,
+      "speed": 50,
+      "showCursor": false,
+      "addAnimatedEndings": false,
+      "sling:resourceType": "kyanite/common/components/title"
+    },
+    "columns": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/common/components/columns",
+      "column1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "kyanite/common/components/columns/column",
+        "desktopColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "two",
+          "offsetType": "evenNumber",
+          "size": "eight",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "tabletColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "empty",
+          "offsetType": "evenNumber",
+          "size": "empty",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "mobileColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "empty",
+          "offsetType": "evenNumber",
+          "size": "empty",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "content": {
+          "jcr:primaryType": "nt:unstructured",
+          "size": "is-medium",
+          "text": "<p style=\"text-align: center\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi finibus, fermentum eros sit amet, efficitur ligula. Vivamus maximus velit vel velit maximus, at placerat lorem placerat. Praesent nec nisl nec nisi volutpat aliquet. Phasellus eget velit eget urna consectetur egestas quis sit amet est. Aenean euismod, urna eu tempor congue, orci erat molestie nibh, vitae maximus ipsum est vitae risus.</p>",
+          "color": "rest_has-text-grey",
+          "sling:resourceType": "kyanite/common/components/content",
+          "rest": {
+            "jcr:primaryType": "nt:unstructured",
+            "shade": "700"
+          }
+        }
+      }
+    },
+    "level": {
+      "jcr:primaryType": "nt:unstructured",
+      "addDividers": "true",
+      "sling:resourceType": "kyanite/common/components/level",
+      "levelitem2": {
+        "jcr:primaryType": "nt:unstructured",
+        "alignmentVertical": "is-top",
+        "sling:resourceType": "kyanite/common/components/level/levelitem",
+        "alignment": "is-left",
+        "container": {
+          "jcr:primaryType": "nt:unstructured",
+          "alignmentHorizontal": "is-centered",
+          "sling:resourceType": "kyanite/common/components/container",
+          "image": {
+            "jcr:primaryType": "nt:unstructured",
+            "height": "720",
+            "hasVideoOptions": false,
+            "width": "1280",
+            "sling:resourceType": "kyanite/common/components/image"
+          },
+          "content": {
+            "jcr:primaryType": "nt:unstructured",
+            "size": "is-large",
+            "text": "<p>Logo Name</p>",
+            "color": "rest_has-text-grey",
+            "sling:resourceType": "kyanite/common/components/content",
+            "textWeight": "has-text-weight-semibold",
+            "rest": {
+              "jcr:primaryType": "nt:unstructured",
+              "shade": "700"
+            }
+          }
+        }
+      },
+      "levelitem2_1": {
+        "jcr:primaryType": "nt:unstructured",
+        "alignmentVertical": "is-top",
+        "sling:resourceType": "kyanite/common/components/level/levelitem",
+        "alignment": "is-left",
+        "container": {
+          "jcr:primaryType": "nt:unstructured",
+          "alignmentHorizontal": "is-centered",
+          "sling:resourceType": "kyanite/common/components/container",
+          "image": {
+            "jcr:primaryType": "nt:unstructured",
+            "height": "720",
+            "hasVideoOptions": false,
+            "width": "1280",
+            "sling:resourceType": "kyanite/common/components/image"
+          },
+          "content_1": {
+            "jcr:primaryType": "nt:unstructured",
+            "size": "is-large",
+            "text": "<p>Logo Name 2</p>",
+            "color": "rest_has-text-grey",
+            "sling:resourceType": "kyanite/common/components/content",
+            "textWeight": "has-text-weight-semibold",
+            "rest": {
+              "jcr:primaryType": "nt:unstructured",
+              "shade": "700"
+            }
+          }
+        }
+      },
+      "levelitem2_2": {
+        "jcr:primaryType": "nt:unstructured",
+        "alignmentVertical": "is-top",
+        "sling:resourceType": "kyanite/common/components/level/levelitem",
+        "alignment": "is-left",
+        "container": {
+          "jcr:primaryType": "nt:unstructured",
+          "alignmentHorizontal": "is-centered",
+          "sling:resourceType": "kyanite/common/components/container",
+          "image": {
+            "jcr:primaryType": "nt:unstructured",
+            "height": "720",
+            "hasVideoOptions": false,
+            "width": "1280",
+            "sling:resourceType": "kyanite/common/components/image"
+          },
+          "content_1": {
+            "jcr:primaryType": "nt:unstructured",
+            "size": "is-large",
+            "text": "<p>Logo Name 3</p>",
+            "color": "rest_has-text-grey",
+            "sling:resourceType": "kyanite/common/components/content",
+            "textWeight": "has-text-weight-semibold",
+            "rest": {
+              "jcr:primaryType": "nt:unstructured",
+              "shade": "700"
+            }
+          }
+        }
+      }
+    }
+  }
+}

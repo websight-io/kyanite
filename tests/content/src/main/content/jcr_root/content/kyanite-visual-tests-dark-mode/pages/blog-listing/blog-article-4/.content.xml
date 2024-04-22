@@ -8,9 +8,6 @@
         jcr:title="Blog article 4"
         sling:resourceType="kyanite/blogs/components/blogarticlepage"
         ws:template="/libs/kyanite/blogs/templates/blogarticlepage"
-        authorName="Joanna Kowalska"
-        authorPhoto="/content/kyanite-visual-tests/assets/basura.svg"
-        authorPhotoAlt="\0"
         description="Unlocking the Power of DXP: A Comprehensive Guide"
         heroImage="/content/kyanite-visual-tests/assets/blog-image-example.jpeg"
         heroImageAlt="\0"
@@ -19,6 +16,12 @@
         publicationDate="2023-05-14"
         readTime="9"
         title="Unlocking the Power of DXP: A Comprehensive Guide">
+        <author
+                jcr:primaryType="nt:unstructured"
+                authorInfoSource="ownProperties"
+                authorName="Joanna Kowalska"
+                authorPhoto="/content/kyanite-visual-tests/assets/basura.svg"
+                authorPhotoAlt="\0"/>
         <pagecontainer
             jcr:primaryType="nt:unstructured"
             sling:resourceType="kyanite/common/components/pagecontainer">

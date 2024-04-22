@@ -40,7 +40,7 @@ describe('Section layout', function () {
     .find(selectors.overlayName)
     .should('contain.text', 'Section');
 
-    cy.getByTestId(testIds.editIcon).click({ force: true });
+    cy.getByTestId(testIds.componentEditIcon).click({ force: true });
 
     cy.getByTestId('ModalDialog_Section')
       .findByTestId('Input_Sectionid').clear().type('section1');
@@ -60,6 +60,7 @@ describe('Section layout', function () {
     .should('deep.eq', {
       id: 'section1',
       size: 'is-halfheight',
+      renderAsHero: 'false',
       'sling:resourceType': 'kyanite/common/components/section',
       'jcr:primaryType': 'nt:unstructured'
     });

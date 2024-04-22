@@ -1,0 +1,100 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "renderAsHero": "false",
+  "sling:resourceType": "kyanite/common/components/section",
+  "container": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/container",
+    "card": {
+      "jcr:primaryType": "nt:unstructured",
+      "type": "card",
+      "sling:resourceType": "kyanite/common/components/card",
+      "cardcontent": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "kyanite/common/components/card/cardcontent",
+        "title": {
+          "jcr:primaryType": "nt:unstructured",
+          "element": "h2",
+          "isSpaced": false,
+          "size": "is-2",
+          "text": "<p style=\"text-align: center\">Banner Section</p>",
+          "delay": 1200,
+          "speed": 50,
+          "showCursor": false,
+          "addAnimatedEndings": false,
+          "sling:resourceType": "kyanite/common/components/title"
+        },
+        "container": {
+          "jcr:primaryType": "nt:unstructured",
+          "alignmentHorizontal": "is-centered",
+          "sling:resourceType": "kyanite/common/components/container",
+          "level": {
+            "jcr:primaryType": "nt:unstructured",
+            "spacing": "",
+            "verticalAlignment": "is-align-items-center",
+            "sling:resourceType": "kyanite/common/components/level",
+            "isVertical": "true",
+            "levelitem": {
+              "jcr:primaryType": "nt:unstructured",
+              "alignmentVertical": "is-top",
+              "sling:resourceType": "kyanite/common/components/level/levelitem",
+              "alignment": "is-centered",
+              "link": {
+                "jcr:primaryType": "nt:unstructured",
+                "showIconRight": false,
+                "showIconLeft": false,
+                "size": "is-medium",
+                "label": "Link 1",
+                "variant": "is-dark",
+                "sling:resourceType": "kyanite/common/components/link",
+                "leftIcon": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "iconSize": "fa-lg",
+                  "iconLibType": "mdi",
+                  "icon": "mdi-home-outline",
+                  "selectOrType": "select"
+                },
+                "rightIcon": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "iconSize": "fa-lg",
+                  "iconLibType": "mdi",
+                  "icon": "mdi-home-outline",
+                  "selectOrType": "select"
+                }
+              }
+            },
+            "levelitem_1": {
+              "jcr:primaryType": "nt:unstructured",
+              "alignmentVertical": "is-top",
+              "sling:resourceType": "kyanite/common/components/level/levelitem",
+              "alignment": "is-centered",
+              "link": {
+                "jcr:primaryType": "nt:unstructured",
+                "showIconRight": false,
+                "showIconLeft": false,
+                "size": "is-medium",
+                "label": "Link 2",
+                "variant": "is-dark",
+                "sling:resourceType": "kyanite/common/components/link",
+                "leftIcon": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "iconSize": "fa-lg",
+                  "iconLibType": "mdi",
+                  "icon": "mdi-home-outline",
+                  "selectOrType": "select"
+                },
+                "rightIcon": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "iconSize": "fa-lg",
+                  "iconLibType": "mdi",
+                  "icon": "mdi-home-outline",
+                  "selectOrType": "select"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

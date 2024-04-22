@@ -16,6 +16,7 @@
 
 package pl.ds.kyanite.common.components.models;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
 import javax.annotation.PostConstruct;
@@ -24,6 +25,8 @@ import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.Self;
+import pl.ds.kyanite.common.components.utils.ContainerComponentUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class HeroComponent {
@@ -44,11 +47,18 @@ public class HeroComponent {
   @Getter
   private String[] heroClasses;
 
+  @Self
+  private Resource resource;
+
+  @Getter
+  private List<Resource> children;
+
   @PostConstruct
   private void init() {
     heroClasses = Stream.of(size, variant, background)
         .filter(Objects::nonNull)
         .toList()
         .toArray(new String[]{});
+    children = ContainerComponentUtil.listVisibleChildren(resource);
   }
 }

@@ -28,4 +28,14 @@
   &.with-background-image {
     @extend .a-bg-image
   }
+
+  .card-redirect-anchor {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    cursor: pointer;
+  }
 }

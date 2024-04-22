@@ -40,7 +40,7 @@ describe('Container layout', function () {
     .find(selectors.overlayName)
     .should('contain.text', 'Container');
 
-    cy.getByTestId(testIds.editIcon).click({ force: true });
+    cy.getByTestId(testIds.componentEditIcon).click({ force: true });
 
     cy.getByTestId('ModalDialog_Container')
       .find('div[id^="containerStyle-uid"]').click();

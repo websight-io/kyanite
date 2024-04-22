@@ -22,7 +22,7 @@
       ${model.eyebrowText}
     </h6>
   </sly>
-  <h1 id="${model.anchorId}" style="text-align: ${model.titleAlign @ context='styleToken'};" data-sly-element="${model.element}" class="${model.titleClasses @ join=' '}">
+  <h1 id="${model.overrideAnchorId && model.anchorId ? model.anchorId : model.generatedAnchorId}" style="text-align: ${model.titleAlign @ context='styleToken'};" data-sly-element="${model.element}" class="${model.titleClasses @ join=' '}">
     ${model.textAsOneLine @ context='html'}
     
     <sly data-sly-test="${model.addAnimatedEndings}">

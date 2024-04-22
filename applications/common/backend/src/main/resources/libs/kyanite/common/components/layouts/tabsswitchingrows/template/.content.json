@@ -1,0 +1,215 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "renderAsHero": "false",
+  "sling:resourceType": "kyanite/common/components/section",
+  "container": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/container",
+    "title": {
+      "jcr:primaryType": "nt:unstructured",
+      "element": "h2",
+      "isSpaced": false,
+      "size": "is-2",
+      "text": "<p style=\"text-align: center\">Section with tabs: switching rows</p>",
+      "delay": 1200,
+      "speed": 50,
+      "showCursor": false,
+      "addAnimatedEndings": "false",
+      "sling:resourceType": "kyanite/common/components/title"
+    },
+    "columns": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/common/components/columns",
+      "column1": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "kyanite/common/components/columns/column",
+        "desktopColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "two",
+          "offsetType": "evenNumber",
+          "size": "eight",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "tabletColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "empty",
+          "offsetType": "evenNumber",
+          "size": "empty",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "mobileColumnStyle": {
+          "jcr:primaryType": "nt:unstructured",
+          "isNormalColumn": "true",
+          "offset": "empty",
+          "offsetType": "evenNumber",
+          "size": "empty",
+          "sizeType": "evenNumber",
+          "alignment": ""
+        },
+        "content": {
+          "jcr:primaryType": "nt:unstructured",
+          "size": "is-medium",
+          "text": "<p style=\"text-align: center\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi finibus, fermentum eros sit amet, efficitur ligula. Vivamus maximus velit vel velit maximus, at placerat lorem placerat. Praesent nec nisl nec nisi volutpat aliquet. Phasellus eget velit eget urna consectetur egestas quis sit amet est. Aenean euismod, urna eu tempor congue, orci erat molestie nibh, vitae maximus ipsum est vitae risus.</p>",
+          "color": "",
+          "sling:resourceType": "kyanite/common/components/content",
+          "rest": {
+            "jcr:primaryType": "nt:unstructured",
+            "shade": "700"
+          }
+        }
+      }
+    },
+    "tabs": {
+      "jcr:primaryType": "nt:unstructured",
+      "vertical": "true",
+      "fullWidth": "false",
+      "toggle": "false",
+      "toggleRounded": "true",
+      "autoSwitch": "false",
+      "size": "is-medium",
+      "boxed": "false",
+      "sling:resourceType": "kyanite/common/components/tabs",
+      "alignment": "",
+      "switchingTime": "5",
+      "tab1": {
+        "jcr:primaryType": "nt:unstructured",
+        "hidden": "true",
+        "addIcon": "false",
+        "size": "is-normal",
+        "color": "",
+        "label": "<p>Basics of Rows</p>",
+        "sling:resourceType": "kyanite/common/components/tabs/tab",
+        "selectOrType": "select",
+        "textWeight": "has-text-weight-normal",
+        "tabcontent": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "kyanite/common/components/tabs/tabcontent",
+          "title": {
+            "jcr:primaryType": "nt:unstructured",
+            "element": "h3",
+            "isSpaced": false,
+            "size": "is-5",
+            "text": "<p>Basics of Rows</p>",
+            "delay": 1200,
+            "speed": 50,
+            "showCursor": false,
+            "addAnimatedEndings": false,
+            "sling:resourceType": "kyanite/common/components/title"
+          },
+          "content": {
+            "jcr:primaryType": "nt:unstructured",
+            "size": "is-medium",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi finibus, fermentum eros sit amet, efficitur ligula. Vivamus maximus velit vel velit maximus, at placerat lorem placerat.</p>",
+            "color": "rest_has-text-grey",
+            "sling:resourceType": "kyanite/common/components/content",
+            "rest": {
+              "jcr:primaryType": "nt:unstructured",
+              "shade": "700"
+            }
+          },
+          "image": {
+            "jcr:primaryType": "nt:unstructured",
+            "height": "720",
+            "hasVideoOptions": false,
+            "type": "none",
+            "width": "1280",
+            "isRounded": "false",
+            "sling:resourceType": "kyanite/common/components/image"
+          }
+        }
+      },
+      "tab2": {
+        "jcr:primaryType": "nt:unstructured",
+        "hidden": "true",
+        "addIcon": "false",
+        "label": "<p>Advanced Techniques</p>",
+        "sling:resourceType": "kyanite/common/components/tabs/tab",
+        "selectOrType": "select",
+        "tabcontent": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "kyanite/common/components/tabs/tabcontent",
+          "title": {
+            "jcr:primaryType": "nt:unstructured",
+            "element": "h3",
+            "isSpaced": false,
+            "size": "is-5",
+            "text": "<p>Advanced Techniques</p>",
+            "delay": 1200,
+            "speed": 50,
+            "showCursor": false,
+            "addAnimatedEndings": false,
+            "sling:resourceType": "kyanite/common/components/title"
+          },
+          "content": {
+            "jcr:primaryType": "nt:unstructured",
+            "size": "is-medium",
+            "text": "<p>Praesent nec nisl nec nisi volutpat aliquet. Phasellus eget velit eget urna consectetur egestas quis sit amet est. Aenean euismod, urna eu tempor congue, orci erat molestie nibh, vitae maximus ipsum est vitae risus.</p>",
+            "color": "rest_has-text-grey",
+            "sling:resourceType": "kyanite/common/components/content",
+            "rest": {
+              "jcr:primaryType": "nt:unstructured",
+              "shade": "700"
+            }
+          },
+          "image": {
+            "jcr:primaryType": "nt:unstructured",
+            "height": "720",
+            "hasVideoOptions": false,
+            "type": "none",
+            "width": "1280",
+            "isRounded": "false",
+            "sling:resourceType": "kyanite/common/components/image"
+          }
+        }
+      },
+      "tab3": {
+        "jcr:primaryType": "nt:unstructured",
+        "hidden": "true",
+        "addIcon": "false",
+        "label": "<p>Real-World Examples</p>",
+        "sling:resourceType": "kyanite/common/components/tabs/tab",
+        "selectOrType": "select",
+        "tabcontent": {
+          "jcr:primaryType": "nt:unstructured",
+          "sling:resourceType": "kyanite/common/components/tabs/tabcontent",
+          "title": {
+            "jcr:primaryType": "nt:unstructured",
+            "element": "h3",
+            "isSpaced": false,
+            "size": "is-5",
+            "text": "<p>Real-World Examples</p>",
+            "delay": 1200,
+            "speed": 50,
+            "showCursor": false,
+            "addAnimatedEndings": false,
+            "sling:resourceType": "kyanite/common/components/title"
+          },
+          "content": {
+            "jcr:primaryType": "nt:unstructured",
+            "size": "is-medium",
+            "text": "<p>Nulla facilisi. Donec vel urna quis libero sodales facilisis. Fusce ullamcorper pellentesque nibh, ac hendrerit mauris. Curabitur pharetra, mauris sed auctor auctor, quam nunc fermentum nunc, eget auctor orci sapien quis est.</p>",
+            "color": "rest_has-text-grey",
+            "sling:resourceType": "kyanite/common/components/content",
+            "rest": {
+              "jcr:primaryType": "nt:unstructured",
+              "shade": "700"
+            }
+          },
+          "image": {
+            "jcr:primaryType": "nt:unstructured",
+            "height": "720",
+            "hasVideoOptions": false,
+            "type": "none",
+            "width": "1280",
+            "isRounded": "false",
+            "sling:resourceType": "kyanite/common/components/image"
+          }
+        }
+      }
+    }
+  }
+}
