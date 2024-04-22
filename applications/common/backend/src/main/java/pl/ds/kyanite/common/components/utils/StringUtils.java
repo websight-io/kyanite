@@ -32,4 +32,11 @@ public class StringUtils {
     String emailPart3 = email.substring(dotIndex + 1);
     return Arrays.asList(emailPart1, emailPart2, emailPart3);
   }
+
+  public static String simplifyTitle(String title) {
+    return title
+        .replaceAll("[^A-Za-z0-9-_ ]", "")
+        .replaceAll(" ", "-")
+        .toLowerCase();
+  }
 }

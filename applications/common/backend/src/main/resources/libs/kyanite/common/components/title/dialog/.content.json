@@ -48,11 +48,27 @@
 					"name": "element"
 				}
 			},
-			"anchorId": {
-				"sling:resourceType": "wcm/dialogs/components/textfield",
-				"name": "anchorId",
-				"label": "AnchorId text"
+			"overrideAnchorId": {
+				"sling:resourceType": "wcm/dialogs/components/toggle",
+				"name": "overrideAnchorId",
+				"label": "Override anchorId",
+				"description": "The default anchor is created based on the title. However, authors can override it."
 			},
+			"anchorContainer": {
+				"sling:resourceType": "wcm/dialogs/components/container",
+				"anchorId": {
+					"sling:resourceType": "wcm/dialogs/components/textfield",
+					"name": "anchorId",
+					"label": "AnchorId text"
+				},
+				"ws:display": {
+					"condition": {
+						"sourceName": "overrideAnchorId",
+						"values": "true"
+					}
+				}
+			},
+
 			"addEyebrow": {
 				"sling:resourceType": "wcm/dialogs/components/toggle",
 				"name": "addEyebrow",
