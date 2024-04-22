@@ -32,6 +32,12 @@
     --kyanite-title-strong-color: var(--kyanite-white-bis);
   }
 
+  &.is-primary, &.is-secondary, &.is-dark, &.is-link {
+    .content {
+      color: var(--kyanite-white-bis);
+    }
+  }
+
   .hero-body {
     @extend .mx-0;
 
