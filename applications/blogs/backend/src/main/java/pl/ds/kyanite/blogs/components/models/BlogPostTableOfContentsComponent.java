@@ -28,6 +28,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import pl.ds.kyanite.common.components.models.TitleComponent;
 import pl.ds.websight.pages.core.api.Page;
 import pl.ds.websight.pages.core.api.PageManager;
@@ -38,6 +39,10 @@ public class BlogPostTableOfContentsComponent {
   private static final String BLOG_CONTENT_CONTAINER_REL_PATH =
       "/jcr:content/pagecontainer/section/container/columns1/column4";
   private static final String TITLE_RESOURCE_PATH = "kyanite/common/components/title";
+
+  @ValueMapValue
+  @Getter
+  private boolean isHidden;
 
   @Getter
   @Inject
