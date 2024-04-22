@@ -37,26 +37,14 @@
                                 size="is-2"
                                 text="68,715"
                                 textWeight="has-text-weight-bold"
-                                type="title">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title1>
+                                type="title"/>
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>API requests served per second&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                textWeight="has-text-weight-bold"/>
                             <content1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
@@ -96,26 +84,14 @@
                                 size="is-2"
                                 text="68,715"
                                 textWeight="has-text-weight-bold"
-                                type="title">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title1>
+                                type="title"/>
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>API requests served per second&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                textWeight="has-text-weight-bold"/>
                             <content1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
@@ -151,26 +127,14 @@
                                 size="is-2"
                                 text="297"
                                 textWeight="has-text-weight-bold"
-                                type="title">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title1>
+                                type="title"/>
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>TBs of assets delivered per day&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                textWeight="has-text-weight-bold"/>
                             <content1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
@@ -210,26 +174,14 @@
                                 size="is-2"
                                 text="68,715"
                                 textWeight="has-text-weight-bold"
-                                type="title">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title1>
+                                type="title"/>
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>API requests served per second&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                textWeight="has-text-weight-bold"/>
                             <content1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
@@ -265,26 +217,14 @@
                                 size="is-2"
                                 text="297"
                                 textWeight="has-text-weight-bold"
-                                type="title">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title1>
+                                type="title"/>
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>TBs of assets delivered per day&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                textWeight="has-text-weight-bold"/>
                             <content1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
@@ -320,26 +260,14 @@
                                 size="is-2"
                                 text="90%"
                                 textWeight="has-text-weight-bold"
-                                type="title">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title1>
+                                type="title"/>
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>Reduction in production time&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                textWeight="has-text-weight-bold"/>
                             <content1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
@@ -379,26 +307,14 @@
                                 size="is-2"
                                 text="68,715"
                                 textWeight="has-text-weight-bold"
-                                type="title">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title1>
+                                type="title"/>
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>API requests served per second&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                textWeight="has-text-weight-bold"/>
                             <content1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
@@ -434,26 +350,14 @@
                                 size="is-2"
                                 text="297"
                                 textWeight="has-text-weight-bold"
-                                type="title">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title1>
+                                type="title"/>
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>TBs of assets delivered per day&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                textWeight="has-text-weight-bold"/>
                             <content1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
@@ -489,26 +393,14 @@
                                 size="is-2"
                                 text="90%"
                                 textWeight="has-text-weight-bold"
-                                type="title">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title1>
+                                type="title"/>
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>Reduction in production time&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                textWeight="has-text-weight-bold"/>
                             <content1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
@@ -544,26 +436,14 @@
                                 size="is-2"
                                 text="100"
                                 textWeight="has-text-weight-bold"
-                                type="title">
-                                <grey jcr:primaryType="nt:unstructured"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="900"/>
-                            </title1>
+                                type="title"/>
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
                                 color="has-text-black"
                                 size="is-large"
                                 text="&lt;p>Reduction in production time&lt;/p>"
-                                textWeight="has-text-weight-bold">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                textWeight="has-text-weight-bold"/>
                             <content1
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
@@ -586,4 +466,5 @@
             </section>
         </pagecontainer>
     </jcr:content>
+    <level-item-alignment/>
 </jcr:root>

@@ -34,15 +34,7 @@
                         element="h1"
                         size="is-1"
                         text="&lt;p>The real-time Digital Experience Platform&lt;/p>"
-                        type="title">
-                        <grey jcr:primaryType="nt:unstructured"/>
-                        <bw
-                            jcr:primaryType="nt:unstructured"
-                            shade="has-text-primary"/>
-                        <rest
-                            jcr:primaryType="nt:unstructured"
-                            shade="900"/>
-                    </title1>
+                        type="title"/>
                     <buttons
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/buttons">
@@ -61,14 +53,7 @@
                     <content1
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/content"
-                        color="grey_has-text-grey"
-                        text="&lt;p>WebSight empowers you to build a real-time, highly available stream of experiences informed by data from across different systems.&lt;/p>">
-                        <grey
-                            jcr:primaryType="nt:unstructured"
-                            shade="darker"/>
-                        <bw jcr:primaryType="nt:unstructured"/>
-                        <rest jcr:primaryType="nt:unstructured"/>
-                    </content1>
+                        text="&lt;p>WebSight empowers you to build a real-time, highly available stream of experiences informed by data from across different systems.&lt;/p>"/>
                 </container1>
             </hero>
             <hero_1
@@ -86,15 +71,7 @@
                         element="h1"
                         size="is-1"
                         text="&lt;p>The real-time Digital Experience Platform&lt;/p>"
-                        type="title">
-                        <grey jcr:primaryType="nt:unstructured"/>
-                        <bw
-                            jcr:primaryType="nt:unstructured"
-                            shade="has-text-primary"/>
-                        <rest
-                            jcr:primaryType="nt:unstructured"
-                            shade="900"/>
-                    </title1>
+                        type="title"/>
                     <buttons
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/buttons">
@@ -113,14 +90,7 @@
                     <content1
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/content"
-                        color="grey_has-text-grey"
-                        text="&lt;p>WebSight empowers you to build a real-time, highly available stream of experiences informed by data from across different systems.&lt;/p>">
-                        <grey
-                            jcr:primaryType="nt:unstructured"
-                            shade="darker"/>
-                        <bw jcr:primaryType="nt:unstructured"/>
-                        <rest jcr:primaryType="nt:unstructured"/>
-                    </content1>
+                        text="&lt;p>WebSight empowers you to build a real-time, highly available stream of experiences informed by data from across different systems.&lt;/p>"/>
                 </container1>
             </hero_1>
             <hero_2
@@ -138,15 +108,7 @@
                         element="h1"
                         size="is-1"
                         text="&lt;p>The real-time Digital Experience Platform&lt;/p>"
-                        type="title">
-                        <grey jcr:primaryType="nt:unstructured"/>
-                        <bw
-                            jcr:primaryType="nt:unstructured"
-                            shade="has-text-primary"/>
-                        <rest
-                            jcr:primaryType="nt:unstructured"
-                            shade="900"/>
-                    </title1>
+                        type="title"/>
                     <buttons
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/buttons">
@@ -165,14 +127,7 @@
                     <content1
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/content"
-                        color="grey_has-text-grey"
-                        text="&lt;p>WebSight empowers you to build a real-time, highly available stream of experiences informed by data from across different systems.&lt;/p>">
-                        <grey
-                            jcr:primaryType="nt:unstructured"
-                            shade="darker"/>
-                        <bw jcr:primaryType="nt:unstructured"/>
-                        <rest jcr:primaryType="nt:unstructured"/>
-                    </content1>
+                        text="&lt;p>WebSight empowers you to build a real-time, highly available stream of experiences informed by data from across different systems.&lt;/p>"/>
                 </container1>
             </hero_2>
             <hero_3
@@ -190,15 +145,7 @@
                         element="h1"
                         size="is-1"
                         text="&lt;p>The real-time Digital Experience Platform&lt;/p>"
-                        type="title">
-                        <grey jcr:primaryType="nt:unstructured"/>
-                        <bw
-                            jcr:primaryType="nt:unstructured"
-                            shade="has-text-primary"/>
-                        <rest
-                            jcr:primaryType="nt:unstructured"
-                            shade="900"/>
-                    </title1>
+                        type="title"/>
                     <buttons
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/buttons">
@@ -217,14 +164,7 @@
                     <content1
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/content"
-                        color="grey_has-text-grey"
-                        text="&lt;p>WebSight empowers you to build a real-time, highly available stream of experiences informed by data from across different systems.&lt;/p>">
-                        <grey
-                            jcr:primaryType="nt:unstructured"
-                            shade="darker"/>
-                        <bw jcr:primaryType="nt:unstructured"/>
-                        <rest jcr:primaryType="nt:unstructured"/>
-                    </content1>
+                        text="&lt;p>WebSight empowers you to build a real-time, highly available stream of experiences informed by data from across different systems.&lt;/p>"/>
                 </container1>
             </hero_3>
         </pagecontainer>

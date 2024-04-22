@@ -50,13 +50,8 @@
                         <content
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="rest_has-text-grey"
                             size="is-medium"
-                            text="&lt;p style=&quot;text-align: center&quot;>Content aligned to the &lt;strong>center&lt;/strong>&lt;/p>&lt;p style=&quot;text-align: center&quot;>in a Container with &lt;strong>no&lt;/strong> horizontal alignment&lt;/p>&lt;p style=&quot;text-align: center&quot;>in a LevelItem with &lt;strong>right&lt;/strong> horizontal alignment&lt;/p>&lt;p style=&quot;text-align: center&quot;>and &lt;strong>center&lt;/strong> vertical alignment&lt;/p>">
-                            <rest
-                                jcr:primaryType="nt:unstructured"
-                                shade="700"/>
-                        </content>
+                            text="&lt;p style=&quot;text-align: center&quot;>Content aligned to the &lt;strong>center&lt;/strong>&lt;/p>&lt;p style=&quot;text-align: center&quot;>in a Container with &lt;strong>no&lt;/strong> horizontal alignment&lt;/p>&lt;p style=&quot;text-align: center&quot;>in a LevelItem with &lt;strong>right&lt;/strong> horizontal alignment&lt;/p>&lt;p style=&quot;text-align: center&quot;>and &lt;strong>center&lt;/strong> vertical alignment&lt;/p>"/>
                     </container>
                 </levelitem1>
                 <levelitem2
@@ -90,13 +85,8 @@
                         <content
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="rest_has-text-grey"
                             size="is-medium"
-                            text="&lt;p>Content aligned &lt;strong>left&lt;/strong>&lt;/p>&lt;p>in a Container with &lt;strong>center&lt;/strong> horizontal alignment&lt;/p>&lt;p>In a LevelItem with &lt;strong>right&lt;/strong> horizontal alignment&lt;/p>&lt;p>and &lt;strong>bottom&lt;/strong> vertical alignment&lt;/p>">
-                            <rest
-                                jcr:primaryType="nt:unstructured"
-                                shade="700"/>
-                        </content>
+                            text="&lt;p>Content aligned &lt;strong>left&lt;/strong>&lt;/p>&lt;p>in a Container with &lt;strong>center&lt;/strong> horizontal alignment&lt;/p>&lt;p>In a LevelItem with &lt;strong>right&lt;/strong> horizontal alignment&lt;/p>&lt;p>and &lt;strong>bottom&lt;/strong> vertical alignment&lt;/p>"/>
                     </container>
                 </levelitem2>
             </level>
@@ -115,13 +105,8 @@
                     <content
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="kyanite/common/components/content"
-                        color="rest_has-text-grey"
                         size="is-medium"
-                        text="&lt;p>Following is a level item that has cards of different height, with horizontal alignment set to center and vertical one to bottom&lt;/p>">
-                        <rest
-                            jcr:primaryType="nt:unstructured"
-                            shade="700"/>
-                    </content>
+                        text="&lt;p>Following is a level item that has cards of different height, with horizontal alignment set to center and vertical one to bottom&lt;/p>"/>
                 </feature_1>
                 <feature
                     jcr:primaryType="nt:unstructured"

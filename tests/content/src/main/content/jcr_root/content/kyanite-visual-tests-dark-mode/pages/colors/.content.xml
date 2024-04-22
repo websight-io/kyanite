@@ -1835,29 +1835,15 @@
                                             <title1
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="kyanite/common/components/title"
-                                                color="rest_has-text-grey"
                                                 element="h2"
                                                 text="Primary"
-                                                type="title">
-                                                <grey jcr:primaryType="nt:unstructured"/>
-                                                <bw jcr:primaryType="nt:unstructured"/>
-                                                <rest
-                                                    jcr:primaryType="nt:unstructured"
-                                                    shade="900"/>
-                                            </title1>
+                                                type="title"/>
                                             <title2
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="kyanite/common/components/title"
-                                                color="rest_has-text-grey"
                                                 element="p"
                                                 text="Lorem ipsum dolor sit amet"
-                                                type="subtitle">
-                                                <grey jcr:primaryType="nt:unstructured"/>
-                                                <bw jcr:primaryType="nt:unstructured"/>
-                                                <rest
-                                                    jcr:primaryType="nt:unstructured"
-                                                    shade="900"/>
-                                            </title2>
+                                                type="subtitle"/>
                                         </tile1>
                                         <tile2
                                             jcr:primaryType="nt:unstructured"
@@ -1867,29 +1853,15 @@
                                             <title1
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="kyanite/common/components/title"
-                                                color="rest_has-text-grey"
                                                 element="h2"
                                                 text="Link"
-                                                type="title">
-                                                <grey jcr:primaryType="nt:unstructured"/>
-                                                <bw jcr:primaryType="nt:unstructured"/>
-                                                <rest
-                                                    jcr:primaryType="nt:unstructured"
-                                                    shade="900"/>
-                                            </title1>
+                                                type="title"/>
                                             <title2
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="kyanite/common/components/title"
-                                                color="rest_has-text-grey"
                                                 element="p"
                                                 text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                                                type="subtitle">
-                                                <grey jcr:primaryType="nt:unstructured"/>
-                                                <bw jcr:primaryType="nt:unstructured"/>
-                                                <rest
-                                                    jcr:primaryType="nt:unstructured"
-                                                    shade="900"/>
-                                            </title2>
+                                                type="subtitle"/>
                                         </tile2>
                                     </tile1>
                                     <tile2
@@ -1902,29 +1874,15 @@
                                             <title1
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="kyanite/common/components/title"
-                                                color="rest_has-text-grey"
                                                 element="h2"
                                                 text="Default"
-                                                type="title">
-                                                <grey jcr:primaryType="nt:unstructured"/>
-                                                <bw jcr:primaryType="nt:unstructured"/>
-                                                <rest
-                                                    jcr:primaryType="nt:unstructured"
-                                                    shade="900"/>
-                                            </title1>
+                                                type="title"/>
                                             <title2
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="kyanite/common/components/title"
-                                                color="rest_has-text-grey"
                                                 element="p"
                                                 text="Lorem ipsum dolor sit amet"
-                                                type="subtitle">
-                                                <grey jcr:primaryType="nt:unstructured"/>
-                                                <bw jcr:primaryType="nt:unstructured"/>
-                                                <rest
-                                                    jcr:primaryType="nt:unstructured"
-                                                    shade="900"/>
-                                            </title2>
+                                                type="subtitle"/>
                                         </tile1>
                                     </tile2>
                                 </tile1>
@@ -1939,29 +1897,15 @@
                                         <title1
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="kyanite/common/components/title"
-                                            color="rest_has-text-grey"
                                             element="h2"
                                             text="Info"
-                                            type="title">
-                                            <grey jcr:primaryType="nt:unstructured"/>
-                                            <bw jcr:primaryType="nt:unstructured"/>
-                                            <rest
-                                                jcr:primaryType="nt:unstructured"
-                                                shade="900"/>
-                                        </title1>
+                                            type="title"/>
                                         <title2
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="kyanite/common/components/title"
-                                            color="rest_has-text-grey"
                                             element="p"
                                             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar."
-                                            type="subtitle">
-                                            <grey jcr:primaryType="nt:unstructured"/>
-                                            <bw jcr:primaryType="nt:unstructured"/>
-                                            <rest
-                                                jcr:primaryType="nt:unstructured"
-                                                shade="900"/>
-                                        </title2>
+                                            type="subtitle"/>
                                     </tile1>
                                 </tile2>
                             </tile1>
@@ -1976,28 +1920,14 @@
                                     <title
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="kyanite/common/components/title"
-                                        color="rest_has-text-grey"
                                         element="h2"
                                         text="Success"
-                                        type="title">
-                                        <grey jcr:primaryType="nt:unstructured"/>
-                                        <bw jcr:primaryType="nt:unstructured"/>
-                                        <rest
-                                            jcr:primaryType="nt:unstructured"
-                                            shade="900"/>
-                                    </title>
+                                        type="title"/>
                                     <content
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="kyanite/common/components/content"
-                                        color="grey_has-text-grey"
                                         size="is-medium"
-                                        text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam&lt;/p>">
-                                        <grey
-                                            jcr:primaryType="nt:unstructured"
-                                            shade="darker"/>
-                                        <bw jcr:primaryType="nt:unstructured"/>
-                                        <rest jcr:primaryType="nt:unstructured"/>
-                                    </content>
+                                        text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam&lt;/p>"/>
                                 </tile1>
                             </tile2>
                         </tiles>
@@ -2028,29 +1958,15 @@
                                             <title1
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="kyanite/common/components/title"
-                                                color="rest_has-text-grey"
                                                 element="h2"
                                                 text="Danger"
-                                                type="title">
-                                                <grey jcr:primaryType="nt:unstructured"/>
-                                                <bw jcr:primaryType="nt:unstructured"/>
-                                                <rest
-                                                    jcr:primaryType="nt:unstructured"
-                                                    shade="900"/>
-                                            </title1>
+                                                type="title"/>
                                             <title2
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="kyanite/common/components/title"
-                                                color="rest_has-text-grey"
                                                 element="p"
                                                 text="Lorem ipsum dolor sit amet"
-                                                type="subtitle">
-                                                <grey jcr:primaryType="nt:unstructured"/>
-                                                <bw jcr:primaryType="nt:unstructured"/>
-                                                <rest
-                                                    jcr:primaryType="nt:unstructured"
-                                                    shade="900"/>
-                                            </title2>
+                                                type="subtitle"/>
                                         </tile1>
                                         <tile2
                                             jcr:primaryType="nt:unstructured"
@@ -2060,29 +1976,15 @@
                                             <title1
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="kyanite/common/components/title"
-                                                color="rest_has-text-grey"
                                                 element="h2"
                                                 text="Warning"
-                                                type="title">
-                                                <grey jcr:primaryType="nt:unstructured"/>
-                                                <bw jcr:primaryType="nt:unstructured"/>
-                                                <rest
-                                                    jcr:primaryType="nt:unstructured"
-                                                    shade="900"/>
-                                            </title1>
+                                                type="title"/>
                                             <title2
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="kyanite/common/components/title"
-                                                color="rest_has-text-grey"
                                                 element="p"
                                                 text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                                                type="subtitle">
-                                                <grey jcr:primaryType="nt:unstructured"/>
-                                                <bw jcr:primaryType="nt:unstructured"/>
-                                                <rest
-                                                    jcr:primaryType="nt:unstructured"
-                                                    shade="900"/>
-                                            </title2>
+                                                type="subtitle"/>
                                         </tile2>
                                     </tile1>
                                     <tile2
@@ -2095,29 +1997,15 @@
                                             <title1
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="kyanite/common/components/title"
-                                                color="rest_has-text-grey"
                                                 element="h2"
                                                 text="Container"
-                                                type="title">
-                                                <grey jcr:primaryType="nt:unstructured"/>
-                                                <bw jcr:primaryType="nt:unstructured"/>
-                                                <rest
-                                                    jcr:primaryType="nt:unstructured"
-                                                    shade="900"/>
-                                            </title1>
+                                                type="title"/>
                                             <title2
                                                 jcr:primaryType="nt:unstructured"
                                                 sling:resourceType="kyanite/common/components/title"
-                                                color="rest_has-text-grey"
                                                 element="p"
                                                 text="Lorem ipsum dolor sit amet"
-                                                type="subtitle">
-                                                <grey jcr:primaryType="nt:unstructured"/>
-                                                <bw jcr:primaryType="nt:unstructured"/>
-                                                <rest
-                                                    jcr:primaryType="nt:unstructured"
-                                                    shade="900"/>
-                                            </title2>
+                                                type="subtitle"/>
                                         </tile1>
                                     </tile2>
                                 </tile1>
@@ -2132,29 +2020,15 @@
                                         <title1
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="kyanite/common/components/title"
-                                            color="rest_has-text-grey"
                                             element="h2"
                                             text="Box"
-                                            type="title">
-                                            <grey jcr:primaryType="nt:unstructured"/>
-                                            <bw jcr:primaryType="nt:unstructured"/>
-                                            <rest
-                                                jcr:primaryType="nt:unstructured"
-                                                shade="900"/>
-                                        </title1>
+                                            type="title"/>
                                         <title2
                                             jcr:primaryType="nt:unstructured"
                                             sling:resourceType="kyanite/common/components/title"
-                                            color="rest_has-text-grey"
                                             element="p"
                                             text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus."
-                                            type="subtitle">
-                                            <grey jcr:primaryType="nt:unstructured"/>
-                                            <bw jcr:primaryType="nt:unstructured"/>
-                                            <rest
-                                                jcr:primaryType="nt:unstructured"
-                                                shade="900"/>
-                                        </title2>
+                                            type="subtitle"/>
                                     </tile1>
                                 </tile2>
                             </tile1>
@@ -2169,29 +2043,15 @@
                                     <title1
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="kyanite/common/components/title"
-                                        color="rest_has-text-grey"
                                         element="h2"
                                         text="Default"
-                                        type="title">
-                                        <grey jcr:primaryType="nt:unstructured"/>
-                                        <bw jcr:primaryType="nt:unstructured"/>
-                                        <rest
-                                            jcr:primaryType="nt:unstructured"
-                                            shade="900"/>
-                                    </title1>
+                                        type="title"/>
                                     <title2
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="kyanite/common/components/title"
-                                        color="rest_has-text-grey"
                                         element="p"
                                         text="Lorem ipsum dolor sit amet"
-                                        type="subtitle">
-                                        <grey jcr:primaryType="nt:unstructured"/>
-                                        <bw jcr:primaryType="nt:unstructured"/>
-                                        <rest
-                                            jcr:primaryType="nt:unstructured"
-                                            shade="900"/>
-                                    </title2>
+                                        type="subtitle"/>
                                 </tilechild>
                             </tile2>
                         </tiles>
@@ -2222,15 +2082,7 @@
                                     element="h1"
                                     size="is-1"
                                     text="Primary"
-                                    type="title">
-                                    <grey jcr:primaryType="nt:unstructured"/>
-                                    <bw
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="has-text-primary"/>
-                                    <rest
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="900"/>
-                                </title1>
+                                    type="title"/>
                                 <buttons
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/buttons">
@@ -2250,14 +2102,7 @@
                                 <content1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="grey_has-text-grey"
-                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
-                                    <grey
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="darker"/>
-                                    <bw jcr:primaryType="nt:unstructured"/>
-                                    <rest jcr:primaryType="nt:unstructured"/>
-                                </content1>
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
                             </container1>
                         </hero>
                         <hero_2
@@ -2275,15 +2120,7 @@
                                     element="h1"
                                     size="is-1"
                                     text="Link"
-                                    type="title">
-                                    <grey jcr:primaryType="nt:unstructured"/>
-                                    <bw
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="has-text-primary"/>
-                                    <rest
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="900"/>
-                                </title1>
+                                    type="title"/>
                                 <buttons
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/buttons">
@@ -2302,14 +2139,7 @@
                                 <content1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="grey_has-text-grey"
-                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
-                                    <grey
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="darker"/>
-                                    <bw jcr:primaryType="nt:unstructured"/>
-                                    <rest jcr:primaryType="nt:unstructured"/>
-                                </content1>
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
                             </container1>
                         </hero_2>
                         <hero_1
@@ -2327,15 +2157,7 @@
                                     element="h1"
                                     size="is-1"
                                     text="Info"
-                                    type="title">
-                                    <grey jcr:primaryType="nt:unstructured"/>
-                                    <bw
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="has-text-primary"/>
-                                    <rest
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="900"/>
-                                </title1>
+                                    type="title"/>
                                 <buttons
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/buttons">
@@ -2354,14 +2176,7 @@
                                 <content1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="grey_has-text-grey"
-                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
-                                    <grey
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="darker"/>
-                                    <bw jcr:primaryType="nt:unstructured"/>
-                                    <rest jcr:primaryType="nt:unstructured"/>
-                                </content1>
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
                             </container1>
                         </hero_1>
                         <hero_1_1
@@ -2379,15 +2194,7 @@
                                     element="h1"
                                     size="is-1"
                                     text="Warning"
-                                    type="title">
-                                    <grey jcr:primaryType="nt:unstructured"/>
-                                    <bw
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="has-text-primary"/>
-                                    <rest
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="900"/>
-                                </title1>
+                                    type="title"/>
                                 <buttons
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/buttons">
@@ -2406,14 +2213,7 @@
                                 <content1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="grey_has-text-grey"
-                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
-                                    <grey
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="darker"/>
-                                    <bw jcr:primaryType="nt:unstructured"/>
-                                    <rest jcr:primaryType="nt:unstructured"/>
-                                </content1>
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
                             </container1>
                         </hero_1_1>
                         <hero_1_1_1
@@ -2431,15 +2231,7 @@
                                     element="h1"
                                     size="is-1"
                                     text="Light"
-                                    type="title">
-                                    <grey jcr:primaryType="nt:unstructured"/>
-                                    <bw
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="has-text-primary"/>
-                                    <rest
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="900"/>
-                                </title1>
+                                    type="title"/>
                                 <buttons
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/buttons">
@@ -2458,14 +2250,7 @@
                                 <content1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="grey_has-text-grey"
-                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
-                                    <grey
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="darker"/>
-                                    <bw jcr:primaryType="nt:unstructured"/>
-                                    <rest jcr:primaryType="nt:unstructured"/>
-                                </content1>
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
                             </container1>
                         </hero_1_1_1>
                         <hero_1_1_1_1
@@ -2483,15 +2268,7 @@
                                     element="h1"
                                     size="is-1"
                                     text="Dark"
-                                    type="title">
-                                    <grey jcr:primaryType="nt:unstructured"/>
-                                    <bw
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="has-text-primary"/>
-                                    <rest
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="900"/>
-                                </title1>
+                                    type="title"/>
                                 <buttons
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/buttons">
@@ -2510,14 +2287,7 @@
                                 <content1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="grey_has-text-grey"
-                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
-                                    <grey
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="darker"/>
-                                    <bw jcr:primaryType="nt:unstructured"/>
-                                    <rest jcr:primaryType="nt:unstructured"/>
-                                </content1>
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
                             </container1>
                         </hero_1_1_1_1>
                         <hero_1_1_2
@@ -2535,15 +2305,7 @@
                                     element="h1"
                                     size="is-1"
                                     text="Danger"
-                                    type="title">
-                                    <grey jcr:primaryType="nt:unstructured"/>
-                                    <bw
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="has-text-primary"/>
-                                    <rest
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="900"/>
-                                </title1>
+                                    type="title"/>
                                 <buttons
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/buttons">
@@ -2562,14 +2324,7 @@
                                 <content1
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="grey_has-text-grey"
-                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.">
-                                    <grey
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="darker"/>
-                                    <bw jcr:primaryType="nt:unstructured"/>
-                                    <rest jcr:primaryType="nt:unstructured"/>
-                                </content1>
+                                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
                             </container1>
                         </hero_1_1_2>
                     </column1>
@@ -2587,47 +2342,19 @@
                         <content
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="grey_has-text-grey"
-                            text="&lt;p>Default&lt;/p>">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content>
+                            text="&lt;p>Default&lt;/p>"/>
                         <content_2
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="grey_has-text-grey"
-                            text="&lt;p>Primary&lt;/p>">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content_2>
+                            text="&lt;p>Primary&lt;/p>"/>
                         <content_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="grey_has-text-grey"
-                            text="&lt;p>Link&lt;/p>">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content_1>
+                            text="&lt;p>Link&lt;/p>"/>
                         <content_3
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="grey_has-text-grey"
-                            text="&lt;p>Info&lt;/p>">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content_3>
+                            text="&lt;p>Info&lt;/p>"/>
                     </column1>
                     <column2
                         jcr:primaryType="nt:unstructured"
@@ -2635,58 +2362,23 @@
                         <content_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="grey_has-text-grey"
-                            text="&lt;p>Success&lt;/p>">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content_1>
+                            text="&lt;p>Success&lt;/p>"/>
                         <content_2
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="grey_has-text-grey"
-                            text="&lt;p>Warning&lt;/p>">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content_2>
+                            text="&lt;p>Warning&lt;/p>"/>
                         <content
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="grey_has-text-grey"
-                            text="&lt;p>Danger&lt;/p>">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content>
+                            text="&lt;p>Danger&lt;/p>"/>
                         <content_3
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="grey_has-text-grey"
-                            text="&lt;p>Light&lt;/p>">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content_3>
+                            text="&lt;p>Light&lt;/p>"/>
                         <content_4
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="grey_has-text-grey"
-                            text="&lt;p>Dark&lt;/p>">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content_4>
+                            text="&lt;p>Dark&lt;/p>"/>
                     </column2>
                 </columns>
             </container_1_2_7>
@@ -2702,47 +2394,19 @@
                         <title
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
-                            color="rest_has-text-grey"
-                            text="Default">
-                            <grey jcr:primaryType="nt:unstructured"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest
-                                jcr:primaryType="nt:unstructured"
-                                shade="900"/>
-                        </title>
+                            text="Default"/>
                         <title_3
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
-                            color="rest_has-text-grey"
-                            text="Primary">
-                            <grey jcr:primaryType="nt:unstructured"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest
-                                jcr:primaryType="nt:unstructured"
-                                shade="900"/>
-                        </title_3>
+                            text="Primary"/>
                         <title_2
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
-                            color="rest_has-text-grey"
-                            text="Link">
-                            <grey jcr:primaryType="nt:unstructured"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest
-                                jcr:primaryType="nt:unstructured"
-                                shade="900"/>
-                        </title_2>
+                            text="Link"/>
                         <title_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
-                            color="rest_has-text-grey"
-                            text="Info">
-                            <grey jcr:primaryType="nt:unstructured"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest
-                                jcr:primaryType="nt:unstructured"
-                                shade="900"/>
-                        </title_1>
+                            text="Info"/>
                     </column1>
                     <column1_1
                         jcr:primaryType="nt:unstructured"
@@ -2750,47 +2414,19 @@
                         <title
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
-                            color="rest_has-text-grey"
-                            text="Success">
-                            <grey jcr:primaryType="nt:unstructured"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest
-                                jcr:primaryType="nt:unstructured"
-                                shade="900"/>
-                        </title>
+                            text="Success"/>
                         <title_3
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
-                            color="rest_has-text-grey"
-                            text="Warning">
-                            <grey jcr:primaryType="nt:unstructured"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest
-                                jcr:primaryType="nt:unstructured"
-                                shade="900"/>
-                        </title_3>
+                            text="Warning"/>
                         <title_2
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
-                            color="rest_has-text-grey"
-                            text="Light">
-                            <grey jcr:primaryType="nt:unstructured"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest
-                                jcr:primaryType="nt:unstructured"
-                                shade="900"/>
-                        </title_2>
+                            text="Light"/>
                         <title_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/title"
-                            color="rest_has-text-grey"
-                            text="Dark">
-                            <grey jcr:primaryType="nt:unstructured"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest
-                                jcr:primaryType="nt:unstructured"
-                                shade="900"/>
-                        </title_1>
+                            text="Dark"/>
                     </column1_1>
                 </columns>
             </container_4>

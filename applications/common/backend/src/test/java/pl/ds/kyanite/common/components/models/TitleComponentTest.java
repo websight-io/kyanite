@@ -18,7 +18,6 @@ package pl.ds.kyanite.common.components.models;
 
 import static java.util.Objects.requireNonNull;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.ArgumentMatchers.any;
 
 import org.apache.sling.testing.mock.sling.ResourceResolverType;
 import org.apache.sling.testing.mock.sling.junit5.SlingContext;
@@ -26,30 +25,20 @@ import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
-import pl.ds.kyanite.common.components.models.TitleComponent;
-import pl.ds.kyanite.common.components.services.ColorService;
 
 @ExtendWith({SlingContextExtension.class, MockitoExtension.class})
 class TitleComponentTest {
 
   private static final String PATH = "/content/title";
-  private static final String SHADE_PATH = "/libs/kyanite/common/components/common/text/shade";
   private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
-
-  @Spy
-  private ColorService colorService;
 
   @BeforeEach
   public void init() {
 
     context.addModelsForClasses(TitleComponent.class);
-    context.registerService(ColorService.class, colorService);
     context.load().json(requireNonNull(
         Thread.currentThread().getContextClassLoader().getResourceAsStream("title.json")), PATH);
-    context.load().json(requireNonNull(
-        Thread.currentThread().getContextClassLoader().getResourceAsStream("titleShade.json")), SHADE_PATH);
   }
 
   @Test
@@ -66,8 +55,10 @@ class TitleComponentTest {
 
     assertThat(model.getAnchorId()).isEqualTo("anchorId");
 
-    assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("title", "is-2", "is-spaced", "has-text-black-ter");
-    assertThat(model.getSubtitleClasses()).containsExactlyInAnyOrder("subtitle", "is-4", "has-text-grey-lighter");
+    assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("title", "is-2", "is-spaced",
+        "has-text-black");
+    assertThat(model.getSubtitleClasses()).containsExactlyInAnyOrder("subtitle", "is-4",
+        "has-text-grey");
   }
 
   @Test
@@ -81,19 +72,8 @@ class TitleComponentTest {
     assertThat(model.getElement()).isEqualTo("p");
     assertThat(model.getAnchorId()).isEqualTo("anchorId");
     assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("title", "is-4", "has-text-dark");
-    assertThat(model.getSubtitleClasses()).containsExactlyInAnyOrder("subtitle", "is-6", "has-text-light");
+    assertThat(model.getSubtitleClasses()).containsExactlyInAnyOrder("subtitle", "is-6",
+        "has-text-light");
     assertThat(model.getSize()).isEqualTo("is-4");
-  }
-
-  @Test
-  void titleComponentModelNewShadeTest() {
-    TitleComponent model = context.resourceResolver().getResource(PATH + "/newShade")
-        .adaptTo(TitleComponent.class);
-
-    assertThat(model).isNotNull();
-    assertThat(model.getText()).isEqualTo("Nice title");
-    assertThat(model.getSubtitle()).isEqualTo("Nice subtitle");
-    assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("title", "has-text-black-test");
-    assertThat(model.getSubtitleClasses()).containsExactlyInAnyOrder("subtitle", "has-text-gray-test1");
   }
 }

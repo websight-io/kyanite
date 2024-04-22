@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:ws="http://ds.pl/websight"
-  jcr:primaryType="ws:Pages"
-  ws:template="kyanite/common/templates/pagesspace">
-  <hero/>
-  <level/>
-  <modal/>
+    jcr:primaryType="ws:Pages"
+    ws:template="kyanite/common/templates/pagesspace">
+    <dropdown/>
+    <section/>
+    <card/>
+    <buttons/>
+    <message/>
+    <image/>
+    <tiles/>
+    <container/>
+    <button/>
+    <table/>
+    <menu/>
+    <breadcrumb/>
+    <tag/>
+    <hero/>
+    <level/>
+    <modal/>
 </jcr:root>

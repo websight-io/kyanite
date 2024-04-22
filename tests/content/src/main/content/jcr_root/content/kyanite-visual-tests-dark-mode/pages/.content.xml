@@ -2,6 +2,11 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:ws="http://ds.pl/websight"
     jcr:primaryType="ws:Pages"
     ws:template="/libs/kyanite/common/templates/darkpagesspace">
+    <carousel/>
+    <container/>
+    <table/>
+    <navbar-external-links/>
+    <tag/>
     <tabs/>
     <navbar/>
     <footer/>
