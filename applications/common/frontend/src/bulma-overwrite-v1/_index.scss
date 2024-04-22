@@ -83,6 +83,10 @@
     --kyanite-gray-30-l: 29%; // #494949 old grey-800
     --kyanite-gray-15-l: 16%; // #2A2A2A old grey-900
     --kyanite-gray-10-l: 9%;  // #181818 old grey-1000
+
+  .button {
+    --kyanite-control-radius: var(--border-radius-1) !important;
+  }
 }
 
 .theme-light {
@@ -99,6 +103,8 @@
     --kyanite-background-l: 100%;
 
     --kyanite-radius: 2px;
+
+    --kyanite-hr-background-color: var(--kyanite-gray-90);
 
     /* Components default styles - not from Bulma */
     --kyanite-custom-input-placeholder-color: var(--kyanite-gray-40);

@@ -24,7 +24,7 @@
   // causes the element to establish a containing block for all descendants (used for fixed-position descendants)
   // https://www.w3.org/TR/css-transforms-1/#containing-block-for-all-descendants
   transform: translateX(0);
-  transition: .3s ease-in-out background-color;
+  transition: background-color var(--kyanite-duration) var(--kyanite-easing);
 
   .navbar-dropdown {
     a.navbar-item:focus,
