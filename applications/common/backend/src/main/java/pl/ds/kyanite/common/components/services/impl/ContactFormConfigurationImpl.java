@@ -25,9 +25,10 @@ import org.osgi.service.metatype.annotations.Designate;
 import pl.ds.kyanite.common.components.configurations.ContactFormConfigurationOcd;
 import pl.ds.kyanite.common.components.services.ContactFormConfiguration;
 
+
 @Component(service = ContactFormConfiguration.class)
 @Designate(ocd = ContactFormConfigurationOcd.class, factory = true)
-public class ContactFormConfigurationImpl implements ContactFormConfiguration {
+public class ContactFormConfigurationImpl implements  ContactFormConfiguration {
 
   private ContactFormConfigurationOcd config;
 

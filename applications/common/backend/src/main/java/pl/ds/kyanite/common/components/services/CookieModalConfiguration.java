@@ -16,8 +16,9 @@
 
 package pl.ds.kyanite.common.components.services;
 
-public interface CookieModalConfiguration {
-  String getSpaceName();
+import pl.ds.kyanite.common.components.services.config.SpaceDependentConfiguration;
+
+public interface CookieModalConfiguration extends SpaceDependentConfiguration {
 
   String getPrivacyPolicyPath();
 

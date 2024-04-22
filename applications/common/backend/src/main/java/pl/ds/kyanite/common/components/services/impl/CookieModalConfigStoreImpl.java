@@ -16,43 +16,30 @@
 
 package pl.ds.kyanite.common.components.services.impl;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
 import pl.ds.kyanite.common.components.services.CookieModalConfigStore;
 import pl.ds.kyanite.common.components.services.CookieModalConfiguration;
-
+import pl.ds.kyanite.common.components.services.config.BaseSpaceDependentConfigStore;
 
 @Component(service = CookieModalConfigStore.class, immediate = true)
-public class CookieModalConfigStoreImpl implements CookieModalConfigStore {
+public class CookieModalConfigStoreImpl
+    extends     BaseSpaceDependentConfigStore<CookieModalConfiguration>
+    implements  CookieModalConfigStore {
 
-  private List<CookieModalConfiguration> configsList = new ArrayList<>();
-
-  @Reference(service = CookieModalConfiguration.class,
-      cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC,
+  @Reference(
+      service = CookieModalConfiguration.class,
+      cardinality = ReferenceCardinality.MULTIPLE,
+      policy = ReferencePolicy.DYNAMIC,
       bind = "bind", unbind = "unbind")
   public synchronized void bind(final CookieModalConfiguration config) {
-    if (configsList == null) {
-      configsList = new ArrayList<>();
-    }
-    configsList.add(config);
+    super.bind(config);
   }
-
-  public synchronized void unbind(final CookieModalConfiguration config) {
-    configsList.remove(config);
-  }
-
 
   @Override
-  public CookieModalConfiguration get(String spaceName) {
-    for (CookieModalConfiguration confFact : configsList) {
-      if (spaceName.equals(confFact.getSpaceName())) {
-        return confFact;
-      }
-    }
-    return null;
+  public synchronized void unbind(final CookieModalConfiguration config) {
+    super.unbind(config);
   }
 }

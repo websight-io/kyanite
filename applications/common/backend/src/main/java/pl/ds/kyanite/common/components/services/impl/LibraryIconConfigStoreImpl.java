@@ -24,25 +24,28 @@ import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
 import pl.ds.kyanite.common.components.services.LibraryIconConfig;
 import pl.ds.kyanite.common.components.services.LibraryIconConfigStore;
+import pl.ds.kyanite.common.components.services.config.BaseConfigStore;
 
 
 @Component(service = LibraryIconConfigStore.class, immediate = true)
-public class LibraryIconConfigStoreImpl implements LibraryIconConfigStore {
+public class LibraryIconConfigStoreImpl
+    extends     BaseConfigStore<LibraryIconConfig>
+    implements  LibraryIconConfigStore {
 
-  private List<LibraryIconConfig> configsList;
-
-  @Reference(service = LibraryIconConfig.class,
-      cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC,
-      bind = "bind", unbind = "unbind")
+  @Override
+  @Reference(
+      service = LibraryIconConfig.class,
+      cardinality = ReferenceCardinality.MULTIPLE,
+      policy = ReferencePolicy.DYNAMIC,
+      bind = "bind", unbind = "unbind"
+  )
   public synchronized void bind(final LibraryIconConfig config) {
-    if (configsList == null) {
-      configsList = new ArrayList<>();
-    }
-    configsList.add(config);
+    super.bind(config);
   }
 
+  @Override
   public synchronized void unbind(final LibraryIconConfig config) {
-    configsList.remove(config);
+    super.unbind(config);
   }
 
   @Override
@@ -53,13 +56,4 @@ public class LibraryIconConfigStoreImpl implements LibraryIconConfigStore {
     return configsList;
   }
 
-  @Override
-  public LibraryIconConfig get(String id) {
-    for (LibraryIconConfig confFact : configsList) {
-      if (id.equals(confFact.getId())) {
-        return confFact;
-      }
-    }
-    return null;
-  }
 }

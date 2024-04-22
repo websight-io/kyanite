@@ -16,6 +16,7 @@
 
 package pl.ds.kyanite.common.components.services;
 
-public interface GoogleAnalyticsConfigStore {
-  GoogleAnalyticsConfiguration get(String spaceName);
+import pl.ds.kyanite.common.components.services.config.ConfigStore;
+
+public interface GoogleAnalyticsConfigStore extends ConfigStore<GoogleAnalyticsConfiguration> {
 }

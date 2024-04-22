@@ -16,46 +16,31 @@
 
 package pl.ds.kyanite.common.components.services.impl;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
 import pl.ds.kyanite.common.components.services.ContactFormConfigStore;
 import pl.ds.kyanite.common.components.services.ContactFormConfiguration;
+import pl.ds.kyanite.common.components.services.config.BaseSpaceDependentConfigStore;
+
 
 @Component(service = ContactFormConfigStore.class, immediate = true)
-public class ContactFormConfigStoreImpl implements ContactFormConfigStore {
-
-  private List<ContactFormConfiguration> configList = new ArrayList<>();
+public class ContactFormConfigStoreImpl
+    extends     BaseSpaceDependentConfigStore<ContactFormConfiguration>
+    implements  ContactFormConfigStore {
 
   @Reference(
       service = ContactFormConfiguration.class,
       cardinality = ReferenceCardinality.MULTIPLE,
       policy = ReferencePolicy.DYNAMIC,
-      bind = "bind",
-      unbind = "unbind"
-  )
+      bind = "bind", unbind = "unbind")
   public synchronized void bind(final ContactFormConfiguration config) {
-    if (configList == null) {
-      configList = new ArrayList<>();
-    }
-    configList.add(config);
-  }
-
-  public synchronized void unbind(final ContactFormConfiguration config) {
-    configList.remove(config);
+    super.bind(config);
   }
 
   @Override
-  public ContactFormConfiguration get(String spaceName) {
-    for (ContactFormConfiguration config : configList) {
-      if (spaceName.equals(config.getSpaceName())) {
-        return config;
-      }
-    }
-    return null;
+  public synchronized void unbind(final ContactFormConfiguration config) {
+    super.unbind(config);
   }
-
 }

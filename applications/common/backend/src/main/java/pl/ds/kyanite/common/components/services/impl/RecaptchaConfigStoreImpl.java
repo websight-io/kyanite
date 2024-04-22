@@ -16,43 +16,32 @@
 
 package pl.ds.kyanite.common.components.services.impl;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
 import pl.ds.kyanite.common.components.services.RecaptchaConfigStore;
 import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
+import pl.ds.kyanite.common.components.services.config.BaseSpaceDependentConfigStore;
 
 
 @Component(service = RecaptchaConfigStore.class, immediate = true)
-public class RecaptchaConfigStoreImpl implements RecaptchaConfigStore {
-
-  private List<RecaptchaConfiguration> configsList = new ArrayList<>();
-
-  @Reference(service = RecaptchaConfiguration.class,
-      cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC,
-      bind = "bind", unbind = "unbind")
-  public synchronized void bind(final RecaptchaConfiguration config) {
-    if (configsList == null) {
-      configsList = new ArrayList<>();
-    }
-    configsList.add(config);
-  }
-
-  public synchronized void unbind(final RecaptchaConfiguration config) {
-    configsList.remove(config);
-  }
-
+public class RecaptchaConfigStoreImpl
+    extends     BaseSpaceDependentConfigStore<RecaptchaConfiguration>
+    implements  RecaptchaConfigStore {
 
   @Override
-  public RecaptchaConfiguration get(String spaceName) {
-    for (RecaptchaConfiguration confFact : configsList) {
-      if (spaceName.equals(confFact.getSpaceName())) {
-        return confFact;
-      }
-    }
-    return null;
+  @Reference(
+      service = RecaptchaConfiguration.class,
+      cardinality = ReferenceCardinality.MULTIPLE,
+      policy = ReferencePolicy.DYNAMIC,
+      bind = "bind", unbind = "unbind")
+  public synchronized void bind(final RecaptchaConfiguration config) {
+    super.bind(config);
+  }
+
+  @Override
+  public synchronized void unbind(final RecaptchaConfiguration config) {
+    super.unbind(config);
   }
 }
