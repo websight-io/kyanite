@@ -58,7 +58,7 @@ class TitleComponentTest {
     assertThat(model.getTitleClasses()).containsExactlyInAnyOrder("title", "is-2", "is-spaced",
         "has-text-black");
     assertThat(model.getSubtitleClasses()).containsExactlyInAnyOrder("subtitle", "is-4",
-        "has-text-grey");
+        "has-text-gray");
   }
 
   @Test
