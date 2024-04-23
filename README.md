@@ -133,7 +133,7 @@ These are the colors that can be overwritten in hex value (be aware of grey, whi
 Other global variables (for others, check `:root`):
 
 ```css
-  --kyanite-link: var(--color-primary--500);
+  --kyanite-link: var(--kyanite-primary-50);
   --kyanite-code-background: #000;
   --kyanite-code: #eaeaea;
   --kyanite-background: #0A0A0B;

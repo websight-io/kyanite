@@ -23,6 +23,7 @@
   border-radius: var(--border-radius-1);
   font-weight: var(--kyanite-weight-semibold);
   @extend .px-4;
+  @extend .mb-2;
 
   &.is-normal {
     font-size: var(--font-size-14);

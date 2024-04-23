@@ -48,7 +48,7 @@
                             sling:resourceType="kyanite/common/components/button"
                             isOutlined="{Boolean}true"
                             label="Try now, it's free"
-                            variant="is-secondary"/>
+                            variant="is-dark"/>
                     </buttons>
                     <content1
                         jcr:primaryType="nt:unstructured"
@@ -85,7 +85,7 @@
                             sling:resourceType="kyanite/common/components/button"
                             isOutlined="{Boolean}true"
                             label="Try now, it's free"
-                            variant="is-secondary"/>
+                            variant="is-dark"/>
                     </buttons>
                     <content1
                         jcr:primaryType="nt:unstructured"
@@ -122,7 +122,7 @@
                             sling:resourceType="kyanite/common/components/button"
                             isOutlined="{Boolean}true"
                             label="Try now, it's free"
-                            variant="is-secondary"/>
+                            variant="is-dark"/>
                     </buttons>
                     <content1
                         jcr:primaryType="nt:unstructured"
@@ -159,7 +159,7 @@
                             sling:resourceType="kyanite/common/components/button"
                             isOutlined="{Boolean}true"
                             label="Try now, it's free"
-                            variant="is-secondary"/>
+                            variant="is-dark"/>
                     </buttons>
                     <content1
                         jcr:primaryType="nt:unstructured"

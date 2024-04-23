@@ -42,7 +42,7 @@
             <content_1
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/content"
-                text="&lt;p>Secondary (type button)&lt;/p>"/>
+                text="&lt;p>Outlined dark (type button)&lt;/p>"/>
             <buttons_2
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/buttons">
@@ -50,17 +50,20 @@
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/button"
                     size="is-large"
-                    variant="is-secondary"/>
+                    isOutlined="true"
+                    variant="is-dark"/>
                 <button2
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/button"
                     size="is-normal"
-                    variant="is-secondary"/>
+                    isOutlined="true"
+                    variant="is-dark"/>
                 <button3
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/button"
                     size="is-small"
-                    variant="is-secondary"/>
+                    isOutlined="true"
+                    variant="is-dark"/>
             </buttons_2>
             <content
                 jcr:primaryType="nt:unstructured"
@@ -117,7 +120,7 @@
             <content_4
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/content"
-                text="&lt;p>Secondary (type anchor)&lt;/p>"/>
+                text="&lt;p>Outlined dark (type anchor)&lt;/p>"/>
             <buttons_2_1
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/buttons">
@@ -127,21 +130,24 @@
                     size="is-large"
                     type="a"
                     url="google.com"
-                    variant="is-secondary"/>
+                    isOutlined="true"
+                    variant="is-dark"/>
                 <button2
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/button"
                     size="is-normal"
                     type="a"
                     url="google.com"
-                    variant="is-secondary"/>
+                    isOutlined="true"
+                    variant="is-dark"/>
                 <button3
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/button"
                     size="is-small"
                     type="a"
                     url="google.com"
-                    variant="is-secondary"/>
+                    isOutlined="true"
+                    variant="is-dark"/>
             </buttons_2_1>
             <content_5
                 jcr:primaryType="nt:unstructured"

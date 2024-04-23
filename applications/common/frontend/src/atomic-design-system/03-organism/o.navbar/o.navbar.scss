@@ -69,7 +69,6 @@
   .navbar-top {
     @include breakpoint.media-breakpoint-large {
       align-items: center;
-      height: 100%;
     }
   }
 
@@ -91,6 +90,7 @@
       .navbar-top {
         @include breakpoint.media-breakpoint-large {
           height: calc(50% - var(--spacing-2));
+          margin-top: var(--spacing-3);
         }
       }
     }
@@ -130,12 +130,12 @@
     }
   }
 
-  a.navbar-link,
-  a.navbar-item {
+  .navbar-link,
+  .navbar-item {
     font-weight: var(--kyanite-weight-medium);
   }
 
-  a.navbar-item {
+  .navbar-item {
     &:hover {
       color: var(--kyanite-custom-navbar-item-color-hover);
       background-color: inherit;
@@ -279,13 +279,6 @@
     }
   }
 
-  .label-megadropdown {
-    color: var(--kyanite-gray-15);
-    &:hover {
-      color: var(--kyanite-gray-15);
-    }
-  }
-
   .navbar-mega-dropdown .columns {
     margin-left: -0.5rem;
     margin-right: -0.5rem;
@@ -293,6 +286,11 @@
     @include breakpoint.media-breakpoint-large {
       margin-left: -0.75rem;
       margin-right: -0.75rem;
+    }
+    .navbar-item {
+      &:hover {
+        background-color: inherit;
+      }
     }
   }
 
@@ -307,7 +305,6 @@
       position: fixed;
       width: 100%;
       left: 0;
-      top: calc(100% - var(--spacing-4));
 
       // make sure columns layout will be 5 columns of equal width
       .column {

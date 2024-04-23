@@ -223,6 +223,8 @@
     --kyanite-subtitle-weight: var(--kyanite-weight-semibold);
   }
   .content {
+    --kyanite-content-heading-weight: var(--kyanite-weight-semibold);
+
     --kyanite-custom-content-color: var(--kyanite-gray-40);
   }
   .tabs {
@@ -257,5 +259,10 @@
     --kyanite-footer-background-color: var(--kyanite-gray-10);
     --kyanite-footer-color: var(--kyanite-white-bis);
     --kyanite-custom-footer-menu-label: var(--kyanite-gray-70);
+  }
+
+  // fix content color inconsistencies after migration to bulma v1 - otherwise author should change it all manually
+  .template-blogarticlepage .content {
+    color: var(--kyanite-gray-15) !important;
   }
 }
