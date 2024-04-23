@@ -12,7 +12,7 @@
       "hidden": true,
       "addText": "true",
       "iconSize": "mdi-24px",
-      "textVariant": "has-text-grey",
+      "textVariant": "has-text-gray",
       "iconLibType": "mdi",
       "icon": "mdi-creation-outline",
       "label": "Icon text",
@@ -38,12 +38,8 @@
       "jcr:primaryType": "nt:unstructured",
       "size": "is-medium",
       "text": "<p><span class=\"has-text-primary\">Read More</span></p>",
-      "color": "rest_has-text-primary",
-      "sling:resourceType": "kyanite/common/components/content",
-      "rest": {
-        "jcr:primaryType": "nt:unstructured",
-        "shade": "700"
-      }
+      "color": "has-text-primary",
+      "sling:resourceType": "kyanite/common/components/content"
     }
   }
 }

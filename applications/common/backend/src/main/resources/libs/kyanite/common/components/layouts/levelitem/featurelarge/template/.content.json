@@ -32,8 +32,7 @@
       "sling:resourceType": "kyanite/common/components/content",
       "size": "is-medium",
       "textWeight": "has-text-weight-medium",
-      "color": "rest_has-text-grey",
-      "shadeRest": "900",
+      "color": "",
       "text": "<p>Feature name goes here</p>"
     },
     "link": {

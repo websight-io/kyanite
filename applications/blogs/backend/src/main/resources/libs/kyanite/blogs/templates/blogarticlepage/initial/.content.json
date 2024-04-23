@@ -136,10 +136,6 @@
               },
               "content": {
                 "sling:resourceType": "kyanite/common/components/content",
-                "color": "rest_has-text-grey",
-                "rest": {
-                  "shade": "700"
-                },
                 "text": "<p>Content</p>",
                 "size": "is-medium"
               }

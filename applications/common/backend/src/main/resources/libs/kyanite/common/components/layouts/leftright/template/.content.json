@@ -93,12 +93,7 @@
           "jcr:primaryType": "nt:unstructured",
           "size": "is-medium",
           "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi finibus, fermentum eros sit amet, efficitur ligula. Vivamus maximus velit vel velit maximus, at placerat lorem placerat. Praesent nec nisl nec nisi volutpat aliquet. Phasellus eget velit eget urna consectetur egestas quis sit amet est. Aenean euismod, urna eu tempor congue, orci erat molestie nibh, vitae maximus ipsum est vitae risus.</p>",
-          "color": "rest_has-text-grey",
-          "sling:resourceType": "kyanite/common/components/content",
-          "rest": {
-            "jcr:primaryType": "nt:unstructured",
-            "shade": "700"
-          }
+          "sling:resourceType": "kyanite/common/components/content"
         }
       }
     }

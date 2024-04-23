@@ -20,12 +20,12 @@
   "light": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Light",
-    "value": "has-text-grey-light"
+    "value": "has-text-gray-light"
   },
   "dark": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Dark",
-    "value": "has-text-grey-dark"
+    "value": "has-text-gray-dark"
   },
   "primary": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
@@ -40,7 +40,7 @@
   "grey": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Grey",
-    "value": "has-text-grey"
+    "value": "has-text-gray"
   },
   "link": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",

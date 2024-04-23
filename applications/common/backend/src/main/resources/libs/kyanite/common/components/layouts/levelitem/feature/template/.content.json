@@ -27,8 +27,7 @@
       "sling:resourceType": "kyanite/common/components/content",
       "size": "is-large",
       "textWeight": "has-text-weight-bold",
-      "color": "rest_has-text-grey",
-      "shadeRest": "900",
+      "color": "",
       "text": "<p>Even at high data volumes</p>"
     },
     "content2": {

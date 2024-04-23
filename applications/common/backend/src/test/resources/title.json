@@ -13,7 +13,7 @@
     "anchorId": "anchorId",
     "size": "is-2",
     "color": "has-text-black",
-    "subtitleColor": "has-text-grey",
+    "subtitleColor": "has-text-gray",
     "isSpaced": true
   },
   "complex1": {
