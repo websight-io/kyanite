@@ -26,8 +26,6 @@
   }
 
   .media {
-    @extend .pb-5;
-
     .content {
       color: var(--kyanite-gray-40);
       small:first-of-type {
