@@ -100,6 +100,28 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              url: false
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins() {
+                return [
+                  require('autoprefixer')
+                ];
+              }
+            }
+          },
+        ]
+      },
     ],
   },
   plugins: [
