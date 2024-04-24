@@ -292,6 +292,9 @@
         background-color: inherit;
       }
     }
+    .navbar-section {
+      color: var(--kyanite-gray-60);
+    }
   }
 
   @include breakpoint.media-breakpoint-large {
