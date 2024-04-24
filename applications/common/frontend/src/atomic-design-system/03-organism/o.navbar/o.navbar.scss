@@ -90,7 +90,7 @@
       .navbar-top {
         @include breakpoint.media-breakpoint-large {
           height: calc(50% - var(--spacing-2));
-          margin-top: var(--spacing-3);
+          margin-top: var(--spacing-5);
         }
       }
     }
