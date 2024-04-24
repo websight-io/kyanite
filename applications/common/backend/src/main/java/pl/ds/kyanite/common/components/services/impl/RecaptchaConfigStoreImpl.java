@@ -27,8 +27,8 @@ import pl.ds.kyanite.common.components.services.config.BaseSpaceDependentConfigS
 
 @Component(service = RecaptchaConfigStore.class, immediate = true)
 public class RecaptchaConfigStoreImpl
-    extends     BaseSpaceDependentConfigStore<RecaptchaConfiguration>
-    implements  RecaptchaConfigStore {
+    extends BaseSpaceDependentConfigStore<RecaptchaConfiguration>
+    implements RecaptchaConfigStore {
 
   @Override
   @Reference(

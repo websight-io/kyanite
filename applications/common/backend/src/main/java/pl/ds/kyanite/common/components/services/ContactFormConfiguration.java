@@ -19,6 +19,7 @@ package pl.ds.kyanite.common.components.services;
 import pl.ds.kyanite.common.components.services.config.SpaceDependentConfiguration;
 
 public interface ContactFormConfiguration extends SpaceDependentConfiguration {
+
   String getConfigEndpoint();
 
 }

@@ -27,8 +27,8 @@ import pl.ds.kyanite.common.components.services.config.BaseSpaceDependentConfigu
 @Component(service = CookieModalConfiguration.class)
 @Designate(ocd = CookieModalConfigurationOcd.class, factory = true)
 public class CookieModalConfigurationImpl
-    extends     BaseSpaceDependentConfiguration
-    implements  CookieModalConfiguration {
+    extends BaseSpaceDependentConfiguration
+    implements CookieModalConfiguration {
 
   private String privacyPolicyPath;
   private String contactUsPath;

@@ -26,8 +26,8 @@ import pl.ds.kyanite.common.components.services.config.BaseSpaceDependentConfigS
 
 @Component(service = GoogleAnalyticsConfigStore.class, immediate = true)
 public class GoogleAnalyticsConfigStoreImpl
-    extends     BaseSpaceDependentConfigStore<GoogleAnalyticsConfiguration>
-    implements  GoogleAnalyticsConfigStore {
+    extends BaseSpaceDependentConfigStore<GoogleAnalyticsConfiguration>
+    implements GoogleAnalyticsConfigStore {
 
   @Reference(
       service = GoogleAnalyticsConfiguration.class,

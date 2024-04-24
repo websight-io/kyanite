@@ -19,6 +19,7 @@ package pl.ds.kyanite.common.components.services;
 import pl.ds.kyanite.common.components.services.config.ServiceConfiguration;
 
 public interface LibraryIconConfig extends ServiceConfiguration {
+
   String getLabel();
 
   String getLibraryUrl();

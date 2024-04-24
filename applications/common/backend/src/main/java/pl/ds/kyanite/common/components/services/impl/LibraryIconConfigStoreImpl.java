@@ -29,8 +29,8 @@ import pl.ds.kyanite.common.components.services.config.BaseConfigStore;
 
 @Component(service = LibraryIconConfigStore.class, immediate = true)
 public class LibraryIconConfigStoreImpl
-    extends     BaseConfigStore<LibraryIconConfig>
-    implements  LibraryIconConfigStore {
+    extends BaseConfigStore<LibraryIconConfig>
+    implements LibraryIconConfigStore {
 
   @Override
   @Reference(

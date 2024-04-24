@@ -26,8 +26,8 @@ import pl.ds.kyanite.common.components.services.config.BaseSpaceDependentConfigS
 
 @Component(service = CookieModalConfigStore.class, immediate = true)
 public class CookieModalConfigStoreImpl
-    extends     BaseSpaceDependentConfigStore<CookieModalConfiguration>
-    implements  CookieModalConfigStore {
+    extends BaseSpaceDependentConfigStore<CookieModalConfiguration>
+    implements CookieModalConfigStore {
 
   @Reference(
       service = CookieModalConfiguration.class,

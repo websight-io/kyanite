@@ -27,8 +27,8 @@ import pl.ds.kyanite.common.components.services.config.BaseSpaceDependentConfigu
 @Component(service = RecaptchaConfiguration.class)
 @Designate(ocd = RecaptchaConfigurationOcd.class, factory = true)
 public class RecaptchaConfigurationImpl
-    extends     BaseSpaceDependentConfiguration
-    implements  RecaptchaConfiguration {
+    extends BaseSpaceDependentConfiguration
+    implements RecaptchaConfiguration {
 
   private String captchaPublicKey;
 

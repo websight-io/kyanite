@@ -27,8 +27,8 @@ import pl.ds.kyanite.common.components.services.config.BaseSpaceDependentConfigS
 
 @Component(service = ContactFormConfigStore.class, immediate = true)
 public class ContactFormConfigStoreImpl
-    extends     BaseSpaceDependentConfigStore<ContactFormConfiguration>
-    implements  ContactFormConfigStore {
+    extends BaseSpaceDependentConfigStore<ContactFormConfiguration>
+    implements ContactFormConfigStore {
 
   @Reference(
       service = ContactFormConfiguration.class,

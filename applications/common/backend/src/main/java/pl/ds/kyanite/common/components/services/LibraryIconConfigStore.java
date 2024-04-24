@@ -20,5 +20,7 @@ import java.util.List;
 import pl.ds.kyanite.common.components.services.config.ConfigStore;
 
 public interface LibraryIconConfigStore extends ConfigStore<LibraryIconConfig> {
+
   List<LibraryIconConfig> getAllConfigs();
+
 }
