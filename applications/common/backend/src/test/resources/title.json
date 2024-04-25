@@ -10,6 +10,7 @@
     "subtitle": "Nice subtitle",
     "addSubtitle": true,
     "element": "p",
+    "overrideAnchorId": true,
     "anchorId": "anchorId",
     "size": "is-2",
     "color": "bw_has-text-black",
