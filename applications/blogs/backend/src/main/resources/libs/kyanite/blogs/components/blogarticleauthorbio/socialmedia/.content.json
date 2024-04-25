@@ -1,0 +1,10 @@
+{
+  "isContainer": true,
+  "group": ".hidden",
+  "allowedComponents": [
+    "/apps/kyanite/common/components/button",
+    "/libs/kyanite/common/components/button"
+  ],
+  "sling:resourceType": "ws:Component",
+  "title": "Social media"
+}

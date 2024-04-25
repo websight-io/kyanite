@@ -152,9 +152,9 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
     }
     String authorOwnerPath = authorNode.getParent().getPath();
     if (authorOwnerPath.endsWith(JCR_CONTENT)) {
-      authorOwnerPath = authorOwnerPath.replace(JCR_CONTENT + "$", "");
+      authorOwnerPath = authorOwnerPath.replaceFirst("(?s)(.*)/" + JCR_CONTENT, "$1");
     }
-    model.setAuthorPagePath(authorOwnerPath);
+    model.setAuthorOwnerPath(authorOwnerPath);
     return model;
   }
 

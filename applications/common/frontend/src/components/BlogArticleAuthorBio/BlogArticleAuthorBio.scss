@@ -21,9 +21,6 @@
 
 .blog-article-author-bio {
   @include article-author-bio.m-article-author-bio;
-  .image {
-    margin-bottom: 0 !important;
-  }
 }
 
 .template-authorbiopage {

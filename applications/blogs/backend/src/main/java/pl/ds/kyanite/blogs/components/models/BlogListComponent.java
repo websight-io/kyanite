@@ -157,7 +157,7 @@ public class BlogListComponent {
   private boolean hasSameAuthor(Resource page, AuthorInfoModel currentAuthor) {
     AuthorInfoModel pageAuthor = retrieveAuthorInfo(page);
     return pageAuthor != null
-        && currentAuthor.getAuthorPagePath().equals(pageAuthor.getAuthorPagePath());
+        && currentAuthor.getAuthorOwnerPath().equals(pageAuthor.getAuthorOwnerPath());
   }
 
 }

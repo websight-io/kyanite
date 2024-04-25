@@ -31,8 +31,14 @@
       <article class="media">
         <figure class="media-left">
           <p class="image is-48x48">
-            <img width="48" height="48"  data-sly-test.authorPhoto="${author.authorPhoto}" class="is-rounded"
-                 src="${authorPhoto}" alt="${author.authorPhotoAlt}">
+            <sly data-sly-set.leadsToAuthorPage="
+              ${ (    (author.authorOwnerPath != null)
+                  &&  (author.authorOwnerPath != currentPage.path) ) }"></sly>
+            <a data-sly-unwrap="${!leadsToAuthorPage}"
+               href="${author.authorOwnerUrl}" target="">
+              <img width="48" height="48"  data-sly-test.authorPhoto="${author.authorPhoto}" class="is-rounded"
+                   src="${authorPhoto}" alt="${author.authorPhotoAlt}">
+            </a>
           </p>
         </figure>
         <div class="media-content">

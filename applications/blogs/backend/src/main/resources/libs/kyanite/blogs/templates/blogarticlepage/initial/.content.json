@@ -142,6 +142,13 @@
                 },
                 "text": "<p>Content</p>",
                 "size": "is-medium"
+              },
+              "authorBio": {
+                "sling:resourceType": "kyanite/blogs/components/blogarticleauthorbio",
+                "author": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "authorInfoSource": "parentPage"
+                }
               }
             }
           }
