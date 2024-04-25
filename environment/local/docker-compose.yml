@@ -68,6 +68,15 @@ services:
     volumes:
       - kyanite-project_site_repository:/usr/share/nginx/html:ro
 
+
+  # JSON mocks HTTP server
+  streamx-search-mock-server:
+    init: true
+    build:
+      context: ../.docker/streamx-search-mock-server
+    ports:
+      - "8777:8777"
+
 volumes:
   kyanite-project_cms_logs:
   kyanite-project_mongo_repository:

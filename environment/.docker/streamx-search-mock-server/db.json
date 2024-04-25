@@ -1,0 +1,19 @@
+{
+  "search": {
+    "items": [
+      {
+        "path": "/published/kyanite/pages/Personal.html",
+        "title": "Personal",
+        "bestFragment": "<B>Personal</B> Page",
+        "score": 0.5230583
+      },
+      {
+        "path": "/published/kyanite/pages/Home.html",
+        "title": "Home",
+        "bestFragment": "<B>Home</B> Page",
+        "score": 0.4
+      }
+    ],
+    "executionTimeMs": 10
+  }
+}
