@@ -22,12 +22,14 @@ import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.metatype.annotations.Designate;
 import pl.ds.kyanite.common.components.configurations.RecaptchaConfigurationOcd;
 import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
+import pl.ds.kyanite.common.components.services.config.BaseSpaceDependentConfiguration;
 
 @Component(service = RecaptchaConfiguration.class)
 @Designate(ocd = RecaptchaConfigurationOcd.class, factory = true)
-public class RecaptchaConfigurationImpl implements RecaptchaConfiguration {
+public class RecaptchaConfigurationImpl
+    extends BaseSpaceDependentConfiguration
+    implements RecaptchaConfiguration {
 
-  private String spaceName;
   private String captchaPublicKey;
 
   @Activate
@@ -35,11 +37,6 @@ public class RecaptchaConfigurationImpl implements RecaptchaConfiguration {
   protected void activate(final RecaptchaConfigurationOcd config) {
     this.spaceName = config.spaceName();
     this.captchaPublicKey = config.captchaPublicKey();
-  }
-
-  @Override
-  public String getSpaceName() {
-    return spaceName;
   }
 
   @Override

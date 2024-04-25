@@ -14,9 +14,13 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.common.components.services;
+package pl.ds.kyanite.common.components.services.config;
 
-import pl.ds.kyanite.common.components.services.config.ConfigStore;
+import org.apache.sling.api.resource.Resource;
 
-public interface GoogleAnalyticsConfigStore extends ConfigStore<GoogleAnalyticsConfiguration> {
+public interface SpaceDependentConfigStore<T extends SpaceDependentConfiguration>
+    extends ConfigStore<T> {
+
+  T get(Resource resource);
+
 }

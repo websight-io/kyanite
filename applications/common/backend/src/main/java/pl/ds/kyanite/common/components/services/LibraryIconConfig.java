@@ -16,10 +16,11 @@
 
 package pl.ds.kyanite.common.components.services;
 
-public interface LibraryIconConfig {
-  String getLabel();
+import pl.ds.kyanite.common.components.services.config.ServiceConfiguration;
 
-  String getId();
+public interface LibraryIconConfig extends ServiceConfiguration {
+
+  String getLabel();
 
   String getLibraryUrl();
 

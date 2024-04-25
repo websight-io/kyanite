@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,34 +20,28 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.metatype.annotations.Designate;
-import pl.ds.kyanite.common.components.configurations.CookieModalConfigurationOcd;
-import pl.ds.kyanite.common.components.services.CookieModalConfiguration;
+import pl.ds.kyanite.common.components.configurations.SearchConfigurationOcd;
+import pl.ds.kyanite.common.components.services.SearchConfiguration;
 import pl.ds.kyanite.common.components.services.config.BaseSpaceDependentConfiguration;
 
-@Component(service = CookieModalConfiguration.class)
-@Designate(ocd = CookieModalConfigurationOcd.class, factory = true)
-public class CookieModalConfigurationImpl
-    extends BaseSpaceDependentConfiguration
-    implements CookieModalConfiguration {
+@Component(service = SearchConfiguration.class)
+@Designate(ocd = SearchConfigurationOcd.class, factory = true)
+public class SearchConfigurationImpl
+    extends     BaseSpaceDependentConfiguration
+    implements  SearchConfiguration {
 
-  private String privacyPolicyPath;
-  private String contactUsPath;
+  private String searchEndpoint;
 
   @Activate
   @Modified
-  protected void activate(final CookieModalConfigurationOcd config) {
+  protected void activate(final SearchConfigurationOcd config) {
     this.spaceName = config.spaceName();
-    this.privacyPolicyPath = config.privacyPolicyPath();
-    this.contactUsPath = config.contactUsPath();
+    this.searchEndpoint = config.searchEndpoint();
   }
 
   @Override
-  public String getPrivacyPolicyPath() {
-    return privacyPolicyPath;
+  public String getSearchEndpoint() {
+    return searchEndpoint;
   }
 
-  @Override
-  public String getContactUsPath() {
-    return contactUsPath;
-  }
 }

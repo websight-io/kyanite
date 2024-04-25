@@ -16,19 +16,18 @@
 
 package pl.ds.kyanite.common.components.services.impl;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
 import pl.ds.kyanite.common.components.services.GoogleAnalyticsConfigStore;
 import pl.ds.kyanite.common.components.services.GoogleAnalyticsConfiguration;
+import pl.ds.kyanite.common.components.services.config.BaseSpaceDependentConfigStore;
 
 @Component(service = GoogleAnalyticsConfigStore.class, immediate = true)
-public class GoogleAnalyticsConfigStoreImpl implements GoogleAnalyticsConfigStore {
-
-  private List<GoogleAnalyticsConfiguration> configList = new ArrayList<>();
+public class GoogleAnalyticsConfigStoreImpl
+    extends BaseSpaceDependentConfigStore<GoogleAnalyticsConfiguration>
+    implements GoogleAnalyticsConfigStore {
 
   @Reference(
       service = GoogleAnalyticsConfiguration.class,
@@ -38,24 +37,11 @@ public class GoogleAnalyticsConfigStoreImpl implements GoogleAnalyticsConfigStor
       unbind = "unbind"
   )
   public synchronized void bind(final GoogleAnalyticsConfiguration config) {
-    if (configList == null) {
-      configList = new ArrayList<>();
-    }
-    configList.add(config);
-  }
-
-  public synchronized void unbind(final GoogleAnalyticsConfiguration config) {
-    configList.remove(config);
+    super.bind(config);
   }
 
   @Override
-  public GoogleAnalyticsConfiguration get(String spaceName) {
-    for (GoogleAnalyticsConfiguration config : configList) {
-      if (spaceName.equals(config.getSpaceName())) {
-        return config;
-      }
-    }
-    return null;
+  public synchronized void unbind(final GoogleAnalyticsConfiguration config) {
+    super.unbind(config);
   }
-
 }

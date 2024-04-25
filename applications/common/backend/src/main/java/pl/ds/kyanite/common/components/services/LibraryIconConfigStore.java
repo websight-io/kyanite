@@ -17,9 +17,10 @@
 package pl.ds.kyanite.common.components.services;
 
 import java.util.List;
+import pl.ds.kyanite.common.components.services.config.ConfigStore;
 
-public interface LibraryIconConfigStore {
-  LibraryIconConfig get(String id);
+public interface LibraryIconConfigStore extends ConfigStore<LibraryIconConfig> {
 
   List<LibraryIconConfig> getAllConfigs();
+
 }

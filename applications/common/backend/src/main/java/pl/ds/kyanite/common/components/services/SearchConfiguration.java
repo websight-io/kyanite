@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Dynamic Solutions
+ * Copyright (C) 2023 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,8 @@
 
 package pl.ds.kyanite.common.components.services;
 
-import pl.ds.kyanite.common.components.services.config.ConfigStore;
+import pl.ds.kyanite.common.components.services.config.SpaceDependentConfiguration;
 
-public interface GoogleAnalyticsConfigStore extends ConfigStore<GoogleAnalyticsConfiguration> {
+public interface SearchConfiguration extends SpaceDependentConfiguration {
+  String getSearchEndpoint();
 }

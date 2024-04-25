@@ -14,9 +14,20 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.common.components.services;
+const nonGetHttpMethods = ['POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'];
 
-import pl.ds.kyanite.common.components.services.config.ConfigStore;
-
-public interface GoogleAnalyticsConfigStore extends ConfigStore<GoogleAnalyticsConfiguration> {
-}
+/**
+ * json-server works in non-only-read mode - it can modify the db.json file.
+ * That's because we do want to let POST methods.
+ * But letting saving files from user content is a security risk.
+ * To stay secure this middleware modifies all other methods to non-file-modifying GET.
+ */
+module.exports = (req, res, next) => {
+    if(req.method === "PUT"){
+        res.status(202);
+    }
+    else if (nonGetHttpMethods.includes(req.method)) {
+        req.method = 'GET';
+    }
+    next();
+};

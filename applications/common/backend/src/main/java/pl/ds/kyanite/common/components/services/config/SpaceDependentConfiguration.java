@@ -14,9 +14,14 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.common.components.services;
+package pl.ds.kyanite.common.components.services.config;
 
-import pl.ds.kyanite.common.components.services.config.ConfigStore;
+public interface SpaceDependentConfiguration extends ServiceConfiguration {
 
-public interface GoogleAnalyticsConfigStore extends ConfigStore<GoogleAnalyticsConfiguration> {
+  String getSpaceName();
+
+  @Override
+  default String getId() {
+    return getSpaceName();
+  }
 }

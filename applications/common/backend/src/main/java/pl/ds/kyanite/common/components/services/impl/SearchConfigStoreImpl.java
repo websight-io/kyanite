@@ -16,44 +16,31 @@
 
 package pl.ds.kyanite.common.components.services.impl;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferenceCardinality;
 import org.osgi.service.component.annotations.ReferencePolicy;
-import pl.ds.kyanite.common.components.services.LibraryIconConfig;
-import pl.ds.kyanite.common.components.services.LibraryIconConfigStore;
-import pl.ds.kyanite.common.components.services.config.BaseConfigStore;
+import pl.ds.kyanite.common.components.services.SearchConfigStore;
+import pl.ds.kyanite.common.components.services.SearchConfiguration;
+import pl.ds.kyanite.common.components.services.config.BaseSpaceDependentConfigStore;
 
-
-@Component(service = LibraryIconConfigStore.class, immediate = true)
-public class LibraryIconConfigStoreImpl
-    extends BaseConfigStore<LibraryIconConfig>
-    implements LibraryIconConfigStore {
+@Component(service = SearchConfigStore.class, immediate = true)
+public class SearchConfigStoreImpl
+    extends     BaseSpaceDependentConfigStore<SearchConfiguration>
+    implements  SearchConfigStore {
 
   @Override
   @Reference(
-      service = LibraryIconConfig.class,
+      service = SearchConfiguration.class,
       cardinality = ReferenceCardinality.MULTIPLE,
       policy = ReferencePolicy.DYNAMIC,
-      bind = "bind", unbind = "unbind"
-  )
-  public synchronized void bind(final LibraryIconConfig config) {
+      bind = "bind", unbind = "unbind")
+  public synchronized void bind(final SearchConfiguration config) {
     super.bind(config);
   }
 
   @Override
-  public synchronized void unbind(final LibraryIconConfig config) {
+  public synchronized void unbind(final SearchConfiguration config) {
     super.unbind(config);
   }
-
-  @Override
-  public List<LibraryIconConfig> getAllConfigs() {
-    if (configsList == null) {
-      configsList = new ArrayList<>();
-    }
-    return configsList;
-  }
-
 }

@@ -14,9 +14,14 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.common.components.services;
+package pl.ds.kyanite.common.components.services.config;
 
-import pl.ds.kyanite.common.components.services.config.ConfigStore;
+public interface ConfigStore<T extends ServiceConfiguration> {
 
-public interface GoogleAnalyticsConfigStore extends ConfigStore<GoogleAnalyticsConfiguration> {
+  T get(String id);
+
+  void bind(T conf);
+
+  void unbind(T conf);
+
 }
