@@ -8,10 +8,12 @@
     "pagecontainer": {
       "sling:resourceType": "kyanite/common/components/pagecontainer",
       "navbarreference": {
-        "sling:resourceType": "kyanite/common/components/navbarreference"
+        "sling:resourceType": "kyanite/fragments/components/fragment",
+        "referenceResourceName": "header"
       },
       "footerreference": {
-        "sling:resourceType": "kyanite/common/components/footerreference"
+        "sling:resourceType": "kyanite/fragments/components/fragment",
+        "referenceResourceName": "footer"
       }
     }
   }

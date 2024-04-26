@@ -12,7 +12,8 @@
     "pagecontainer": {
       "sling:resourceType": "kyanite/common/components/pagecontainer",
       "navbarreference": {
-        "sling:resourceType": "kyanite/common/components/navbarreference"
+        "sling:resourceType": "kyanite/fragments/components/fragment",
+        "referenceResourceName": "header"
       },
       "section": {
         "sling:resourceType": "kyanite/common/components/section/fixedsection",
@@ -155,7 +156,8 @@
         }
       },
       "footerreference": {
-        "sling:resourceType": "kyanite/common/components/footerreference"
+        "sling:resourceType": "kyanite/fragments/components/fragment",
+        "referenceResourceName": "footer"
       }
     }
   }
