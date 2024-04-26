@@ -5,11 +5,24 @@
     "generalTab": {
       "sling:resourceType": "wcm/dialogs/components/tab",
       "label": "General",
-      "resource": {
-        "sling:resourceType": "wcm/dialogs/components/pathpicker",
-        "rootPath": "/content",
-        "name": "resource",
-        "label": "Resource"
+      "generalTabContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "resource": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "resource",
+          "label": "Resource"
+        },
+        "referenceResourceType": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "referenceResourceType",
+          "label": "Autofill resource by type"
+        },
+        "referenceResourceName": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "referenceResourceName",
+          "label": "Autofill resource by name"
+        }
       }
     }
   }
