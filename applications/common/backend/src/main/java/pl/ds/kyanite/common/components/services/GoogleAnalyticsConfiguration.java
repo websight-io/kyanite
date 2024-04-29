@@ -16,9 +16,9 @@
 
 package pl.ds.kyanite.common.components.services;
 
-public interface GoogleAnalyticsConfiguration {
+import pl.ds.kyanite.common.components.services.config.SpaceDependentConfiguration;
 
-  String getSpaceName();
+public interface GoogleAnalyticsConfiguration extends SpaceDependentConfiguration {
 
   String getGoogleAnalyticsTrackingId();
 

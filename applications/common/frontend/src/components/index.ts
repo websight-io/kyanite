@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+import "@algolia/autocomplete-theme-classic";
+
 import './CodeSnippet/codesnippet';
 import './ContactForm/contactForm';
 import './Dropdown/dropdown';
@@ -26,6 +28,7 @@ import './PanelTabs/panelTabs';
 import './Tabs/tabs';
 import './Title/title';
 import './Carousel/carousel';
+import './Search/search';
 
 document.querySelectorAll('.navbar-item.has-dropdown').forEach((navbarItem) => {
   navbarItem.addEventListener('keydown', (event: KeyboardEvent) => {

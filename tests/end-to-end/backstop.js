@@ -84,6 +84,8 @@ const scenarios = spaces.flatMap(space => [
   { space: space, page: 'blog-listing-author-filtered', selectors: [selectors.content] },
   { space: space, page: 'blog-listing-author-filtered/blog-category-1-author-filtered', selectors: [selectors.content] },
   { space: space, page: 'blog-listing-author-filtered/blog-category-2', selectors: [selectors.content] },
+  { space: space, page: 'blog-listing-author-filtered/author-1', selectors: [selectors.content] },
+  { space: space, page: 'blog-listing-author-filtered/author-2', selectors: [selectors.content] },
   { space: space, page: 'code-snippet', selectors: ['.code-snippet'] },
   { space: space, page: 'hero', selectors: ['.hero'] },
   { space: space, page: 'message', selectors: [selectors.container] },

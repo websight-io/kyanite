@@ -29,48 +29,80 @@
   @extend .px-6_2;
   @extend .py-5_3;
 
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
   border-top: var(--border-weight-1) solid;
   border-color: var(--kyanite-primary);
 
-  > .id {
-    @extend .t-gap-5;
+  .author-bio-block {
 
-    display: flex;
-    align-items: center;
+    margin-bottom: 10px;
 
-    .photo {
-      @extend .m-0;
+    &.author-info {
+
+      display: block;
+
+      > .id {
+        @extend .t-gap-5;
+
+        display: flex;
+        align-items: center;
+
+        .photo {
+          @extend .m-0;
+
+          .image {
+            margin-bottom: 0 !important;
+          }
+        }
+
+        .name {
+          @extend .m-0;
+
+        font-size: var(--font-size-24);
+        font-weight: var(--kyanite-weight-semibold);
+        color: var(--kyanite-gray-15) !important;
     }
 
-    .name {
-      @extend .m-0;
+        .role {
+          @extend .m-0;
+          @extend .mt-1_2;
 
-      font-size: var(--font-size-24);
-      font-weight: var(--kyanite-weight-semibold);
-      color: var(--kyanite-gray-15) !important;
+        font-weight: var(--kyanite-weight-semibold);
+        color: var(--kyanite-primary);
+      }
     }
 
-    .role {
-      @extend .m-0;
-      @extend .mt-1_2;
+      > .description {
+        @extend .mt-5_3;
+        @extend .mb-0;
 
-      font-weight: var(--kyanite-weight-semibold);
-      color: var(--kyanite-primary);
+      color: var(--kyanite-gray-30) !important;
+    }
+
+      // will be enabled with TODO https://teamds.atlassian.net/browse/WSIO-176
+      > .link {
+        @extend .a-link;
+
+      @extend .mt-5_3;
+      font-weight: var(--kyanite-weight-medium);
     }
   }
 
-  > .description {
-    @extend .mt-5_3;
-    @extend .mb-0;
+    //  social media buttons on one line
+    &.social-media {
 
-    color: var(--kyanite-gray-30) !important;
-  }
+      > * {
+        margin-left: auto;
+        margin-bottom: auto;
+      }
 
-  // will be enabled with TODO https://teamds.atlassian.net/browse/WSIO-176
-  > .link {
-    @extend .a-link;
-
-    @extend .mt-5_3;
-    font-weight: var(--kyanite-weight-medium);
+      //  edit mode placeholder fix
+      > .ws-placeholder {
+        min-width: 125px;
+      }
+    }
   }
 }

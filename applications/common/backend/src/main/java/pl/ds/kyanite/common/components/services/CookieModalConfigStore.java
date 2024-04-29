@@ -16,6 +16,7 @@
 
 package pl.ds.kyanite.common.components.services;
 
-public interface CookieModalConfigStore {
-  CookieModalConfiguration get(String spaceName);
+import pl.ds.kyanite.common.components.services.config.ConfigStore;
+
+public interface CookieModalConfigStore extends ConfigStore<CookieModalConfiguration> {
 }

@@ -22,12 +22,14 @@ import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.metatype.annotations.Designate;
 import pl.ds.kyanite.common.components.configurations.CookieModalConfigurationOcd;
 import pl.ds.kyanite.common.components.services.CookieModalConfiguration;
+import pl.ds.kyanite.common.components.services.config.BaseSpaceDependentConfiguration;
 
 @Component(service = CookieModalConfiguration.class)
 @Designate(ocd = CookieModalConfigurationOcd.class, factory = true)
-public class CookieModalConfigurationImpl implements CookieModalConfiguration {
+public class CookieModalConfigurationImpl
+    extends BaseSpaceDependentConfiguration
+    implements CookieModalConfiguration {
 
-  private String spaceName;
   private String privacyPolicyPath;
   private String contactUsPath;
 
@@ -37,11 +39,6 @@ public class CookieModalConfigurationImpl implements CookieModalConfiguration {
     this.spaceName = config.spaceName();
     this.privacyPolicyPath = config.privacyPolicyPath();
     this.contactUsPath = config.contactUsPath();
-  }
-
-  @Override
-  public String getSpaceName() {
-    return spaceName;
   }
 
   @Override

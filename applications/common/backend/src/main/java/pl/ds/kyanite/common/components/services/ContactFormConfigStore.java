@@ -16,6 +16,7 @@
 
 package pl.ds.kyanite.common.components.services;
 
-public interface ContactFormConfigStore {
-  ContactFormConfiguration get(String spaceName);
+import pl.ds.kyanite.common.components.services.config.ConfigStore;
+
+public interface ContactFormConfigStore extends ConfigStore<ContactFormConfiguration> {
 }

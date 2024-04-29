@@ -16,8 +16,9 @@
 
 package pl.ds.kyanite.common.components.services;
 
-public interface RecaptchaConfiguration {
-  String getSpaceName();
+import pl.ds.kyanite.common.components.services.config.SpaceDependentConfiguration;
+
+public interface RecaptchaConfiguration extends SpaceDependentConfiguration {
 
   String getCaptchaPublicKey();
 

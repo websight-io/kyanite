@@ -27,8 +27,7 @@ import pl.ds.kyanite.common.components.services.GoogleAnalyticsConfiguration;
 
 @Component(service = GoogleAnalyticsConfiguration.class)
 @Designate(ocd = GoogleAnalyticsConfigurationOcd.class, factory = true)
-public class GoogleAnalyticsConfigurationImpl implements
-    GoogleAnalyticsConfiguration {
+public class GoogleAnalyticsConfigurationImpl implements GoogleAnalyticsConfiguration {
 
   private GoogleAnalyticsConfigurationOcd config;
 

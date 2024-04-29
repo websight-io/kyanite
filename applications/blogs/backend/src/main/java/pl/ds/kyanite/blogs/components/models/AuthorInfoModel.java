@@ -24,6 +24,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import pl.ds.kyanite.common.components.utils.LinkUtil;
@@ -59,12 +60,20 @@ public class AuthorInfoModel {
 
   @Getter
   @Setter
-  private String authorPagePath;
+  private String authorOwnerPath;
 
   @SlingObject
   private ResourceResolver resourceResolver;
 
+  @Getter
+  @ChildResource
+  private Resource socialMedia;
+
   public String getAuthorPhoto() {
     return LinkUtil.handleLink(authorPhoto, resourceResolver);
+  }
+
+  public String getAuthorOwnerUrl() {
+    return LinkUtil.handleLink(authorOwnerPath, resourceResolver);
   }
 }

@@ -1,0 +1,20 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "generalTabContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "pageLimit": {
+          "sling:resourceType": "wcm/dialogs/components/numberfield",
+          "name": "pageLimit",
+          "label": "pageLimit",
+          "min": 3,
+          "max": 50
+        }
+      }
+    }
+  }
+}

@@ -84,7 +84,6 @@ public class TitleComponent {
   private boolean overrideAnchorId;
 
   @Inject
-  @Getter
   private String anchorId;
 
   @Getter
@@ -220,11 +219,15 @@ public class TitleComponent {
     return jsonArrayBuilder.build().toString();
   }
 
-  public String getGeneratedAnchorId() {
-    if (text == null) {
-      return "";
+  public String getAnchorId() {
+    if (isOverrideAnchorId() && anchorId != null) {
+      return anchorId;
+    } else {
+      if (text == null) {
+        return "";
+      }
+      return pl.ds.kyanite.common.components.utils.StringUtils.simplifyTitle(
+          getTextAsOneLine().strip());
     }
-    return pl.ds.kyanite.common.components.utils.StringUtils.simplifyTitle(
-        getTextAsOneLine().strip());
   }
 }
