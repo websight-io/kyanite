@@ -21,15 +21,12 @@
 .select:not(.is-multiple, .is-loading)::after {
   border-bottom: var(--border-weight-2) solid;
   border-left: var(--border-weight-2) solid;
-
-  border-color: var(--kyanite-gray-15);
   border-radius: 1px;
 }
 
 /* anchor */
 
 a:not(.button, .link) {
-  // color: var(--kyanite-primary);
   &:hover {
     color: var(--kyanite-custom-anchor-hover-color);
   }
