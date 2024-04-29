@@ -16,29 +16,22 @@
  * -->
  */
 
-// TODO: remove line below
-/* stylelint-disable no-descending-specificity */
-
-@use 'sass:map';
-@use 'src/bulma-overwrite/variables' as spacing;
 @use 'src/atomic-design-system/00-token/t.spacing';
-@use 'src/atomic-design-system/00-token/t.color' as colors;
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
-@use 'src/atomic-design-system/00-token/t.font' as font;
-
-$color-navbar-link: var(--color-grey--900);
 
 @mixin o-navbar {
   // causes the element to establish a containing block for all descendants (used for fixed-position descendants)
   // https://www.w3.org/TR/css-transforms-1/#containing-block-for-all-descendants
   transform: translateX(0);
+  transition: background-color var(--kyanite-duration) var(--kyanite-easing);
 
-  padding-top: var(--spacing-4);
-  transition: .3s ease-in-out background-color;
-
-  &.is-primary {
-    background-color: var(--color-primary--600);
+  .navbar-dropdown {
+    a.navbar-item:focus,
+    a.navbar-item:hover {
+      background-color: var(--kyanite-custom-navbar-dropdown-item-background-hover);
+      color: var(--kyanite-custom-navbar-dropdown-item-text-hover);
+    }
   }
 
   &.is-transparent {
@@ -47,48 +40,22 @@ $color-navbar-link: var(--color-grey--900);
     .navbar-dropdown {
       a.navbar-item:focus,
       a.navbar-item:hover {
-        background-color: var(--base-color-secondary-background, #f5f5f5) !important;
-        color: var(--base-color-body-text, #0a0a0a);
+        background-color: var(--kyanite-custom-navbar-dropdown-item-background-hover);
+        color: var(--kyanite-custom-navbar-dropdown-item-text-hover);
       }
     }
 
     .navbar-burger {
-      color: var(--base-color-body-text, var(--color-grey--700));
+      color: var(--kyanite-navbar-burger-color);
     }
   }
 
   &:not(.is-primary, .is-link, .is-info, .is-warning, .is-danger, .is-success, .is-white, .is-light, .is-dark, .is-black, .is-transparent) {
-    background-color: var(--base-color-body-background);
-
-    a.navbar-item:not(.navbar-dropdown a.navbar-item) {
-      color: var(--base-color-body-text, $color-navbar-link);
-    }
-
-    a.navbar-link {
-      color: var(--base-color-body-text, $color-navbar-link);
-
-      &:not(.is-arrowless)::after {
-        border-color: var(--base-color-body-text, $color-navbar-link);
-      }
-    }
+    background-color: var(--kyanite-body-background-color);
 
     .navbar-burger {
-      color: var(--base-color-body-text, var(--color-grey--700));
+      color: var(--kyanite-navbar-burger-color);
     }
-  }
-
-  &.is-white {
-    @include breakpoint.media-breakpoint-large {
-      .navbar-top > .navbar-item {
-        color: #2a2a2a;
-      }
-    }
-  }
-
-
-  @include breakpoint.media-breakpoint-large {
-    padding-top: var(--spacing-5);
-    padding-bottom: var(--spacing-4);
   }
 
   .container {
@@ -102,12 +69,11 @@ $color-navbar-link: var(--color-grey--900);
   .navbar-top {
     @include breakpoint.media-breakpoint-large {
       align-items: center;
-      height: 100%;
     }
   }
 
   .navbar-menu {
-    background-color: var(--base-color-secondary-background, var(--base-color-white));
+    background-color: var(--kyanite-navbar-background-color);
 
     @include breakpoint.media-breakpoint-large {
       background-color: inherit;
@@ -124,6 +90,7 @@ $color-navbar-link: var(--color-grey--900);
       .navbar-top {
         @include breakpoint.media-breakpoint-large {
           height: calc(50% - var(--spacing-2));
+          margin-top: var(--spacing-5);
         }
       }
     }
@@ -163,15 +130,14 @@ $color-navbar-link: var(--color-grey--900);
     }
   }
 
-  a.navbar-link,
-  a.navbar-item {
-    color: $color-navbar-link;
-    font-weight: var(--font-weight-500);
+  .navbar-link,
+  .navbar-item {
+    font-weight: var(--kyanite-weight-medium);
   }
 
-  a.navbar-item {
+  .navbar-item {
     &:hover {
-      color: var(--color-primary--600, $color-navbar-link);
+      color: var(--kyanite-custom-navbar-item-color-hover);
       background-color: inherit;
     }
   }
@@ -205,7 +171,7 @@ $color-navbar-link: var(--color-grey--900);
     .navbar-top {
       .navbar-item {
         font-size: var(--font-size-14);
-        font-weight: var(--font-weight-500);
+        font-weight: var(--kyanite-weight-medium);
         line-height: var(--line-height-155);
       }
 
@@ -243,7 +209,7 @@ $color-navbar-link: var(--color-grey--900);
           .navbar-dropdown {
             &:not(.navbar-mega-dropdown) {
               display: block;
-              background-color: var(--base-color-secondary-background, var(--base-color-white));
+              background-color: var(--kyanite-navbar-background-color);
             }
           }
         }
@@ -278,6 +244,8 @@ $color-navbar-link: var(--color-grey--900);
         display: flex;
         justify-content: space-between;
         align-items: center;
+        transition-duration: var(--kyanite-duration);
+        transition-property: color;
 
         &::after {
           position: static;
@@ -294,7 +262,7 @@ $color-navbar-link: var(--color-grey--900);
       &.is-hovered {
         .navbar-mega-dropdown {
           display: block;
-          background-color: var(--base-color-secondary-background, var(--base-color-white));
+          background-color: var(--kyanite-navbar-background-color);
         }
       }
     }
@@ -303,18 +271,11 @@ $color-navbar-link: var(--color-grey--900);
       height: var(--spacing-5_2);
       @extend .mt-2;
       font-size: var(--font-size-14);
-      font-weight: var(--font-weight-600);
+      font-weight: var(--kyanite-weight-semibold);
 
       @include breakpoint.media-breakpoint-large {
         margin-top: 0 !important; // overwrite above @extend .mt-2
       }
-    }
-  }
-
-  .label-megadropdown {
-    color: var(--color-grey--900);
-    &:hover {
-      color: var(--color-grey--900);
     }
   }
 
@@ -326,11 +287,19 @@ $color-navbar-link: var(--color-grey--900);
       margin-left: -0.75rem;
       margin-right: -0.75rem;
     }
+    .navbar-item {
+      &:hover {
+        background-color: inherit;
+      }
+    }
+    .navbar-section {
+      color: var(--kyanite-gray-60);
+    }
   }
 
   @include breakpoint.media-breakpoint-large {
     .navbar-mega-dropdown {
-      background-color: var(--base-color-secondary-background, var(--color-grey--100));
+      background-color: var(--kyanite-custom-navbar-megamenu-background);
       border-radius: var(--border-radius-0);
       border: 0;
       box-shadow: 0 2px 4px 0 rgb(0 0 0 / 16%);
@@ -339,7 +308,6 @@ $color-navbar-link: var(--color-grey--900);
       position: fixed;
       width: 100%;
       left: 0;
-      top: calc(100% - var(--spacing-4));
 
       // make sure columns layout will be 5 columns of equal width
       .column {
@@ -391,9 +359,9 @@ $color-navbar-link: var(--color-grey--900);
 
         .navbar-section {
           font-size: var(--font-size-16);
-          font-weight: var(--font-weight-600);
+          font-weight: var(--kyanite-weight-semibold);
           line-height: var(--line-height-150);
-          color: var(--color-grey--500);
+          color: var(--kyanite-gray-60);
         }
 
         // distance between elements:
@@ -425,15 +393,14 @@ $color-navbar-link: var(--color-grey--900);
 
         .navbar-item, .highlight-label {
           font-size: var(--font-size-32);
-          font-weight: var(--font-weight-500);
+          font-weight: var(--kyanite-weight-medium);
           line-height: var(--line-height-150);
-          color: $color-navbar-link;
         }
       }
 
     }
   }
   &.is-scrolled.is-transparent {
-    background-color: var(--base-color-body-background, var(--base-color-white));
+    background-color: var(--kyanite-navbar-background-color);
   }
 }

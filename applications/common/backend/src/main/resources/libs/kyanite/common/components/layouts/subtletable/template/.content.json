@@ -25,23 +25,15 @@
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p><span class=\"has-text-primary\">subject</span></p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           },
           "content_1": {
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p>element</p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           }
         }
       },
@@ -58,12 +50,8 @@
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p><span class=\"has-text-primary\">subject</span></p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           },
           "content_1": {
             "jcr:primaryType": "nt:unstructured",
@@ -91,23 +79,15 @@
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p><span class=\"has-text-primary\">subject</span></p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           },
           "content_1": {
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p>element</p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           }
         }
       },
@@ -124,23 +104,15 @@
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p><span class=\"has-text-primary\">subject</span></p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           },
           "content_1": {
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p>element</p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           }
         }
       }
@@ -169,23 +141,15 @@
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p><span class=\"has-text-primary\">subject</span></p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           },
           "content_1": {
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p>element</p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           }
         }
       },
@@ -202,23 +166,15 @@
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p><span class=\"has-text-primary\">subject</span></p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           },
           "content_1": {
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p>element</p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           }
         }
       },
@@ -235,23 +191,15 @@
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p><span class=\"has-text-primary\">subject</span></p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           },
           "content_1": {
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p>element</p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           }
         }
       },
@@ -268,23 +216,15 @@
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p><span class=\"has-text-primary\">subject</span></p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           },
           "content_1": {
             "jcr:primaryType": "nt:unstructured",
             "size": "is-medium",
             "text": "<p>element</p>",
-            "color": "rest_has-text-grey",
-            "sling:resourceType": "kyanite/common/components/content",
-            "rest": {
-              "jcr:primaryType": "nt:unstructured",
-              "shade": "700"
-            }
+            "color": "",
+            "sling:resourceType": "kyanite/common/components/content"
           }
         }
       }

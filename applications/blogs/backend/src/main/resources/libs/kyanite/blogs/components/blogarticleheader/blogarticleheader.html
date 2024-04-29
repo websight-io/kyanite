@@ -22,7 +22,7 @@
     <div class="container blog-article-header">
       <div class="tags are-normal">
         <sly data-sly-list.item="${blog.tags}">
-              <span class="tag is-dark is-normal">
+              <span class="tag is-normal">
                  ${item.text}
               </span>
         </sly>
@@ -58,8 +58,8 @@
         <img width="1200" height="800" data-sly-test.heroImage="${blog.heroImage}" src="${heroImage}"
              alt="${blog.heroImageAlt}">
       </figure>
-    </div>
-  </sly>
+    </div>  </sly>
+
   <sly data-sly-test="${wcmmode.isEdit}">
     <sly data-sly-test.errMessage="${model.authorInfoErrMessage}">
       <div>Failed to retrieve author info</div>

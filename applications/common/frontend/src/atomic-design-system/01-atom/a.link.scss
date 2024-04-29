@@ -16,45 +16,41 @@
  * -->
  */
 
-@use 'sass:map';
-@use 'src/atomic-design-system/00-token/t.font' as font;
-@use 'src/atomic-design-system/00-token/t.color' as colors;
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
 @use 'src/atomic-design-system/00-token/t.border' as border;
 
 .a-link {
   display: inline-block;
   @include link.a-animated-underline-link;
-  color: var(--color-grey--900) !important;
+  color: var(--kyanite-custom-link-color);
+  &:hover {
+    color: var(--kyanite-custom-link-color-hover);
+  }
 
   &:focus-visible {
     outline: var(--border-weight-3) solid;
     border-radius: var(--border-radius-1);
-    outline-color: var(--color-primary--300) !important;
-
+    outline-color: var(--kyanite-primary-80) !important;
     outline-offset: 0;
   }
 
   &:active {
     &::after {
-      background-color: var(--color-primary--700) !important;
-
-
+      background-color: var(--kyanite-primary-40) !important;
       transform: translate3d(0, 0, 0);
     }
   }
 
   &-light {
-    color: var(--color-grey--100) !important;
+    color: var(--kyanite-white-bis) !important;
 
     &::after {
-      background-color: var(--color-primary--500) !important;
-
+      background-color: var(--kyanite-primary-60) !important;
     }
 
     &:active {
       &::after {
-        background-color: var(--color-primary--600) !important;
+        background-color: var(--kyanite-primary) !important;
       }
     }
   }
@@ -75,6 +71,6 @@
 @mixin a-link-reset {
   display: inline;
   border: none;
-  color: var(--color-link--700);
-  border-bottom-color: var(--color-link--700);
+  color: var(--kyanite-primary-40);
+  border-bottom-color: var(--kyanite-primary-40);
 }

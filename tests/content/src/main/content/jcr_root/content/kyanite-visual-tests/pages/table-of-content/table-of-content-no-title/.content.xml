@@ -140,14 +140,7 @@
                                 sizeType="evenNumber"/>
                             <content
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="kyanite/common/components/content"
-                                color="grey_has-text-grey">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                sling:resourceType="kyanite/common/components/content"/>
                         </column4>
                     </columns1>
                 </container>

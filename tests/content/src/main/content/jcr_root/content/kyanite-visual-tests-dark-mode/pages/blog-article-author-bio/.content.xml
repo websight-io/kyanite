@@ -61,14 +61,7 @@
                             <content
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/common/components/content"
-                                color="grey_has-text-grey"
-                                text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in ex id nibh suscipit venenatis. Aenean fringilla orci vitae velit vehicula vehicula. Integer a purus eget risus scelerisque ornare sit amet in nisi. Pellentesque ac erat tincidunt, elementum diam in, pretium nisi. Etiam vitae nisl lectus.&lt;/p>&lt;p>Aenean placerat justo at tellus vestibulum bibendum. Integer vitae neque nisl. Sed dignissim posuere imperdiet. Pellentesque placerat, dui et tincidunt fringilla, ligula est fringilla orci, sit amet iaculis lorem erat at ante. Donec diam lacus, placerat at feugiat et, scelerisque id neque. Praesent a pellentesque quam, id varius turpis.&lt;/p>&lt;p>Nulla mi purus, congue at est id, finibus vulputate magna. Vestibulum euismod ante eget quam viverra pharetra. Suspendisse nisi eros, ornare at condimentum iaculis, tempus tempus odio. Quisque congue eleifend dui, at vulputate massa condimentum quis.&lt;/p>">
-                                <grey
-                                    jcr:primaryType="nt:unstructured"
-                                    shade="darker"/>
-                                <bw jcr:primaryType="nt:unstructured"/>
-                                <rest jcr:primaryType="nt:unstructured"/>
-                            </content>
+                                text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in ex id nibh suscipit venenatis. Aenean fringilla orci vitae velit vehicula vehicula. Integer a purus eget risus scelerisque ornare sit amet in nisi. Pellentesque ac erat tincidunt, elementum diam in, pretium nisi. Etiam vitae nisl lectus.&lt;/p>&lt;p>Aenean placerat justo at tellus vestibulum bibendum. Integer vitae neque nisl. Sed dignissim posuere imperdiet. Pellentesque placerat, dui et tincidunt fringilla, ligula est fringilla orci, sit amet iaculis lorem erat at ante. Donec diam lacus, placerat at feugiat et, scelerisque id neque. Praesent a pellentesque quam, id varius turpis.&lt;/p>&lt;p>Nulla mi purus, congue at est id, finibus vulputate magna. Vestibulum euismod ante eget quam viverra pharetra. Suspendisse nisi eros, ornare at condimentum iaculis, tempus tempus odio. Quisque congue eleifend dui, at vulputate massa condimentum quis.&lt;/p>"/>
                             <blogarticleauthorbio
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/blogs/components/blogarticleauthorbio"

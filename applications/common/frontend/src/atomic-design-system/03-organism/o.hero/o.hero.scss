@@ -20,13 +20,22 @@
 
 @use 'src/atomic-design-system/00-token/t.spacing';
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
-@use 'src/bulma-overwrite/variables' as variables;
-@use 'src/bulma-overwrite/bulma-spacing' as bulma-spacing;
+@use 'src/variables-helpers' as variables;
 @use 'src/atomic-design-system/03-organism/o.hero-background' as o-hero-background;
 
 @mixin o-hero {
   &.hero--bg-circles {
     @include o-hero-background.o-background-circles;
+  }
+  &.is-background-gray-15 .title { // custom option added in hero dialog as Grey-15
+    --kyanite-title-color: var(--kyanite-white-bis);
+    --kyanite-title-strong-color: var(--kyanite-white-bis);
+  }
+
+  &.is-primary, &.is-secondary, &.is-dark, &.is-link {
+    .content {
+      color: var(--kyanite-white-bis);
+    }
   }
 
   .hero-body {
@@ -83,6 +92,3 @@
   }
 }
 
-@mixin o-hero-primary {
-  background-color: var(--color-primary--600);
-}

@@ -32,7 +32,7 @@ import pl.ds.kyanite.common.components.services.ContactFormConfigStore;
 import pl.ds.kyanite.common.components.services.ContactFormConfiguration;
 import pl.ds.kyanite.common.components.services.RecaptchaConfigStore;
 import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
-import pl.ds.kyanite.common.components.utils.PagesSpaceUtil;
+import pl.ds.kyanite.common.components.utils.PageSpace;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContactFormComponent {
@@ -63,8 +63,10 @@ public class ContactFormComponent {
 
   @PostConstruct
   private void init() {
-    spaceName = PagesSpaceUtil.getWsPagesSpaceName(resource.getPath(),
-        resource.getResourceResolver());
+    PageSpace pageSpace = PageSpace.forResource(resource);
+    if (pageSpace != null) {
+      spaceName = pageSpace.getWsPagesSpaceName();
+    }
   }
 
   public String getCaptchaPublicKey() {

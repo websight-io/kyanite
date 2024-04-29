@@ -9,5 +9,5 @@
     "Kyanite In-Text Sections"
   ],
   "sling:resourceType": "ws:Component",
-  "title": "Child tile"
+  "title": "Child tile (Deprecated)"
 }

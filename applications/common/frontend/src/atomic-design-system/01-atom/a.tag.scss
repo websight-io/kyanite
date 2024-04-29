@@ -16,44 +16,14 @@
  * -->
  */
 
-@use 'src/atomic-design-system/00-token/t.border' as border;
-@use 'src/atomic-design-system/00-token/t.font' as font;
-@use 'src/atomic-design-system/00-token/t.color' as color;
-@use 'src/bulma-overwrite/bulma-spacing';
-
-
-@mixin a-tag-default-color {
-  background-color: var(--base-color-contrast-background, var(--color-grey--900));
-  color: var(--base-color-contrast-text, var(--base-color-white));
-}
-
-/* default tag style */
-@mixin a-tag-default {
-
-  &:not(body) {
-
-    @include a-tag-default-color;
-
-    &.is-primary {
-
-      background-color: var(--color-primary--600);
-
-      &.is-light {
-        background-color: var(--color-primary--100);
-        color: var(--color-primary--600);
-      }
-    }
-  }
-}
+@use 'src/variables-helpers';
 
 /* tag style in some context */
 @mixin a-tag-contextual {
-
-  @include a-tag-default-color;
-
   border-radius: var(--border-radius-1);
-  font-weight: var(--font-weight-600);
+  font-weight: var(--kyanite-weight-semibold);
   @extend .px-4;
+  @extend .mb-2;
 
   &.is-normal {
     font-size: var(--font-size-14);

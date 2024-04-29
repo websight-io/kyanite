@@ -16,11 +16,9 @@
  * -->
  */
 
-@use 'src/bulma-overwrite/bulma-spacing';
+@use 'src/variables-helpers';
 
 @use 'src/atomic-design-system/00-token/t.spacing' as spacing;
-@use 'src/atomic-design-system/00-token/t.color' as color;
-@use 'src/atomic-design-system/00-token/t.font' as font;
 @use 'src/atomic-design-system/00-token/t.border' as border;
 @use 'src/atomic-design-system/01-atom/a.link' as link;
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as
@@ -36,7 +34,7 @@
   flex-wrap: wrap;
 
   border-top: var(--border-weight-1) solid;
-  border-color: var(--color-primary--600) !important;
+  border-color: var(--kyanite-primary);
 
   .author-bio-block {
 
@@ -63,35 +61,35 @@
         .name {
           @extend .m-0;
 
-          font-size: var(--font-size-24);
-          font-weight: var(--font-weight-600);
-          color: var(--color-grey--900) !important;
-        }
+        font-size: var(--font-size-24);
+        font-weight: var(--kyanite-weight-semibold);
+        color: var(--kyanite-gray-15) !important;
+    }
 
         .role {
           @extend .m-0;
           @extend .mt-1_2;
 
-          font-weight: var(--font-weight-600);
-          color: var(--color-primary--600) !important;
-        }
+        font-weight: var(--kyanite-weight-semibold);
+        color: var(--kyanite-primary);
       }
+    }
 
       > .description {
         @extend .mt-5_3;
         @extend .mb-0;
 
-        color: var(--color-grey--800) !important;
-      }
+      color: var(--kyanite-gray-30) !important;
+    }
 
       // will be enabled with TODO https://teamds.atlassian.net/browse/WSIO-176
       > .link {
         @extend .a-link;
 
-        @extend .mt-5_3;
-        font-weight: var(--font-weight-500);
-      }
+      @extend .mt-5_3;
+      font-weight: var(--kyanite-weight-medium);
     }
+  }
 
     //  social media buttons on one line
     &.social-media {

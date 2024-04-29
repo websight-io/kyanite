@@ -25,15 +25,14 @@
       "element": "h6",
       "size": "is-6",
       "textWeight": "has-text-weight-bold",
-      "color": "has-text-grey-900"
+      "color": "has-text-gray-15"
     },
     "content": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "kyanite/common/components/content",
       "size": "is-medium",
       "textWeight": "has-text-weight-medium",
-      "color": "rest_has-text-grey",
-      "shadeRest": "900",
+      "color": "",
       "text": "<p>Feature name goes here</p>"
     },
     "link": {

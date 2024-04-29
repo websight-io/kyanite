@@ -16,14 +16,9 @@
  * -->
  */
 
-@use 'sass:map';
-
-@use 'src/bulma-overwrite/bulma-spacing';
-@use 'src/bulma-overwrite/variables' as spacing;
+@use 'src/variables-helpers';
 @use 'src/atomic-design-system/00-token/t.font';
-@use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
-
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
 
 @mixin m-level-item-stats {
@@ -41,11 +36,11 @@
 
     > .title {
       @extend .mb-4;
-      font-weight: var(--font-weight-700);
+      font-weight: var(--kyanite-weight-bold);
     }
 
     > .button.is-ghost {
-      color: var(--color-grey--1000) !important;
+      color: var(--kyanite-gray-10) !important;
       @extend .px-0;
       @include link.a-animated-underline-link;
 

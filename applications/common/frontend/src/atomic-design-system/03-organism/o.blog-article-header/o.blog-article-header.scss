@@ -17,7 +17,6 @@
  */
 
 @use 'sass:map';
-@use 'src/bulma-overwrite/bulma-spacing';
 
 @use 'src/atomic-design-system/01-atom/a.tag' as tag;
 
@@ -27,9 +26,8 @@
   }
 
   .media {
-    @extend .pb-5;
-
     .content {
+      color: var(--kyanite-gray-40);
       small:first-of-type {
         @extend .pr-4;
       }

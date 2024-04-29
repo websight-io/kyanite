@@ -17,7 +17,7 @@
 package pl.ds.kyanite.common.components.services.config;
 
 import org.apache.sling.api.resource.Resource;
-import pl.ds.kyanite.common.components.utils.PagesSpaceUtil;
+import pl.ds.kyanite.common.components.utils.PageSpace;
 
 /**
  * Config store retrieving space dependent configurations by space name.
@@ -33,8 +33,11 @@ public abstract class BaseSpaceDependentConfigStore<T extends SpaceDependentConf
 
   @Override
   public T get(Resource resource) {
-    String spaceName = PagesSpaceUtil.getWsPagesSpaceName(resource.getPath(),
-        resource.getResourceResolver());
-    return get(spaceName);
+    PageSpace pageSpace = PageSpace.forResource(resource);
+    if (pageSpace != null) {
+      String spaceName = pageSpace.getWsPagesSpaceName();
+      return get(spaceName);
+    }
+    return null;
   }
 }

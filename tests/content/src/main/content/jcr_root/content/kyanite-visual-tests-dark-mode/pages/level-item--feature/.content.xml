@@ -41,29 +41,17 @@
                         <content
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="rest_has-text-primary"
+                            color="has-text-primary"
                             size="is-small"
                             text="&lt;p>Zero latency / High throughput&lt;/p>"
-                            textWeight="has-text-weight-medium">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content>
+                            textWeight="has-text-weight-medium"/>
                         <content1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
                             color="has-text-black"
                             size="is-large"
                             text="&lt;p>Icon + Eyebrow + Text&lt;/p>"
-                            textWeight="has-text-weight-bold">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content1>
+                            textWeight="has-text-weight-bold"/>
                         <content2
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
@@ -93,29 +81,17 @@
                         <content
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
-                            color="rest_has-text-primary"
+                            color="has-text-primary"
                             size="is-small"
                             text="&lt;p>Zero latency / High throughput&lt;/p>"
-                            textWeight="has-text-weight-medium">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content>
+                            textWeight="has-text-weight-medium"/>
                         <content1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
                             color="has-text-black"
                             size="is-large"
                             text="&lt;p>Eyebrow + Text&lt;/p>"
-                            textWeight="has-text-weight-bold">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content1>
+                            textWeight="has-text-weight-bold"/>
                         <content2
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
@@ -148,13 +124,7 @@
                             color="has-text-black"
                             size="is-large"
                             text="&lt;p>Text&lt;/p>"
-                            textWeight="has-text-weight-bold">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content1>
+                            textWeight="has-text-weight-bold"/>
                         <content2
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
@@ -189,13 +159,7 @@
                             color="has-text-black"
                             size="is-large"
                             text="&lt;p>Icon + Text&lt;/p>"
-                            textWeight="has-text-weight-bold">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content1>
+                            textWeight="has-text-weight-bold"/>
                         <content2
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/content"
@@ -237,13 +201,7 @@
                             color="has-text-black"
                             size="is-large"
                             text="&lt;p>Icon + Eyebrow&lt;/p>"
-                            textWeight="has-text-weight-bold">
-                            <grey
-                                jcr:primaryType="nt:unstructured"
-                                shade="darker"/>
-                            <bw jcr:primaryType="nt:unstructured"/>
-                            <rest jcr:primaryType="nt:unstructured"/>
-                        </content1>
+                            textWeight="has-text-weight-bold"/>
                         <container
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/container">

@@ -26,8 +26,8 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="kyanite/common/components/pagecontainer">
             <container_wrapper
-              jcr:primaryType="nt:unstructured"
-              sling:resourceType="kyanite/common/components/container">
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="kyanite/common/components/container">
                 <tag_10
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/tag"
@@ -202,56 +202,56 @@
                         <tag
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/tag"
-                            label="Primary"
                             isRounded="true"
+                            label="Primary"
                             variant="is-primary"/>
                         <tag_1
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/tag"
-                            label="Link"
                             isRounded="true"
+                            label="Link"
                             variant="is-link"/>
                         <tag_3
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/tag"
-                            label="Info"
                             isRounded="true"
+                            label="Info"
                             variant="is-info"/>
                         <tag_4
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/tag"
-                            label="Success"
                             isRounded="true"
+                            label="Success"
                             variant="is-success"/>
                         <tag_5
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/tag"
-                            label="Warning"
                             isRounded="true"
+                            label="Warning"
                             variant="is-warning"/>
                         <tag_6
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/tag"
-                            label="Danger"
                             isRounded="true"
+                            label="Danger"
                             variant="is-danger"/>
                         <tag_7
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/tag"
-                            label="White"
                             isRounded="true"
+                            label="White"
                             variant="is-white"/>
                         <tag_8
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/tag"
-                            label="Light"
                             isRounded="true"
+                            label="Light"
                             variant="is-light"/>
                         <tag_9
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/tag"
-                            label="Dark"
                             isRounded="true"
+                            label="Dark"
                             variant="is-dark"/>
                     </column1>
                     <column1_1
@@ -342,54 +342,54 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/tagslist">
                             <tag_2
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Default"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                label="Default"/>
                             <tag
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Primary"
-                              variant="is-primary"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                label="Primary"
+                                variant="is-primary"/>
                             <tag_1
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Link"
-                              variant="is-link"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                label="Link"
+                                variant="is-link"/>
                             <tag_3
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Info"
-                              variant="is-info"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                label="Info"
+                                variant="is-info"/>
                             <tag_4
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Success"
-                              variant="is-success"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                label="Success"
+                                variant="is-success"/>
                             <tag_5
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Warning"
-                              variant="is-warning"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                label="Warning"
+                                variant="is-warning"/>
                             <tag_6
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Danger"
-                              variant="is-danger"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                label="Danger"
+                                variant="is-danger"/>
                             <tag_7
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="White"
-                              variant="is-white"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                label="White"
+                                variant="is-white"/>
                             <tag_8
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Light"
-                              variant="is-light"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                label="Light"
+                                variant="is-light"/>
                             <tag_9
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Dark"
-                              variant="is-dark"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                label="Dark"
+                                variant="is-dark"/>
                         </tagslist>
                     </column1>
                     <column1_1
@@ -399,216 +399,216 @@
                             jcr:primaryType="nt:unstructured"
                             sling:resourceType="kyanite/common/components/tagslist">
                             <tag_2
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Default-light"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                label="Default-light"/>
                             <tag
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Primary-light"
-                              variant="is-primary"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                label="Primary-light"
+                                variant="is-primary"/>
                             <tag_1
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Link-light"
-                              variant="is-link"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                label="Link-light"
+                                variant="is-link"/>
                             <tag_3
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Info-light"
-                              variant="is-info"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                label="Info-light"
+                                variant="is-info"/>
                             <tag_4
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Success-light"
-                              variant="is-success"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                label="Success-light"
+                                variant="is-success"/>
                             <tag_5
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Warning-light"
-                              variant="is-warning"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                label="Warning-light"
+                                variant="is-warning"/>
                             <tag_6
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Danger-light"
-                              variant="is-danger"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                label="Danger-light"
+                                variant="is-danger"/>
                             <tag_7
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="White-light"
-                              variant="is-white"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                label="White-light"
+                                variant="is-white"/>
                             <tag_8
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Light-light"
-                              variant="is-light"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                label="Light-light"
+                                variant="is-light"/>
                             <tag_9
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Dark-light"
-                              variant="is-dark"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                label="Dark-light"
+                                variant="is-dark"/>
                         </tagslist>
                     </column1_1>
                 </columns>
             </container_tags>
             <container_tags_round
-              jcr:primaryType="nt:unstructured"
-              sling:resourceType="kyanite/common/components/container">
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="kyanite/common/components/container">
                 <columns
-                  jcr:primaryType="nt:unstructured"
-                  sling:resourceType="kyanite/common/components/columns">
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/columns">
                     <column1
-                      jcr:primaryType="nt:unstructured"
-                      sling:resourceType="kyanite/common/components/columns/column">
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/columns/column">
                         <tagslist
-                          jcr:primaryType="nt:unstructured"
-                          sling:resourceType="kyanite/common/components/tagslist">
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/tagslist">
                             <tag_2
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isRounded="true"
-                              label="Default"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isRounded="true"
+                                label="Default"/>
                             <tag
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Primary"
-                              isRounded="true"
-                              variant="is-primary"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isRounded="true"
+                                label="Primary"
+                                variant="is-primary"/>
                             <tag_1
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Link"
-                              isRounded="true"
-                              variant="is-link"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isRounded="true"
+                                label="Link"
+                                variant="is-link"/>
                             <tag_3
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Info"
-                              isRounded="true"
-                              variant="is-info"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isRounded="true"
+                                label="Info"
+                                variant="is-info"/>
                             <tag_4
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Success"
-                              isRounded="true"
-                              variant="is-success"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isRounded="true"
+                                label="Success"
+                                variant="is-success"/>
                             <tag_5
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Warning"
-                              isRounded="true"
-                              variant="is-warning"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isRounded="true"
+                                label="Warning"
+                                variant="is-warning"/>
                             <tag_6
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Danger"
-                              isRounded="true"
-                              variant="is-danger"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isRounded="true"
+                                label="Danger"
+                                variant="is-danger"/>
                             <tag_7
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="White"
-                              isRounded="true"
-                              variant="is-white"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isRounded="true"
+                                label="White"
+                                variant="is-white"/>
                             <tag_8
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Light"
-                              isRounded="true"
-                              variant="is-light"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isRounded="true"
+                                label="Light"
+                                variant="is-light"/>
                             <tag_9
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              label="Dark"
-                              isRounded="true"
-                              variant="is-dark"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isRounded="true"
+                                label="Dark"
+                                variant="is-dark"/>
                         </tagslist>
                     </column1>
                     <column1_1
-                      jcr:primaryType="nt:unstructured"
-                      sling:resourceType="kyanite/common/components/columns/column">
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="kyanite/common/components/columns/column">
                         <tagslist
-                          jcr:primaryType="nt:unstructured"
-                          sling:resourceType="kyanite/common/components/tagslist">
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="kyanite/common/components/tagslist">
                             <tag_2
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              isRounded="true"
-                              label="Default-light"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                isRounded="true"
+                                label="Default-light"/>
                             <tag
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Primary-light"
-                              isRounded="true"
-                              variant="is-primary"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                isRounded="true"
+                                label="Primary-light"
+                                variant="is-primary"/>
                             <tag_1
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Link-light"
-                              isRounded="true"
-                              variant="is-link"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                isRounded="true"
+                                label="Link-light"
+                                variant="is-link"/>
                             <tag_3
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Info-light"
-                              isRounded="true"
-                              variant="is-info"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                isRounded="true"
+                                label="Info-light"
+                                variant="is-info"/>
                             <tag_4
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Success-light"
-                              isRounded="true"
-                              variant="is-success"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                isRounded="true"
+                                label="Success-light"
+                                variant="is-success"/>
                             <tag_5
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Warning-light"
-                              isRounded="true"
-                              variant="is-warning"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                isRounded="true"
+                                label="Warning-light"
+                                variant="is-warning"/>
                             <tag_6
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Danger-light"
-                              isRounded="true"
-                              variant="is-danger"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                isRounded="true"
+                                label="Danger-light"
+                                variant="is-danger"/>
                             <tag_7
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="White-light"
-                              isRounded="true"
-                              variant="is-white"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                isRounded="true"
+                                label="White-light"
+                                variant="is-white"/>
                             <tag_8
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Light-light"
-                              isRounded="true"
-                              variant="is-light"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                isRounded="true"
+                                label="Light-light"
+                                variant="is-light"/>
                             <tag_9
-                              jcr:primaryType="nt:unstructured"
-                              sling:resourceType="kyanite/common/components/tag"
-                              isLight="true"
-                              label="Dark-light"
-                              isRounded="true"
-                              variant="is-dark"/>
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/tag"
+                                isLight="true"
+                                isRounded="true"
+                                label="Dark-light"
+                                variant="is-dark"/>
                         </tagslist>
                     </column1_1>
                 </columns>

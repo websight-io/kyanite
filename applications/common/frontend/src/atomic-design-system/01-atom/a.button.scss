@@ -16,154 +16,34 @@
  * -->
  */
 
-// TODO: remove line below
-/* stylelint-disable no-descending-specificity */
-
-@use 'sass:map';
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/atomic-design-system/00-token/t.font' as font;
-@use 'src/atomic-design-system/00-token/t.color' as colors;
 @use 'src/atomic-design-system/00-token/t.border' as border;
 
 .a-button {
-  border-radius: var(--border-radius-1);
-
-  &-primary {
-    background-color: var(--color-primary--600);
-
-    &:hover {
-      background-color: var(--color-primary--500);
-
-    }
-
-    &:focus:not(:active) {
-      box-shadow: none;
-    }
-
-    &:focus-visible {
-      background-color: var(--color-primary--500);
-
-      outline: var(--border-weight-3) solid;
-      outline-color: var(--color-primary--300);
-
-      outline-offset: 0;
-    }
-
-    &:active {
-      background-color: var(--color-primary--700);
-      outline: none;
-    }
-
-    &.is-light {
-      background-color: var(--color-primary--100);
-      color: var(--color-primary--600);
-
-      &:hover {
-        background-color: var(--color-primary--200);
-        color: var(--color-primary--700);
-      }
-
-      &:active {
-        background-color: var(--color-primary--300);
-        color: var(--color-primary--700);
-      }
-    }
-
-    &.is-inverted {
-      color: var(--color-primary--600);
-    }
-
-    &.is-outlined {
-      background-color: transparent;
-      color:            var(--color-primary--600);
-      border-color:     var(--color-primary--600);
-
-      &:hover {
-        background-color: var(--color-primary--600);
-        border-color:     var(--color-primary--600);
-      }
-    }
-  }
-
-  &-secondary {
-    background-color: var(--base-color-body-background);
-    border: var(--border-weight-1) solid;
-    border-color: var(--color-secondary--500, var(--color-grey--300));
-    color: var(--base-color-body-text, var(--color-grey--900));
-
-    &:hover {
-      background-color: var(--color-secondary--600, var(--color-primary--600));
-      border-color:     var(--color-secondary--600, var(--color-primary--600));
-    }
-
-    &:focus:not(:active) {
-      box-shadow: none;
-    }
-
-    &:focus-visible {
-      color: var(--color-secondary--600, var(--color-primary--600));
-      border-color: var(--color-secondary--600, var(--color-primary--600));
-      outline: var(--border-weight-3) solid;
-      outline-color: var(--color-secondary--300, var(--color-primary--300));
-
-
-      outline-offset: 0;
-    }
-
-    &:active {
-      color: var(--color-secondary--700, var(--color-primary--700));
-      border-color: var(--color-secondary--700, var(--color-primary--700));
-    }
-
-    &.is-light {
-      background-color: var(--base-color-body-background);
-      color: var(--base-color-body-text, var(--color-grey--900));
-
-      &:hover {
-        border-color: var(--color-secondary--300, var(--color-primary--300));
-      }
-
-      &:focus-visible {
-        color: var(--color-secondary--300, var(--color-primary--300));
-        border-color: var(--color-secondary--300, var(--color-primary--300));
-        outline-color: var(--color-secondary--100, var(--color-primary--100));
-      }
-
-      &:active {
-        color: var(--color-secondary--400, var(--color-primary--400));
-        border-color: var(--color-secondary--400, var(--color-primary--400));
-      }
-    }
-  }
 
   &-ghost {
-    border: none;
-    color: var(--base-color-body-text, var(--color-grey--900));
-
     &:hover {
-      color: var(--color-primary--600);
-
       text-decoration: none;
     }
-
     &:focus:not(:active) {
       box-shadow: none;
     }
 
     &:focus-visible {
-      color: var(--color-primary--600);
+      color: var(--kyanite-primary);
       outline: var(--border-weight-3) solid;
-      outline-color: var(--color-primary--300);
+      outline-color: var(--kyanite-primary-80);
       outline-offset: 0;
     }
 
     &:active {
-      color: var(--color-primary--700);
+      color: var(--kyanite-primary-80);
     }
   }
 
   &-text {
-    color: var(--color-grey--700);
+    color: var(--kyanite-gray-40);
 
     &.is-light {
       background-color: transparent;
@@ -173,14 +53,14 @@
     &.is-hovered,
     &:focus,
     &:hover {
-      background-color: var(--color-grey--200);
-      color: var(--color-grey--800)
+      background-color: var(--kyanite-text-95);
+      color: var(--kyanite-gray-30)
     }
 
     &.is-active,
     &:active {
-      background-color: var(--color-grey--300);
-      color: var(--color-grey--800)
+      background-color: var(--kyanite-gray-90);
+      color: var(--kyanite-gray-30)
     }
   }
 }

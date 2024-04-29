@@ -43,20 +43,20 @@ class PagesSpaceComponentTest {
   }
 
   @Test
-  void shouldReturnStylePath() {
-    PagesSpaceComponent model = context.resourceResolver().getResource(PATH + "darkModeSpace/pages/test")
-        .adaptTo(PagesSpaceComponent.class);
-
-    assertThat(model).isNotNull();
-    assertThat(model.getStylesPath()).isEqualTo("nicePath");
-  }
-
-  @Test
-  void shouldReturnEmptyPath() {
+  void shouldReturnDefaultTheme() {
     PagesSpaceComponent model = context.resourceResolver().getResource(PATH + "baseSpace/pages/test")
         .adaptTo(PagesSpaceComponent.class);
 
     assertThat(model).isNotNull();
-    assertThat(model.getStylesPath()).isEmpty();
+    assertThat(model.getThemeClass()).isEqualTo("theme-light");
+  }
+
+  @Test
+  void shouldReturnDarkTheme() {
+    PagesSpaceComponent model = context.resourceResolver().getResource(PATH + "darkModeSpace/pages/test")
+        .adaptTo(PagesSpaceComponent.class);
+
+    assertThat(model).isNotNull();
+    assertThat(model.getThemeClass()).isEqualTo("theme-dark");
   }
 }

@@ -18,6 +18,6 @@
 
 @use 'src/atomic-design-system/02-molecule/m.panel' as panel;
 
-.panel {
+.theme-light .panel {
   @include panel.m-panel;
 }

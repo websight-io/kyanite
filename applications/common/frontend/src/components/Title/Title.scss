@@ -20,7 +20,6 @@
 
 .title {
   @extend .a-title;
-  font-weight: var(--font-weight-700);
 
   &.is-1 {
     @extend .a-title-1;
@@ -49,7 +48,6 @@
 
 .subtitle {
   @extend .a-subtitle;
-  font-weight: var(--font-weight-600);
 
   &.is-1 {
     @extend .a-subtitle-1;

@@ -16,17 +16,11 @@
  * -->
  */
 
-@use 'sass:map';
-
-@use 'src/bulma-overwrite/bulma-spacing';
-
 @use 'src/atomic-design-system/00-token/t.spacing' as gap;
-@use 'src/atomic-design-system/00-token/t.color' as color;
 @use 'src/atomic-design-system/00-token/t.font' as font;
-@use 'src/atomic-design-system/00-token/t.border';
 
 @mixin m-article-thumbnail {
-  color: var(--color-grey--900) !important;
+  color: var(--kyanite-custom-article-title-color);
   @extend .mb-5_4;
 
   .content {
@@ -41,7 +35,7 @@
 
     .title {
       @extend .mb-4;
-      color: var(--color-grey--900) !important;
+      color: var(--kyanite-custom-article-title-color);
     }
   }
 
@@ -51,8 +45,9 @@
     @include font.t-font-size-fluid(22, 32);
 
 
-    color: var(--base-color-body-text, var(--base-color-black));
+    color: var(--kyanite-custom-article-mdi-color);
     transform: rotate(45deg);
+    transition: color var(--kyanite-duration) var(--kyanite-easing);
   }
 
   .image-hero img {
@@ -63,17 +58,17 @@
 
   .content-info-details {
     .author-content {
-      color: var(--color-grey--900) !important;
+      color: var(--kyanite-custom-article-author-color);
       @extend .pr-5;
     }
 
     .date-content {
-      color: var(--color-grey--700) !important;
+      color: var(--kyanite-custom-article-info-color);
       @extend .pr-3;
     }
 
     .time-content {
-      color: var(--color-grey--700) !important;
+      color: var(--kyanite-custom-article-info-color);
     }
   }
 }

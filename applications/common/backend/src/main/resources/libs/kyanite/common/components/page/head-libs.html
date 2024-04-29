@@ -16,7 +16,7 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.kyanite.common.components.helpers.PageModel"></sly>
+<sly data-sly-use.model="pl.ds.kyanite.common.components.models.PageHeadLibsComponent"></sly>
 <!-- Google Tag Manager -->
 <script data-sly-test="${model.hasAnalyticsUrl}" type="text/plain" data-cookiecategory="analytics">
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -63,11 +63,10 @@
   href="/libs/kyanite/webroot/main.published.css"
 />
 
-<sly data-sly-use.pagesSpace="pl.ds.kyanite.common.components.models.PagesSpaceComponent"></sly>
 <link
     rel="stylesheet"
     type="text/css"
-    data-sly-test="${pagesSpace.getStylesPath}"
+    data-sly-test="${model.getStylesPath}"
     href="${pagesSpace.getStylesPath}"
 />
 

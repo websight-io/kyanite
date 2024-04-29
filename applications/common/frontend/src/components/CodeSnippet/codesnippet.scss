@@ -16,16 +16,9 @@
  * -->
  */
 
-@use 'sass:map';
-
 @use 'node_modules/highlight.js/styles/github.css';
 
-@use 'src/bulma-overwrite/variables' as variables;
-@use 'src/bulma-overwrite/bulma-spacing' as spacing;
-
-@use 'src/atomic-design-system/00-token/t.font' as font;
-@use 'src/atomic-design-system/00-token/t.color' as color;
-@use 'src/atomic-design-system/00-token/t.border' as border;
+@use 'src/variables-helpers' as variables;
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 
 .code-snippet {
@@ -41,10 +34,9 @@
     @extend .p-2;
 
     font-size: var(--font-size-14);
-    font-weight: var(--font-weight-700);
-    color: var(--color-grey--900) !important;
+    font-weight: var(--kyanite-weight-bold);
+    color: var(--kyanite-custom-codesnippet-title-color) !important;
 
-    background-color: var(--base-color-background);
     word-wrap: break-word;
 
     display: flex;
@@ -61,12 +53,13 @@
     @extend .p-0, .pr-6_1;
 
     border-top: var(--border-weight-1) solid;
-    border-color: var(--color-grey--300) !important;
+    border-color: var(--kyanite-custom-codesnippet-border-color) !important;
+    background-color: var(--kyanite-custom-codesnippet-code-background-color);
 
     > code {
       @extend .px-5;
 
-      background-color: var(--base-color-background) !important; // overwrite hljs (highlight.js)
+      background-color: var(--kyanite-custom-codesnippet-code-background-color) !important; // overwrite hljs (highlight.js)
     }
   }
 
@@ -85,23 +78,23 @@
     margin-top: var(--spacing-4);
 
     /* Color */
-    color: var(--color-grey--900);
+    color: var(--kyanite-custom-codesnippet-icon-mobile-color);
 
     /* Others */
     cursor: pointer;
 
     @include breakpoint.media-breakpoint-large {
-      color: var(--color-grey--300);
+      color: var(--kyanite-custom-codesnippet-icon-color);
     }
   }
 
   @include breakpoint.media-breakpoint-large {
     // icon - on container hover
     &:hover > .code-snippet__icon {
-      color: var(--color-grey--900);
+      color: var(--kyanite-custom-codesnippet-icon-hover-code-color);
 
       &:hover {
-        color: var(--color-primary--600);
+        color: var(--kyanite-custom-codesnippet-icon-hover-color);
       }
     }
   }
@@ -133,8 +126,8 @@
     );
 
     /* Colors */
-    background-color: var(--color-primary--600);
-    color: var(--color-primary--100);
+    background-color: var(--kyanite-custom-codesnippet-icon-message-background-color);
+    color: var(--kyanite-custom-codesnippet-icon-message-color);
 
     /* Text */
     text-align: center;
@@ -167,7 +160,7 @@
         rotate(45deg);
 
       /* Colors */
-      background-color: var(--color-primary--600);
+      background-color: var(--kyanite-custom-codesnippet-icon-message-background-color);
 
       /* Others */
       content: ' ';

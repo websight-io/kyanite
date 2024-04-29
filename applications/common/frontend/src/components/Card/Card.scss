@@ -17,13 +17,10 @@
  */
 
 @use 'src/atomic-design-system/01-atom/a.bg-image';
-@use 'src/atomic-design-system/02-molecule/m.card' as card;
 @use 'src/atomic-design-system/02-molecule/m.card-full-height' as
   card-full-height;
 
 .card {
-  @include card.m-card;
-
   &--full-height {
     @include card-full-height.m-card-full-height;
   }

@@ -18,45 +18,45 @@
 
 .aa-Autocomplete {
   .aa-DetachedSearchButton {
-    border-color: var(--color-grey--300);
+    border-color: var(--kyanite-gray-90);
     border-radius: var(--border-radius-2);
 
     &:focus {
-      border-color: rgba(var(--color-primary--600), 1);
-      box-shadow: color-mix(in srgb, var(--color-primary--600) 20%, white) 0 0 0
+      border-color: rgba(var(--kyanite-primary), 1);
+      box-shadow: color-mix(in srgb, var(--kyanite-primary) 20%, white) 0 0 0
           3px,
-        inset color-mix(in srgb, var(--color-primary--600) 20%, white) 0 0 0 2px;
+        inset color-mix(in srgb, var(--kyanite-primary) 20%, white) 0 0 0 2px;
     }
   }
 
   .aa-SubmitIcon {
-    color: var(--color-grey--500);
+    color: var(--kyanite-gray-60);
   }
 }
 
 .aa-DetachedOverlay {
   .aa-Form:focus-within {
-    border-color: var(--color-primary--600);
-    box-shadow: color-mix(in srgb, var(--color-primary--600) 20%, white) 0 0 0
+    border-color: var(--kyanite-primary);
+    box-shadow: color-mix(in srgb, var(--kyanite-primary) 20%, white) 0 0 0
         2px,
-      inset color-mix(in srgb, var(--color-primary--600) 20%, white) 0 0 0 2px;
+      inset color-mix(in srgb, var(--kyanite-primary) 20%, white) 0 0 0 2px;
   }
 
   .aa-SubmitIcon {
-    color: var(--color-grey--500);
+    color: var(--kyanite-gray-60);
   }
 
   .aa-DetachedCancelButton {
-    background-color: var(--color-additional-1--800);
-    font-weight: var(--font-weight-600);
+    background-color: var(--kyanite-gray-15ś);
+    font-weight: var(--kyanite-weight-semibold);
   }
 
   .aa-SourceHeaderTitle {
-    color: var(--color-grey--500);
+    color: var(--kyanite-gray-60);
   }
 
   .aa-SourceHeaderLine {
-    border-bottom-color: var(--color-grey--500);
+    border-bottom-color: var(--kyanite-gray-60);
   }
 
   .aa-ItemLink {
@@ -68,10 +68,10 @@
   }
 
   .aa-ItemContentTitle {
-    font-weight: var(--font-weight-600);
+    font-weight: var(--kyanite-weight-semibold);
 
     b {
-      color: var(--color-primary--600);
+      color: var(--kyanite-primary);
     }
   }
 
@@ -81,7 +81,7 @@
 
   .aa-ItemContentDescription {
     b {
-      color: var(--color-primary--600);
+      color: var(--kyanite-primary);
     }
   }
 

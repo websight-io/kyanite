@@ -1,0 +1,74 @@
+/*
+ * Copyright (C) 2024 Dynamic Solutions
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@use 'src/atomic-design-system/00-token/t.border' as border;
+
+
+.navbar-link:not(.is-arrowless)::after,
+.select:not(.is-multiple, .is-loading)::after {
+  border-bottom: var(--border-weight-2) solid;
+  border-left: var(--border-weight-2) solid;
+  border-radius: 1px;
+}
+
+/* anchor */
+
+a:not(.button, .link) {
+  &:hover {
+    color: var(--kyanite-custom-anchor-hover-color);
+  }
+}
+
+/*  inputs text colors */
+
+.input, .select select, .textarea, .label  {
+  color: var(--kyanite-body-color);
+  background-color: var(--kyanite-body-background-color);
+  &:focus, &:active, &.is-active, &.is-focused {
+    border-color: var(--kyanite-primary) !important;
+    box-shadow: none;
+  }
+}
+
+.select:not(.is-multiple):not(.is-loading):after {
+  border-color: var(--kyanite-primary);
+}
+
+.input::placeholder, .textarea::placeholder {
+  color: var(--kyanite-custom-input-placeholder-color);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px var(--kyanite-body-background-color) inset;
+    -webkit-text-fill-color: var(--kyanite-body-color);
+}
+
+input[type=checkbox] {
+  accent-color: var(--kyanite-primary);
+}
+
+.checkbox:hover, .radio:hover {
+  color: var(--kyanite-custom-checkbox-radio-hover);
+}
+
+.table {
+  --kyanite-table-striped-row-even-background-color: #fafafa;
+  --kyanite-table-background-color: var(--kyanite-body-background-color);
+}
+

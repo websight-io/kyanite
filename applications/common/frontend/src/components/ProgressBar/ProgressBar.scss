@@ -18,6 +18,6 @@
 
 @use 'src/atomic-design-system/02-molecule/m.progress-bar' as progressbar;
 
-.progress {
+.theme-light .progress {
   @include progressbar.m-progressbar;
 }

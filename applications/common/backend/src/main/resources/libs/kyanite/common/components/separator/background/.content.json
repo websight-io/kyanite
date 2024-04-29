@@ -50,7 +50,7 @@
     "grey": {
       "sling:resourceType": "wcm/dialogs/components/select/selectitem",
       "label": "Grey",
-      "value": "has-background-grey"
+      "value": "has-background-gray"
     },
     "dark": {
       "sling:resourceType": "wcm/dialogs/components/select/selectitem",

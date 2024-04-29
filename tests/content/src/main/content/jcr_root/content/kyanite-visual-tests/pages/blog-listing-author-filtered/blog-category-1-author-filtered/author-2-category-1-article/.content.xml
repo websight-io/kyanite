@@ -141,12 +141,9 @@
                             <content
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/content"
-                                    color="rest_has-text-grey"
+                                    color=""
                                     size="is-medium"
                                     text="&lt;p>Content&lt;/p>">
-                                <rest
-                                        jcr:primaryType="nt:unstructured"
-                                        shade="700"/>
                             </content>
                         </column4>
                     </columns1>

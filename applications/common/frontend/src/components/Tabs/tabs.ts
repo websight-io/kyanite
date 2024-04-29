@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import { onDOMContentLoaded } from '../../helpers.dom';
+import { onDOMContentLoaded } from '../../helpers/dom';
 import { Tabs } from './tabs.class';
 import { TabsMobile } from "./tabsMobile.class";
 import { AutoSwitchingTabs } from './autoSwitchingTabs.class';

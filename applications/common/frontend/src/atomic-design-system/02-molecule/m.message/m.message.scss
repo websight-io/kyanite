@@ -16,76 +16,80 @@
  * -->
  */
 
-@use 'src/atomic-design-system/00-token/t.color' as color;
-@use 'src/atomic-design-system/00-token/t.border';
-
-
 @mixin m-message {
   // "None" variant, base for the other variants
-  border-color: var(--color-grey--400) !important;
+  border-color: var(--kyanite-light) !important;
   border-left: var(--border-weight-3) solid;
   border-radius: var(--border-radius-2);
 
-  box-shadow: 0 0.2rem 0.5rem rgb(0 0 0 / 5%), 0 0 0.05rem rgb(0 0 0 / 10%);
+  box-shadow: var(--kyanite-shadow);
 
   .message-header {
-    color: var(--color-grey--900) !important;
-    background-color: var( --color-grey--200) !important;
+    color: var(--kyanite-gray-15) !important;
+    background-color: var(--kyanite-text-95) !important;
     border-top-left-radius: var(--border-weight-0);
   }
 
   .message-body {
-    color: var(--color-grey--900) !important;
+    color: var(--kyanite-gray-15) !important;
 
     border: none;
-    background-color: var(--base-color-white);
+    background-color: var(--kyanite-white) !important;
   }
 
   &.is-primary {
-    border-color: var(--color-primary--400) !important;
+    border-color: var(--kyanite-primary-50) !important;
 
     .message-header {
-      background-color: var(--color-primary--100) !important;
+      background-color: var(--kyanite-primary-100) !important;
+    }
+  }
+
+  &.is-secondary {
+    border-color: var(--kyanite-secondary-50) !important;
+
+    .message-header {
+      background-color: var(--kyanite-secondary-100) !important;
     }
   }
 
   &.is-link {
-    border-color: var(--color-link--400) !important;
+    border-color: var(--kyanite-link-50) !important;
 
     .message-header {
-      background-color: var(--color-link--100) !important;
+      background-color: var(--kyanite-link-100) !important;
     }
   }
 
   &.is-info {
-    border-color: var(--color-info--400) !important;
+    border-color: var(--kyanite-info-50) !important;
 
     .message-header {
-      background-color: var(--color-info--100) !important;
+      background-color: var(--kyanite-info-100) !important;
     }
   }
 
   &.is-success {
-    border-color: var(--color-success--400) !important;
+    border-color: var(--kyanite-success-50) !important;
 
     .message-header {
-      background-color: var(--color-success--100) !important;
+      background-color: var(--kyanite-success-100) !important;
     }
   }
 
   &.is-warning {
-    border-color: var(--color-warning--400) !important;
+    border-color: var(--kyanite-warning-50) !important;
 
     .message-header {
-      background-color: var(--color-warning--100) !important;
+      background-color: var(--kyanite-warning-100) !important;
     }
   }
 
   &.is-danger {
-    border-color: var(--color-danger--400) !important;
+    border-color: var(--kyanite-danger-50) !important;
 
     .message-header {
-      background-color: var(--color-danger--100) !important;
+      background-color: var(--kyanite-danger-100) !important;
     }
   }
 }

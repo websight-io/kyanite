@@ -1,10 +1,10 @@
 {
   "isContainer": true,
-  "group": "Kyanite Layouts",
+  "group": ".hidden",
   "allowedComponents": [
     "/apps/kyanite/common/components/tiles/tileparent",
     "/libs/kyanite/common/components/tiles/tileparent"
   ],
   "sling:resourceType": "ws:Component",
-  "title": "Tiles"
+  "title": "Tiles (Deprecated)"
 }

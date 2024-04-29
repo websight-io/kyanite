@@ -39,14 +39,7 @@
             <content
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/content"
-                color="grey_has-text-grey"
-                text="&lt;p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet&lt;/p>">
-                <grey
-                    jcr:primaryType="nt:unstructured"
-                    shade="darker"/>
-                <bw jcr:primaryType="nt:unstructured"/>
-                <rest jcr:primaryType="nt:unstructured"/>
-            </content>
+                text="&lt;p>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit ametLorem ipsum dolor sit amet&lt;/p>"/>
             <footerreference
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/footerreference"/>

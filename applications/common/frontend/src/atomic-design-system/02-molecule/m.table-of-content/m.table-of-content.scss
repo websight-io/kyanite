@@ -16,16 +16,14 @@
  * -->
  */
 
-@use 'src/bulma-overwrite/bulma-spacing';
+@use 'src/variables-helpers';
 
-@use 'src/atomic-design-system/00-token/t.color' as color;
-@use 'src/atomic-design-system/00-token/t.font' as font;
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
 
 @mixin m-table-of-content {
   .table-label {
-    color: var(--color-grey--700) !important;
-    font-weight: var(--font-weight-500);
+    color: var(--kyanite-gray-40) !important;
+    font-weight: var(--kyanite-weight-medium);
     @extend .mb-5;
     display: block;
   }
@@ -38,7 +36,7 @@
     align-items: flex-start;
 
     li.button {
-      font-weight: var(--font-weight-500);
+      font-weight: var(--kyanite-weight-medium);
       @extend .mb-3;
       @extend .p-0;
       height: unset;
@@ -47,7 +45,7 @@
 
       a {
         @include link.a-animated-underline-link;
-        color: var(--color-grey--900) !important;
+        color: var(--kyanite-gray-15) !important;
         line-height: var(--line-height-150);
       }
     }
@@ -55,7 +53,7 @@
 
   .table-content-button {
     @include link.a-animated-underline-link;
-    color: var(--color-grey--900) !important;
+    color: var(--kyanite-gray-15) !important;
     display: inline-block;
   }
 }

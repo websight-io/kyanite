@@ -43,8 +43,7 @@ module.exports = {
       import: `${SOURCE_ROOT}/main.published.ts`,
       filename: 'main/main.published.js',
     },
-    author: {import: SOURCE_ROOT + '/author.ts', filename: 'author/author.js'},
-    'dark-mode': {import: SOURCE_ROOT + '/dark-mode.ts', filename: 'dark-mode/dark-mode.js'},
+    author: {import: SOURCE_ROOT + '/author.ts', filename: 'author/author.js'}
   },
   output: {
     filename: (chunkData) => {

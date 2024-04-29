@@ -31,6 +31,7 @@
     "sling:resourceType": "ws:PagesTemplate",
     "title": "Kyanite Dark Theme website Pages",
     "stylesPath": "nicePath",
+    "theme": "theme-dark",
     "allowedChildren": [
       "/libs/kyanite/common/templates/homepage",
       "/libs/kyanite/common/templates/contactuspage",

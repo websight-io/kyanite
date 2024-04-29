@@ -24,7 +24,7 @@ import yaml from 'highlight.js/lib/languages/yaml';
 import bash from 'highlight.js/lib/languages/bash';
 import typescript from 'highlight.js/lib/languages/typescript';
 
-import { onDOMContentLoaded } from '../../helpers.dom';
+import { onDOMContentLoaded } from '../../helpers/dom';
 import { CodeSnippet } from './codesnippet.class';
 
 hljs.registerLanguage('html', xml);

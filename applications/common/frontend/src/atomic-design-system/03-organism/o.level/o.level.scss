@@ -18,7 +18,6 @@
 
 @use 'sass:map';
 
-@use 'src/bulma-overwrite/variables' as spacing;
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 
 $gap: var(--spacing-6);

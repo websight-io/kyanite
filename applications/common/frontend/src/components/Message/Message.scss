@@ -18,6 +18,6 @@
 
 @use 'src/atomic-design-system/02-molecule/m.message' as message;
 
-.message {
+.theme-light .message {
   @include message.m-message;
 }

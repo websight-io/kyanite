@@ -19,11 +19,9 @@
 @use 'sass:map';
 
 @use 'src/atomic-design-system/01-atom/a.image' as image;
-@use 'src/atomic-design-system/00-token/t.color' as color;
-@use 'src/bulma-overwrite/variables' as spacing;
 
-$color-shadow-start: rgba(var(--base-color-black), 0.06);
-$color-shadow-end: rgba(var(--color-shadow--1), 0.07);
+$color-shadow-start: rgba(#000, 0.06);
+$color-shadow-end: rgba(#605e78, 0.07);
 
 .image {
   @include image.a-image;
