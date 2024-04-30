@@ -25,4 +25,3 @@ import './main.published.scss';
 
 // scripts
 import './helpers/load-events';
-import './cookies/cookieConsents';
