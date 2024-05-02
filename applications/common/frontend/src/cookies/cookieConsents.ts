@@ -14,15 +14,18 @@
  * limitations under the License.
  */
 
-/**
- * This file is loaded only in WCM disabled mode. It's not present in edit or publish mode.
- * Used only for end-user.
- * Loaded in `head-libs.html` & `body-content.html`
- */
+interface Window {
+    dataLayer: any;
+}
 
-// styles
-import './main.published.scss';
+const openModalLinks: NodeListOf<Element> = document.querySelectorAll(
+    'a[href="#cookieSettings"'
+);
 
-// scripts
-import './helpers/load-events';
-import './cookies/cookieConsents';
+openModalLinks.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ 'event': 'client-consent-change' });
+  });
+});
