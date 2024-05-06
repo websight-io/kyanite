@@ -18,19 +18,17 @@ package pl.ds.kyanite.blogs.components.services;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.osgi.service.component.annotations.Component;
+import pl.ds.kyanite.common.components.utils.PageUtil;
 import pl.ds.kyanite.common.components.utils.PagesSpaceUtil;
 import pl.ds.websight.pages.core.api.Page;
 
@@ -71,7 +69,7 @@ public class BlogArticleService {
   }
 
   public List<Resource> findFeatureBlogsOnPage(Resource resource) {
-    return this.getDescendants(resource).stream()
+    return PageUtil.getDescendants(resource).stream()
         .filter(
             res -> StringUtils.equals(FEATURE_BLOG_ARTICLE_RESOURCE_TYPE, res.getResourceType()))
         .toList();
@@ -100,18 +98,6 @@ public class BlogArticleService {
         .map(vm -> vm.get("publicationDate", String.class))
         .map(date -> LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy-MM-dd")))
         .orElse(null);
-  }
-
-  private Collection<Resource> getDescendants(Resource resource) {
-    final Collection<Resource> children = Optional.ofNullable(resource)
-        .map(res -> StreamSupport.stream(res.getChildren().spliterator(), false).collect(
-            Collectors.toSet()))
-        .orElse(Collections.emptySet());
-    return children.isEmpty() ? Collections.emptySet()
-        : Stream.concat(children.stream(), children.stream()
-                .map(this::getDescendants)
-                .flatMap(Collection::stream))
-            .collect(Collectors.toSet());
   }
 
   private Stream<Page> streamRootPages(String resourcePath, ResourceResolver resourceResolver) {

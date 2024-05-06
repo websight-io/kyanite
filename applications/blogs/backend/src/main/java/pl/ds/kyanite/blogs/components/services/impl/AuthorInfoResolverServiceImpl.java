@@ -47,7 +47,7 @@ import pl.ds.kyanite.blogs.components.models.AuthorInfo.Fields;
 import pl.ds.kyanite.blogs.components.models.AuthorInfo.SourceType;
 import pl.ds.kyanite.blogs.components.models.AuthorInfoModel;
 import pl.ds.kyanite.blogs.components.services.AuthorInfoResolverService;
-import pl.ds.kyanite.blogs.components.utils.ResourceUtil;
+import pl.ds.kyanite.common.components.utils.PageUtil;
 
 
 @Component(service = {AuthorInfoResolverService.class})
@@ -82,7 +82,7 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
     if (authorNode == null) {
       throw new AuthorInfoConfigurationException(AUTHOR_NODE_MISSING_IN_CONSUMER);
     }
-    String authorNodePath = ResourceUtil.removeContentSuffix(authorNode.getPath());
+    String authorNodePath = PageUtil.removeContentSuffix(authorNode.getPath());
 
     //  check for circular reference
     if (paths.contains(authorNodePath)) {
@@ -106,7 +106,7 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
         return retrieveAuthorInfo(authorPageResource, resourceResolver, paths);
       }
       case SourceType.PARENT_PAGE -> {
-        String parentPagePath = ResourceUtil.getParentPagePath(authorNode);
+        String parentPagePath = PageUtil.getParentPagePath(authorNode);
         Resource parentPage = resolveAuthorInfoReference(
             parentPagePath, resourceResolver, authorNodePath);
         return retrieveAuthorInfo(parentPage, resourceResolver, paths);
@@ -182,8 +182,8 @@ public class AuthorInfoResolverServiceImpl implements AuthorInfoResolverService 
           String.format(AUTHOR_INFO_SOURCE_IS_NULL, authorInfoSourcePath, consumerPath));
     }
 
-    Resource authorNode = ResourceUtil.getContentNode(authorInfoResource)
-                                      .getChild(AuthorInfo.AUTHOR_NODE_NAME);
+    Resource authorNode = PageUtil.getContentNode(authorInfoResource)
+        .getChild(AuthorInfo.AUTHOR_NODE_NAME);
     if (authorNode == null) {
       throw new AuthorInfoConfigurationException(
           String.format(AUTHOR_NODE_MISSING_IN_REFERENCE, authorInfoSourcePath, consumerPath));

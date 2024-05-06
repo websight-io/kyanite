@@ -29,7 +29,7 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.factory.ModelFactory;
 import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingException;
 import pl.ds.kyanite.blogs.components.services.AuthorInfoResolverService;
-import pl.ds.kyanite.blogs.components.utils.ResourceUtil;
+import pl.ds.kyanite.common.components.utils.PageUtil;
 
 @Model(
     adaptables = {Resource.class},
@@ -74,9 +74,9 @@ public class BlogArticleHeaderComponent {
   }
 
   private void resolveHeaderModel() {
-    final Resource currentPage = ResourceUtil.getParentPageResource(resource, resourceResolver);
+    final Resource currentPage = PageUtil.getParentPageResource(resource, resourceResolver);
     if (Objects.nonNull(currentPage)) {
-      final Resource pageContent = ResourceUtil.getContentNode(currentPage);
+      final Resource pageContent = PageUtil.getContentNode(currentPage);
       blogArticleHeaderModel = modelFactory.createModel(pageContent, BlogArticleHeaderModel.class);
     }
   }
