@@ -1,6 +1,6 @@
 <!--/*
   ~
-  ~     Copyright (C) 2023 Dynamic Solutions
+  ~     Copyright (C) 2024 Dynamic Solutions
   ~
   ~     Licensed under the Apache License, Version 2.0 (the "License");
   ~     you may not use this file except in compliance with the License.
@@ -16,7 +16,14 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.kyanite.fragments.components.models.ExperienceFragmentComponent">
-  <sly data-sly-use.template="./fragment-template.html"
-       data-sly-call="${template.fragment @ model=model}"></sly>
+<sly data-sly-template.fragment="${ @ model}">
+  <sly data-sly-test.editor="${!wcmmode.isDisabled}">
+    <sly data-sly-test="${model.isValidPage}">
+      <sly data-sly-resource="${model.resource @ requestAttributes = wcmmode.disabledModeAttribute}"></sly>
+    </sly>
+  </sly>
+  <sly data-sly-test="${!editor}">
+    <!--# block name="fail" --><!--# endblock -->
+    <!--# include virtual="${model.pagePath}" stub="fail" -->
+  </sly>
 </sly>

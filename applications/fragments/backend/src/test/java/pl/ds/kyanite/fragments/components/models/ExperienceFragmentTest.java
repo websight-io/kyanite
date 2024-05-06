@@ -34,68 +34,68 @@ class ExperienceFragmentTest {
 
   @BeforeEach
   public void init() {
-    context.addModelsForClasses(ExperienceFragment.class);
+    context.addModelsForClasses(ExperienceFragmentComponent.class);
     context.load().json(requireNonNull(
         Thread.currentThread().getContextClassLoader().getResourceAsStream("fragment.json")), PATH);
   }
 
   @Test
   void emptyFragment() {
-    ExperienceFragment model =
+    ExperienceFragmentComponent model =
         requireNonNull(requireNonNull(context.resourceResolver()).getResource(PATH + "/empty"))
-            .adaptTo(ExperienceFragment.class);
+            .adaptTo(ExperienceFragmentComponent.class);
 
     assertThat(model).isNotNull();
     assertThat(model.getResource()).isNull();
-    assertThat(model.getValidPage()).isFalse();
+    assertThat(model.isValidPage()).isFalse();
     assertThat(model.getPagePath()).isNull();
   }
 
   @Test
   void validFragment() {
-    ExperienceFragment model =
+    ExperienceFragmentComponent model =
         requireNonNull(requireNonNull(context.resourceResolver()).getResource(PATH + "/with-valid-resource"))
-            .adaptTo(ExperienceFragment.class);
+            .adaptTo(ExperienceFragmentComponent.class);
 
     assertThat(model).isNotNull();
     assertThat(model.getResource()).isEqualTo("/content/fragments/pages/fragments/fragment");
-    assertThat(model.getValidPage()).isTrue();
+    assertThat(model.isValidPage()).isTrue();
     assertThat(model.getPagePath()).isEqualTo("/content/fragments/pages/fragments/fragment.html");
   }
 
   @Test
   void validFragmentWithSlashAtResourcePath() {
-    ExperienceFragment model =
+    ExperienceFragmentComponent model =
         requireNonNull(requireNonNull(context.resourceResolver()).getResource(PATH + "/with-slash-at-the-end"))
-            .adaptTo(ExperienceFragment.class);
+            .adaptTo(ExperienceFragmentComponent.class);
 
     assertThat(model).isNotNull();
     assertThat(model.getResource()).isEqualTo("/content/fragments/pages/fragments/fragment/");
-    assertThat(model.getValidPage()).isTrue();
+    assertThat(model.isValidPage()).isTrue();
     assertThat(model.getPagePath()).isEqualTo("/content/fragments/pages/fragments/fragment.html");
   }
 
   @Test
   void invalidResourceFragment() {
-    ExperienceFragment model =
+    ExperienceFragmentComponent model =
         requireNonNull(requireNonNull(context.resourceResolver()).getResource(PATH + "/with-invalid-resource"))
-            .adaptTo(ExperienceFragment.class);
+            .adaptTo(ExperienceFragmentComponent.class);
 
     assertThat(model).isNotNull();
     assertThat(model.getResource()).isEqualTo("/content/fragments/pages/fragments/invalid");
-    assertThat(model.getValidPage()).isFalse();
+    assertThat(model.isValidPage()).isFalse();
     assertThat(model.getPagePath()).isEqualTo("/content/fragments/pages/fragments/invalid.html");
   }
 
   @Test
   void notExistingResourceFragment() {
-    ExperienceFragment model =
+    ExperienceFragmentComponent model =
         requireNonNull(requireNonNull(context.resourceResolver()).getResource(PATH + "/with-not-existing-resource"))
-            .adaptTo(ExperienceFragment.class);
+            .adaptTo(ExperienceFragmentComponent.class);
 
     assertThat(model).isNotNull();
     assertThat(model.getResource()).isEqualTo("/content/fragments/pages/fragments/not-existing");
-    assertThat(model.getValidPage()).isFalse();
+    assertThat(model.isValidPage()).isFalse();
     assertThat(model.getPagePath()).isEqualTo("/content/fragments/pages/fragments/not-existing.html");
   }
 

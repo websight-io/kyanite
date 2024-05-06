@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,57 +16,23 @@
 
 package pl.ds.kyanite.fragments.components.models;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import lombok.Getter;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.api.resource.ValueMap;
-import org.apache.sling.models.annotations.DefaultInjectionStrategy;
-import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+public interface ExperienceFragment {
 
-@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class ExperienceFragment {
+  boolean isValidPage();
 
-  @Inject
-  @Getter
-  private String resource;
+  String getPagePath();
 
-  @Getter
-  private Boolean validPage = false;
+  String getResource();
 
-  @Getter
-  private String pagePath;
+  default String preparePagePath(String pagePath) {
+    String path = pagePath;
 
-  @SlingObject
-  private ResourceResolver resourceResolver;
-
-  @PostConstruct
-  private void init() {
-    validPage = checkIfValidPage();
-    pagePath = preparePagePath();
-  }
-
-  private boolean checkIfValidPage() {
-    Resource pageResource = resourceResolver.getResource(resource);
-    if (pageResource != null) {
-      ValueMap valueMap = pageResource.getValueMap();
-      String primaryType = valueMap.get("jcr:primaryType", String.class);
-      return "ws:Page".equals(primaryType);
-    }
-    return false;
-  }
-
-  private String preparePagePath() {
-    String path = resource;
-
-    if (resource == null) {
+    if (pagePath == null) {
       return null;
     }
 
-    if (resource.endsWith("/")) {
-      path = resource.substring(0, resource.length() - 1);
+    if (pagePath.endsWith("/")) {
+      path = pagePath.substring(0, pagePath.length() - 1);
     }
 
     return path + ".html";
