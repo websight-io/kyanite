@@ -9,5 +9,8 @@
     "Kyanite In-Text Sections"
   ],
   "sling:resourceType": "ws:Component",
+  "jcr:mixinTypes": [
+    "ws:FragmentComponent"
+  ],
   "title": "Footer"
 }

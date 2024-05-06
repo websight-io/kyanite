@@ -136,6 +136,12 @@
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-collections4</artifactId>
     </dependency>
+    <dependency>
+      <groupId>pl.ds.kyanite</groupId>
+      <artifactId>kyanite-fragments-backend</artifactId>
+      <version>${project.version}</version>
+      <scope>compile</scope>
+    </dependency>
   </dependencies>
 
 </project>

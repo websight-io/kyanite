@@ -30,5 +30,10 @@ public class NavbarReferenceComponent extends HomepageComponentReference {
   public String getPath() {
     return "jcr:content/pagecontainer/navbar";
   }
+
+  @Override
+  protected String getReferencedResourceType() {
+    return "kyanite/common/components/navbar";
+  }
 }
 

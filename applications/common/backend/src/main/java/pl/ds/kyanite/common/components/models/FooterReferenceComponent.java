@@ -23,9 +23,15 @@ import org.apache.sling.models.annotations.Model;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class FooterReferenceComponent extends HomepageComponentReference {
+
   @Override
   public String getPath() {
     return "jcr:content/pagecontainer/footer";
+  }
+
+  @Override
+  protected String getReferencedResourceType() {
+    return "kyanite/common/components/footer";
   }
 
 }

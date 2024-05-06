@@ -20,44 +20,99 @@ import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIO
 
 import java.util.Objects;
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.sling.api.resource.ModifiableValueMap;
+import org.apache.sling.api.resource.PersistenceException;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import pl.ds.kyanite.common.components.utils.PageUtil;
+import pl.ds.kyanite.fragments.components.models.ExperienceFragment;
 import pl.ds.websight.pages.core.api.Page;
 import pl.ds.websight.pages.core.api.PageManager;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
-public abstract class HomepageComponentReference {
+public abstract class HomepageComponentReference implements ExperienceFragment {
 
   @SlingObject
   private Resource resource;
 
+  @Inject
+  private String referencePath;
+
+  private String referenceTargetPath;
+
   protected Resource homepage;
-  protected Resource data;
 
   @PostConstruct
-  private void initReferenceComponent() {
-    PageManager pageManager = resource.getResourceResolver().adaptTo(PageManager.class);
+  private void initReferenceComponent() throws PersistenceException {
+
+    //  resolve reference path
+    if (referencePath == null || !isReferenceExists()) {
+      referencePath = resolveReferencePath();
+    }
+    referenceTargetPath = preparePagePath(referencePath);
+  }
+
+  private boolean isReferenceExists() {
+    return referencePath != null
+        && resource.getResourceResolver().getResource(referencePath) != null;
+  }
+
+  private String resolveReferencePath() throws PersistenceException {
+    ResourceResolver resourceResolver = resource.getResourceResolver();
+    PageManager pageManager = resourceResolver.adaptTo(PageManager.class);
     if (pageManager != null) {
       Page rootPage = PageUtil.findTopLevelParentPageForCurrentPage(
           Objects.requireNonNull(pageManager.getContainingPage(resource.getPath())));
       homepage = PageUtil.findSiblingPageForCurrentPage(rootPage,
           "/libs/kyanite/common/templates/homepage");
 
+      //  find reference
+      Resource reference = null;
       if (Objects.nonNull(homepage)) {
-        data = homepage.getChild(getPath()) != null ? homepage.getChild(getPath()) : null;
+        //  by path...
+        reference = homepage.getChild(getPath());
+        if (reference == null) {
+          //   ...or by resourceType
+          reference = PageUtil.getDescendants(homepage)
+              .stream()
+              .filter(res -> getReferencedResourceType().equals(res.getResourceType()))
+              .findFirst()
+              .orElse(null);
+        }
+      }
+
+      //  save reference path
+      if (reference != null) {
+        referencePath = reference.getPath();
+        ModifiableValueMap vm = resource.adaptTo(ModifiableValueMap.class);
+        vm.put("referencePath", referencePath);
+        resourceResolver.commit();
+        return referencePath;
       }
     }
+    return null;
   }
 
-  public Resource getComponent() {
-    return this.data;
+  @Override
+  public boolean isValidPage() {
+    return StringUtils.isNotBlank(referenceTargetPath);
   }
 
-  public boolean hasData() {
-    return Objects.nonNull(this.data);
+  @Override
+  public String getPagePath() {
+    return referenceTargetPath;
+  }
+
+  @Override
+  public String getResource() {
+    return referencePath;
   }
 
   protected abstract String getPath();
+
+  protected abstract String getReferencedResourceType();
 }

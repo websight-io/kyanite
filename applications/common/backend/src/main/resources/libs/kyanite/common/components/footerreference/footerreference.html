@@ -15,7 +15,6 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.FooterReferenceComponent">
-    <sly data-sly-test="${model.hasData}"
-         data-sly-resource="${model.component @ requestAttributes = wcmmode.disabledModeAttribute}"></sly>
-    </sly>
+    <sly data-sly-use.template="/libs/kyanite/fragments/components/fragment/fragment-template.html"
+         data-sly-call="${template.fragment @ model=model}"></sly>
 </sly>
