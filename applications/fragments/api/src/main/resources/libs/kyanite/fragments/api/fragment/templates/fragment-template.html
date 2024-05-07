@@ -17,13 +17,27 @@
 */-->
 
 <sly data-sly-template.fragment="${ @ model}">
+  <sly  data-sly-set.referenceExists="${model.isValidPage}"
+        data-sly-set.referenceMissingTemplate="${model.referenceMissingTemplatePath}"
+        data-sly-set.referenceFailedTemplate="${model.includeFailTemplatePath}"
+  ></sly>
   <sly data-sly-test.editor="${!wcmmode.isDisabled}">
-    <sly data-sly-test="${model.isValidPage}">
+    <sly data-sly-test="${referenceExists}">
       <sly data-sly-resource="${model.resource @ requestAttributes = wcmmode.disabledModeAttribute}"></sly>
+    </sly>
+    <sly data-sly-test="${!referenceExists}">
+      <sly data-sly-use.template="${referenceMissingTemplate}"
+           data-sly-call="${template.error @ model=model}"></sly>
     </sly>
   </sly>
   <sly data-sly-test="${!editor}">
-    <!--# block name="fail" --><!--# endblock -->
-    <!--# include virtual="${model.pagePath}" stub="fail" -->
+    <sly data-sly-test="${referenceExists}">
+      <sly data-sly-set.failBlockId="$fail-${model.fragmentInstanceId}"></sly>
+      <!--# block name="${failBlockId}" -->
+        <sly data-sly-use.template="${referenceFailedTemplate}"
+             data-sly-call="${template.error @ model=model}"></sly>
+      <!--# endblock -->
+      <!--# include virtual="${model.pagePath}" stub="${failBlockId}" -->
+    </sly>
   </sly>
 </sly>

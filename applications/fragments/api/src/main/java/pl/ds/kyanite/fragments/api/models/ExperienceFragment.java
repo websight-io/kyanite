@@ -16,6 +16,10 @@
 
 package pl.ds.kyanite.fragments.api.models;
 
+import static pl.ds.kyanite.fragments.api.models.ExperienceFragmentConstants.DEFAULT_TEMPLATES_PATH;
+
+import java.util.UUID;
+
 public interface ExperienceFragment {
 
   boolean isValidPage();
@@ -36,6 +40,23 @@ public interface ExperienceFragment {
     }
 
     return path + ".html";
+  }
+
+  /**
+   * Get unique ID for this fragment instance to tell it from other fragments on the page.
+   *
+   * @return unique ID string
+   */
+  default String getFragmentInstanceId() {
+    return UUID.randomUUID().toString();
+  }
+
+  default String getIncludeFailTemplatePath() {
+    return DEFAULT_TEMPLATES_PATH + "fragment-error-virtual-include-fail-template.html";
+  }
+
+  default String getReferenceMissingTemplatePath() {
+    return DEFAULT_TEMPLATES_PATH + "fragment-error-reference-missing-template.html";
   }
 
 }
