@@ -14,28 +14,7 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.fragments.components.models;
+@Version("1.0.0")
+package pl.ds.kyanite.fragments.api.models;
 
-public interface ExperienceFragment {
-
-  boolean isValidPage();
-
-  String getPagePath();
-
-  String getResource();
-
-  default String preparePagePath(String pagePath) {
-    String path = pagePath;
-
-    if (pagePath == null) {
-      return null;
-    }
-
-    if (pagePath.endsWith("/")) {
-      path = pagePath.substring(0, pagePath.length() - 1);
-    }
-
-    return path + ".html";
-  }
-
-}
+import org.osgi.annotation.versioning.Version;

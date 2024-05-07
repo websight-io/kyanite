@@ -18,6 +18,9 @@ package pl.ds.kyanite.common.components.models;
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
 
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -29,7 +32,7 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import pl.ds.kyanite.common.components.utils.PageUtil;
-import pl.ds.kyanite.fragments.components.models.ExperienceFragment;
+import pl.ds.kyanite.fragments.api.models.ExperienceFragment;
 import pl.ds.websight.pages.core.api.Page;
 import pl.ds.websight.pages.core.api.PageManager;
 
