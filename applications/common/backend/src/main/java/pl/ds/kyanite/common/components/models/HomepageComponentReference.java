@@ -53,7 +53,7 @@ public abstract class HomepageComponentReference implements ExperienceFragment {
   private void initReferenceComponent() throws PersistenceException {
 
     //  resolve reference path
-    if (referencePath == null || !isReferenceExists()) {
+    if (!isReferenceExists() && canBeEdited()) {
       referencePath = resolveReferencePath();
     }
     referenceTargetPath = preparePagePath(referencePath);
@@ -62,6 +62,10 @@ public abstract class HomepageComponentReference implements ExperienceFragment {
   private boolean isReferenceExists() {
     return referencePath != null
         && resource.getResourceResolver().getResource(referencePath) != null;
+  }
+
+  private boolean canBeEdited() {
+    return !resource.getPath().startsWith("/published");
   }
 
   private String resolveReferencePath() throws PersistenceException {
@@ -92,9 +96,13 @@ public abstract class HomepageComponentReference implements ExperienceFragment {
       if (reference != null) {
         referencePath = reference.getPath();
         ModifiableValueMap vm = resource.adaptTo(ModifiableValueMap.class);
-        vm.put("referencePath", referencePath);
-        resourceResolver.commit();
-        return referencePath;
+        if (vm != null) {
+          vm.put("referencePath", referencePath);
+          resourceResolver.commit();
+          return referencePath;
+        } else {
+          return null;
+        }
       }
     }
     return null;
