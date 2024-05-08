@@ -6,7 +6,7 @@
     "/apps/kyanite/common/components/navbar/navbarmenu",
     "/libs/kyanite/common/components/navbar/navbarmenu"
   ],
-  "group": "Components",
+  "group": "Kyanite Layouts",
   "sling:resourceType": "ws:Component",
   "title": "Navbar"
 }
