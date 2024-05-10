@@ -1,0 +1,10 @@
+{
+  "isContainer": true,
+  "group": "Kyanite Layouts",
+  "allowedComponents": [
+    "/apps/kyanite/common/components/grid/gridcell",
+    "/libs/kyanite/common/components/grid/gridcell"
+  ],
+  "sling:resourceType": "ws:Component",
+  "title": "Grid"
+}
