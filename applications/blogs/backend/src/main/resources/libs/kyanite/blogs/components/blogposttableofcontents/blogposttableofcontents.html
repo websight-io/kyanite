@@ -23,7 +23,7 @@
     <sly data-sly-test="${!model.isHidden}">
         <div data-sly-test="${model.items}" class="blog-table-of-content">
             <label class="table-label">${model.title}</label>
-            <ul class="table-content-list">
+            <ul class="table-content-list" data-simplebar data-simplebar-auto-hide="false">
                 <div data-sly-list.item="${model.items}" data-sly-unwrap>
                     <sly data-sly-test="${item.title}">
                         <li class="button is-ghost table-content-list__item--${item.headingLevel}">

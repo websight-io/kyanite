@@ -56,4 +56,7 @@
     color: var(--kyanite-gray-15) !important;
     display: inline-block;
   }
+  .simplebar-scrollbar:before {
+    background: var(--kyanite-gray-15);
+  }
 }
