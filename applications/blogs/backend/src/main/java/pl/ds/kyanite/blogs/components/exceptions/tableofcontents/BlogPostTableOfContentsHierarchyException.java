@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,19 @@
  * limitations under the License.
  */
 
-package pl.ds.kyanite.blogs.components.models;
+package pl.ds.kyanite.blogs.components.exceptions.tableofcontents;
 
-import java.util.List;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
-@AllArgsConstructor
-public class BlogPostTableOfContentsItemComponent {
+public class BlogPostTableOfContentsHierarchyException extends IllegalArgumentException {
 
-  private String title;
-  private String url;
-  private String headingLevel;
-  private List<BlogPostTableOfContentsItemComponent> subTitles;
+  private final int levelExpected;
+  private final int levelActual;
+
+  public BlogPostTableOfContentsHierarchyException(int levelExpected, int levelActual) {
+    super();
+    this.levelExpected = levelExpected;
+    this.levelActual = levelActual;
+  }
 }
