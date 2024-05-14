@@ -54,7 +54,7 @@ public class BlogPostTableOfContentsComponent {
 
   @Getter
   @Inject
-  @Default(intValues = 1)
+  @Default(intValues = 2)
   private Integer maxHeadingLevel;
 
   @Getter
@@ -92,7 +92,7 @@ public class BlogPostTableOfContentsComponent {
       hierarchyErrorMessage = "";
       ListIterator<Resource> titlesIter = titles.listIterator();
       this.rootItem = new BlogPostTableOfContentsItemComponent(
-          "", "", "",
+          "", "", "h1",
           getChildTitles(titlesIter, maxHeadingLevel - 1)
       );
     }
