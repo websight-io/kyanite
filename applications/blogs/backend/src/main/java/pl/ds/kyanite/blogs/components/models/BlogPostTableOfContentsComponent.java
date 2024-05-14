@@ -42,6 +42,7 @@ public class BlogPostTableOfContentsComponent {
   private static final String BLOG_CONTENT_CONTAINER_REL_PATH =
       "/jcr:content/pagecontainer/section/container/columns1/column4";
   private static final String TITLE_RESOURCE_PATH = "kyanite/common/components/title";
+  private static final int NO_HEADING_LEVEL = -1;
 
   @ValueMapValue
   @Getter
@@ -56,6 +57,11 @@ public class BlogPostTableOfContentsComponent {
   @Inject
   @Default(intValues = 2)
   private Integer maxHeadingLevel;
+
+  @Getter
+  @Inject
+  @Default(intValues = 6)
+  private Integer minHeadingLevel;
 
   @Getter
   @Inject
@@ -86,8 +92,7 @@ public class BlogPostTableOfContentsComponent {
     if (pageResource != null) {
       Resource contentsContainer = resourceResolver.getResource(
           pageResource.getPath() + BLOG_CONTENT_CONTAINER_REL_PATH);
-      List<Resource> titles = findAllResourcesInContainerByType(
-          contentsContainer, TITLE_RESOURCE_PATH);
+      List<Resource> titles = findAllValidTitlesInContainer(contentsContainer);
 
       //  construct items hierarchy with a stub root element
       hierarchyErrorMessage = "";
@@ -124,7 +129,7 @@ public class BlogPostTableOfContentsComponent {
         String headingLevelValue = titleComponent.getElement();
 
         if (headingLevelValue != null && !"p".equals(headingLevelValue)) {
-          int headingLevel = Integer.parseInt(headingLevelValue.substring(1));
+          int headingLevel = getHeadingLevel(titleComponent);
           if (headingLevel == requiredLevel) {
             List<BlogPostTableOfContentsItemComponent> children = getChildTitles(
                 titlesIter, headingLevel);
@@ -147,25 +152,41 @@ public class BlogPostTableOfContentsComponent {
     return null;
   }
 
+  int getHeadingLevel(Resource resource) {
+    return getHeadingLevel(resource.adaptTo(TitleComponent.class));
+  }
+
+  int getHeadingLevel(TitleComponent titleComponent) {
+    if (titleComponent != null) {
+      String headingLevelValue = titleComponent.getElement();
+      if (headingLevelValue != null && !"p".equals(headingLevelValue)) {
+        return Integer.parseInt(headingLevelValue.substring(1));
+      }
+    }
+    return NO_HEADING_LEVEL;
+  }
+
   private List<BlogPostTableOfContentsItemComponent> getChildTitles(
       ListIterator<Resource> titlesIter, int parentLevel) {
 
     List<BlogPostTableOfContentsItemComponent> children = new ArrayList<>();
 
-    while (titlesIter.hasNext()) {
-      try {
-        BlogPostTableOfContentsItemComponent item = prepareNewContentItem(
-            titlesIter, parentLevel + 1);
-        if (item != null) {
-          children.add(item);
-        }
-      } catch (BlogPostTableOfContentsHierarchyException e) {
-        if (e.getLevelActual() < e.getLevelExpected()) {
-          //  return to the item as it may be a next item in parent level sequence
-          titlesIter.previous();
-          break;
-        } else {
-          //  just skip this element as it doesn't fit into hierarchy
+    if (parentLevel < minHeadingLevel) {
+      while (titlesIter.hasNext()) {
+        try {
+          BlogPostTableOfContentsItemComponent item = prepareNewContentItem(
+              titlesIter, parentLevel + 1);
+          if (item != null) {
+            children.add(item);
+          }
+        } catch (BlogPostTableOfContentsHierarchyException e) {
+          if (e.getLevelActual() < e.getLevelExpected()) {
+            //  return to the item as it may be a next item in parent level sequence
+            titlesIter.previous();
+            break;
+          } else {
+            //  just skip this element as it doesn't fit into hierarchy
+          }
         }
       }
     }
@@ -173,14 +194,16 @@ public class BlogPostTableOfContentsComponent {
     return children;
   }
 
-  private List<Resource> findAllResourcesInContainerByType(
-      Resource container, String resourceType) {
+  private List<Resource> findAllValidTitlesInContainer(Resource container) {
     List<Resource> result = new ArrayList<>();
 
     if (container != null) {
-      for (Resource content : container.getChildren()) {
-        if (content.isResourceType(resourceType)) {
-          result.add(content);
+      for (Resource titleResource : container.getChildren()) {
+        if (titleResource.isResourceType(TITLE_RESOURCE_PATH)) {
+          int headingLevel = getHeadingLevel(titleResource);
+          if (headingLevel <= minHeadingLevel && headingLevel >= maxHeadingLevel) {
+            result.add(titleResource);
+          }
         }
       }
     }
