@@ -17,7 +17,7 @@
 */-->
 
 <sly data-sly-template.title="${ @ title}">
-  <ul class="table-content-list" data-simplebar data-simplebar-auto-hide="false">
+  <ul>
     <div data-sly-list.item="${title.subTitles}" data-sly-unwrap>
       <sly data-sly-test="${item.title}">
         <li class="button is-ghost table-content-list__item--${item.headingLevel}">

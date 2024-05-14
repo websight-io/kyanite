@@ -23,8 +23,10 @@
     <sly data-sly-test="${!model.isHidden}">
         <div data-sly-test.stubRoot="${model.rootItem}" class="blog-table-of-content">
             <label class="table-label">${model.title}</label>
+            <ul class="table-content-list" data-simplebar data-simplebar-auto-hide="false">
             <sly data-sly-use.template="./templates/template-title.html"
                  data-sly-call="${template.title @ title=stubRoot}"></sly>
+            </ul>
             <sly data-sly-test="${model.showBackToTopButton}">
                 <a class="table-content-button" data-sly-attribute.href="#">
                     <span class="table-content-button__label">
