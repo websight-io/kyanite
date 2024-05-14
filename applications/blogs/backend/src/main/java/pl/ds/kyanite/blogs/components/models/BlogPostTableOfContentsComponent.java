@@ -20,15 +20,18 @@ import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIO
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import pl.ds.kyanite.blogs.components.exceptions.tableofcontents.BlogPostTableOfContentsHierarchyException;
 import pl.ds.kyanite.common.components.models.TitleComponent;
 import pl.ds.websight.pages.core.api.Page;
 import pl.ds.websight.pages.core.api.PageManager;
@@ -65,7 +68,10 @@ public class BlogPostTableOfContentsComponent {
   private String backToTopButtonLabel;
 
   @Getter
-  private List<BlogPostTableOfContentsItemComponent> items;
+  private BlogPostTableOfContentsItemComponent rootItem;
+
+  @Getter
+  private String hierarchyErrorMessage;
 
   @SlingObject
   private ResourceResolver resourceResolver;
@@ -74,8 +80,6 @@ public class BlogPostTableOfContentsComponent {
 
   @PostConstruct
   private void init() {
-    this.items = new ArrayList<>();
-
     Resource pageResource = getContainingPageAsResource(this.resource);
 
     if (pageResource != null) {
@@ -84,18 +88,16 @@ public class BlogPostTableOfContentsComponent {
       List<Resource> titles = findAllResourcesInContainerByType(
           contentsContainer, TITLE_RESOURCE_PATH);
 
-      for (Resource contentTitle : titles) {
-        TitleComponent titleComponent = contentTitle.adaptTo(TitleComponent.class);
-
-        if (!"p".equals(titleComponent.getElement())) {
-          BlogPostTableOfContentsItemComponent contentItem =
-              prepareNewContentItem(titleComponent);
-          if (contentItem != null) {
-            this.items.add(contentItem);
-          }
-        }
-      }
+      //  construct items hierarchy with a stub root element
+      hierarchyErrorMessage = "";
+      ListIterator<Resource> titlesIter = titles.listIterator();
+      this.rootItem = new BlogPostTableOfContentsItemComponent(
+          "", "", "",
+          getChildTitles(titlesIter, maxHeadingLevel - 1)
+      );
     }
+
+    System.out.print(this.rootItem);
   }
 
   private Resource getContainingPageAsResource(Resource currentResource) {
@@ -114,20 +116,65 @@ public class BlogPostTableOfContentsComponent {
   }
 
   private BlogPostTableOfContentsItemComponent prepareNewContentItem(
-      TitleComponent titleComponent) {
-    if (titleComponent != null) {
-      String titleValue = titleComponent.getRawText();
-      String anchorIdValue = titleComponent.getAnchorId();
-      String headingLevelValue = titleComponent.getElement();
+      ListIterator<Resource> titlesIter, int requiredLevel) {
+    if (titlesIter.hasNext()) {
 
-      if (headingLevelValue != null
-          && Integer.parseInt(headingLevelValue.substring(1)) >= this.maxHeadingLevel) {
-        return new BlogPostTableOfContentsItemComponent(
-            titleValue, anchorIdValue, headingLevelValue);
+      Resource titleResource = titlesIter.next();
+      TitleComponent titleComponent = titleResource.adaptTo(TitleComponent.class);
+
+      if (titleComponent != null) {
+        String titleValue = titleComponent.getRawText();
+        String anchorIdValue = titleComponent.getAnchorId();
+        String headingLevelValue = titleComponent.getElement();
+
+        if (headingLevelValue != null && !"p".equals(headingLevelValue)) {
+          int headingLevel = Integer.parseInt(headingLevelValue.substring(1));
+          if (headingLevel == requiredLevel) {
+            List<BlogPostTableOfContentsItemComponent> children = getChildTitles(
+                titlesIter, headingLevel);
+            return new BlogPostTableOfContentsItemComponent(
+                titleValue, anchorIdValue, headingLevelValue, children);
+          } else {
+            if (StringUtils.isEmpty(hierarchyErrorMessage)) {
+              hierarchyErrorMessage = String.format(
+                  "Wrong headers hierarchy: expected %s, got %s at header %s",
+                  requiredLevel, headingLevel, titlesIter.nextIndex() - 1);
+            }
+            //  throw exception for getChildItems() to decide whether it is a child with wrong level
+            //  or probably a top-level item (we should process this item, not skip it)
+            throw new BlogPostTableOfContentsHierarchyException(requiredLevel, headingLevel);
+          }
+        }
       }
     }
 
     return null;
+  }
+
+  private List<BlogPostTableOfContentsItemComponent> getChildTitles(
+      ListIterator<Resource> titlesIter, int parentLevel) {
+
+    List<BlogPostTableOfContentsItemComponent> children = new ArrayList<>();
+
+    while (titlesIter.hasNext()) {
+      try {
+        BlogPostTableOfContentsItemComponent item = prepareNewContentItem(
+            titlesIter, parentLevel + 1);
+        if (item != null) {
+          children.add(item);
+        }
+      } catch (BlogPostTableOfContentsHierarchyException e) {
+        if (e.getLevelActual() < e.getLevelExpected()) {
+          //  return to the item as it may be a next item in parent level sequence
+          titlesIter.previous();
+          break;
+        } else {
+          //  just skip this element as it doesn't fit into hierarchy
+        }
+      }
+    }
+
+    return children;
   }
 
   private List<Resource> findAllResourcesInContainerByType(
