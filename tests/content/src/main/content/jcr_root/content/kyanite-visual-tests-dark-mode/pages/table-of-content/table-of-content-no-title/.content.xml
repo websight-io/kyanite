@@ -106,7 +106,8 @@
                             <blogposttableofcontents
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/blogs/components/blogposttableofcontents"
-                                maxHeadingLevel="2"/>
+                                maxHeadingLevel="2"
+                                minHeadingLevel="6"/>
                             <tabletColumnStyle
                                 jcr:primaryType="nt:unstructured"
                                 isNormalColumn="true"
