@@ -17,17 +17,17 @@
 */-->
 
 <sly data-sly-template.title="${ @ title}">
-  <ul class="table-content-list-inner">
-    <div data-sly-list.item="${title.subTitles}" data-sly-unwrap>
-      <sly data-sly-test="${item.title}">
-        <li class="button is-ghost table-content-list__item--${item.headingLevel}">
-          <a class="" data-sly-attribute.href="#${item.url}">
-            ${item.title}
-          </a>
-          <sly data-sly-use.template="./templates/template-title.html"
-               data-sly-call="${template.title @ title=item}"></sly>
-        </li>
-      </sly>
-    </div>
-  </ul>
+  <li class="button is-ghost table-content-list__item--${title.headingLevel}">
+    <a class="" data-sly-attribute.href="#${title.url}">
+      ${title.title}
+    </a>
+    <sly data-sly-test.subTitles="${title.subTitles}">
+      <ul class="table-content-list-inner">
+        <sly data-sly-list.subTitle="${subTitles}">
+          <sly data-sly-use.template="./templates/template-table-of-contents-element.html"
+               data-sly-call="${template.title @ title=subTitle}"></sly>
+        </sly>
+      </ul>
+    </sly>
+  </li>
 </sly>

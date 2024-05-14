@@ -68,7 +68,7 @@ public class BlogPostTableOfContentsComponent {
   private String backToTopButtonLabel;
 
   @Getter
-  private BlogPostTableOfContentsItemComponent rootItem;
+  private List<BlogPostTableOfContentsItemComponent> subTitles;
 
   @Getter
   private String hierarchyErrorMessage;
@@ -80,6 +80,7 @@ public class BlogPostTableOfContentsComponent {
 
   @PostConstruct
   private void init() {
+    this.subTitles = new ArrayList<>();
     Resource pageResource = getContainingPageAsResource(this.resource);
 
     if (pageResource != null) {
@@ -91,13 +92,8 @@ public class BlogPostTableOfContentsComponent {
       //  construct items hierarchy with a stub root element
       hierarchyErrorMessage = "";
       ListIterator<Resource> titlesIter = titles.listIterator();
-      this.rootItem = new BlogPostTableOfContentsItemComponent(
-          "", "", "h1",
-          getChildTitles(titlesIter, maxHeadingLevel - 1)
-      );
+      this.subTitles = getChildTitles(titlesIter, maxHeadingLevel - 1);
     }
-
-    System.out.print(this.rootItem);
   }
 
   private Resource getContainingPageAsResource(Resource currentResource) {
