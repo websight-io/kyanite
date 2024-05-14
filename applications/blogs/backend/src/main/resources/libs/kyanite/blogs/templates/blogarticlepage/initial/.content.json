@@ -86,7 +86,8 @@
               },
               "blogposttableofcontents": {
                 "sling:resourceType": "kyanite/blogs/components/blogposttableofcontents",
-                "maxHeadingLevel": "2"
+                "maxHeadingLevel": "2",
+                "minHeadingLevel": "6"
               },
               "desktopColumnStyle": {
                 "jcr:primaryType": "nt:unstructured",

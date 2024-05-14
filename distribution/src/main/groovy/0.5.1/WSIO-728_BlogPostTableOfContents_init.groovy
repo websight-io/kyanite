@@ -52,6 +52,7 @@ def initProperty(node, propName, value) {
 def updateTableOfContentsComponent(component) {
     println("processing ${component.getPath()}")
     initProperty(component, "maxHeadingLevel", 2)
+    initProperty(component, "minHeadingLevel", 6)
 }
 
 rootPaths.each {
