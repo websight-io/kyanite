@@ -23,22 +23,22 @@
   <sly data-sly-test="${!model.isHidden}">
     <div class="blog-table-of-content">
       <label class="table-label">${model.title}</label>
-      <sly data-sly-test.titles="${model.subTitles}">
-        <ul class="table-content-list" data-simplebar data-simplebar-auto-hide="false">
-          <sly data-sly-list.title="${titles}">
-            <sly data-sly-use.template="./templates/template-table-of-contents-element.html"
-                 data-sly-call="${template.title @ title=title}"></sly>
-          </sly>
-        </ul>
-      </sly>
-      <sly data-sly-test="${model.showBackToTopButton}">
-        <a class="table-content-button" data-sly-attribute.href="#">
-        <span class="table-content-button__label">
-            <span class="mdi mdi-arrow-up"></span>
-            <span>${model.backToTopButtonLabel}</span>
-        </span>
-        </a>
-      </sly>
-    </sly>
+        <sly data-sly-test.titles="${model.subTitles}">
+            <ul class="table-content-list" data-simplebar data-simplebar-auto-hide="false">
+            <sly data-sly-list.title="${titles}">
+                <sly data-sly-use.template="./templates/template-table-of-contents-element.html"
+                    data-sly-call="${template.title @ title=title}"></sly>
+            </sly>
+            </ul>
+        </sly>
+        <sly data-sly-test="${model.showBackToTopButton}">
+            <a class="table-content-button" data-sly-attribute.href="#">
+                <span class="table-content-button__label">
+                    <span class="mdi mdi-arrow-up"></span>
+                    <span>${model.backToTopButtonLabel}</span>
+                </span>
+            </a>
+        </sly>
+    </div>
   </sly>
 </sly>
