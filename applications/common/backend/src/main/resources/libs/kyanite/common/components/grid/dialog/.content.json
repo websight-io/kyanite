@@ -1,0 +1,41 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "generalTabContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "fixedGridContainer": {
+          "sling:resourceType": "wcm/dialogs/components/container",
+          "columnsNumber": {
+            "sling:resourceType": "wcm/dialogs/components/numberfield",
+            "name": "columnsNumber",
+            "label": "Number of columns",
+            "min": 1,
+            "max": 12
+          }
+        },
+        "columnGap": {
+          "sling:resourceType": "wcm/dialogs/components/numberfield",
+          "name": "columnGap",
+          "label": "Column gap",
+          "description": "Gap between columns, rem",
+          "min": 0,
+          "max": 8,
+          "step": 0.5
+        },
+        "rowGap": {
+          "sling:resourceType": "wcm/dialogs/components/numberfield",
+          "name": "rowGap",
+          "label": "Row gap",
+          "description": "Gap between rows, rem",
+          "min": 0,
+          "max": 8,
+          "step": 0.5
+        }
+      }
+    }
+  }
+}

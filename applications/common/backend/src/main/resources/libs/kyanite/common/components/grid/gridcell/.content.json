@@ -1,0 +1,13 @@
+{
+  "isContainer": true,
+  "group": "Kyanite sub-elements",
+  "allowedComponents": [
+    "Kyanite Columns",
+    "Kyanite Components",
+    "Kyanite Elements",
+    "Kyanite Layouts",
+    "Kyanite In-Text Sections"
+  ],
+  "sling:resourceType": "ws:Component",
+  "title": "Grid cell"
+}
