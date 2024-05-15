@@ -109,6 +109,7 @@
             },
             "column4": {
               "sling:resourceType": "kyanite/common/components/columns/column",
+              "customClass" : "blogArticleContent",
               "desktopColumnStyle": {
                 "jcr:primaryType": "nt:unstructured",
                 "size": "eight",
