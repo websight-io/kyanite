@@ -17,8 +17,8 @@
 */-->
 
 <sly data-sly-template.title="${ @ title}">
-  <li class="button is-ghost table-content-list__item--${title.headingLevel}">
-    <a class="" data-sly-attribute.href="#${title.url}">
+  <li class="table-content-list__item--${title.headingLevel}">
+    <a class="" data-sly-attribute.href="#${title.url}" class="button is-text">
       ${title.title}
     </a>
     <sly data-sly-test.subTitles="${title.subTitles}">

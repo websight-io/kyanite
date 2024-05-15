@@ -31,23 +31,32 @@
   .table-content-list {
     @extend .mb-4;
     @extend .pt-2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
 
-    li.button {
-      font-weight: var(--kyanite-weight-medium);
-      @extend .mb-3;
-      @extend .p-0;
-      height: unset;
-      text-align: left;
-      white-space: initial;
-
-      a {
+    li {
+      a.button {        
+        @extend .p-0;
         @include link.a-animated-underline-link;
+        display: inline-block;
+        font-weight: var(--kyanite-weight-medium);
+        height: unset;
+        text-align: left;
+        white-space: initial;
         color: var(--kyanite-gray-15) !important;
         line-height: var(--line-height-150);
+        text-decoration: none;
+        border-radius: 0 !important;
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+    .table-content-list-inner { // second and lower levels list
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: var(--spacing-3);
+      li:not(:last-child) {
+        margin-bottom: var(--spacing-3);
       }
     }
   }
@@ -60,9 +69,12 @@
   .simplebar-scrollbar:before {
     background: var(--kyanite-gray-15);
   }
-  .simplebar-content {
+  .simplebar-content { // first level list
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
+    > li:not(:last-child) {
+      margin-bottom: var(--spacing-3);
+    }
+  }
 }
