@@ -16,6 +16,8 @@
 
 import { breakpoints } from 'src/helpers/breakpoints';
 
+const navbarMenuElementsSelector = ':is(.navbar-start, .navbar-end)';
+
 document.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
   const isTransparent = navbar.classList.contains('is-transparent');
@@ -56,8 +58,8 @@ document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
   });
 
   // Get all dropdowns items
-  const $navbarMega = Array.prototype.slice.call(
-    document.querySelectorAll('.navbar-end .navbar-item.has-dropdown')
+  const $navbarMenuDropdowns = Array.prototype.slice.call(
+    document.querySelectorAll(`${navbarMenuElementsSelector} .navbar-item.has-dropdown`)
   );
   const desktopMQ = window.matchMedia(`(min-width: ${breakpoints.lg}px)`);
 
@@ -70,7 +72,7 @@ document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
 
     // On desktop the dropdowns are hoverable
     if (desktopMQ.matches) {
-      $navbarMega.forEach((el) => {
+      $navbarMenuDropdowns.forEach((el) => {
         el.classList.add('is-hoverable');
         el.classList.remove('is-active');
         el.removeEventListener('click', onClick);
@@ -80,7 +82,7 @@ document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
     }
 
     // On mobile the dropdowns are clickable
-    $navbarMega.forEach((el) => {
+    $navbarMenuDropdowns.forEach((el) => {
       el.classList.remove('is-hoverable');
       el.classList.remove('is-active');
       el.addEventListener('click', onClick);
@@ -124,7 +126,7 @@ function handleFixedNavbarPosition() {
 function handleMegamenuHover(isDesktop) {
   const menu = document.querySelector('.navbar-menu');
   const allNavbarItems = Array.from(
-    document.querySelectorAll('.navbar-end > .navbar-item')
+    document.querySelectorAll(`${navbarMenuElementsSelector} > .navbar-item`)
   ); // only first level
 
   if (!allNavbarItems.length) {
