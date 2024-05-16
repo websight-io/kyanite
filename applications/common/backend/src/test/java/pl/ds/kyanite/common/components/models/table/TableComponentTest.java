@@ -56,6 +56,6 @@ public class TableComponentTest {
         .adaptTo(TableComponent.class);
     assertThat(model.isScrollable()).isTrue();
     assertThat(model.getTableClasses()).containsExactlyInAnyOrder("is-bordered", "is-striped",
-        "is-narrow", "is-hoverable", "is-fullwidth");
+        "is-narrow", "is-hoverable", "is-fullwidth", "is-scrollable");
   }
 }

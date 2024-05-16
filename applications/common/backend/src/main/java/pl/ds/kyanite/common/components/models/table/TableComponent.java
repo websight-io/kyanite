@@ -69,6 +69,9 @@ public class TableComponent {
     if (isFullwidth) {
       classes.add("is-fullwidth");
     }
+    if (isScrollable) {
+      classes.add("is-scrollable");
+    }
     tableClasses = classes.toArray(new String[]{});
   }
 }
