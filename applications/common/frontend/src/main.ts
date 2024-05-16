@@ -18,6 +18,7 @@
 import './main.scss';
 
 // scripts
+import 'simplebar';
 import './helpers/load-events';
 import './components';
 import './emailDecryption';

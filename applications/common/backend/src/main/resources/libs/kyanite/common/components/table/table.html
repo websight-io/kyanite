@@ -19,19 +19,21 @@
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.table.TableComponent">
   <sly data-sly-set.classes="table ${model.tableClasses @ join=' '}"></sly>
   <sly data-sly-test="${resource.hasChildren}">
-    <div data-sly-unwrap="${!model.isScrollable}" class="table-container">
+    <div class="table-container-el">
       <div data-sly-test="${model.isScrollable}" class="table-button-container">
-        <button class="table-button" aria-label="Scroll to the left">
+        <button class="table-button table-button-left" aria-label="Scroll to the left">
           <i class="mdi mdi-arrow-left"></i>
         </button>
-        <button class="table-button" aria-label="Scroll to the right">
+        <button class="table-button table-button-right" aria-label="Scroll to the right">
           <i class="mdi mdi-arrow-right"></i>
         </button>
       </div>
-      <table class="${classes}">
-        <sly
-            data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
-      </table>
+      <div class="table-wrapper" data-simplebar data-simplebar-auto-hide="false">
+        <table class="${classes}">
+          <sly
+              data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>
+        </table>
+      </div>
     </div>
   </sly>
   <sly data-sly-test="${!resource.hasChildren}">

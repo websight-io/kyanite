@@ -18,7 +18,7 @@
 
  @use 'src/atomic-design-system/01-atom/a.table-button' as table-button;
 
- .table-container { // this class indicates that table is scrollable
+ .table-container-el {
   @include table-button.a-table-button;
  }
  .table.is-scrollable {

@@ -16,6 +16,7 @@
  * -->
  */
 @use '../node_modules/@glidejs/glide/src/assets/sass/glide.core.scss';
+@use '../node_modules/simplebar/dist/simplebar.min.css';
 @use '../node_modules/viewerjs/dist/viewer.min.css';
 @use 'src/variables-helpers';
 @use 'src/bulma-overwrite-v1';
