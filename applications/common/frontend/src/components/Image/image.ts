@@ -27,7 +27,13 @@ const createSeparatePreviews = (imageList) => {
       zoomable: false,
       movable: false,
       title: false,
-      url: 'data-lightbox-asset'
+      url: 'data-lightbox-asset',
+      show() {
+        document.querySelector("html").style.overflowY = "hidden";
+      },
+      hidden() {
+        document.querySelector("html").style.overflowY = "scroll";
+      }
     });
   });
 };
