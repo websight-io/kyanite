@@ -28,7 +28,7 @@
           <i class="mdi mdi-arrow-right"></i>
         </button>
       </div>
-      <div class="table-wrapper" data-simplebar data-simplebar-auto-hide="false">
+      <div class="table-wrapper ${model.isFirstCellLocked ? 'is-first-cell-locked' : ''}" data-simplebar data-simplebar-auto-hide="false">
         <table class="${classes}">
           <sly
               data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>

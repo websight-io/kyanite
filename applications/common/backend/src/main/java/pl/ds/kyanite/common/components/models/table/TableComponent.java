@@ -49,6 +49,10 @@ public class TableComponent {
 
   @Inject
   @Getter
+  private boolean isFirstCellLocked;
+
+  @Inject
+  @Getter
   private String[] tableClasses;
 
   @PostConstruct

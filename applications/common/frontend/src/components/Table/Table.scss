@@ -17,19 +17,61 @@
  */
 
  @use 'src/atomic-design-system/01-atom/a.table-button' as table-button;
+ @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 
+ $mobileCellWidth: 296px;
+ $desktopCellWidth: 320px;
+
+ @mixin tableIsScrollableCellsWidth {
+    min-width: $mobileCellWidth;
+    @include breakpoint.media-breakpoint-large {
+      min-width: $desktopCellWidth;
+    }
+ }
+
+ @mixin tableIsLockedFirstCellCellsWidth {
+  min-width: $mobileCellWidth;
+  @include breakpoint.media-breakpoint-medium {
+    position: sticky;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: var(--kyanite-background);
+  }
+  @include breakpoint.media-breakpoint-large {
+    min-width: $desktopCellWidth;
+  }
+}
  .table-container-el {
   @include table-button.a-table-button;
- }
- .table.is-scrollable {
-  thead {
-    th {
-      min-width: 320px;
+  .table-wrapper {
+    .table {
+      &.is-scrollable {
+        thead {
+          th {
+            @include tableIsScrollableCellsWidth;
+          }
+        }
+        tbody {
+          tr {
+            @include tableIsScrollableCellsWidth;
+          }
+        }
+      }
+    }
+    &.is-first-cell-locked {
+      .table {
+        thead {
+          tr th:first-child {
+            @include tableIsLockedFirstCellCellsWidth;
+          }
+        }
+        tbody {
+          tr td:first-child {
+            @include tableIsLockedFirstCellCellsWidth;
+          }
+        }
+      }
     }
   }
-  tbody {
-    tr {
-      min-width: 320px;
-    }
-  }
- }
+}

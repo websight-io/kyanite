@@ -20,13 +20,13 @@
 @mixin a-table-button {
   .table-button-container {
     display: none;
-    @include breakpoint.media-breakpoint-large {
+    @include breakpoint.media-breakpoint-medium {
       display: flex;
       gap: 1rem;
     }
     .table-button {
       padding: var(--spacing-3);
       font-size: 22px;
-      }
     }
+  }
 }
