@@ -95,7 +95,7 @@
                                 addEyebrow="false"
                                 addSubtitle="false"
                                 anchorId="title1"
-                                element="h5"
+                                element="h2"
                                 size="is-6"
                                 text="&lt;p>The evolution of WWW and its impact on content management systems&lt;/p>"/>
                             <content
@@ -107,7 +107,7 @@
                                 sling:resourceType="kyanite/common/components/title"
                                 addEyebrow="false"
                                 anchorId="title2"
-                                element="h6"
+                                element="h2"
                                 size="is-6"
                                 text="&lt;p>DXP - a revolution or “just” next step?&lt;/p>"/>
                             <content_1
@@ -119,7 +119,7 @@
                                 sling:resourceType="kyanite/common/components/title"
                                 addEyebrow="false"
                                 anchorId="title3"
-                                element="h6"
+                                element="h2"
                                 size="is-6"
                                 text="&lt;p>DXP - should you care?&lt;/p>"/>
                             <content_1_1
