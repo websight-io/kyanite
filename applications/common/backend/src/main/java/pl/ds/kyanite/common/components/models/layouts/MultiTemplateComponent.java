@@ -21,28 +21,44 @@ package pl.ds.kyanite.common.components.models.layouts;
  * It would be nice to have in any component if there is a chance for its layout to be customized -
  * consider it a contract.
  *
+ * <p>
  * Use cases:
- *  - you are using/extending an existing component and you want to change its layout/add a new one
- *  - you are developing a component that can have different layouts by design
- *    (e.g. horizontal and vertical tabs)
+ * <ul>
+ *    <li>you are using/extending an existing component and you want to change its layout
+ *    or add a new one</li>
+ *    <li>you are developing a component that can have different layouts by design
+ *    (e.g. horizontal and vertical tabs)</li>
+ * </ul>
+ * </p>
  *
- * Component must follow this rules:
- *  1)  component has a default template under template/template-default.html
- *  2)  component's model implements MultiTemplateComponent interface
- *  3)  [component].html imports template by relative path which is retrieved via interface method:
- *      <code>
- *        <sly data-sly-use.template="${model.templatePath}"
- *             data-sly-call="${template.template @ model=model}"></sly>
- *      </code>
+ * <p>Component must follow this rules:
+ * <ol>
+ *    <li>component has a default template under templates/template-default.html</li>
+ *    <li>component's model implements MultiTemplateComponent interface</li>
+ *    <li>[component].html imports template by relative path retrieved via interface method
+ *      <p>&lt;sly data-sly-use.template=&quot;${model.templatePath}&quot;</p>
+ *      <p>       data-sly-call=&quot;${template.template @ model=model}&quot;&gt;&lt;/sly&gt;</p>
+ *    </li>
+ * </ol>
+ * </p>
  *
- * Then, you may want to customize component's layout in your project:
- * 1) override default layout:
- *    - just create your own ./templates/template-default.html for that component
- * 2) add one or more variants of component's layout:
- *    - add additional templates under ./templates
- *    - include /libs/kyanite/common/components/common/template field into component's dialog
- *    - add options representing your templates to included select
- *    - don't forget to initialize your component with default template
+ * <p>Then, you may want to customize component's layout in your project:
+ * <ol>
+ *    <li>override default layout:
+ *      <ul>
+ *        <li>just create your own ./templates/template-default.html for that component</li>
+ *      </ul>
+ *    </li>
+ *    <li>add one or more variants of component's layout:
+ *      <ul>
+ *        <li>add additional templates under ./templates</li>
+ *        <li>include /libs/kyanite/common/components/common/template into component's dialog</li>
+ *        <li>add options representing your templates to included select</li>
+ *        <li>initialize the templatePath property, because now you actually store it in JCR</li>
+ *      </ul>
+ *    </li>
+ * </ol>
+ * </p>
  */
 public interface MultiTemplateComponent {
 
