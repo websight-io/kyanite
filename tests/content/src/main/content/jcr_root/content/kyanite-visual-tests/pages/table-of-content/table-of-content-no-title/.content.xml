@@ -139,9 +139,6 @@
                                 isNormalColumn="true"
                                 offsetType="evenNumber"
                                 sizeType="evenNumber"/>
-                            <content
-                                jcr:primaryType="nt:unstructured"
-                                sling:resourceType="kyanite/common/components/content"/>
                         </column4>
                     </columns1>
                 </container>
