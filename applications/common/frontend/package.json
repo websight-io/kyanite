@@ -73,12 +73,13 @@
     "> 1%"
   ],
   "dependencies": {
+    "@algolia/autocomplete-js": "^1.11.0",
+    "@algolia/autocomplete-theme-classic": "^1.11.0",
     "@glidejs/glide": "^3.6.0",
     "highlight.js": "^11.8.0",
+    "simplebar": "^6.2.6",
     "typed.js": "^2.1.0",
     "vanilla-cookieconsent": "^2.9.1",
-    "viewerjs": "^1.11.4",
-    "@algolia/autocomplete-js": "^1.11.0",
-    "@algolia/autocomplete-theme-classic": "^1.11.0"
+    "viewerjs": "^1.11.4"
   }
 }

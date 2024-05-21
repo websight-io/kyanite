@@ -16,6 +16,7 @@
 
 package pl.ds.kyanite.common.components.models;
 
+import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -40,4 +41,12 @@ public class CodeSnippetComponent {
   @ValueMapValue
   @Getter
   private String code;
+
+  @Inject
+  @Getter
+  private Boolean isExpandingOn;
+
+  @Inject
+  @Getter
+  private Boolean isInitiallyExpanded;
 }

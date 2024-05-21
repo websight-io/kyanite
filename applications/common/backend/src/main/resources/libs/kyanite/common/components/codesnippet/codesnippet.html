@@ -20,7 +20,7 @@
   <!--/*
     Be wary of adding new lines here as code formatting can add extra lines in rendered code
   */-->
-  <div class="code-snippet">
+  <div class="code-snippet ${model.isExpandingOn ? 'expanding-on' : ''} ${model.isInitiallyExpanded ? 'is-expanded' : ''}">
     <sly data-sly-test="${model.title || model.fileName}">
       <div class="code-snippet__title-banner">
         <span class="code-snippet__title-banner__title">${model.title}</span>
@@ -31,6 +31,12 @@
       <i class="mdi mdi-24px mdi-content-copy"></i>
       <span class="icon__message"></span>
     </span>
-    <pre class="code-snippet__pre"><code class="${model.fileType}">${model.code}</code></pre>
+    <pre class="code-snippet__pre"><code class="${model.fileType}" data-simplebar data-simplebar-auto-hide="false">${model.code}</code></pre>
+    <div class="code-snippet__footer">
+      <button class="code-snippet-button" aria-label="Show more">
+        <span class="code-snippet-button-text">Show more</span>
+        <i class="mdi mdi-24px mdi-chevron-down" aria-hidden="true"></i>
+      </button>
+    </div>
   </div>
 </sly>

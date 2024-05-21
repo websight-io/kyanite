@@ -118,7 +118,7 @@
     border-radius: var(--border-radius-2);
 
     // fits text in 1 line, can not do 100% as it's just icons width, have to do it manually like that
-    width: 170px;
+    width: 90px;
 
     // 16px = 1rem ('4') is a distance between edge of the tooltip and  endge of the icon container.
     transform: translateX(
@@ -169,6 +169,45 @@
     &.visible {
       visibility: visible;
       opacity: 1;
+    }
+  }
+
+  // expand / collapse styles
+  .code-snippet__footer {
+    display: none;
+  }
+  &.expanding-on {
+    code {
+      overflow-y: hidden;
+      transition: max-height 0.3s ease-out;
+    }
+    .code-snippet__pre {
+      padding-bottom: 0 !important;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .code-snippet__footer {
+      background-color: var(--kyanite-custom-codesnippet-code-background-color);
+      border-bottom-left-radius: var(--border-radius-2);
+      border-bottom-right-radius: var(--border-radius-2);
+      display: flex;
+      justify-content: flex-end;
+      padding: 1rem 1.5rem 1.5rem;
+      .code-snippet-button {
+        display: flex;
+        align-items: center;
+        border-radius: 64px;
+        padding: 8px 12px 8px 16px;
+        font-weight: var(--kyanite-weight-semibold);
+      }
+    }
+    .code-snippet__footer {
+      display: flex;
+    }
+  }
+  &.is-expanded {
+    .code-snippet-button i {
+      transform: rotate(180deg);
     }
   }
 }

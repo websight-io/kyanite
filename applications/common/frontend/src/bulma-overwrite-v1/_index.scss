@@ -92,6 +92,7 @@
     --kyanite-gray-10-l: 9%;  // #181818 old grey-1000
 
     --kyanite-custom-codesnippet-icon-message-background-color: var(--kyanite-primary);
+    --kyanite-custom-codesnippet-icon-message-color: var(--kyanite-white);
 
   .button {
     --kyanite-control-radius: var(--border-radius-1);
@@ -140,7 +141,7 @@
     --kyanite-custom-codesnippet-icon-mobile-color: var(--kyanite-text);
     --kyanite-custom-codesnippet-icon-hover-code-color: var(--kyanite-text);
     --kyanite-custom-codesnippet-icon-hover-color: var(--kyanite-primary);
-    --kyanite-custom-codesnippet-icon-message-color: var(--kyanite-primary-100);
+    --kyanite-custom-codesnippet-icon-message-color: var(--kyanite-white);
     --kyanite-custom-codesnippet-icon-message-background-color: var(--kyanite-primary);
     --kyanite-custom-codesnippet-border-color: var(--kyanite-light);
 
@@ -240,7 +241,7 @@
     --kyanite-custom-codesnippet-icon-mobile-color: var(--kyanite-gray-15);
     --kyanite-custom-codesnippet-icon-hover-code-color: var(--kyanite-gray-15);
     --kyanite-custom-codesnippet-icon-hover-color: var(--kyanite-primary);
-    --kyanite-custom-codesnippet-icon-message-color: var(--kyanite-primary-100);
+    --kyanite-custom-codesnippet-icon-message-color: var(--kyanite-white);
     --kyanite-custom-codesnippet-icon-message-background-color: var(--kyanite-primary);
     --kyanite-custom-codesnippet-border-color: var(--kyanite-gray-90);
   }
