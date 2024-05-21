@@ -17,6 +17,10 @@
  */
 
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
+@use 'src/atomic-design-system/01-atom/a.quote-text' as quote-text;
+@use 'src/atomic-design-system/01-atom/a.author-photo' as author-photo;
+@use 'src/atomic-design-system/01-atom/a.line-placeholder' as line-placeholder;
+
 
 @mixin m-quote {
   padding: 40px 0;
@@ -24,56 +28,33 @@
   @include breakpoint.media-breakpoint-medium {
     padding: 40px;
   }
-}
 
-@mixin m-quote-text {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: var(--kyanite-body-color);
-}
-
-@mixin m-quote-author {
-
-  display: flex;
-  align-items: center;
-
-  .quote-author-photo {
-    .image {
-      margin-bottom: 0 !important;
-    }
+  .quote-text {
+    @include quote-text.a-quote-text;
   }
 
-  .quote-author-info{
+  .quote-author {
+    display: flex;
+    align-items: center;
 
-    .description {
-      font-size: 1rem;
-      color: var(--kyanite-body-color);
+    .quote-author-photo {
+      @include author-photo.a-author-photo;
     }
 
-    &.no-photo {
+    .quote-author-info{
 
       .description {
-        position: relative;
+        font-size: 1rem;
+        color: var(--kyanite-body-color);
+      }
 
-        //  padding-left = line's width + margin-right
-        padding-left: 44px;
-        @include breakpoint.media-breakpoint-medium {
-          padding-left: 92px;
-        }
-
-        &:before {
-          content: "";
-          display: inline-block;
-          border-top: 1px solid;
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translateY(-50%);
-          margin-right: 12px;
-          width: 32px;
+      &.no-photo {
+        .description {
+          --line-placeholder-width: 32px;
           @include breakpoint.media-breakpoint-medium {
-            width: 80px;
+            --line-placeholder-width: 80px;
           }
+          @include line-placeholder.a-line-placeholder(--line-placeholder-width, --kyanite-media-spacing);
         }
       }
     }

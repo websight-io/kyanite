@@ -21,8 +21,8 @@
 @use 'src/atomic-design-system/00-token/t.spacing' as spacing;
 @use 'src/atomic-design-system/00-token/t.border' as border;
 @use 'src/atomic-design-system/01-atom/a.link' as link;
-@use 'src/atomic-design-system/01-atom/a.animated-underline-link' as
-  animated-link;
+@use 'src/atomic-design-system/01-atom/a.author-photo' as author-photo;
+@use 'src/atomic-design-system/01-atom/a.animated-underline-link' as animated-link;
 
 @mixin m-article-author-bio {
   @extend .mt-6_1;
@@ -52,10 +52,7 @@
 
         .photo {
           @extend .m-0;
-
-          .image {
-            margin-bottom: 0 !important;
-          }
+          @include author-photo.a-author-photo;
         }
 
         .name {
