@@ -25,12 +25,14 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import pl.ds.kyanite.common.components.models.layouts.MultiTemplateComponent;
 
 @Model(
     adaptables = { Resource.class },
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 public class GridComponent {
+public class GridComponent implements MultiTemplateComponent {
 
   @Inject
   @Getter

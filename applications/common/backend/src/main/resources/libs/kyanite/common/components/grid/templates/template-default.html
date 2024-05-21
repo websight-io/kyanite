@@ -16,7 +16,7 @@
   ~
 */-->
 
-<sly data-sly-template.fixedGrid="${ @ model}">
+<sly data-sly-template.template="${ @ model}">
   <div class="fixed-grid ${model.fixedGridClasses @ join=' '}">
     <div class="grid ${model.commonGridClasses @ join=' '}">
       <sly data-sly-list.cell="${resource.children}">

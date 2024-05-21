@@ -18,8 +18,8 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.grid.GridComponent">
   <sly data-sly-test="${resource.hasChildren}">
-    <sly data-sly-use.template="./templates/fixed-grid-template.html"
-         data-sly-call="${template.fixedGrid @ model=model}"></sly>
+    <sly data-sly-use.template="${model.templatePath}"
+         data-sly-call="${template.template @ model=model}"></sly>
   </sly>
   <sly data-sly-test="${!resource.hasChildren}">
     <sly
