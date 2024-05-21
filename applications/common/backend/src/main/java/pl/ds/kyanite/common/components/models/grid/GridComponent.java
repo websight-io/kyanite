@@ -95,7 +95,7 @@ public class GridComponent implements MultiTemplateComponent {
     List<String> fixedGridClassList = new ArrayList<>();
 
     //  set default columns number that will be overwritten by viewport-specific classes
-    final int defaultColumnsNumber = 3;
+    final int defaultColumnsNumber = 4;
     fixedGridClassList.add(String.format("has-%s-cols", defaultColumnsNumber));
     responsiveGridStyles.forEach((viewportBulmaName, style) -> {
       if (style != null) {
