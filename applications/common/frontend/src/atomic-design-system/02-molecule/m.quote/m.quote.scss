@@ -28,6 +28,8 @@
 
 @mixin m-quote-text {
   font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--kyanite-body-color);
 }
 
 @mixin m-quote-author {
@@ -42,13 +44,19 @@
   }
 
   .quote-author-info{
-    &.no-photo {
-      .description {
 
+    .description {
+      font-size: 1rem;
+      color: var(--kyanite-body-color);
+    }
+
+    &.no-photo {
+
+      .description {
         position: relative;
 
+        //  padding-left = line's width + margin-right
         padding-left: 44px;
-
         @include breakpoint.media-breakpoint-medium {
           padding-left: 92px;
         }
@@ -63,7 +71,6 @@
           transform: translateY(-50%);
           margin-right: 12px;
           width: 32px;
-
           @include breakpoint.media-breakpoint-medium {
             width: 80px;
           }
