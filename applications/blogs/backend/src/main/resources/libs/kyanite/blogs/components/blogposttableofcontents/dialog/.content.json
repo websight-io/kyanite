@@ -32,8 +32,7 @@
       "showBackToTopButton": {
         "sling:resourceType": "wcm/dialogs/components/toggle",
         "name": "showBackToTopButton",
-        "label": "Display back to top button",
-        "checkedByDefault": "true"
+        "label": "Display back to top button"
       },
       "container": {
         "sling:resourceType": "wcm/dialogs/components/container",
