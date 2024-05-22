@@ -25,7 +25,6 @@ import bash from 'highlight.js/lib/languages/bash';
 import typescript from 'highlight.js/lib/languages/typescript';
 import 'simplebar';
 
-// import { onDOMContentLoaded } from '../../helpers/dom';
 import { CodeSnippet } from './codesnippet.class';
 
 hljs.registerLanguage('html', xml);
@@ -35,7 +34,7 @@ hljs.registerLanguage('yaml', yaml);
 hljs.registerLanguage('bash', bash);
 hljs.registerLanguage('typescript', typescript);
 
-// fix for Safari bug - same as KYAN-159
+// instead of onDomContentLoaded - onload - fix for Safari bug - same as KYAN-159
 window.addEventListener(window.KYANITE_ON_LOAD, () => {
   document
     .querySelectorAll<HTMLDivElement>(CodeSnippet.componentSelector)
