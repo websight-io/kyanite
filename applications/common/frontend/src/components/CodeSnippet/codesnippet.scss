@@ -60,6 +60,9 @@
       @extend .px-5;
 
       background-color: var(--kyanite-custom-codesnippet-code-background-color) !important; // overwrite hljs (highlight.js)
+      &.hljs {
+        padding: 0 1em; // simplebar is adding padding
+      }
     }
   }
 
