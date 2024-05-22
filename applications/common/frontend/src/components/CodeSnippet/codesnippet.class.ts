@@ -15,6 +15,7 @@
  */
 
 import hljs from 'highlight.js/lib/core';
+import SimpleBar from 'simplebar';
 
 export class CodeSnippet {
   static readonly backendComponentName = 'Code snippet';
@@ -29,9 +30,9 @@ export class CodeSnippet {
   static readonly copyButtonSelector = '.code-snippet__icon';
   static readonly copyMessageSelector = '.code-snippet__icon .icon__message';
 
-  readonly collapsedHeightInPixels = 337;
+  readonly collapsedHeight = 337;
   readonly expandedClassName = 'is-expanded';
-  expandHeightInPixels: number;
+  codeHeight: number;
   isExpandingOn: boolean;
   buttonElement: HTMLElement;
   buttonTextElement: HTMLElement;
@@ -60,6 +61,8 @@ export class CodeSnippet {
     this.highlightCode();
 
     this.markAsInitialised();
+
+    this.initSimplebar();
 
     this.prepareExpandCollapseButton();
   }
@@ -120,9 +123,9 @@ export class CodeSnippet {
   }
 
   prepareExpandCollapseButton() {
-    this.expandHeightInPixels = this.componentElement.offsetHeight;
+    this.codeHeight = this.codeElement.offsetHeight;
 
-    if (this.expandHeightInPixels <= 422) {
+    if (this.codeHeight <= this.collapsedHeight) {
       this.componentElement.classList.remove('expanding-on');
     }
 
@@ -136,7 +139,6 @@ export class CodeSnippet {
       this.buttonTextElement = this.buttonElement.querySelector(
         '.code-snippet-button-text'
       );
-
       this.expandCollapseButton();
     }
   }
@@ -151,11 +153,17 @@ export class CodeSnippet {
 
   handleExpandButtonClick() {
     if (this.componentElement.classList.contains(this.expandedClassName)) {
-      this.codeElement.style.maxHeight = this.expandHeightInPixels + 'px';
+      this.codeElement.style.maxHeight = this.codeHeight + 'px';
       this.buttonTextElement.innerText = 'Show less';
     } else {
-      this.codeElement.style.maxHeight = this.collapsedHeightInPixels + 'px';
+      this.codeElement.style.maxHeight = this.collapsedHeight + 'px';
       this.buttonTextElement.innerText = 'Show more';
     }
+  }
+
+  initSimplebar() {
+    new SimpleBar(this.codeElement, {
+      autoHide: false,
+    });
   }
 }
