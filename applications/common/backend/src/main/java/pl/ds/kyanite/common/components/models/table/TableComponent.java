@@ -49,7 +49,7 @@ public class TableComponent {
 
   @Inject
   @Getter
-  private boolean isFirstCellLocked;
+  private boolean isFirstColumnLocked;
 
   @Inject
   @Getter

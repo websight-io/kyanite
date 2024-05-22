@@ -40,11 +40,11 @@
         "label": "Scrollable table",
         "description": "Make the table scrollable"
       },
-      "isFirstCellLocked": {
+      "isFirstColumnLocked": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
-        "name": "isFirstCellLocked",
-        "label": "Lock first cell for scrolling (only tablet and up)",
-        "description": "When table gets horizontal scroll, the first cell in each row will be locked and its width will be fixed (320px on desktop and 296px below)."
+        "name": "isFirstColumnLocked",
+        "label": "Lock first column for scrolling (only tablet and up)",
+        "description": "When table gets horizontal scroll, the first cell in each row will be locked and its width will be fixed."
       }
     }
   }
