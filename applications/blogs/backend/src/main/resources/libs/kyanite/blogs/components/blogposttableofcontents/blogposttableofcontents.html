@@ -20,6 +20,9 @@
   <sly data-sly-test="${model.isHidden && wcmmode.isEdit}">
     <div class="blog-back-button-placeholder">This component will be hidden on the page.</div>
   </sly>
+  <sly data-sly-test="${model.hierarchyErrorMessage && wcmmode.isEdit}">
+    <div class="has-text-danger">${model.hierarchyErrorMessage}</div>
+  </sly>
   <sly data-sly-test="${!model.isHidden}">
     <div class="blog-table-of-content">
       <label class="table-label">${model.title}</label>
