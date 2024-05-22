@@ -1,13 +1,19 @@
 {
-  "default": {
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/common/components/tablecell"
-  },
-  "complex": {
-    "jcr:primaryType": "nt:unstructured",
-    "sling:resourceType": "kyanite/common/components/tablecell",
-    "text": "Table cell text",
-    "rowspan": 2,
-    "colspan": 3
+  "tablebody": {
+    "tablerow1": {
+      "default": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "kyanite/common/components/table/tablecell"
+      }
+    },
+    "tablerow2": {
+      "complex": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "kyanite/common/components/table/tablecell",
+        "text": "Table cell text",
+        "rows": 2,
+        "columns": 3
+      }
+    }
   }
 }
