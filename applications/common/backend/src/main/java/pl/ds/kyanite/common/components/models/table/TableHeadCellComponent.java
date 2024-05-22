@@ -16,39 +16,11 @@
 
 package pl.ds.kyanite.common.components.models.table;
 
-import javax.annotation.PostConstruct;
-import javax.inject.Inject;
-import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class TableHeadCellComponent {
-
-  private static final String DEFAULT_TEXT = "Content";
-
-  @Inject
-  @Getter
-  @Default(values = DEFAULT_TEXT)
-  private String text;
-
-  @Inject
-  @Getter
-  @Default(intValues = 1)
-  private int colspan;
-
-  @Inject
-  @Getter
-  @Default(intValues = 1)
-  private int rowspan;
-
-  @PostConstruct
-  private void init() {
-    if (text.isEmpty()) {
-      text = DEFAULT_TEXT;
-    }
-  }
+public class TableHeadCellComponent extends TableCellComponent {
 
 }
