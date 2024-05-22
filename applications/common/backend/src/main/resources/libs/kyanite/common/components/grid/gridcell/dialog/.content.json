@@ -1,0 +1,27 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "generalTabContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "width": {
+          "sling:resourceType": "wcm/dialogs/components/numberfield",
+          "name": "width",
+          "label": "Width",
+          "min": 1,
+          "max": 12
+        },
+        "height": {
+          "sling:resourceType": "wcm/dialogs/components/numberfield",
+          "name": "height",
+          "label": "Height",
+          "min": 1,
+          "max": 12
+        }
+      }
+    }
+  }
+}

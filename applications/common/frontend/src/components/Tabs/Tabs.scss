@@ -103,50 +103,41 @@
     }
   }
   &.is-vertical {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    .tabs {
-      flex-shrink: 0;
-      width: 100%;
-      ul {
-        gap: var(--spacing-6);
-        flex-direction: column;
-        max-width: 100%;
-        li {
-          @extend .pb-3;
-          @extend .pt-3;
-          white-space: normal;
-          border-color: transparent;
-          &.is-active {
-            border-color: var(--kyanite-primary);
-          }
-        }
-      }
-    }
-    .tabs-content {
-      width: 100%;
-      text-align: center;
-      margin-top: var(--spacing-6);
-      @include breakpoint.media-breakpoint-xlarge {
-        margin-left: var(--spacing-6);
-        margin-top: 0;
-      }
-    }
     @include breakpoint.media-breakpoint-xlarge {
+      display: flex;
+      flex: 1;
       flex-direction: row;
       .tabs {
+        flex-shrink: 0;
         width: 33%;
         ul {
+          gap: var(--spacing-6);
+          flex-direction: column;
+          max-width: 100%;
           margin-right: 0 !important;
           align-items: stretch;
           li {
+            padding-top: var(--spacing-3);
+            white-space: normal;
+            border-color: transparent;
             padding-right: var(--spacing-6) !important;
             border-bottom: none;
             border-right: var(--border-weight-2) solid;
             border-color: transparent;
             width: 100%;
+            &.is-active {
+              border-color: var(--kyanite-primary);
+            }
           }
+        }
+      }
+      .tabs-content {
+        width: 100%;
+        text-align: center;
+        margin-top: var(--spacing-6);
+        @include breakpoint.media-breakpoint-xlarge {
+          margin-left: var(--spacing-6);
+          margin-top: 0;
         }
       }
     }
@@ -155,11 +146,9 @@
 
 /* switch to mobile layout start */
 .tabs-container {
-  &:not(.is-vertical) {
-    display: none;
-    @include breakpoint.media-breakpoint-xlarge {
-      display: block;
-    }
+  display: none;
+  @include breakpoint.media-breakpoint-xlarge {
+    display: block;
   }
 }
 

@@ -14,18 +14,7 @@
  * limitations under the License.
  */
 
-interface Window {
-    dataLayer: any;
-}
+@Version("1.0.0")
+package pl.ds.kyanite.common.components.models.grid;
 
-const openModalLinks: NodeListOf<Element> = document.querySelectorAll(
-    'a[href="#cookieSettings"'
-);
-
-openModalLinks.forEach((link) => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ 'event': 'client-consent-change' });
-  });
-});
+import org.osgi.annotation.versioning.Version;
