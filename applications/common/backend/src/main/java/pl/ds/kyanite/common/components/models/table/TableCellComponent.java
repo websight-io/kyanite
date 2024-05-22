@@ -37,12 +37,12 @@ public class TableCellComponent {
   @Inject
   @Getter
   @Default(intValues = 1)
-  private int colspan;
+  private int columns;
 
   @Inject
   @Getter
   @Default(intValues = 1)
-  private int rowspan;
+  private int rows;
 
   @PostConstruct
   private void init() {
