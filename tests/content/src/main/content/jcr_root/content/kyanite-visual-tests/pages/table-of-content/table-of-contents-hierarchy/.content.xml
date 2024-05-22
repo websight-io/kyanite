@@ -94,6 +94,7 @@
                             <desktopColumnStyle
                                     jcr:primaryType="nt:unstructured"
                                     isNormalColumn="true"
+                                    size="two"
                                     offsetType="evenNumber"
                                     sizeType="evenNumber"/>
                             <blogposttableofcontents
