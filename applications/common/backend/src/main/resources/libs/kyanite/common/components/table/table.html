@@ -19,7 +19,11 @@
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.table.TableComponent">
   <sly data-sly-set.classes="table ${model.tableClasses @ join=' '}"></sly>
   <sly data-sly-test="${resource.hasChildren}">
-    <div class="table-container-el">
+    <!--/* 
+      ~   "data-table-component='true'" should be always on the first tag of this html template. 
+      ~   It is used to find component in additional table actions in "extensions" folder.
+    */-->
+    <div class="table-container-el ${model.isScrollable ? 'is-scrollable' : ''}" data-table-component="true">
       <div data-sly-test="${model.isScrollable}" class="table-button-container">
         <button class="table-button table-button-left" aria-label="Scroll to the left">
           <i class="mdi mdi-arrow-left"></i>
@@ -28,7 +32,7 @@
           <i class="mdi mdi-arrow-right"></i>
         </button>
       </div>
-      <div class="table-wrapper ${model.isFirstColumnLocked ? 'is-first-column-locked' : ''}" data-simplebar data-simplebar-auto-hide="false">
+      <div class="table-wrapper ${model.isFirstColumnLocked ? 'is-first-column-locked' : ''}">
         <table class="${classes}">
           <sly
               data-sly-include="${'parsys.html' @ prependPath='/libs/wcm/foundation/components/parsys'}"></sly>

@@ -14,27 +14,13 @@
  * limitations under the License.
  */
 
-import Simplebar from 'simplebar';
+import { onDOMContentLoaded } from "src/helpers/dom";
+import { Table } from "./table.class";
 
-const handleTableButton = (tableContainerEl: HTMLElement) => {
-  const buttonLeft = tableContainerEl.querySelector('.table-button-left');
-  const buttonRight = tableContainerEl.querySelector('.table-button-right');
-  const simplebarIns = Simplebar.instances.get(
-    tableContainerEl.querySelector('.table-wrapper')
-  );
-  buttonRight.addEventListener('click', () => {
-    simplebarIns.getScrollElement().scrollBy({ left: 320, behavior: 'smooth' });
-  });
-  buttonLeft.addEventListener('click', () => {
-    simplebarIns
-      .getScrollElement()
-      .scrollBy({ left: -320, behavior: 'smooth' });
-  });
-};
-
-window.addEventListener(window.KYANITE_ON_LOAD, () => {
-  const tableContainers = document.getElementsByClassName('table-container-el');
-  Array.from(tableContainers).forEach((container: HTMLElement) => {
-    handleTableButton(container);
-  });
+onDOMContentLoaded(() => {
+  document
+    .querySelectorAll<HTMLDivElement>(Table.componentSelector)
+    .forEach((element) => {
+      new Table(element);
+    });
 });
