@@ -54,7 +54,9 @@
           @include breakpoint.media-breakpoint-medium {
             --line-placeholder-width: 80px;
           }
-          @include line-placeholder.a-line-placeholder(--line-placeholder-width, --kyanite-media-spacing);
+          @include line-placeholder.a-line-placeholder(
+                  var(--line-placeholder-width),
+                  var(--kyanite-media-spacing));
         }
       }
     }

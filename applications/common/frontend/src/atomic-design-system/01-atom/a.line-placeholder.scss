@@ -21,7 +21,7 @@
 @mixin a-line-placeholder ($--line-placeholder-width, $--line-placeholder-margin-right) {
 
   position: relative;
-  padding-left: ($--line-placeholder-width + $--line-placeholder-margin-right);
+  padding-left: calc($--line-placeholder-width + $--line-placeholder-margin-right);
 
   &:before {
     content: "";
