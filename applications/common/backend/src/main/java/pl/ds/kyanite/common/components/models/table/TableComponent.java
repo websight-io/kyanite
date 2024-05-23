@@ -28,6 +28,8 @@ import org.apache.sling.models.annotations.Model;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class TableComponent {
 
+  static final int DEFAULT_SUMMARY_COLSPAN = 12;
+
   @Inject
   private boolean isBordered;
 

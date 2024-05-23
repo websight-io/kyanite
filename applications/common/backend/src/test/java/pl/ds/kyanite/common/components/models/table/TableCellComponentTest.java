@@ -47,8 +47,8 @@ public class TableCellComponentTest {
         .adaptTo(TableCellComponent.class);
     assertThat(model).isNotNull();
     assertThat(model.getText()).isEqualTo("Content");
-    assertThat(model.getRows()).isEqualTo(1);
-    assertThat(model.getColumns()).isEqualTo(1);
+    assertThat(model.getRowspan()).isEqualTo(1);
+    assertThat(model.getColspan()).isEqualTo(12);
   }
 
   @Test
@@ -56,7 +56,7 @@ public class TableCellComponentTest {
     TableCellComponent model = context.resourceResolver().getResource(PATH + "/tablebody/tablerow2/complex")
         .adaptTo(TableCellComponent.class);
     assertThat(model.getText()).isEqualTo("Table cell text");
-    assertThat(model.getRows()).isEqualTo(2);
-    assertThat(model.getColumns()).isEqualTo(3);
+    assertThat(model.getRowspan()).isEqualTo(2);
+    assertThat(model.getColspan()).isEqualTo(3);
   }
 }
