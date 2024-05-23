@@ -60,7 +60,7 @@ package pl.ds.kyanite.common.components.models.layouts;
  * </ol>
  * </p>
  */
-public interface MultiTemplateComponent {
+public interface TemplateHandler {
 
   /**
    * Return layout template relative path. Returns default template path by default,
