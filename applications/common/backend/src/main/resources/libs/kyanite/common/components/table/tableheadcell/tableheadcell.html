@@ -17,7 +17,7 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.table.TableHeadCellComponent">
-  <th rowspan="${model.rows}" colspan="${model.columns}">
+  <th rowspan="${model.rowspan}" colspan="${model.colspan}">
     ${model.text @ context='html'}
   </th>
 </sly>
