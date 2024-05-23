@@ -17,8 +17,8 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.blogs.components.models.BlogArticleAuthorBioComponent">
-  <sly data-sly-use.template="./template-default.html"
-       data-sly-call="${template.default @ model=model}">
+  <sly data-sly-use.template="${model.templatePath}"
+       data-sly-call="${template.template @ model=model}">
   </sly>
   <sly data-sly-test="${wcmmode.isEdit}">
     <sly data-sly-test.errMessage="${model.authorInfoErrMessage}">
