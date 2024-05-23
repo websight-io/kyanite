@@ -25,7 +25,6 @@ import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import pl.ds.kyanite.common.components.models.table.TableHeadCellComponent;
 
 @ExtendWith(SlingContextExtension.class)
 public class TableHeadCellComponentTest {
@@ -48,8 +47,8 @@ public class TableHeadCellComponentTest {
         .adaptTo(TableHeadCellComponent.class);
     assertThat(model).isNotNull();
     assertThat(model.getText()).isEqualTo("Content");
-    assertThat(model.getRows()).isEqualTo(1);
-    assertThat(model.getColumns()).isEqualTo(1);
+    assertThat(model.getRowspan()).isEqualTo(1);
+    assertThat(model.getColspan()).isEqualTo(12);
   }
 
   @Test
@@ -57,7 +56,7 @@ public class TableHeadCellComponentTest {
     TableHeadCellComponent model = context.resourceResolver().getResource(PATH + "/tablehead/tablerow2/complex")
         .adaptTo(TableHeadCellComponent.class);
     assertThat(model.getText()).isEqualTo("Table head cell text");
-    assertThat(model.getRows()).isEqualTo(2);
-    assertThat(model.getColumns()).isEqualTo(3);
+    assertThat(model.getRowspan()).isEqualTo(2);
+    assertThat(model.getColspan()).isEqualTo(3);
   }
 }
