@@ -23,14 +23,14 @@ import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import pl.ds.kyanite.common.components.models.layouts.MultiTemplateComponent;
+import pl.ds.kyanite.common.components.models.layouts.TemplateHandler;
 import pl.ds.kyanite.common.components.utils.LinkUtil;
 
 @Model(
     adaptables = { Resource.class },
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
-public class QuoteComponent implements Quote, MultiTemplateComponent {
+public class QuoteComponent implements Quote, TemplateHandler {
 
   @Inject
   @Getter
