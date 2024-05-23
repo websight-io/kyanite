@@ -24,7 +24,7 @@
 dryRun = true
 rootPaths = ['/content']
 newPropertyName = 'customClass'
-newPropertyValue = 'blogArticleContent'
+newPropertyValue = 'previewImageContainer'
 contentColumnPath = 'pagecontainer/section/container/columns1/column4'
 updatedPagesCount = 0
 

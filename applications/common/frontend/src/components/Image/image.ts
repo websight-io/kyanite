@@ -60,8 +60,8 @@ const createPreviewCarousel = (imageContainer) => {
 }
 
 if (imageCarouselTemplates.some(className => document.body.classList.contains(className))) {
-  const imageContainer = document.querySelector<HTMLElement>(".blogArticleContent");
-  const previewCarouselImages = document.querySelectorAll<HTMLElement>(".blogArticleContent .image");
+  const imageContainer = document.querySelector<HTMLElement>(".previewImageContainer");
+  const previewCarouselImages = document.querySelectorAll<HTMLElement>(".previewImageContainer .image");
 
   previewCarouselImages.forEach(imageContainer => {
     const imageElement = imageContainer.querySelector("img");
