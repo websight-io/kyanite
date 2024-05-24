@@ -30,12 +30,13 @@ import org.apache.sling.models.factory.ModelFactory;
 import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingException;
 import pl.ds.kyanite.blogs.components.services.AuthorInfoResolverService;
 import pl.ds.kyanite.blogs.components.utils.ResourceUtil;
+import pl.ds.kyanite.common.components.models.layouts.TemplateHandler;
 
 @Model(
     adaptables = {Resource.class},
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
-public class BlogArticleHeaderComponent {
+public class BlogArticleHeaderComponent implements TemplateHandler {
 
   private final Resource resource;
 
