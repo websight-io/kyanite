@@ -32,6 +32,7 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.factory.ModelFactory;
 import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingException;
+import pl.ds.kyanite.blogs.components.models.impl.BlogArticleHeaderModelImpl;
 import pl.ds.kyanite.blogs.components.services.AuthorInfoResolverService;
 import pl.ds.kyanite.blogs.components.services.BlogArticleService;
 import pl.ds.kyanite.common.components.utils.LinkUtil;
@@ -60,7 +61,7 @@ public class FeatureBlogArticleComponent {
   private boolean isReversed;
 
   @Getter
-  private BlogArticleHeaderModel blogArticleHeader;
+  private BlogArticleHeaderModelImpl blogArticleHeader;
 
   @Getter
   private String blogArticleHeaderLink;
@@ -94,7 +95,7 @@ public class FeatureBlogArticleComponent {
   private void init() {
     final Resource blogPage = this.getArticlePage();
     if (Objects.nonNull(blogPage)) {
-      this.blogArticleHeader = modelFactory.createModel(blogPage, BlogArticleHeaderModel.class);
+      this.blogArticleHeader = modelFactory.createModel(blogPage, BlogArticleHeaderModelImpl.class);
       this.blogArticleHeaderLink = LinkUtil.handleLink(
           StringUtils.substringBefore(blogPage.getPath(), JCR_CONTENT), resourceResolver);
       this.resolveAuthorInfo(blogPage);

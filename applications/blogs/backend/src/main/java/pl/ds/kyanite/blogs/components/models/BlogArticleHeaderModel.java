@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,86 +16,23 @@
 
 package pl.ds.kyanite.blogs.components.models;
 
-import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
-import javax.inject.Inject;
-import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
-import org.apache.sling.models.annotations.Default;
-import org.apache.sling.models.annotations.DefaultInjectionStrategy;
-import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.ChildResource;
-import org.apache.sling.models.annotations.injectorspecific.OSGiService;
-import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
-import org.apache.sling.models.factory.ModelFactory;
-import pl.ds.kyanite.common.components.utils.DateFormatterUtil;
-import pl.ds.kyanite.common.components.utils.LinkUtil;
 
-@Model(
-    adaptables = {Resource.class},
-    defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
-)
-public class BlogArticleHeaderModel {
+public interface BlogArticleHeaderModel {
 
-  @ValueMapValue
-  @Getter
-  @Default(values = "Title")
-  private String title;
+  String getTitle();
 
-  @ValueMapValue
-  @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String description;
+  String getDescription();
 
-  @ValueMapValue
-  @Getter
-  private String publicationDate;
+  List<TagModel> getTags();
 
-  @ValueMapValue
-  @Getter
-  @Default(values = "0")
-  private String readTime;
+  String getPublicationDate();
 
-  @ValueMapValue
-  private String heroImage;
+  String getFormattedPublicationDate();
 
-  @ValueMapValue
-  @Getter
-  @Default(values = StringUtils.EMPTY)
-  private String heroImageAlt;
+  String getReadTime();
 
-  @ChildResource
-  private List<Resource> tags;
+  String getHeroImage();
 
-  private final ResourceResolver resourceResolver;
-
-  private final ModelFactory modelFactory;
-
-  @Inject
-  public BlogArticleHeaderModel(
-      @SlingObject ResourceResolver resourceResolver,
-      @OSGiService ModelFactory modelFactory) {
-    this.resourceResolver = resourceResolver;
-    this.modelFactory = modelFactory;
-  }
-
-  public String getHeroImage() {
-    return LinkUtil.handleLink(heroImage, resourceResolver);
-  }
-
-  public String getFormattedPublicationDate() {
-    return DateFormatterUtil.formatDate(this.publicationDate);
-  }
-
-  public List<TagModel> getTags() {
-    return Optional.ofNullable(tags)
-        .orElseGet(Collections::emptyList)
-        .stream()
-        .map(resource -> modelFactory.createModel(resource, TagModel.class))
-        .toList();
-  }
+  String getHeroImageAlt();
 }
