@@ -36,7 +36,8 @@
                   &&  (author.authorOwnerPath != currentPage.path) ) }"></sly>
               <a data-sly-unwrap="${!leadsToAuthorPage}"
                  href="${author.authorOwnerUrl}" target="">
-                <img width="48" height="48"  data-sly-test.authorPhoto="${author.authorPhoto}" class="is-rounded"
+                <img width="48" height="48" data-sly-test.authorPhoto="${author.authorPhoto}"
+                     class="is-rounded"
                      src="${authorPhoto}" alt="${author.authorPhotoAlt}">
               </a>
             </p>
@@ -48,23 +49,19 @@
                 <br>
                 <small
                     data-sly-test.publicationDate="${blog.formattedPublicationDate}">${publicationDate}</small>
-                <small data-sly-test.readTime="${blog.readTime}">${'{0} min read' @ format=[readTime],
+                <small data-sly-test.readTime="${blog.readTime}">${'{0} min read' @
+                  format=[readTime],
                   i18n}</small>
               </p>
             </div>
           </div>
         </article>
         <figure class="image">
-          <img width="1200" height="800" data-sly-test.heroImage="${blog.heroImage}" src="${heroImage}"
+          <img width="1200" height="800" data-sly-test.heroImage="${blog.heroImage}"
+               src="${heroImage}"
                alt="${blog.heroImageAlt}">
         </figure>
-      </div>  </sly>
-
-    <sly data-sly-test="${wcmmode.isEdit}">
-      <sly data-sly-test.errMessage="${model.authorInfoErrMessage}">
-        <div>Failed to retrieve author info</div>
-        <div>${errMessage}</div>
-      </sly>
+      </div>
     </sly>
   </sly>
 </template>
