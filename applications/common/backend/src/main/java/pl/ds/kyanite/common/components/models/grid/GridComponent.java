@@ -33,13 +33,13 @@ import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
-import pl.ds.kyanite.common.components.models.layouts.MultiTemplateComponent;
+import pl.ds.kyanite.common.components.models.layouts.TemplateHandler; 
 
 @Model(
     adaptables = { Resource.class },
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
-public class GridComponent implements MultiTemplateComponent {
+public class GridComponent implements TemplateHandler {
 
   @Inject
   private ResponsiveGridStyle desktopGridStyle;
