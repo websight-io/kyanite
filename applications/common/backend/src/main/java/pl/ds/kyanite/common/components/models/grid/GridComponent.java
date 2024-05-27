@@ -16,8 +16,15 @@
 
 package pl.ds.kyanite.common.components.models.grid;
 
+import static pl.ds.kyanite.common.components.models.grid.GridCellComponent.GRID_CELL_RESOURCE_TYPE;
+import static pl.ds.kyanite.common.components.utils.SlingUtils.SLING_RESOURCE_TYPE;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
@@ -25,17 +32,25 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import pl.ds.kyanite.common.components.models.layouts.MultiTemplateComponent;
 
 @Model(
     adaptables = { Resource.class },
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
-public class GridComponent {
+public class GridComponent implements MultiTemplateComponent {
 
   @Inject
-  @Getter
-  @Default(intValues = 3)
-  private int columnsNumber;
+  private ResponsiveGridStyle desktopGridStyle;
+
+  @Inject
+  private ResponsiveGridStyle tabletGridStyle;
+
+  @Inject
+  private ResponsiveGridStyle mobileGridStyle;
+
+  private Map<String, ResponsiveGridStyle> responsiveGridStyles;
 
   @Inject
   @Getter
@@ -53,8 +68,16 @@ public class GridComponent {
   @Getter
   private String[] fixedGridClasses = new String[0];
 
+  @SlingObject
+  private Resource resource;
+
   @PostConstruct
   private void init() {
+    responsiveGridStyles = new HashMap<>();
+    responsiveGridStyles.put("desktop", desktopGridStyle);
+    responsiveGridStyles.put("tablet",  tabletGridStyle);
+    responsiveGridStyles.put("mobile",  mobileGridStyle);
+
     calcCommonGridClasses();
     calcFixedGridClasses();
   }
@@ -71,9 +94,17 @@ public class GridComponent {
   private void calcFixedGridClasses() {
     List<String> fixedGridClassList = new ArrayList<>();
 
-    if (columnsNumber > 0) {
-      fixedGridClassList.add(String.format("has-%s-cols", columnsNumber));
-    }
+    //  set default columns number that will be overwritten by viewport-specific classes
+    final int defaultColumnsNumber = 4;
+    fixedGridClassList.add(String.format("has-%s-cols", defaultColumnsNumber));
+    responsiveGridStyles.forEach((viewportBulmaName, style) -> {
+      if (style != null) {
+        int columnsNumber = style.getColumnsNumber();
+        if (columnsNumber > 0) {
+          fixedGridClassList.add(String.format("has-%s-cols-%s", columnsNumber, viewportBulmaName));
+        }
+      }
+    });
 
     fixedGridClasses = fixedGridClassList.toArray(new String[]{});
   }
@@ -85,4 +116,12 @@ public class GridComponent {
       return String.format("%.1f", f);
     }
   }
+
+  public List<Resource> getChildrenComponents() {
+    return StreamSupport
+        .stream(resource.getChildren().spliterator(), false)
+        .filter(it -> GRID_CELL_RESOURCE_TYPE.equals(it.getValueMap().get(SLING_RESOURCE_TYPE)))
+        .collect(Collectors.toList());
+  }
+
 }

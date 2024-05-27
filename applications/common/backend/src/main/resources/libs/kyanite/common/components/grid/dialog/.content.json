@@ -9,10 +9,24 @@
         "sling:resourceType": "wcm/dialogs/components/container",
         "fixedGridContainer": {
           "sling:resourceType": "wcm/dialogs/components/container",
-          "columnsNumber": {
+          "desktopColumnsNumber": {
             "sling:resourceType": "wcm/dialogs/components/numberfield",
-            "name": "columnsNumber",
-            "label": "Number of columns",
+            "name": "desktopGridStyle/columnsNumber",
+            "label": "Number of columns, desktop",
+            "min": 1,
+            "max": 12
+          },
+          "tabletColumnsNumber": {
+            "sling:resourceType": "wcm/dialogs/components/numberfield",
+            "name": "tabletGridStyle/columnsNumber",
+            "label": "Number of columns, tablet",
+            "min": 1,
+            "max": 12
+          },
+          "mobileColumnsNumber": {
+            "sling:resourceType": "wcm/dialogs/components/numberfield",
+            "name": "mobileGridStyle/columnsNumber",
+            "label": "Number of columns, mobile",
             "min": 1,
             "max": 12
           }
