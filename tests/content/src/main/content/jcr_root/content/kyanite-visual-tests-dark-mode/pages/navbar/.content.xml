@@ -22,7 +22,7 @@
                 sling:resourceType="kyanite/common/components/navbar"
                 fixedOption="is-fixed-top"
                 isTransparent="false"
-                variant="is-white">
+                variant="is-dark">
                 <brand
                     jcr:primaryType="nt:unstructured"
                     sling:resourceType="kyanite/common/components/navbar/navbarbrand"
