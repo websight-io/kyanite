@@ -36,15 +36,17 @@
 		"include": {
 			"sling:resourceSuperType": "kyanite/common/components/common/imagesource",
 			"name": "Desktop background image",
-			"imageSrcType": {
-				"label": "Source type (desktop)"
-			},
 			"assetReference": {
 				"mimeTypes": ["image/*"],
-				"name": "desktopBackgroundImage/assetReference"
+				"name": "desktopBackgroundImage/assetReference",
+				"label": "Choose image (desktop)"
+			},
+			"imageSrcType": {
+				"label": "Background image source type"
 			},
 			"src": {
-				"name": "desktopBackgroundImage/assetReference"
+				"name": "desktopBackgroundImage/assetReference",
+				"label": "Choose image (desktop)"
 			}
 		}
 	},
@@ -54,14 +56,16 @@
 			"sling:resourceSuperType": "kyanite/common/components/common/imagesource",
 			"name": "Tablet background image",
 			"imageSrcType": {
-				"label": "Source type (tablet)"
+				"sling:hideResource": "true"
 			},
 			"assetReference": {
 				"mimeTypes": ["image/*"],
-				"name": "tabletBackgroundImage/assetReference"
+				"name": "tabletBackgroundImage/assetReference",
+				"label": "Choose image (tablet)"
 			},
 			"src": {
-				"name": "tabletBackgroundImage/assetReference"
+				"name": "tabletBackgroundImage/assetReference",
+				"label": "Choose image (tablet)"
 			}
 		}
 	},
@@ -71,14 +75,16 @@
 			"sling:resourceSuperType": "kyanite/common/components/common/imagesource",
 			"name": "Mobile background image",
 			"imageSrcType": {
-				"label": "Source type (mobile)"
+				"sling:hideResource": "true"
 			},
 			"assetReference": {
 				"mimeTypes": ["image/*"],
-				"name": "mobileBackgroundImage/assetReference"
+				"name": "mobileBackgroundImage/assetReference",
+				"label": "Choose image (mobile)"
 			},
 			"src": {
-				"name": "mobileBackgroundImage/assetReference"
+				"name": "mobileBackgroundImage/assetReference",
+				"label": "Choose image (mobile)"
 			}
 		}
 	}
