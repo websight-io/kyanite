@@ -40,7 +40,6 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.apache.sling.models.factory.ModelFactory;
 import org.jetbrains.annotations.Nullable;
-import pl.ds.kyanite.blogs.components.models.impl.BlogArticleHeaderModelImpl;
 import pl.ds.kyanite.blogs.components.services.AuthorInfoResolverService;
 import pl.ds.kyanite.blogs.components.services.BlogArticleService;
 import pl.ds.kyanite.common.components.utils.LinkUtil;
@@ -130,7 +129,7 @@ public class BlogListComponent {
             BlogArticle.builder()
                 .link(LinkUtil.handleLink(
                     StringUtils.substringBefore(res.getPath(), JCR_CONTENT), resourceResolver))
-                .blogArticleHeader(modelFactory.createModel(res, BlogArticleHeaderModelImpl.class))
+                .blogArticleHeader(modelFactory.createModel(res, BlogArticleHeaderModel.class))
                 .authorInfo(retrieveAuthorInfo(res))
                 .build()
         )
