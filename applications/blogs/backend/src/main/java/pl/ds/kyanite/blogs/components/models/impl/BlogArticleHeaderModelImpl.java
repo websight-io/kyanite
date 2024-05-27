@@ -67,6 +67,9 @@ public class BlogArticleHeaderModelImpl implements BlogArticleHeaderModel {
   private String heroImage;
 
   @ValueMapValue
+  private String heroImageMobile;
+
+  @ValueMapValue
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String heroImageAlt;
@@ -89,6 +92,11 @@ public class BlogArticleHeaderModelImpl implements BlogArticleHeaderModel {
   @Override
   public String getHeroImage() {
     return LinkUtil.handleLink(heroImage, resourceResolver);
+  }
+
+  @Override
+  public String getHeroImageMobile() {
+    return LinkUtil.handleLink(heroImageMobile, resourceResolver);
   }
 
   @Override

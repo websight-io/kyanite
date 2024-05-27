@@ -34,5 +34,7 @@ public interface BlogArticleHeaderModel {
 
   String getHeroImage();
 
+  String getHeroImageMobile();
+
   String getHeroImageAlt();
 }

@@ -56,9 +56,15 @@
             </div>
           </div>
         </article>
-        <figure class="image">
-          <img width="1200" height="800" data-sly-test.heroImage="${blog.heroImage}"
+        <figure data-sly-test.heroImage="${blog.heroImage}"
+                class="image">
+          <img class="is-hidden-mobile"
+               width="1200" height="800"
                src="${heroImage}"
+               alt="${blog.heroImageAlt}">
+          <img class="is-hidden-tablet"
+               idth="360" height="200"
+               src="${blog.heroImageMobile ? blog.heroImageMobile : blog.heroImage}"
                alt="${blog.heroImageAlt}">
         </figure>
       </div>
