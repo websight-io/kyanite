@@ -36,6 +36,9 @@
 		"include": {
 			"sling:resourceSuperType": "kyanite/common/components/common/imagesource",
 			"name": "Desktop background image",
+			"imageSrcType": {
+				"label": "Source type (desktop)"
+			},
 			"assetReference": {
 				"mimeTypes": ["image/*"],
 				"name": "desktopBackgroundImage/assetReference"
@@ -50,6 +53,9 @@
 		"include": {
 			"sling:resourceSuperType": "kyanite/common/components/common/imagesource",
 			"name": "Tablet background image",
+			"imageSrcType": {
+				"label": "Source type (tablet)"
+			},
 			"assetReference": {
 				"mimeTypes": ["image/*"],
 				"name": "tabletBackgroundImage/assetReference"
@@ -64,6 +70,9 @@
 		"include": {
 			"sling:resourceSuperType": "kyanite/common/components/common/imagesource",
 			"name": "Mobile background image",
+			"imageSrcType": {
+				"label": "Source type (mobile)"
+			},
 			"assetReference": {
 				"mimeTypes": ["image/*"],
 				"name": "mobileBackgroundImage/assetReference"
