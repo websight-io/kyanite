@@ -1,0 +1,8 @@
+{
+  "sling:resourceType": "ws:Component",
+  "isContainer": true,
+  "isLayout": true,
+  "group": "Kyanite In-Text Sections",
+  "instanceResourceType": "kyanite/common/components/grid",
+  "title": "Bento box 2 in 1 row"
+}

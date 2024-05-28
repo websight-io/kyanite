@@ -1,0 +1,68 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "columnGap": "1",
+  "rowGap": 1,
+  "sling:resourceType": "kyanite/common/components/grid",
+  "desktopGridStyle": {
+    "jcr:primaryType": "nt:unstructured",
+    "columnsNumber": "2"
+  },
+  "tabletGridStyle": {
+    "jcr:primaryType": "nt:unstructured",
+    "columnsNumber": "2"
+  },
+  "mobileGridStyle": {
+    "jcr:primaryType": "nt:unstructured",
+    "columnsNumber": "1"
+  },
+  "cell_1": {
+    "jcr:primaryType": "nt:unstructured",
+    "height": "1",
+    "width": "1",
+    "sling:resourceType": "kyanite/common/components/grid/gridcell",
+    "image": {
+      "jcr:primaryType": "nt:unstructured",
+      "imageSrcType": "asset",
+      "height": "720",
+      "assetReference": "/content/kyanite/assets/images/personal/Placeholder.svg",
+      "hasShadow": "false",
+      "hasVideoOptions": "false",
+      "alt": "",
+      "type": "none",
+      "width": "1280",
+      "showLightbox": "false",
+      "isRounded": "false",
+      "sling:resourceType": "kyanite/common/components/image"
+    },
+    "content": {
+      "jcr:primaryType": "nt:unstructured",
+      "size": "is-medium",
+      "text": "\u003Cp style=\"text-align: center\"\u003EDescription\u003C/p\u003E",
+      "sling:resourceType": "kyanite/common/components/content"
+    }
+  },
+  "cell_2": {
+    "jcr:primaryType": "nt:unstructured",
+    "height": 1,
+    "width": "1",
+    "sling:resourceType": "kyanite/common/components/grid/gridcell",
+    "image": {
+      "jcr:primaryType": "nt:unstructured",
+      "imageSrcType": "asset",
+      "height": "720",
+      "assetReference": "/content/kyanite/assets/images/personal/Placeholder.svg",
+      "hasVideoOptions": "false",
+      "alt": "",
+      "type": "none",
+      "width": "1280",
+      "isRounded": "false",
+      "sling:resourceType": "kyanite/common/components/image"
+    },
+    "content": {
+      "jcr:primaryType": "nt:unstructured",
+      "size": "is-medium",
+      "text": "\u003Cp style=\"text-align: center\"\u003EDescription\u003C/p\u003E",
+      "sling:resourceType": "kyanite/common/components/content"
+    }
+  }
+}
