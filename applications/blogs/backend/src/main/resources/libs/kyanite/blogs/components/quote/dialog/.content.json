@@ -10,8 +10,20 @@
         "name": "quoteText",
         "label": "Quote text",
         "required": true,
-        "ws:disallowedContext": ["edit:panel"],
+        "ws:disallowedContext": [
+          "edit:panel"
+        ],
         "configuration": "kyanite/common/components/common/rte/configurations/default"
+      },
+      "quoteTextPanel": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "quoteText",
+        "label": "Quote text",
+        "required": true,
+        "ws:disallowedContext": [
+          "edit:dialog"
+        ],
+        "configuration": "kyanite/common/components/common/rte/configurations/compact"
       },
       "authorContainer": {
         "sling:resourceType": "wcm/dialogs/components/container",
@@ -27,11 +39,35 @@
           "label": "Author company"
         },
         "authorPhotoPath": {
-          "sling:resourceType": "wcm/dialogs/components/pathpicker",
-          "rootPath": "/content",
-          "name": "authorPhotoPath",
-          "description": "Author square photo asset (optional)",
-          "label": "Author photo",
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
+            "imageSrcType": {
+              "name": "authorPhotoSourceType",
+              "label": "Author photo source"
+            },
+            "assetReference": {
+              "name": "authorPhotoPath",
+              "mimeTypes": [
+                "image/*"
+              ],
+              "ws:display": {
+                "condition": {
+                  "sourceName": "authorPhotoSourceType",
+                  "values": "asset"
+                }
+              }
+            },
+            "src": {
+              "name": "authorPhotoPath",
+              "ws:display": {
+                "condition": {
+                  "sourceName": "authorPhotoSourceType",
+                  "values": "link"
+                }
+              }
+            }
+          },
           "ws:disallowedContext": [
             "edit:panel"
           ]
