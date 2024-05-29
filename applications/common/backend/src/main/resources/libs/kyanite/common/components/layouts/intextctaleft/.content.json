@@ -1,0 +1,8 @@
+{
+  "sling:resourceType": "ws:Component",
+  "isContainer": true,
+  "isLayout": true,
+  "group": "Kyanite In-Text Sections",
+  "instanceResourceType": "kyanite/common/components/card",
+  "title": "In-text CTA (left alignment)"
+}

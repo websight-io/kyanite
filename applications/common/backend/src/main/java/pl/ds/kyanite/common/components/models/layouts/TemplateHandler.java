@@ -33,28 +33,32 @@ package pl.ds.kyanite.common.components.models.layouts;
  *
  * <p>Component must follow this rules:
  * <ol>
- *    <li>component has a default template under templates/template-default.html</li>
- *    <li>component's model implements MultiTemplateComponent interface</li>
- *    <li>[component].html imports template by relative path retrieved via interface method
+ *    <li>component has a default template under templates/template-default.html declared as
+ *      &lt;template data-sly-template.template="${ @ model}"&gt;</li>
+ *    <li>component's model implements TemplateHandler interface</li>
+ *    <li>[component].html imports template using the path returned by getTemplatePath() method:
  *      <p>&lt;sly data-sly-use.template=&quot;${model.templatePath}&quot;</p>
  *      <p>       data-sly-call=&quot;${template.template @ model=model}&quot;&gt;&lt;/sly&gt;</p>
  *    </li>
  * </ol>
  * </p>
  *
- * <p>Then, you may want to customize component's layout in your project:
+ * <p>In your project, whether you are creating your own component based on an existing one
+ *  or simply overwriting part of it, you may want to customize the component's layout:
  * <ol>
  *    <li>override default layout:
  *      <ul>
- *        <li>just create your own ./templates/template-default.html for that component</li>
+ *        <li>just create your own template-default.html for the component under component's
+ *    /templates folder (for overwriting it will be /apps/path/to/base/component/templates)</li>
  *      </ul>
  *    </li>
  *    <li>add one or more variants of component's layout:
  *      <ul>
- *        <li>add additional templates under ./templates</li>
+ *        <li>add additional templates under component /templates folder</li>
  *        <li>include /libs/kyanite/common/components/common/template into component's dialog</li>
  *        <li>add options representing your templates to included select</li>
- *        <li>initialize the templatePath property, because now you actually store it in JCR</li>
+ *        <li>initialize the templatePath property in /template/.content.json,
+ *            because now you actually store it in JCR</li>
  *      </ul>
  *    </li>
  * </ol>

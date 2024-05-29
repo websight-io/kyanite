@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,18 +14,22 @@
  * limitations under the License.
  */
 
-interface Window {
-    dataLayer: any;
+package pl.ds.kyanite.common.components.models.grid;
+
+import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
+
+import javax.inject.Inject;
+import lombok.Getter;
+import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Default;
+import org.apache.sling.models.annotations.Model;
+
+@Getter
+@Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
+public class ResponsiveGridStyle {
+
+  @Inject
+  @Default(intValues = 3)
+  private int columnsNumber;
+
 }
-
-const openModalLinks: NodeListOf<Element> = document.querySelectorAll(
-    'a[href="#cookieSettings"'
-);
-
-openModalLinks.forEach((link) => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ 'event': 'client-consent-change' });
-  });
-});
