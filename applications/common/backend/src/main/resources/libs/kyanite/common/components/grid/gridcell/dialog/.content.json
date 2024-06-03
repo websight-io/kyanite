@@ -10,9 +10,29 @@
         "width": {
           "sling:resourceType": "wcm/dialogs/components/numberfield",
           "name": "width",
-          "label": "Width",
+          "label": "Desktop width/default",
+          "description": "Number of columns to occupy in desktop viewport and by default in all other viewports other than desktop. Defaults to 1 when left blank.",
           "min": 1,
-          "max": 12
+          "max": 12,
+          "required": false
+        },
+        "tabletWidth": {
+          "sling:resourceType": "wcm/dialogs/components/numberfield",
+          "name": "tabletWidth",
+          "label": "Tablet width",
+          "description": "Number of columns to occupy in tablet viewport. You can leave it blank if it is the same as defined under Desktop width/default",
+          "min": 1,
+          "max": 12,
+          "required": false
+        },
+        "mobileWidth": {
+          "sling:resourceType": "wcm/dialogs/components/numberfield",
+          "name": "mobileWidth",
+          "label": "Mobile width",
+          "description": "Number of columns to occupy in mobile viewport. You can leave it blank if it is the same as defined under Desktop width/default",
+          "min": 1,
+          "max": 12,
+          "required": false
         },
         "height": {
           "sling:resourceType": "wcm/dialogs/components/numberfield",
