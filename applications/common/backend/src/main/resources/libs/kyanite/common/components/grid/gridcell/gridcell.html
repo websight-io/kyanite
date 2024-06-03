@@ -21,7 +21,7 @@
   <sly data-sly-test="${resource.hasChildren}">
     <div class="${classes}">
       <sly data-sly-list="${resource.children}">
-        <sly data-sly-resource="${item @ resourceType=item.resourceType}"></sly>
+        <sly data-sly-resource="${item}"></sly>
       </sly>
     </div>
   </sly>

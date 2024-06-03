@@ -18,6 +18,7 @@ package pl.ds.kyanite.common.components.models.columns;
 
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
+import static pl.ds.kyanite.common.components.utils.SlingUtils.SLING_RESOURCE_TYPE;
 
 import java.util.HashMap;
 import java.util.List;
@@ -39,8 +40,6 @@ import pl.ds.kyanite.common.components.services.ColumnClassProvider;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class ColumnComponent extends DefaultResponsiveColumnComponent {
-
-  private static final String SLING_RESOURCE_TYPE = "sling:resourceType";
 
   @SlingObject
   private Resource resource;
