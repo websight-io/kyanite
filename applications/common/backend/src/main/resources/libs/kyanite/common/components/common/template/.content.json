@@ -1,0 +1,11 @@
+{
+  "sling:resourceType": "wcm/dialogs/components/select",
+  "name": "templatePath",
+  "label": "Layout",
+  "default": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Default",
+    "value": "./templates/template-default.html",
+    "selected": true
+  }
+}
