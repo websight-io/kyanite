@@ -96,62 +96,102 @@ public class BlogPostTableOfContentsComponent {
     if (pageResource != null) {
       Resource contentsContainer = resourceResolver.getResource(
           pageResource.getPath() + BLOG_CONTENT_CONTAINER_REL_PATH);
-      List<Resource> titles = findAllValidTitlesInContainer(contentsContainer);
+      List<TitleComponent> titles = findAllValidTitlesInContainer(contentsContainer);
 
       hierarchyErrorMessage = "";
-      ListIterator<Resource> titlesIter = titles.listIterator();
+      ListIterator<TitleComponent> titlesIter = titles.listIterator();
       BlogPostTableOfContentsItemComponent stubRoot = new BlogPostTableOfContentsItemComponent(
-          "stub", "", "");
+          "stub", "", "h1");
       BlogPostTableOfContentsItemComponent currentNode = stubRoot;
-      int currentLevel = maxHeadingLevel - 1;
 
       while (titlesIter.hasNext()) {
-        Resource titleResource = titlesIter.next();
-        TitleComponent titleComponent = titleResource.adaptTo(TitleComponent.class);
-        BlogPostTableOfContentsItemComponent newNode = prepareNewContentItem(titleComponent);
-        if (newNode != null) {
-          int headingLevel = getHeadingLevel(titleComponent);
-          if (headingLevel == NO_HEADING_LEVEL) {
-            //  skip this node as it's incorrectly configured
-          } else if (headingLevel > currentLevel + 1) {
-            if (StringUtils.isBlank(hierarchyErrorMessage)) {
-              hierarchyErrorMessage = String.format(
-                  "Wrong header level for title #%s: expected h%s or higher, got h%s. "
-                      + "This element will be skipped",
-                  titlesIter.nextIndex(), currentLevel + 1, headingLevel);
-            }
-          } else if (headingLevel == currentLevel + 1) {
-            //  we found a child: add it to current node
-            currentNode.getSubTitles().add(newNode);
-            newNode.setParent(currentNode);
-            //  now the new node is potential parent for the upcoming nodes
-            currentNode = newNode;
-            currentLevel++;
-          } else if (headingLevel == currentLevel) {
-            //  we found a sibling: add it to parent
-            BlogPostTableOfContentsItemComponent parent = currentNode.getParent();
-            if (parent != null) {
-              parent.getSubTitles().add(newNode);
-              newNode.setParent(parent);
-              //  now the new node is potential parent for the upcoming nodes
-              currentNode = newNode;
-            }
-          } else if (headingLevel < currentLevel) {
-            //  we found a sibling to one of a parent levels, so go up the hierarchy
-            while (currentLevel > headingLevel - 1) {
-              //  parent != null check is omitted, because only root stub has no parent,
-              //  and we will never reach the root by design
-              currentNode = currentNode.getParent();
-              currentLevel--;
-            }
-            currentNode.getSubTitles().add(newNode);
-            newNode.setParent(currentNode);
-          }
-        }
+        BlogPostTableOfContentsItemComponent newNode = prepareNewContentItem(titlesIter.next());
+        currentNode = handleAddTitleNode(currentNode, newNode);
       }
 
       this.subTitles = stubRoot.getSubTitles();
     }
+  }
+
+  /**
+   * Helper method for building title hierarchy.
+   * Considering all titles processed are represented as a one-directional sequence,
+   * compares the 'next' title element against currentNode aka 'lowest possible parent':
+   *  - if it is a child/sibling/(grand)parent of currentNode:
+   *    - (optionally) goes up the hierarchy to the proper parent
+   *    - adds it to the parent's children
+   *    - makes it a new lowest possible parent for the upcoming titles
+   *  - if it has too low level comparing to the current element - skips it, fills the error message
+   *
+   * @param currentNode the lowest possible parent for newNode
+   * @param newNode the next title in the sequence, needs to be placed in the hierarchy
+   * @return the new lowest possible parent for the upcoming titles
+   */
+  BlogPostTableOfContentsItemComponent handleAddTitleNode(
+      BlogPostTableOfContentsItemComponent currentNode,
+      BlogPostTableOfContentsItemComponent newNode
+  ) {
+    if (newNode != null) {
+      if (isGrandchildLevelTitle(currentNode, newNode)) {
+        if (StringUtils.isBlank(hierarchyErrorMessage)) {
+          hierarchyErrorMessage = String.format(
+              "Wrong header level for %s with title %s: expected h%s or higher, got h%s. "
+                  + "This element will be skipped",
+              newNode.getHeadingLevel(),
+              newNode.getTitle(),
+              getHeadingLevel(currentNode) + 1,
+              getHeadingLevel(newNode));
+        }
+      } else if (isChildLevelTitle(currentNode, newNode)) {
+        currentNode = addSubTitle(currentNode, newNode);
+      } else if (isSiblingLevelTitle(currentNode, newNode)) {
+        currentNode = addSubTitle(currentNode.getParent(), newNode);
+      } else {
+        //  we found a sibling to one of a parent levels, so go up the hierarchy
+        while (!isChildLevelTitle(currentNode, newNode)) {
+          currentNode = currentNode.getParent();
+        }
+        currentNode = addSubTitle(currentNode, newNode);
+      }
+    }
+    return currentNode;
+  }
+
+  /**
+   *  Helper method for building title hierarchy.
+   *    - adds subTitle to current title subtitles
+   *    - sets title as subTitle's parent
+   *    - returns subTitle as the new lowest possible parent for upcoming titles
+   */
+  BlogPostTableOfContentsItemComponent addSubTitle(
+      BlogPostTableOfContentsItemComponent title,
+      BlogPostTableOfContentsItemComponent subTitle
+  ) {
+    title.getSubTitles().add(subTitle);
+    subTitle.setParent(title);
+    return subTitle;
+  }
+
+
+  boolean isGrandchildLevelTitle(
+      BlogPostTableOfContentsItemComponent baseTitle,
+      BlogPostTableOfContentsItemComponent comparedTitle
+  ) {
+    return getHeadingLevel(comparedTitle) > getHeadingLevel(baseTitle) + 1;
+  }
+
+  boolean isChildLevelTitle(
+      BlogPostTableOfContentsItemComponent baseTitle,
+      BlogPostTableOfContentsItemComponent comparedTitle
+  ) {
+    return getHeadingLevel(comparedTitle) == getHeadingLevel(baseTitle) + 1;
+  }
+
+  boolean isSiblingLevelTitle(
+      BlogPostTableOfContentsItemComponent baseTitle,
+      BlogPostTableOfContentsItemComponent comparedTitle
+  ) {
+    return getHeadingLevel(comparedTitle) == getHeadingLevel(baseTitle);
   }
 
   private Resource getContainingPageAsResource(Resource currentResource) {
@@ -184,29 +224,34 @@ public class BlogPostTableOfContentsComponent {
     return null;
   }
 
-  int getHeadingLevel(Resource resource) {
-    return getHeadingLevel(resource.adaptTo(TitleComponent.class));
-  }
-
-  int getHeadingLevel(TitleComponent titleComponent) {
-    if (titleComponent != null) {
-      String headingLevelValue = titleComponent.getElement();
-      if (headingLevelValue != null && !"p".equals(headingLevelValue)) {
-        return Integer.parseInt(headingLevelValue.substring(1));
-      }
+  int getHeadingLevel(String headingElement) {
+    if (headingElement != null && !"p".equals(headingElement)) {
+      return Integer.parseInt(headingElement.substring(1));
     }
     return NO_HEADING_LEVEL;
   }
 
-  private List<Resource> findAllValidTitlesInContainer(Resource container) {
-    List<Resource> result = new ArrayList<>();
+  int getHeadingLevel(TitleComponent titleComponent) {
+    return titleComponent == null
+        ? NO_HEADING_LEVEL
+        : getHeadingLevel(titleComponent.getElement());
+  }
+
+  int getHeadingLevel(BlogPostTableOfContentsItemComponent tocItem) {
+    return getHeadingLevel(tocItem.getHeadingLevel());
+  }
+
+
+  private List<TitleComponent> findAllValidTitlesInContainer(Resource container) {
+    List<TitleComponent> result = new ArrayList<>();
 
     if (container != null) {
       for (Resource titleResource : container.getChildren()) {
         if (titleResource.isResourceType(TITLE_RESOURCE_PATH)) {
-          int headingLevel = getHeadingLevel(titleResource);
+          TitleComponent titleComponent = titleResource.adaptTo(TitleComponent.class);
+          int headingLevel = getHeadingLevel(titleComponent);
           if (headingLevel <= minHeadingLevel && headingLevel >= maxHeadingLevel) {
-            result.add(titleResource);
+            result.add(titleComponent);
           }
         }
       }
