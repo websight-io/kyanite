@@ -48,8 +48,8 @@ const getPublishedPageUrl = ({ space, page }) => {
 
 const spaces = ['kyanite-visual-tests', 'kyanite-visual-tests-dark-mode'];
 
-const postHoverInterval = 1000;
-const postClickInterval = 1000;
+const postHoverIntervalMs = 1000;
+const postClickIntervalMs = 1000;
 
 const scenarios = spaces.flatMap(space => [
   { space: space, page: 'icons' },
@@ -67,22 +67,22 @@ const scenarios = spaces.flatMap(space => [
   { space: space, page: 'navbar', selectors: [selectors.body],
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
-    postInteractionWait: postHoverInterval,
+    postInteractionWait: postHoverIntervalMs,
   },
   { space: space, page: 'navbar-megadropdown', selectors: [selectors.body],
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
-    postInteractionWait: postHoverInterval,
+    postInteractionWait: postHoverIntervalMs,
   },
   { space: space, page: 'navbar-megadropdown', selectors: [selectors.body],
     clickSelectors: ['.navbar-burger', '.navbar-item.has-dropdown'],
     viewports: viewports.filter((viewport) => ['md-mini', 'md'].includes(viewport.label)),
-    postInteractionWait: postClickInterval,
+    postInteractionWait: postClickIntervalMs,
   },
   { space: space, page: 'navbar-megadropdown-columns', selectors: [selectors.body],
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
-    postInteractionWait: postHoverInterval,
+    postInteractionWait: postHoverIntervalMs,
   },
   { space: space, page: 'blog-article-header/blog-article-page', selectors: [selectors.container] },
   { space: space, page: 'blog-listing', selectors: [selectors.container] },
@@ -103,13 +103,13 @@ const scenarios = spaces.flatMap(space => [
     label: `${space}_external-link-meganav`,
     clickSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
-    postInteractionWait: postClickInterval,
+    postInteractionWait: postClickIntervalMs,
   },
   { space: space, page: 'navbar-external-links', selectors: [selectors.body],
     label: `${space}_external-link-dropdown-menu`,
     clickSelector: '.navbar-item.has-dropdown.is-hoverable:nth-of-type(2)',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
-    postInteractionWait: postClickInterval,
+    postInteractionWait: postClickIntervalMs,
   },
   { space: space, page: 'container/container-alignment',  selectors: [ selectors.container] },
   { space: space, page: 'level/level-item-alignment',     selectors: [ selectors.all] },
