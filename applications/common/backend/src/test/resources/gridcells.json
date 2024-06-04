@@ -1,0 +1,26 @@
+{
+  "default": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/grid/gridcell"
+  },
+  "withInitialProperties": {
+    "jcr:primaryType": "nt:unstructured",
+    "height": 1,
+    "width": 1,
+    "sling:resourceType": "kyanite/common/components/grid/gridcell"
+  },
+  "withDefaultsReconfigured": {
+    "jcr:primaryType": "nt:unstructured",
+    "height": "2",
+    "width": "2",
+    "sling:resourceType": "kyanite/common/components/grid/gridcell"
+  },
+  "withAuthorProvidedWidths": {
+    "jcr:primaryType": "nt:unstructured",
+    "mobileWidth": "1",
+    "height": "4",
+    "width": "3",
+    "tabletWidth": "2",
+    "sling:resourceType": "kyanite/common/components/grid/gridcell"
+  }
+}

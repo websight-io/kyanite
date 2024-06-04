@@ -1,0 +1,369 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "renderAsHero": "false",
+  "sling:resourceType": "kyanite/common/components/section",
+  "container": {
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/container",
+    "grid": {
+      "jcr:primaryType": "nt:unstructured",
+      "columnGap": "1",
+      "rowGap": 1,
+      "sling:resourceType": "kyanite/common/components/grid",
+      "desktopGridStyle": {
+        "jcr:primaryType": "nt:unstructured",
+        "columnsNumber": "3"
+      },
+      "tabletGridStyle": {
+        "jcr:primaryType": "nt:unstructured",
+        "columnsNumber": "2"
+      },
+      "mobileGridStyle": {
+        "jcr:primaryType": "nt:unstructured",
+        "columnsNumber": "1"
+      },
+      "cell_1": {
+        "jcr:primaryType": "nt:unstructured",
+        "mobileWidth": "1",
+        "tabletWidth": "2",
+        "height": "1",
+        "width": "3",
+        "sling:resourceType": "kyanite/common/components/grid/gridcell",
+        "intextctacentered": {
+          "jcr:primaryType": "nt:unstructured",
+          "imageSrcType": "asset",
+          "header": "Lorem ipsum",
+          "anchorUrl": "",
+          "type": "anchor",
+          "heightVariant": "card--full-height",
+          "sling:resourceType": "kyanite/common/components/card",
+          "openInNewTab": "true",
+          "cardcontent": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "kyanite/common/components/card/cardcontent",
+            "container": {
+              "jcr:primaryType": "nt:unstructured",
+              "alignmentHorizontal": "is-left",
+              "sling:resourceType": "kyanite/common/components/container",
+              "title": {
+                "jcr:primaryType": "nt:unstructured",
+                "element": "h3",
+                "eyebrowText": "",
+                "size": "is-6",
+                "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
+                "showCursor": false,
+                "addEyebrow": "false",
+                "addAnimatedEndings": "false",
+                "sling:resourceType": "kyanite/common/components/title"
+              },
+              "mediaobject_1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "kyanite/common/components/mediaobject",
+                "mediaLeft": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "sling:resourceType": "kyanite/common/components/mediaobject/medialeft",
+                  "image": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "imageSrcType": "asset",
+                    "height": "",
+                    "type": "fixed",
+                    "style": "is-64x64",
+                    "width": "",
+                    "isRounded": "true",
+                    "sling:resourceType": "kyanite/common/components/image"
+                  }
+                },
+                "mediaContent": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "sling:resourceType": "kyanite/common/components/mediaobject/mediacontent",
+                  "content": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "size": "is-normal",
+                    "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
+                    "sling:resourceType": "kyanite/common/components/content",
+                    "textWeight": "has-text-weight-normal"
+                  }
+                }
+              },
+              "link": {
+                "jcr:primaryType": "nt:unstructured",
+                "showIconRight": "true",
+                "showIconLeft": false,
+                "size": "is-large",
+                "label": "Read more",
+                "variant": "is-link",
+                "sling:resourceType": "kyanite/common/components/link",
+                "openInNewTab": "true",
+                "rightIcon": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "iconSize": "mdi-18px",
+                  "iconLibType": "mdi",
+                  "icon": "mdi-arrow-right",
+                  "selectOrType": "select"
+                }
+              }
+            }
+          },
+          "image": {
+            "jcr:primaryType": "nt:unstructured"
+          }
+        }
+      },
+      "cell_2": {
+        "jcr:primaryType": "nt:unstructured",
+        "height": "1",
+        "width": "1",
+        "sling:resourceType": "kyanite/common/components/grid/gridcell",
+        "intextctacentered": {
+          "jcr:primaryType": "nt:unstructured",
+          "imageSrcType": "asset",
+          "header": "Lorem ipsum",
+          "anchorUrl": "",
+          "type": "anchor",
+          "heightVariant": "card--full-height",
+          "sling:resourceType": "kyanite/common/components/card",
+          "openInNewTab": "true",
+          "cardcontent": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "kyanite/common/components/card/cardcontent",
+            "container": {
+              "jcr:primaryType": "nt:unstructured",
+              "alignmentHorizontal": "is-left",
+              "sling:resourceType": "kyanite/common/components/container",
+              "title": {
+                "jcr:primaryType": "nt:unstructured",
+                "element": "h3",
+                "eyebrowText": "",
+                "size": "is-6",
+                "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
+                "showCursor": false,
+                "addEyebrow": "false",
+                "addAnimatedEndings": "false",
+                "sling:resourceType": "kyanite/common/components/title"
+              },
+              "mediaobject_1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "kyanite/common/components/mediaobject",
+                "mediaLeft": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "sling:resourceType": "kyanite/common/components/mediaobject/medialeft",
+                  "image": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "imageSrcType": "asset",
+                    "height": "",
+                    "type": "fixed",
+                    "style": "is-64x64",
+                    "width": "",
+                    "isRounded": "true",
+                    "sling:resourceType": "kyanite/common/components/image"
+                  }
+                },
+                "mediaContent": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "sling:resourceType": "kyanite/common/components/mediaobject/mediacontent",
+                  "content": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "size": "is-normal",
+                    "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
+                    "sling:resourceType": "kyanite/common/components/content",
+                    "textWeight": "has-text-weight-normal"
+                  }
+                }
+              },
+              "link": {
+                "jcr:primaryType": "nt:unstructured",
+                "showIconRight": "true",
+                "showIconLeft": false,
+                "size": "is-large",
+                "label": "Read more",
+                "variant": "is-link",
+                "sling:resourceType": "kyanite/common/components/link",
+                "openInNewTab": "true",
+                "rightIcon": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "iconSize": "mdi-18px",
+                  "iconLibType": "mdi",
+                  "icon": "mdi-arrow-right",
+                  "selectOrType": "select"
+                }
+              }
+            }
+          },
+          "image": {
+            "jcr:primaryType": "nt:unstructured"
+          }
+        }
+      },
+      "cell_3": {
+        "jcr:primaryType": "nt:unstructured",
+        "height": "1",
+        "width": "1",
+        "sling:resourceType": "kyanite/common/components/grid/gridcell",
+        "intextctacentered": {
+          "jcr:primaryType": "nt:unstructured",
+          "imageSrcType": "asset",
+          "header": "Lorem ipsum",
+          "anchorUrl": "",
+          "type": "anchor",
+          "heightVariant": "card--full-height",
+          "sling:resourceType": "kyanite/common/components/card",
+          "openInNewTab": "true",
+          "cardcontent": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "kyanite/common/components/card/cardcontent",
+            "container": {
+              "jcr:primaryType": "nt:unstructured",
+              "alignmentHorizontal": "is-left",
+              "sling:resourceType": "kyanite/common/components/container",
+              "title": {
+                "jcr:primaryType": "nt:unstructured",
+                "element": "h3",
+                "eyebrowText": "",
+                "size": "is-6",
+                "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
+                "showCursor": false,
+                "addEyebrow": "false",
+                "addAnimatedEndings": "false",
+                "sling:resourceType": "kyanite/common/components/title"
+              },
+              "mediaobject_1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "kyanite/common/components/mediaobject",
+                "mediaLeft": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "sling:resourceType": "kyanite/common/components/mediaobject/medialeft",
+                  "image": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "imageSrcType": "asset",
+                    "height": "",
+                    "type": "fixed",
+                    "style": "is-64x64",
+                    "width": "",
+                    "isRounded": "true",
+                    "sling:resourceType": "kyanite/common/components/image"
+                  }
+                },
+                "mediaContent": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "sling:resourceType": "kyanite/common/components/mediaobject/mediacontent",
+                  "content": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "size": "is-normal",
+                    "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
+                    "sling:resourceType": "kyanite/common/components/content",
+                    "textWeight": "has-text-weight-normal"
+                  }
+                }
+              },
+              "link": {
+                "jcr:primaryType": "nt:unstructured",
+                "showIconRight": "true",
+                "showIconLeft": false,
+                "size": "is-large",
+                "label": "Read more",
+                "variant": "is-link",
+                "sling:resourceType": "kyanite/common/components/link",
+                "rightIcon": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "iconSize": "mdi-18px",
+                  "iconLibType": "mdi",
+                  "icon": "mdi-arrow-right",
+                  "selectOrType": "select"
+                }
+              }
+            }
+          },
+          "image": {
+            "jcr:primaryType": "nt:unstructured"
+          }
+        }
+      },
+      "cell_4": {
+        "jcr:primaryType": "nt:unstructured",
+        "tabletWidth": "2",
+        "height": "1",
+        "width": "1",
+        "sling:resourceType": "kyanite/common/components/grid/gridcell",
+        "intextctacentered": {
+          "jcr:primaryType": "nt:unstructured",
+          "imageSrcType": "asset",
+          "header": "Lorem ipsum",
+          "anchorUrl": "",
+          "type": "anchor",
+          "heightVariant": "card--full-height",
+          "sling:resourceType": "kyanite/common/components/card",
+          "openInNewTab": "true",
+          "cardcontent": {
+            "jcr:primaryType": "nt:unstructured",
+            "sling:resourceType": "kyanite/common/components/card/cardcontent",
+            "container": {
+              "jcr:primaryType": "nt:unstructured",
+              "alignmentHorizontal": "is-left",
+              "sling:resourceType": "kyanite/common/components/container",
+              "title": {
+                "jcr:primaryType": "nt:unstructured",
+                "element": "h3",
+                "eyebrowText": "",
+                "size": "is-6",
+                "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
+                "showCursor": false,
+                "addEyebrow": "false",
+                "addAnimatedEndings": "false",
+                "sling:resourceType": "kyanite/common/components/title"
+              },
+              "mediaobject_1": {
+                "jcr:primaryType": "nt:unstructured",
+                "sling:resourceType": "kyanite/common/components/mediaobject",
+                "mediaLeft": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "sling:resourceType": "kyanite/common/components/mediaobject/medialeft",
+                  "image": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "imageSrcType": "asset",
+                    "height": "",
+                    "type": "fixed",
+                    "style": "is-64x64",
+                    "width": "",
+                    "isRounded": "true",
+                    "sling:resourceType": "kyanite/common/components/image"
+                  }
+                },
+                "mediaContent": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "sling:resourceType": "kyanite/common/components/mediaobject/mediacontent",
+                  "content": {
+                    "jcr:primaryType": "nt:unstructured",
+                    "size": "is-normal",
+                    "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
+                    "sling:resourceType": "kyanite/common/components/content",
+                    "textWeight": "has-text-weight-normal"
+                  }
+                }
+              },
+              "link": {
+                "jcr:primaryType": "nt:unstructured",
+                "showIconRight": "true",
+                "showIconLeft": false,
+                "size": "is-large",
+                "label": "Read more",
+                "variant": "is-link",
+                "sling:resourceType": "kyanite/common/components/link",
+                "openInNewTab": "true",
+                "rightIcon": {
+                  "jcr:primaryType": "nt:unstructured",
+                  "iconSize": "mdi-18px",
+                  "iconLibType": "mdi",
+                  "icon": "mdi-arrow-right",
+                  "selectOrType": "select"
+                }
+              }
+            }
+          },
+          "image": {
+            "jcr:primaryType": "nt:unstructured"
+          }
+        }
+      }
+    }
+  }
+}
