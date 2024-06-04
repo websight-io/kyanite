@@ -1,0 +1,80 @@
+/*!
+ * <!--
+ *     Copyright (C) 2024 Dynamic Solutions
+ *
+ *     Licensed under the Apache License, Version 2.0 (the "License");
+ *     you may not use this file except in compliance with the License.
+ *     You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *     Unless required by applicable law or agreed to in writing, software
+ *     distributed under the License is distributed on an "AS IS" BASIS,
+ *     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *     See the License for the specific language governing permissions and
+ *     limitations under the License.
+ * -->
+ */
+
+ @use 'src/atomic-design-system/01-atom/a.table-button' as table-button;
+ @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
+
+ $mobileCellWidth: 296px;
+ $desktopCellWidth: 320px;
+
+ @mixin tableIsScrollableCellsWidth {
+    min-width: $mobileCellWidth;
+    @include breakpoint.media-breakpoint-large {
+      min-width: $desktopCellWidth;
+    }
+ }
+
+ @mixin tableIsLockedFirstCellCellsWidth {
+  min-width: $mobileCellWidth;
+  @include breakpoint.media-breakpoint-medium {
+    position: sticky;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: var(--kyanite-background);
+  }
+  @include breakpoint.media-breakpoint-large {
+    min-width: $desktopCellWidth;
+  }
+}
+ .table-container-el { // 'table-container' class name is taken by Bulma
+  &:not(.is-table-scrollable, .is-table-fullwidth) {
+    display: inline-block;
+  }
+  @include table-button.a-table-button;
+  .table-wrapper {
+    .table {
+      &.is-scrollable {
+        thead {
+          th {
+            @include tableIsScrollableCellsWidth;
+          }
+        }
+        tbody {
+          tr {
+            @include tableIsScrollableCellsWidth;
+          }
+        }
+      }
+    }
+    &.is-first-column-locked {
+      .table {
+        thead {
+          tr th:first-child {
+            @include tableIsLockedFirstCellCellsWidth;
+          }
+        }
+        tbody {
+          tr td:first-child {
+            @include tableIsLockedFirstCellCellsWidth;
+          }
+        }
+      }
+    }
+  }
+}

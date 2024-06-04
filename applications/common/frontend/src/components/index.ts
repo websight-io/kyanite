@@ -29,6 +29,7 @@ import './Tabs/tabs';
 import './Title/title';
 import './Carousel/carousel';
 import './Search/search';
+import './Table/table';
 import './BlogTableOfContent/blogtableofcontent';
 
 document.querySelectorAll('.navbar-item.has-dropdown').forEach((navbarItem) => {

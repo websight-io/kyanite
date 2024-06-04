@@ -32,7 +32,7 @@ const selectors = {
 
 const viewports = [
   { label: 'md-mini', width: 360,  height: 480  },
-  { label: 'md',      width: 768,  height: 1024 },
+  { label: 'md',      width: 769,  height: 1024 },
   { label: 'lg',      width: 1025, height: 768  },
   { label: 'xl',      width: 1216, height: 1024 },
   { label: 'mx',      width: 1408, height: 900  }
@@ -111,6 +111,7 @@ const scenarios = spaces.flatMap(space => [
   { space: space, page: 'carousel/carousel-itemsshown-06-scroll',   selectors: [selectors.all] },
   { space: space, page: 'carousel/carousel-itemsshown-12-noscroll', selectors: [selectors.all] },
   { space: space, page: 'carousel/carousel-itemsshown-12-scroll',   selectors: [selectors.all] },
+  { space: space, page: 'quote',   selectors: ['.quote'] },
   { space: space, page: 'table',   selectors: [selectors.all] },
   { space: space, page: 'tag',   selectors: [selectors.container] },
 

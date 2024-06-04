@@ -15,12 +15,13 @@
  */
 
 import hljs from 'highlight.js/lib/core';
+import SimpleBar from 'simplebar';
 
 export class CodeSnippet {
   static readonly backendComponentName = 'Code snippet';
 
   static readonly copyMessageVisibilityTime = 1000;
-  static readonly copyMessageLabel = 'Copied to clipboard';
+  static readonly copyMessageLabel = 'Copied!';
   static readonly cssClassIsInitialised = 'active';
   static readonly cssClassIsHighlighted = 'code-snippet--highlighted';
 
@@ -28,6 +29,13 @@ export class CodeSnippet {
   static readonly codeSelector = '.code-snippet__pre > code';
   static readonly copyButtonSelector = '.code-snippet__icon';
   static readonly copyMessageSelector = '.code-snippet__icon .icon__message';
+
+  readonly collapsedHeight = 337;
+  readonly expandedClassName = 'is-expanded';
+  codeHeight: number;
+  isExpandingOn: boolean;
+  buttonElement: HTMLElement;
+  buttonTextElement: HTMLElement;
 
   readonly componentElement: HTMLDivElement;
   readonly codeElement: HTMLElement;
@@ -53,6 +61,10 @@ export class CodeSnippet {
     this.highlightCode();
 
     this.markAsInitialised();
+
+    this.initSimplebar();
+
+    this.prepareExpandCollapseButton();
   }
 
   private markAsInitialised() {
@@ -108,5 +120,50 @@ export class CodeSnippet {
     this.copyMessageTimeout = setTimeout(() => {
       this.copyMessage.classList.remove('visible');
     }, CodeSnippet.copyMessageVisibilityTime);
+  }
+
+  prepareExpandCollapseButton() {
+    this.codeHeight = this.codeElement.offsetHeight;
+
+    if (this.codeHeight <= this.collapsedHeight) {
+      this.componentElement.classList.remove('expanding-on');
+    }
+
+    this.isExpandingOn =
+      this.componentElement.classList.contains('expanding-on');
+
+    if (this.isExpandingOn) {
+      this.buttonElement = this.componentElement.querySelector(
+        '.code-snippet-button'
+      );
+      this.buttonTextElement = this.buttonElement.querySelector(
+        '.code-snippet-button-text'
+      );
+      this.expandCollapseButton();
+    }
+  }
+
+  expandCollapseButton() {
+    this.handleExpandButtonClick();
+    this.buttonElement.addEventListener('click', () => {
+      this.componentElement.classList.toggle(this.expandedClassName);
+      this.handleExpandButtonClick();
+    });
+  }
+
+  handleExpandButtonClick() {
+    if (this.componentElement.classList.contains(this.expandedClassName)) {
+      this.codeElement.style.maxHeight = this.codeHeight + 'px';
+      this.buttonTextElement.innerText = 'Show less';
+    } else {
+      this.codeElement.style.maxHeight = this.collapsedHeight + 'px';
+      this.buttonTextElement.innerText = 'Show more';
+    }
+  }
+
+  initSimplebar() {
+    new SimpleBar(this.codeElement, {
+      autoHide: false,
+    });
   }
 }

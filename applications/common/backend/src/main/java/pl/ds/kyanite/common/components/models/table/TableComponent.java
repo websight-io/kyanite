@@ -28,6 +28,8 @@ import org.apache.sling.models.annotations.Model;
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class TableComponent {
 
+  static final int DEFAULT_SUMMARY_COLSPAN = 12;
+
   @Inject
   private boolean isBordered;
 
@@ -49,11 +51,20 @@ public class TableComponent {
 
   @Inject
   @Getter
+  private boolean isFirstColumnLocked;
+
+  @Inject
+  @Getter
   private String[] tableClasses;
+
+  @Inject
+  @Getter
+  private String[] tableContainerClasses;
 
   @PostConstruct
   private void init() {
     List<String> classes = new ArrayList<>();
+    List<String> containerClasses = new ArrayList<>();
     if (isBordered) {
       classes.add("is-bordered");
     }
@@ -68,7 +79,13 @@ public class TableComponent {
     }
     if (isFullwidth) {
       classes.add("is-fullwidth");
+      containerClasses.add("is-table-fullwidth");
+    }
+    if (isScrollable) {
+      classes.add("is-scrollable");
+      containerClasses.add("is-table-scrollable");
     }
     tableClasses = classes.toArray(new String[]{});
+    tableContainerClasses = containerClasses.toArray(new String[] {});
   }
 }
