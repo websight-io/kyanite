@@ -75,6 +75,20 @@
                 sling:resourceType="kyanite/common/components/codesnippet"
                 fileName="long-content/application/backend/src/main/resources/apps/rte/extended/configuration/.content.json.../application/backend/src/main/resources/apps/rte/extended/configuration/.content.json.json"
                 title="Extremely long title describing content of the code snippet with the long file path, added for the testing purposes"/>
+            <codesnippet_9
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="kyanite/common/components/codesnippet"
+                code="package pl.ds.kyanite.common.components.models.table;&#xa;&#xa;import java.util.ArrayList;&#xa;import java.util.List;&#xa;import javax.annotation.PostConstruct;&#xa;import javax.inject.Inject;&#xa;import lombok.Getter;&#xa;import org.apache.sling.api.resource.Resource;&#xa;import org.apache.sling.models.annotations.DefaultInjectionStrategy;&#xa;import org.apache.sling.models.annotations.Model;&#xa;&#xa;@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONALOPTIONALOPTIONALOPTIONALOPTIONALOPTIONAL)&#xa;public class TableComponent {&#xa;&#xa;  @Inject&#xa;  private boolean isBordered;&#xa;&#xa;  @Inject&#xa;  private boolean isStriped;&#xa;&#xa;  @Inject&#xa;  private boolean isNarrow;&#xa;&#xa;  @Inject&#xa;  private boolean isHoverable;&#xa;&#xa;  @Inject&#xa;  private boolean isFullwidth;&#xa;&#xa;  @Inject&#xa;  @Getter&#xa;  private boolean isScrollable;&#xa;&#xa;  @Inject&#xa;  @Getter&#xa;  private String[] tableClasses;&#xa;&#xa;  @PostConstruct&#xa;  private void init() {&#xa;    List&lt;String> classes = new ArrayList&lt;>();&#xa;    if (isBordered) {&#xa;      classes.add(&quot;is-bordered&quot;);&#xa;    }&#xa;    if (isStriped) {&#xa;      classes.add(&quot;is-striped&quot;);&#xa;    }&#xa;    if (isNarrow) {&#xa;      classes.add(&quot;is-narrow&quot;);&#xa;    }&#xa;    if (isHoverable) {&#xa;      classes.add(&quot;is-hoverable&quot;);&#xa;    }&#xa;    if (isFullwidth) {&#xa;      classes.add(&quot;is-fullwidth&quot;);&#xa;    }&#xa;    tableClasses = classes.toArray(new String[]{});&#xa;  }&#xa;}&#xa;"
+                fileType="language-java"
+                isExpandingOn="true"
+                title="Expandable long"/>
+            <codesnippet_9_1
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="kyanite/common/components/codesnippet"
+                code="package pl.ds.kyanite.common.components.models.table;&#xa;&#xa;import java.util.ArrayList;&#xa;import java.util.List;&#xa;import javax.annotation.PostConstruct;&#xa;import javax.inject.Inject;&#xa;import lombok.Getter;&#xa;import org.apache.sling.api.resource.Resource;&#xa;import org.apache.sling.models.annotations.DefaultInjectionStrategy;&#xa;import org.apache.sling.models.annotations.Model;&#xa;&#xa;@Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)&#xa;}&#xa;"
+                fileType="language-java"
+                isExpandingOn="true"
+                title="Expandable short (no button)"/>
         </pagecontainer>
     </jcr:content>
 </jcr:root>

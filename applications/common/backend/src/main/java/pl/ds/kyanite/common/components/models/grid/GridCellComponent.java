@@ -25,13 +25,14 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.Self;
 
 @Model(
     adaptables = { Resource.class },
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
 public class GridCellComponent {
+
+  public static final String GRID_CELL_RESOURCE_TYPE = "kyanite/common/components/grid/gridcell";
 
   @Inject
   @Getter

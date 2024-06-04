@@ -1,8 +1,19 @@
 {
   "jcr:primaryType": "nt:unstructured",
-  "columnsNumber": 4,
   "columnGap": 1,
   "rowGap": 1,
+  "desktopGridStyle": {
+    "jcr:primaryType": "nt:unstructured",
+    "columnsNumber": 4
+  },
+  "tabletGridStyle": {
+    "jcr:primaryType": "nt:unstructured",
+    "columnsNumber": 4
+  },
+  "mobileGridStyle": {
+    "jcr:primaryType": "nt:unstructured",
+    "columnsNumber": 4
+  },
   "cell_1": {
     "sling:resourceType": "kyanite/common/components/grid/gridcell",
     "jcr:primaryType": "nt:unstructured",

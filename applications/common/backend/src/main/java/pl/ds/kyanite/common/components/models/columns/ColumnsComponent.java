@@ -17,6 +17,7 @@
 package pl.ds.kyanite.common.components.models.columns;
 
 import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
+import static pl.ds.kyanite.common.components.utils.SlingUtils.SLING_RESOURCE_TYPE;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,6 @@ public class ColumnsComponent {
 
   private static final String COLUMN_COMPONENT_RESOURCE_TYPE
       = "kyanite/common/components/columns/column";
-  private static final String SLING_RESOURCE_TYPE = "sling:resourceType";
 
   @SlingObject
   private Resource resource;

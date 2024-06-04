@@ -60,6 +60,25 @@
         "sling:resourceType": "wcm/dialogs/components/textarea",
         "name": "code",
         "label": "Code"
+      },
+      "isExpandingOn": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "isExpandingOn",
+        "label": "Expandable snippets"
+      },
+      "expandContainer": {
+				"sling:resourceType": "wcm/dialogs/components/container",
+        "isInitiallyExpanded": {
+          "sling:resourceType": "wcm/dialogs/components/checkbox",
+          "name": "isInitiallyExpanded",
+          "label": "Initially expanded"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "isExpandingOn",
+            "values": true
+          }
+        }
       }
     }
   }
