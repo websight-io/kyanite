@@ -25,12 +25,11 @@ import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import pl.ds.kyanite.common.components.models.table.TableHeadCellComponent;
 
 @ExtendWith(SlingContextExtension.class)
 public class TableHeadCellComponentTest {
 
-  private static final String PATH = "/content/tableheadcell";
+  private static final String PATH = "/content/table";
 
   private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
 
@@ -44,17 +43,17 @@ public class TableHeadCellComponentTest {
 
   @Test
   void defaultTableHeadCellComponentModelTest() {
-    TableHeadCellComponent model = context.resourceResolver().getResource(PATH + "/default")
+    TableHeadCellComponent model = context.resourceResolver().getResource(PATH + "/tablehead/tablerow1/default")
         .adaptTo(TableHeadCellComponent.class);
     assertThat(model).isNotNull();
     assertThat(model.getText()).isEqualTo("Content");
     assertThat(model.getRowspan()).isEqualTo(1);
-    assertThat(model.getColspan()).isEqualTo(1);
+    assertThat(model.getColspan()).isEqualTo(12);
   }
 
   @Test
   void tableHeadCellComponentModelTest() {
-    TableHeadCellComponent model = context.resourceResolver().getResource(PATH + "/complex")
+    TableHeadCellComponent model = context.resourceResolver().getResource(PATH + "/tablehead/tablerow2/complex")
         .adaptTo(TableHeadCellComponent.class);
     assertThat(model.getText()).isEqualTo("Table head cell text");
     assertThat(model.getRowspan()).isEqualTo(2);

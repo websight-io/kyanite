@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,9 @@
  * limitations under the License.
  */
 
-// styles
-import './main.scss';
+package pl.ds.kyanite.common.components.models.table.dto;
 
-// scripts
-import 'simplebar';
-import './helpers/load-events';
-import './components';
-import './emailDecryption';
+public record TableCellData(
+        Integer columns,
+        boolean isCurrentCell) {
+}

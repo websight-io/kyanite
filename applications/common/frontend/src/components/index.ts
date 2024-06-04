@@ -29,6 +29,7 @@ import './Tabs/tabs';
 import './Title/title';
 import './Carousel/carousel';
 import './Search/search';
+import './Table/table';
 
 document.querySelectorAll('.navbar-item.has-dropdown').forEach((navbarItem) => {
   navbarItem.addEventListener('keydown', (event: KeyboardEvent) => {

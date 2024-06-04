@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,11 +14,13 @@
  * limitations under the License.
  */
 
-// styles
-import './main.scss';
+import { onDOMContentLoaded } from "src/helpers/dom";
+import { Table } from "./table.class";
 
-// scripts
-import 'simplebar';
-import './helpers/load-events';
-import './components';
-import './emailDecryption';
+onDOMContentLoaded(() => {
+  document
+    .querySelectorAll<HTMLDivElement>(Table.componentSelector)
+    .forEach((element) => {
+      new Table(element);
+    });
+});
