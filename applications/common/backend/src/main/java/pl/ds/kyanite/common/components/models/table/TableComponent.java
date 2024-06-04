@@ -57,9 +57,14 @@ public class TableComponent {
   @Getter
   private String[] tableClasses;
 
+  @Inject
+  @Getter
+  private String[] tableContainerClasses;
+
   @PostConstruct
   private void init() {
     List<String> classes = new ArrayList<>();
+    List<String> containerClasses = new ArrayList<>();
     if (isBordered) {
       classes.add("is-bordered");
     }
@@ -74,10 +79,13 @@ public class TableComponent {
     }
     if (isFullwidth) {
       classes.add("is-fullwidth");
+      containerClasses.add("is-table-fullwidth");
     }
     if (isScrollable) {
       classes.add("is-scrollable");
+      containerClasses.add("is-table-scrollable");
     }
     tableClasses = classes.toArray(new String[]{});
+    tableContainerClasses = containerClasses.toArray(new String[] {});
   }
 }

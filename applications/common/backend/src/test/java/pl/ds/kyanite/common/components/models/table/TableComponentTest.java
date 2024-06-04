@@ -72,6 +72,7 @@ public class TableComponentTest {
     assertThat(model.isScrollable()).isTrue();
     assertThat(model.getTableClasses()).containsExactlyInAnyOrder("is-bordered", "is-striped",
         "is-narrow", "is-hoverable", "is-fullwidth", "is-scrollable");
+    assertThat(model.getTableContainerClasses()).containsExactlyInAnyOrder("is-table-fullwidth", "is-table-scrollable");
   }
 
   @Test

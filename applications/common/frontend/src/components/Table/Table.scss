@@ -42,7 +42,10 @@
     min-width: $desktopCellWidth;
   }
 }
- .table-container-el {
+ .table-container-el { // 'table-container' class name is taken by Bulma
+  &:not(.is-table-scrollable, .is-table-fullwidth) {
+    display: inline-block;
+  }
   @include table-button.a-table-button;
   .table-wrapper {
     .table {

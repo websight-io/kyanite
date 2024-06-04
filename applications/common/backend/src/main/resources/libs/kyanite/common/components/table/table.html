@@ -18,12 +18,13 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.table.TableComponent">
   <sly data-sly-set.classes="table ${model.tableClasses @ join=' '}"></sly>
+  <sly data-sly-set.containerClasses="${model.tableContainerClasses @ join=' '}"></sly>
   <sly data-sly-test="${resource.hasChildren}">
     <!--/* 
       ~   "data-table-component='true'" should be always on the first tag of this html template. 
       ~   It is used to find component in additional table actions in "extensions" folder.
     */-->
-    <div class="table-container-el ${model.isScrollable ? 'is-scrollable' : ''}" data-table-component="true">
+    <div class="table-container-el ${containerClasses}" data-table-component="true">
       <div data-sly-test="${model.isScrollable}" class="table-button-container">
         <button class="table-button table-button-left" aria-label="Scroll to the left">
           <i class="mdi mdi-arrow-left"></i>

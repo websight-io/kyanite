@@ -17,7 +17,7 @@
 import SimpleBar from 'simplebar';
 
 export class Table {
-  static readonly componentSelector = '.table-container-el.is-scrollable';
+  static readonly componentSelector = '.is-table-scrollable';
 
   readonly element: HTMLElement;
   simplebarInstance: SimpleBar;
