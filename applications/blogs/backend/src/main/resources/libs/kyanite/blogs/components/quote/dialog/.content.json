@@ -1,0 +1,86 @@
+{
+  "sling:resourceType": "wcm/dialogs/dialog",
+  "tabs": {
+    "sling:resourceType": "wcm/dialogs/components/tabs",
+    "generalTab": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "General",
+      "quoteText": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "quoteText",
+        "label": "Quote text",
+        "required": true,
+        "ws:disallowedContext": [
+          "edit:panel"
+        ],
+        "configuration": "kyanite/common/components/common/rte/configurations/default"
+      },
+      "quoteTextPanel": {
+        "sling:resourceType": "wcm/dialogs/components/richtext",
+        "name": "quoteText",
+        "label": "Quote text",
+        "required": true,
+        "ws:disallowedContext": [
+          "edit:dialog"
+        ],
+        "configuration": "kyanite/common/components/common/rte/configurations/compact"
+      },
+      "authorContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "authorName": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "authorName",
+          "label": "Author name",
+          "required": true
+        },
+        "authorCompany": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "authorCompany",
+          "label": "Author company"
+        },
+        "authorPhotoPath": {
+          "sling:resourceType": "wcm/dialogs/components/include",
+          "include": {
+            "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
+            "imageSrcType": {
+              "name": "authorPhotoSourceType",
+              "label": "Author photo source"
+            },
+            "assetReference": {
+              "name": "authorPhotoPath",
+              "mimeTypes": [
+                "image/*"
+              ],
+              "ws:display": {
+                "condition": {
+                  "sourceName": "authorPhotoSourceType",
+                  "values": "asset"
+                }
+              }
+            },
+            "src": {
+              "name": "authorPhotoPath",
+              "ws:display": {
+                "condition": {
+                  "sourceName": "authorPhotoSourceType",
+                  "values": "link"
+                }
+              }
+            }
+          },
+          "ws:disallowedContext": [
+            "edit:panel"
+          ]
+        },
+        "authorPhotoAlt": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "authorPhotoAlt",
+          "label": "Author photo alt",
+          "ws:disallowedContext": [
+            "edit:panel"
+          ]
+        }
+      }
+    }
+  }
+}

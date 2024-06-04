@@ -16,34 +16,23 @@
  * -->
  */
 
-@use './Hero';
-@use './Level';
-@use './Title';
-@use './Content';
-@use './LevelItem';
-@use './Image';
-@use './Eyebrow';
-@use './Footer';
-@use './Button';
-@use './Tabs';
-@use './CodeSnippet';
-@use './Navbar';
-@use './BlogArticleHeader';
-@use './BlogArticleThumbnail';
-@use './BlogArticleFeatured';
-@use './Link';
-@use './BlogArticleAuthorBio';
-@use './Card';
-@use './Message';
-@use './BlogTableOfContent';
-@use './BlogBackButton';
-@use './Column';
-@use './Container';
-@use './Carousel';
-@use './Panel';
-@use './ProgressBar';
-@use './Quote';
-@use './Tag';
-@use './Search';
-@use './Section';
-@use './Separator';
+@use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
+
+@mixin a-line-placeholder ($--line-placeholder-width, $--line-placeholder-margin-right) {
+
+  position: relative;
+  padding-left: calc($--line-placeholder-width + $--line-placeholder-margin-right);
+
+  &:before {
+    content: "";
+    display: inline-block;
+    border-top: 1px solid;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin-right: $--line-placeholder-margin-right;
+    width: $--line-placeholder-width;
+  }
+
+}
