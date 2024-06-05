@@ -20,12 +20,12 @@
   <parent>
     <groupId>pl.ds.kyanite</groupId>
     <artifactId>kyanite-common</artifactId>
-    <version>0.6.0-SNAPSHOT</version>
+    <version>0.6.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>kyanite-common-frontend</artifactId>
-  <version>0.6.0-SNAPSHOT</version>
+  <version>0.6.0</version>
   <name>Kyanite Components Project - Common frontend</name>
   <description>Contains application frontend.</description>
 
