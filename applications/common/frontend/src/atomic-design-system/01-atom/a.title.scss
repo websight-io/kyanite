@@ -64,4 +64,11 @@
     visibility: hidden;
     color: transparent !important;
   }
+  &.center {
+    & > span {
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%);
+    }
+  }
 }
