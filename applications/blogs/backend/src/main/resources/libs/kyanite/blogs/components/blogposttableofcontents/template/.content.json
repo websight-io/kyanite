@@ -1,0 +1,6 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "maxHeadingLevel": 2,
+  "minHeadingLevel": 6,
+  "showBackToTopButton": true
+}

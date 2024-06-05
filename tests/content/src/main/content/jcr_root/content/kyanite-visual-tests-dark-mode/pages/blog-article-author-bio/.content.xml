@@ -77,7 +77,9 @@
                             <blogposttableofcontents
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/blogs/components/blogposttableofcontents"
-                                maxHeadingLevel="2"/>
+                                maxHeadingLevel="2"
+                                minHeadingLevel="6"
+                                showBackToTopButton="true"/>
                         </column3>
                     </columns1>
                     <columns2

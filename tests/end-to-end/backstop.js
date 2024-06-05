@@ -98,6 +98,8 @@ const scenarios = spaces.flatMap(space => [
   { space: space, page: 'hero', selectors: ['.hero'] },
   { space: space, page: 'message', selectors: [selectors.container] },
   { space: space, page: 'table-of-content/table-of-content' },
+  { space: space, page: 'table-of-content/table-of-content-no-title' },
+  { space: space, page: 'table-of-content/table-of-content-hierarchy' },
   { space: space, page: 'card-full-height-variant', selectors: [selectors.body] },
   { space: space, page: 'navbar-external-links', selectors: [selectors.body],
     label: `${space}_external-link-meganav`,

@@ -6,21 +6,18 @@
         jcr:primaryType="ws:Page">
     <jcr:content
             jcr:primaryType="ws:PageContent"
-            jcr:title="author-1 category-2 article"
+            jcr:title="Table of content Hierarchy"
             sling:resourceType="kyanite/blogs/components/blogarticlepage"
+            ws:lastModifiedBy="wsadmin"
             ws:template="/libs/kyanite/blogs/templates/blogarticlepage"
-            description="author-1 category-2 article"
-            heroImage="/content/kyanite-visual-tests/assets/Windows XP.png/"
-            heroImageAlt="hero-image-alt"
             navbarFixed="true"
             navbarFixedPosition="has-navbar-fixed-top"
-            publicationDate="2000-01-02"
-            readTime="5"
-            title="author-1 category-2 article">
+            title="Article">
         <author
                 jcr:primaryType="nt:unstructured"
-                authorInfoSource="authorPage"
-                authorPageLink="/content/kyanite-visual-tests-dark-mode/pages/blog-listing-author-filtered/author-1/"/>
+                authorInfoSource="ownProperties"
+                authorName="John Doe"
+                authorRole="CEO"/>
         <pagecontainer
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/pagecontainer">
@@ -29,18 +26,19 @@
                     sling:resourceType="kyanite/common/components/navbarreference"/>
             <section
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="kyanite/common/components/section">
+                    sling:resourceType="kyanite/common/components/section/fixedsection"
+                    renderAsHero="false">
                 <container
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="kyanite/common/components/container">
+                        sling:resourceType="kyanite/common/components/container/fixedcontainer">
                     <columns1
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="kyanite/common/components/columns"
+                            sling:resourceType="kyanite/common/components/columns/fixedcolumns"
                             columnsActivationLevel="is-desktop"
                             isMultiline="true">
                         <column1
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="kyanite/common/components/columns/column"
+                                sling:resourceType="kyanite/common/components/columns/column/fixedcolumn"
                                 customClass="sticky-container">
                             <desktopColumnStyle
                                     jcr:primaryType="nt:unstructured"
@@ -64,7 +62,7 @@
                         </column1>
                         <column2
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="kyanite/common/components/columns/column">
+                                sling:resourceType="kyanite/common/components/columns/column/fixedcolumn">
                             <desktopColumnStyle
                                     jcr:primaryType="nt:unstructured"
                                     isNormalColumn="true"
@@ -91,11 +89,12 @@
                         </column2>
                         <column3
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="kyanite/common/components/columns/column"
+                                sling:resourceType="kyanite/common/components/columns/column/fixedcolumn"
                                 customClass="sticky-container">
                             <desktopColumnStyle
                                     jcr:primaryType="nt:unstructured"
                                     isNormalColumn="true"
+                                    size="two"
                                     offsetType="evenNumber"
                                     sizeType="evenNumber"/>
                             <blogposttableofcontents
@@ -103,7 +102,8 @@
                                     sling:resourceType="kyanite/blogs/components/blogposttableofcontents"
                                     maxHeadingLevel="2"
                                     minHeadingLevel="6"
-                                    showBackToTopButton="true"/>
+                                    showBackToTopButton="true"
+                                    title="ToC"/>
                             <tabletColumnStyle
                                     jcr:primaryType="nt:unstructured"
                                     isNormalColumn="true"
@@ -135,18 +135,72 @@
                                     isNormalColumn="true"
                                     offsetType="evenNumber"
                                     sizeType="evenNumber"/>
+                            <title_1_3
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="kyanite/common/components/title"
+                                    element="h4"
+                                    size="is-6"
+                                    text="&lt;p>4444 wrong element (should be skipped)&lt;/p>&lt;p>&lt;/p>"/>
                             <title
                                     jcr:primaryType="nt:unstructured"
                                     sling:resourceType="kyanite/common/components/title"
                                     element="h2"
-                                    text="Title"/>
-                            <content
+                                    size="is-4"
+                                    text="&lt;p>22 with wrong hierarchy&lt;/p>"/>
+                            <title_1
                                     jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="kyanite/common/components/content"
-                                    color=""
-                                    size="is-medium"
-                                    text="&lt;p>Content&lt;/p>">
-                            </content>
+                                    sling:resourceType="kyanite/common/components/title"
+                                    element="h4"
+                                    size="is-6"
+                                    text="&lt;p>4444 wrong order element&lt;/p>"/>
+                            <title_2
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="kyanite/common/components/title"
+                                    element="h3"
+                                    size="is-5"
+                                    text="&lt;p>333 must be visible in ToC&lt;/p>"/>
+                            <title_3
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="kyanite/common/components/title"
+                                    element="h2"
+                                    size="is-4"
+                                    text="&lt;p>22 with no children&lt;/p>"/>
+                            <title_4
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="kyanite/common/components/title"
+                                    element="h2"
+                                    size="is-4"
+                                    text="&lt;p>22 with correct hierarchy&lt;/p>"/>
+                            <title_1_1
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="kyanite/common/components/title"
+                                    element="h3"
+                                    size="is-5"
+                                    text="&lt;p>333 subelement with no children&lt;/p>"/>
+                            <title_1_1_1
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="kyanite/common/components/title"
+                                    element="h3"
+                                    size="is-5"
+                                    text="&lt;p>333 subelement with children&lt;/p>"/>
+                            <title_1_2
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="kyanite/common/components/title"
+                                    element="h4"
+                                    size="is-6"
+                                    text="&lt;p>4444 &lt;/p>"/>
+                            <title_1_2_1
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="kyanite/common/components/title"
+                                    element="h4"
+                                    size="is-6"
+                                    text="&lt;p>4444 &lt;/p>"/>
+                            <title_1_1_1_1
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="kyanite/common/components/title"
+                                    element="h3"
+                                    size="is-5"
+                                    text="&lt;p>333 last element&lt;/p>"/>
                         </column4>
                     </columns1>
                 </container>
