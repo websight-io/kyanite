@@ -42,21 +42,47 @@ public class TableCellComponentTest {
   }
 
   @Test
-  void defaultTableCellComponentModelTest() {
-    TableCellComponent model = context.resourceResolver().getResource(PATH + "/tablebody/tablerow1/default")
-        .adaptTo(TableCellComponent.class);
+  void shouldUseDefaultsWhenNoConfigurationSet() {
+    final TableCellComponent model = createModel("tablebody/tablerow1/default");
+
     assertThat(model).isNotNull();
     assertThat(model.getText()).isEqualTo("Content");
     assertThat(model.getRowspan()).isEqualTo(1);
     assertThat(model.getColspan()).isEqualTo(12);
+    assertThat(model.getLeftIcon()).isEmpty();
+    assertThat(model.getRightIcon()).isEmpty();
   }
 
   @Test
-  void tableCellComponentModelTest() {
-    TableCellComponent model = context.resourceResolver().getResource(PATH + "/tablebody/tablerow2/complex")
-        .adaptTo(TableCellComponent.class);
+  void shouldUseAuthorProvidedConfigurationWhenSet() {
+    final TableCellComponent model = createModel("tablebody/tablerow2/complex");
+
+    assertThat(model).isNotNull();
     assertThat(model.getText()).isEqualTo("Table cell text");
     assertThat(model.getRowspan()).isEqualTo(2);
     assertThat(model.getColspan()).isEqualTo(3);
+  }
+
+  @Test
+  void shouldResolveLeftIconWhenEnabled() {
+    final TableCellComponent model = createModel("tablebody/tablerow3/withLeftIcon");
+
+    assertThat(model).isNotNull();
+    assertThat(model.getLeftIcon()).isNotEmpty();
+    assertThat(model.getRightIcon()).isEmpty();
+  }
+
+  @Test
+  void shouldResolveRightIconWhenEnabled() {
+    final TableCellComponent model = createModel("tablebody/tablerow3/withRightIcon");
+
+    assertThat(model).isNotNull();
+    assertThat(model.getLeftIcon()).isEmpty();
+    assertThat(model.getRightIcon()).isNotEmpty();
+  }
+
+  private TableCellComponent createModel(final String componentResourceSubPath) {
+    return context.resourceResolver().getResource(PATH + "/" + componentResourceSubPath)
+        .adaptTo(TableCellComponent.class);
   }
 }

@@ -9,13 +9,17 @@
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "text",
         "label": "Text",
-        "ws:disallowedContext": ["edit:panel"]
+        "ws:disallowedContext": [
+          "edit:panel"
+        ]
       },
       "panelText": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "text",
         "label": "Text",
-        "ws:disallowedContext": ["edit:dialog"],
+        "ws:disallowedContext": [
+          "edit:dialog"
+        ],
         "configuration": "wcm/dialogs/components/richtext/configurations/compact"
       },
       "columns": {
@@ -33,7 +37,147 @@
         "max": 100,
         "label": "Rows",
         "description": "The number of rows the cell should span"
+      },
+      "iconVariant": {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "iconVariant",
+        "label": "Icon",
+        "none": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "No icon",
+          "value": "",
+          "selected": "true"
+        },
+        "iconOnTheLeft": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Icon to the left",
+          "value": "icon-on-the-left"
+        },
+        "iconOnTheRight": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Icon to the right",
+          "value": "icon-on-the-right"
+        }
+      }
+    },
+    "iconTabs": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "Icon",
+      "embeddedIcon": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/icon/dialog/tabs",
+        "namespace": "embeddedIcon",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/icon/dialog/tabs",
+          "generalTab": {
+            "typedIcon": {
+              "ws:display": {
+                "condition": {
+                  "sourceName": "embeddedIcon/selectOrType"
+                }
+              }
+            },
+            "iconFA": {
+              "selectableIcon": {
+                "include": {
+                  "sling:resourceSuperType": "kyanite/common/components/common/icon/icons/fontawesome",
+                  "name": "embeddedIcon/icon"
+                },
+                "ws:display": {
+                  "condition": {
+                    "sourceName": "embeddedIcon/selectOrType"
+                  }
+                }
+              },
+              "iconSize": {
+                "include": {
+                  "sling:resourceSuperType": "kyanite/common/components/common/icon/iconsize/fontawesome",
+                  "name": "embeddedIcon/iconSize"
+                }
+              },
+              "ws:display": {
+                "condition": {
+                  "sourceName": "embeddedIcon/iconLibType"
+                }
+              }
+            },
+            "iconMD": {
+              "selectableIcon": {
+                "include": {
+                  "sling:resourceSuperType": "kyanite/common/components/common/icon/icons/materialdesign",
+                  "name": "embeddedIcon/icon"
+                },
+                "ws:display": {
+                  "condition": {
+                    "sourceName": "embeddedIcon/selectOrType"
+                  }
+                }
+              },
+              "iconSize": {
+                "include": {
+                  "sling:resourceSuperType": "kyanite/common/components/common/icon/iconsize/materialdesign",
+                  "name": "embeddedIcon/iconSize"
+                }
+              },
+              "ws:display": {
+                "condition": {
+                  "sourceName": "embeddedIcon/iconLibType"
+                }
+              }
+            },
+            "iconSymbols": {
+              "selectableIcon": {
+                "include": {
+                  "sling:resourceSuperType": "kyanite/common/components/common/icon/icons/symbols",
+                  "name": "embeddedIcon/icon"
+                },
+                "ws:display": {
+                  "condition": {
+                    "sourceName": "embeddedIcon/selectOrType"
+                  }
+                }
+              },
+              "iconSize": {
+                "include": {
+                  "sling:resourceSuperType": "kyanite/common/components/common/icon/iconsize/symbols",
+                  "name": "embeddedIcon/iconSize"
+                }
+              },
+              "ws:display": {
+                "condition": {
+                  "sourceName": "embeddedIcon/iconLibType"
+                }
+              }
+            },
+            "textVariant": {
+              "include": {
+                "sling:resourceSuperType": "kyanite/common/components/common/textvariant",
+                "name": "embeddedIcon/textVariant"
+              }
+            }
+          },
+          "textTab": {
+            "textContainer": {
+              "ws:display": {
+                "condition": {
+                  "sourceName": "embeddedIcon/addText"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ws:display": {
+        "condition": {
+          "sourceName": "iconVariant",
+          "values": [
+            "icon-on-the-left",
+            "icon-on-the-right"
+          ]
+        }
       }
     }
   }
 }
+
+
