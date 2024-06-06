@@ -106,15 +106,15 @@ export class AnimatedEndings {
 
   static setFontSize(titleEl: HTMLElement) {
     if (window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches) {
-      const currentSize = Number(
+      const initialSize = Number(
         window.getComputedStyle(titleEl).fontSize.split('px')[0]
       );
       const lineHeight = Number(
         window.getComputedStyle(titleEl).lineHeight.split('px')[0]
       );
 
-      if (!isNaN(currentSize) && !isNaN(lineHeight)) {
-        adjustTitleFontSize(titleEl, currentSize, lineHeight);
+      if (!isNaN(initialSize) && !isNaN(lineHeight)) {
+        adjustTitleFontSize(titleEl, initialSize, lineHeight);
       }
     }
   }

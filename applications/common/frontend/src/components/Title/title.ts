@@ -40,8 +40,8 @@ const setAnimatedEndingsHeight = () => {
         ).forEach((animatedEndingsEl: HTMLElement) => {
           const noTitleWrapping = animatedEndingsEl.dataset.noTitleWrapping;
 
-          if (noTitleWrapping) {
-            AnimatedEndings.setFontSize(component); // different values when onDomContentLoaded 
+          if (JSON.parse(noTitleWrapping)) {
+            AnimatedEndings.setFontSize(component); // different values when onDomContentLoaded
           } else {
             AnimatedEndings.setHeightOfTitle(component);
           }
