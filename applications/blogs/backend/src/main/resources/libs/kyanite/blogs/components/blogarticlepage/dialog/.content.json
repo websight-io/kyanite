@@ -33,6 +33,13 @@
         "description": "Hero image",
         "label": "Hero image"
       },
+      "heroImageMobile": {
+        "sling:resourceType": "wcm/dialogs/components/pathpicker",
+        "rootPath": "/content",
+        "name": "heroImageMobile",
+        "description": "Hero image variation for mobile (optionally)",
+        "label": "Hero image, mobile version"
+      },
       "heroImageAlt": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "heroImageAlt",

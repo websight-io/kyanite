@@ -64,6 +64,9 @@ public class BlogArticleHeaderModel {
   private String heroImage;
 
   @ValueMapValue
+  private String heroImageMobile;
+
+  @ValueMapValue
   @Getter
   @Default(values = StringUtils.EMPTY)
   private String heroImageAlt;
@@ -85,6 +88,10 @@ public class BlogArticleHeaderModel {
 
   public String getHeroImage() {
     return LinkUtil.handleLink(heroImage, resourceResolver);
+  }
+
+  public String getHeroImageMobile() {
+    return LinkUtil.handleLink(heroImageMobile, resourceResolver);
   }
 
   public String getFormattedPublicationDate() {
