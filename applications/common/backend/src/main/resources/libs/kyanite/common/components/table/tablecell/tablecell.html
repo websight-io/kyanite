@@ -18,11 +18,10 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.table.TableCellComponent">
   <td rowspan="${model.rowspan}" colspan="${model.colspan}">
-    <sly data-sly-set.leftIcon="${model.leftIcon}" data-sly-test="${leftIcon}">
-      <sly data-sly-resource="${leftIcon.path @ resourceType='kyanite/common/components/icon'}"/>
+    <sly data-sly-test="">
+      ${model.text @ context='unsafe'}
     </sly>
-    ${model.text @ context='unsafe'}
-    <sly data-sly-set.rightIcon="${model.rightIcon}" data-sly-test="${rightIcon}">
+    <sly data-sly-test="">
       <sly data-sly-resource="${rightIcon.path @ resourceType='kyanite/common/components/icon'}"/>
     </sly>
   </td>
