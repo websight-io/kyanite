@@ -16,6 +16,8 @@
 
 package pl.ds.kyanite.common.components.models.table;
 
+import static org.apache.commons.lang3.StringUtils.equalsIgnoreCase;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.StreamSupport;
@@ -39,6 +41,7 @@ import pl.ds.kyanite.common.components.models.table.dto.TableRowData;
 public class TableCellComponent {
 
   private static final String DEFAULT_TEXT = "Content";
+  private static final String PN_ICON_VARIANT = "iconVariant";
   private static final int DEFAULT_COLSPAN = 1;
   private static final int DEFAULT_ROWSPAN = 1;
 
@@ -56,7 +59,7 @@ public class TableCellComponent {
   private Resource currentResource;
 
   @ValueMapValue
-  private String iconVariant;
+  private String cellType = CellType.TEXT.name();
 
   @ChildResource(name = "embeddedIcon")
   private Resource iconResource;
@@ -66,6 +69,31 @@ public class TableCellComponent {
     if (StringUtils.isEmpty(text)) {
       text = DEFAULT_TEXT;
     }
+  }
+
+  public boolean isShowText() {
+    return equalsIgnoreCase(CellType.TEXT.name(), cellType);
+  }
+
+  public boolean isShowIcon() {
+    return equalsIgnoreCase(CellType.ICON.name(), cellType);
+  }
+
+  public Optional<Resource> getIcon() {
+    return Optional.ofNullable(iconResource)
+        .filter(resource -> !ResourceUtil.isNonExistingResource(resource));
+  }
+
+  public boolean isIconOnTheLeft() {
+    return !isIconOnTheRight();
+  }
+
+  public boolean isIconOnTheRight() {
+    return getIcon()
+        .map(Resource::getValueMap)
+        .map(valueMap -> valueMap.get(PN_ICON_VARIANT, IconLayout.ON_THE_LEFT.variantName))
+        .filter(iconLayout -> equalsIgnoreCase(IconLayout.ON_THE_RIGHT.variantName, iconLayout))
+        .isPresent();
   }
 
   public int getColspan() {
@@ -156,18 +184,9 @@ public class TableCellComponent {
     throw new IllegalStateException("Expected to always find the current cell in cells list");
   }
 
-  public Optional<Resource> getLeftIcon() {
-    return getIcon(IconLayout.ON_THE_LEFT);
-  }
-
-  public Optional<Resource> getRightIcon() {
-    return getIcon(IconLayout.ON_THE_RIGHT);
-  }
-
-  private Optional<Resource> getIcon(final IconLayout iconLayout) {
-    return Optional.ofNullable(iconResource)
-        .filter(resource -> !ResourceUtil.isNonExistingResource(resource))
-        .filter(resource -> StringUtils.equalsIgnoreCase(iconLayout.variantName, iconVariant));
+  private enum CellType {
+    TEXT,
+    ICON
   }
 
   private enum IconLayout {

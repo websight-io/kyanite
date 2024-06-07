@@ -10,22 +10,23 @@
       "complex": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "kyanite/common/components/table/tablecell",
+        "cellType": "text",
         "text": "Table cell text",
         "rows": 2,
         "columns": 3
       }
     },
     "tablerow3": {
-      "withLeftIcon": {
+      "withLeftOrientedIcon": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "kyanite/common/components/table/tablecell",
-        "textVariant": "",
-        "iconVariant": "icon-on-the-left",
+        "cellType": "icon",
         "text": "\u003Cp\u003ETable cell content\u003C/p\u003E",
         "embeddedIcon": {
           "jcr:primaryType": "nt:unstructured",
           "addText": "true",
           "iconSize": "mdi-36px",
+          "iconVariant": "icon-on-the-left",
           "textVariant": "has-text-success",
           "iconLibType": "mdi",
           "icon": "mdi-home-outline",
@@ -35,16 +36,17 @@
           "selectOrType": "select"
         }
       },
-      "withRightIcon": {
+      "withRightOrientedIcon": {
         "jcr:primaryType": "nt:unstructured",
         "sling:resourceType": "kyanite/common/components/table/tablecell",
         "textVariant": "",
-        "iconVariant": "icon-on-the-right",
+        "cellType": "icon",
         "text": "\u003Cp\u003ETable cell content\u003C/p\u003E",
         "embeddedIcon": {
           "jcr:primaryType": "nt:unstructured",
           "addText": "true",
           "iconSize": "mdi-36px",
+          "iconVariant": "icon-on-the-right",
           "textVariant": "has-text-success",
           "iconLibType": "mdi",
           "icon": "mdi-home-outline",

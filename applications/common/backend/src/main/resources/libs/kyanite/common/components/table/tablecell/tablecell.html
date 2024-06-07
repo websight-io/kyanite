@@ -18,11 +18,11 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.table.TableCellComponent">
   <td rowspan="${model.rowspan}" colspan="${model.colspan}">
-    <sly data-sly-test="">
+    <sly data-sly-test="${model.showText}">
       ${model.text @ context='unsafe'}
     </sly>
-    <sly data-sly-test="">
-      <sly data-sly-resource="${rightIcon.path @ resourceType='kyanite/common/components/icon'}"/>
-    </sly>
+    <div data-sly-test="${model.showIcon && model.icon}" class="${model.iconOnTheLeft ? 'on-the-left' : (model.iconOnTheRight ? 'on-the-right' : '')}">
+      <sly data-sly-resource="${model.icon.path @ resourceType='kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"/>
+    </div>
   </td>
 </sly>
