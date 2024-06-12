@@ -17,12 +17,10 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.table.TableCellComponent">
-  <td rowspan="${model.rowspan}" colspan="${model.colspan}">
+  <td rowspan="${model.rowspan}" colspan="${model.colspan}" class="${model.showIcon && model.icon && model.iconOnTheRight ? 'icon-on-the-right' : ''}">
     <sly data-sly-test="${model.showText}">
       ${model.text @ context='unsafe'}
     </sly>
-    <div data-sly-test="${model.showIcon && model.icon}" class="${model.iconOnTheLeft ? 'on-the-left' : (model.iconOnTheRight ? 'on-the-right' : '')}">
-      <sly data-sly-resource="${model.icon.path @ resourceType='kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"/>
-    </div>
+    <sly data-sly-test="${model.showIcon && model.icon}" data-sly-resource="${model.icon.path @ resourceType='kyanite/common/components/icon', requestAttributes = wcmmode.disabledModeAttribute}"/>
   </td>
 </sly>
