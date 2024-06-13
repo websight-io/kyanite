@@ -55,7 +55,7 @@
             </sly>
           </sly>
         <!--/* end */-->
-        <span class="${model.endingsClasses @ join=' '} typed-animation" data-show-cursor="${model.showCursor}" data-endings="${model.endingJson}" data-speed="${model.speed}" data-delay="${model.delay}">
+        <span class="${model.endingsClasses @ join=' '} typed-animation" data-no-title-wrapping="${model.noTitleWrapping}" data-show-cursor="${model.showCursor}" data-endings="${model.endingJson}" data-speed="${model.speed}" data-delay="${model.delay}">
         </span>
         <sly data-sly-test="${!model.showCursor}"><span class="typed-cursor" style="visibility: hidden" aria-hidden="true">|</span></sly>
       </div>

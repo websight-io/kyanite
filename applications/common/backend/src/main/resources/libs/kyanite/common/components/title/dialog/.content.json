@@ -177,6 +177,13 @@
 					"label": "Show typed text cursor?",
 					"default": "false"
 				},
+				"noTitleWrapping": {
+					"sling:resourceType": "wcm/dialogs/components/checkbox",
+					"name": "noTitleWrapping",
+					"label": "Disable text wrapping by reducing the font size (mobile only)",
+					"description": "Not recommended for long endings",
+					"default": "false"
+				},
 				"ws:display": {
 					"condition": {
 						"sourceName": "addAnimatedEndings",
