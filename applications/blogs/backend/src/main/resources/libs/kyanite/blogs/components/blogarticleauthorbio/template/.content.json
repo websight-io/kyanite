@@ -39,6 +39,28 @@
           "iconSize": "fa-lg",
           "selectOrType": "select"
         }
+      },
+      "link": {
+        "jcr:primaryType": "nt:unstructured",
+        "sling:resourceType": "kyanite/common/components/link",
+        "size": "is-medium",
+        "variant": "is-dark",
+        "showIconLeft": false,
+        "showIconRight": false,
+        "leftIcon": {
+          "jcr:primaryType": "nt:unstructured",
+          "selectOrType": "select",
+          "iconLibType": "mdi",
+          "icon": "mdi-home-outline",
+          "iconSize": "fa-lg"
+        },
+        "rightIcon": {
+          "jcr:primaryType": "nt:unstructured",
+          "selectOrType": "select",
+          "iconLibType": "mdi",
+          "icon": "mdi-home-outline",
+          "iconSize": "fa-lg"
+        }
       }
     }
   }
