@@ -67,18 +67,12 @@
         @extend .mb-0;
         color: var(--kyanite-gray-30) !important;
       }
-      .author-social-media {
-        > .ws-placeholder {
-          min-width: 125px;
-        }
-      }
      }
-  
-     // will be enabled with TODO https://teamds.atlassian.net/browse/WSIO-176
-     .link {
-      @extend .a-link;
-      // @extend .mt-5_3;
-      font-weight: var(--kyanite-weight-medium);
-     }
+     .author-social-media {
+      .link {
+        @extend .a-link;
+        font-weight: var(--kyanite-weight-medium);
+       }
+    }
   }
  }
