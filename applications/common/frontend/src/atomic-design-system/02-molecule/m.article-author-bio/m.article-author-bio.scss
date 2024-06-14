@@ -16,81 +16,112 @@
  * -->
  */
 
-@use 'src/variables-helpers';
+ @use 'src/variables-helpers';
 
-@use 'src/atomic-design-system/00-token/t.spacing' as spacing;
-@use 'src/atomic-design-system/00-token/t.border' as border;
-@use 'src/atomic-design-system/01-atom/a.link' as link;
-@use 'src/atomic-design-system/01-atom/a.animated-underline-link' as
-  animated-link;
+ @use 'src/atomic-design-system/00-token/t.spacing' as spacing;
+ @use 'src/atomic-design-system/00-token/t.border' as border;
+ @use 'src/atomic-design-system/01-atom/a.link' as link;
+ @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as
+   animated-link;
+ 
+ @mixin m-article-author-bio {
+   @extend .mt-6_1;
+   @extend .px-6_2;
+   @extend .py-5_3;
+ 
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+ 
+   border-top: var(--border-weight-1) solid;
+   border-color: var(--kyanite-primary);
+   gap: 1.5rem;
 
-@mixin m-article-author-bio {
-  @extend .mt-6_1;
-  @extend .px-6_2;
-  @extend .py-5_3;
-
-  border-top: var(--border-weight-1) solid;
-  border-color: var(--kyanite-primary);
-
-  .author-bio-block {
-
-    display: block;
-    margin-bottom: 10px;
-
-    .author-short-info {
-      @extend .t-gap-5;
-    }
-
+   .author-bio {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
     .author-photo {
-      @extend .m-0;
-
       .image {
         margin-bottom: 0 !important;
+        img {
+          height: 100%;
+          width: 100%;
+        }
       }
     }
-
-    .author-name {
-      @extend .m-0;
-
-      font-size: var(--font-size-24);
-      font-weight: var(--kyanite-weight-semibold);
-      color: var(--kyanite-gray-15) !important;
+    .author-info {
+      .name {
+        font-size: var(--font-size-24);
+        font-weight: var(--kyanite-weight-semibold);
+        color: var(--kyanite-gray-15) !important;
+      }
+      .role {
+        font-weight: var(--kyanite-weight-semibold);
+        color: var(--kyanite-primary);
+      }
     }
-
-    .author-role {
-      @extend .m-0;
-      @extend .mt-1_2;
-
-      font-weight: var(--kyanite-weight-semibold);
-      color: var(--kyanite-primary);
-    }
-
     .author-description {
-      @extend .mt-5_3;
       @extend .mb-0;
-
       color: var(--kyanite-gray-30) !important;
     }
-
-    .link {
-      @extend .a-link;
-
-      @extend .mt-5_3;
-      font-weight: var(--kyanite-weight-medium);
-    }
-
-    //  social media buttons on one line
-    &.social-media {
-
-      > * {
-        margin-left: auto;
-        margin-bottom: auto;
-      }
-
-      //  edit mode placeholder fix
+    .author-links {
       > .ws-placeholder {
         min-width: 125px;
       }
     }
-  }
-}
+   }
+
+   // will be enabled with TODO https://teamds.atlassian.net/browse/WSIO-176
+   .link {
+    @extend .a-link;
+    @extend .mt-5_3;
+    font-weight: var(--kyanite-weight-medium);
+   }
+ 
+  //  .author-bio-block {
+ 
+  //    margin-bottom: 10px;
+ 
+  //    &.author-info {
+ 
+  //      display: block;
+ 
+  //      > .id {
+  //        @extend .t-gap-5;
+ 
+  //        display: flex;
+  //        align-items: center;
+ 
+  //        .photo {
+ 
+
+  //        }
+  //    }
+ 
+  //      > .description {
+         
+  //    }
+ 
+  //      
+  //      > .link {
+       
+  //    }
+  //  }
+ 
+  //    //  social media buttons on one line
+  //    &.social-media {
+ 
+  //      > * {
+  //        margin-left: auto;
+  //        margin-bottom: auto;
+  //      }
+ 
+  //      //  edit mode placeholder fix
+  //      > .ws-placeholder {
+  //        min-width: 125px;
+  //      }
+  //    }
+  //  }
+ }
