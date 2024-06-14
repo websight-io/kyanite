@@ -27,5 +27,8 @@
   .blog-article-author-bio {
     margin-top: 0 !important;
     border-top: none;
+    .author-bio-wrapper {
+      flex-wrap: nowrap;
+    }
   }
 }

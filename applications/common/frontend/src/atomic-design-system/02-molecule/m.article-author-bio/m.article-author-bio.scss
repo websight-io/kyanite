@@ -28,100 +28,57 @@
    @extend .mt-6_1;
    @extend .px-6_2;
    @extend .py-5_3;
- 
-   display: flex;
-   justify-content: space-between;
-   flex-wrap: wrap;
- 
+
    border-top: var(--border-weight-1) solid;
    border-color: var(--kyanite-primary);
-   gap: 1.5rem;
-
-   .author-bio {
+  
+  .author-bio-wrapper {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 1.25rem;
-    .author-photo {
-      .image {
-        margin-bottom: 0 !important;
-        img {
-          height: 100%;
-          width: 100%;
+    gap: 1.5rem;
+    .author-bio {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.35rem;
+      .author-photo {
+        .image {
+          margin-bottom: 0 !important;
+          img {
+            height: 100%;
+            width: 100%;
+          }
         }
       }
-    }
-    .author-info {
-      .name {
-        font-size: var(--font-size-24);
-        font-weight: var(--kyanite-weight-semibold);
-        color: var(--kyanite-gray-15) !important;
+      .author-info {
+        display: flex;
+        flex-direction: column;
+        .name {
+          font-size: var(--font-size-24);
+          font-weight: var(--kyanite-weight-semibold);
+          color: var(--kyanite-gray-15) !important;
+        }
+        .role {
+          font-weight: var(--kyanite-weight-semibold);
+          color: var(--kyanite-primary);
+        }
       }
-      .role {
-        font-weight: var(--kyanite-weight-semibold);
-        color: var(--kyanite-primary);
+      .author-description {
+        @extend .mb-0;
+        color: var(--kyanite-gray-30) !important;
       }
-    }
-    .author-description {
-      @extend .mb-0;
-      color: var(--kyanite-gray-30) !important;
-    }
-    .author-links {
-      > .ws-placeholder {
-        min-width: 125px;
+      .author-social-media {
+        > .ws-placeholder {
+          min-width: 125px;
+        }
       }
-    }
-   }
-
-   // will be enabled with TODO https://teamds.atlassian.net/browse/WSIO-176
-   .link {
-    @extend .a-link;
-    @extend .mt-5_3;
-    font-weight: var(--kyanite-weight-medium);
-   }
- 
-  //  .author-bio-block {
- 
-  //    margin-bottom: 10px;
- 
-  //    &.author-info {
- 
-  //      display: block;
- 
-  //      > .id {
-  //        @extend .t-gap-5;
- 
-  //        display: flex;
-  //        align-items: center;
- 
-  //        .photo {
- 
-
-  //        }
-  //    }
- 
-  //      > .description {
-         
-  //    }
- 
-  //      
-  //      > .link {
-       
-  //    }
-  //  }
- 
-  //    //  social media buttons on one line
-  //    &.social-media {
- 
-  //      > * {
-  //        margin-left: auto;
-  //        margin-bottom: auto;
-  //      }
- 
-  //      //  edit mode placeholder fix
-  //      > .ws-placeholder {
-  //        min-width: 125px;
-  //      }
-  //    }
-  //  }
+     }
+  
+     // will be enabled with TODO https://teamds.atlassian.net/browse/WSIO-176
+     .link {
+      @extend .a-link;
+      // @extend .mt-5_3;
+      font-weight: var(--kyanite-weight-medium);
+     }
+  }
  }

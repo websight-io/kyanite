@@ -20,39 +20,40 @@
 <template data-sly-template.template="${ @ model}">
   <sly data-sly-test.author="${model.authorInfoModel}">
     <article class="container blog-article-author-bio layout-default">
-      <div class="author-bio">
-        <figure class="author-photo">
-          <p class="image is-96x96">
-            <sly data-sly-set.leadsToAuthorPage="
-              ${((author.authorOwnerPath != null)
-               && (author.authorOwnerPath != currentPage.path))}"></sly>
-            <a data-sly-unwrap="${!leadsToAuthorPage}"
-              href="${author.authorOwnerUrl}" target="">
-              <img data-sly-test.authorPhoto="${author.authorPhoto}"
-                src="${authorPhoto}" alt="${author.authorPhotoAlt}"
-                class="is-rounded"
-              />
-            </a>
-          </p>
-        </figure>
-        <div class="author-info">
-          <span data-sly-test.authorName="${author.authorName}"
-              class="name">${authorName}</span>
-          <span data-sly-test.authorRole="${author.authorRole}"
-              class="role">${authorRole}</span>
+      <div class="author-bio-wrapper">
+        <div class="author-bio">
+          <figure class="author-photo">
+            <p class="image is-96x96">
+              <sly data-sly-set.leadsToAuthorPage="
+                ${((author.authorOwnerPath != null)
+                && (author.authorOwnerPath != currentPage.path))}"></sly>
+              <a data-sly-unwrap="${!leadsToAuthorPage}"
+                href="${author.authorOwnerUrl}" target="">
+                <img data-sly-test.authorPhoto="${author.authorPhoto}"
+                  src="${authorPhoto}" alt="${author.authorPhotoAlt}"
+                  class="is-rounded"
+                />
+              </a>
+            </p>
+          </figure>
+          <div class="author-info">
+            <span data-sly-test.authorName="${author.authorName}"
+                class="name">${authorName}</span>
+            <span data-sly-test.authorRole="${author.authorRole}"
+                class="role">${authorRole}</span>
+          </div>
+          <div class="author-description">
+            <p data-sly-test.authorDescription="${author.authorDescription}">${authorDescription}</p>
+          </div>
         </div>
-      </div>
-
-      <div class="author-description">
-        <p data-sly-test.authorDescription="${author.authorDescription}">${authorDescription}</p>
-      </div>
-      <div class="author-links">
-        <sly data-sly-set.socialMediaMode=
-                 "${ (    (author.authorOwnerPath == currentPage.path)
-                 || (author.authorOwnerPath == resource.path))
-               ? wcmmode.editModeAttribute
-               : wcmmode.previewModeAttribute}"></sly>
-        <sly data-sly-resource="${author.socialMedia @ requestAttributes=socialMediaMode}"></sly>
+        <div class="author-social-media">
+          <sly data-sly-set.socialMediaMode=
+                  "${ (    (author.authorOwnerPath == currentPage.path)
+                  || (author.authorOwnerPath == resource.path))
+                ? wcmmode.editModeAttribute
+                : wcmmode.previewModeAttribute}"></sly>
+          <sly data-sly-resource="${author.socialMedia @ requestAttributes=socialMediaMode}"></sly>
+        </div>
       </div>
     </article>
   </sly>
