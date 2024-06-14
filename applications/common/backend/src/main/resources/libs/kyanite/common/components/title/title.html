@@ -22,7 +22,7 @@
       ${model.eyebrowText}
     </h6>
   </sly>
-  <h1 id="${model.anchorId}" style="text-align: ${model.titleAlign @ context='styleToken'};" data-sly-element="${model.element}" class="${model.titleClasses @ join=' '}">
+  <h1 id="${model.anchorId}" style="text-align: ${model.titleAlign @ context='styleToken'};" data-sly-element="${model.element}" class="${model.titleClasses @ join=' '} ${model.addAnimatedEndings ? 'is-relative' : ''}">
     ${model.textAsOneLine @ context='html'}
     
     <sly data-sly-test="${model.addAnimatedEndings}">
@@ -38,10 +38,10 @@
       <div class="title-container" data-sly-test="${!wcmmode.isEdit && model.endings}">
           <!--/* for SEO purposes and to get the heighest element */-->
           <sly data-sly-test="${model.addAnimatedEndings}">
-          <div class="container-with-endings ${model.endingsClasses @ join=' '}">
+          <div class="container-with-endings ${model.endingsClasses @ join=' '} ${model.titleAlign}">
             <sly data-sly-list.item="${model.endings}">
               <span>
-                ${item.value}
+                ${item.value}<sly data-sly-test="${model.showCursor}">|</sly>
               </span>
             </sly>
           </div>

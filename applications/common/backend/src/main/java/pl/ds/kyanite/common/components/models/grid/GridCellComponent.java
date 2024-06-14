@@ -16,48 +16,38 @@
 
 package pl.ds.kyanite.common.components.models.grid;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.models.annotations.injectorspecific.Self;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
 @Model(
-    adaptables = { Resource.class },
+    adaptables = Resource.class,
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
+@Getter
 public class GridCellComponent {
 
-  @Inject
-  @Getter
-  @Default(intValues = 1)
-  private int width;
+  public static final String GRID_CELL_RESOURCE_TYPE = "kyanite/common/components/grid/gridcell";
+
+  private final int desktopWidth;
+  private final int tabletWidth;
+  private final int mobileWidth;
+  private final int height;
 
   @Inject
-  @Getter
-  @Default(intValues = 1)
-  private int height;
+  public GridCellComponent(
+      @ValueMapValue(name = "width") final String desktopWidth,
+      @ValueMapValue(name = "tabletWidth") final String tabletWidth,
+      @ValueMapValue(name = "mobileWidth") final String mobileWidth,
+      @ValueMapValue(name = "height") final String height) {
 
-  @Getter
-  private String[] classes;
-
-  @PostConstruct
-  private void init() {
-    List<String> classList = new ArrayList<>();
-
-    if (width > 1) {
-      classList.add(String.format("is-col-span-%s", width));
-    }
-    if (height > 1) {
-      classList.add(String.format("is-row-span-%s", height));
-    }
-
-    classes = classList.toArray(new String[]{});
+    this.desktopWidth = NumberUtils.toInt(desktopWidth, 1);
+    this.tabletWidth = NumberUtils.toInt(tabletWidth, this.desktopWidth);
+    this.mobileWidth = NumberUtils.toInt(mobileWidth, this.desktopWidth);
+    this.height = NumberUtils.toInt(height, 1);
   }
-
 }

@@ -22,22 +22,25 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
+@Getter
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class CodeSnippetComponent {
 
   @ValueMapValue
-  @Getter
   private String title;
 
   @ValueMapValue
-  @Getter
   private String fileName;
 
   @ValueMapValue
-  @Getter
   private String fileType;
 
   @ValueMapValue
-  @Getter
   private String code;
+
+  @ValueMapValue
+  private Boolean isExpandingOn;
+
+  @ValueMapValue
+  private Boolean isInitiallyExpanded;
 }

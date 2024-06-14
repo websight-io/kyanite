@@ -18,6 +18,6 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.table.TableCellComponent">
   <td rowspan="${model.rowspan}" colspan="${model.colspan}">
-    ${model.text @ context='html'}
+    ${model.text @ context='unsafe'}
   </td>
 </sly>

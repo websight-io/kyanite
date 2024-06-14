@@ -19,14 +19,20 @@
         "sling:resourceType": "wcm/dialogs/components/numberfield",
         "label": "Max heading level",
         "name": "maxHeadingLevel",
-        "min": 1,
+        "min": 2,
+        "max": 6
+      },
+      "minHeadingLevel": {
+        "sling:resourceType": "wcm/dialogs/components/numberfield",
+        "label": "Min heading level",
+        "name": "minHeadingLevel",
+        "min": 2,
         "max": 6
       },
       "showBackToTopButton": {
         "sling:resourceType": "wcm/dialogs/components/toggle",
         "name": "showBackToTopButton",
-        "label": "Display back to top button",
-        "checkedByDefault": "true"
+        "label": "Display back to top button"
       },
       "container": {
         "sling:resourceType": "wcm/dialogs/components/container",

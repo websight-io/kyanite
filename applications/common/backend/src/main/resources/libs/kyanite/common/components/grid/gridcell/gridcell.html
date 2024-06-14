@@ -17,11 +17,11 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.grid.GridCellComponent"
-     data-sly-set.classes="cell ${model.classes @ join=' '}">
+     data-sly-set.classes="cell is-col-span-${model.desktopWidth}-desktop is-col-span-${model.tabletWidth}-tablet is-col-span-${model.mobileWidth}-mobile is-row-span-${model.height}">
   <sly data-sly-test="${resource.hasChildren}">
     <div class="${classes}">
       <sly data-sly-list="${resource.children}">
-        <sly data-sly-resource="${item @ resourceType=item.resourceType}"></sly>
+        <sly data-sly-resource="${item}"></sly>
       </sly>
     </div>
   </sly>

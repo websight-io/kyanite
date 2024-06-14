@@ -25,12 +25,11 @@ import org.apache.sling.testing.mock.sling.junit5.SlingContextExtension;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import pl.ds.kyanite.common.components.models.table.TableCellComponent;
 
 @ExtendWith(SlingContextExtension.class)
 public class TableCellComponentTest {
 
-  private static final String PATH = "/content/tablecell";
+  private static final String PATH = "/content/table";
 
   private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
 
@@ -44,17 +43,17 @@ public class TableCellComponentTest {
 
   @Test
   void defaultTableCellComponentModelTest() {
-    TableCellComponent model = context.resourceResolver().getResource(PATH + "/default")
+    TableCellComponent model = context.resourceResolver().getResource(PATH + "/tablebody/tablerow1/default")
         .adaptTo(TableCellComponent.class);
     assertThat(model).isNotNull();
     assertThat(model.getText()).isEqualTo("Content");
     assertThat(model.getRowspan()).isEqualTo(1);
-    assertThat(model.getColspan()).isEqualTo(1);
+    assertThat(model.getColspan()).isEqualTo(12);
   }
 
   @Test
   void tableCellComponentModelTest() {
-    TableCellComponent model = context.resourceResolver().getResource(PATH + "/complex")
+    TableCellComponent model = context.resourceResolver().getResource(PATH + "/tablebody/tablerow2/complex")
         .adaptTo(TableCellComponent.class);
     assertThat(model.getText()).isEqualTo("Table cell text");
     assertThat(model.getRowspan()).isEqualTo(2);

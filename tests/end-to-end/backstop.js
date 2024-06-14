@@ -32,7 +32,7 @@ const selectors = {
 
 const viewports = [
   { label: 'md-mini', width: 360,  height: 480  },
-  { label: 'md',      width: 768,  height: 1024 },
+  { label: 'md',      width: 769,  height: 1024 },
   { label: 'lg',      width: 1025, height: 768  },
   { label: 'xl',      width: 1216, height: 1024 },
   { label: 'mx',      width: 1408, height: 900  }
@@ -47,6 +47,9 @@ const getPublishedPageUrl = ({ space, page }) => {
 };
 
 const spaces = ['kyanite-visual-tests', 'kyanite-visual-tests-dark-mode'];
+
+const postHoverIntervalMs = 1000;
+const postClickIntervalMs = 1000;
 
 const scenarios = spaces.flatMap(space => [
   { space: space, page: 'icons' },
@@ -63,20 +66,23 @@ const scenarios = spaces.flatMap(space => [
   { space: space, page: 'navbar', selectors: [selectors.header] },
   { space: space, page: 'navbar', selectors: [selectors.body],
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
-    viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label))
+    viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
+    postInteractionWait: postHoverIntervalMs,
   },
   { space: space, page: 'navbar-megadropdown', selectors: [selectors.body],
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
-    viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label))
+    viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
+    postInteractionWait: postHoverIntervalMs,
   },
   { space: space, page: 'navbar-megadropdown', selectors: [selectors.body],
     clickSelectors: ['.navbar-burger', '.navbar-item.has-dropdown'],
     viewports: viewports.filter((viewport) => ['md-mini', 'md'].includes(viewport.label)),
-    postInteractionWait: 1000,
+    postInteractionWait: postClickIntervalMs,
   },
   { space: space, page: 'navbar-megadropdown-columns', selectors: [selectors.body],
     hoverSelector: '.navbar-item.has-dropdown.is-hoverable',
-    viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label))
+    viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
+    postInteractionWait: postHoverIntervalMs,
   },
   { space: space, page: 'blog-article-header/blog-article-page', selectors: [selectors.container] },
   { space: space, page: 'blog-listing', selectors: [selectors.container] },
@@ -87,20 +93,25 @@ const scenarios = spaces.flatMap(space => [
   { space: space, page: 'blog-listing-author-filtered/author-1', selectors: [selectors.content] },
   { space: space, page: 'blog-listing-author-filtered/author-2', selectors: [selectors.content] },
   { space: space, page: 'code-snippet', selectors: ['.code-snippet'] },
-  { space: space, page: 'grid', selectors: ['.grid'] },
+  { space: space, page: 'grid/grid-columns-number', selectors: ['.grid'] },
+  { space: space, page: 'grid/grid-layout',         selectors: ['.grid'] },
   { space: space, page: 'hero', selectors: ['.hero'] },
   { space: space, page: 'message', selectors: [selectors.container] },
   { space: space, page: 'table-of-content/table-of-content' },
+  { space: space, page: 'table-of-content/table-of-content-no-title' },
+  { space: space, page: 'table-of-content/table-of-content-hierarchy' },
   { space: space, page: 'card-full-height-variant', selectors: [selectors.body] },
   { space: space, page: 'navbar-external-links', selectors: [selectors.body],
     label: `${space}_external-link-meganav`,
     clickSelector: '.navbar-item.has-dropdown.is-hoverable',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
+    postInteractionWait: postClickIntervalMs,
   },
   { space: space, page: 'navbar-external-links', selectors: [selectors.body],
     label: `${space}_external-link-dropdown-menu`,
     clickSelector: '.navbar-item.has-dropdown.is-hoverable:nth-of-type(2)',
     viewports: viewports.filter((viewport) => ['lg', 'xl', 'mx'].includes(viewport.label)),
+    postInteractionWait: postClickIntervalMs,
   },
   { space: space, page: 'container/container-alignment',  selectors: [ selectors.container] },
   { space: space, page: 'level/level-item-alignment',     selectors: [ selectors.all] },
@@ -108,6 +119,7 @@ const scenarios = spaces.flatMap(space => [
   { space: space, page: 'carousel/carousel-itemsshown-06-scroll',   selectors: [selectors.all] },
   { space: space, page: 'carousel/carousel-itemsshown-12-noscroll', selectors: [selectors.all] },
   { space: space, page: 'carousel/carousel-itemsshown-12-scroll',   selectors: [selectors.all] },
+  { space: space, page: 'quote',   selectors: ['.quote'] },
   { space: space, page: 'table',   selectors: [selectors.all] },
   { space: space, page: 'tag',   selectors: [selectors.container] },
 

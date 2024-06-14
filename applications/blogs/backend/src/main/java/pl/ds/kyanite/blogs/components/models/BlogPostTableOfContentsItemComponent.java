@@ -16,14 +16,35 @@
 
 package pl.ds.kyanite.blogs.components.models;
 
-import lombok.AllArgsConstructor;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.Getter;
+import lombok.Setter;
+import org.jetbrains.annotations.Nullable;
 
 @Getter
-@AllArgsConstructor
 public class BlogPostTableOfContentsItemComponent {
 
-  private String title;
-  private String url;
-  private String headingLevel;
+  private final String title;
+  private final String url;
+  private final String headingLevel;
+
+  private final List<BlogPostTableOfContentsItemComponent> subTitles = new ArrayList<>();
+
+  @Nullable
+  @Setter
+  private BlogPostTableOfContentsItemComponent parent;
+
+  BlogPostTableOfContentsItemComponent(String title, String url, String headingLevel) {
+    this.title        = title;
+    this.url          = url;
+    this.headingLevel = headingLevel;
+  }
+
+  BlogPostTableOfContentsItemComponent(
+      String title, String url, String headingLevel,
+      @Nullable BlogPostTableOfContentsItemComponent parent) {
+    this(title, url, headingLevel);
+    this.parent = parent;
+  }
 }

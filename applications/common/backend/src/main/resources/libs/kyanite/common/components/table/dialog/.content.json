@@ -39,6 +39,12 @@
         "name": "isScrollable",
         "label": "Scrollable table",
         "description": "Make the table scrollable"
+      },
+      "isFirstColumnLocked": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "name": "isFirstColumnLocked",
+        "label": "Lock first column for scrolling (only tablet and up)",
+        "description": "When table gets horizontal scroll, the first column will be locked and its width will be fixed."
       }
     }
   }

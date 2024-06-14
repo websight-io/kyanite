@@ -16,12 +16,18 @@
   ~
 */-->
 
-<sly data-sly-template.fixedGrid="${ @ model}">
-  <div class="fixed-grid ${model.fixedGridClasses @ join=' '}">
-    <div class="grid ${model.commonGridClasses @ join=' '}">
-      <sly data-sly-list.cell="${resource.children}">
-        <sly data-sly-resource="${cell @ resourceType=cell.resourceType}"></sly>
-      </sly>
-    </div>
-  </div>
+<sly data-sly-template.title="${ @ title}">
+  <li class="table-content-list__item--${title.headingLevel}">
+    <a class="" data-sly-attribute.href="#${title.url}" class="button is-text">
+      ${title.title}
+    </a>
+    <sly data-sly-test.subTitles="${title.subTitles}">
+      <ul class="table-content-list-inner">
+        <sly data-sly-list.subTitle="${subTitles}">
+          <sly data-sly-use.template="./templates/template-table-of-contents-element.html"
+               data-sly-call="${template.title @ title=subTitle}"></sly>
+        </sly>
+      </ul>
+    </sly>
+  </li>
 </sly>

@@ -90,7 +90,9 @@
               },
               "blogposttableofcontents": {
                 "sling:resourceType": "kyanite/blogs/components/blogposttableofcontents",
-                "maxHeadingLevel": "2"
+                "maxHeadingLevel": "2",
+                "minHeadingLevel": "6",
+                "showBackToTopButton": true
               },
               "desktopColumnStyle": {
                 "jcr:primaryType": "nt:unstructured",
@@ -113,6 +115,7 @@
             },
             "column4": {
               "sling:resourceType": "kyanite/common/components/columns/column",
+              "customClass" : "previewImageContainer",
               "desktopColumnStyle": {
                 "jcr:primaryType": "nt:unstructured",
                 "size": "eight",
