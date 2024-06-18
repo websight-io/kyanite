@@ -118,6 +118,10 @@ public class TitleComponent {
 
   @Inject
   @Getter
+  private String noTitleWrapping;
+
+  @Inject
+  @Getter
   private Integer speed;
 
   @Inject
