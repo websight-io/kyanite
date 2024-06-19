@@ -1,6 +1,6 @@
 <!--/*
   ~
-  ~     Copyright (C) 2023 Dynamic Solutions
+  ~     Copyright (C) 2024 Dynamic Solutions
   ~
   ~     Licensed under the Apache License, Version 2.0 (the "License");
   ~     you may not use this file except in compliance with the License.
@@ -16,11 +16,11 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.kyanite.blogs.components.models.BlogArticleHeaderComponent">
-  <sly data-sly-use.template="${model.templatePath}"
-       data-sly-call="${template.template @ model=model}">
+<template data-sly-template.template="${ @ model}">
+  <sly data-sly-test="${wcmmode.isEdit}">
+    <sly data-sly-test.errMessage="${model.authorInfoErrMessage}">
+      <div>Failed to retrieve author info</div>
+      <div>${errMessage}</div>
+    </sly>
   </sly>
-  <sly data-sly-use.template="../common/templates/authorinfo/template-edit-mode-error-message.html"
-       data-sly-call="${template.template @ model=model}">
-  </sly>
-</sly>
+</template>
