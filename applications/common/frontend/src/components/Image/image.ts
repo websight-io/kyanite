@@ -66,6 +66,8 @@ const defaultSettings = {
     'srcset',
     'useMap',
   ],
+  // transition needs to be disabled because there is strange animation pause between initial image and the zoomed one.
+  // there is no way to set the default zoom level at the start (https://github.com/fengyuanchen/viewerjs/issues/268)
   transition: false,
 }
 
