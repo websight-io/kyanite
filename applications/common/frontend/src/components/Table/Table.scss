@@ -61,6 +61,16 @@
           }
         }
       }
+      td {
+        &.icon-on-the-right {
+          .icon-text {
+            flex-direction: row-reverse;
+          }
+        }
+        .icon-text {
+          gap: 1rem;
+        }
+      }
     }
     &.is-first-column-locked {
       .table {
