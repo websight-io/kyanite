@@ -2,31 +2,62 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:ws="http://ds.pl/websight" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
     jcr:primaryType="ws:Page">
     <jcr:content
-        jcr:lastModified="{Date}2023-06-01T12:21:43.245Z"
+        jcr:lastModified="{Date}2024-06-19T11:27:22.393Z"
         jcr:lastModifiedBy="wsadmin"
         jcr:primaryType="ws:PageContent"
-        jcr:title="Blog article author bio"
+        jcr:title="article page - my branch"
         sling:resourceType="kyanite/blogs/components/blogarticlepage"
-        ws:lastModified="{Date}2023-06-02T09:13:21.799Z"
+        ws:lastModified="{Date}2024-06-20T06:16:22.205Z"
         ws:lastModifiedBy="wsadmin"
         ws:template="/libs/kyanite/blogs/templates/blogarticlepage"
-        description="article-desc"
-        fancyBackground="false"
-        heroImage="/content/kyanite-visual-tests/assets/Event-driven.png/"
-        heroImageAlt="hero-alt"
+        description="\0"
+        heroImageAlt="\0"
         navbarFixed="true"
         navbarFixedPosition="has-navbar-fixed-top"
-        publicationDate="2023-06-01"
-        readTime="55"
-        title="article-title">
+        ogDescription="\0"
+        ogTitle="\0"
+        ogUrl="\0"
+        publicationDate="2024-06-11"
+        readTime="13"
+        title="\0"
+        twitterDescription="\0"
+        twitterImageAlt="\0"
+        twitterSite="\0"
+        twitterTitle="\0">
         <author
+            jcr:primaryType="nt:unstructured"
+            authorDescription="Goal oriented and not afraid to step out of his comfort zone. He specializes in AEM based websites development and maintenance, including AEM components."
+            authorInfoSource="ownProperties"
+            authorName="John Doe"
+            authorPhoto="/content/kyanite-visual-tests/assets/blog-image-example.jpeg"
+            authorPhotoAlt="alt"
+            authorRole="DXP multiverse ruler">
+            <socialMedia
                 jcr:primaryType="nt:unstructured"
-                authorInfoSource="ownProperties"
-                authorDescription="Goal oriented and not afraid to step out of his comfort zone. He specializes in AEM based websites development and maintenance, including AEM components."
-                authorName="John Doe"
-                authorPhoto="/content/kyanite-visual-tests/assets/blog-article-author-bio.png"
-                authorPhotoAlt="author-photo-alt"
-                authorRole="DXP multiverse ruler"/>
+                sling:resourceType="kyanite/blogs/components/blogarticleauthorbio/socialmedia">
+                <link
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="kyanite/common/components/link"
+                    label="John's other articles"
+                    showIconLeft="{Boolean}false"
+                    showIconRight="true"
+                    size="is-medium"
+                    variant="is-dark">
+                    <leftIcon
+                        jcr:primaryType="nt:unstructured"
+                        icon="mdi-home-outline"
+                        iconLibType="mdi"
+                        iconSize="fa-lg"
+                        selectOrType="select"/>
+                    <rightIcon
+                        jcr:primaryType="nt:unstructured"
+                        icon="mdi-arrow-top-right"
+                        iconLibType="mdi"
+                        iconSize="fa-lg"
+                        selectOrType="type"/>
+                </link>
+            </socialMedia>
+        </author>
         <pagecontainer
             jcr:primaryType="nt:unstructured"
             sling:resourceType="kyanite/common/components/pagecontainer">
@@ -35,78 +66,126 @@
                 sling:resourceType="kyanite/common/components/navbarreference"/>
             <section
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="kyanite/common/components/section" renderAsHero="false">
+                sling:resourceType="kyanite/common/components/section/fixedsection"
+                renderAsHero="false">
                 <container
                     jcr:primaryType="nt:unstructured"
-                    sling:resourceType="kyanite/common/components/container">
+                    sling:resourceType="kyanite/common/components/container/fixedcontainer">
                     <columns1
                         jcr:primaryType="nt:unstructured"
-                        sling:resourceType="kyanite/common/components/columns">
+                        sling:resourceType="kyanite/common/components/columns/fixedcolumns"
+                        columnsActivationLevel="is-desktop"
+                        isMultiline="true">
                         <column1
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="kyanite/common/components/columns/column">
+                            sling:resourceType="kyanite/common/components/columns/column/fixedcolumn"
+                            customClass="sticky-container">
                             <desktopColumnStyle
                                 jcr:primaryType="nt:unstructured"
-                                size="two"/>
+                                isNormalColumn="true"
+                                offsetType="evenNumber"
+                                size="two"
+                                sizeType="evenNumber"/>
+                            <tabletColumnStyle
+                                jcr:primaryType="nt:unstructured"
+                                isNormalColumn="true"
+                                offsetType="evenNumber"
+                                sizeType="evenNumber"/>
+                            <mobileColumnStyle
+                                jcr:primaryType="nt:unstructured"
+                                isNormalColumn="true"
+                                offsetType="evenNumber"
+                                sizeType="evenNumber"/>
                             <backbutton
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/blogs/components/blogpostbackbutton"/>
                         </column1>
                         <column2
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="kyanite/common/components/columns/column">
+                            sling:resourceType="kyanite/common/components/columns/column/fixedcolumn">
                             <desktopColumnStyle
                                 jcr:primaryType="nt:unstructured"
-                                size="eight"/>
-                            <content
+                                isNormalColumn="true"
+                                offsetType="evenNumber"
+                                size="eight"
+                                sizeType="evenNumber"/>
+                            <tabletColumnStyle
                                 jcr:primaryType="nt:unstructured"
-                                sling:resourceType="kyanite/common/components/content"
-                                text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in ex id nibh suscipit venenatis. Aenean fringilla orci vitae velit vehicula vehicula. Integer a purus eget risus scelerisque ornare sit amet in nisi. Pellentesque ac erat tincidunt, elementum diam in, pretium nisi. Etiam vitae nisl lectus.&lt;/p>&lt;p>Aenean placerat justo at tellus vestibulum bibendum. Integer vitae neque nisl. Sed dignissim posuere imperdiet. Pellentesque placerat, dui et tincidunt fringilla, ligula est fringilla orci, sit amet iaculis lorem erat at ante. Donec diam lacus, placerat at feugiat et, scelerisque id neque. Praesent a pellentesque quam, id varius turpis.&lt;/p>&lt;p>Nulla mi purus, congue at est id, finibus vulputate magna. Vestibulum euismod ante eget quam viverra pharetra. Suspendisse nisi eros, ornare at condimentum iaculis, tempus tempus odio. Quisque congue eleifend dui, at vulputate massa condimentum quis.&lt;/p>"/>
-                            <blogarticleauthorbio
-                                    jcr:primaryType="nt:unstructured"
-                                    sling:resourceType="kyanite/blogs/components/blogarticleauthorbio"
-                                    link="/content/kyanite-visual-tests/pages/wsio-114-blog-article-author-bio">
-                                <author
-                                        jcr:primaryType="nt:unstructured"
-                                        authorInfoSource="parentPage"/>
-                            </blogarticleauthorbio>
+                                isNormalColumn="true"
+                                offsetType="evenNumber"
+                                sizeType="evenNumber"/>
+                            <mobileColumnStyle
+                                jcr:primaryType="nt:unstructured"
+                                isNormalColumn="true"
+                                offsetType="evenNumber"
+                                sizeType="evenNumber"/>
                         </column2>
                         <column3
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="kyanite/common/components/columns/column">
+                            sling:resourceType="kyanite/common/components/columns/column/fixedcolumn"
+                            customClass="sticky-container">
+                            <desktopColumnStyle
+                                jcr:primaryType="nt:unstructured"
+                                isNormalColumn="true"
+                                offsetType="evenNumber"
+                                sizeType="evenNumber"/>
                             <blogposttableofcontents
                                 jcr:primaryType="nt:unstructured"
                                 sling:resourceType="kyanite/blogs/components/blogposttableofcontents"
                                 maxHeadingLevel="2"
                                 minHeadingLevel="6"
-                                showBackToTopButton="true"/>
+                                showBackToTopButton="{Boolean}true"/>
+                            <tabletColumnStyle
+                                jcr:primaryType="nt:unstructured"
+                                isNormalColumn="true"
+                                offsetType="evenNumber"
+                                sizeType="evenNumber"/>
+                            <mobileColumnStyle
+                                jcr:primaryType="nt:unstructured"
+                                isNormalColumn="true"
+                                offsetType="evenNumber"
+                                sizeType="evenNumber"/>
                         </column3>
-                    </columns1>
-                    <columns2
-                        jcr:primaryType="nt:unstructured"
-                        sling:resourceType="kyanite/common/components/columns">
-                        <column1
+                        <column4
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="kyanite/common/components/columns/column">
+                            sling:resourceType="kyanite/common/components/columns/column"
+                            customClass="previewImageContainer">
                             <desktopColumnStyle
                                 jcr:primaryType="nt:unstructured"
+                                isNormalColumn="true"
                                 offset="two"
-                                size="eight"/>
-                        </column1>
-                    </columns2>
+                                offsetType="evenNumber"
+                                size="eight"
+                                sizeType="evenNumber"/>
+                            <tabletColumnStyle
+                                jcr:primaryType="nt:unstructured"
+                                isNormalColumn="true"
+                                offsetType="evenNumber"
+                                sizeType="evenNumber"/>
+                            <mobileColumnStyle
+                                jcr:primaryType="nt:unstructured"
+                                isNormalColumn="true"
+                                offsetType="evenNumber"
+                                sizeType="evenNumber"/>
+                            <content
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/common/components/content"
+                                size="is-medium"
+                                text="&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis in ex id nibh suscipit venenatis. Aenean fringilla orci vitae velit vehicula vehicula. Integer a purus eget risus scelerisque ornare sit amet in nisi. Pellentesque ac erat tincidunt, elementum diam in, pretium nisi. Etiam vitae nisl lectus.&lt;/p>&lt;p style=&quot;text-align: start&quot;>Aenean placerat justo at tellus vestibulum bibendum. Integer vitae neque nisl. Sed dignissim posuere imperdiet. Pellentesque placerat, dui et tincidunt fringilla, ligula est fringilla orci, sit amet iaculis lorem erat at ante. Donec diam lacus, placerat at feugiat et, scelerisque id neque. Praesent a pellentesque quam, id varius turpis.&lt;/p>&lt;p style=&quot;text-align: start&quot;>Nulla mi purus, congue at est id, finibus vulputate magna. Vestibulum euismod ante eget quam viverra pharetra. Suspendisse nisi eros, ornare at condimentum iaculis, tempus tempus odio. Quisque congue eleifend dui, at vulputate massa condimentum quis.&lt;/p>"/>
+                            <authorBio
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/blogs/components/blogarticleauthorbio">
+                                <author
+                                    jcr:primaryType="nt:unstructured"
+                                    authorInfoSource="parentPage"/>
+                            </authorBio>
+                        </column4>
+                    </columns1>
                 </container>
             </section>
             <footerreference
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="kyanite/common/components/footerreference"/>
         </pagecontainer>
-        <tags jcr:primaryType="nt:unstructured">
-            <_x0030_
-                jcr:primaryType="nt:unstructured"
-                text="tag1"/>
-            <_x0031_
-                jcr:primaryType="nt:unstructured"
-                text="tag 2"/>
-        </tags>
     </jcr:content>
 </jcr:root>
