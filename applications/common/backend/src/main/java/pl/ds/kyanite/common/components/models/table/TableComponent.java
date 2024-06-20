@@ -50,7 +50,6 @@ public class TableComponent {
   private boolean isScrollable;
 
   @Inject
-  @Getter
   private boolean isFirstColumnLocked;
 
   @Inject
@@ -78,12 +77,13 @@ public class TableComponent {
       classes.add("is-hoverable");
     }
     if (isFullwidth) {
-      classes.add("is-fullwidth");
       containerClasses.add("is-table-fullwidth");
     }
     if (isScrollable) {
-      classes.add("is-scrollable");
       containerClasses.add("is-table-scrollable");
+    }
+    if (isFirstColumnLocked) {
+      containerClasses.add("is-table-locked-first-column");
     }
     tableClasses = classes.toArray(new String[]{});
     tableContainerClasses = containerClasses.toArray(new String[] {});
