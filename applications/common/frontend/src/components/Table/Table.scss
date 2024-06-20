@@ -22,14 +22,14 @@
  $mobileCellWidth: 296px;
  $desktopCellWidth: 320px;
 
- @mixin tableIsScrollableCellsWidth {
+ @mixin fixedCellsWidth {
     min-width: $mobileCellWidth;
     @include breakpoint.media-breakpoint-large {
       min-width: $desktopCellWidth;
     }
  }
 
- @mixin tableIsLockedFirstCellCellsWidth {
+ @mixin stickyCell {
   @include breakpoint.media-breakpoint-medium {
     position: sticky;
     z-index: 1;
@@ -52,18 +52,18 @@
       .table {
         thead {
           th:first-child {
-            @include tableIsLockedFirstCellCellsWidth;
+            @include stickyCell;
           }
           th {
-            @include tableIsScrollableCellsWidth;
+            @include fixedCellsWidth;
           }
         }
         tbody {
           td:first-child {
-            @include tableIsLockedFirstCellCellsWidth;
+            @include stickyCell;
           }
           td {
-            @include tableIsScrollableCellsWidth;
+            @include fixedCellsWidth;
           }
         }
       }
@@ -75,12 +75,12 @@
       .table {
         thead {
           th {
-            @include tableIsScrollableCellsWidth;
+            @include fixedCellsWidth;
           }
         }
         tbody {
           td {
-            @include tableIsScrollableCellsWidth;
+            @include fixedCellsWidth;
           }
         }
       }
