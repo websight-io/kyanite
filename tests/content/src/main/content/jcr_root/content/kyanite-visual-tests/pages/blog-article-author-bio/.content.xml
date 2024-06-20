@@ -119,6 +119,13 @@
                                 isNormalColumn="true"
                                 offsetType="evenNumber"
                                 sizeType="evenNumber"/>
+                            <blogarticleheader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="kyanite/blogs/components/blogarticleheader">
+                                <author
+                                    jcr:primaryType="nt:unstructured"
+                                    authorInfoSource="parentPage"/>
+                            </blogarticleheader>
                         </column2>
                         <column3
                             jcr:primaryType="nt:unstructured"
