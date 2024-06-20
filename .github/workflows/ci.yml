@@ -24,12 +24,22 @@ env:
   MAVEN_CACHE_VERSION: v7.0.0 # bump cache version number to invalidate cache i.e. v3 > v4
   MAVEN_CACHE_PATH: ~/.m2/repository
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WEBSIGHT_RELEASES_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_WEBSIGHT_RELEASES_RELEASE_DEPLOY_SA }}
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -43,12 +53,6 @@ jobs:
           key: ${{ env.MAVEN_CACHE_VERSION }}-${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ env.MAVEN_CACHE_VERSION }}-${{ runner.os }}-maven
 
-      - name: Set up QEMU # https://github.com/docker/buildx/issues/499
-        uses: docker/setup-qemu-action@v2
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
       - name: Build and run e2e tests
         run: ./mvnw --batch-mode clean verify -P e2e-functional
 
@@ -59,7 +63,7 @@ jobs:
           key: ${{ env.MAVEN_CACHE_VERSION }}-${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
 
       - name: Switch to base branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.base.ref }}
       - uses: actions/cache/restore@v3
@@ -73,7 +77,7 @@ jobs:
         run: cp -R ./tests/end-to-end/backstop_data/bitmaps_reference $HOME/bitmaps_reference
   
       - name: Switch to PR branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Add snapshot references from base branch to the project
         run: cp -R $HOME/bitmaps_reference ./tests/end-to-end/backstop_data
       - name: Remove temporary storage of snapshot references
