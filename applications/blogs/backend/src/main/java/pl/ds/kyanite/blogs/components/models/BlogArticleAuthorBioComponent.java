@@ -27,12 +27,13 @@ import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingException;
 import pl.ds.kyanite.blogs.components.services.AuthorInfoResolverService;
+import pl.ds.kyanite.common.components.models.layouts.TemplateHandler;
 
 @Model(
     adaptables = {Resource.class},
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
-public class BlogArticleAuthorBioComponent {
+public class BlogArticleAuthorBioComponent implements TemplateHandler {
 
   private final Resource resource;
 

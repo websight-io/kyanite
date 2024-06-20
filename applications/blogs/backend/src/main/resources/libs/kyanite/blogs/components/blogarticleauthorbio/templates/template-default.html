@@ -1,0 +1,60 @@
+<!--/*
+  ~
+  ~     Copyright (C) 2024 Dynamic Solutions
+  ~
+  ~     Licensed under the Apache License, Version 2.0 (the "License");
+  ~     you may not use this file except in compliance with the License.
+  ~     You may obtain a copy of the License at
+  ~
+  ~         http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~     Unless required by applicable law or agreed to in writing, software
+  ~     distributed under the License is distributed on an "AS IS" BASIS,
+  ~     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~     See the License for the specific language governing permissions and
+  ~     limitations under the License.
+  ~
+
+*/-->
+
+<template data-sly-template.template="${ @ model}">
+  <sly data-sly-test.author="${model.authorInfoModel}">
+    <article class="container blog-article-author-bio layout-default">
+      <div class="author-bio-wrapper">
+        <div class="author-bio">
+          <figure class="author-photo">
+            <p class="image is-96x96">
+              <sly data-sly-set.leadsToAuthorPage="
+                ${((author.authorOwnerPath != null)
+                && (author.authorOwnerPath != currentPage.path))}"></sly>
+              <a data-sly-unwrap="${!leadsToAuthorPage}"
+                href="${author.authorOwnerUrl}" target="">
+                <img data-sly-test.authorPhoto="${author.authorPhoto}"
+                  src="${authorPhoto}" alt="${author.authorPhotoAlt}"
+                  class="is-rounded"
+                />
+              </a>
+            </p>
+          </figure>
+          <div class="author-info">
+            <span data-sly-test.authorName="${author.authorName}"
+                class="name">${authorName}</span>
+            <span data-sly-test.authorRole="${author.authorRole}"
+                class="role">${authorRole}</span>
+          </div>
+          <div class="author-description">
+            <p data-sly-test.authorDescription="${author.authorDescription}">${authorDescription}</p>
+          </div>
+        </div>
+        <div class="author-social-media">
+          <sly data-sly-set.socialMediaMode=
+                  "${ (    (author.authorOwnerPath == currentPage.path)
+                  || (author.authorOwnerPath == resource.path))
+                ? wcmmode.editModeAttribute
+                : wcmmode.previewModeAttribute}"></sly>
+          <sly data-sly-resource="${author.socialMedia @ requestAttributes=socialMediaMode}"></sly>
+        </div>
+      </div>
+    </article>
+  </sly>
+</template>
