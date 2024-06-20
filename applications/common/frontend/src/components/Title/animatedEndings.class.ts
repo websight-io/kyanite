@@ -59,7 +59,9 @@ export class AnimatedEndings {
     this.element = element;
     this.titleElement = title;
     this.showCursor = JSON.parse(element.dataset.showCursor);
-    this.noTitleWrapping = JSON.parse(element.dataset.noTitleWrapping);
+    this.noTitleWrapping = JSON.parse(
+      element.dataset.noTitleWrapping || 'false'
+    );
     this.speed = Number(element.dataset.speed);
     this.delay = Number(element.dataset.delay);
     this.strings = JSON.parse(element.dataset.endings);
