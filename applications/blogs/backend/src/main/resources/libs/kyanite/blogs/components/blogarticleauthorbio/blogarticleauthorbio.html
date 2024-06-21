@@ -17,13 +17,10 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.blogs.components.models.BlogArticleAuthorBioComponent">
-  <sly data-sly-use.template="./template-default.html"
-       data-sly-call="${template.default @ model=model}">
+  <sly data-sly-use.template="${model.templatePath}"
+       data-sly-call="${template.template @ model=model}">
   </sly>
-  <sly data-sly-test="${wcmmode.isEdit}">
-    <sly data-sly-test.errMessage="${model.authorInfoErrMessage}">
-      <div>Failed to retrieve author info</div>
-      <div>${errMessage}</div>
-    </sly>
+  <sly data-sly-use.template="../common/templates/authorinfo/template-edit-mode-error-message.html"
+       data-sly-call="${template.template @ model=model}">
   </sly>
 </sly>

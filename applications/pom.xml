@@ -21,7 +21,7 @@
   <parent>
     <groupId>pl.ds.kyanite</groupId>
     <artifactId>kyanite</artifactId>
-    <version>0.6.3-SNAPSHOT</version>
+    <version>0.7.2-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -328,7 +328,7 @@
       <dependency>
         <groupId>pl.ds.websight</groupId>
         <artifactId>websight-assets-core-api</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.7</version>
         <scope>provided</scope>
       </dependency>
       <dependency>
@@ -339,7 +339,7 @@
       <dependency>
         <groupId>pl.ds.websight</groupId>
         <artifactId>websight-pages-core-api</artifactId>
-        <version>3.0.0</version>
+        <version>${websight.pages.version}</version>
         <scope>provided</scope>
       </dependency>
     </dependencies>

@@ -42,21 +42,58 @@ public class TableCellComponentTest {
   }
 
   @Test
-  void defaultTableCellComponentModelTest() {
-    TableCellComponent model = context.resourceResolver().getResource(PATH + "/tablebody/tablerow1/default")
-        .adaptTo(TableCellComponent.class);
+  void shouldUseDefaultsWhenNoConfigurationSet() {
+    final TableCellComponent model = createModel("tablebody/tablerow1/default");
+
     assertThat(model).isNotNull();
+    assertThat(model.isShowText()).isTrue();
     assertThat(model.getText()).isEqualTo("Content");
     assertThat(model.getRowspan()).isEqualTo(1);
     assertThat(model.getColspan()).isEqualTo(12);
+    assertThat(model.isShowIcon()).isFalse();
+    assertThat(model.getIcon()).isEmpty();
   }
 
   @Test
-  void tableCellComponentModelTest() {
-    TableCellComponent model = context.resourceResolver().getResource(PATH + "/tablebody/tablerow2/complex")
-        .adaptTo(TableCellComponent.class);
+  void shouldUseAuthorProvidedConfigurationWhenSet() {
+    final TableCellComponent model = createModel("tablebody/tablerow2/complex");
+
+    assertThat(model).isNotNull();
+    assertThat(model.isShowText()).isTrue();
     assertThat(model.getText()).isEqualTo("Table cell text");
     assertThat(model.getRowspan()).isEqualTo(2);
     assertThat(model.getColspan()).isEqualTo(3);
+    assertThat(model.isShowIcon()).isFalse();
+  }
+
+  @Test
+  void shouldResolveLeftOrientedIconWhenEnabled() {
+    final TableCellComponent model = createModel("tablebody/tablerow3/withLeftOrientedIcon");
+
+    assertThat(model).isNotNull();
+    assertThat(model.isShowText()).isFalse();
+
+    assertThat(model.isShowIcon()).isTrue();
+    assertThat(model.getIcon()).isNotEmpty();
+    assertThat(model.isIconOnTheLeft()).isTrue();
+    assertThat(model.isIconOnTheRight()).isFalse();
+  }
+
+  @Test
+  void shouldResolveRightIconWhenEnabled() {
+    final TableCellComponent model = createModel("tablebody/tablerow3/withRightOrientedIcon");
+
+    assertThat(model).isNotNull();
+    assertThat(model.isShowText()).isFalse();
+
+    assertThat(model.isShowIcon()).isTrue();
+    assertThat(model.getIcon()).isNotEmpty();
+    assertThat(model.isIconOnTheLeft()).isFalse();
+    assertThat(model.isIconOnTheRight()).isTrue();
+  }
+
+  private TableCellComponent createModel(final String componentResourceSubPath) {
+    return context.resourceResolver().getResource(PATH + "/" + componentResourceSubPath)
+        .adaptTo(TableCellComponent.class);
   }
 }

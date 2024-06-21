@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2024 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,8 @@
 
 package pl.ds.kyanite.common.components.models.table;
 
+import static org.apache.commons.lang3.StringUtils.equalsIgnoreCase;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.StreamSupport;
@@ -25,9 +27,12 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceUtil;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import pl.ds.kyanite.common.components.models.table.dto.TableCellData;
 import pl.ds.kyanite.common.components.models.table.dto.TableRowData;
 
@@ -36,6 +41,7 @@ import pl.ds.kyanite.common.components.models.table.dto.TableRowData;
 public class TableCellComponent {
 
   private static final String DEFAULT_TEXT = "Content";
+  private static final String PN_ICON_VARIANT = "iconVariant";
   private static final int DEFAULT_COLSPAN = 1;
   private static final int DEFAULT_ROWSPAN = 1;
 
@@ -52,11 +58,42 @@ public class TableCellComponent {
   @SlingObject
   private Resource currentResource;
 
+  @ValueMapValue
+  private String cellType = CellType.TEXT.name();
+
+  @ChildResource(name = "embeddedIcon")
+  private Resource iconResource;
+
   @PostConstruct
   private void init() {
     if (StringUtils.isEmpty(text)) {
       text = DEFAULT_TEXT;
     }
+  }
+
+  public boolean isShowText() {
+    return equalsIgnoreCase(CellType.TEXT.name(), cellType);
+  }
+
+  public boolean isShowIcon() {
+    return equalsIgnoreCase(CellType.ICON.name(), cellType);
+  }
+
+  public Optional<Resource> getIcon() {
+    return Optional.ofNullable(iconResource)
+        .filter(resource -> !ResourceUtil.isNonExistingResource(resource));
+  }
+
+  public boolean isIconOnTheLeft() {
+    return !isIconOnTheRight();
+  }
+
+  public boolean isIconOnTheRight() {
+    return getIcon()
+        .map(Resource::getValueMap)
+        .map(valueMap -> valueMap.get(PN_ICON_VARIANT, IconLayout.ON_THE_LEFT.variantName))
+        .filter(iconLayout -> equalsIgnoreCase(IconLayout.ON_THE_RIGHT.variantName, iconLayout))
+        .isPresent();
   }
 
   public int getColspan() {
@@ -69,10 +106,10 @@ public class TableCellComponent {
 
   private int computeColspan() {
     Optional<TableComponent> parentTable = Optional
-            .ofNullable(currentResource.getParent()) // table row
-            .map(Resource::getParent) // table head or body
-            .map(Resource::getParent) // the table
-            .map(tableResource -> tableResource.adaptTo(TableComponent.class));
+        .ofNullable(currentResource.getParent()) // table row
+        .map(Resource::getParent) // table head or body
+        .map(Resource::getParent) // the table
+        .map(tableResource -> tableResource.adaptTo(TableComponent.class));
 
     if (parentTable.isEmpty() || parentTable.get().isScrollable()) {
       return DEFAULT_COLSPAN;
@@ -81,11 +118,11 @@ public class TableCellComponent {
     Resource parentRow = currentResource.getParent();
 
     List<TableCellData> tableCells = StreamSupport
-            .stream(parentRow.getChildren().spliterator(), false)
-            .map(cell -> new TableCellData(
-                    cell.getValueMap().get("columns", Integer.class),
-                    cell.getPath().equals(currentResource.getPath())))
-            .toList();
+        .stream(parentRow.getChildren().spliterator(), false)
+        .map(cell -> new TableCellData(
+            cell.getValueMap().get("columns", Integer.class),
+            cell.getPath().equals(currentResource.getPath())))
+        .toList();
 
     TableRowData tableRowData = new TableRowData(tableCells);
 
@@ -93,36 +130,36 @@ public class TableCellComponent {
   }
 
   /**
-   * Computes colspan for a cell that hasn't got the columns property specified.
-   * Attempts to give each such cell the same colspan, if possible.
-   * It takes into account colspans from other cells in the same row.
+   * Computes colspan for a cell that hasn't got the columns property specified. Attempts to give
+   * each such cell the same colspan, if possible. It takes into account colspans from other cells
+   * in the same row.
    */
   private static int computeColspan(TableRowData row) {
     int summaryAvailableColspan = TableComponent.DEFAULT_SUMMARY_COLSPAN
-            - row.getSummaryColspanTakenByCellsWithColumnsSpecified();
+        - row.getSummaryColspanTakenByCellsWithColumnsSpecified();
 
     if (summaryAvailableColspan < 1) {
       return 1;
     }
 
     int colspanAvailableForSingleCell = summaryAvailableColspan
-            / row.getNumberOfCellsWithColumnsUnspecified();
+        / row.getNumberOfCellsWithColumnsUnspecified();
     if (colspanAvailableForSingleCell == 0) {
       colspanAvailableForSingleCell = 1;
     }
 
     if (summaryAvailableColspan
-            % row.getNumberOfCellsWithColumnsUnspecified() == 0) {
+        % row.getNumberOfCellsWithColumnsUnspecified() == 0) {
       // all cells are able to receive the same colspan
       return colspanAvailableForSingleCell;
     }
 
     // ... otherwise - we have some additional colspan space to distribute between cells
     int colspanLeftToDistribute = summaryAvailableColspan
-            - row.getNumberOfCellsWithColumnsUnspecified() * colspanAvailableForSingleCell;
+        - row.getNumberOfCellsWithColumnsUnspecified() * colspanAvailableForSingleCell;
 
     int indexOfCurrentCellInCellsWithColumnsUnspecified =
-            getIndexOfCurrentCellInCellsWithColumnsUnspecified(row.getTableCellData());
+        getIndexOfCurrentCellInCellsWithColumnsUnspecified(row.getTableCellData());
 
     if (indexOfCurrentCellInCellsWithColumnsUnspecified < colspanLeftToDistribute) {
       // when giving additional +1 to colspan, prefer cells from the left
@@ -133,7 +170,7 @@ public class TableCellComponent {
   }
 
   private static int getIndexOfCurrentCellInCellsWithColumnsUnspecified(
-          List<TableCellData> tableCells) {
+      List<TableCellData> tableCells) {
     int resultIndex = 0;
     for (TableCellData tableCell : tableCells) {
       if (tableCell.isCurrentCell()) {
@@ -147,4 +184,19 @@ public class TableCellComponent {
     throw new IllegalStateException("Expected to always find the current cell in cells list");
   }
 
+  private enum CellType {
+    TEXT,
+    ICON
+  }
+
+  private enum IconLayout {
+    ON_THE_LEFT("icon-on-the-left"),
+    ON_THE_RIGHT("icon-on-the-right");
+
+    private final String variantName;
+
+    IconLayout(final String variantName) {
+      this.variantName = variantName;
+    }
+  }
 }

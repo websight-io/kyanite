@@ -107,31 +107,32 @@ const createPreviewCarousel = (imageContainer) => {
   });
 };
 
-if (
-  imageCarouselTemplates.some((className) =>
-    document.body.classList.contains(className)
-  )
-) {
+if (imageCarouselTemplates.some(className => document.body.classList.contains(className))) {
   const imageContainer = document.querySelector<HTMLElement>(
-    ".previewImageContainer"
+    '.previewImageContainer'
   );
   const previewCarouselImages = document.querySelectorAll<HTMLElement>(
-    ".previewImageContainer .image"
+    '.previewImageContainer .image'
   );
 
   previewCarouselImages.forEach((imageContainer) => {
-    const imageElement = imageContainer.querySelector("img");
-    imageElement.classList.add("previewCarouselImage");
-    imageContainer.innerHTML += `
-      <svg class="previewIcon" width="30" height="30" viewBox="9 9 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="45" height="45" rx="24" x="9" y="9" fill="#1B1C20"/>
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M32 24H40V32H42V22H32V24ZM24 32H22V42H32V40H24V32Z" fill="#ECF5FF"/>
-      </svg>
-    `;
+    const imageElement = imageContainer.querySelector('img');
+    imageElement.classList.add('previewCarouselImage');
+    imageContainer.innerHTML +=
+      '<svg class="previewIcon" width="30" height="30" viewBox="9 9 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+      '  <rect width="45" height="45" rx="24" x="9" y="9" fill="#1B1C20"/>\n' +
+      '  <path fill-rule="evenodd" clip-rule="evenodd" d="M32 24H40V32H42V22H32V24ZM24 32H22V42H32V40H24V32Z" fill="#ECF5FF"/>\n' +
+      '</svg>';
   });
-  createPreviewCarousel(imageContainer);
+
+  if (imageContainer !== null) {
+    createPreviewCarousel(imageContainer);
+  }
 } else {
-  const imagesWithLightbox =
-    document.querySelectorAll<HTMLImageElement>('.image--lightbox');
-  createSeparatePreviews(imagesWithLightbox);
+  const imagesWithLightbox = document.querySelectorAll<HTMLImageElement>(
+      ".image--lightbox"
+  );
+  if (imagesWithLightbox !== null) {
+    createSeparatePreviews(imagesWithLightbox);
+  }
 }
