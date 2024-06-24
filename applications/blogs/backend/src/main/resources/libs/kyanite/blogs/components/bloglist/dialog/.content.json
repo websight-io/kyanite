@@ -27,6 +27,7 @@
         "include": {
           "sling:resourceSuperType": "/libs/kyanite/blogs/components/common/dialog/authorinfo",
           "authorInfoSource": {
+            "description": "Define the author info source to filter the list to their articles",
             "ownProperties": {
               "sling:hideResource": true
             }
