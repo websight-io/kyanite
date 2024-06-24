@@ -36,7 +36,9 @@
                   </span>
                 </sly>
               </div>
-              <h4 class="title is-4" data-sly-test.title="${article.title}">${title}</h4>
+              <h4 class="title is-4"
+                  data-sly-element="${properties.element}"
+                  data-sly-test.title="${article.title}">${title}</h4>
               <p data-sly-test.description="${article.description}" class="article-description">
                 ${description @ context='html'}
               </p>
