@@ -18,9 +18,9 @@
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.TitleComponent">
   <sly data-sly-test="${model.addEyebrow}">
-    <h6 class="has-text-primary is-1 eyebrow">
+    <span class="has-text-primary is-1 eyebrow">
       ${model.eyebrowText}
-    </h6>
+    </span>
   </sly>
   <h1 id="${model.anchorId}" style="text-align: ${model.titleAlign @ context='styleToken'};" data-sly-element="${model.element}" class="${model.titleClasses @ join=' '} ${model.addAnimatedEndings ? 'is-relative' : ''}">
     ${model.textAsOneLine @ context='html'}
