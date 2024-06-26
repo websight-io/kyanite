@@ -19,33 +19,78 @@ import Viewer from "viewerjs";
 // We may extend this array later with additional pages that need to have an image preview carousel
 const imageCarouselTemplates = ["template-blogarticlepage"];
 
+const onViewed = (event, viewer) => {
+  const heightFillFactor = 0.8;
+  const widthFillFactor = 0.9;
+  const availVieportHeight = viewer.containerData.height * heightFillFactor;
+  const availVieportWidth = viewer.containerData.width * widthFillFactor;
+  const viewerInstance = viewer;
+  const { naturalHeight, naturalWidth } = viewerInstance.imageData;
+
+  // Calculate aspect ratios
+  const imageAspectRatio = naturalWidth / naturalHeight;
+  const viewportAspectRatio = availVieportWidth / availVieportHeight;
+
+  // Determine if should fit to width or height
+  let zoomRatio;
+  if (imageAspectRatio < viewportAspectRatio) {
+    // Fit to height
+    zoomRatio = availVieportHeight / naturalHeight;
+  } else {
+    // Fit to width
+    zoomRatio = availVieportWidth / naturalWidth;
+  }
+
+  viewer.zoomTo(zoomRatio, false);
+};
+
+const defaultSettings = {
+  navbar: false,
+  toolbar: false,
+  zoomable: true,
+  movable: false,
+  title: false,
+  url: 'data-lightbox-asset',
+  zoomOnTouch: false,
+  zoomOnWheel: false,
+  scalable: false,
+  toggleOnDblclick: false,
+  // use the default value from the library but without `loading` attibute,
+  // becasue there are some problems in Safari - it is not working with lazy loaded images
+  inheritedAttributes: [
+    'crossOrigin',
+    'decoding',
+    'isMap',
+    'referrerPolicy',
+    'sizes',
+    'srcset',
+    'useMap',
+  ],
+  // transition needs to be disabled because there is strange animation pause between initial image and the zoomed one.
+  // there is no way to set the default zoom level at the start (https://github.com/fengyuanchen/viewerjs/issues/268)
+  transition: false,
+}
+
 const createSeparatePreviews = (imageList) => {
   imageList.forEach((image) => {
-    new Viewer(image, {
-      navbar: false,
-      toolbar: false,
-      zoomable: false,
-      movable: false,
-      title: false,
-      url: 'data-lightbox-asset',
-      show() {
-        document.querySelector("html").style.overflowY = "hidden";
-      },
-      hidden() {
-        document.querySelector("html").style.overflowY = "scroll";
-      }
+    const viewer = new Viewer(image, {
+     ...defaultSettings,
+    show() {
+      document.querySelector("html").style.overflowY = "hidden";
+    },
+    hidden() {
+      document.querySelector("html").style.overflowY = "scroll";
+    },
+    viewed(e) {
+      onViewed(e, viewer);
+    },
     });
   });
 };
 
 const createPreviewCarousel = (imageContainer) => {
-  new Viewer(imageContainer, {
-    navbar: false,
-    zoomable: false,
-    movable: false,
-    title: false,
-    scalable: false,
-    url: 'data-lightbox-asset',
+  const viewer = new Viewer(imageContainer, {
+    ...defaultSettings,
     toolbar: {
       prev: 1,
       next: 1,
@@ -55,9 +100,12 @@ const createPreviewCarousel = (imageContainer) => {
     },
     hidden() {
       document.querySelector("html").style.overflowY = "scroll";
-    }
+    },
+    viewed(e) {
+      onViewed(e, viewer);
+    },
   });
-}
+};
 
 if (imageCarouselTemplates.some(className => document.body.classList.contains(className))) {
   const imageContainer = document.querySelector<HTMLElement>(
