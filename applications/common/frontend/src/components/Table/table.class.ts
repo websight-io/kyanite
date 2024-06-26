@@ -15,9 +15,11 @@
  */
 
 import SimpleBar from 'simplebar';
+import { breakpoints } from 'src/helpers/breakpoints';
 
 export class Table {
-  static readonly componentSelector = '.is-table-scrollable';
+  static readonly componentSelector =
+    '.is-table-scrollable, .is-table-locked-first-column';
 
   readonly element: HTMLElement;
   simplebarInstance: SimpleBar;
@@ -26,7 +28,9 @@ export class Table {
     this.element = element;
     this.initSimplebar(element.querySelector('.table-wrapper'));
 
-    this.handleScrollButtons();
+    if (element.classList.contains('is-table-scrollable')) {
+      this.handleScrollButtons();
+    }
   }
 
   initSimplebar(tableWrapperEl: HTMLElement) {
@@ -36,16 +40,17 @@ export class Table {
   handleScrollButtons() {
     const leftButton = this.element.querySelector('.table-button-left');
     const rightButton = this.element.querySelector('.table-button-right');
+    const isMobile = window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches;
 
     rightButton.addEventListener('click', () => {
       this.simplebarInstance
         .getScrollElement()
-        .scrollBy({ left: 320, behavior: 'smooth' });
+        .scrollBy({ left: isMobile ? 296 : 320, behavior: 'smooth' });
     });
     leftButton.addEventListener('click', () => {
       this.simplebarInstance
         .getScrollElement()
-        .scrollBy({ left: -320, behavior: 'smooth' });
+        .scrollBy({ left: isMobile ? -296 : -320 , behavior: 'smooth' });
     });
   }
 }

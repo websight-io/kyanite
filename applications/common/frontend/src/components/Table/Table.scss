@@ -22,15 +22,14 @@
  $mobileCellWidth: 296px;
  $desktopCellWidth: 320px;
 
- @mixin tableIsScrollableCellsWidth {
+ @mixin fixedCellsWidth {
     min-width: $mobileCellWidth;
     @include breakpoint.media-breakpoint-large {
       min-width: $desktopCellWidth;
     }
  }
 
- @mixin tableIsLockedFirstCellCellsWidth {
-  min-width: $mobileCellWidth;
+ @mixin stickyCell {
   @include breakpoint.media-breakpoint-medium {
     position: sticky;
     z-index: 1;
@@ -38,29 +37,66 @@
     top: 0;
     background-color: var(--kyanite-background);
   }
-  @include breakpoint.media-breakpoint-large {
-    min-width: $desktopCellWidth;
-  }
 }
- .table-container-el { // 'table-container' class name is taken by Bulma
-  &:not(.is-table-scrollable, .is-table-fullwidth) {
-    display: inline-block;
-  }
-  @include table-button.a-table-button;
-  .table-wrapper {
-    .table {
-      &.is-scrollable {
+
+@mixin tableScroll {
+  max-width: 100%;
+  overflow: auto;
+  overflow-y: hidden;
+}
+
+.table-container-el { // 'table-container' class name is taken by Bulma
+  &.is-table-locked-first-column {
+    .table-wrapper {
+      @include tableScroll;
+      .table {
         thead {
+          th:first-child {
+            @include stickyCell;
+          }
           th {
-            @include tableIsScrollableCellsWidth;
+            @include fixedCellsWidth;
           }
         }
         tbody {
-          tr {
-            @include tableIsScrollableCellsWidth;
+          td:first-child {
+            @include stickyCell;
+          }
+          td {
+            @include fixedCellsWidth;
           }
         }
       }
+    }
+  }
+  &.is-table-scrollable {
+    .table-wrapper {
+      @include tableScroll;
+      .table {
+        thead {
+          th {
+            @include fixedCellsWidth;
+          }
+        }
+        tbody {
+          td {
+            @include fixedCellsWidth;
+          }
+        }
+      }
+    }
+  }
+  &.is-table-fullwidth {
+    .table {
+      width: 100%;
+    }
+  }
+  &:not(.is-table-scrollable, .is-table-fullwidth, .is-table-locked-first-column) {
+    display: inline-block;
+  }
+  @include table-button.a-table-button; // table arrows
+  .table-wrapper {
+    .table {
       td {
         &.icon-on-the-right {
           .icon-text {
@@ -69,20 +105,6 @@
         }
         .icon-text {
           gap: 1rem;
-        }
-      }
-    }
-    &.is-first-column-locked {
-      .table {
-        thead {
-          tr th:first-child {
-            @include tableIsLockedFirstCellCellsWidth;
-          }
-        }
-        tbody {
-          tr td:first-child {
-            @include tableIsLockedFirstCellCellsWidth;
-          }
         }
       }
     }
