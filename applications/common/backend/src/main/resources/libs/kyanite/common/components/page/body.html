@@ -23,6 +23,6 @@
 
   <body class="${properties.defaultTemplateCSS} ${templateMarker} ${pageMarker} ${properties.background} ${noNavbarPadding}" data-cookie-config="${extra.cookieData}">
   <sly data-sly-include="body-content.html"></sly>
-  <script data-sly-test="${!wcmmode.isEdit && extra.addCaptcha}" src="https://www.google.com/recaptcha/api.js?render=${extra.captchaPublicKey}"></script>
+  <script data-sly-test="${!wcmmode.isEdit && extra.addCaptcha}" src="https://www.recaptcha.net/recaptcha/api.js?render=${extra.captchaPublicKey}"></script>
   </body>
 </sly>
