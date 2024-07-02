@@ -26,7 +26,9 @@
         </div>
         <div class="content">
           <div class="content-info">
-            <h6 class="title is-6" data-sly-test.title="${item.blogArticleHeader.title}">${title}</h6>
+            <h6 class="title is-6"
+                data-sly-element="${properties.element}"
+                data-sly-test.title="${item.blogArticleHeader.title}">${title}</h6>
             <div class="content-info-details">
               <p>
                 <sly data-sly-test.author="${item.authorInfo}">

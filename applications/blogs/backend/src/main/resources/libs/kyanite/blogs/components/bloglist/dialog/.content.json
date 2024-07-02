@@ -11,11 +11,23 @@
         "name": "link",
         "label": "Path to the blog article pages"
       },
+      "element": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/common/headinglevel",
+          "name": "element",
+          "description": "Heading Level for articles' titles",
+          "h1": {
+            "sling:hideResource": "true"
+          }
+        }
+      },
       "authorInfo": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "include": {
           "sling:resourceSuperType": "/libs/kyanite/blogs/components/common/dialog/authorinfo",
           "authorInfoSource": {
+            "description": "Define the author info source to filter the list to their articles",
             "ownProperties": {
               "sling:hideResource": true
             }

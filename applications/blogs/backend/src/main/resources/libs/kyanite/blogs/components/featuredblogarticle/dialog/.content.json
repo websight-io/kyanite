@@ -11,6 +11,17 @@
         "name": "link",
         "label": "Path to the blog article page"
       },
+      "element": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/common/headinglevel",
+          "name": "element",
+          "description": "Heading Level for article title",
+          "h1": {
+            "sling:hideResource": "true"
+          }
+        }
+      },
       "isReversed": {
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "name": "isReversed",
