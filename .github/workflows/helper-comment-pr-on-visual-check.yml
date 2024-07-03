@@ -12,14 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Comment on PR
+name: 'Helper: comment PR with visual tests report'
 
 on:
   workflow_run:
     types:
       - completed
     workflows:
-      - CI
+      - 'CI: verify build'
 
 jobs:
   comment-on-pr:
