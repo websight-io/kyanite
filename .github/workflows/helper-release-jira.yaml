@@ -28,6 +28,11 @@ on:
         type: string
         required: false
 
+env:
+  JIRA_PROJECT_ID: ${{ vars.ATLASSIAN_CLOUD_JIRA_PROJECT_ID }}
+  JIRA_PROJECT_NAME: ${{ vars.ATLASSIAN_CLOUD_JIRA_PROJECT_NAME }}
+
+
 jobs:
   create-jira-release:
     runs-on: ubuntu-latest
@@ -38,7 +43,6 @@ jobs:
           fetch-depth: '0'
       - name: Prepare release
         run: |
-          PROJECT_NAME="KYAN"
           RELEASE_NAME_PREFIX=""
           
           if [ -z "${{ inputs.tag }}" ]; then
@@ -52,20 +56,20 @@ jobs:
           PREVIOUS_VERSION=$(git describe --abbrev=0 ${RELEASED_VERSION}^)
           echo "Previous version: ${PREVIOUS_VERSION}"
           
-          COMMITS=$(git log ${PREVIOUS_VERSION}..${RELEASED_VERSION} --pretty=format:"%s" | grep ${PROJECT_NAME} || true)
-          TICKETS=$(echo "${COMMITS}" | grep -o ${PROJECT_NAME}'\-[0-9]\+' | sort -u | paste -sd "," - || true)
+          COMMITS=$(git log ${PREVIOUS_VERSION}..${RELEASED_VERSION} --pretty=format:"%s" | grep ${ env.JIRA_PROJECT_NAME } || true)
+          TICKETS=$(echo "${COMMITS}" | grep -o ${ env.JIRA_PROJECT_NAME '\-[0-9]\+' | sort -u | paste -sd "," - || true)
           echo "Tickets found in commit messages: ${TICKETS}"
           
           echo "RELEASE_NAME=${RELEASE_NAME_PREFIX}${RELEASED_VERSION}" >> $GITHUB_ENV
           echo "TICKETS=${TICKETS}" >> $GITHUB_ENV
 
       - name: Create release
-        uses: armona/jira-release-actions@v2.0.6
+        uses: charpi/jira-release-action@latest
         with:
           create: true
           email: ${{ secrets.ATLASSIAN_CLOUD_USER }}
           api_token: ${{ secrets.ATLASSIAN_CLOUD_APIKEY }}
           subdomain: ${{ secrets.ATLASSIAN_CLOUD_DOMAIN }}
-          jira_project: 10233
+          jira_project: ${{ env.JIRA_PROJECT_ID }}
           tickets: ${{ env.TICKETS }}
           release_name: ${{ env.RELEASE_NAME }}

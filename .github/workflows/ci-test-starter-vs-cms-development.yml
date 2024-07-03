@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Kyanite CI development version
+name: 'CI: test Starter vs CMS development version'
 
 on:
   workflow_dispatch:
