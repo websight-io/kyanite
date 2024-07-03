@@ -63,8 +63,8 @@ jobs:
           echo "RELEASE_NAME=${RELEASE_NAME_PREFIX}${RELEASED_VERSION}" >> $GITHUB_ENV
           echo "TICKETS=${TICKETS}" >> $GITHUB_ENV
 
-      - name: Create release
-        uses: armona/jira-release-actions@v2.0.6
+      - name: Release Jira Version
+        uses: charpi/jira-release-action@1.0.2
         with:
           create: true
           email: ${{ secrets.ATLASSIAN_CLOUD_USER }}
