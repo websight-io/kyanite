@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: Create JIRA release
+name: 'Helper: Create JIRA release'
 
 on:
   workflow_dispatch:
@@ -56,15 +56,15 @@ jobs:
           PREVIOUS_VERSION=$(git describe --abbrev=0 ${RELEASED_VERSION}^)
           echo "Previous version: ${PREVIOUS_VERSION}"
           
-          COMMITS=$(git log ${PREVIOUS_VERSION}..${RELEASED_VERSION} --pretty=format:"%s" | grep ${ env.JIRA_PROJECT_NAME } || true)
-          TICKETS=$(echo "${COMMITS}" | grep -o ${ env.JIRA_PROJECT_NAME '\-[0-9]\+' | sort -u | paste -sd "," - || true)
+          COMMITS=$(git log ${PREVIOUS_VERSION}..${RELEASED_VERSION} --pretty=format:"%s" | grep ${{ env.JIRA_PROJECT_NAME }} || true)
+          TICKETS=$(echo "${COMMITS}" | grep -o '${{ env.JIRA_PROJECT_NAME }}\-[0-9]\+' | sort -u | paste -sd "," - || true)
           echo "Tickets found in commit messages: ${TICKETS}"
           
           echo "RELEASE_NAME=${RELEASE_NAME_PREFIX}${RELEASED_VERSION}" >> $GITHUB_ENV
           echo "TICKETS=${TICKETS}" >> $GITHUB_ENV
 
-      - name: Create release
-        uses: charpi/jira-release-action@latest
+      - name: Release Jira Version
+        uses: charpi/jira-release-actions@v1.0.2
         with:
           create: true
           email: ${{ secrets.ATLASSIAN_CLOUD_USER }}

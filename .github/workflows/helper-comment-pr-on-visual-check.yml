@@ -12,6 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# This workflow adds a comment to the current PR with visual tests report.
+# It must be triggered at the completion of CI workflow, because GH Actions artifacts are not available until the workflow is completed.
+# And we need an URL of the artifact to add it to the comment.
+# Read more here:
+# - https://github.com/actions/upload-artifact/issues/50
+# - https://github.com/orgs/community/discussions/51403
+
 name: 'Helper: comment PR with visual tests report'
 
 on:
@@ -64,6 +71,7 @@ jobs:
       - name: Get current date
         id: currentDateStep
         run: echo "CURRENT_DATE=$(date +'%Y-%m-%dT%H%M%S')" >> "$GITHUB_OUTPUT"
+
       - name: Add a comment
         if: "${{ env.ARTIFACT_ID != '' }}"
         env:
@@ -87,6 +95,7 @@ jobs:
             | Commit   | ${{ env.HEAD_SHA }}     |
             | Logs     | ${{ env.JOB_PATH }}     |
             | Report   | [visual-tests-report_${{ steps.currentDateStep.outputs.CURRENT_DATE }}.zip](${{ env.ARTIFACT_URL }}) |
+
       - name: Add a comment
         if: "${{ env.ARTIFACT_ID == '' }}"
         env:
@@ -104,3 +113,10 @@ jobs:
             | -------- | ----------------------- |
             | Commit   | ${{ env.HEAD_SHA }}     |
             | Logs     | ${{ env.JOB_PATH }}     |
+
+      - name: Add a comment on job failure
+        if: ${{ failure() }}
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue-number: ${{ env.PR_NUMBER }}
+          body: ❌ Failed to add visual tests status!
