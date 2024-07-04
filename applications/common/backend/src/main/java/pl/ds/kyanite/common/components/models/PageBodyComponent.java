@@ -17,6 +17,7 @@
 package pl.ds.kyanite.common.components.models;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 import javax.json.Json;
 import javax.json.JsonObjectBuilder;
 import lombok.Getter;
@@ -29,6 +30,8 @@ import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import pl.ds.kyanite.common.components.services.CookieModalConfigStore;
 import pl.ds.kyanite.common.components.services.CookieModalConfiguration;
+import pl.ds.kyanite.common.components.services.GoogleAnalyticsConfigStore;
+import pl.ds.kyanite.common.components.services.GoogleAnalyticsConfiguration;
 import pl.ds.kyanite.common.components.services.RecaptchaConfigStore;
 import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
 import pl.ds.kyanite.common.components.utils.PageSpace;
@@ -41,14 +44,10 @@ public class PageBodyComponent {
 
   public static final String DEFAULT_PRIVACY_POLICY_PATH = "/privacy-policy.html";
   public static final String DEFAULT_CONTACT_US_PATH = "/about/contact-us.html";
-  @SlingObject
-  private Resource resource;
-
-  @OSGiService
-  private RecaptchaConfigStore recaptchaConfigStore;
-
-  @OSGiService
-  private CookieModalConfigStore cookieModalConfigStore;
+  private final Resource resource;
+  private final RecaptchaConfigStore recaptchaConfigStore;
+  private final CookieModalConfigStore cookieModalConfigStore;
+  private final GoogleAnalyticsConfigStore googleAnalyticsConfigStore;
 
   @Getter
   @ValueMapValue
@@ -63,11 +62,25 @@ public class PageBodyComponent {
   @Getter
   private String cookieData;
 
+  private GoogleAnalyticsConfiguration googleAnalyticsConfig;
+
+  @Inject
+  public PageBodyComponent(@SlingObject Resource resource,
+      @OSGiService CookieModalConfigStore cookieModalConfigStore,
+      @OSGiService GoogleAnalyticsConfigStore googleAnalyticsConfigStore,
+      @OSGiService RecaptchaConfigStore recaptchaConfigStore) {
+    this.resource = resource;
+    this.cookieModalConfigStore = cookieModalConfigStore;
+    this.googleAnalyticsConfigStore = googleAnalyticsConfigStore;
+    this.recaptchaConfigStore = recaptchaConfigStore;
+  }
+
   @PostConstruct
   private void init() {
     PageSpace pageSpace = PageSpace.forResource(resource);
     if (pageSpace != null) {
       spaceName = pageSpace.getWsPagesSpaceName();
+      googleAnalyticsConfig = googleAnalyticsConfigStore.get(pageSpace.getWsPagesSpaceName());
     }
     initCookieData();
   }
@@ -106,5 +119,22 @@ public class PageBodyComponent {
     String pageProperty = PageUtil.getPageProperty(resource, "ws:template");
     return pageProperty == null ? ""
         : pageProperty.substring(pageProperty.lastIndexOf("/") + 1);
+  }
+
+  public String getGoogleAnalyticsTrackingId() {
+    if (googleAnalyticsConfig != null) {
+      return googleAnalyticsConfig.getGoogleAnalyticsTrackingId();
+    }
+    return null;
+  }
+
+  public boolean hasAnalyticsUrl() {
+    if (googleAnalyticsConfig != null) {
+      return StringUtils.isNotBlank(
+          googleAnalyticsConfig.getGoogleAnalyticsTrackingId())
+          && StringUtils.isNotBlank(
+          googleAnalyticsConfig.getGoogleAnalyticsScriptUrl());
+    }
+    return false;
   }
 }
