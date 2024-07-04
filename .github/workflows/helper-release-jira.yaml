@@ -57,7 +57,7 @@ jobs:
           echo "Previous version: ${PREVIOUS_VERSION}"
           
           COMMITS=$(git log ${PREVIOUS_VERSION}..${RELEASED_VERSION} --pretty=format:"%s" | grep ${{ env.JIRA_PROJECT_NAME }} || true)
-          TICKETS=$(echo "${COMMITS}" | grep -o ${{ env.JIRA_PROJECT_NAME }} '\-[0-9]\+' | sort -u | paste -sd "," - || true)
+          TICKETS=$(echo "${COMMITS}" | grep -o '${{ env.JIRA_PROJECT_NAME }}\-[0-9]\+' | sort -u | paste -sd "," - || true)
           echo "Tickets found in commit messages: ${TICKETS}"
           
           echo "RELEASE_NAME=${RELEASE_NAME_PREFIX}${RELEASED_VERSION}" >> $GITHUB_ENV
