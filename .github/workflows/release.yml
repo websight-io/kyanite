@@ -72,3 +72,10 @@ jobs:
 
       - name: Release to GCP Artifact Registry
         run: ./mvnw --batch-mode release:perform
+
+  release-jira:
+    needs: release
+    uses: ./.github/workflows/helper-release-jira.yaml
+    secrets: inherit
+    with:
+      tag: ${{ needs.release.outputs.released-version }}
