@@ -64,7 +64,7 @@ jobs:
           echo "TICKETS=${TICKETS}" >> $GITHUB_ENV
 
       - name: Release Jira Version
-        uses: charpi/jira-release-actions@1.0.2
+        uses: charpi/jira-release-actions@latest
         with:
           create: true
           email: ${{ secrets.ATLASSIAN_CLOUD_USER }}
