@@ -16,6 +16,10 @@ name: 'Helper: Validate PR title'
 
 on:
   pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
 
 env:
   JIRA_PROJECT_NAME: ${{ vars.ATLASSIAN_CLOUD_JIRA_PROJECT_NAME }}
