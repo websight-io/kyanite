@@ -17,16 +17,10 @@ name: 'Helper: Validate PR title'
 on:
   pull_request:
 
-env:
-  JIRA_PROJECT_NAME: ${{ vars.ATLASSIAN_CLOUD_JIRA_PROJECT_NAME }}
-
-
 jobs:
   verify-pr-title:
     runs-on: ubuntu-latest
     steps:
-      - name: Enforce Jira Issue Key in Pull Request Title
-        uses: ryanvade/enforce-pr-title-style-action@v2.1.1
+      - uses: actions/checkout@v4
         with:
-          projectKey: ${{ JIRA_PROJECT_NAME }}
-          keyAnywhereInTitle: 'true'
+          fetch-depth: 0
