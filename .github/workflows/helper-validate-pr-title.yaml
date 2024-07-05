@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-name: 'Helper: Validate PR title'
+name: 'Helper: Validate if PR title starts with the ticket key'
 
 on:
   pull_request:
