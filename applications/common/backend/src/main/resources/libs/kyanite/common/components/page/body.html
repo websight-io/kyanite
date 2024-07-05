@@ -17,15 +17,14 @@
 */-->
 
 <sly data-sly-use.extra="pl.ds.kyanite.common.components.models.PageBodyComponent">
-  <sly data-sly-use.model="pl.ds.kyanite.common.components.models.PageHeadLibsComponent"></sly>
   <sly data-sly-set.templateMarker="template-${extra.templateName}"></sly>
   <sly data-sly-set.pageMarker="page-${extra.pageName}"></sly>
   <sly data-sly-set.noNavbarPadding="${extra.noNavbarPadding ? 'no-navbar-padding' : ''}"></sly>
 
   <body class="${properties.defaultTemplateCSS} ${templateMarker} ${pageMarker} ${properties.background} ${noNavbarPadding}" data-cookie-config="${extra.cookieData}">
   <!-- Google Tag Manager (noscript) -->
-  <noscript data-sly-test="${model.hasAnalyticsUrl}">
-    <iframe src="https://www.googletagmanager.com/ns.html?id=${model.googleAnalyticsTrackingId @ context='text'}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  <noscript data-sly-test="${extra.hasAnalyticsUrl}">
+    <iframe src="https://www.googletagmanager.com/ns.html?id=${extra.googleAnalyticsTrackingId @ context='text'}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
   </noscript>
   <!-- End Google Tag Manager (noscript) -->
   <sly data-sly-include="body-content.html"></sly>
