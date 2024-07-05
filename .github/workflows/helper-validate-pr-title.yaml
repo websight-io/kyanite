@@ -20,6 +20,7 @@ on:
       - opened
       - edited
       - reopened
+      - synchronize
 
 env:
   JIRA_PROJECT_NAME: ${{ vars.ATLASSIAN_CLOUD_JIRA_PROJECT_NAME }}
