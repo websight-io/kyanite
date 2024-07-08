@@ -4,5 +4,5 @@
   "isLayout": true,
   "group": "Kyanite In-Text Sections",
   "instanceResourceType": "kyanite/common/components/card",
-  "title": "In-text CTA (centered)"
+  "title": "CTA Card - Centered Text"
 }

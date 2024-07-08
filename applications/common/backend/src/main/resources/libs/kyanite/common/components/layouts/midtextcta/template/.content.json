@@ -26,7 +26,7 @@
       "element": "h4",
       "isSpaced": false,
       "size": "is-6",
-      "text": "<p>Mid-text CTA in-text section</p>",
+      "text": "<p>CTA Card - Text with Eyebrow</p>",
       "delay": 1200,
       "speed": 50,
       "showCursor": false,

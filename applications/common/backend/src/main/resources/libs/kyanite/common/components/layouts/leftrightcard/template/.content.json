@@ -89,7 +89,7 @@
               "element": "h3",
               "isSpaced": false,
               "size": "is-4",
-              "text": "<p>Left-right Card Section</p>",
+              "text": "<p>Block on Card - Image Left, Text Right</p>",
               "delay": 1200,
               "speed": 50,
               "showCursor": false,

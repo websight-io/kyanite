@@ -51,7 +51,7 @@
               "element": "h3",
               "isSpaced": false,
               "size": "is-4",
-              "text": "<p>Right-left Card Section</p>",
+              "text": "<p>Block on Card - Image Right, Text Left</p>",
               "delay": 1200,
               "speed": 50,
               "showCursor": false,
