@@ -58,6 +58,10 @@ public class BlogListComponent {
   @Default(values = CONTENT)
   private String link;
 
+  @ValueMapValue
+  @Getter
+  private String size;
+
   public static final String JCR_CONTENT = "/jcr:content";
 
   private final ResourceResolver resourceResolver;

@@ -57,6 +57,10 @@ public class FeatureBlogArticleComponent {
 
   @ValueMapValue
   @Getter
+  private String size;
+
+  @ValueMapValue
+  @Getter
   private boolean isReversed;
 
   @Getter
