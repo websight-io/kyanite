@@ -14,7 +14,7 @@
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "path": "/libs/kyanite/common/components/common/issize"
-      }
+      },
       "element": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "include": {
