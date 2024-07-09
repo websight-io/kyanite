@@ -60,7 +60,7 @@ public class BlogListComponent {
 
   @ValueMapValue
   @Getter
-  private Integer size;
+  private String size;
 
   public static final String JCR_CONTENT = "/jcr:content";
 

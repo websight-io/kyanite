@@ -57,7 +57,7 @@ public class FeatureBlogArticleComponent {
 
   @ValueMapValue
   @Getter
-  private Integer size;
+  private String size;
 
   @ValueMapValue
   @Getter
