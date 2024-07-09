@@ -22,6 +22,11 @@
   <sly data-sly-set.noNavbarPadding="${extra.noNavbarPadding ? 'no-navbar-padding' : ''}"></sly>
 
   <body class="${properties.defaultTemplateCSS} ${templateMarker} ${pageMarker} ${properties.background} ${noNavbarPadding}" data-cookie-config="${extra.cookieData}">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript data-sly-test="${extra.hasAnalyticsUrl}">
+    <iframe src="https://www.googletagmanager.com/ns.html?id=${extra.googleAnalyticsTrackingId @ context='text'}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <sly data-sly-include="body-content.html"></sly>
   <script data-sly-test="${!wcmmode.isEdit && extra.addCaptcha}" src="https://www.recaptcha.net/recaptcha/api.js?render=${extra.captchaPublicKey}"></script>
   </body>
