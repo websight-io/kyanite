@@ -85,6 +85,7 @@ export class AnimatedEndings {
 
     if (this.noTitleWrapping) {
       window.onresize = () => {
+        this.titleElement.style.removeProperty('font-size');
         AnimatedEndings.setFontSize(this.titleElement);
       };
     } else {
@@ -107,7 +108,7 @@ export class AnimatedEndings {
   }
 
   static setFontSize(titleEl: HTMLElement) {
-    if (window.matchMedia(`(max-width: ${breakpoints.md}px)`).matches) {
+    if (window.matchMedia(`(max-width: ${breakpoints.xxl}px)`).matches) {
       const initialSize = Number(
         window.getComputedStyle(titleEl).fontSize.split('px')[0]
       );
