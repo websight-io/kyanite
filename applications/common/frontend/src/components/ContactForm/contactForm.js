@@ -70,7 +70,7 @@ const initForm = () => {
                         submitBtn.setAttribute('disabled', 'disabled');
                         sendForm(contactForm, formData);
                     } else {
-                        console.error('Invalid configuration: contactForm not found');
+                        errorStatus('Invalid configuration: contactForm not found');
                     }
                 };
 
