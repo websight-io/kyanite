@@ -48,11 +48,11 @@ describe('Hero component', function () {
 
     cy.getByTestId('ModalDialog_Hero')
       .find('div[id^="size-uid"]').click();
-    cy.contains('Large').click({ force: true });
+    cy.get('.Input_Size__menu').contains('Large').click({ force: true });
 
     cy.getByTestId('ModalDialog_Hero')
       .find('div[id^="variant-uid"]').click();
-    cy.contains('Link').click({ force: true });
+    cy.get('.Input_Variant__menu').contains('Link').click({ force: true });
 
     cy.getByTestId(testIds.dialogSubmitButton).click();
 

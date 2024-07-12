@@ -82,7 +82,7 @@
           "element": "h3",
           "isSpaced": false,
           "size": "is-4",
-          "text": "<p>Left-right Section</p>",
+          "text": "<p>Block - Image Left, Text Right</p>",
           "delay": 1200,
           "speed": 50,
           "showCursor": false,

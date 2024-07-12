@@ -98,7 +98,7 @@
           "element": "h4",
           "isSpaced": false,
           "size": "is-6",
-          "text": "<p>In-text EAD section</p>",
+          "text": "<p>CTA Card - Image and Text</p>",
           "delay": 1200,
           "speed": 50,
           "showCursor": false,

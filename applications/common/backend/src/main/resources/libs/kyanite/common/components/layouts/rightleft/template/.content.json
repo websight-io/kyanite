@@ -44,7 +44,7 @@
           "element": "h3",
           "isSpaced": false,
           "size": "is-4",
-          "text": "<p>Right-left Section</p>",
+          "text": "<p>Block - Image Right, Text Left</p>",
           "delay": 1200,
           "speed": 50,
           "showCursor": false,
