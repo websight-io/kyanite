@@ -29,6 +29,17 @@ const initForm = () => {
                 const emailInputEl = form.getElementsByClassName('email-input')[0];
                 const contactForm = form.dataset.configHttpEndPoint;
                 const captchaPublicKey = form.dataset.configCaptchaPublicKey;
+                
+                const errorStatus = (err) => {
+                    console.error(err);
+                    formFailureEl.classList.remove('is-hidden');
+                    submitBtn.removeAttribute('disabled');
+                };
+
+                if (captchaPublicKey === undefined) {
+                    errorStatus('Invalid configuration: recaptcha key not found');
+                    return;
+                }
 
                 const sendForm = (submitForm, formData) => {
                     fetch(submitForm, {
@@ -57,12 +68,6 @@ const initForm = () => {
                     formSuccessEl.classList.remove('is-hidden');
                     submitBtn.removeAttribute('disabled');
                     form.reset();
-                };
-
-                const errorStatus = (err) => {
-                    console.error(err);
-                    formFailureEl.classList.remove('is-hidden');
-                    submitBtn.removeAttribute('disabled');
                 };
 
                 const startSubmit = (formData) => {
@@ -109,7 +114,7 @@ const initForm = () => {
                 }
 
                 const parseFormData = (form) => {
-                    return new Promise(async resolve => {
+                    return new Promise(async () => {
                         const data = new FormData();
 
                         data.set('email', form.email.value);
@@ -118,11 +123,16 @@ const initForm = () => {
                         data.set('name', form.name.value);
                         data.set('message', form.message.value);
 
-                        await new Promise((resolve) => grecaptcha.ready(() => resolve()));
-                        const token = await grecaptcha.execute(captchaPublicKey, { action: 'submit' });
-                        data.set('g-recaptcha-response', token);
-
-                        resolve(data);
+                        await new Promise((resolve) => grecaptcha.ready(() => {
+                            try {
+                                grecaptcha.execute(captchaPublicKey, {action: 'submit'}).then((token) => {
+                                    data.set('g-recaptcha-response', token);
+                                    resolve(data);
+                                })
+                            } catch(err) {
+                                errorStatus(err.message)
+                            }
+                        }));
                     });
                 }
 
