@@ -48,7 +48,7 @@ export class TitleComponent {
 
   static get hashAnchor(): Element | null {
     return window.location.hash
-      ? document.querySelector(window.location.hash)
+      ? document.getElementById(window.location.hash.split('#')[1])
       : null;
   }
 
