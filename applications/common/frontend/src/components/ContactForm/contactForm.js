@@ -29,6 +29,17 @@ const initForm = () => {
                 const emailInputEl = form.getElementsByClassName('email-input')[0];
                 const contactForm = form.dataset.configHttpEndPoint;
                 const captchaPublicKey = form.dataset.configCaptchaPublicKey;
+                
+                const errorStatus = (err) => {
+                    console.error(err);
+                    formFailureEl.classList.remove('is-hidden');
+                    submitBtn.removeAttribute('disabled');
+                };
+
+                if (captchaPublicKey === undefined) {
+                    errorStatus('Invalid configuration: recaptcha key not found');
+                    return;
+                }
 
                 const sendForm = (submitForm, formData) => {
                     fetch(submitForm, {
@@ -59,18 +70,12 @@ const initForm = () => {
                     form.reset();
                 };
 
-                const errorStatus = (err) => {
-                    console.error(err);
-                    formFailureEl.classList.remove('is-hidden');
-                    submitBtn.removeAttribute('disabled');
-                };
-
                 const startSubmit = (formData) => {
                     if (contactForm) {
                         submitBtn.setAttribute('disabled', 'disabled');
                         sendForm(contactForm, formData);
                     } else {
-                        console.error('Invalid configuration: contactForm not found');
+                        errorStatus('Invalid configuration: contactForm not found');
                     }
                 };
 
@@ -109,7 +114,7 @@ const initForm = () => {
                 }
 
                 const parseFormData = (form) => {
-                    return new Promise(async resolve => {
+                    return new Promise(async (resolve, reject) => {
                         const data = new FormData();
 
                         data.set('email', form.email.value);
@@ -118,16 +123,27 @@ const initForm = () => {
                         data.set('name', form.name.value);
                         data.set('message', form.message.value);
 
-                        await new Promise((resolve) => grecaptcha.ready(() => resolve()));
-                        const token = await grecaptcha.execute(captchaPublicKey, { action: 'submit' });
-                        data.set('g-recaptcha-response', token);
-
-                        resolve(data);
+                        await new Promise((resolveCaptchaInit, rejectCaptchaInit) => {
+                            try {
+                                grecaptcha.ready(() => resolveCaptchaInit());
+                            } catch (err) {
+                                rejectCaptchaInit(err);
+                            }
+                        })
+                        .then(() => {
+                            grecaptcha.execute(captchaPublicKey, {action: 'submit'})
+                            .then((token) => {
+                                data.set("g-recaptcha-response", token);
+                                resolve(data);
+                            })
+                        })
+                        .catch(err => reject(err));
                     });
                 }
 
                 const submitForm = () => {
-                    parseFormData(form).then(formData => {
+                    parseFormData(form)
+                    .then(formData => {
                         let email = false;
                         for (let data of formData.entries()) {
                             if (data[0] === 'email') {
@@ -136,6 +152,7 @@ const initForm = () => {
                         }
                         isValidEmail(email) ? startSubmit(formData) : showEmailError();
                     })
+                    .catch(err => errorStatus(err));
                 };
 
                 hideEmailError();
