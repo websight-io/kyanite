@@ -21,7 +21,7 @@
   <parent>
     <groupId>pl.ds.kyanite</groupId>
     <artifactId>kyanite-tests</artifactId>
-    <version>0.7.5-SNAPSHOT</version>
+    <version>0.7.5</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -48,14 +48,14 @@
     <dependency>
       <groupId>pl.ds.kyanite</groupId>
       <artifactId>kyanite-distribution</artifactId>
-      <version>0.7.5-SNAPSHOT</version>
+      <version>0.7.5</version>
       <classifier>websight-cms-kyanite-project</classifier>
       <type>slingosgifeature</type>
     </dependency>
     <dependency>
       <groupId>pl.ds.kyanite</groupId>
       <artifactId>kyanite-tests-content</artifactId>
-      <version>0.7.5-SNAPSHOT</version>
+      <version>0.7.5</version>
       <type>pom</type>
     </dependency>
   </dependencies>
