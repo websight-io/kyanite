@@ -1,0 +1,20 @@
+{
+  "jcr:primaryType": "ws:Assets",
+  "PortfolioForum.png": {
+    "jcr:primaryType": "ws:Asset",
+    "jcr:content": {
+      "jcr:primaryType": "ws:AssetContent",
+      "renditions": {
+        "jcr:primaryType": "nt:folder",
+        "original.png": {
+          "jcr:primaryType": "nt:file",
+          "jcr:content": {
+            "jcr:primaryType": "oak:Resource",
+            "jcr:mimeType": "image/png",
+            ":jcr:data": 177642
+          }
+        }
+      }
+    }
+  }
+}
