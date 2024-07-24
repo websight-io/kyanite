@@ -1,0 +1,20 @@
+{
+  "jcr:primaryType": "ws:Pages",
+  "ws:template": "kyanite/common/templates/pagesspace",
+  "links": {
+    "jcr:primaryType": "ws:Page",
+    "jcr:content": {
+      "jcr:primaryType": "ws:PageContent",
+      "ws:template": "/libs/kyanite/common/templates/structurepage",
+      "sling:resourceType": "kyanite/common/components/page"
+    },
+    "page": {
+      "jcr:primaryType": "ws:Page",
+      "jcr:content": {
+        "jcr:primaryType": "ws:PageContent",
+        "ws:template": "/libs/kyanite/common/templates/homepage",
+        "sling:resourceType": "kyanite/common/components/page"
+      }
+    }
+  }
+}
