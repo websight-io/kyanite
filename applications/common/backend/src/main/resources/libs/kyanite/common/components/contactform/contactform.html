@@ -17,20 +17,25 @@
 */-->
 
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.ContactFormComponent">
+  <h5 data-sly-test.formHeader="${model.formHeader}"
+      class="contact-form-header">${formHeader}</h5>
   <form class="contact-form"
         data-config-captcha-public-key='${model.captchaPublicKey}'
         data-config-http-end-point='${model.configEndpoint}'>
 
-    <div class="field">
-      <label class="label">Type of inquiry</label>
+    <div data-sly-set.types="${model.types}"
+         data-sly-attribute.hidden="${types.size < 2}"
+         class="field">
       <div class="control">
         <div class="select">
           <select required
                   name="type"
                   aria-label="Type of inquiry">
-            <option disabled selected value>Select an option</option>
+            <option disabled value
+                    data-sly-attribute.selected="${types.size != 1}">Select an option</option>
             <sly data-sly-list.item="${model.types}">
               <option
+                  data-sly-attribute.selected="${types.size == 1}"
                   data-value-part1="${item.mailParts[0]}"
                   data-value-part2="${item.mailParts[1]}"
                   data-value-part3="${item.mailParts[2]}"
@@ -41,38 +46,40 @@
       </div>
     </div>
 
-    <div class="columns is-desktop">
-      <div class="column">
-        <div class="field">
-          <label class="label">Full Name</label>
-          <div class="control">
-            <input class="input" type="text" name="name" placeholder="Full Name" required>
-          </div>
-        </div>
-
-      </div>
-      <div class="column">
-        <div class="field">
-          <label class="label">Email</label>
-          <div class="control has-icons-left">
-            <input class="input email-input" type="email" name="email" placeholder="Email" required>
-            <span class="icon is-small is-left">
-            <i class="mdi mdi-email"></i>
-        </span>
-          </div>
-          <p class="help is-danger is-hidden email-validate-error">This email is invalid</p>
-        </div>
+    <div class="field">
+      <div class="control">
+        <input class="input" type="text" name="firstName" placeholder="First Name*" required>
       </div>
     </div>
 
     <div class="field">
-      <label class="label">How we can help you?</label>
       <div class="control">
-        <textarea class="textarea" name="message" placeholder="Write your message here..."
-                  required></textarea>
+        <input class="input" type="text" name="lastName" placeholder="Last Name*" required>
       </div>
     </div>
 
+    <div class="field">
+      <div class="control has-icons-left">
+        <input class="input email-input" type="email" name="email" placeholder="Your working email*" required>
+        <span class="icon is-small is-left">
+          <i class="mdi mdi-email"></i>
+        </span>
+      </div>
+      <p class="help is-danger is-hidden email-validate-error">This email is invalid</p>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <input class="input" type="text" name="companyName" placeholder="Company Name">
+      </div>
+    </div>
+
+    <div  data-sly-attribute.hidden="${!properties.showMessage}"
+          class="field">
+      <div class="control">
+        <textarea class="textarea" name="message" placeholder="${model.messagePlaceholder}"></textarea>
+      </div>
+    </div>
 
     <div class="field">
       <div class="control">
@@ -80,6 +87,18 @@
           <input type="checkbox" class="mr-2" required>
           ${model.consentText @ context='html'}
         </label>
+      </div>
+    </div>
+
+    <div hidden class="field">
+      <div class="control">
+        <input class="input" type="text" name="pageSpace" value="${model.spaceName}">
+      </div>
+    </div>
+
+    <div hidden class="field">
+      <div class="control">
+        <input class="input" type="text" name="pageName" value="${model.pageName}">
       </div>
     </div>
 

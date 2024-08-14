@@ -60,7 +60,7 @@ public class ContactFormComponentTest {
 
     assertThat(model).isNotNull();
     assertThat(model.getSubmitLabel()).isEqualTo("Send");
-    assertThat(model.getConsentText()).isEqualTo("<p>Contact Us</p>");
+    assertThat(model.getConsentText()).isEqualTo("<p>I agree to the terms and conditions</p>");
   }
 
   @Test

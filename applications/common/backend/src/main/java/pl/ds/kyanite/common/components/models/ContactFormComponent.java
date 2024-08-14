@@ -33,6 +33,7 @@ import pl.ds.kyanite.common.components.services.ContactFormConfiguration;
 import pl.ds.kyanite.common.components.services.RecaptchaConfigStore;
 import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
 import pl.ds.kyanite.common.components.utils.PageSpace;
+import pl.ds.kyanite.common.components.utils.PageUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContactFormComponent {
@@ -56,16 +57,34 @@ public class ContactFormComponent {
 
   @ValueMapValue
   @Getter
-  @Default(values = "<p>Contact Us</p>")
+  private String formHeader;
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "Your message")
+  private String messagePlaceholder;
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "<p>I agree to the terms and conditions</p>")
   private String consentText;
 
+  @Getter
   private String spaceName;
+
+  @Getter
+  private String pageName;
 
   @PostConstruct
   private void init() {
     PageSpace pageSpace = PageSpace.forResource(resource);
     if (pageSpace != null) {
       spaceName = pageSpace.getWsPagesSpaceName();
+    }
+    try {
+      pageName = PageUtil.getPageProperty(resource, "jcr:title");
+    } catch (Exception e) {
+      // ignore exception when we are out of page context (e.g. when performing tests)
     }
   }
 

@@ -22,6 +22,30 @@
           "description": "Email for sending"
         }
       },
+      "formHeader": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "formHeader",
+        "label": "Form Header Text"
+      },
+      "showMessage": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "showMessage",
+        "label": "Show Message field"
+      },
+      "messageContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "messageLabel": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "messagePlaceholder",
+          "label": "Message placeholder"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "showMessage",
+            "values": "true"
+          }
+        }
+      },
       "submitLabel": {
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "submitLabel",
