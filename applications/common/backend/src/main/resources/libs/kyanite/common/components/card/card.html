@@ -25,7 +25,7 @@
     <sly data-sly-set.backgroundStyle=""></sly>
   </sly>
 
-  <div class="card ${model.heightVariant} ${model.hasBackgroundImage ? 'with-background-image' : ''}"
+  <div class="card ${model.heightVariant} ${model.hasBackgroundImage ? 'with-background-image' : ''}  ${model.padding}"
        style="${backgroundStyle @ context='html'}">
     <sly data-sly-test="${model.header}">
       <header class="card-header">

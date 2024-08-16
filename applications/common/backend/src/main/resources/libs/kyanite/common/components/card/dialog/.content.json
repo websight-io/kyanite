@@ -60,6 +60,15 @@
             "values": "anchor"
           }
         }
+      },
+      "padding": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/common/padding",
+          "p6": {
+            "selected": true
+          }
+        }
       }
     },
     "imageTab": {
@@ -75,7 +84,9 @@
             "include": {
               "sling:resourceSuperType": "kyanite/common/components/common/imagesource",
               "assetReference": {
-                "mimeTypes": ["image/*"],
+                "mimeTypes": [
+                  "image/*"
+                ],
                 "name": "image/assetReference"
               },
               "src": {
@@ -153,7 +164,10 @@
               "assetReference": {
                 "name": "tabletAssetReference",
                 "label": "Choose tablet image",
-                "mimeTypes": ["image/*", "video/*"],
+                "mimeTypes": [
+                  "image/*",
+                  "video/*"
+                ],
                 "ws:display": {
                   "condition": {
                     "sourceName": "tabletImageSrcType",

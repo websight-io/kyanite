@@ -29,6 +29,10 @@
     @extend .a-bg-image
   }
 
+  .card-content {
+    padding: 0;
+  }
+
   .card-redirect-anchor {
     position: absolute;
     left: 0;
