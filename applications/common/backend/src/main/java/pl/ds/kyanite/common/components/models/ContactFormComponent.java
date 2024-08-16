@@ -28,6 +28,8 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pl.ds.kyanite.common.components.services.ContactFormConfigStore;
 import pl.ds.kyanite.common.components.services.ContactFormConfiguration;
 import pl.ds.kyanite.common.components.services.RecaptchaConfigStore;
@@ -37,6 +39,8 @@ import pl.ds.kyanite.common.components.utils.PageUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContactFormComponent {
+
+  private static final Logger LOG = LoggerFactory.getLogger(ContactFormComponent.class);
 
   @SlingObject
   private Resource resource;
@@ -84,7 +88,7 @@ public class ContactFormComponent {
     try {
       pageName = PageUtil.getPageProperty(resource, "jcr:title");
     } catch (Exception e) {
-      // ignore exception when we are out of page context (e.g. when performing tests)
+      LOG.warn("Contact form component is out of a PageSpace");
     }
   }
 
