@@ -83,7 +83,7 @@ public class CardComponent implements ComponentWithBackground {
 
   @Inject
   @Getter
-  @Default(values = "p-5")
+  @Default(values = "p-0")
   private String padding;
 
   @Inject
