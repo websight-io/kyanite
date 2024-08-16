@@ -65,7 +65,7 @@
         "sling:resourceType": "wcm/dialogs/components/include",
         "include": {
           "sling:resourceSuperType": "/libs/kyanite/common/components/common/padding",
-          "p6": {
+          "p5": {
             "selected": true
           }
         }
