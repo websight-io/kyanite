@@ -21,12 +21,12 @@
   <parent>
     <groupId>pl.ds.kyanite</groupId>
     <artifactId>kyanite-applications</artifactId>
-    <version>0.7.6-SNAPSHOT</version>
+    <version>0.7.6</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
   <artifactId>kyanite-richtext</artifactId>
-  <version>0.7.6-SNAPSHOT</version>
+  <version>0.7.6</version>
   <name>Kyanite Components Project - Extensions RTE extensions module</name>
   <description>RTE extensions module</description>
 
