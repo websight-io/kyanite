@@ -119,8 +119,12 @@ const initForm = () => {
 
                         data.set('email', form.email.value);
                         data.set('type', form.type.value);
+                        data.set('pageSpace', form.pageSpace.value);
+                        data.set('pageName', form.pageName.value);
                         data.set('sendTo', parseMailAddress(form.type));
-                        data.set('name', form.name.value);
+                        data.set('firstName', form.firstName.value);
+                        data.set('lastName', form.lastName.value);
+                        data.set('companyName', form.companyName.value);
                         data.set('message', form.message.value);
 
                         await new Promise((resolveCaptchaInit, rejectCaptchaInit) => {

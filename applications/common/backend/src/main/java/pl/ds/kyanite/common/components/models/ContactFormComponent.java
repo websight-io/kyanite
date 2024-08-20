@@ -28,14 +28,19 @@ import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pl.ds.kyanite.common.components.services.ContactFormConfigStore;
 import pl.ds.kyanite.common.components.services.ContactFormConfiguration;
 import pl.ds.kyanite.common.components.services.RecaptchaConfigStore;
 import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
 import pl.ds.kyanite.common.components.utils.PageSpace;
+import pl.ds.kyanite.common.components.utils.PageUtil;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
 public class ContactFormComponent {
+
+  private static final Logger LOG = LoggerFactory.getLogger(ContactFormComponent.class);
 
   @SlingObject
   private Resource resource;
@@ -56,16 +61,34 @@ public class ContactFormComponent {
 
   @ValueMapValue
   @Getter
-  @Default(values = "<p>Contact Us</p>")
+  private String formHeader;
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "Your message")
+  private String messagePlaceholder;
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "<p>I agree to the terms and conditions</p>")
   private String consentText;
 
+  @Getter
   private String spaceName;
+
+  @Getter
+  private String pageName;
 
   @PostConstruct
   private void init() {
     PageSpace pageSpace = PageSpace.forResource(resource);
     if (pageSpace != null) {
       spaceName = pageSpace.getWsPagesSpaceName();
+    }
+    try {
+      pageName = PageUtil.getPageProperty(resource, "jcr:title");
+    } catch (Exception e) {
+      LOG.warn("Contact form component is out of a PageSpace");
     }
   }
 
