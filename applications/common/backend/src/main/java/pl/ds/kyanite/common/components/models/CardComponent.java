@@ -82,6 +82,11 @@ public class CardComponent implements ComponentWithBackground {
   private String type;
 
   @Inject
+  @Getter
+  @Default(values = "p-0")
+  private String padding;
+
+  @Inject
   @Default(values = StringUtils.EMPTY)
   private String anchorUrl;
 
