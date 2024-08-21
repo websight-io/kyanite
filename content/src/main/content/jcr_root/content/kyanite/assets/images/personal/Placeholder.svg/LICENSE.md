@@ -1,1 +1,0 @@
-Image is from https://en.wikipedia.org/wiki/File:Placeholder_view_vector.svg. This file is made available under the [Creative Commons](https://en.wikipedia.org/wiki/en:Creative_Commons) [CC0 1.0 Universal Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/deed.en).
