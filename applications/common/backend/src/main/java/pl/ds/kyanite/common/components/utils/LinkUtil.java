@@ -26,9 +26,11 @@ import pl.ds.websight.assets.core.api.AssetsConstants;
 
 public class LinkUtil {
 
-  private static final String ANCHOR_LINK_PREFIX = "#";
   public static final String PUBLISHED = "/published";
   public static final String CONTENT = "/content";
+  private static final String ANCHOR_LINK_PREFIX = "#";
+  private static final String KYANITE_WEB_RESOURCE_ROOT_PATH = "/libs/kyanite/webroot/";
+
 
   private LinkUtil() {
     // no instance
@@ -66,7 +68,7 @@ public class LinkUtil {
   }
 
   public static boolean isInternal(String link, ResourceResolver resourceResolver) {
-    return Objects.nonNull(getResource(link, resourceResolver));
+    return Objects.nonNull(getResource(link, resourceResolver)) && !isWebResource(link);
   }
 
   private static boolean isAsset(String link, ResourceResolver resourceResolver) {
@@ -104,5 +106,9 @@ public class LinkUtil {
       return null;
     }
     return resource.getValueMap().get("jcr:primaryType", String.class);
+  }
+
+  private static boolean isWebResource(final String link) {
+    return StringUtils.startsWith(link, KYANITE_WEB_RESOURCE_ROOT_PATH);
   }
 }
