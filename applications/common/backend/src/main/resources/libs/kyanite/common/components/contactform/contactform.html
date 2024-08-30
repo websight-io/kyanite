@@ -16,129 +16,141 @@
   ~
 */-->
 
-<sly data-sly-use.model="pl.ds.kyanite.common.components.models.ContactFormComponent">
-  <h5 data-sly-test.formHeader="${model.formHeader}"
-      class="contact-form-header">${formHeader}</h5>
-  <form class="contact-form"
-        data-sly-attribute.submit-message-type="${model.showAlternativeSubmitMessage ? 'alternative' : 'default'}"
-        data-config-captcha-public-key='${model.captchaPublicKey}'
-        data-config-http-end-point='${model.configEndpoint}'>
+<sly data-sly-use.model="pl.ds.kyanite.common.components.models.ContactFormComponent"
+     data-sly-set.types="${model.types}">
+  <sly data-sly-test.typesAreProvided="${types.size > 0}">
+    <h5 data-sly-test.formHeader="${model.formHeader}"
+        class="contact-form-header">${formHeader}</h5>
+    <form class="contact-form"
+          data-sly-attribute.submit-message-type="${model.showAlternativeSubmitMessage ? 'alternative' : 'default'}"
+          data-config-captcha-public-key='${model.captchaPublicKey}'
+          data-config-http-end-point='${model.configEndpoint}'>
 
-    <div data-sly-set.types="${model.types}"
-         data-sly-attribute.hidden="${types.size < 2}"
-         class="field">
-      <div class="control">
-        <div class="select">
-          <select required
-                  name="type"
-                  aria-label="Type of inquiry">
-            <option disabled value
-                    data-sly-attribute.selected="${types.size != 1}">Select an option</option>
-            <sly data-sly-list.item="${model.types}">
-              <option
-                  data-sly-attribute.selected="${types.size == 1}"
-                  data-value-part1="${item.mailParts[0]}"
-                  data-value-part2="${item.mailParts[1]}"
-                  data-value-part3="${item.mailParts[2]}"
-                  value="${item.label}">${item.label}</option>
-            </sly>
-          </select>
+      <div data-sly-attribute.hidden="${types.size < 2}"
+           class="field">
+        <div class="control">
+          <div class="select">
+            <select required
+                    name="type"
+                    aria-label="Type of inquiry">
+              <option disabled value
+                      data-sly-attribute.selected="${types.size != 1}">Select an option
+              </option>
+              <sly data-sly-list.item="${types}">
+                <option
+                    data-sly-attribute.selected="${types.size == 1}"
+                    data-value-part1="${item.mailParts[0]}"
+                    data-value-part2="${item.mailParts[1]}"
+                    data-value-part3="${item.mailParts[2]}"
+                    value="${item.label}">${item.label}
+                </option>
+              </sly>
+            </select>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="field">
-      <div class="control">
-        <input class="input" type="text" name="firstName" placeholder="First Name*" required>
+      <div class="field">
+        <div class="control">
+          <input class="input" type="text" name="firstName" placeholder="First Name*" required>
+        </div>
       </div>
-    </div>
 
-    <div class="field">
-      <div class="control">
-        <input class="input" type="text" name="lastName" placeholder="Last Name*" required>
+      <div class="field">
+        <div class="control">
+          <input class="input" type="text" name="lastName" placeholder="Last Name*" required>
+        </div>
       </div>
-    </div>
 
-    <div class="field">
-      <div class="control has-icons-left">
-        <input class="input email-input" type="email" name="email" placeholder="Your working email*" required>
-        <span class="icon is-small is-left">
+      <div class="field">
+        <div class="control has-icons-left">
+          <input class="input email-input" type="email" name="email"
+                 placeholder="Your working email*" required>
+          <span class="icon is-small is-left">
           <i class="mdi mdi-email"></i>
         </span>
-      </div>
-      <p class="help is-danger is-hidden email-validate-error">This email is invalid</p>
-    </div>
-
-    <div class="field">
-      <div class="control">
-        <input class="input" type="text" name="companyName" placeholder="Company Name">
-      </div>
-    </div>
-
-    <div  data-sly-attribute.hidden="${!model.showMessage}"
-          class="field">
-      <div class="control">
-        <textarea class="textarea" name="message" placeholder="${model.messagePlaceholder}"></textarea>
-      </div>
-    </div>
-
-    <div class="field">
-      <div class="control">
-        <label class="checkbox is-flex">
-          <input type="checkbox" class="mr-2" required>
-          ${model.consentText @ context='html'}
-        </label>
-      </div>
-    </div>
-
-    <div hidden class="field">
-      <div class="control">
-        <input class="input" type="text" name="pageSpace" value="${model.spaceName}">
-      </div>
-    </div>
-
-    <div hidden class="field">
-      <div class="control">
-        <input class="input" type="text" name="pageName" value="${model.pageName}">
-      </div>
-    </div>
-
-    <div class="field">
-      <div class="control">
-        <input id="submit-btn" class="button is-primary is-medium" type="submit"
-               value="${model.submitLabel}" data-form-id="${resource.name}">
-      </div>
-    </div>
-    <div class="block submit-message-type submit-message-default">
-      <div class="submit-result notification is-danger is-light form-failure mb-0">
-        Something's wrong, try again
-      </div>
-      <div class="submit-result notification is-success is-light form-success">
-        Form submitted successfully
-      </div>
-    </div>
-    <section class="block notification submit-message-type submit-message-alternative">
-      <div class="submit-result form-success">
-        <header>
-          <h2 class="submit-result-header title">
-            Thank you for your request!
-          </h2>
-        </header>
-        <p class="submit-result-message">${model.alternativeSuccessMessage}</p>
+        </div>
+        <p class="help is-danger is-hidden email-validate-error">This email is invalid</p>
       </div>
 
-      <div class="submit-result form-failure">
-        <header>
-          <h2 class="submit-result-header title">
-            Oops! Something didn’t go as planned.
-          </h2>
-        </header>
-        <p class="submit-result-message">${model.alternativeFailureMessage}</p>
+      <div class="field">
+        <div class="control">
+          <input class="input" type="text" name="companyName" placeholder="Company Name">
+        </div>
       </div>
 
-      <div class="control back-button-div">
-        <input class="button back-button is-primary is-medium" type="button" value="Back to the form">
+      <div data-sly-attribute.hidden="${!model.showMessage}"
+           class="field">
+        <div class="control">
+          <textarea class="textarea" name="message"
+                    placeholder="${model.messagePlaceholder}"></textarea>
+        </div>
       </div>
-    </section>
-  </form>
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox is-flex">
+            <input type="checkbox" class="mr-2" required>
+            ${model.consentText @ context='html'}
+          </label>
+        </div>
+      </div>
+
+      <div hidden class="field">
+        <div class="control">
+          <input class="input" type="text" name="pageSpace" value="${model.spaceName}">
+        </div>
+      </div>
+
+      <div hidden class="field">
+        <div class="control">
+          <input class="input" type="text" name="pageName" value="${model.pageName}">
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <input id="submit-btn" class="button is-primary is-medium" type="submit"
+                 value="${model.submitLabel}" data-form-id="${resource.name}">
+        </div>
+      </div>
+      <div class="block submit-message-type submit-message-default">
+        <div class="submit-result notification is-danger is-light form-failure mb-0">
+          Something's wrong, try again
+        </div>
+        <div class="submit-result notification is-success is-light form-success">
+          Form submitted successfully
+        </div>
+      </div>
+      <section class="block notification submit-message-type submit-message-alternative">
+        <div class="submit-result form-success">
+          <header>
+            <h2 class="submit-result-header title">
+              Thank you for your request!
+            </h2>
+          </header>
+          <p class="submit-result-message">${model.alternativeSuccessMessage}</p>
+        </div>
+
+        <div class="submit-result form-failure">
+          <header>
+            <h2 class="submit-result-header title">
+              Oops! Something didn’t go as planned.
+            </h2>
+          </header>
+          <p class="submit-result-message">${model.alternativeFailureMessage}</p>
+        </div>
+
+        <div class="control back-button-div">
+          <input class="button back-button is-primary is-medium" type="button"
+                 value="Back to the form">
+        </div>
+      </section>
+    </form>
+  </sly>
+  <sly data-sly-test="${wcmmode.isEdit && !typesAreProvided}">
+    <div>
+      <span class="has-text-danger">Provide at least one inquiry type</span>
+    </div>
+  </sly>
 </sly>
