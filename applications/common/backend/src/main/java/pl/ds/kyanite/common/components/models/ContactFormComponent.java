@@ -73,6 +73,25 @@ public class ContactFormComponent {
   @Default(values = "<p>I agree to the terms and conditions</p>")
   private String consentText;
 
+  @ValueMapValue
+  @Getter
+  private boolean showMessage;
+
+  @ValueMapValue
+  @Getter
+  private boolean showAlternativeSubmitMessage;
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "A member of our team will be in contact with you shortly.")
+  private String alternativeSuccessMessage;
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "Unfortunately, we were unable to complete your request "
+      + "due to an unexpected error. Please attempt to submit your inquiry again.")
+  private String alternativeFailureMessage;
+
   @Getter
   private String spaceName;
 

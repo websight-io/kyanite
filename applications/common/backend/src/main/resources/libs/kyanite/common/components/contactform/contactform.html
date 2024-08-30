@@ -20,6 +20,7 @@
   <h5 data-sly-test.formHeader="${model.formHeader}"
       class="contact-form-header">${formHeader}</h5>
   <form class="contact-form"
+        data-sly-attribute.submit-message-type="${model.showAlternativeSubmitMessage ? 'alternative' : 'default'}"
         data-config-captcha-public-key='${model.captchaPublicKey}'
         data-config-http-end-point='${model.configEndpoint}'>
 
@@ -74,7 +75,7 @@
       </div>
     </div>
 
-    <div  data-sly-attribute.hidden="${!properties.showMessage}"
+    <div  data-sly-attribute.hidden="${!model.showMessage}"
           class="field">
       <div class="control">
         <textarea class="textarea" name="message" placeholder="${model.messagePlaceholder}"></textarea>
@@ -108,13 +109,36 @@
                value="${model.submitLabel}" data-form-id="${resource.name}">
       </div>
     </div>
-    <div class="block">
-      <div class="notification is-danger is-light is-hidden form-failure mb-0">
+    <div class="block submit-message-type submit-message-default">
+      <div class="submit-result notification is-danger is-light form-failure mb-0">
         Something's wrong, try again
       </div>
-      <div class="notification is-success is-light is-hidden form-success">
+      <div class="submit-result notification is-success is-light form-success">
         Form submitted successfully
       </div>
     </div>
+    <section class="block notification submit-message-type submit-message-alternative">
+      <div class="submit-result form-success">
+        <header>
+          <h2 class="submit-result-header title">
+            Thank you for your request!
+          </h2>
+        </header>
+        <p class="submit-result-message">${model.alternativeSuccessMessage}</p>
+      </div>
+
+      <div class="submit-result form-failure">
+        <header>
+          <h2 class="submit-result-header title">
+            Oops! Something didn’t go as planned.
+          </h2>
+        </header>
+        <p class="submit-result-message">${model.alternativeFailureMessage}</p>
+      </div>
+
+      <div class="control back-button-div">
+        <input class="button back-button is-primary is-medium" type="button" value="Back to the form">
+      </div>
+    </section>
   </form>
 </sly>

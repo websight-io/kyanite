@@ -63,6 +63,31 @@
         "label": "Consent Text",
         "ws:disallowedContext": ["edit:dialog"],
         "configuration": "wcm/dialogs/components/richtext/configurations/compact"
+      },
+      "showAlternativeSubmitMessage": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "showAlternativeSubmitMessage",
+        "label": "Show Thank You message on submit",
+        "description": "Show Thank You message instead of a notification bar"
+      },
+      "alternativeSubmitMessageContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "alternativeSuccessMessage": {
+          "sling:resourceType": "wcm/dialogs/components/textarea",
+          "name": "alternativeSuccessMessage",
+          "label": "Success message"
+        },
+        "alternativeFailureMessage": {
+          "sling:resourceType": "wcm/dialogs/components/textarea",
+          "name": "alternativeFailureMessage",
+          "label": "Failure message"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "showAlternativeSubmitMessage",
+            "values": "true"
+          }
+        }
       }
     }
   }
