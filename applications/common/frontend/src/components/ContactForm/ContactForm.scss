@@ -77,4 +77,10 @@
       }
     }
   }
+
+  //  Bulma override
+
+  .input, .select select, .notification {
+    background-color: transparent;
+  }
 }
