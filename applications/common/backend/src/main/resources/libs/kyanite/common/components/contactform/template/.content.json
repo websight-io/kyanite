@@ -2,5 +2,7 @@
   "jcr:primaryType": "nt:unstructured",
   "showAlternativeSubmitMessage": "false",
   "alternativeSuccessMessage": "A member of our team will be in contact with you shortly.",
-  "alternativeFailureMessage": "Unfortunately, we were unable to complete your request due to an unexpected error."
+  "alternativeSuccessButtonLabel": "Back to the form",
+  "alternativeFailureMessage": "Unfortunately, we were unable to complete your request due to an unexpected error.",
+  "alternativeFailureButtonLabel": "Back to the form"
 }

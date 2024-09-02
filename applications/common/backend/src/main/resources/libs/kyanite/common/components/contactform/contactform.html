@@ -122,7 +122,8 @@
           Form submitted successfully
         </div>
       </div>
-      <section class="block notification submit-message-type submit-message-alternative">
+      <section data-sly-test="${model.showAlternativeSubmitMessage}"
+               class="block notification submit-message-type submit-message-alternative">
         <div class="submit-result form-success">
           <header>
             <h2 class="submit-result-header title">
@@ -130,6 +131,16 @@
             </h2>
           </header>
           <p class="submit-result-message">${model.alternativeSuccessMessage}</p>
+
+          <div class="control after-submit-button-div">
+            <sly data-sly-set.submitSuccessButtonLink="${model.alternativeSuccessButtonLink}"></sly>
+            <a data-sly-test="${submitSuccessButtonLink}" href="${submitSuccessButtonLink}">
+              <span class="hl-cta__text">${model.alternativeSuccessButtonLabel}</span>
+            </a>
+            <input data-sly-test="${!submitSuccessButtonLink}"
+                   class="button after-submit-button is-primary is-medium" type="button"
+                   value="${model.alternativeSuccessButtonLabel}">
+          </div>
         </div>
 
         <div class="submit-result form-failure">
@@ -139,11 +150,18 @@
             </h2>
           </header>
           <p class="submit-result-message">${model.alternativeFailureMessage}</p>
-        </div>
 
-        <div class="control back-button-div">
-          <input class="button back-button is-primary is-medium" type="button"
-                 value="Back to the form">
+          <div class="control after-submit-button-div">
+            <sly data-sly-set.submitFailureButtonLink="${model.alternativeFailureButtonLink}"></sly>
+            <a data-sly-test="${submitFailureButtonLink}"
+               class="button after-submit-button is-primary is-medium"
+               href="${submitFailureButtonLink}" target="_blank">
+              <span class="hl-cta__text">${model.alternativeFailureButtonLabel}</span>
+            </a>
+            <input data-sly-test="${!submitFailureButtonLink}"
+                class="button after-submit-button is-primary is-medium" type="button"
+                   value="${model.alternativeFailureButtonLabel}">
+          </div>
         </div>
       </section>
     </form>

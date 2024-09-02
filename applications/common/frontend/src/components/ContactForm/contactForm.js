@@ -190,9 +190,11 @@ const initForm = () => {
                 submitForm();
             });
 
-            const backBtn = contactForm.getElementsByClassName('back-button')[0];
-            backBtn.addEventListener('click', (e) => {
-                setSubmitted(false);
+            Array.from(contactForm.getElementsByClassName('after-submit-button'))
+                .forEach((b) => {
+                    b.addEventListener('click', (e) => {
+                        setSubmitted(false);
+                    });
             })
         });
     });

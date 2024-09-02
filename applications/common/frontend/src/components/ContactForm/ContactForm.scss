@@ -37,10 +37,8 @@
     .submit-result {
       display: none;
 
-      margin-bottom: 2rem;
-
-      .submit-result-header {
-        margin-bottom: 1rem;
+      > *:not(:last-child) {
+        margin-bottom: 1.5rem;
       }
     }
   }
@@ -80,7 +78,13 @@
 
   //  Bulma override
 
-  .input, .select select, .notification {
+  .notification.submit-message-type {
     background-color: transparent;
+  }
+
+  .field {
+    .input, .select select {
+      background-color: transparent;
+    }
   }
 }

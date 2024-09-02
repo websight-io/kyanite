@@ -88,9 +88,27 @@ public class ContactFormComponent {
 
   @ValueMapValue
   @Getter
+  private String alternativeSuccessButtonLink;
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "Back to the form")
+  private String alternativeSuccessButtonLabel;
+
+  @ValueMapValue
+  @Getter
   @Default(values = "Unfortunately, we were unable to complete your request "
       + "due to an unexpected error. Please attempt to submit your inquiry again.")
   private String alternativeFailureMessage;
+
+  @ValueMapValue
+  @Getter
+  private String alternativeFailureButtonLink;
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "Back to the form")
+  private String alternativeFailureButtonLabel;
 
   @Getter
   private String spaceName;
