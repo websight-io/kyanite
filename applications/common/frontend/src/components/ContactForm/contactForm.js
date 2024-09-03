@@ -73,6 +73,7 @@ const initForm = () => {
                 };
 
                 if (captchaPublicKey === undefined) {
+                    setSubmitted(true);
                     errorStatus('Invalid configuration: recaptcha key not found');
                     return;
                 }
