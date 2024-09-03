@@ -18,11 +18,11 @@
 
 
 .contact-form-header {
-  font-size: 1.125rem;
-  line-height: 1.33;
+  font-size: 1.5rem;
+  line-height: 1.5;
   font-weight: var(--kyanite-weight-bold);
 
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .contact-form {
@@ -58,7 +58,7 @@
         display: block;
       }
 
-      .field {
+      .form-decorative-element, .field {
         display: none;
       }
     }

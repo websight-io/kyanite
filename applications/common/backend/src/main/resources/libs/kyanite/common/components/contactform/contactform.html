@@ -19,12 +19,13 @@
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.ContactFormComponent"
      data-sly-set.types="${model.types}">
   <sly data-sly-test.typesAreProvided="${types.size > 0}">
-    <h5 data-sly-test.formHeader="${model.formHeader}"
-        class="contact-form-header">${formHeader}</h5>
     <form class="contact-form"
           data-sly-attribute.submit-message-type="${model.showAlternativeSubmitMessage ? 'alternative' : 'default'}"
           data-config-captcha-public-key='${model.captchaPublicKey}'
           data-config-http-end-point='${model.configEndpoint}'>
+
+      <h3 data-sly-test.formHeader="${model.formHeader}"
+          class="contact-form-header form-decorative-element">${formHeader}</h3>
 
       <div data-sly-attribute.hidden="${types.size < 2}"
            class="field">
@@ -125,43 +126,23 @@
       <section data-sly-test="${model.showAlternativeSubmitMessage}"
                class="block notification submit-message-type submit-message-alternative">
         <div class="submit-result form-success">
-          <header>
-            <h2 class="submit-result-header title">
-              Thank you for your request!
-            </h2>
-          </header>
-          <p class="submit-result-message">${model.alternativeSuccessMessage}</p>
-
-          <div class="control after-submit-button-div">
-            <sly data-sly-set.submitSuccessButtonLink="${model.alternativeSuccessButtonLink}"></sly>
-            <a data-sly-test="${submitSuccessButtonLink}" href="${submitSuccessButtonLink}">
-              <span class="hl-cta__text">${model.alternativeSuccessButtonLabel}</span>
-            </a>
-            <input data-sly-test="${!submitSuccessButtonLink}"
-                   class="button after-submit-button is-primary is-medium" type="button"
-                   value="${model.alternativeSuccessButtonLabel}">
-          </div>
+          <sly data-sly-use.template="./templates/submitmessage.html"
+               data-sly-call="${template.submitmessage @
+                                headerText='Thank you for your request!',
+                                messageText=model.alternativeSuccessMessage,
+                                buttonLink=model.alternativeSuccessButtonLink,
+                                buttonLabel=model.alternativeSuccessButtonLabel,
+                                openInNewWindow=!model.isAlternativeSuccessButtonLinkInternal}"></sly>
         </div>
 
         <div class="submit-result form-failure">
-          <header>
-            <h2 class="submit-result-header title">
-              Oops! Something didn’t go as planned.
-            </h2>
-          </header>
-          <p class="submit-result-message">${model.alternativeFailureMessage}</p>
-
-          <div class="control after-submit-button-div">
-            <sly data-sly-set.submitFailureButtonLink="${model.alternativeFailureButtonLink}"></sly>
-            <a data-sly-test="${submitFailureButtonLink}"
-               class="button after-submit-button is-primary is-medium"
-               href="${submitFailureButtonLink}" target="_blank">
-              <span class="hl-cta__text">${model.alternativeFailureButtonLabel}</span>
-            </a>
-            <input data-sly-test="${!submitFailureButtonLink}"
-                class="button after-submit-button is-primary is-medium" type="button"
-                   value="${model.alternativeFailureButtonLabel}">
-          </div>
+          <sly data-sly-use.template="./templates/submitmessage.html"
+               data-sly-call="${template.submitmessage @
+                                headerText='Oops! Something didn’t go as planned.',
+                                messageText=model.alternativeFailureMessage,
+                                buttonLink=model.alternativeFailureButtonLink,
+                                buttonLabel=model.alternativeFailureButtonLabel,
+                                openInNewWindow=!model.isAlternativeFailureButtonLinkInternal}"></sly>
         </div>
       </section>
     </form>
