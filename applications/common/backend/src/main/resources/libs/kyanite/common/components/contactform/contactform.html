@@ -115,14 +115,17 @@
                  value="${model.submitLabel}" data-form-id="${resource.name}">
         </div>
       </div>
-      <div class="block submit-message-type submit-message-default">
-        <div class="submit-result notification is-danger is-light form-failure mb-0">
-          Something's wrong, try again
+        <sly data-sly-test="${!model.showAlternativeSubmitMessage}">
+
+        <div class="block submit-message-type submit-message-default">
+          <div class="submit-result notification is-danger is-light form-failure mb-0">
+            Something's wrong, try again
+          </div>
+          <div class="submit-result notification is-success is-light form-success">
+            Form submitted successfully
+          </div>
         </div>
-        <div class="submit-result notification is-success is-light form-success">
-          Form submitted successfully
-        </div>
-      </div>
+      </sly>
       <section data-sly-test="${model.showAlternativeSubmitMessage}"
                class="block notification submit-message-type submit-message-alternative">
         <div class="submit-result form-success">

@@ -31,8 +31,8 @@ const initForm = () => {
                 contactForm.classList.contains(clsName) && contactForm.classList.remove(clsName);
             }
 
-            const toggleFormClass = (clsName, isAdd) => {
-                isAdd ? addFormClass(clsName) : removeFormClass(clsName);
+            const toggleFormClass = (clsName, add) => {
+                add ? addFormClass(clsName) : removeFormClass(clsName);
             }
 
             const resetFormResult = () => {
@@ -47,7 +47,7 @@ const initForm = () => {
 
             const setSuccess = (isSuccess) => {
                 resetFormResult();
-                toggleFormClass(isSuccess ? clsFormSubmitSuccess : clsFormSubmitFailure, true);
+                addFormClass(isSuccess ? clsFormSubmitSuccess : clsFormSubmitFailure);
             }
 
             contactForm.addEventListener('submit', (e) => {
