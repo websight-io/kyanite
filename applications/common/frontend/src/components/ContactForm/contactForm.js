@@ -18,25 +18,62 @@ const initForm = () => {
     document.addEventListener(window.KYANITE_ON_DOM_CONTENT_LOAD, () => {
         Array.from(document.getElementsByClassName("contact-form"))
         .forEach(function(contactForm) {
+
+            const clsFormSubmitted = 'form-submitted';
+            const clsFormSubmitSuccess = 'form-success';
+            const clsFormSubmitFailure = 'form-failure';
+
+            const addFormClass = (clsName) => {
+                !contactForm.classList.contains(clsName) && contactForm.classList.add(clsName);
+            }
+
+            const removeFormClass = (clsName) => {
+                contactForm.classList.contains(clsName) && contactForm.classList.remove(clsName);
+            }
+
+            const toggleFormClass = (clsName, add) => {
+                add ? addFormClass(clsName) : removeFormClass(clsName);
+            }
+
+            const resetFormResult = () => {
+                removeFormClass(clsFormSubmitSuccess);
+                removeFormClass(clsFormSubmitFailure);
+            }
+
+            const setSubmitted = (isSubmitted) => {
+                toggleFormClass(clsFormSubmitted, isSubmitted);
+                !isSubmitted && resetFormResult();
+            }
+
+            const setSuccess = (isSuccess) => {
+                resetFormResult();
+                addFormClass(isSuccess ? clsFormSubmitSuccess : clsFormSubmitFailure);
+            }
+
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
 
                 const form = e.target;
                 const submitBtn = form.getElementsByClassName('button')[0];
-                const formSuccessEl = form.getElementsByClassName('form-success')[0];
-                const formFailureEl = form.getElementsByClassName('form-failure')[0];
                 const emailValidateErrorEl = form.getElementsByClassName('email-validate-error')[0];
                 const emailInputEl = form.getElementsByClassName('email-input')[0];
-                const contactForm = form.dataset.configHttpEndPoint;
+                const contactFormEndpoint = form.dataset.configHttpEndPoint;
                 const captchaPublicKey = form.dataset.configCaptchaPublicKey;
-                
+
                 const errorStatus = (err) => {
                     console.error(err);
-                    formFailureEl.classList.remove('is-hidden');
+                    setSuccess(false);
                     submitBtn.removeAttribute('disabled');
                 };
 
+                const successStatus = () => {
+                    setSuccess(true);
+                    submitBtn.removeAttribute('disabled');
+                    form.reset();
+                };
+
                 if (captchaPublicKey === undefined) {
+                    setSubmitted(true);
                     errorStatus('Invalid configuration: recaptcha key not found');
                     return;
                 }
@@ -64,18 +101,13 @@ const initForm = () => {
                     });
                 };
 
-                const successStatus = () => {
-                    formSuccessEl.classList.remove('is-hidden');
-                    submitBtn.removeAttribute('disabled');
-                    form.reset();
-                };
-
                 const startSubmit = (formData) => {
-                    if (contactForm) {
+                    if (contactFormEndpoint) {
+                        setSubmitted(true);
                         submitBtn.setAttribute('disabled', 'disabled');
-                        sendForm(contactForm, formData);
+                        sendForm(contactFormEndpoint, formData);
                     } else {
-                        errorStatus('Invalid configuration: contactForm not found');
+                        errorStatus('Invalid configuration: contactFormEndpoint not found');
                     }
                 };
 
@@ -93,11 +125,6 @@ const initForm = () => {
                     !emailValidateErrorEl.classList.contains('is-hidden')
                     && emailValidateErrorEl.classList.add('is-hidden');
                     emailInputEl.classList.remove('is-danger');
-                };
-
-                const hideNotifications = () => {
-                    !formSuccessEl.classList.contains('is-hidden') && formSuccessEl.classList.add('is-hidden');
-                    !formFailureEl.classList.contains('is-hidden') && formFailureEl.classList.add('is-hidden');
                 };
 
                 const parseMailAddress = (messageType) =>  {
@@ -160,9 +187,16 @@ const initForm = () => {
                 };
 
                 hideEmailError();
-                hideNotifications();
+                setSubmitted(false);
                 submitForm();
             });
+
+            Array.from(contactForm.getElementsByClassName('after-submit-button'))
+                .forEach((b) => {
+                    b.addEventListener('click', (e) => {
+                        setSubmitted(false);
+                    });
+            })
         });
     });
 };

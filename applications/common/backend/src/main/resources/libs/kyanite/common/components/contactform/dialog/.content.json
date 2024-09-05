@@ -55,14 +55,71 @@
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "consentText",
         "label": "Consent Text",
-        "ws:disallowedContext": ["edit:panel"]
+        "ws:disallowedContext": [
+          "edit:panel"
+        ]
       },
       "panelConsentText": {
         "sling:resourceType": "wcm/dialogs/components/richtext",
         "name": "consentText",
         "label": "Consent Text",
-        "ws:disallowedContext": ["edit:dialog"],
+        "ws:disallowedContext": [
+          "edit:dialog"
+        ],
         "configuration": "wcm/dialogs/components/richtext/configurations/compact"
+      }
+    },
+    "submitResult": {
+      "sling:resourceType": "wcm/dialogs/components/tab",
+      "label": "After submit",
+      "showAlternativeSubmitMessage": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "showAlternativeSubmitMessage",
+        "label": "Show Thank You message on submit",
+        "description": "Show Thank You message instead of a notification bar"
+      },
+      "alternativeSubmitMessageContainer": {
+        "sling:resourceType": "wcm/dialogs/components/container",
+        "alternativeSuccessMessage": {
+          "sling:resourceType": "wcm/dialogs/components/textarea",
+          "name": "alternativeSuccessMessage",
+          "label": "Success message"
+        },
+        "alternativeSuccessButtonLink": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "alternativeSuccessButtonLink",
+          "label": "Link for the button on submit success",
+          "description": "If not specified, user will be taken back to form"
+        },
+        "alternativeSuccessButtonLabel": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "alternativeSuccessButtonLabel",
+          "label": "Text for the button on submit success"
+        },
+        "alternativeFailureMessage": {
+          "sling:resourceType": "wcm/dialogs/components/textarea",
+          "name": "alternativeFailureMessage",
+          "label": "Failure message"
+        },
+        "alternativeFailureButtonLink": {
+          "sling:resourceType": "wcm/dialogs/components/pathpicker",
+          "rootPath": "/content",
+          "name": "alternativeFailureButtonLink",
+          "label": "Link for the button on submit failure",
+          "description": "If not specified, user will be taken back to form"
+        },
+        "alternativeFailureButtonLabel": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "alternativeFailureButtonLabel",
+          "label": "Text for the button on submit failure"
+        },
+        "ws:display": {
+          "condition": {
+            "sourceName": "showAlternativeSubmitMessage",
+            "values": "true"
+          }
+        }
       }
     }
   }

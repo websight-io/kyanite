@@ -21,6 +21,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
@@ -34,6 +35,7 @@ import pl.ds.kyanite.common.components.services.ContactFormConfigStore;
 import pl.ds.kyanite.common.components.services.ContactFormConfiguration;
 import pl.ds.kyanite.common.components.services.RecaptchaConfigStore;
 import pl.ds.kyanite.common.components.services.RecaptchaConfiguration;
+import pl.ds.kyanite.common.components.utils.LinkUtil;
 import pl.ds.kyanite.common.components.utils.PageSpace;
 import pl.ds.kyanite.common.components.utils.PageUtil;
 
@@ -73,6 +75,41 @@ public class ContactFormComponent {
   @Default(values = "<p>I agree to the terms and conditions</p>")
   private String consentText;
 
+  @ValueMapValue
+  @Getter
+  private boolean showMessage;
+
+  @ValueMapValue
+  @Getter
+  private boolean showAlternativeSubmitMessage;
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "A member of our team will be in contact with you shortly.")
+  private String alternativeSuccessMessage;
+
+  @ValueMapValue
+  private String alternativeSuccessButtonLink;
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "Back to the form")
+  private String alternativeSuccessButtonLabel;
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "Unfortunately, we were unable to complete your request "
+      + "due to an unexpected error. Please attempt to submit your inquiry again.")
+  private String alternativeFailureMessage;
+
+  @ValueMapValue
+  private String alternativeFailureButtonLink;
+
+  @ValueMapValue
+  @Getter
+  @Default(values = "Back to the form")
+  private String alternativeFailureButtonLabel;
+
   @Getter
   private String spaceName;
 
@@ -106,6 +143,31 @@ public class ContactFormComponent {
       return config.getConfigEndpoint();
     }
     return null;
+  }
+
+  public String getAlternativeSuccessButtonLink() {
+    return handleLink(alternativeSuccessButtonLink);
+  }
+
+  public String getAlternativeFailureButtonLink() {
+    return handleLink(alternativeFailureButtonLink);
+  }
+
+  private String handleLink(String link) {
+    return LinkUtil.handleLink(link, resource.getResourceResolver());
+  }
+
+
+  public boolean isAlternativeSuccessButtonLinkInternal() {
+    return isLinkInternal(alternativeSuccessButtonLink);
+  }
+
+  public boolean isAlternativeFailureButtonLinkInternal() {
+    return isLinkInternal(alternativeFailureButtonLink);
+  }
+
+  private boolean isLinkInternal(String link) {
+    return StringUtils.startsWith(link, "/");
   }
 
 }

@@ -16,10 +16,75 @@
  * -->
  */
 
+
 .contact-form-header {
-  font-size: 1.125rem;
-  line-height: 1.33;
+  font-size: 1.5rem;
+  line-height: 1.5;
   font-weight: var(--kyanite-weight-bold);
 
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-form {
+
+  //  form initial state and defaults
+
+  .submit-message-type {
+    display: none;
+
+    text-align: center;
+
+    .submit-result {
+      display: none;
+
+      > *:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  //  submit messages visibility depending on result message type
+
+  &.form-submitted {
+
+    &[submit-message-type="default"] {
+      .submit-message-default {
+        display: block;
+      }
+    }
+
+    &[submit-message-type="alternative"] {
+      .submit-message-alternative {
+        display: block;
+      }
+
+      .form-decorative-element, .field {
+        display: none;
+      }
+    }
+
+    &.form-success {
+      .submit-result.form-success {
+        display: block;
+      }
+    }
+
+    &.form-failure {
+      .submit-result.form-failure {
+        display: block;
+      }
+    }
+  }
+
+  //  Bulma override
+
+  .notification.submit-message-type {
+    background-color: transparent;
+  }
+
+  .field {
+    .input, .select select {
+      background-color: transparent;
+    }
+  }
 }
