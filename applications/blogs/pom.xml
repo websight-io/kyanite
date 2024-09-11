@@ -20,7 +20,7 @@
     <parent>
         <groupId>pl.ds.kyanite</groupId>
         <artifactId>kyanite-applications</artifactId>
-        <version>0.7.8-SNAPSHOT</version>
+        <version>0.7.8</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
