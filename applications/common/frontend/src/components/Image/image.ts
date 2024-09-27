@@ -16,8 +16,14 @@
 
 import Viewer from "viewerjs";
 
-// We may extend this array later with additional pages that need to have an image preview carousel
-const imageCarouselTemplates = ["template-blogarticlepage"];
+const IMAGES_PREVIEW_ROOT_CLASS = "previewImageContainer";
+const IMAGES_PREVIEW_ROOT_SELECTOR = `.${IMAGES_PREVIEW_ROOT_CLASS}`;
+const IMAGE_PREVIEW_IMAGE_SELECTOR = "img.image--lightbox";
+const IMAGE_PREVIEW_CONTAINER_SELECTOR = `.image:has(${IMAGE_PREVIEW_IMAGE_SELECTOR})`;
+
+const shouldCreateCarousel = () => {
+  return document.body.classList.contains(IMAGES_PREVIEW_ROOT_CLASS);
+}
 
 const onViewed = (event, viewer) => {
   const heightFillFactor = 0.8;
@@ -107,32 +113,36 @@ const createPreviewCarousel = (imageContainer) => {
   });
 };
 
-if (imageCarouselTemplates.some(className => document.body.classList.contains(className))) {
-  const imageContainer = document.querySelector<HTMLElement>(
-    '.previewImageContainer'
-  );
-  const previewCarouselImages = document.querySelectorAll<HTMLElement>(
-    '.previewImageContainer .image'
-  );
+window.addEventListener(window.KYANITE_ON_LOAD, () => {
+  if (shouldCreateCarousel()) {
 
-  previewCarouselImages.forEach((imageContainer) => {
-    const imageElement = imageContainer.querySelector('img');
-    imageElement.classList.add('previewCarouselImage');
-    imageContainer.innerHTML +=
-      '<svg class="previewIcon" width="30" height="30" viewBox="9 9 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
-      '  <rect width="45" height="45" rx="24" x="9" y="9" fill="#1B1C20"/>\n' +
-      '  <path fill-rule="evenodd" clip-rule="evenodd" d="M32 24H40V32H42V22H32V24ZM24 32H22V42H32V40H24V32Z" fill="#ECF5FF"/>\n' +
-      '</svg>';
-  });
+    const rootPreviewContainer = document.querySelector<HTMLElement>(
+        IMAGES_PREVIEW_ROOT_SELECTOR
+    );
+    if (!rootPreviewContainer) return;
 
-  if (imageContainer !== null) {
-    createPreviewCarousel(imageContainer);
+    const previewImageContainers = document.querySelectorAll<HTMLElement>(
+        `${IMAGES_PREVIEW_ROOT_SELECTOR} ${IMAGE_PREVIEW_CONTAINER_SELECTOR}`
+    );
+    if (previewImageContainers.length == 0) return;
+
+    previewImageContainers.forEach((imageContainer) => {
+      const imageElement = imageContainer.querySelector(IMAGE_PREVIEW_IMAGE_SELECTOR);
+      imageElement.classList.add('previewCarouselImage');
+      imageContainer.innerHTML +=
+          '<svg class="previewIcon" width="30" height="30" viewBox="9 9 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+          '  <rect width="45" height="45" rx="24" x="9" y="9" fill="#1B1C20"/>\n' +
+          '  <path fill-rule="evenodd" clip-rule="evenodd" d="M32 24H40V32H42V22H32V24ZM24 32H22V42H32V40H24V32Z" fill="#ECF5FF"/>\n' +
+          '</svg>';
+    });
+
+    createPreviewCarousel(rootPreviewContainer);
+  } else {
+    const imagesWithLightbox = document.querySelectorAll<HTMLImageElement>(
+        IMAGE_PREVIEW_IMAGE_SELECTOR
+    );
+    if (imagesWithLightbox.length > 0) {
+      createSeparatePreviews(imagesWithLightbox);
+    }
   }
-} else {
-  const imagesWithLightbox = document.querySelectorAll<HTMLImageElement>(
-      ".image--lightbox"
-  );
-  if (imagesWithLightbox !== null) {
-    createSeparatePreviews(imagesWithLightbox);
-  }
-}
+});

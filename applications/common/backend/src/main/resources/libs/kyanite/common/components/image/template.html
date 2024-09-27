@@ -45,7 +45,10 @@
       <source media="(max-width:1023px)" srcset="${model.tabletAssetReference @ context='uri'}"/>
     </sly>
 
-    <img class="${model.isRounded ? 'is-rounded' : ''}${model.showLightbox ? ' image--lightbox' : ''}" width="${model.width}" height="${model.height}"  src="${model.assetReference}" alt="${model.alt}" data-lightbox-asset="${model.highResolutionAssetSrc}" loading="lazy">
+    <img class="${model.isRounded ? 'is-rounded' : ''}${model.showLightbox ? ' image--lightbox' : ''}"
+         width="${model.width}" height="${model.height}"
+         src="${model.assetReference}" alt="${model.alt}" loading="lazy"
+         data-sly-attribute.data-lightbox-asset="${model.showLightbox ? model.highResolutionAssetSrc : ''}">
   </picture>
 </template>
 

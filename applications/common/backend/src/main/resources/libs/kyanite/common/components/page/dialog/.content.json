@@ -31,6 +31,12 @@
         "sling:resourceType": "wcm/dialogs/components/checkbox",
         "label": "Add reCAPTCHA",
         "name": "addCaptcha"
+      },
+      "createPreviewImagesCarousel": {
+        "sling:resourceType": "wcm/dialogs/components/checkbox",
+        "label": "Show images preview in carousel",
+        "description": "When checked, all the images with 'Display in lightbox' property will be shown in a single carousel",
+        "name": "createPreviewImagesCarousel"
       }
     },
     "metadata": {
