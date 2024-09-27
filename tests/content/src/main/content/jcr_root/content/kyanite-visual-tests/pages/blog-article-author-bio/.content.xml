@@ -155,8 +155,7 @@
                         </column3>
                         <column4
                             jcr:primaryType="nt:unstructured"
-                            sling:resourceType="kyanite/common/components/columns/column"
-                            customClass="previewImageContainer">
+                            sling:resourceType="kyanite/common/components/columns/column">
                             <desktopColumnStyle
                                 jcr:primaryType="nt:unstructured"
                                 isNormalColumn="true"
