@@ -16,6 +16,12 @@
         "label": "Hide label",
         "description": "Use to describe link without showing the label. Can be useful e.g. to describe link with an icon"
       },
+      "buttonId": {
+        "sling:resourceType": "wcm/dialogs/components/textfield",
+        "name": "buttonId",
+        "label": "Button ID",
+        "description": "ID used for GTM/GA4/etc. purposes"
+      },
       "type": {
         "sling:resourceType": "wcm/dialogs/components/include",
         "path": "/libs/kyanite/common/components/button/attributes/type"
