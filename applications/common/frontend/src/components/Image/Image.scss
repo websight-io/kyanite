@@ -28,7 +28,7 @@ $color-shadow-end: rgba(#605e78, 0.07);
 
   &.has-shadow {
     box-shadow: 0 3.1015px 19.2293px 4.3421px $color-shadow-start,
-      0 0.6203px 2.4812px $color-shadow-end;
+    0 0.6203px 2.4812px $color-shadow-end;
   }
 
   > svg {
@@ -41,22 +41,16 @@ $color-shadow-end: rgba(#605e78, 0.07);
 }
 
 .viewer-backdrop {
-  background-color: rgba(0,0,0,.9);
+  background-color: rgba(0, 0, 0, .9);
 }
 
 .viewer-open > .navbar {
   padding-right: 15px;
 }
 
-.previewImageContainer {
+.image:has(img.image--lightbox) {
 
-  .image {
-    position: relative;
-  }
-
-  .previewCarouselImage {
-    cursor: pointer;
-  }
+  position: relative;
 
   .previewIcon {
     position: absolute;

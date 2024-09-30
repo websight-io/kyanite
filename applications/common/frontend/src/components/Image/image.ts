@@ -16,8 +16,29 @@
 
 import Viewer from "viewerjs";
 
-// We may extend this array later with additional pages that need to have an image preview carousel
-const imageCarouselTemplates = ["template-blogarticlepage"];
+/**
+ *  There are two cases: preview carousel and separate previews for every message.
+ *  They differ by presence of 'carousel root' container with 'previewImageContainer' class.
+ *  Only the body can be the root for preview carousel since https://teamds.atlassian.net/browse/KYAN-291
+ *
+ *  Examples of structure:
+ *    1)  preview carousel:
+ *          <body class="previewImageContainer">
+ *            ...
+ *              <figure class="image">
+ *                ...
+ *                  <img class="image--lightbox">
+ *    2)  separate previews:
+ *          <body>
+ *            ...
+ *              <figure class="image">
+ *                ...
+ *                  <img class="image--lightbox">
+ */
+
+const IMAGES_PREVIEW_ROOT_SELECTOR = `body.previewImageContainer`;
+const IMAGE_PREVIEW_IMAGE_SELECTOR = "img.image--lightbox";
+const IMAGE_PREVIEW_CONTAINER_SELECTOR = `.image:has(${IMAGE_PREVIEW_IMAGE_SELECTOR})`;
 
 const onViewed = (event, viewer) => {
   const heightFillFactor = 0.8;
@@ -107,32 +128,34 @@ const createPreviewCarousel = (imageContainer) => {
   });
 };
 
-if (imageCarouselTemplates.some(className => document.body.classList.contains(className))) {
-  const imageContainer = document.querySelector<HTMLElement>(
-    '.previewImageContainer'
-  );
-  const previewCarouselImages = document.querySelectorAll<HTMLElement>(
-    '.previewImageContainer .image'
-  );
+window.addEventListener(window.KYANITE_ON_LOAD, () => {
 
-  previewCarouselImages.forEach((imageContainer) => {
-    const imageElement = imageContainer.querySelector('img');
-    imageElement.classList.add('previewCarouselImage');
+  const previewsCarouselContainer = document.querySelector<HTMLElement>(
+      IMAGES_PREVIEW_ROOT_SELECTOR);
+  const previewsRootContainer = previewsCarouselContainer ? previewsCarouselContainer : document.body;
+
+  const previewImageContainers = previewsRootContainer.querySelectorAll<HTMLElement>(
+      IMAGE_PREVIEW_CONTAINER_SELECTOR);
+  if (previewImageContainers.length == 0) return;
+
+  previewImageContainers.forEach((imageContainer) => {
     imageContainer.innerHTML +=
-      '<svg class="previewIcon" width="30" height="30" viewBox="9 9 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
-      '  <rect width="45" height="45" rx="24" x="9" y="9" fill="#1B1C20"/>\n' +
-      '  <path fill-rule="evenodd" clip-rule="evenodd" d="M32 24H40V32H42V22H32V24ZM24 32H22V42H32V40H24V32Z" fill="#ECF5FF"/>\n' +
-      '</svg>';
+        '<svg class="previewIcon" width="30" height="30" viewBox="9 9 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">\n' +
+        '  <rect width="45" height="45" rx="24" x="9" y="9" fill="#1B1C20"/>\n' +
+        '  <path fill-rule="evenodd" clip-rule="evenodd" d="M32 24H40V32H42V22H32V24ZM24 32H22V42H32V40H24V32Z" fill="#ECF5FF"/>\n' +
+        '</svg>';
   });
 
-  if (imageContainer !== null) {
-    createPreviewCarousel(imageContainer);
-  }
-} else {
-  const imagesWithLightbox = document.querySelectorAll<HTMLImageElement>(
-      ".image--lightbox"
+  const previewImages = previewsRootContainer.querySelectorAll<HTMLElement>(
+      `${IMAGE_PREVIEW_CONTAINER_SELECTOR} ${IMAGE_PREVIEW_IMAGE_SELECTOR}`
   );
-  if (imagesWithLightbox !== null) {
-    createSeparatePreviews(imagesWithLightbox);
+
+  if (previewsCarouselContainer) {
+    previewImages.forEach((imageElement) => {
+      imageElement.classList.add('previewCarouselImage');
+    });
+    createPreviewCarousel(previewsCarouselContainer);
+  } else {
+    createSeparatePreviews(previewImages)
   }
-}
+});

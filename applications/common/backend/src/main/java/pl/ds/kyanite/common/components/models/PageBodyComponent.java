@@ -57,6 +57,10 @@ public class PageBodyComponent {
   @ValueMapValue
   private boolean addCaptcha;
 
+  @Getter
+  @ValueMapValue
+  private boolean createPreviewImagesCarousel;
+
   private String spaceName;
 
   @Getter

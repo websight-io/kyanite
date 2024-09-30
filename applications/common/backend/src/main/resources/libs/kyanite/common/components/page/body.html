@@ -20,8 +20,11 @@
   <sly data-sly-set.templateMarker="template-${extra.templateName}"></sly>
   <sly data-sly-set.pageMarker="page-${extra.pageName}"></sly>
   <sly data-sly-set.noNavbarPadding="${extra.noNavbarPadding ? 'no-navbar-padding' : ''}"></sly>
+  <sly data-sly-set.previewImageCarouselMarker="${extra.createPreviewImagesCarousel ? 'previewImageContainer' : ''}"></sly>
 
-  <body class="${properties.defaultTemplateCSS} ${templateMarker} ${pageMarker} ${properties.background} ${noNavbarPadding}" data-cookie-config="${extra.cookieData}">
+  <body class="${properties.defaultTemplateCSS} ${properties.background}
+               ${templateMarker} ${pageMarker} ${noNavbarPadding} ${previewImageCarouselMarker}"
+        data-cookie-config="${extra.cookieData}">
   <!-- Google Tag Manager (noscript) -->
   <noscript data-sly-test="${extra.hasAnalyticsUrl}">
     <iframe src="https://www.googletagmanager.com/ns.html?id=${extra.googleAnalyticsTrackingId @ context='text'}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
