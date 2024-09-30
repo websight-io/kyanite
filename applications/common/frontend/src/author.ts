@@ -16,3 +16,28 @@
 
 // Stylesheets that will be loaded in Edit mode only
 import "./author.scss";
+import {onDOMContentLoaded} from "./helpers/dom";
+
+
+const detectDuplicateIds = () => {
+  const idCnt = {};
+  document.querySelectorAll("[id]").forEach((element) => {
+    const id = element.id;
+    idCnt[id] ? idCnt[id]++ : idCnt[id] = 1;
+  });
+  const duplCnt = Object.keys(idCnt)
+    .filter(k => idCnt[k] > 1)
+    .reduce((m, k) => {
+      m[k] = idCnt[k];
+      return m;
+    }, {});
+  if (duplCnt) {
+    const duplicatesString = Array.from(
+        Object.keys(duplCnt)
+        .map(k => `${k}: ${duplCnt[k]} times`)
+    ).join('\n');
+    alert("Page contains elements with duplicate ids:\n" + duplicatesString);
+  }
+}
+
+onDOMContentLoaded(() => detectDuplicateIds());
