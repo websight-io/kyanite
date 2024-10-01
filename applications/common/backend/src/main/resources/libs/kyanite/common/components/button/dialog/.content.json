@@ -20,7 +20,7 @@
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "buttonId",
         "label": "Button ID",
-        "description": "ID used for GTM/GA4/etc. purposes"
+        "description": "ID used for Google Analytics purposes"
       },
       "type": {
         "sling:resourceType": "wcm/dialogs/components/include",
