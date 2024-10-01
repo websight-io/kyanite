@@ -45,6 +45,10 @@ public class ButtonComponent {
   @Getter
   private boolean hideLabel;
 
+  @ValueMapValue
+  @Getter
+  private String buttonId;
+
   @Inject
   @Getter
   private boolean showIconLeft;

@@ -140,7 +140,8 @@ describe('Button component', function () {
               'iconLibType': 'mdi',
               'icon': 'mdi-cube-outline',
               'selectOrType': 'select'
-          }
+          },
+          'buttonId': ''
         });
   });
 
@@ -195,7 +196,8 @@ describe('Button component', function () {
           'label': 'Label',
           'sling:resourceType': 'kyanite/common/components/button',
           'openInNewTab': 'true',
-          'isMailto': 'false'
+          'isMailto': 'false',
+          'buttonId': ''
         });
   });
 });
