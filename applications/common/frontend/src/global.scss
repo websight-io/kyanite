@@ -15,6 +15,7 @@
  */
 
 @use 'src/atomic-design-system/00-token/t.border' as border;
+@use 'src/atomic-design-system/00-token/t.size' as sizes;
 
 
 .navbar-link:not(.is-arrowless)::after,
@@ -74,4 +75,12 @@ input[type=checkbox] {
 
 strong {
   color: inherit;
+}
+
+.is-extra-small {
+  @include sizes.extra-small;
+}
+
+.is-2-extra-small {
+  @include sizes.extra-small-2;
 }

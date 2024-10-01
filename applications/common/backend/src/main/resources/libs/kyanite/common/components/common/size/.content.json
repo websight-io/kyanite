@@ -2,6 +2,16 @@
   "sling:resourceType": "wcm/dialogs/components/select",
   "name": "size",
   "label": "Size",
+  "extraSmall-2x": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "2 Extra small",
+    "value": "is-2-extra-small"
+  },
+  "extraSmall": {
+    "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+    "label": "Extra small",
+    "value": "is-extra-small"
+  },
   "small": {
     "sling:resourceType": "wcm/dialogs/components/select/selectitem",
     "label": "Small",
