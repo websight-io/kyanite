@@ -36,7 +36,13 @@
     color: unset;
   }
 
+  &-2xs {
+    line-height: var(--line-height-140);
+    font-size: var(--font-size-10);
+  }
+
   &-xs {
+    line-height: var(--line-height-150);
     font-size: var(--font-size-12);
   }
 
