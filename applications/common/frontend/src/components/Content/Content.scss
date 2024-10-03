@@ -21,6 +21,10 @@
 .content {
   @extend .a-content;
 
+  &.is-2xsmall {
+    @extend .a-content-2xs;
+  }
+
   &.is-xsmall {
     @extend .a-content-xs;
   }

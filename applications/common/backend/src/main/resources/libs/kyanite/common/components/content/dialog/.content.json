@@ -21,7 +21,21 @@
       },
       "size": {
         "sling:resourceType": "wcm/dialogs/components/include",
-        "path": "kyanite/common/components/common/size"
+        "include": {
+          "sling:resourceSuperType": "/libs/kyanite/common/components/common/size",
+          "extraSmall-2x": {
+            "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+            "label": "2 Extra small",
+            "value": "is-2xsmall",
+            "sling:orderBefore": "small"
+          },
+          "extraSmall": {
+            "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+            "label": "Extra small",
+            "value": "is-xsmall",
+            "sling:orderBefore": "small"
+          }
+        }
       },
       "textweight": {
         "sling:resourceType": "wcm/dialogs/components/include",
