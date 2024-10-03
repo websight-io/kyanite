@@ -19,13 +19,13 @@
   <parent>
     <groupId>pl.ds.kyanite</groupId>
     <artifactId>kyanite-applications</artifactId>
-    <version>0.7.11</version>
+    <version>0.7.12-SNAPSHOT</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>kyanite-table-service</artifactId>
-  <version>0.7.11</version>
+  <version>0.7.12-SNAPSHOT</version>
   <name>Kyanite Components Project - Extensions Table Service</name>
   <description>Table Service module</description>
 
