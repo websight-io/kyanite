@@ -148,6 +148,7 @@
     padding-bottom: var(--spacing-4);
 
     flex-shrink: 1;
+    height: 100%;
 
     @include breakpoint.media-breakpoint-large {
       flex-wrap: wrap;
