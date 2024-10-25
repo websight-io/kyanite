@@ -25,6 +25,9 @@ public class VideoLinkParser {
       "(?:embed|vi?)/([^/?]*)", "(?:user/[A-Za-z0-9]*#[a-z]/[a-z]/[a-z0-9]*/*)/([^&]*)",
       "^([A-Za-z0-9\\-]*)"};
   private static final String YOUTUBE_PLAYER_URL_PREFIX = "https://www.youtube.com/embed/";
+
+  private static final String YOUTUBE_PLAYER_URL_NOCOOKIE_PREFIX = "https://www.youtube-nocookie.com/embed/";
+
   private static final String[] VIMEO_VIDEO_ID_REGEX = {
       "(?:video|channels|groups/name/videos)/([^/?]*)",
       "^([A-Za-z0-9\\-]*)"};
@@ -36,12 +39,15 @@ public class VideoLinkParser {
       + "(www.)?(m.)?((vimeo.com)|(player.vimeo.com))/";
   private static final String VIMEO_PLAYER_URL_PREFIX = "https://player.vimeo.com/video/";
 
-  public static String getYouTubeLink(String link) {
+  public static String getYouTubeLink(String link, boolean enableCookies) {
     if (isYouTubeFullUrl(link)) {
       link = extractVideoIdFromUrl(link, YOUTUBE_VIDEO_ID_REGEX, YOUTUBE_URL_REGEX);
     }
+    if (enableCookies) {
+      return YOUTUBE_PLAYER_URL_PREFIX + link;
+    }
 
-    return YOUTUBE_PLAYER_URL_PREFIX + link;
+    return YOUTUBE_PLAYER_URL_NOCOOKIE_PREFIX + link;
   }
 
   public static String getVimeoLink(String link) {

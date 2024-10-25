@@ -51,6 +51,12 @@
           "name": "youtubeLink",
           "label": "Youtube link"
         },
+        "enableCookies": {
+          "sling:resourceType": "wcm/dialogs/components/toggle",
+          "description": "By default all links will be generated using the youtube-nocookie.com domain, but if this property is set to true, it will generated with simply youtube.com",
+          "name": "enableCookies",
+          "label": "Enable cookies"
+        },
         "ws:display": {
           "condition": {
             "sourceName": "source",
