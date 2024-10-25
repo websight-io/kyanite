@@ -88,6 +88,10 @@ public class VideoComponent {
   private String youtubeLink;
 
   @ValueMapValue
+  @Default(booleanValues = false)
+  private boolean enableCookies;
+
+  @ValueMapValue
   @Default(values = StringUtils.EMPTY)
   private String vimeoLink;
 
@@ -120,7 +124,7 @@ public class VideoComponent {
     }
 
     switch (this.source) {
-      case ("youtube") -> this.src = VideoLinkParser.getYouTubeLink(youtubeLink);
+      case ("youtube") -> this.src = VideoLinkParser.getYouTubeLink(youtubeLink, enableCookies);
       case ("vimeo") -> this.src = VideoLinkParser.getVimeoLink(vimeoLink);
       default -> this.src = StringUtils.EMPTY;
     }
