@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023 Dynamic Solutions
+ * Copyright (C) 2025 Dynamic Solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import './Carousel/carousel';
 import './Search/search';
 import './Table/table';
 import './BlogTableOfContent/blogtableofcontent';
+import './Accordion/accordion'
 
 document.querySelectorAll('.navbar-item.has-dropdown').forEach((navbarItem) => {
   navbarItem.addEventListener('keydown', (event: KeyboardEvent) => {

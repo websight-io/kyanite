@@ -1,0 +1,51 @@
+{
+  "jcr:primaryType": "nt:unstructured",
+  "cell_1": {
+    "title": "Title",
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/accordion/accordionitem",
+    "container": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/common/components/container",
+      "content": {
+        "jcr:primaryType": "nt:unstructured",
+        "size": "is-normal",
+        "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
+        "sling:resourceType": "kyanite/common/components/content",
+        "textWeight": "has-text-weight-normal"
+      }
+    }
+  },
+  "cell_2": {
+    "title": "Title",
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/accordion/accordionitem",
+    "container": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/common/components/container",
+      "content": {
+        "jcr:primaryType": "nt:unstructured",
+        "size": "is-normal",
+        "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
+        "sling:resourceType": "kyanite/common/components/content",
+        "textWeight": "has-text-weight-normal"
+      }
+    }
+  },
+  "cell_3": {
+    "title": "Title",
+    "jcr:primaryType": "nt:unstructured",
+    "sling:resourceType": "kyanite/common/components/accordion/accordionitem",
+    "container": {
+      "jcr:primaryType": "nt:unstructured",
+      "sling:resourceType": "kyanite/common/components/container",
+      "content": {
+        "jcr:primaryType": "nt:unstructured",
+        "size": "is-normal",
+        "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
+        "sling:resourceType": "kyanite/common/components/content",
+        "textWeight": "has-text-weight-normal"
+      }
+    }
+  }
+}
