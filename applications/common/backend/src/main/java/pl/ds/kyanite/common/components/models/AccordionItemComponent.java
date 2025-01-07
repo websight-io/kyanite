@@ -16,23 +16,38 @@
 
 package pl.ds.kyanite.common.components.models;
 
-import javax.inject.Inject;
+import static org.apache.sling.models.annotations.DefaultInjectionStrategy.OPTIONAL;
+
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.PostConstruct;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-@Model(adaptables = Resource.class)
+@Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
 public class AccordionItemComponent {
 
   @Getter
-  @Inject
+  @ValueMapValue
   @Default(values = "Accordion item title")
   private String title;
 
+  @ValueMapValue
   @Getter
-  @Inject
-  @Default(values = "Add your content here")
-  private String content;
+  private String size;
+
+  @Getter
+  List<String> classList = new ArrayList<>();
+
+  @PostConstruct
+  private void init() {
+    if (StringUtils.isNotBlank(size)) {
+      classList.add(size);
+    }
+  }
 
 }

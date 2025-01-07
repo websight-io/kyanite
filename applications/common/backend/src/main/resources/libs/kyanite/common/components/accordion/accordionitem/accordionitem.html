@@ -16,7 +16,7 @@
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.AccordionItemComponent">
     <sly data-sly-test="${resource.hasChildren}">
         <li class="accordion-item  ${wcmmode.isEdit ? 'opened' : ''}">
-            <button aria-expanded="false" class="accordion-item__title title">
+            <button aria-expanded="false" class="accordion-item__title title ${model.classList @ join=' '}">
                 ${model.title}
                 <i class="mdi mdi-chevron-up mdi-36px"></i>
             </button>

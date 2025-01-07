@@ -9,6 +9,10 @@
         "sling:resourceType": "wcm/dialogs/components/textfield",
         "name": "title",
         "label": "Title"
+      },
+      "size": {
+        "sling:resourceType": "wcm/dialogs/components/include",
+        "path": "/libs/kyanite/common/components/common/issize"
       }
     }
   }

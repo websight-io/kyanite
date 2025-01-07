@@ -21,10 +21,10 @@ import static pl.ds.kyanite.common.components.utils.SlingUtils.SLING_RESOURCE_TY
 
 import java.util.List;
 import java.util.stream.StreamSupport;
-import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
@@ -36,7 +36,7 @@ public class AccordionComponent {
   @SlingObject
   private Resource resource;
 
-  @Inject
+  @ChildResource
   @Getter
   private List<AccordionItemComponent> elements;
 

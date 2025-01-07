@@ -2,6 +2,7 @@
   "jcr:primaryType": "nt:unstructured",
   "cell_1": {
     "title": "Title",
+    "size": "is-4",
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "kyanite/common/components/accordion/accordionitem",
     "container": {
@@ -18,11 +19,13 @@
   },
   "cell_2": {
     "title": "Title",
+    "size": "is-4",
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "kyanite/common/components/accordion/accordionitem",
     "container": {
       "jcr:primaryType": "nt:unstructured",
       "sling:resourceType": "kyanite/common/components/container",
+      "alignmentHorizontal": "is-left",
       "content": {
         "jcr:primaryType": "nt:unstructured",
         "size": "is-normal",
@@ -34,6 +37,7 @@
   },
   "cell_3": {
     "title": "Title",
+    "size": "is-4",
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "kyanite/common/components/accordion/accordionitem",
     "container": {
