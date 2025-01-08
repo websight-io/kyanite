@@ -41,7 +41,7 @@ public class AccordionItemComponent {
   private String size;
 
   @Getter
-  List<String> classList = new ArrayList<>();
+  private List<String> classList = new ArrayList<>();
 
   @PostConstruct
   private void init() {
