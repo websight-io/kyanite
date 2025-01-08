@@ -18,13 +18,13 @@
         <li class="accordion-item  ${wcmmode.isEdit ? 'opened' : ''}">
             <button aria-expanded="false" class="accordion-item__title title ${model.classList @ join=' '}">
                 ${model.title}
-                <i class="mdi mdi-chevron-up mdi-36px"></i>
+                <i class="mdi mdi-chevron-down mdi-36px"></i>
             </button>
-            <sly data-sly-list="${resource.children}">
-                <div role="region" class="accordion-item__content">
-                     <sly data-sly-resource="${item}"></sly>
-                </div>
-            </sly>
+            <div role="region" class="accordion-item__content">
+                <sly data-sly-list="${resource.children}">
+                         <sly data-sly-resource="${item}"></sly>
+                </sly>
+            </div>
         </li>
     </sly>
     <sly data-sly-test="${!resource.hasChildren}">

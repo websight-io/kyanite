@@ -5,16 +5,12 @@
     "size": "is-4",
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "kyanite/common/components/accordion/accordionitem",
-    "container": {
+    "content": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "kyanite/common/components/container",
-      "content": {
-        "jcr:primaryType": "nt:unstructured",
-        "size": "is-normal",
-        "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
-        "sling:resourceType": "kyanite/common/components/content",
-        "textWeight": "has-text-weight-normal"
-      }
+      "size": "is-normal",
+      "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
+      "sling:resourceType": "kyanite/common/components/content",
+      "textWeight": "has-text-weight-normal"
     }
   },
   "cell_2": {
@@ -22,34 +18,25 @@
     "size": "is-4",
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "kyanite/common/components/accordion/accordionitem",
-    "container": {
+    "content": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "kyanite/common/components/container",
-      "alignmentHorizontal": "is-left",
-      "content": {
-        "jcr:primaryType": "nt:unstructured",
-        "size": "is-normal",
-        "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
-        "sling:resourceType": "kyanite/common/components/content",
-        "textWeight": "has-text-weight-normal"
-      }
-    }
+      "size": "is-normal",
+      "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
+      "sling:resourceType": "kyanite/common/components/content",
+      "textWeight": "has-text-weight-normal"
+   }
   },
   "cell_3": {
     "title": "Title",
     "size": "is-4",
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "kyanite/common/components/accordion/accordionitem",
-    "container": {
+    "content": {
       "jcr:primaryType": "nt:unstructured",
-      "sling:resourceType": "kyanite/common/components/container",
-      "content": {
-        "jcr:primaryType": "nt:unstructured",
-        "size": "is-normal",
-        "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
-        "sling:resourceType": "kyanite/common/components/content",
-        "textWeight": "has-text-weight-normal"
-      }
+      "size": "is-normal",
+      "text": "\u003Cp\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.\u003C/p\u003E",
+      "sling:resourceType": "kyanite/common/components/content",
+      "textWeight": "has-text-weight-normal"
     }
   }
 }

@@ -16,13 +16,13 @@
 <sly data-sly-use.model="pl.ds.kyanite.common.components.models.AccordionComponent">
     <sly data-sly-set.cssClasses="accordion"></sly>
     <div class="${cssClasses}">
-            <div data-sly-test="${resource.hasChildren}">
-                <ul>
-                    <sly data-sly-list.cell="${model.childrenComponents}">
-                        <sly data-sly-resource="${cell}"></sly>
-                    </sly>
-                </ul>
-            </div>
+        <div data-sly-test="${resource.hasChildren}">
+            <ul>
+                <sly data-sly-list.cell="${model.childrenComponents}">
+                    <sly data-sly-resource="${cell}"></sly>
+                </sly>
+            </ul>
+        </div>
     </div>
 
     <sly data-sly-test="${!resource.hasChildren}">

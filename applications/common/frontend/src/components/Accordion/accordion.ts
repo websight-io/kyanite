@@ -26,12 +26,12 @@ const handleAccordionOpening = (accordionItem) => {
       let hasOpenedClass = accordionItem.classList.contains(openedClass);
       if (hasOpenedClass) {
           accordionButton.ariaExpanded = 'true';
-          icon.classList.remove("mdi-chevron-up")
-          icon.classList.add("mdi-chevron-down")
-      } else {
-          accordionButton.ariaExpanded = 'false';
           icon.classList.remove("mdi-chevron-down")
           icon.classList.add("mdi-chevron-up")
+      } else {
+          accordionButton.ariaExpanded = 'false';
+          icon.classList.remove("mdi-chevron-up")
+          icon.classList.add("mdi-chevron-down")
       }
   }) as EventListener);
 };
