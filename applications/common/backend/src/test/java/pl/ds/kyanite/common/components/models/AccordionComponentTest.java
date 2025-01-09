@@ -18,7 +18,6 @@ package pl.ds.kyanite.common.components.models;
 
 import static java.util.Objects.requireNonNull;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
@@ -34,6 +33,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 public class AccordionComponentTest {
 
   private static final String PATH = "/content/accordion";
+  public static final String IS_5 = "is-5";
 
   private final SlingContext context = new SlingContext(ResourceResolverType.RESOURCERESOLVER_MOCK);
 
@@ -52,14 +52,14 @@ public class AccordionComponentTest {
         .adaptTo(AccordionComponent.class);
     assertThat(model).isNotNull();
     List<Resource> childrenComponents = model.getChildrenComponents();
-    assertEquals(2, childrenComponents.size());
+    assertThat(childrenComponents).hasSize(2);
     AccordionItemComponent accordionItemComponent = childrenComponents.get(1).adaptTo(AccordionItemComponent.class);
     assertThat(accordionItemComponent).isNotNull();
-    assertEquals(List.of("is-5"), accordionItemComponent.getClassList());
-    assertEquals("is-5", accordionItemComponent.getSize());
-    assertEquals("Title2", accordionItemComponent.getTitle());
+    assertThat(accordionItemComponent.getClassList()).containsExactly(IS_5);
+    assertThat(accordionItemComponent.getSize()).isEqualTo(IS_5);
+    assertThat(accordionItemComponent.getTitle()).isEqualTo("Title2");
     Resource content = childrenComponents.get(0).getChild("content");
     ContentComponent contentComponent = content.adaptTo(ContentComponent.class);
-    assertEquals("<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>", contentComponent.getText());
+    assertThat(contentComponent.getText()).isEqualTo("<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>");
   }
 }
