@@ -1,0 +1,14 @@
+{
+  "group": "Kyanite sub-elements",
+  "isContainer": true,
+  "sling:resourceType": "ws:Component",
+  "allowedComponents": [
+    "Kyanite Columns",
+    "Kyanite Components",
+    "Kyanite Elements",
+    "Kyanite Layouts",
+    "Kyanite In-Text Sections",
+    "Kyanite Accordion"
+  ],
+  "title": "Accordion Item"
+}

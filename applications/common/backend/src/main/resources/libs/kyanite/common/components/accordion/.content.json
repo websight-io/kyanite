@@ -1,0 +1,10 @@
+{
+  "isContainer": true,
+  "group": "Kyanite Components",
+  "allowedComponents": [
+    "/apps/kyanite/common/components/accordion/accordionitem",
+    "/libs/kyanite/common/components/accordion/accordionitem"
+  ],
+  "sling:resourceType": "ws:Component",
+  "title": "Accordion"
+}

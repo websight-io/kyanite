@@ -1,0 +1,35 @@
+{
+  "default": {
+    "sling:resourceType": "kyanite/common/components/accordion",
+    "jcr:primaryType": "nt:unstructured",
+    "cell_1": {
+      "sling:resourceType": "kyanite/common/components/accordion/accordionitem",
+      "jcr:primaryType": "nt:unstructured",
+      "size": "is-4",
+      "title": "Title",
+      "content": {
+        "sling:resourceType": "kyanite/common/components/content",
+        "jcr:primaryType": "nt:unstructured",
+        "size": "is-normal",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+        "textWeight": "has-text-weight-normal"
+      }
+    },
+    "cell_2": {
+      "sling:resourceType": "kyanite/common/components/accordion/accordionitem",
+      "jcr:primaryType": "nt:unstructured",
+      "size": "is-5",
+      "title": "Title2",
+      "content": {
+        "sling:resourceType": "kyanite/common/components/content",
+        "jcr:primaryType": "nt:unstructured",
+        "size": "is-normal",
+        "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit2.</p>",
+        "textWeight": "has-text-weight-normal"
+      }
+    },
+    "text": {
+      "title": "Title2"
+    }
+  }
+}
