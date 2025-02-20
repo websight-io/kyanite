@@ -35,14 +35,13 @@
         <img class="iframe-thumbnail" src="${model.thumbnail}" alt="Thumbnail image">
       </sly>
       <sly data-sly-test.link="${[model.src,model.shareLinkParameters] @ join = '?'}"></sly>
-      <iframe id="player"
+      <iframe id="${model.youtubeIframeId}"
+              class="${model.enableCookies ? 'player-with-cookies' : 'player'}"
               width="${model.width || '100%' @ context='scriptString'}"
               height="${model.height || 390 @ context='scriptString'}"
               src="${link}"
               title="Video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
       ></iframe>
     </sly>
   </div>
