@@ -88,6 +88,7 @@ public class VideoComponent {
   private String youtubeLink;
 
   @ValueMapValue
+  @Getter
   @Default(booleanValues = false)
   private boolean enableCookies;
 
@@ -97,6 +98,9 @@ public class VideoComponent {
 
   @Getter
   private String src;
+
+  @Getter
+  private String youtubeIframeId;
 
   @SlingObject
   private Resource resource;
@@ -124,7 +128,14 @@ public class VideoComponent {
     }
 
     switch (this.source) {
-      case ("youtube") -> this.src = VideoLinkParser.getYouTubeLink(youtubeLink, enableCookies);
+      case ("youtube") -> {
+        this.src = VideoLinkParser.getYouTubeLink(youtubeLink, enableCookies);
+        this.youtubeIframeId = VideoLinkParser.getYouTubeId(youtubeLink) != null
+            ? "player-" + VideoLinkParser.getYouTubeId(youtubeLink) : "player";
+        if (enableCookies) {
+          this.parameters.put("enablejsapi", true);
+        }
+      }
       case ("vimeo") -> this.src = VideoLinkParser.getVimeoLink(vimeoLink);
       default -> this.src = StringUtils.EMPTY;
     }
