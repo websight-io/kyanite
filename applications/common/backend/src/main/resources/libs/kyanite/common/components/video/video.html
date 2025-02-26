@@ -36,7 +36,7 @@
       </sly>
       <sly data-sly-test.link="${[model.src,model.shareLinkParameters] @ join = '?'}"></sly>
       <iframe id="${model.youtubeIframeId}"
-              class="${model.enableCookies ? 'player-with-cookies' : 'player'}"
+              class="${model.trackInteractions ? 'player-with-cookies' : 'player'}"
               width="${model.width || '100%' @ context='scriptString'}"
               height="${model.height || 390 @ context='scriptString'}"
               src="${link}"
