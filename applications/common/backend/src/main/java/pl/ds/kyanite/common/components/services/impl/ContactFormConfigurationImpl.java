@@ -48,6 +48,10 @@ public class ContactFormConfigurationImpl implements ContactFormConfiguration {
     return getHost() + getPath();
   }
 
+  public String getConfigDynamicEndpoint() {
+    return getHost() + getDynamicPath();
+  }
+
   private String getHost() {
     if (config.host() == null) {
       return "";
@@ -70,6 +74,18 @@ public class ContactFormConfigurationImpl implements ContactFormConfiguration {
     }
 
     return config.path();
+  }
+
+  private String getDynamicPath() {
+    if (config.dynamicPath() == null) {
+      return "";
+    }
+
+    if (!config.dynamicPath().startsWith("/")) {
+      return "/" + config.dynamicPath();
+    }
+
+    return config.dynamicPath();
   }
 
 }
