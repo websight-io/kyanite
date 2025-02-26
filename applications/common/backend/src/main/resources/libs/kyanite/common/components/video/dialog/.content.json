@@ -51,10 +51,10 @@
           "name": "youtubeLink",
           "label": "Youtube link"
         },
-        "enableCookies": {
+        "trackInteractions": {
           "sling:resourceType": "wcm/dialogs/components/toggle",
           "description": "Turning on this property will enable using the YouTube IFrame API to track user interactions.",
-          "name": "enableCookies",
+          "name": "trackInteractions",
           "label": "Track interactions"
         },
         "ws:display": {
