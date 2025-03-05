@@ -87,4 +87,12 @@
       background-color: transparent;
     }
   }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: none;
+    transition: background-color 9999999999s ease-in-out 0s;
+  }
 }
