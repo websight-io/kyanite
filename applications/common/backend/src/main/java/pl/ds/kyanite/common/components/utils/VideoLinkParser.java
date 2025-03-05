@@ -50,10 +50,6 @@ public class VideoLinkParser {
     return YOUTUBE_PLAYER_URL_NOCOOKIE_PREFIX + link;
   }
 
-  public static String getYouTubeId(String youtubeLink) {
-    return extractVideoIdFromUrl(youtubeLink, YOUTUBE_VIDEO_ID_REGEX, YOUTUBE_URL_REGEX);
-  }
-
   public static String getVimeoLink(String link) {
     if (isVimeoFullUrl(link)) {
       link = extractVideoIdFromUrl(link, VIMEO_VIDEO_ID_REGEX, VIMEO_URL_REGEX);

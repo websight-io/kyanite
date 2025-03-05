@@ -21,7 +21,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Optional;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import lombok.Getter;
@@ -88,13 +87,9 @@ public class VideoComponent {
   @Default(values = StringUtils.EMPTY)
   private String youtubeLink;
 
-  @Getter
-  private String youtubeIframeId;
-
   @ValueMapValue
-  @Getter
   @Default(booleanValues = false)
-  private boolean trackInteractions;
+  private boolean enableCookies;
 
   @ValueMapValue
   @Default(values = StringUtils.EMPTY)
@@ -129,14 +124,7 @@ public class VideoComponent {
     }
 
     switch (this.source) {
-      case ("youtube") -> {
-        this.src = VideoLinkParser.getYouTubeLink(youtubeLink, trackInteractions);
-        this.youtubeIframeId = Optional.ofNullable(VideoLinkParser.getYouTubeId(youtubeLink))
-            .map(id -> "player-" + id).orElse("player");
-        if (trackInteractions) {
-          this.parameters.put("enablejsapi", true);
-        }
-      }
+      case ("youtube") -> this.src = VideoLinkParser.getYouTubeLink(youtubeLink, enableCookies);
       case ("vimeo") -> this.src = VideoLinkParser.getVimeoLink(vimeoLink);
       default -> this.src = StringUtils.EMPTY;
     }

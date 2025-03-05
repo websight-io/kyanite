@@ -40,8 +40,7 @@ module.exports = {
     "**/*/navbar.js",
     "**/*/notification.js",
     "**/*/panelTabs.js",
-    "**/*/switchTab.js",
-    "**/*/video.js"],
+    "**/*/switchTab.js"],
   rules: {
     '@typescript-eslint/no-misused-promises': [
       'error',
