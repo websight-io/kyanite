@@ -51,11 +51,11 @@
           "name": "youtubeLink",
           "label": "Youtube link"
         },
-        "trackInteractions": {
+        "enableCookies": {
           "sling:resourceType": "wcm/dialogs/components/toggle",
-          "description": "Turning on this property will enable using the YouTube IFrame API to track user interactions.",
-          "name": "trackInteractions",
-          "label": "Track interactions"
+          "description": "By default all links will be generated using the youtube-nocookie.com domain, but if this property is set to true, it will generated with simply youtube.com",
+          "name": "enableCookies",
+          "label": "Enable cookies"
         },
         "ws:display": {
           "condition": {
