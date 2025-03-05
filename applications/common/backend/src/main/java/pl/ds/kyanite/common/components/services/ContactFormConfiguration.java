@@ -22,6 +22,4 @@ public interface ContactFormConfiguration extends SpaceDependentConfiguration {
 
   String getConfigEndpoint();
 
-  String getConfigDynamicFormEndpoint();
-
 }

@@ -48,47 +48,28 @@ public class ContactFormConfigurationImpl implements ContactFormConfiguration {
     return getHost() + getPath();
   }
 
-  public String getConfigDynamicFormEndpoint() {
-    return getHost() + getDynamicFormPath();
-  }
-
   private String getHost() {
-    String host = config.host();
-    if (host == null) {
+    if (config.host() == null) {
       return "";
     }
 
-    if (host.endsWith("/")) {
-      return host.substring(0, host.length() - 1);
+    if (config.host().endsWith("/")) {
+      return config.host().substring(0, config.host().length() - 1);
     }
 
-    return host;
+    return config.host();
   }
 
   private String getPath() {
-    String path = config.path();
-    if (path == null) {
+    if (config.path() == null) {
       return "";
     }
 
-    if (!path.startsWith("/")) {
-      return "/" + path;
+    if (!config.path().startsWith("/")) {
+      return "/" + config.path();
     }
 
-    return path;
-  }
-
-  private String getDynamicFormPath() {
-    String dynamicFormPath = config.dynamicFormPath();
-    if (dynamicFormPath == null) {
-      return "";
-    }
-
-    if (!dynamicFormPath.startsWith("/")) {
-      return "/" + dynamicFormPath;
-    }
-
-    return dynamicFormPath;
+    return config.path();
   }
 
 }

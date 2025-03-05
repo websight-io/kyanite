@@ -39,10 +39,6 @@ public @interface ContactFormConfigurationOcd {
       description = "Contact form service URL path")
   String path();
 
-  @AttributeDefinition(name = "Dynamic Form Path",
-      description = "Contact form service URL path for dynamic forms")
-  String dynamicFormPath();
-
 
 
 }
