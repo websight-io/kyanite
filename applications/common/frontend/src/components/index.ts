@@ -31,7 +31,8 @@ import './Carousel/carousel';
 import './Search/search';
 import './Table/table';
 import './BlogTableOfContent/blogtableofcontent';
-import './Accordion/accordion'
+import './Accordion/accordion';
+import './Video/video.js';
 
 document.querySelectorAll('.navbar-item.has-dropdown').forEach((navbarItem) => {
   navbarItem.addEventListener('keydown', (event: KeyboardEvent) => {
