@@ -15,6 +15,7 @@
   ~     limitations under the License.
   ~
 */-->
+<sly data-sly-use.model="pl.ds.kyanite.common.components.models.PageHeadLibsComponent"></sly>
 
 <html data-sly-unwrap="${wcmmode.isDisabled}">
   <sly data-sly-test="${!wcmmode.isDisabled}" data-sly-include="head.html"></sly>
@@ -25,7 +26,7 @@
     </div>
 
     <sly data-sly-test="${!wcmmode.isDisabled}">
-      <script src="/libs/kyanite/webroot/main.js"></script>
+      <script src="${model.versionedResources['main.js']}"></script>
     </sly>
   </body>
 </html>
