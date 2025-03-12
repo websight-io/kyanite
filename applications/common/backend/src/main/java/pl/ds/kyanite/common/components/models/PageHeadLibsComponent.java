@@ -53,6 +53,9 @@ public class PageHeadLibsComponent {
 
   private static final Logger LOG = LoggerFactory.getLogger(PageHeadLibsComponent.class);
 
+  private static final String VERSIONED_RESOURCES_MANIFEST =
+      "/libs/kyanite/webroot/versioned-resources-manifest.json";
+
   @SlingObject
   private Resource resource;
 
@@ -73,9 +76,6 @@ public class PageHeadLibsComponent {
 
   @Getter
   private Map<String, String> versionedResources = new HashMap<>();
-
-  private static final String VERSIONED_RESOURCES_MANIFEST =
-      "/libs/kyanite/webroot/versioned-resources-manifest.json";
 
   @Inject
   public PageHeadLibsComponent(@OSGiService LibraryIconConfigStore libraryIconConfigStore,
