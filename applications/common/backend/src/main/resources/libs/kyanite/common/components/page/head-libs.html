@@ -51,7 +51,7 @@
 
 <link
   rel="stylesheet"
-  href="/libs/kyanite/webroot/main.css"
+  href="${model.versionedResources['main.css']}"
   type="text/css"
 />
 
@@ -65,14 +65,8 @@
 <link
   rel="stylesheet"
   type="text/css"
-  data-sly-test="${!(wcmmode.isEdit || wcmmode.isPreview) && project.version }"
-  href="/libs/kyanite/webroot/${project.version}/main.published.css"
-/>
-<link
-  rel="stylesheet"
-  type="text/css"
-  data-sly-test="${!(wcmmode.isEdit || wcmmode.isPreview) && !project.version}"
-  href="/libs/kyanite/webroot/main.published.css"
+  data-sly-test="${!(wcmmode.isEdit || wcmmode.isPreview)}"
+  href="${model.versionedResources['main.published.css']}"
 />
 
 <link
@@ -82,9 +76,5 @@
     href="${pagesSpace.getStylesPath}"
 />
 
-<script defer data-sly-test="${wcmmode.isDisabled && project.version}" src="/libs/kyanite/webroot/${project.version}/main.js"></script>
-<script defer data-sly-test="${wcmmode.isDisabled && !project.version}" src="/libs/kyanite/webroot/main.js"></script>
-<script defer data-sly-test="${!wcmmode.isDisabled}" src="/libs/kyanite/webroot/main.js"></script>
-
-<script defer data-sly-test="${wcmmode.isDisabled && project.version}" src="/libs/kyanite/webroot/${project.version}/main.published.js"></script>
-<script defer data-sly-test="${wcmmode.isDisabled && !project.version}" src="/libs/kyanite/webroot/main.published.js"></script>
+<script defer src="${model.versionedResources['main.js']}"></script>
+<script defer data-sly-test="${wcmmode.isDisabled}" src="${model.versionedResources['main.published.js']}"></script>

@@ -16,12 +16,19 @@
 
 package pl.ds.kyanite.common.components.models;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
+import javax.json.JsonString;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -29,9 +36,12 @@ import lombok.NoArgsConstructor;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pl.ds.kyanite.common.components.services.GoogleAnalyticsConfigStore;
 import pl.ds.kyanite.common.components.services.GoogleAnalyticsConfiguration;
 import pl.ds.kyanite.common.components.services.LibraryIconConfig;
@@ -41,8 +51,16 @@ import pl.ds.kyanite.common.components.utils.PageSpace;
 @Model(adaptables = SlingHttpServletRequest.class)
 public class PageHeadLibsComponent {
 
+  private static final Logger LOG = LoggerFactory.getLogger(PageHeadLibsComponent.class);
+
+  private static final String VERSIONED_RESOURCES_MANIFEST =
+      "/libs/kyanite/webroot/versioned-resources-manifest.json";
+
   @SlingObject
   private Resource resource;
+
+  @SlingObject
+  private ResourceResolver resourceResolver;
 
   private final LibraryIconConfigStore libraryIconConfigStore;
 
@@ -55,6 +73,9 @@ public class PageHeadLibsComponent {
 
   @Getter
   private String stylesPath;
+
+  @Getter
+  private Map<String, String> versionedResources = new HashMap<>();
 
   @Inject
   public PageHeadLibsComponent(@OSGiService LibraryIconConfigStore libraryIconConfigStore,
@@ -70,6 +91,17 @@ public class PageHeadLibsComponent {
     if (pageSpace != null) {
       googleAnalyticsConfig = googleAnalyticsConfigStore.get(pageSpace.getWsPagesSpaceName());
       stylesPath = initStylesPath(pageSpace);
+    }
+    Resource manifestResource = resourceResolver.getResource(VERSIONED_RESOURCES_MANIFEST);
+    if (manifestResource != null) {
+      try (InputStream inputStream = manifestResource.adaptTo(InputStream.class);
+          JsonReader jsonReader = Json.createReader(inputStream)) {
+        JsonObject jsonObject = jsonReader.readObject();
+        jsonObject.forEach((key, value) ->
+            versionedResources.put(key, ((JsonString) value).getString()));
+      } catch (IOException e) {
+        LOG.error("Could not parse Resource Manifest JSON", e);
+      }
     }
   }
 

@@ -23,6 +23,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 const SOURCE_ROOT = __dirname + '/src';
 
@@ -38,10 +39,10 @@ const resolve = {
 module.exports = {
   resolve: resolve,
   entry: {
-    main: { import: `${SOURCE_ROOT}/main.ts`, filename: 'main/main.js' },
+    main: { import: `${SOURCE_ROOT}/main.ts`, filename: 'main/main.[contenthash].js' },
     'main.published': {
       import: `${SOURCE_ROOT}/main.published.ts`,
-      filename: 'main/main.published.js',
+      filename: 'main/main.published.[contenthash].js',
     },
     author: {import: SOURCE_ROOT + '/author.ts', filename: 'author/author.js'}
   },
@@ -127,7 +128,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new ESLintPlugin(),
     new MiniCssExtractPlugin({
-      filename: (file) => (file.chunk.name === 'author' ? 'author': 'main') + '/[name].css'
+      filename: (file) => {
+        return file.chunk.name === 'author' ? 'author/[name].css': 'main/[name].[contenthash].css'
+      }
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -144,6 +147,17 @@ module.exports = {
         },
         { from: path.resolve(__dirname, 'libs'), to: './main' },
       ],
+    }),
+    new WebpackManifestPlugin({
+      fileName: 'main/versioned-resources-manifest.json',
+      publicPath: '/libs/kyanite/webroot',
+      filter: (file) => {
+        return !file.isAsset && file.name.indexOf('author') < 0;
+      },
+      map: (file) => {
+        file.path = file.path.replace('/main', '');
+        return file;
+      },
     }),
     new FileManagerPlugin({
       events: {
