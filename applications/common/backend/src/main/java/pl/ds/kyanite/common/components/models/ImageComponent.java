@@ -122,6 +122,11 @@ public class ImageComponent {
   @Getter
   private boolean isVideo;
 
+  @ValueMapValue
+  @Getter
+  @Default(values = "auto")
+  private String fetchPriority;
+
   @Getter
   @ValueMapValue
   private String url;

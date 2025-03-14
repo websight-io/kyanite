@@ -48,6 +48,7 @@
       "section": {
         "sling:resourceType": "kyanite/common/components/section",
         "renderAsHero": "false",
+        "fetchPriority": "auto",
         "container": {
           "sling:resourceType": "kyanite/common/components/container"
         }

@@ -1,6 +1,7 @@
 {
   "jcr:primaryType": "nt:unstructured",
   "padding": "p-0",
+  "fetchPriority": "auto",
   "cardcontent": {
     "jcr:primaryType": "nt:unstructured",
     "sling:resourceType": "kyanite/common/components/card/cardcontent"

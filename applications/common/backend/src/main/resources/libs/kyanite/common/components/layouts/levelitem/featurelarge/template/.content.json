@@ -14,6 +14,7 @@
       "sling:resourceType": "kyanite/common/components/image",
       "style": "is-160x160",
       "isRounded": "false",
+      "fetchPriority": "auto",
       "src": "",
       "type": "fixed"
     },

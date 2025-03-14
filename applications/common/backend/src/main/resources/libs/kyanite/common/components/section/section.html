@@ -33,7 +33,7 @@
       </sly>
 
       <img width="${model.width}" height="${model.height}" class="img-as-bg" src="${model.desktopImage}"
-           alt="${model.alt}">
+           alt="${model.alt}" fetchpriority="${model.fetchPriority}">
     </picture>
     <sly data-sly-repeat.paragraph="${model.children}"
          data-sly-resource="${paragraph.path @ resourceType=paragraph.resourceType}"></sly>
