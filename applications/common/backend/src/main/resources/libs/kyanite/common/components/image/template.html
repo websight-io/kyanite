@@ -47,7 +47,7 @@
 
     <img class="${model.isRounded ? 'is-rounded' : ''}${model.showLightbox ? ' image--lightbox' : ''}"
          width="${model.width}" height="${model.height}"
-         src="${model.assetReference}" alt="${model.alt}" loading="${model.fetchPriority == 'high' ? 'eager' : 'lazy'}"
+         src="${model.assetReference}" alt="${model.alt}" loading="${model.loadingMode}"
          fetchpriority="${model.fetchPriority}"
          data-sly-attribute.data-lightbox-asset="${model.showLightbox ? model.highResolutionAssetSrc : ''}">
   </picture>

@@ -144,6 +144,8 @@ public class ImageComponent {
 
   private boolean isInternal;
 
+  private String loadingMode;
+
   @PostConstruct
   private void init() {
     if (Objects.nonNull(assetReference)) {
@@ -219,5 +221,9 @@ public class ImageComponent {
   private boolean isVideo(String link) {
     String mimeType = URLConnection.guessContentTypeFromName(link);
     return mimeType != null && mimeType.startsWith("video");
+  }
+
+  public String getLoadingMode() {
+    return "high".equals(fetchPriority) ? "eager" : "lazy";
   }
 }

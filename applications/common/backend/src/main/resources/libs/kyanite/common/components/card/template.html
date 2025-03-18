@@ -25,7 +25,7 @@
       </sly>
 
       <img src="${model.image.assetReference}" width="${model.image.width}" height="${model.image.height}" alt="${model.image.alt}"
-           loading="${model.fetchPriority == 'high' ? 'eager' : 'lazy'}" fetchpriority="${model.fetchPriority}"/>
+           loading="${model.loadingMode}" fetchpriority="${model.fetchPriority}"/>
     </picture>
   </figure>
 </template>

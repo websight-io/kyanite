@@ -37,9 +37,9 @@ def findInstances(String rootPath) {
 }
 
 def addAttribute(Resource resource) {
-    def resourceMVM = resource.adaptTo(org.apache.sling.api.resource.ModifiableValueMap)
-    if (!resourceMVM.containsKey(fetchPriorityAttribute)) {
-        resourceMVM.put(fetchPriorityAttribute, 'auto')
+    def resourceMap = resource.adaptTo(org.apache.sling.api.resource.ModifiableValueMap)
+    if (!resourceMap.containsKey(fetchPriorityAttribute)) {
+        resourceMap.put(fetchPriorityAttribute, 'auto')
         updatedInstancesCount++
     }
 }

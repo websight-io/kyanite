@@ -61,6 +61,8 @@ public class DefaultComponentWithBackground {
   @Getter
   private String height;
 
+  private String loadingMode;
+
   public String getDesktopBackgroundImage() {
     return getBackgroundImage(desktopBackgroundImage);
   }
@@ -106,6 +108,10 @@ public class DefaultComponentWithBackground {
     }
 
     return image.getAssetReference();
+  }
+
+  public String getLoadingMode() {
+    return "high".equals(fetchPriority) ? "eager" : "lazy";
   }
 
 }
