@@ -24,7 +24,8 @@
         <source media="(max-width:1023px)" srcset="${model.tabletAssetReference @ context='uri'}"/>
       </sly>
 
-      <img src="${model.image.assetReference}" width="${model.image.width}" height="${model.image.height}" alt="${model.image.alt}" loading="lazy" />
+      <img src="${model.image.assetReference}" width="${model.image.width}" height="${model.image.height}" alt="${model.image.alt}"
+           loading="${model.loadingMode}" fetchpriority="${model.fetchPriority}"/>
     </picture>
   </figure>
 </template>

@@ -43,6 +43,7 @@
           "jcr:primaryType": "nt:unstructured",
           "height": "720",
           "hasVideoOptions": false,
+          "fetchPriority": "auto",
           "width": "1280",
           "sling:resourceType": "kyanite/common/components/image"
         }

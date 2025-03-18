@@ -23,6 +23,7 @@ import java.util.stream.Stream;
 import javax.inject.Inject;
 import lombok.Getter;
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import pl.ds.kyanite.common.components.models.ImageComponent;
@@ -49,11 +50,18 @@ public class DefaultComponentWithBackground {
 
   @ValueMapValue
   @Getter
+  @Default(values = "auto")
+  private String fetchPriority;
+
+  @ValueMapValue
+  @Getter
   private String width;
 
   @ValueMapValue
   @Getter
   private String height;
+
+  private String loadingMode;
 
   public String getDesktopBackgroundImage() {
     return getBackgroundImage(desktopBackgroundImage);
@@ -100,6 +108,10 @@ public class DefaultComponentWithBackground {
     }
 
     return image.getAssetReference();
+  }
+
+  public String getLoadingMode() {
+    return "high".equals(fetchPriority) ? "eager" : "lazy";
   }
 
 }

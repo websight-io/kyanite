@@ -122,6 +122,11 @@ public class ImageComponent {
   @Getter
   private boolean isVideo;
 
+  @ValueMapValue
+  @Getter
+  @Default(values = "auto")
+  private String fetchPriority;
+
   @Getter
   @ValueMapValue
   private String url;
@@ -138,6 +143,8 @@ public class ImageComponent {
   private String highResolutionAssetSrc;
 
   private boolean isInternal;
+
+  private String loadingMode;
 
   @PostConstruct
   private void init() {
@@ -214,5 +221,9 @@ public class ImageComponent {
   private boolean isVideo(String link) {
     String mimeType = URLConnection.guessContentTypeFromName(link);
     return mimeType != null && mimeType.startsWith("video");
+  }
+
+  public String getLoadingMode() {
+    return "high".equals(fetchPriority) ? "eager" : "lazy";
   }
 }

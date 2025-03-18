@@ -3,6 +3,7 @@
   "hasVideoOptions": false,
   "width": "1280",
   "height": "720",
+  "fetchPriority": "auto",
   "isRounded": "false",
   "type": "none"
 }
