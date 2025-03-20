@@ -40,20 +40,21 @@
       margin-bottom: var(--spacing-3);
     }
 
-    @supports (scrollbar-width: auto) {
+    @supports (scrollbar-color: auto) {
       scrollbar-color: var(--kyanite-gray-15) transparent;
       scrollbar-width: thin;
     }
 
-    @supports not (scrollbar-width: auto) {
+    @supports not (scrollbar-color: auto) {
       &::-webkit-scrollbar-thumb {
         background: var(--kyanite-gray-15);
+        border-radius: 4px;
       }
       &::-webkit-scrollbar-track {
         background: transparent;
       }
       &::-webkit-scrollbar {
-        max-width: 10px;
+        max-width: 7px;
       }
     }
 
