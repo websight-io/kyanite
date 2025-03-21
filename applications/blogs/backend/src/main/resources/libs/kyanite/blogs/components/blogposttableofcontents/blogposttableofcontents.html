@@ -27,12 +27,14 @@
     <div class="blog-table-of-content">
       <label class="table-label">${model.title}</label>
         <sly data-sly-test.titles="${model.subTitles}">
-            <ul class="table-content-list" data-simplebar data-simplebar-auto-hide="false">
-            <sly data-sly-list.title="${titles}">
-                <sly data-sly-use.template="./templates/template-table-of-contents-element.html"
-                    data-sly-call="${template.title @ title=title}"></sly>
-            </sly>
-            </ul>
+            <div class="table-content-wrapper">
+              <ul class="table-content-list">
+                <sly data-sly-list.title="${titles}">
+                  <sly data-sly-use.template="./templates/template-table-of-contents-element.html"
+                       data-sly-call="${template.title @ title=title}"></sly>
+                </sly>
+              </ul>
+            </div>
         </sly>
         <sly data-sly-test="${model.showBackToTopButton}">
             <a class="table-content-button" data-sly-attribute.href="#">

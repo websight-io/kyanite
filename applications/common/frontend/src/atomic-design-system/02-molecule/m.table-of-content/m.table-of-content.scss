@@ -31,6 +31,32 @@
   .table-content-list {
     @extend .mb-4;
     @extend .pt-2;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    > li:not(:last-child) {
+      margin-bottom: var(--spacing-3);
+    }
+
+    @supports (scrollbar-color: auto) {
+      scrollbar-color: var(--kyanite-gray-15) transparent;
+      scrollbar-width: thin;
+    }
+
+    @supports not (scrollbar-color: auto) {
+      &::-webkit-scrollbar-thumb {
+        background: var(--kyanite-gray-15);
+        border-radius: 4px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      &::-webkit-scrollbar {
+        max-width: 7px;
+      }
+    }
 
     li {
       a.button {        
@@ -65,16 +91,5 @@
     @include link.a-animated-underline-link;
     color: var(--kyanite-gray-15) !important;
     display: inline-block;
-  }
-  .simplebar-scrollbar:before {
-    background: var(--kyanite-gray-15);
-  }
-  .simplebar-content { // first level list
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    > li:not(:last-child) {
-      margin-bottom: var(--spacing-3);
-    }
   }
 }
