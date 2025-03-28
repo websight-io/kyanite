@@ -63,6 +63,11 @@ public class FeatureBlogArticleComponent {
   @Getter
   private boolean isReversed;
 
+  @ValueMapValue
+  @Getter
+  @Default(values = "auto")
+  private String fetchPriority;
+
   @Getter
   private BlogArticleHeaderModel blogArticleHeader;
 
@@ -77,6 +82,8 @@ public class FeatureBlogArticleComponent {
   private final ModelFactory modelFactory;
   private final Resource resource;
   private final PageManager pageManager;
+
+  private String loadingMode;
 
   @Inject
   public FeatureBlogArticleComponent(
@@ -130,6 +137,10 @@ public class FeatureBlogArticleComponent {
         .stream()
         .findFirst()
         .orElse(null);
+  }
+
+  public String getLoadingMode() {
+    return "high".equals(fetchPriority) ? "eager" : "lazy";
   }
 
 }

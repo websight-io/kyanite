@@ -32,6 +32,27 @@
         "checkedByDefault": false,
         "label": "The position of the columns is reversed",
         "description": "If you want the reverse the position of the columns."
+      },
+      "fetchPriority" : {
+        "sling:resourceType": "wcm/dialogs/components/select",
+        "name": "fetchPriority",
+        "label": "Blog Image Fetch Priority",
+        "description": "Prioritize image on page load. Setting high priority to multiple images on a page may reduce its effect.",
+        "low": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Low",
+          "value": "low"
+        },
+        "auto": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "Auto",
+          "value": "auto"
+        },
+        "high": {
+          "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+          "label": "High",
+          "value": "high"
+        }
       }
     }
   }

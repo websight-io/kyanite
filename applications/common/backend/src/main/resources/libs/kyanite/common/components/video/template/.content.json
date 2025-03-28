@@ -1,5 +1,6 @@
 {
   "jcr:primaryType": "nt:unstructured",
   "source": "video",
-  "hasThumbnail": true
+  "hasThumbnail": true,
+  "fetchPriority": "auto"
 }

@@ -32,7 +32,8 @@
     </sly>
     <sly data-sly-test=${!model.isVideo}>
       <sly data-sly-test="${model.hasThumbnail}">
-        <img class="iframe-thumbnail" src="${model.thumbnail}" alt="Thumbnail image">
+        <img class="iframe-thumbnail" src="${model.thumbnail}" alt="Thumbnail image"
+             loading="${model.loadingMode}" fetchpriority="${model.fetchPriority}">
       </sly>
       <sly data-sly-test.link="${[model.src,model.shareLinkParameters] @ join = '?'}"></sly>
       <iframe id="${model.youtubeIframeId}"

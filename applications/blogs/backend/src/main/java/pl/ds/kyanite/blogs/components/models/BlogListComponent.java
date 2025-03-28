@@ -62,6 +62,11 @@ public class BlogListComponent {
   @Getter
   private String size;
 
+  @ValueMapValue
+  @Getter
+  @Default(values = "auto")
+  private String fetchPriority;
+
   public static final String JCR_CONTENT = "/jcr:content";
 
   private final ResourceResolver resourceResolver;
@@ -75,6 +80,7 @@ public class BlogListComponent {
 
   private final PageManager pageManager;
 
+  private String loadingMode;
 
   @Inject
   public BlogListComponent(@SlingObject ResourceResolver resourceResolver,
@@ -162,6 +168,10 @@ public class BlogListComponent {
     AuthorInfoModel pageAuthor = retrieveAuthorInfo(page);
     return pageAuthor != null
         && currentAuthor.getAuthorOwnerPath().equals(pageAuthor.getAuthorOwnerPath());
+  }
+
+  public String getLoadingMode() {
+    return "high".equals(fetchPriority) ? "eager" : "lazy";
   }
 
 }

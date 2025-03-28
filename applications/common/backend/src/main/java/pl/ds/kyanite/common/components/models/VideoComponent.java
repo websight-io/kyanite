@@ -59,6 +59,12 @@ public class VideoComponent {
   @Getter
   private boolean hasThumbnail;
 
+  @ValueMapValue
+  @Getter
+  @Default(values = "auto")
+  private String fetchPriority;
+
+  private String loadingMode;
 
   @ValueMapValue
   @Default(values = StringUtils.EMPTY)
@@ -162,6 +168,10 @@ public class VideoComponent {
 
   public String getThumbnail() {
     return LinkUtil.handleLink(thumbnail, resource.getResourceResolver());
+  }
+
+  public String getLoadingMode() {
+    return "high".equals(fetchPriority) ? "eager" : "lazy";
   }
 
 }
