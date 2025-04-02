@@ -21,7 +21,7 @@
   <parent>
     <groupId>pl.ds.kyanite</groupId>
     <artifactId>kyanite</artifactId>
-    <version>0.7.17-SNAPSHOT</version>
+    <version>0.7.17</version>
   </parent>
 
   <artifactId>kyanite-content</artifactId>
