@@ -1,5 +1,5 @@
 {
   "jcr:primaryType": "nt:unstructured",
   "link": "/content",
-  "fetchPriority": false
+  "fetchPriority": "auto"
 }

@@ -5,5 +5,5 @@
     "jcr:primaryType": "nt:unstructured",
     "authorInfoSource": "parentPage"
   },
-  "fetchPriority": false
+  "fetchPriority": "auto"
 }
