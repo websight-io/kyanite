@@ -34,6 +34,7 @@ import org.apache.sling.models.factory.ModelFactory;
 import pl.ds.kyanite.blogs.components.exceptions.AuthorInfoResolvingException;
 import pl.ds.kyanite.blogs.components.services.AuthorInfoResolverService;
 import pl.ds.kyanite.blogs.components.services.BlogArticleService;
+import pl.ds.kyanite.common.components.models.HasLoadingMode;
 import pl.ds.kyanite.common.components.utils.LinkUtil;
 import pl.ds.websight.pages.core.api.Page;
 import pl.ds.websight.pages.core.api.PageManager;
@@ -42,7 +43,7 @@ import pl.ds.websight.pages.core.api.PageManager;
     adaptables = {Resource.class},
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
-public class FeatureBlogArticleComponent {
+public class FeatureBlogArticleComponent implements HasLoadingMode {
 
   public static final String CONTENT = "/content";
   public static final String JCR_CONTENT = "/jcr:content";
@@ -82,8 +83,6 @@ public class FeatureBlogArticleComponent {
   private final ModelFactory modelFactory;
   private final Resource resource;
   private final PageManager pageManager;
-
-  private String loadingMode;
 
   @Inject
   public FeatureBlogArticleComponent(
@@ -138,10 +137,5 @@ public class FeatureBlogArticleComponent {
         .findFirst()
         .orElse(null);
   }
-
-  public String getLoadingMode() {
-    return "high".equals(fetchPriority) ? "eager" : "lazy";
-  }
-
 }
 

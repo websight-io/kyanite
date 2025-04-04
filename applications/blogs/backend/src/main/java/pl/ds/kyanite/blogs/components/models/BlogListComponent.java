@@ -42,6 +42,7 @@ import org.apache.sling.models.factory.ModelFactory;
 import org.jetbrains.annotations.Nullable;
 import pl.ds.kyanite.blogs.components.services.AuthorInfoResolverService;
 import pl.ds.kyanite.blogs.components.services.BlogArticleService;
+import pl.ds.kyanite.common.components.models.HasLoadingMode;
 import pl.ds.kyanite.common.components.utils.LinkUtil;
 import pl.ds.websight.pages.core.api.Page;
 import pl.ds.websight.pages.core.api.PageManager;
@@ -51,7 +52,7 @@ import pl.ds.websight.pages.core.api.PageManager;
     adaptables = {Resource.class},
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
-public class BlogListComponent {
+public class BlogListComponent implements HasLoadingMode {
 
   @ValueMapValue
   @Getter
@@ -79,8 +80,6 @@ public class BlogListComponent {
   private List<BlogArticle> blogArticles;
 
   private final PageManager pageManager;
-
-  private String loadingMode;
 
   @Inject
   public BlogListComponent(@SlingObject ResourceResolver resourceResolver,
@@ -169,10 +168,5 @@ public class BlogListComponent {
     return pageAuthor != null
         && currentAuthor.getAuthorOwnerPath().equals(pageAuthor.getAuthorOwnerPath());
   }
-
-  public String getLoadingMode() {
-    return "high".equals(fetchPriority) ? "eager" : "lazy";
-  }
-
 }
 

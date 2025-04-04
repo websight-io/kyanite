@@ -25,6 +25,7 @@ import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import pl.ds.kyanite.common.components.models.HasLoadingMode;
 import pl.ds.kyanite.common.components.models.layouts.TemplateHandler;
 import pl.ds.kyanite.common.components.utils.LinkUtil;
 
@@ -32,7 +33,7 @@ import pl.ds.kyanite.common.components.utils.LinkUtil;
     adaptables = { Resource.class },
     defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL
 )
-public class QuoteComponent implements Quote, TemplateHandler {
+public class QuoteComponent implements Quote, TemplateHandler, HasLoadingMode {
 
   @Inject
   @Getter
@@ -56,8 +57,6 @@ public class QuoteComponent implements Quote, TemplateHandler {
 
   private final ResourceResolver resourceResolver;
 
-  private String loadingMode;
-
   @Inject
   public QuoteComponent(
       @SlingObject ResourceResolver resourceResolver
@@ -69,9 +68,4 @@ public class QuoteComponent implements Quote, TemplateHandler {
   public String getAuthorPhoto() {
     return LinkUtil.handleLink(authorPhotoPath, resourceResolver);
   }
-
-  public String getLoadingMode() {
-    return "high".equals(fetchPriority) ? "eager" : "lazy";
-  }
-
 }
