@@ -1,5 +1,26 @@
 {
   "sling:resourceType": "wcm/dialogs/components/container",
+  "fetchPriority" : {
+    "sling:resourceType": "wcm/dialogs/components/select",
+    "name": "image/fetchPriority",
+    "label": "Image Fetch Priority",
+    "description": "Prioritize this image on page load. Setting high priority to multiple images on a page may reduce its effect.",
+    "low": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Low",
+      "value": "low"
+    },
+    "auto": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "Auto",
+      "value": "auto"
+    },
+    "high": {
+      "sling:resourceType": "wcm/dialogs/components/select/selectitem",
+      "label": "High",
+      "value": "high"
+    }
+  },
   "alt": {
     "sling:resourceType": "wcm/dialogs/components/textfield",
     "name": "image/alt",

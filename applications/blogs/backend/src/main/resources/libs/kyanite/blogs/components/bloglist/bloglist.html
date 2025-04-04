@@ -22,7 +22,8 @@
       <a href="${item.link}" class="column is-4-desktop article-thumbnail">
         <div class="has-text-centered image-hero">
           <img data-sly-test.heroImage="${item.blogArticleHeader.heroImage}" src="${heroImage}"
-               alt="${item.blogArticleHeader.heroImageAlt}" loading="lazy">
+               alt="${item.blogArticleHeader.heroImageAlt}"
+               loading="${model.loadingMode}" fetchpriority="${model.fetchPriority}">
         </div>
         <div class="content">
           <div class="content-info">

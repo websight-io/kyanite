@@ -26,10 +26,11 @@ import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
+import pl.ds.kyanite.common.components.models.HasLoadingMode;
 import pl.ds.kyanite.common.components.models.ImageComponent;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = OPTIONAL)
-public class DefaultComponentWithBackground {
+public class DefaultComponentWithBackground implements HasLoadingMode {
 
   @Inject
   private ImageComponent desktopBackgroundImage;
@@ -60,8 +61,6 @@ public class DefaultComponentWithBackground {
   @ValueMapValue
   @Getter
   private String height;
-
-  private String loadingMode;
 
   public String getDesktopBackgroundImage() {
     return getBackgroundImage(desktopBackgroundImage);
@@ -109,9 +108,4 @@ public class DefaultComponentWithBackground {
 
     return image.getAssetReference();
   }
-
-  public String getLoadingMode() {
-    return "high".equals(fetchPriority) ? "eager" : "lazy";
-  }
-
 }

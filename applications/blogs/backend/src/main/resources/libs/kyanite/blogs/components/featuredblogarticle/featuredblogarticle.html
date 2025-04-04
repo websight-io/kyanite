@@ -23,7 +23,8 @@
         <div class="column">
           <figure class="image-hero">
             <img data-sly-test.heroImage="${article.heroImage}" src="${heroImage}"
-                 alt="${article.heroImageAlt}">
+                 alt="${article.heroImageAlt}"
+                 loading="${model.loadingMode}" fetchpriority="${model.fetchPriority}">
           </figure>
         </div>
         <div class="column">
