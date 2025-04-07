@@ -36,7 +36,7 @@ import pl.ds.kyanite.common.components.utils.LinkUtil;
 import pl.ds.kyanite.common.components.utils.VideoLinkParser;
 
 @Model(adaptables = Resource.class, defaultInjectionStrategy = DefaultInjectionStrategy.OPTIONAL)
-public class VideoComponent {
+public class VideoComponent implements HasLoadingMode {
 
   @ValueMapValue
   @Default(values = StringUtils.EMPTY)
@@ -59,6 +59,10 @@ public class VideoComponent {
   @Getter
   private boolean hasThumbnail;
 
+  @ValueMapValue
+  @Getter
+  @Default(values = "auto")
+  private String fetchPriority;
 
   @ValueMapValue
   @Default(values = StringUtils.EMPTY)
@@ -163,5 +167,4 @@ public class VideoComponent {
   public String getThumbnail() {
     return LinkUtil.handleLink(thumbnail, resource.getResourceResolver());
   }
-
 }

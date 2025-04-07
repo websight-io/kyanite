@@ -4,5 +4,6 @@
   "author": {
     "jcr:primaryType": "nt:unstructured",
     "authorInfoSource": "parentPage"
-  }
+  },
+  "fetchPriority": "auto"
 }
