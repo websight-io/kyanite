@@ -16,6 +16,7 @@
  * -->
  */
 
+@use 'sass:map';
 @use 'src/atomic-design-system/00-token/t.spacing';
 @use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
 @use 'src/atomic-design-system/01-atom/a.animated-underline-link' as link;
@@ -297,6 +298,12 @@
     }
     .navbar-section {
       color: var(--kyanite-gray-60);
+    }
+    
+    @media (width < map.get(breakpoint.$map_t-breakpoints-px, large)) {
+      .empty-column {
+        padding: 0;
+      }
     }
   }
 
