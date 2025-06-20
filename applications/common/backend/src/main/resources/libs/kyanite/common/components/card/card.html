@@ -70,7 +70,11 @@
     </sly>
 
     <sly data-sly-test="${model.type == 'anchor' && model.anchorUrl}">
-      <a class="card-redirect-anchor" href="${model.anchorUrl}" target="${model.openInNewTab ? '_blank' : ''}"></a>
+      <a class="card-redirect-anchor"
+         href="${model.anchorUrl}"
+         target="${model.openInNewTab ? '_blank' : ''}"
+         aria-label="${model.anchorName}">
+      </a>
     </sly>
   </div>
 </sly>

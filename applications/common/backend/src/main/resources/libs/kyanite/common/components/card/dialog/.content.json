@@ -49,6 +49,12 @@
           "name": "anchorUrl",
           "label": "Anchor URL"
         },
+        "anchorName": {
+          "sling:resourceType": "wcm/dialogs/components/textfield",
+          "name": "anchorName",
+          "label": "Anchor Name",
+          "description": "Provide a discernible name to the anchor for accessibility purposes."
+        },
         "openInNewTab": {
           "sling:resourceType": "wcm/dialogs/components/toggle",
           "name": "openInNewTab",
