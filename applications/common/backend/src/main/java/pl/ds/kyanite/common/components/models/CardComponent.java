@@ -92,6 +92,11 @@ public class CardComponent implements ComponentWithBackground {
 
   @Inject
   @Getter
+  @Default(values = StringUtils.EMPTY)
+  private String anchorName;
+
+  @Inject
+  @Getter
   private boolean openInNewTab;
 
   @SlingObject
