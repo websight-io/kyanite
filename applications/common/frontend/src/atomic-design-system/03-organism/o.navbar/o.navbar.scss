@@ -301,7 +301,7 @@
     }
     
     @media (width < map.get(breakpoint.$map_t-breakpoints-px, large)) {
-      .empty-column {
+      .p-0-below-lg {
         padding: 0;
       }
     }
