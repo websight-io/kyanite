@@ -77,6 +77,10 @@ public class ColumnsComponent {
 
   @Getter
   @Inject
+  private boolean invertMobileColumnOrder;
+
+  @Getter
+  @Inject
   private String[] classes;
 
   @PostConstruct
@@ -99,6 +103,10 @@ public class ColumnsComponent {
 
     if (isCentered) {
       classList.add("is-centered");
+    }
+
+    if (invertMobileColumnOrder) {
+      classList.add("invert-column-order-mobile");
     }
 
     classList.add(columnsActivationLevel);

@@ -77,6 +77,11 @@
           "sourceName": "isCustomGapLevel",
           "values": true
         }}
+      },
+      "invertMobileColumnOrder": {
+        "sling:resourceType": "wcm/dialogs/components/toggle",
+        "name": "invertMobileColumnOrder",
+        "label": "Invert column order for mobile view"
       }
     }
   }
