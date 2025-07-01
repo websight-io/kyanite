@@ -16,7 +16,16 @@
  * -->
  */
 
+@use 'sass:map';
 @use 'src/atomic-design-system/00-token/t.position' as position;
+@use 'src/atomic-design-system/00-token/t.breakpoint' as breakpoint;
+
+@media (width < map.get(breakpoint.$map_t-breakpoints-px, medium)) {
+  .columns.invert-column-order-mobile {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
 
 .column {
   &.sticky-container {
