@@ -28,7 +28,7 @@
         <div class="columns is-desktop">
           <sly data-sly-list.column="${model.dropdownColumns}">
             <sly data-sly-test="${!column.hideColumn && column.type == 'text'}">
-              <div class="column text-column ${column.colSizeClass}">
+              <div class="column text-column ${column.sections.size > 0 ? '' : 'p-0-below-lg'} ${column.colSizeClass}">
                 <sly data-sly-list.section="${column.sections}">
                   <span class="navbar-section">
                     ${section.label}
@@ -47,7 +47,7 @@
               </div>
             </sly>
             <sly data-sly-test="${!column.hideColumn && column.type == 'highlights'}">
-              <div class="column highlights-column ${column.colSizeClass}">
+              <div class="column highlights-column ${column.highlights.size > 0 ? '' : 'p-0-below-lg'} ${column.colSizeClass}">
                 <sly data-sly-list.highlight="${column.highlights}">
                   <a data-sly-test="${highlight.url}" class="navbar-item" href="${highlight.url}" target="${highlight.isExternalUrl ? '_blank' : ''}">
                     ${highlight.label}
