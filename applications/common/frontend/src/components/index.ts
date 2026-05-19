@@ -14,8 +14,6 @@
  * limitations under the License.
  */
 
-import "@algolia/autocomplete-theme-classic";
-
 import './CodeSnippet/codesnippet';
 import './ContactForm/contactForm';
 import './Dropdown/dropdown';
@@ -33,6 +31,7 @@ import './Table/table';
 import './BlogTableOfContent/blogtableofcontent';
 import './Accordion/accordion';
 import './Video/video.js';
+import { upgradeMdiIcons } from '../helpers/icons';
 
 document.querySelectorAll('.navbar-item.has-dropdown').forEach((navbarItem) => {
   navbarItem.addEventListener('keydown', (event: KeyboardEvent) => {
@@ -41,3 +40,5 @@ document.querySelectorAll('.navbar-item.has-dropdown').forEach((navbarItem) => {
     }
   });
 });
+
+upgradeMdiIcons();

@@ -32,6 +32,9 @@ To use this project on existing environment you have to use a command from secti
 ## Development
 
 ### Build
+> [!WARNING]
+> During installation, the application requires a connection to localhost:8080, which is run by Docker. Run Docker (as mentioned in the How to run section below) before running the install command.
+
 ```bash
 ./mvnw clean install
 ```
@@ -62,7 +65,7 @@ Please check the community support section in [WebSight Starter](https://github.
 Kyanite components is `open-source` project with `Apache License 2.0` license.
 
 ## Light and dark mode
-Kyanite does not support light and dark system mode, it forces one of each with class from space template on `html` tag: `theme-dark` and `theme-light`. It can be used as a base color system for any new theme. 
+Kyanite does not support light and dark system mode, it forces one of each with class from space template on `html` tag: `theme-dark` and `theme-light`. It can be used as a base color system for any new theme.
 
 ## Creating a New Theme for Kyanite
 
@@ -143,7 +146,7 @@ Other global variables (for others, check `:root`):
 ```
 
 If you wish to customize components, use css variables inside top level component's name class:
-``` 
+```
   .card {
     --kyanite-card-background-color: #ffffff;
     --kyanite-card-footer-border-top: #ededed;
@@ -153,7 +156,7 @@ If you wish to customize components, use css variables inside top level componen
 ### 3. Add the Style File to the Bundle
 
 Ensure that the style file is included in the bundle by adding the following lines to your configuration:
-``` 
+```
 Sling-Bundle-Resources: /apps/my-project/webroot
 WebSight-Apps-WebRoot: /apps/my-project/webroot
 ```

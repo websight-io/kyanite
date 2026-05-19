@@ -16,6 +16,46 @@
 
 @use 'src/atomic-design-system/00-token/t.border' as border;
 
+/* Be Vietnam Pro */
+@font-face {
+  font-display: swap;
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/be-vietnam-pro-v12-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./fonts/be-vietnam-pro-v12-latin-500.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: url('./fonts/be-vietnam-pro-v12-latin-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Be Vietnam Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./fonts/be-vietnam-pro-v12-latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/roboto-v51-latin-regular.woff2') format('woff2');
+}
 
 .navbar-link:not(.is-arrowless)::after,
 .select:not(.is-multiple, .is-loading)::after {
@@ -52,8 +92,8 @@ a:not(.button, .link) {
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px var(--kyanite-body-background-color) inset;
     -webkit-text-fill-color: var(--kyanite-body-color);
@@ -74,4 +114,14 @@ input[type=checkbox] {
 
 strong {
   color: inherit;
+}
+
+/* icons */
+
+.mdi-svg {
+  width: 1em;
+  height: 1em;
+  fill: currentcolor;
+  display: inline-block;
+  vertical-align: middle;
 }
