@@ -27,10 +27,14 @@ Front-End files are deployed as a part of `core` package.
 CSS Variables are generated automatically in 'global-variables.scss'. These variables can be `used` or `redefined` in your project.
 
 Places where the data necessary to generate css variables are located:
-1. `/atomic-design-system/00-token/` - Contain folders named and arranged according to the purpose of css attributes. 
+1. `/atomic-design-system/00-token/` - Contain folders named and arranged according to the purpose of css attributes.
 2. `/bulma-overwrite/_variables.scss` - Contain defined spacing names and values.
 
 Important files:
 1. `global-variables.scss` - File responsible for generating css variables base on sass maps imported from '/atomic-design-system/00-token/*' and '/bulma-overwrite/_variables.scss'.
 
 IMPORTANT: The names of maps defined in the '/atomic-design-system/00-token/' and '/bulma-overwrite/_variables.scss' can't be changed because the rest of 'atomic-design-system' uses css variables from 'global-variables.scss'.
+
+## Bulma css size
+
+We use at least one component from every Bulma module, which forces us to import the entire framework. As a result, the final CSS bundle is around 900 KB. Bulma doesn’t offer granular tree‑shaking or modular builds that would allow us to reduce the output size based on actual usage.
