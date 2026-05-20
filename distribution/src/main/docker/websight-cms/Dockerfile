@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM docker.io/openjdk:17-slim
+FROM eclipse-temurin:17-jre
 
 EXPOSE 8080
 
