@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 import "@algolia/autocomplete-theme-classic";
+
 import './CodeSnippet/codesnippet';
 import './ContactForm/contactForm';
 import './Dropdown/dropdown';
