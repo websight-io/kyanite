@@ -64,12 +64,14 @@ export async function upgradeMdiIcons(root = document) {
     try {
       const svg = await loadIcon(iconName);
 
-      for (const cls of el.classList) {
-        if (cls !== 'mdi' && !cls.startsWith('mdi-')) {
-          svg.classList.add(cls);
-        }
-      }
+      const mdiSizes = new Set(['mdi-18px', 'mdi-24px', 'mdi-36px', 'mdi-48px']);
 
+      const iconClasses = [...el.classList].filter((cls) => {
+        if (mdiSizes.has(cls)) return true;
+        return !cls.startsWith('mdi-') && cls !== 'mdi';
+      });
+
+      svg.classList.add(...iconClasses);
       svg.style.cssText = el.style.cssText;
 
       for (const attr of el.attributes) {

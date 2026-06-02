@@ -124,4 +124,25 @@ strong {
   fill: currentcolor;
   display: inline-block;
   vertical-align: middle;
+  overflow: visible;
+}
+
+.mdi-18px.mdi-svg {
+  width: auto;
+  height: 18px;
+}
+
+.mdi-24px.mdi-svg {
+  width: auto;
+  height: 24px;
+}
+
+.mdi-36px.mdi-svg {
+  width: auto;
+  height: 36px;
+}
+
+.mdi-48px.mdi-svg {
+  width: auto;
+  height: 3pc;
 }
