@@ -160,6 +160,7 @@
                 <exclude>**/*.svg</exclude>
                 <exclude>**/.content.xml</exclude>
                 <exclude>**/sitemap.xml/**/*</exclude>
+                <exclude>**/.java-version</exclude>
               </excludes>
             </configuration>
           </execution>
